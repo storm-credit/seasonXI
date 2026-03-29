@@ -25,5 +25,11 @@
   "aura_type": "domination",
   "aura_color": "gold_flare",
   "entrance_effect": "flash_zoom_shake",
+  "signature_stats": ["finishing", "clutch"],
+  "sound_hit": "power_strike",
+  "sound_ovr": "heavy_impact_gold",
+  "sound_graph": "electronic_sweep",
+  "sound_tier": "metal_stamp",
+  "club_accent_color": "#FFFFFF",
   "quote_optional": "Unstoppable."
 }

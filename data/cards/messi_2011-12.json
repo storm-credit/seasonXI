@@ -25,5 +25,11 @@
   "aura_type": "divine",
   "aura_color": "gold_white",
   "entrance_effect": "flash_zoom_particles",
+  "signature_stats": ["dribbling", "aura"],
+  "sound_hit": "epic_cinematic",
+  "sound_ovr": "heavy_impact_gold",
+  "sound_graph": "electronic_sweep",
+  "sound_tier": "metal_stamp",
+  "club_accent_color": "#A50044",
   "quote_optional": "Not human."
 }

@@ -25,5 +25,11 @@
   "aura_type": "speed",
   "aura_color": "blue_trail",
   "entrance_effect": "flash_zoom_motionblur",
+  "signature_stats": ["finishing", "clutch"],
+  "sound_hit": "speed_whoosh",
+  "sound_ovr": "heavy_impact_gold",
+  "sound_graph": "electronic_sweep",
+  "sound_tier": "metal_stamp",
+  "club_accent_color": "#132257",
   "quote_optional": "One of the best finishers in the world."
 }
