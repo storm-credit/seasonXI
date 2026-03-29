@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SeasonXI Card Builder</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { height: 100%; background: #111; font-family: 'Montserrat', sans-serif; color: #F5F7FA; }
+
+  .app {
+    display: flex;
+    height: 100vh;
+    gap: 24px;
+    padding: 20px;
+  }
+
+  /* Left panel - controls */
+  .controls {
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    padding-right: 12px;
+  }
+
+  .controls h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: #C9A24A;
+    letter-spacing: 3px;
+  }
+
+  .controls h1 span { color: #F5F7FA; font-size: 16px; letter-spacing: 1px; display: block; font-family: 'Montserrat'; font-weight: 500; }
+
+  .field { display: flex; flex-direction: column; gap: 4px; }
+  .field label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+  .field input, .field select {
+    background: #1a1a1a; border: 1px solid #333; color: #F5F7FA;
+    padding: 8px 12px; border-radius: 6px; font-size: 14px; font-family: 'Montserrat';
+  }
+  .field input:focus, .field select:focus { border-color: #C9A24A; outline: none; }
+
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .stat-field input { width: 100%; }
+
+  .drop-zone {
+    border: 2px dashed #333; border-radius: 12px; padding: 24px;
+    text-align: center; color: #666; cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    min-height: 100px;
+  }
+  .drop-zone:hover, .drop-zone.drag-over {
+    border-color: #C9A24A; background: rgba(201,162,74,0.05);
+  }
+  .drop-zone img { max-width: 100%; max-height: 120px; border-radius: 8px; margin-top: 8px; }
+
+  .btn {
+    background: linear-gradient(135deg, #C9A24A, #a8862e);
+    color: #0B0D12; border: none; padding: 12px; border-radius: 8px;
+    font-family: 'Bebas Neue'; font-size: 20px; letter-spacing: 3px;
+    cursor: pointer; transition: transform 0.1s;
+  }
+  .btn:hover { transform: scale(1.02); }
+  .btn:active { transform: scale(0.98); }
+
+  /* Right panel - card preview */
+  .preview-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .card {
+    width: 540px;
+    height: 960px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    flex-shrink: 0;
+  }
+
+  .card .bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 60% 40%, rgba(15,28,46,0.9) 0%, transparent 70%),
+      radial-gradient(ellipse at 30% 80%, rgba(201,162,74,0.08) 0%, transparent 50%),
+      linear-gradient(180deg, #0B0D12 0%, #0F1C2E 40%, #0B0D12 100%);
+  }
+
+  .card .frame {
+    position: absolute; inset: 20px;
+    border: 1.5px solid rgba(201,162,74,0.4);
+    border-radius: 16px;
+  }
+  .card .frame::before {
+    content: ''; position: absolute; inset: 6px;
+    border: 1px solid rgba(201,162,74,0.15);
+    border-radius: 12px;
+  }
+
+  .card .player-img {
+    position: absolute;
+    bottom: 100px; left: 50%;
+    transform: translateX(-45%);
+    width: 520px; height: auto;
+    max-height: 750px;
+    object-fit: contain; object-position: bottom center;
+    z-index: 3;
+    filter: brightness(1.08) contrast(1.08) drop-shadow(0 0 40px rgba(0,0,0,0.6));
+  }
+
+  .card .player-glow {
+    position: absolute; bottom: 150px; left: 50%;
+    transform: translateX(-40%);
+    width: 350px; height: 400px;
+    background: radial-gradient(ellipse, rgba(201,162,74,0.12) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  .card .info {
+    position: absolute; top: 45px; left: 45px; z-index: 10;
+  }
+  .card .info .name {
+    font-family: 'Bebas Neue'; font-size: 40px; color: #F5F7FA;
+    letter-spacing: 2px; line-height: 1; text-transform: uppercase;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.8);
+  }
+  .card .info .meta { display: flex; gap: 10px; margin-top: 8px; align-items: center; }
+  .card .info .season { font-weight: 600; font-size: 16px; color: #C9A24A; }
+  .card .info .pos {
+    font-weight: 700; font-size: 13px; color: #F5F7FA;
+    background: rgba(201,162,74,0.2); border: 1px solid rgba(201,162,74,0.4);
+    padding: 2px 10px; border-radius: 4px; letter-spacing: 2px;
+  }
+  .card .info .club { font-weight: 500; font-size: 13px; color: rgba(245,247,250,0.5); margin-top: 4px; }
+
+  .card .ovr-wrap {
+    position: absolute; top: 40px; right: 45px; z-index: 10;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .card .ovr-circle {
+    width: 90px; height: 90px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .card .ovr-circle::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,162,74,0.3), rgba(201,162,74,0.1));
+    border: 2px solid #C9A24A; border-radius: 50%;
+  }
+  .card .ovr-num {
+    font-family: 'Bebas Neue'; font-size: 52px; color: #E2C674;
+    line-height: 1; position: relative; z-index: 1;
+    text-shadow: 0 0 20px rgba(201,162,74,0.4);
+  }
+  .card .ovr-label {
+    font-weight: 700; font-size: 10px; color: rgba(201,162,74,0.8);
+    letter-spacing: 3px; position: relative; z-index: 1; margin-top: -4px;
+  }
+
+  .card .tier {
+    position: absolute; bottom: 148px; left: 50%; transform: translateX(-50%);
+    z-index: 10; font-family: 'Bebas Neue'; font-size: 16px;
+    letter-spacing: 5px; padding: 3px 16px;
+    border: 1.5px solid rgba(201,162,74,0.5); border-radius: 5px;
+    background: rgba(11,13,18,0.7);
+  }
+  .tier-mythic { color: #FFD700; border-color: #FFD700 !important; text-shadow: 0 0 15px rgba(255,215,0,0.4); }
+  .tier-legendary { color: #E2C674; }
+  .tier-elite { color: #A8B8D0; border-color: #7890A8 !important; }
+  .tier-gold { color: #C9A24A; }
+
+  .card .tagline {
+    position: absolute; bottom: 130px; left: 50%; transform: translateX(-50%);
+    z-index: 10; font-weight: 600; font-size: 11px;
+    color: rgba(245,247,250,0.45); letter-spacing: 1px; white-space: nowrap;
+  }
+
+  .card .stats {
+    position: absolute; bottom: 30px; left: 30px; right: 30px; z-index: 10;
+    background: linear-gradient(180deg, rgba(11,13,18,0.85), rgba(11,13,18,0.95));
+    border: 1px solid rgba(201,162,74,0.25); border-radius: 10px;
+    padding: 16px 20px;
+  }
+  .card .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 30px; }
+  .card .stat-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 3px 0; border-bottom: 1px solid rgba(201,162,74,0.1);
+  }
+  .card .stat-name { font-weight: 600; font-size: 13px; color: rgba(245,247,250,0.8); text-transform: uppercase; letter-spacing: 1px; }
+  .card .stat-val { font-family: 'Bebas Neue'; font-size: 24px; color: #E2C674; line-height: 1; }
+
+  .card .brand {
+    position: absolute; bottom: 8px; right: 35px;
+    font-family: 'Bebas Neue'; font-size: 11px; color: rgba(201,162,74,0.3);
+    letter-spacing: 3px; z-index: 10;
+  }
+
+  .corner { position: absolute; width: 24px; height: 24px; z-index: 5; }
+  .c-tl { top: 20px; left: 20px; border-top: 2px solid #C9A24A; border-left: 2px solid #C9A24A; border-radius: 16px 0 0 0; }
+  .c-tr { top: 20px; right: 20px; border-top: 2px solid #C9A24A; border-right: 2px solid #C9A24A; border-radius: 0 16px 0 0; }
+  .c-bl { bottom: 20px; left: 20px; border-bottom: 2px solid #C9A24A; border-left: 2px solid #C9A24A; border-radius: 0 0 0 16px; }
+  .c-br { bottom: 20px; right: 20px; border-bottom: 2px solid #C9A24A; border-right: 2px solid #C9A24A; border-radius: 0 0 16px 0; }
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- Controls -->
+  <div class="controls">
+    <h1>SEASONXI <span>Card Builder v1</span></h1>
+
+    <div class="drop-zone" id="dropZone">
+      Drop player image here<br><small>or click to browse</small>
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+    </div>
+
+    <div class="field">
+      <label>Player Name</label>
+      <input id="inName" value="MESSI" placeholder="MESSI">
+    </div>
+    <div class="field">
+      <label>Season</label>
+      <input id="inSeason" value="2011-12" placeholder="2021-22">
+    </div>
+    <div style="display:flex;gap:8px">
+      <div class="field" style="flex:1">
+        <label>Position</label>
+        <input id="inPos" value="RW" placeholder="RW">
+      </div>
+      <div class="field" style="flex:1">
+        <label>OVR</label>
+        <input id="inOvr" type="number" value="97" min="0" max="99">
+      </div>
+    </div>
+    <div class="field">
+      <label>Club</label>
+      <input id="inClub" value="FC Barcelona" placeholder="FC Barcelona">
+    </div>
+    <div class="field">
+      <label>Tier</label>
+      <select id="inTier">
+        <option value="mythic">Mythic</option>
+        <option value="legendary">Legendary</option>
+        <option value="elite">Elite</option>
+        <option value="gold">Gold</option>
+      </select>
+    </div>
+
+    <label style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px">Stats</label>
+    <div class="stat-grid">
+      <div class="field"><label>Finishing</label><input id="s1" type="number" value="97" min="0" max="99"></div>
+      <div class="field"><label>Playmaking</label><input id="s2" type="number" value="95" min="0" max="99"></div>
+      <div class="field"><label>Dribbling</label><input id="s3" type="number" value="99" min="0" max="99"></div>
+      <div class="field"><label>Defense</label><input id="s4" type="number" value="55" min="0" max="99"></div>
+      <div class="field"><label>Clutch</label><input id="s5" type="number" value="98" min="0" max="99"></div>
+      <div class="field"><label>Aura</label><input id="s6" type="number" value="99" min="0" max="99"></div>
+    </div>
+
+    <div class="field">
+      <label>Tagline</label>
+      <input id="inTag" value="50 league goals. Pure absurdity." placeholder="One-liner...">
+    </div>
+
+    <button class="btn" onclick="updateCard()">UPDATE CARD</button>
+    <button class="btn" style="background:linear-gradient(135deg,#444,#222);color:#C9A24A" onclick="downloadCard()">DOWNLOAD PNG</button>
+  </div>
+
+  <!-- Card preview -->
+  <div class="preview-wrap">
+    <div class="card" id="card">
+      <div class="bg"></div>
+      <div class="frame"></div>
+      <div class="corner c-tl"></div>
+      <div class="corner c-tr"></div>
+      <div class="corner c-bl"></div>
+      <div class="corner c-br"></div>
+      <div class="player-glow"></div>
+      <img class="player-img" id="playerImg" src="" alt="" style="display:none">
+      <div class="info">
+        <div class="name" id="cardName">MESSI</div>
+        <div class="meta">
+          <span class="season" id="cardSeason">2011-12</span>
+          <span class="pos" id="cardPos">RW</span>
+        </div>
+        <div class="club" id="cardClub">FC Barcelona</div>
+      </div>
+      <div class="ovr-wrap">
+        <div class="ovr-circle">
+          <span class="ovr-num" id="cardOvr">97</span>
+          <span class="ovr-label">OVR</span>
+        </div>
+      </div>
+      <div class="tier tier-mythic" id="cardTier">MYTHIC SEASON</div>
+      <div class="tagline" id="cardTag">50 league goals. Pure absurdity.</div>
+      <div class="stats">
+        <div class="stats-grid">
+          <div class="stat-row"><span class="stat-name">Finishing</span><span class="stat-val" id="cv1">97</span></div>
+          <div class="stat-row"><span class="stat-name">Playmaking</span><span class="stat-val" id="cv2">95</span></div>
+          <div class="stat-row"><span class="stat-name">Dribbling</span><span class="stat-val" id="cv3">99</span></div>
+          <div class="stat-row"><span class="stat-name">Defense</span><span class="stat-val" id="cv4">55</span></div>
+          <div class="stat-row"><span class="stat-name">Clutch</span><span class="stat-val" id="cv5">98</span></div>
+          <div class="stat-row"><span class="stat-name">Aura</span><span class="stat-val" id="cv6">99</span></div>
+        </div>
+      </div>
+      <div class="brand">SEASONXI</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+  const playerImg = document.getElementById('playerImg');
+
+  dropZone.addEventListener('click', () => fileInput.click());
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault(); dropZone.classList.remove('drag-over');
+    handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
+
+  function handleFile(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      playerImg.src = e.target.result;
+      playerImg.style.display = 'block';
+      // Show thumbnail in drop zone
+      let thumb = dropZone.querySelector('img');
+      if (!thumb) { thumb = document.createElement('img'); dropZone.appendChild(thumb); }
+      thumb.src = e.target.result;
+      dropZone.querySelector('br')?.remove();
+      dropZone.querySelector('small')?.remove();
+      dropZone.childNodes[0].textContent = 'Image loaded ';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function updateCard() {
+    document.getElementById('cardName').textContent = document.getElementById('inName').value;
+    document.getElementById('cardSeason').textContent = document.getElementById('inSeason').value;
+    document.getElementById('cardPos').textContent = document.getElementById('inPos').value;
+    document.getElementById('cardClub').textContent = document.getElementById('inClub').value;
+    document.getElementById('cardOvr').textContent = document.getElementById('inOvr').value;
+    document.getElementById('cardTag').textContent = document.getElementById('inTag').value;
+
+    const tier = document.getElementById('inTier').value;
+    const tierEl = document.getElementById('cardTier');
+    tierEl.textContent = tier.toUpperCase() + ' SEASON';
+    tierEl.className = 'tier tier-' + tier;
+
+    for (let i = 1; i <= 6; i++) {
+      document.getElementById('cv' + i).textContent = document.getElementById('s' + i).value;
+    }
+  }
+
+  function downloadCard() {
+    // Use html2canvas if available, otherwise alert
+    alert('To download: Right-click the card and Save as Image, or use a screenshot tool.\n\nFor automated PNG export, install html2canvas.');
+  }
+
+  // Auto-update on any input change
+  document.querySelectorAll('.controls input, .controls select').forEach(el => {
+    el.addEventListener('input', updateCard);
+  });
+</script>
+</body>
+</html>

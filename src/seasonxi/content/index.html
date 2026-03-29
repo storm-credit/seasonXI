@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeasonXI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0B0D12; color: #F5F7FA;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* Hero */
+  .hero {
+    height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(15,28,46,0.8) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 80%, rgba(201,162,74,0.06) 0%, transparent 40%),
+      #0B0D12;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(201,162,74,0.03) 49px, rgba(201,162,74,0.03) 50px);
+  }
+  .hero-brand {
+    font-family: 'Bebas Neue'; font-size: 96px; color: #C9A24A;
+    letter-spacing: 12px; position: relative; z-index: 1;
+    text-shadow: 0 0 60px rgba(201,162,74,0.2);
+  }
+  .hero-tagline {
+    font-size: 18px; color: rgba(245,247,250,0.5); letter-spacing: 4px;
+    margin-top: 8px; position: relative; z-index: 1;
+  }
+  .hero-desc {
+    max-width: 560px; font-size: 14px; color: rgba(245,247,250,0.4);
+    line-height: 1.8; margin-top: 32px; position: relative; z-index: 1;
+  }
+  .hero-nav {
+    display: flex; gap: 16px; margin-top: 48px; position: relative; z-index: 1;
+  }
+  .hero-nav a {
+    font-family: 'Bebas Neue'; font-size: 18px; letter-spacing: 3px;
+    padding: 12px 32px; border-radius: 8px; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-primary {
+    background: linear-gradient(135deg, #C9A24A, #a8862e);
+    color: #0B0D12;
+  }
+  .nav-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,162,74,0.3); }
+  .nav-secondary {
+    border: 1px solid rgba(201,162,74,0.4); color: #C9A24A;
+  }
+  .nav-secondary:hover { background: rgba(201,162,74,0.1); }
+
+  /* Tools section */
+  .tools {
+    padding: 80px 40px; max-width: 1100px; margin: 0 auto;
+  }
+  .tools h2 {
+    font-family: 'Bebas Neue'; font-size: 48px; color: #C9A24A;
+    letter-spacing: 4px; text-align: center; margin-bottom: 48px;
+  }
+  .tool-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .tool-card {
+    background: linear-gradient(135deg, rgba(15,28,46,0.5), rgba(11,13,18,0.8));
+    border: 1px solid rgba(201,162,74,0.2); border-radius: 16px;
+    padding: 32px; transition: all 0.2s; text-decoration: none; color: #F5F7FA;
+    display: block;
+  }
+  .tool-card:hover {
+    border-color: #C9A24A; transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(201,162,74,0.1);
+  }
+  .tool-card h3 {
+    font-family: 'Bebas Neue'; font-size: 28px; color: #E2C674;
+    letter-spacing: 2px; margin-bottom: 8px;
+  }
+  .tool-card p { font-size: 13px; color: rgba(245,247,250,0.5); line-height: 1.6; }
+  .tool-badge {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; padding: 3px 10px; border-radius: 4px;
+    margin-top: 16px; text-transform: uppercase;
+  }
+  .badge-live { background: rgba(76,175,80,0.2); color: #4CAF50; }
+  .badge-soon { background: rgba(201,162,74,0.2); color: #C9A24A; }
+
+  /* Stats banner */
+  .stats-banner {
+    display: flex; justify-content: center; gap: 64px;
+    padding: 48px 20px; border-top: 1px solid rgba(201,162,74,0.1);
+    border-bottom: 1px solid rgba(201,162,74,0.1);
+  }
+  .stat-item { text-align: center; }
+  .stat-item .num {
+    font-family: 'Bebas Neue'; font-size: 48px; color: #C9A24A;
+  }
+  .stat-item .label {
+    font-size: 11px; color: rgba(245,247,250,0.4); letter-spacing: 2px;
+    text-transform: uppercase; margin-top: 4px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center; padding: 40px 20px;
+    font-size: 12px; color: rgba(245,247,250,0.2);
+    letter-spacing: 1px;
+  }
+  footer a { color: #C9A24A; text-decoration: none; }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-brand">SEASONXI</div>
+    <div class="hero-tagline">One season. One version. One legend.</div>
+    <div class="hero-desc">
+      Football's greatest club seasons turned into cards, rankings, and ultimate XIs.
+      We analyze players by their best versions, compare legendary seasons,
+      and build the strongest football combinations ever.
+    </div>
+    <div class="hero-nav">
+      <a href="card_builder.html" class="nav-primary">CARD BUILDER</a>
+      <a href="shorts_preview.html" class="nav-secondary">SHORTS PREVIEW</a>
+    </div>
+  </section>
+
+  <section class="stats-banner">
+    <div class="stat-item"><div class="num">2,030</div><div class="label">Players Rated</div></div>
+    <div class="stat-item"><div class="num">5</div><div class="label">Major Leagues</div></div>
+    <div class="stat-item"><div class="num">6</div><div class="label">Rating Dimensions</div></div>
+    <div class="stat-item"><div class="num">1,101</div><div class="label">Season Cards</div></div>
+  </section>
+
+  <section class="tools">
+    <h2>TOOLS</h2>
+    <div class="tool-grid">
+      <a href="card_builder.html" class="tool-card">
+        <h3>CARD BUILDER</h3>
+        <p>Create SeasonXI player cards. Drop in a player image, set stats, and generate a premium card with the locked brand template.</p>
+        <span class="tool-badge badge-live">LIVE</span>
+      </a>
+      <a href="shorts_preview.html" class="tool-card">
+        <h3>SHORTS PREVIEWER</h3>
+        <p>Preview all 6 scenes of a 15-second Short. Hook, card reveal, OVR pop, stat sequence, verdict, end tag.</p>
+        <span class="tool-badge badge-live">LIVE</span>
+      </a>
+      <a href="#" class="tool-card">
+        <h3>RATING ENGINE</h3>
+        <p>Search any player's season card from the HANESIS database. 2,030 players across 5 leagues, 2021-22 season.</p>
+        <span class="tool-badge badge-soon">COMING SOON</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    SEASONXI &copy; 2026 &mdash; HANESIS Engine v1 &mdash;
+    <a href="https://github.com/storm-credit/seasonXI" target="_blank">GitHub</a>
+  </footer>
+
+</body>
+</html>
