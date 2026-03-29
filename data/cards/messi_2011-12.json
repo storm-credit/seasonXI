@@ -1,0 +1,26 @@
+{
+  "player": "Messi",
+  "season": "2011-12",
+  "club": "FC Barcelona",
+  "position": "RW",
+  "ovr": 97,
+  "stats": {
+    "finishing": 97,
+    "playmaking": 95,
+    "dribbling": 99,
+    "defense": 55,
+    "clutch": 98,
+    "aura": 99
+  },
+  "tier": "Mythic",
+  "hook": "THIS VERSION WAS BROKEN",
+  "play_style": "Impossible to stop in tight spaces. Unstoppable close control with lethal finishing from any angle.",
+  "achievement": "50 LEAGUE GOALS",
+  "achievement_number": "50",
+  "achievement_detail": "La Liga all-time single-season record",
+  "verdict": "MYTHIC SEASON",
+  "cta": "WHO TOPS THIS?",
+  "image": "messi_2011_12.png",
+  "music_theme": "messi_peak_a",
+  "quote_optional": "Not human."
+}

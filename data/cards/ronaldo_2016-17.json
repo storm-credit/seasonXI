@@ -1,0 +1,26 @@
+{
+  "player": "Cristiano Ronaldo",
+  "season": "2016-17",
+  "club": "Real Madrid",
+  "position": "ST",
+  "ovr": 95,
+  "stats": {
+    "finishing": 98,
+    "playmaking": 72,
+    "dribbling": 85,
+    "defense": 45,
+    "clutch": 99,
+    "aura": 97
+  },
+  "tier": "Mythic",
+  "hook": "BIG GAME MACHINE",
+  "play_style": "Ruthless in knockouts. Explosive power headers and counterattack dominance.",
+  "achievement": "UCL TOP SCORER",
+  "achievement_number": "12",
+  "achievement_detail": "Champions League top scorer + La Liga champion",
+  "verdict": "MYTHIC SEASON",
+  "cta": "BEST UCL RUN EVER?",
+  "image": "ronaldo_2016_17.png",
+  "music_theme": "ronaldo_peak_a",
+  "quote_optional": "Unstoppable."
+}

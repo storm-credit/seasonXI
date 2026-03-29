@@ -1,0 +1,26 @@
+{
+  "player": "Son Heung-min",
+  "season": "2021-22",
+  "club": "Tottenham Hotspur",
+  "position": "LW",
+  "ovr": 89,
+  "stats": {
+    "finishing": 93,
+    "playmaking": 80,
+    "dribbling": 88,
+    "defense": 61,
+    "clutch": 90,
+    "aura": 85
+  },
+  "tier": "Elite",
+  "hook": "THE PERFECT FINISHER",
+  "play_style": "Ruthless two-foot finishing. Explosive counterattack runs with lethal precision.",
+  "achievement": "GOLDEN BOOT",
+  "achievement_number": "23",
+  "achievement_detail": "Premier League Golden Boot winner",
+  "verdict": "ELITE SEASON",
+  "cta": "BETTER THAN 2020-21?",
+  "image": "son_2021_22.png",
+  "music_theme": "son_peak_a",
+  "quote_optional": "One of the best finishers in the world."
+}

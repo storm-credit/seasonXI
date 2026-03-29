@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SeasonXI Card",
+  "description": "One player-season record for card + shorts generation",
+  "type": "object",
+  "required": ["player", "season", "club", "position", "ovr", "stats", "tier", "hook", "achievement", "verdict"],
+  "properties": {
+    "player": { "type": "string", "description": "Display name" },
+    "season": { "type": "string", "description": "e.g. 2011-12" },
+    "club": { "type": "string" },
+    "position": { "type": "string", "enum": ["RW", "LW", "ST", "CF", "CAM", "CM", "CDM", "CB", "LB", "RB", "GK", "FW", "MF", "DF"] },
+    "ovr": { "type": "integer", "minimum": 0, "maximum": 99 },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "finishing": { "type": "integer", "minimum": 0, "maximum": 99 },
+        "playmaking": { "type": "integer", "minimum": 0, "maximum": 99 },
+        "dribbling": { "type": "integer", "minimum": 0, "maximum": 99 },
+        "defense": { "type": "integer", "minimum": 0, "maximum": 99 },
+        "clutch": { "type": "integer", "minimum": 0, "maximum": 99 },
+        "aura": { "type": "integer", "minimum": 0, "maximum": 99 }
+      },
+      "required": ["finishing", "playmaking", "dribbling", "defense", "clutch", "aura"]
+    },
+    "tier": { "type": "string", "enum": ["Mythic", "Legendary", "Elite", "Gold", "Silver", "Bronze"] },
+    "hook": { "type": "string", "description": "Opening impact text" },
+    "play_style": { "type": "string", "description": "What made this season special" },
+    "achievement": { "type": "string", "description": "Key season evidence" },
+    "achievement_number": { "type": "string", "description": "Big number for achievement scene (e.g. 50)" },
+    "achievement_detail": { "type": "string", "description": "Sub-text (e.g. La Liga all-time record)" },
+    "verdict": { "type": "string", "description": "Final tier declaration" },
+    "cta": { "type": "string", "description": "End CTA (e.g. WHO TOPS THIS?)" },
+    "image": { "type": "string", "description": "Player image filename" },
+    "music_theme": { "type": "string" },
+    "quote_optional": { "type": "string", "description": "Optional opponent/peer reaction" }
+  }
+}
