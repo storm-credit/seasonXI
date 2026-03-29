@@ -1,0 +1,22 @@
+{
+  "name": "seasonxi-remotion",
+  "version": "1.0.0",
+  "description": "SeasonXI video renderer - JSON to MP4",
+  "scripts": {
+    "start": "npx remotion studio src/index.ts",
+    "preview": "npx remotion studio src/index.ts",
+    "render": "npx remotion render src/index.ts SeasonCard outputs/video.mp4",
+    "render:messi": "npx remotion render src/index.ts SeasonCard outputs/messi_2011-12.mp4"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "@remotion/cli": "^4.0.441",
+    "@remotion/renderer": "^4.0.441",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.441",
+    "typescript": "^6.0.2"
+  }
+}
