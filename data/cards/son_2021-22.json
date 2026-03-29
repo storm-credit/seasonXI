@@ -22,5 +22,8 @@
   "cta": "BETTER THAN 2020-21?",
   "image": "son_2021_22.png",
   "music_theme": "son_peak_a",
+  "aura_type": "speed",
+  "aura_color": "blue_trail",
+  "entrance_effect": "flash_zoom_motionblur",
   "quote_optional": "One of the best finishers in the world."
 }

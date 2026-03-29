@@ -22,5 +22,8 @@
   "cta": "BEST UCL RUN EVER?",
   "image": "ronaldo_2016_17.png",
   "music_theme": "ronaldo_peak_a",
+  "aura_type": "domination",
+  "aura_color": "gold_flare",
+  "entrance_effect": "flash_zoom_shake",
   "quote_optional": "Unstoppable."
 }

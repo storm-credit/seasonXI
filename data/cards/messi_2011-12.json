@@ -22,5 +22,8 @@
   "cta": "WHO TOPS THIS?",
   "image": "messi_2011_12.png",
   "music_theme": "messi_peak_a",
+  "aura_type": "divine",
+  "aura_color": "gold_white",
+  "entrance_effect": "flash_zoom_particles",
   "quote_optional": "Not human."
 }
