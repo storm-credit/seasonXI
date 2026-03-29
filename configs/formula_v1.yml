@@ -1,0 +1,79 @@
+# V1 Rating Formula Weights
+# Each role bucket has different weight profiles per latent dimension.
+# Percentile inputs (_pct) are 0.0–1.0 from within-role ranking.
+
+FW:
+  finishing:
+    goals_pct_role: 0.35
+    xg_pct_role: 0.25
+    shots_pct_role: 0.20
+    team_goal_contribution: 0.20
+  creation:
+    assists_pct_role: 0.35
+    xa_pct_role: 0.25
+    key_passes_pct_role: 0.20
+    prog_passes_pct_role: 0.20
+  control:
+    dribbles_pct_role: 0.35
+    prog_carries_pct_role: 0.30
+    prog_passes_pct_role: 0.20
+    minutes_share: 0.15
+  defense:
+    tackles_pct_role: 0.40
+    interceptions_pct_role: 0.30
+    minutes_share: 0.30
+  clutch:
+    team_goal_contribution: 0.45
+    minutes_share: 0.30
+    team_success_pct: 0.25
+  aura:
+    overall_performance_proxy: 0.35
+    team_success_pct: 0.25
+    minutes_share: 0.20
+    role_dominance_pct: 0.20
+  overall:
+    finishing: 0.30
+    creation: 0.20
+    control: 0.18
+    defense: 0.08
+    clutch: 0.12
+    aura: 0.12
+
+MF:
+  finishing:
+    goals_pct_role: 0.30
+    xg_pct_role: 0.20
+    shots_pct_role: 0.20
+    team_goal_contribution: 0.30
+  creation:
+    assists_pct_role: 0.30
+    xa_pct_role: 0.25
+    key_passes_pct_role: 0.20
+    prog_passes_pct_role: 0.25
+  control:
+    prog_carries_pct_role: 0.25
+    prog_passes_pct_role: 0.25
+    dribbles_pct_role: 0.20
+    minutes_share: 0.15
+    xa_pct_role: 0.15
+  defense:
+    tackles_pct_role: 0.35
+    interceptions_pct_role: 0.30
+    clearances_pct_role: 0.15
+    minutes_share: 0.20
+  clutch:
+    team_goal_contribution: 0.35
+    minutes_share: 0.30
+    team_success_pct: 0.35
+  aura:
+    overall_performance_proxy: 0.30
+    control_raw: 0.25
+    team_success_pct: 0.20
+    role_dominance_pct: 0.25
+  overall:
+    finishing: 0.16
+    creation: 0.24
+    control: 0.24
+    defense: 0.14
+    clutch: 0.10
+    aura: 0.12

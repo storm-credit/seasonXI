@@ -1,0 +1,23 @@
+# Position bucket mapping for V1 (4 buckets).
+# Sub-positions reserved for V1.1+.
+
+buckets:
+  FW:
+    label: Forward
+    fbref_positions: [FW, "FW,MF"]
+    primary_emphasis: [finishing, clutch]
+
+  MF:
+    label: Midfielder
+    fbref_positions: [MF, "MF,FW", "MF,DF"]
+    primary_emphasis: [creation, control]
+
+  DF:
+    label: Defender
+    fbref_positions: [DF, "DF,MF"]
+    primary_emphasis: [defense, aura]
+
+  GK:
+    label: Goalkeeper
+    fbref_positions: [GK]
+    primary_emphasis: [defense, clutch]

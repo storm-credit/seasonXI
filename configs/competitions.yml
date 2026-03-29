@@ -1,0 +1,35 @@
+leagues:
+  - id: ENG1
+    name: Premier League
+    country: England
+    tier: 1
+    fbref_id: "ENG-Premier League"
+    understat_id: EPL
+
+  - id: ESP1
+    name: La Liga
+    country: Spain
+    tier: 1
+    fbref_id: "ESP-La Liga"
+    understat_id: La_liga
+
+  - id: GER1
+    name: Bundesliga
+    country: Germany
+    tier: 1
+    fbref_id: "GER-Bundesliga"
+    understat_id: Bundesliga
+
+  - id: ITA1
+    name: Serie A
+    country: Italy
+    tier: 1
+    fbref_id: "ITA-Serie A"
+    understat_id: Serie_A
+
+  - id: FRA1
+    name: Ligue 1
+    country: France
+    tier: 1
+    fbref_id: "FRA-Ligue 1"
+    understat_id: Ligue_1

@@ -1,0 +1,6 @@
+team_season_id,club_id,season_id,competition_scope,matches_played,team_goals,team_goals_conceded,points,final_table_rank,wins,draws,losses
+tottenham-2021-2022,tottenham,2021-2022,league_only,38,69,40,71,4,22,5,11
+barcelona-2011-2012,barcelona,2011-2012,league_only,38,114,29,91,1,28,7,3
+real-madrid-2016-2017,real-madrid,2016-2017,league_only,38,106,41,93,1,29,6,3
+man-city-2022-2023,man-city,2022-2023,league_only,38,94,33,89,1,28,5,5
+man-city-2019-2020,man-city,2019-2020,league_only,38,102,35,81,2,26,3,9

@@ -205,3 +205,17 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# SeasonXI
+data/db/
+data/raw/fbref/
+data/raw/understat/
+!data/raw/seed_players.csv
+!data/raw/seed_teams.csv
+!data/raw/README.md
+data/interim/
+data/processed/
+outputs/
+*.duckdb
+*.duckdb.wal
+.claude/

@@ -1,0 +1,11 @@
+# League strength factors for stat adjustment.
+# 1.00 = baseline (EPL / La Liga).
+# Applied as: adjusted_stat = stat * factor
+
+Premier League: 1.00
+La Liga: 1.00
+Serie A: 0.97
+Bundesliga: 0.97
+Ligue 1: 0.94
+Eredivisie: 0.90
+Primeira Liga: 0.89
