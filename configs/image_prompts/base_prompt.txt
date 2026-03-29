@@ -1,0 +1,53 @@
+Create a premium vertical football poster image in 9:16 format for a SeasonXI-style player card.
+
+Style:
+- semi-realistic
+- cinematic sports art
+- premium football card key visual
+- high contrast
+- dramatic stadium lighting
+- dark navy and black base tones
+- metallic gold accents
+- realistic textures
+- slightly stylized, not photorealistic
+- not cartoon
+- not anime
+
+Composition:
+- one male football player only
+- dynamic action pose
+- full body or strong 3/4 body framing
+- player is the clear focal point
+- slightly blurred stadium background
+- strong depth
+- premium poster composition
+- space left for card UI overlay
+- clean silhouette
+- ball visible near the player
+
+Mood:
+- elite
+- mythic
+- intense
+- focused
+- powerful
+
+Environment:
+- night stadium
+- cinematic floodlights
+- subtle rain or atmospheric particles
+- dramatic shadows
+- premium sports atmosphere
+
+Design restrictions:
+- no copyrighted club logos
+- no real brand marks
+- no extra players
+- no text
+- no watermark
+- no cartoon proportions
+- no exaggerated fantasy armor
+
+The result should feel like a top-tier football video game card splash art for an elite player.
+
+Do not change the core SeasonXI visual identity: dark premium palette, cinematic football lighting, metallic gold accents, elite sports-card tone, single-player composition, and serious mythic atmosphere.

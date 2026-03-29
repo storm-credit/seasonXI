@@ -218,4 +218,8 @@ data/processed/
 outputs/
 *.duckdb
 *.duckdb.wal
-.claude/
+.claude/settings.json
+.claude/hooks/
+.claude/commands/
+.claude/memory/
+.claude/plans/

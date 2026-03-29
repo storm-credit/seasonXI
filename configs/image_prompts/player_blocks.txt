@@ -1,0 +1,79 @@
+# SeasonXI Player Identity Blocks
+# Append one of these after the base prompt.
+
+## MESSI
+Player inspiration:
+- inspired by a legendary Argentine forward playmaker
+- compact athletic build
+- short dark brown hair
+- trimmed beard
+- calm but deadly expression
+- genius aura
+- low center of gravity
+- elegant dribbling body language
+
+## RONALDO
+Player inspiration:
+- inspired by a legendary Portuguese goal machine
+- tall elite athletic build
+- sharp facial structure
+- short styled dark hair
+- intense dominant expression
+- explosive posture
+- heroic aura
+- ruthless finisher body language
+
+## SON
+Player inspiration:
+- inspired by an elite Korean forward
+- lean athletic build
+- short black hair
+- clean-shaven or light stubble
+- focused determined expression
+- explosive speed energy
+- dynamic sprinting posture
+- lethal left-footed shooter body language
+
+## HAALAND
+Player inspiration:
+- inspired by a powerful Scandinavian striker
+- tall imposing muscular build
+- long blonde hair tied back
+- intense predatory expression
+- raw power aura
+- aggressive forward posture
+- dominant physical presence
+- brutal finisher body language
+
+## ZIDANE
+Player inspiration:
+- inspired by a legendary French playmaker
+- tall elegant build
+- shaved or very short hair
+- composed face
+- regal aura
+- graceful body balance
+- refined, dominant movement
+- orchestral greatness feeling
+
+## DE BRUYNE
+Player inspiration:
+- inspired by an elite Belgian creative midfielder
+- medium athletic build
+- light reddish-brown hair
+- focused intelligent expression
+- commanding presence
+- precise passing posture
+- visionary playmaker energy
+- controlled power body language
+
+## SALAH
+Player inspiration:
+- inspired by an elite Egyptian forward
+- lean muscular build
+- distinctive curly dark hair
+- determined fierce expression
+- explosive speed energy
+- cutting inside body posture
+- relentless goal threat aura
+- dynamic left-footed attacker body language

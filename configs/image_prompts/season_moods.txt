@@ -1,0 +1,39 @@
+# SeasonXI Season Mood Blocks
+# Append one of these after the player block.
+
+## PEAK_MONSTER
+Season mood:
+- unstoppable
+- explosive
+- peak form
+- aggressive momentum
+- dominant match-winning energy
+- stronger lighting contrast
+- more intensity in motion and atmosphere
+
+## ELEGANT_PRIME
+Season mood:
+- complete
+- elegant
+- controlled dominance
+- legendary peak
+- balanced power and intelligence
+- refined cinematic atmosphere
+
+## BREAKTHROUGH
+Season mood:
+- hungry
+- emerging
+- raw talent explosion
+- youthful energy
+- electric atmosphere
+- bright dynamic lighting accents
+
+## DECLINE_TRANSITION
+Season mood:
+- reflective
+- colder atmosphere
+- controlled intensity
+- emotional weight
+- experienced veteran energy
+- quieter but powerful visual tone
