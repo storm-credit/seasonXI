@@ -18,6 +18,7 @@ const MESSI_2011: CardData = {
   achievement_detail: "La Liga all-time single-season record",
   verdict: "MYTHIC SEASON",
   cta: "WHO TOPS THIS?",
+  image: "/messi_2011_12.png",
   aura_type: "divine",
   aura_color: "gold_white",
   entrance_effect: "flash_zoom_particles",

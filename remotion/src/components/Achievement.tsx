@@ -4,49 +4,68 @@ import { CardData, COLORS } from '../types';
 export const Achievement: React.FC<{ data: CardData }> = ({ data }) => {
   const frame = useCurrentFrame();
 
-  // Counter animation for number
   const targetNum = parseInt(data.achievement_number) || 0;
-  const counterProgress = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
+  const counterProgress = interpolate(frame, [0, 18], [0, 1], { extrapolateRight: 'clamp' });
   const displayNum = Math.round(targetNum * counterProgress);
 
-  const numScale = interpolate(frame, [18, 24, 30], [0.8, 1.1, 1.0], { extrapolateRight: 'clamp' });
-  const textOpacity = interpolate(frame, [22, 30], [0, 1], { extrapolateRight: 'clamp' });
-  const detailOpacity = interpolate(frame, [32, 40], [0, 1], { extrapolateRight: 'clamp' });
+  const numScale = interpolate(frame, [16, 22, 28], [0.7, 1.12, 1.0], { extrapolateRight: 'clamp' });
+  const numOpacity = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: 'clamp' });
+  const textOpacity = interpolate(frame, [20, 28], [0, 1], { extrapolateRight: 'clamp' });
+  const textY = interpolate(frame, [20, 28], [15, 0], { extrapolateRight: 'clamp' });
 
-  // Glow
-  const glowOpacity = interpolate(frame, [15, 25], [0, 0.4], { extrapolateRight: 'clamp' });
+  // Background: stadium glow hint
+  const bgGlow = interpolate(frame, [10, 25], [0, 0.15], { extrapolateRight: 'clamp' });
 
   return (
     <AbsoluteFill style={{
-      background: `radial-gradient(circle at 50% 45%, ${COLORS.mythicGold}10, transparent 50%), ${COLORS.black}`,
+      background: COLORS.black,
       alignItems: 'center', justifyContent: 'center',
+      overflow: 'hidden',
     }}>
-      {/* Glow */}
+      {/* Stadium light streaks */}
       <div style={{
-        position: 'absolute', width: 300, height: 300, borderRadius: '50%',
-        background: `radial-gradient(circle, ${COLORS.gold}30, transparent 70%)`,
-        opacity: glowOpacity,
+        position: 'absolute', top: 0, width: '120%', height: '40%',
+        background: `radial-gradient(ellipse at 50% 0%, ${COLORS.white}08, transparent 70%)`,
+        opacity: bgGlow,
       }} />
 
-      {/* Big number */}
+      {/* Radial glow behind number */}
       <div style={{
-        fontFamily: 'Bebas Neue, sans-serif', fontSize: 140, color: COLORS.softGold,
-        lineHeight: 1, transform: `scale(${numScale})`,
-        textShadow: `0 0 40px ${COLORS.gold}50`,
+        position: 'absolute', width: 400, height: 400, borderRadius: '50%',
+        background: `radial-gradient(circle, ${COLORS.mythicGold}15, transparent 60%)`,
+        opacity: bgGlow * 2,
+      }} />
+
+      {/* Big number - counter animation */}
+      <div style={{
+        fontFamily: 'Bebas Neue, sans-serif', fontSize: 180, color: COLORS.softGold,
+        lineHeight: 1, transform: `scale(${numScale})`, opacity: numOpacity,
+        textShadow: `0 0 60px ${COLORS.gold}40`,
       }}>{displayNum}</div>
 
       {/* Achievement text */}
       <div style={{
-        fontFamily: 'Bebas Neue, sans-serif', fontSize: 36, color: COLORS.white,
-        letterSpacing: 4, marginTop: 8, opacity: textOpacity,
+        fontFamily: 'Bebas Neue, sans-serif', fontSize: 38, color: COLORS.white,
+        letterSpacing: 5, marginTop: 4,
+        opacity: textOpacity, transform: `translateY(${textY}px)`,
+        textShadow: `0 2px 20px rgba(0,0,0,0.6)`,
       }}>{data.achievement}</div>
 
-      {/* Detail */}
+      {/* Corner details */}
       <div style={{
-        fontFamily: 'Montserrat, sans-serif', fontSize: 14,
-        color: `${COLORS.white}55`, letterSpacing: 2,
-        marginTop: 16, opacity: detailOpacity,
-      }}>{data.achievement_detail}</div>
+        position: 'absolute', top: 40, left: 40,
+        width: 25, height: 25,
+        borderTop: `2px solid ${COLORS.gold}30`,
+        borderLeft: `2px solid ${COLORS.gold}30`,
+        opacity: textOpacity,
+      }} />
+      <div style={{
+        position: 'absolute', bottom: 40, right: 40,
+        width: 25, height: 25,
+        borderBottom: `2px solid ${COLORS.gold}30`,
+        borderRight: `2px solid ${COLORS.gold}30`,
+        opacity: textOpacity,
+      }} />
     </AbsoluteFill>
   );
 };
