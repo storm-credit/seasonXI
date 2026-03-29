@@ -10,362 +10,300 @@
 
   .app { display: flex; height: 100vh; }
 
-  /* Left: Timeline */
+  /* Timeline */
   .timeline {
-    width: 280px; flex-shrink: 0; padding: 20px;
+    width: 260px; flex-shrink: 0; padding: 16px;
     border-right: 1px solid rgba(201,162,74,0.15);
-    display: flex; flex-direction: column; gap: 8px;
-    overflow-y: auto;
+    display: flex; flex-direction: column; gap: 6px; overflow-y: auto;
   }
-  .timeline h2 {
-    font-family: 'Bebas Neue'; font-size: 28px; color: #C9A24A;
-    letter-spacing: 3px; margin-bottom: 8px;
+  .timeline h2 { font-family: 'Bebas Neue'; font-size: 24px; color: #C9A24A; letter-spacing: 3px; margin-bottom: 6px; }
+  .tl-item {
+    padding: 8px 12px; border-radius: 8px; cursor: pointer;
+    border: 1px solid transparent; transition: all 0.15s; position: relative;
   }
-  .timeline-item {
-    padding: 12px 16px; border-radius: 10px; cursor: pointer;
-    border: 1px solid transparent; transition: all 0.2s;
-    position: relative;
-  }
-  .timeline-item:hover { background: rgba(201,162,74,0.05); border-color: rgba(201,162,74,0.2); }
-  .timeline-item.active { background: rgba(201,162,74,0.1); border-color: #C9A24A; }
-  .timeline-item .time {
-    font-family: 'Bebas Neue'; font-size: 14px; color: #C9A24A; letter-spacing: 2px;
-  }
-  .timeline-item .scene-name {
-    font-weight: 600; font-size: 14px; margin-top: 2px;
-  }
-  .timeline-item .scene-desc {
-    font-size: 11px; color: rgba(245,247,250,0.4); margin-top: 4px;
-  }
-  .scene-num {
-    position: absolute; top: 12px; right: 12px;
-    font-family: 'Bebas Neue'; font-size: 24px; color: rgba(201,162,74,0.2);
-  }
+  .tl-item:hover { background: rgba(201,162,74,0.05); border-color: rgba(201,162,74,0.2); }
+  .tl-item.active { background: rgba(201,162,74,0.1); border-color: #C9A24A; }
+  .tl-item .time { font-family: 'Bebas Neue'; font-size: 12px; color: #C9A24A; letter-spacing: 2px; }
+  .tl-item .name { font-weight: 600; font-size: 13px; margin-top: 1px; }
+  .tl-item .desc { font-size: 10px; color: rgba(245,247,250,0.35); margin-top: 2px; }
+  .tl-num { position: absolute; top: 8px; right: 10px; font-family: 'Bebas Neue'; font-size: 20px; color: rgba(201,162,74,0.15); }
 
   .play-btn {
-    margin-top: auto; padding: 14px; border: none; border-radius: 10px;
+    margin-top: auto; padding: 12px; border: none; border-radius: 8px;
     background: linear-gradient(135deg, #C9A24A, #a8862e);
-    color: #0B0D12; font-family: 'Bebas Neue'; font-size: 20px;
-    letter-spacing: 3px; cursor: pointer; transition: all 0.2s;
+    color: #0B0D12; font-family: 'Bebas Neue'; font-size: 18px;
+    letter-spacing: 3px; cursor: pointer;
   }
   .play-btn:hover { transform: scale(1.02); }
 
-  /* Center: Phone preview */
-  .preview {
-    flex: 1; display: flex; align-items: center; justify-content: center;
-    background: radial-gradient(ellipse at center, rgba(15,28,46,0.3) 0%, #0B0D12 70%);
-  }
+  /* Phone */
+  .preview { flex: 1; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, rgba(15,28,46,0.3) 0%, #0B0D12 70%); }
   .phone {
-    width: 360px; height: 640px;
-    border: 2px solid rgba(201,162,74,0.3); border-radius: 32px;
-    overflow: hidden; position: relative;
-    background: #0B0D12;
-    box-shadow: 0 0 60px rgba(0,0,0,0.5), 0 0 120px rgba(201,162,74,0.05);
+    width: 360px; height: 640px; border: 2px solid rgba(201,162,74,0.3); border-radius: 32px;
+    overflow: hidden; position: relative; background: #0B0D12;
+    box-shadow: 0 0 60px rgba(0,0,0,0.5);
   }
-  .phone-screen {
-    position: absolute; inset: 0; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-  }
+  .phone-screen { position: absolute; inset: 0; overflow: hidden; }
 
-  /* Scene styles */
-  .scene { display: none; position: absolute; inset: 0; }
-  .scene.active { display: flex; flex-direction: column; }
+  .scene { display: none; position: absolute; inset: 0; flex-direction: column; }
+  .scene.active { display: flex; }
 
-  /* Scene 1: Hook */
-  .s1 {
-    background:
-      radial-gradient(ellipse at 50% 40%, rgba(15,28,46,0.9), transparent 70%),
-      linear-gradient(180deg, #0B0D12, #0F1C2E);
-    align-items: center; justify-content: center;
-  }
-  .s1 .hook-text {
-    font-family: 'Bebas Neue'; font-size: 28px; color: #F5F7FA;
-    letter-spacing: 3px; text-align: center; padding: 0 24px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
-  }
-  .s1 .hook-img {
-    width: 260px; height: 340px; border-radius: 12px; margin-top: 20px;
-    object-fit: cover; filter: brightness(0.9) contrast(1.1);
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
-  }
-  .s1 .hook-img-placeholder {
-    width: 260px; height: 340px; border-radius: 12px; margin-top: 20px;
-    background: linear-gradient(135deg, rgba(15,28,46,0.8), rgba(201,162,74,0.1));
-    border: 1px dashed rgba(201,162,74,0.3);
-    display: flex; align-items: center; justify-content: center;
-    color: rgba(201,162,74,0.3); font-size: 12px; letter-spacing: 2px;
-  }
+  /* S1: Hook */
+  .s1 { background: radial-gradient(ellipse at 50% 40%, rgba(15,28,46,0.9), transparent 70%), linear-gradient(180deg, #0B0D12, #0F1C2E); align-items: center; justify-content: center; }
+  .s1 .hook-text { font-family: 'Bebas Neue'; font-size: 26px; color: #F5F7FA; letter-spacing: 3px; text-align: center; padding: 0 20px; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
+  .s1 .hook-sub { font-size: 12px; color: rgba(245,247,250,0.3); margin-top: 12px; letter-spacing: 2px; }
+  .s1 .hook-placeholder { width: 240px; height: 300px; border-radius: 12px; margin-top: 16px; background: linear-gradient(135deg, rgba(15,28,46,0.8), rgba(201,162,74,0.08)); border: 1px dashed rgba(201,162,74,0.2); display: flex; align-items: center; justify-content: center; color: rgba(201,162,74,0.2); font-size: 11px; }
 
-  /* Scene 2: Card reveal */
-  .s2 {
-    background: linear-gradient(180deg, #0B0D12, #0F1C2E);
-    padding: 40px 24px; justify-content: flex-start;
-  }
-  .s2 .card-name { font-family: 'Bebas Neue'; font-size: 48px; color: #F5F7FA; letter-spacing: 3px; }
-  .s2 .card-meta { display: flex; gap: 12px; margin-top: 8px; align-items: center; }
-  .s2 .card-season { font-weight: 600; font-size: 18px; color: #C9A24A; }
-  .s2 .card-pos {
-    font-weight: 700; font-size: 14px; color: #F5F7FA;
-    background: rgba(201,162,74,0.2); border: 1px solid rgba(201,162,74,0.4);
-    padding: 3px 12px; border-radius: 4px; letter-spacing: 2px;
-  }
-  .s2 .card-club { font-size: 14px; color: rgba(245,247,250,0.5); margin-top: 6px; }
-  .s2 .card-img {
-    width: 240px; height: 320px; object-fit: cover; border-radius: 12px;
-    align-self: center; margin-top: 24px;
-    border: 1.5px solid rgba(201,162,74,0.3);
-    filter: brightness(1.05);
-  }
-  .s2 .card-img-placeholder {
-    width: 240px; height: 320px; border-radius: 12px;
-    background: rgba(15,28,46,0.5); border: 1px solid rgba(201,162,74,0.2);
-    align-self: center; margin-top: 24px;
-    display: flex; align-items: center; justify-content: center;
-    color: rgba(201,162,74,0.2); font-size: 11px;
-  }
+  /* S2: Card Reveal */
+  .s2 { background: linear-gradient(180deg, #0B0D12, #0F1C2E); padding: 36px 24px; }
+  .s2 .c-name { font-family: 'Bebas Neue'; font-size: 44px; color: #F5F7FA; letter-spacing: 3px; }
+  .s2 .c-meta { display: flex; gap: 10px; margin-top: 6px; align-items: center; }
+  .s2 .c-season { font-weight: 600; font-size: 16px; color: #C9A24A; }
+  .s2 .c-pos { font-weight: 700; font-size: 12px; color: #F5F7FA; background: rgba(201,162,74,0.2); border: 1px solid rgba(201,162,74,0.4); padding: 2px 10px; border-radius: 4px; letter-spacing: 2px; }
+  .s2 .c-club { font-size: 13px; color: rgba(245,247,250,0.4); margin-top: 4px; }
+  .s2 .c-placeholder { width: 220px; height: 280px; border-radius: 10px; background: rgba(15,28,46,0.5); border: 1px solid rgba(201,162,74,0.15); align-self: center; margin-top: 20px; display: flex; align-items: center; justify-content: center; color: rgba(201,162,74,0.15); font-size: 10px; }
 
-  /* Scene 3: OVR */
-  .s3 {
-    background: radial-gradient(circle at 50% 50%, rgba(201,162,74,0.15), transparent 50%), #0B0D12;
-    align-items: center; justify-content: center;
-  }
-  .s3 .ovr-big {
-    width: 180px; height: 180px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; position: relative;
-  }
-  .s3 .ovr-big::before {
-    content: ''; position: absolute; inset: 0;
-    border: 3px solid #C9A24A; border-radius: 50%;
-    background: linear-gradient(135deg, rgba(201,162,74,0.2), rgba(201,162,74,0.05));
-    box-shadow: 0 0 40px rgba(201,162,74,0.3);
-  }
-  .s3 .ovr-num { font-family: 'Bebas Neue'; font-size: 100px; color: #E2C674; position: relative; z-index: 1; line-height: 1; }
-  .s3 .ovr-label { font-weight: 700; font-size: 16px; color: rgba(201,162,74,0.7); letter-spacing: 5px; position: relative; z-index: 1; margin-top: -8px; }
-  .s3 .ovr-sub { font-size: 14px; color: rgba(245,247,250,0.5); margin-top: 24px; text-align: center; }
+  /* S3: OVR */
+  .s3 { background: radial-gradient(circle at 50% 50%, rgba(201,162,74,0.12), transparent 50%), #0B0D12; align-items: center; justify-content: center; }
+  .s3 .ovr-ring { width: 160px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+  .s3 .ovr-ring::before { content: ''; position: absolute; inset: 0; border: 3px solid #C9A24A; border-radius: 50%; background: linear-gradient(135deg, rgba(201,162,74,0.2), rgba(201,162,74,0.05)); box-shadow: 0 0 40px rgba(201,162,74,0.3); }
+  .s3 .ovr-n { font-family: 'Bebas Neue'; font-size: 88px; color: #E2C674; position: relative; z-index: 1; line-height: 1; }
+  .s3 .ovr-l { font-weight: 700; font-size: 14px; color: rgba(201,162,74,0.7); letter-spacing: 5px; position: relative; z-index: 1; margin-top: -6px; }
+  .s3 .ovr-sub { font-size: 13px; color: rgba(245,247,250,0.4); margin-top: 20px; }
 
-  /* Scene 4: Stats */
-  .s4 {
-    background: linear-gradient(180deg, #0B0D12, #0F1C2E);
-    padding: 40px 24px; justify-content: center; gap: 16px;
-  }
-  .s4 .stat-line {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 10px 0; border-bottom: 1px solid rgba(201,162,74,0.1);
-  }
-  .s4 .stat-label { font-weight: 600; font-size: 16px; color: rgba(245,247,250,0.8); text-transform: uppercase; letter-spacing: 1px; }
-  .s4 .stat-num { font-family: 'Bebas Neue'; font-size: 36px; color: #E2C674; }
+  /* S4: Hex Graph */
+  .s4 { background: #0B0D12; align-items: center; justify-content: center; }
+  .s4 svg { width: 280px; height: 280px; }
+  .hex-bg { fill: none; stroke: rgba(201,162,74,0.15); stroke-width: 1; }
+  .hex-fill { fill: rgba(201,162,74,0.15); stroke: #C9A24A; stroke-width: 2; transition: all 1s ease-out; }
+  .hex-label { fill: rgba(245,247,250,0.6); font-family: 'Montserrat'; font-weight: 600; font-size: 9px; text-anchor: middle; letter-spacing: 1px; }
+  .hex-val { fill: #E2C674; font-family: 'Bebas Neue'; font-size: 16px; text-anchor: middle; }
 
-  /* Scene 5: Verdict */
-  .s5 {
-    background: radial-gradient(ellipse at 50% 50%, rgba(201,162,74,0.08), transparent 60%), #0B0D12;
-    align-items: center; justify-content: center; text-align: center; padding: 24px;
-  }
-  .s5 .verdict-line { font-family: 'Bebas Neue'; font-size: 36px; color: #F5F7FA; letter-spacing: 2px; }
-  .s5 .verdict-tier {
-    font-family: 'Bebas Neue'; font-size: 24px; letter-spacing: 6px;
-    margin-top: 16px; padding: 6px 24px; border-radius: 8px;
-    border: 1.5px solid #FFD700; color: #FFD700;
-    text-shadow: 0 0 20px rgba(255,215,0,0.3);
-  }
+  /* S5: Key Stats */
+  .s5 { background: linear-gradient(180deg, #0B0D12, #0F1C2E); align-items: center; justify-content: center; gap: 20px; padding: 40px; }
+  .key-stat { text-align: center; }
+  .key-stat .val { font-family: 'Bebas Neue'; font-size: 64px; color: #E2C674; line-height: 1; }
+  .key-stat .label { font-weight: 600; font-size: 14px; color: rgba(245,247,250,0.6); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
 
-  /* Scene 6: End */
-  .s6 {
-    background: #0B0D12; align-items: center; justify-content: center;
-  }
-  .s6 .end-brand { font-family: 'Bebas Neue'; font-size: 40px; color: #C9A24A; letter-spacing: 8px; }
-  .s6 .end-cta { font-size: 14px; color: rgba(245,247,250,0.4); margin-top: 16px; letter-spacing: 2px; }
+  /* S6: Season Description */
+  .s6 { background: radial-gradient(ellipse at 50% 50%, rgba(201,162,74,0.06), transparent 60%), #0B0D12; align-items: center; justify-content: center; text-align: center; padding: 32px; }
+  .s6 .play-style { font-family: 'Bebas Neue'; font-size: 24px; color: #F5F7FA; letter-spacing: 2px; line-height: 1.3; }
+  .s6 .play-detail { font-size: 13px; color: rgba(245,247,250,0.4); margin-top: 16px; line-height: 1.6; letter-spacing: 1px; }
 
-  /* Right: Scene info */
-  .scene-info {
-    width: 280px; flex-shrink: 0; padding: 20px;
-    border-left: 1px solid rgba(201,162,74,0.15);
-    display: flex; flex-direction: column; gap: 16px;
-    overflow-y: auto;
-  }
-  .scene-info h3 { font-family: 'Bebas Neue'; font-size: 24px; color: #C9A24A; letter-spacing: 2px; }
-  .info-field label { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px; }
-  .info-field .val { font-size: 13px; color: rgba(245,247,250,0.7); padding: 6px 0; }
-  .info-field { margin-bottom: 8px; }
+  /* S7: Achievement */
+  .s7 { background: radial-gradient(circle at 50% 45%, rgba(255,215,0,0.08), transparent 50%), #0B0D12; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+  .s7 .achieve-num { font-family: 'Bebas Neue'; font-size: 72px; color: #E2C674; line-height: 1; text-shadow: 0 0 30px rgba(201,162,74,0.3); }
+  .s7 .achieve-text { font-family: 'Bebas Neue'; font-size: 22px; color: #F5F7FA; letter-spacing: 3px; margin-top: 8px; }
+  .s7 .achieve-sub { font-size: 12px; color: rgba(245,247,250,0.35); margin-top: 12px; letter-spacing: 1px; }
 
-  /* Progress bar */
+  /* S8: Verdict */
+  .s8 { background: #0B0D12; align-items: center; justify-content: center; text-align: center; }
+  .s8 .verdict-tier { font-family: 'Bebas Neue'; font-size: 36px; letter-spacing: 8px; color: #FFD700; text-shadow: 0 0 30px rgba(255,215,0,0.3); }
+  .s8 .verdict-line { font-family: 'Bebas Neue'; font-size: 16px; color: rgba(245,247,250,0.5); letter-spacing: 4px; margin-top: 8px; }
+  .s8 .brand { font-family: 'Bebas Neue'; font-size: 14px; color: rgba(201,162,74,0.25); letter-spacing: 5px; margin-top: 40px; }
+  .s8 .cta { font-size: 12px; color: rgba(245,247,250,0.3); margin-top: 8px; letter-spacing: 1px; }
+
   .progress { height: 3px; background: rgba(201,162,74,0.15); position: absolute; bottom: 0; left: 0; right: 0; z-index: 20; }
   .progress-fill { height: 100%; background: #C9A24A; transition: width 0.3s; }
+
+  /* Info panel */
+  .info-panel {
+    width: 260px; flex-shrink: 0; padding: 16px;
+    border-left: 1px solid rgba(201,162,74,0.15);
+    overflow-y: auto;
+  }
+  .info-panel h3 { font-family: 'Bebas Neue'; font-size: 20px; color: #C9A24A; letter-spacing: 2px; margin-bottom: 12px; }
+  .ifield { margin-bottom: 10px; }
+  .ifield label { font-size: 9px; color: #555; text-transform: uppercase; letter-spacing: 1px; }
+  .ifield .v { font-size: 12px; color: rgba(245,247,250,0.6); margin-top: 2px; line-height: 1.5; }
 </style>
 </head>
 <body>
 <div class="app">
-  <!-- Timeline -->
   <div class="timeline">
-    <h2>SHORTS TIMELINE</h2>
-    <div class="timeline-item active" onclick="goScene(0)">
-      <span class="time">0.0s - 1.8s</span>
-      <div class="scene-name">Hook</div>
-      <div class="scene-desc">Player image + impact text</div>
-      <span class="scene-num">1</span>
-    </div>
-    <div class="timeline-item" onclick="goScene(1)">
-      <span class="time">1.8s - 3.5s</span>
-      <div class="scene-name">Card Reveal</div>
-      <div class="scene-desc">Name, season, position</div>
-      <span class="scene-num">2</span>
-    </div>
-    <div class="timeline-item" onclick="goScene(2)">
-      <span class="time">3.5s - 5.0s</span>
-      <div class="scene-name">OVR Pop</div>
-      <div class="scene-desc">Rating badge reveal</div>
-      <span class="scene-num">3</span>
-    </div>
-    <div class="timeline-item" onclick="goScene(3)">
-      <span class="time">5.0s - 9.2s</span>
-      <div class="scene-name">Stat Reveal</div>
-      <div class="scene-desc">6 stats one by one</div>
-      <span class="scene-num">4</span>
-    </div>
-    <div class="timeline-item" onclick="goScene(4)">
-      <span class="time">9.2s - 12.5s</span>
-      <div class="scene-name">Verdict</div>
-      <div class="scene-desc">Killer line + tier</div>
-      <span class="scene-num">5</span>
-    </div>
-    <div class="timeline-item" onclick="goScene(5)">
-      <span class="time">12.5s - 15.0s</span>
-      <div class="scene-name">End Tag</div>
-      <div class="scene-desc">SEASONXI + CTA</div>
-      <span class="scene-num">6</span>
-    </div>
-    <button class="play-btn" id="playBtn" onclick="playAll()">PLAY ALL (15s)</button>
+    <h2>8-SCENE TIMELINE</h2>
+    <div class="tl-item active" onclick="go(0)"><span class="time">0.0 - 1.5S</span><div class="name">Hook</div><div class="desc">Impact text + player image</div><span class="tl-num">1</span></div>
+    <div class="tl-item" onclick="go(1)"><span class="time">1.5 - 3.0S</span><div class="name">Card Reveal</div><div class="desc">Name / season / position</div><span class="tl-num">2</span></div>
+    <div class="tl-item" onclick="go(2)"><span class="time">3.0 - 4.5S</span><div class="name">OVR Shock</div><div class="desc">Rating badge pop</div><span class="tl-num">3</span></div>
+    <div class="tl-item" onclick="go(3)"><span class="time">4.5 - 6.0S</span><div class="name">Hex Graph</div><div class="desc">Radar fills with gold</div><span class="tl-num">4</span></div>
+    <div class="tl-item" onclick="go(4)"><span class="time">6.0 - 8.0S</span><div class="name">Key Stats</div><div class="desc">Top 3 stats pop</div><span class="tl-num">5</span></div>
+    <div class="tl-item" onclick="go(5)"><span class="time">8.0 - 10.5S</span><div class="name">Play Style</div><div class="desc">What made this season special</div><span class="tl-num">6</span></div>
+    <div class="tl-item" onclick="go(6)"><span class="time">10.5 - 12.5S</span><div class="name">Achievement</div><div class="desc">Season evidence / proof</div><span class="tl-num">7</span></div>
+    <div class="tl-item" onclick="go(7)"><span class="time">12.5 - 15.0S</span><div class="name">Verdict</div><div class="desc">Tier + brand + CTA</div><span class="tl-num">8</span></div>
+    <button class="play-btn" id="playBtn" onclick="playAll()">PLAY ALL (15S)</button>
   </div>
 
-  <!-- Phone preview -->
   <div class="preview">
     <div class="phone">
       <div class="phone-screen">
-        <!-- Scene 1: Hook -->
-        <div class="scene s1 active" id="scene0">
+        <!-- S1: Hook -->
+        <div class="scene s1 active" id="sc0">
           <div class="hook-text">THIS VERSION WAS BROKEN</div>
-          <div class="hook-img-placeholder">[ PLAYER IMAGE ]</div>
+          <div class="hook-sub">MESSI 2011-12</div>
+          <div class="hook-placeholder">[ PLAYER IMAGE ]</div>
         </div>
-        <!-- Scene 2: Card Reveal -->
-        <div class="scene s2" id="scene1">
-          <div class="card-name">MESSI</div>
-          <div class="card-meta">
-            <span class="card-season">2011-12</span>
-            <span class="card-pos">RW</span>
-          </div>
-          <div class="card-club">FC Barcelona</div>
-          <div class="card-img-placeholder">[ CARD IMAGE ]</div>
+        <!-- S2: Card Reveal -->
+        <div class="scene s2" id="sc1">
+          <div class="c-name">MESSI</div>
+          <div class="c-meta"><span class="c-season">2011-12</span><span class="c-pos">RW</span></div>
+          <div class="c-club">FC Barcelona</div>
+          <div class="c-placeholder">[ CARD ]</div>
         </div>
-        <!-- Scene 3: OVR -->
-        <div class="scene s3" id="scene2">
-          <div class="ovr-big">
-            <span class="ovr-num">97</span>
-            <span class="ovr-label">OVR</span>
-          </div>
+        <!-- S3: OVR -->
+        <div class="scene s3" id="sc2">
+          <div class="ovr-ring"><span class="ovr-n">97</span><span class="ovr-l">OVR</span></div>
           <div class="ovr-sub">97 overall. Mythic level.</div>
         </div>
-        <!-- Scene 4: Stats -->
-        <div class="scene s4" id="scene3">
-          <div class="stat-line"><span class="stat-label">Finishing</span><span class="stat-num">97</span></div>
-          <div class="stat-line"><span class="stat-label">Playmaking</span><span class="stat-num">95</span></div>
-          <div class="stat-line"><span class="stat-label">Dribbling</span><span class="stat-num">99</span></div>
-          <div class="stat-line"><span class="stat-label">Defense</span><span class="stat-num">55</span></div>
-          <div class="stat-line"><span class="stat-label">Clutch</span><span class="stat-num">98</span></div>
-          <div class="stat-line"><span class="stat-label">Aura</span><span class="stat-num">99</span></div>
+        <!-- S4: Hex Graph -->
+        <div class="scene s4" id="sc3">
+          <svg viewBox="0 0 300 300">
+            <!-- Background hex rings -->
+            <polygon class="hex-bg" points="150,30 255,90 255,210 150,270 45,210 45,90"/>
+            <polygon class="hex-bg" points="150,70 220,110 220,190 150,230 80,190 80,110"/>
+            <polygon class="hex-bg" points="150,110 185,130 185,170 150,190 115,170 115,130"/>
+            <!-- Data polygon -->
+            <polygon class="hex-fill" id="hexData" points="150,150 150,150 150,150 150,150 150,150 150,150"/>
+            <!-- Labels -->
+            <text class="hex-label" x="150" y="22">FINISHING</text>
+            <text class="hex-label" x="265" y="88">PLAYMAKING</text>
+            <text class="hex-label" x="265" y="218">DEFENSE</text>
+            <text class="hex-label" x="150" y="290">CLUTCH</text>
+            <text class="hex-label" x="35" y="218">AURA</text>
+            <text class="hex-label" x="35" y="88">DRIBBLING</text>
+            <!-- Values -->
+            <text class="hex-val" x="150" y="46" id="hv0">97</text>
+            <text class="hex-val" x="248" y="102" id="hv1">95</text>
+            <text class="hex-val" x="248" y="205" id="hv2">55</text>
+            <text class="hex-val" x="150" y="275" id="hv3">98</text>
+            <text class="hex-val" x="52" y="205" id="hv4">99</text>
+            <text class="hex-val" x="52" y="102" id="hv5">99</text>
+          </svg>
         </div>
-        <!-- Scene 5: Verdict -->
-        <div class="scene s5" id="scene4">
-          <div class="verdict-line">50 LEAGUE GOALS</div>
-          <div class="verdict-tier">MYTHIC SEASON</div>
+        <!-- S5: Key Stats -->
+        <div class="scene s5" id="sc4">
+          <div class="key-stat"><div class="val">99</div><div class="label">Dribbling</div></div>
+          <div class="key-stat"><div class="val">97</div><div class="label">Finishing</div></div>
+          <div class="key-stat"><div class="val">98</div><div class="label">Clutch</div></div>
         </div>
-        <!-- Scene 6: End -->
-        <div class="scene s6" id="scene5">
-          <div class="end-brand">SEASONXI</div>
-          <div class="end-cta">WHO TOPS THIS?</div>
+        <!-- S6: Play Style -->
+        <div class="scene s6" id="sc5">
+          <div class="play-style">IMPOSSIBLE TO STOP<br>IN TIGHT SPACES</div>
+          <div class="play-detail">Unstoppable close control. Lethal finishing from any angle. Complete attacking dominance.</div>
+        </div>
+        <!-- S7: Achievement -->
+        <div class="scene s7" id="sc6">
+          <div class="achieve-num">50</div>
+          <div class="achieve-text">LEAGUE GOALS</div>
+          <div class="achieve-sub">La Liga all-time single-season record</div>
+        </div>
+        <!-- S8: Verdict -->
+        <div class="scene s8" id="sc7">
+          <div class="verdict-tier">MYTHIC</div>
+          <div class="verdict-line">SEASON</div>
+          <div class="brand">SEASONXI</div>
+          <div class="cta">WHO TOPS THIS?</div>
         </div>
       </div>
-      <div class="progress"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div class="progress"><div class="progress-fill" id="pf" style="width:0%"></div></div>
     </div>
   </div>
 
-  <!-- Scene info -->
-  <div class="scene-info" id="sceneInfo">
+  <div class="info-panel" id="ip">
     <h3>SCENE 1: HOOK</h3>
-    <div class="info-field"><label>Duration</label><div class="val">1.8 seconds</div></div>
-    <div class="info-field"><label>Visual</label><div class="val">Full-screen player image, push-in zoom, rain/particles</div></div>
-    <div class="info-field"><label>Text</label><div class="val">THIS VERSION WAS BROKEN</div></div>
-    <div class="info-field"><label>Audio</label><div class="val">Strong cinematic hit at 0.2s</div></div>
-    <div class="info-field"><label>CapCut Tip</label><div class="val">Use "Zoom In" effect + camera shake. Add impact SFX from audio library.</div></div>
+    <div class="ifield"><label>Duration</label><div class="v">1.5s</div></div>
+    <div class="ifield"><label>Emotion</label><div class="v">Shock / curiosity</div></div>
+    <div class="ifield"><label>Visual</label><div class="v">Player image full-screen, push-in zoom, rain particles</div></div>
+    <div class="ifield"><label>Text</label><div class="v">THIS VERSION WAS BROKEN</div></div>
+    <div class="ifield"><label>Audio</label><div class="v">Strong cinematic hit at 0.2s</div></div>
+    <div class="ifield"><label>CapCut</label><div class="v">Zoom In effect + camera shake + impact SFX</div></div>
   </div>
 </div>
 
 <script>
-  const scenes = [
-    { name: 'HOOK', dur: '1.8s', visual: 'Full-screen player image, push-in zoom, rain/particles', text: 'THIS VERSION WAS BROKEN', audio: 'Strong cinematic hit at 0.2s', tip: 'Use "Zoom In" effect + camera shake. Add impact SFX.' },
-    { name: 'CARD REVEAL', dur: '1.7s', visual: 'Card frame slides in, player locks into frame', text: 'MESSI / 2011-12 / RW', audio: 'Short metallic reveal sound', tip: 'Use "Slide In" animation for card overlay. Text pop-in with 0.2s delay.' },
-    { name: 'OVR POP', dur: '1.5s', visual: 'OVR badge lights up, glow pulse', text: 'OVR 97', audio: 'Heavy impact + gold flicker', tip: 'Scale keyframe: 80% -> 110% -> 100%. Add glow layer.' },
-    { name: 'STAT REVEAL', dur: '4.2s', visual: 'Stats appear one by one (0.7s interval)', text: 'Finishing 97 / Playmaking 95 / Dribbling 99 / Defense 55 / Clutch 98 / Aura 99', audio: 'Six rhythmic ticks on BGM beat', tip: 'Each stat: fade-in + slight slide-up. Use consistent timing.' },
-    { name: 'VERDICT', dur: '3.3s', visual: 'Zoom toward player, background darkens', text: '50 LEAGUE GOALS / MYTHIC SEASON', audio: 'Strong rise then controlled drop', tip: 'First line impact, second line 0.4s later. Use bold text animation.' },
-    { name: 'END TAG', dur: '2.5s', visual: 'Card stays, soft fade', text: 'SEASONXI / WHO TOPS THIS?', audio: 'Short branded ending sting', tip: 'Keep card visible. Soft fade on CTA text. Do not fully cut away.' },
-  ];
+const S = [
+  { n:'HOOK', d:'1.5s', emotion:'Shock / curiosity', vis:'Player image full-screen, push-in zoom, rain particles', txt:'THIS VERSION WAS BROKEN', aud:'Strong cinematic hit at 0.2s', cap:'Zoom In effect + camera shake + impact SFX' },
+  { n:'CARD REVEAL', d:'1.5s', emotion:'Recognition', vis:'Card frame slides in, player locks into frame', txt:'MESSI / 2011-12 / RW / FC Barcelona', aud:'Short metallic reveal sound', cap:'Slide In animation, text pop-in 0.2s delay' },
+  { n:'OVR SHOCK', d:'1.5s', emotion:'Impact / awe', vis:'OVR badge lights up, glow pulse, slight shake', txt:'97 OVR', aud:'Heavy impact + gold flicker', cap:'Scale: 80%->110%->100%. Add glow layer. 0.3s.' },
+  { n:'HEX GRAPH', d:'1.5s', emotion:'Trust / analysis', vis:'Radar fills from center outward, gold lines expand', txt:'6-stat radar visualization', aud:'Rising tension, electronic sweep', cap:'Use shape animation: center to full. Gold stroke. 0.8s fill.' },
+  { n:'KEY STATS', d:'2.0s', emotion:'Confirmation', vis:'Top 3 stats appear large, one after another', txt:'99 Dribbling / 97 Finishing / 98 Clutch', aud:'Three rhythmic ticks', cap:'Each stat: fade-in + slide-up. 0.5s interval.' },
+  { n:'PLAY STYLE', d:'2.5s', emotion:'Understanding', vis:'Text appears over darkened background', txt:'Impossible to stop in tight spaces.', aud:'BGM builds tension', cap:'Text impact animation. First line bold, detail fades in 0.4s later.' },
+  { n:'ACHIEVEMENT', d:'2.0s', emotion:'Evidence / proof', vis:'Big number + achievement text, slight glow', txt:'50 LEAGUE GOALS', aud:'Strong rise + hit', cap:'Number scales up from 0 to 50 (counter animation). Text pops after.' },
+  { n:'VERDICT', d:'2.5s', emotion:'Declaration', vis:'Tier badge + SEASONXI brand, card stays', txt:'MYTHIC SEASON / WHO TOPS THIS?', aud:'Short branded ending sting', cap:'Tier text glow animation. Brand stays. Do not cut away.' },
+];
 
-  let current = 0;
-  let playing = false;
+let cur = 0, playing = false;
 
-  function goScene(idx) {
-    current = idx;
-    document.querySelectorAll('.scene').forEach((s, i) => s.classList.toggle('active', i === idx));
-    document.querySelectorAll('.timeline-item').forEach((t, i) => t.classList.toggle('active', i === idx));
-    updateInfo(idx);
-    updateProgress(idx);
-  }
+function go(i) {
+  cur = i;
+  document.querySelectorAll('.scene').forEach((s,j) => s.classList.toggle('active', j===i));
+  document.querySelectorAll('.tl-item').forEach((t,j) => t.classList.toggle('active', j===i));
+  const pcts = [0, 10, 20, 30, 40, 53, 70, 83];
+  document.getElementById('pf').style.width = pcts[i]+'%';
+  // Animate hex graph when scene 3
+  if (i === 3) animateHex();
+  // Update info
+  const s = S[i];
+  document.getElementById('ip').innerHTML = `
+    <h3>SCENE ${i+1}: ${s.n}</h3>
+    <div class="ifield"><label>Duration</label><div class="v">${s.d}</div></div>
+    <div class="ifield"><label>Emotion</label><div class="v">${s.emotion}</div></div>
+    <div class="ifield"><label>Visual</label><div class="v">${s.vis}</div></div>
+    <div class="ifield"><label>Text</label><div class="v">${s.txt}</div></div>
+    <div class="ifield"><label>Audio</label><div class="v">${s.aud}</div></div>
+    <div class="ifield"><label>CapCut Tip</label><div class="v">${s.cap}</div></div>
+  `;
+}
 
-  function updateInfo(idx) {
-    const s = scenes[idx];
-    document.getElementById('sceneInfo').innerHTML = `
-      <h3>SCENE ${idx + 1}: ${s.name}</h3>
-      <div class="info-field"><label>Duration</label><div class="val">${s.dur}</div></div>
-      <div class="info-field"><label>Visual</label><div class="val">${s.visual}</div></div>
-      <div class="info-field"><label>Text</label><div class="val">${s.text}</div></div>
-      <div class="info-field"><label>Audio</label><div class="val">${s.audio}</div></div>
-      <div class="info-field"><label>CapCut Tip</label><div class="val">${s.tip}</div></div>
-    `;
-  }
+function animateHex() {
+  const vals = [97,95,55,98,99,99]; // fin,play,def,clu,aura,dri
+  const cx=150, cy=150, r=110;
+  const angles = [-90,-30,30,90,150,210].map(a => a*Math.PI/180);
+  // Start from center
+  const el = document.getElementById('hexData');
+  el.setAttribute('points', Array(6).fill(`${cx},${cy}`).join(' '));
+  // Animate to full
+  setTimeout(() => {
+    const pts = vals.map((v,i) => {
+      const scale = v / 100;
+      const x = cx + r * scale * Math.cos(angles[i]);
+      const y = cy + r * scale * Math.sin(angles[i]);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    }).join(' ');
+    el.setAttribute('points', pts);
+  }, 100);
+}
 
-  function updateProgress(idx) {
-    const pcts = [0, 12, 23, 33, 61, 83];
-    document.getElementById('progressFill').style.width = pcts[idx] + '%';
-  }
+const durs = [1500, 1500, 1500, 1500, 2000, 2500, 2000, 2500];
 
-  const durations = [1800, 1700, 1500, 4200, 3300, 2500];
-
-  function playAll() {
-    if (playing) return;
-    playing = true;
-    const btn = document.getElementById('playBtn');
-    btn.textContent = 'PLAYING...';
-    btn.style.opacity = '0.5';
-
-    let idx = 0;
-    function next() {
-      if (idx >= 6) {
-        playing = false;
-        btn.textContent = 'PLAY ALL (15s)';
-        btn.style.opacity = '1';
-        document.getElementById('progressFill').style.width = '100%';
-        return;
-      }
-      goScene(idx);
-      setTimeout(() => { idx++; next(); }, durations[idx]);
+function playAll() {
+  if (playing) return;
+  playing = true;
+  const btn = document.getElementById('playBtn');
+  btn.textContent = 'PLAYING...';
+  btn.style.opacity = '0.5';
+  let i = 0;
+  function next() {
+    if (i >= 8) {
+      playing = false;
+      btn.textContent = 'PLAY ALL (15S)';
+      btn.style.opacity = '1';
+      document.getElementById('pf').style.width = '100%';
+      return;
     }
-    next();
+    go(i);
+    setTimeout(() => { i++; next(); }, durs[i]);
   }
+  next();
+}
 
-  // Keyboard navigation
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goScene(Math.min(5, current + 1)); }
-    if (e.key === 'ArrowLeft') { goScene(Math.max(0, current - 1)); }
-    if (e.key === 'Enter') playAll();
-  });
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(Math.min(7, cur+1)); }
+  if (e.key === 'ArrowLeft') go(Math.max(0, cur-1));
+  if (e.key === 'Enter') playAll();
+});
+
+// Init hex
+animateHex();
 </script>
 </body>
 </html>
