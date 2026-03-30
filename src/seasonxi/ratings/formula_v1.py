@@ -1,10 +1,15 @@
-"""V1 Rule-Based Rating Engine.
+"""V1 Rule-Based Rating Engine (SXI Engine).
 
 Score formula: score = 50 + 49 * raw * confidence
 - raw is a weighted sum of percentile inputs (0.0–1.0)
-- confidence adjusts for minutes played
+- confidence = min(1.0, (minutes/1800)^0.7) — non-linear, penalizes low minutes
 - Output range: 50–99 (with confidence=1.0)
 - Defense for FW is slightly compressed: 40 + 40 * raw * confidence
+
+Research basis:
+- PlayeRank (Pappalardo 2019): role-aware multi-dimensional evaluation
+- Wolf et al. (2020): percentile-based player rating system
+- VAEP (Decroos 2019): xG/xA as indirect action-value proxies
 """
 
 from __future__ import annotations

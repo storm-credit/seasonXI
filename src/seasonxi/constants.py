@@ -49,6 +49,11 @@ def score_to_tier(overall: float) -> Tier:
 # Minimum minutes for full confidence
 CONFIDENCE_MINUTES_CAP = 1800
 
+# Non-linear confidence exponent (0.7 penalizes low-minute samples more)
+# Research basis: early samples are statistically more unstable
+# sqrt(0.5) = 0.71 at 900min vs linear 0.50 — better reflects reliability
+CONFIDENCE_EXPONENT = 0.7
+
 # Score scaling constants
 SCORE_BASE = 50
 SCORE_RANGE = 49
