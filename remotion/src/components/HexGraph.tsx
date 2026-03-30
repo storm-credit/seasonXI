@@ -80,20 +80,21 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
 
         {/* Labels + values */}
         {LABELS.map((label, i) => {
-          const lx = cx + (r + 28) * Math.cos(ANGLES[i]);
-          const ly = cy + (r + 28) * Math.sin(ANGLES[i]);
-          const vx = cx + (r + 50) * Math.cos(ANGLES[i]);
-          const vy = cy + (r + 50) * Math.sin(ANGLES[i]);
+          const lx = cx + (r + 45) * Math.cos(ANGLES[i]);
+          const ly = cy + (r + 45) * Math.sin(ANGLES[i]);
+          const vx = cx + (r + 45) * Math.cos(ANGLES[i]);
+          const vy = cy + (r + 45) * Math.sin(ANGLES[i]);
           const valOp = interpolate(frame, [16 + i * 2, 22 + i * 2], [0, 1], { extrapolateRight: 'clamp' });
           return (
             <g key={label}>
-              <text x={lx} y={ly} fill={`${COLORS.white}88`}
-                fontFamily="Montserrat, sans-serif" fontWeight={600}
-                fontSize={13} textAnchor="middle" dominantBaseline="middle"
-                letterSpacing={1}>{label.toUpperCase()}</text>
-              <text x={vx} y={vy + 15} fill={COLORS.softGold}
-                fontFamily="Bebas Neue, sans-serif" fontSize={24}
-                textAnchor="middle" opacity={valOp}>{vals[i]}</text>
+              <text x={vx} y={vy - 2} fill={COLORS.softGold}
+                fontFamily="Bebas Neue, sans-serif" fontSize={28}
+                textAnchor="middle" dominantBaseline="middle"
+                opacity={valOp}>{vals[i]}</text>
+              <text x={lx} y={ly + 18} fill={`${COLORS.white}99`}
+                fontFamily="Montserrat, sans-serif" fontWeight={700}
+                fontSize={10} textAnchor="middle" dominantBaseline="middle"
+                letterSpacing={2}>{label.toUpperCase()}</text>
             </g>
           );
         })}
