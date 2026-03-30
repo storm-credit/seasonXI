@@ -28,9 +28,11 @@ function buildSunoPrompt(s: Season): string {
   return [
     `Title: ${name} ${season} ${tier} Theme`,
     ``,
-    `Style: Short cinematic football theme, instrumental, premium sports soundtrack, ${moodStyles[mood] || moodStyles.PEAK_MONSTER}, stadium atmosphere`,
+    `Style: 20 second cinematic football theme, instrumental, premium sports soundtrack, ${moodStyles[mood] || moodStyles.PEAK_MONSTER}, stadium atmosphere, strong opening impact, builds to dramatic climax, clean ending`,
     ``,
     `Lyrics: Instrumental`,
+    ``,
+    `[Duration: 20 seconds minimum]`,
   ].join("\n");
 }
 

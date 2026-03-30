@@ -7,7 +7,7 @@
 ## 1. MESSI 2011-12 (MYTHIC / PEAK_MONSTER)
 ## ============================================
 Title: Messi 2011-12 Mythic Theme
-Style: Short cinematic football theme, instrumental, premium sports soundtrack, dark elegant energy, mythic and emotional, explosive but controlled, elite football highlight music, divine genius aura, subtle orchestral layers, modern pulse, stadium atmosphere
+Style: 20 second cinematic football theme, instrumental, premium sports soundtrack, dark elegant energy, mythic and emotional, explosive but controlled, elite football highlight music, divine genius aura, subtle orchestral layers, modern pulse, stadium atmosphere
 Lyrics: Instrumental
 
 
@@ -15,7 +15,7 @@ Lyrics: Instrumental
 ## 2. RONALDO 2016-17 (MYTHIC / PEAK_MONSTER)
 ## ============================================
 Title: Ronaldo 2016-17 Dynasty Theme
-Style: Short cinematic football theme, instrumental, premium sports anthem, dominant and heroic, powerful elite football energy, dark gold sports atmosphere, dramatic percussion, controlled aggression, royal stadium tension, legendary big-game aura
+Style: 20 second cinematic football theme, instrumental, premium sports anthem, dominant and heroic, powerful elite football energy, dark gold sports atmosphere, dramatic percussion, controlled aggression, royal stadium tension, legendary big-game aura
 Lyrics: Instrumental
 
 
@@ -23,7 +23,7 @@ Lyrics: Instrumental
 ## 3. MBAPPÉ 2018-19 (ELITE / BREAKTHROUGH)
 ## ============================================
 Title: Mbappe 2018-19 Breakthrough Theme
-Style: Short cinematic football theme, instrumental, explosive young superstar energy, premium sports soundtrack, fast and sharp, dark modern football atmosphere, elegant aggression, futuristic stadium pulse, dynamic rise, elite highlight music
+Style: 20 second cinematic football theme, instrumental, explosive young superstar energy, premium sports soundtrack, fast and sharp, dark modern football atmosphere, elegant aggression, futuristic stadium pulse, dynamic rise, elite highlight music
 Lyrics: Instrumental
 
 
@@ -31,7 +31,7 @@ Lyrics: Instrumental
 ## 4. MESSI 2014-15 (MYTHIC / ELEGANT_PRIME)
 ## ============================================
 Title: Messi 2014-15 Perfect Season Theme
-Style: Short cinematic football theme, instrumental, elegant and complete, premium sports soundtrack, refined orchestral football atmosphere, mythic and intelligent, emotional but controlled, elite football greatness, smooth dramatic rise, stadium aura
+Style: 20 second cinematic football theme, instrumental, elegant and complete, premium sports soundtrack, refined orchestral football atmosphere, mythic and intelligent, emotional but controlled, elite football greatness, smooth dramatic rise, stadium aura
 Lyrics: Instrumental
 
 
@@ -39,7 +39,7 @@ Lyrics: Instrumental
 ## 5. RONALDO 2007-08 (LEGENDARY / BREAKTHROUGH)
 ## ============================================
 Title: Ronaldo 2007-08 Rise of a King Theme
-Style: Short cinematic football theme, instrumental, rising superstar energy, premium sports soundtrack, explosive and stylish, dramatic football atmosphere, confident and aggressive, elite momentum, stadium electricity, powerful modern pulse
+Style: 20 second cinematic football theme, instrumental, rising superstar energy, premium sports soundtrack, explosive and stylish, dramatic football atmosphere, confident and aggressive, elite momentum, stadium electricity, powerful modern pulse
 Lyrics: Instrumental
 
 
@@ -47,7 +47,7 @@ Lyrics: Instrumental
 ## 6. MBAPPÉ 2021-22 (MYTHIC / PEAK_MONSTER)
 ## ============================================
 Title: Mbappe 2021-22 Elite Monster Theme
-Style: Short cinematic football theme, instrumental, elite forward energy, premium sports soundtrack, explosive but polished, sharp and modern football atmosphere, dark luxury sports mood, stadium pulse, confident and dangerous, big-match momentum
+Style: 20 second cinematic football theme, instrumental, elite forward energy, premium sports soundtrack, explosive but polished, sharp and modern football atmosphere, dark luxury sports mood, stadium pulse, confident and dangerous, big-match momentum
 Lyrics: Instrumental
 
 
@@ -61,7 +61,8 @@ Lyrics: Instrumental
 ## ============================================
 ## 보정 문구 (잘 안 나올 때 Style 뒤에 추가)
 ## ============================================
+## 너무 짧으면: 20 second duration, extended cinematic build, longer dramatic arc
 ## 너무 약하면: stronger opening impact, more tension in the first second
 ## 너무 과하면: more refined, less aggressive, cleaner premium sports tone
 ## 너무 EDM:   less EDM, more cinematic sports soundtrack
-## 너무 길면:  keep it under 20 seconds, short highlight format
+## 구조 명시:  intro build (0-5s), main theme (5-12s), climax and resolve (12-20s)
