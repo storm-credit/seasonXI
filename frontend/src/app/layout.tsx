@@ -18,7 +18,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "SeasonXI - Production Dashboard",
-  description: "HANESIS Football Season Card Engine",
+  description: "SXI Engine — Football Season Card Engine",
 };
 
 export default function RootLayout({

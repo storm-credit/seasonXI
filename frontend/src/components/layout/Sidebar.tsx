@@ -70,14 +70,14 @@ export default function Sidebar() {
         })}
       </nav>
 
-      {/* HANESIS Badge */}
+      {/* SXI Engine Badge */}
       {!collapsed && (
         <div className="px-4 py-3 mx-2 mb-3 rounded-lg bg-[rgba(201,162,74,0.05)] border border-[rgba(201,162,74,0.1)]">
           <p className="text-[10px] uppercase tracking-widest text-sxi-gold/60 mb-1">
             Engine
           </p>
           <p className="font-display text-sm tracking-wider text-sxi-gold">
-            HANESIS v1.3
+            SXI ENGINE v1.3
           </p>
         </div>
       )}

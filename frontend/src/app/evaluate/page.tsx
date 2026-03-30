@@ -88,7 +88,7 @@ export default function EvaluatePage() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="font-display text-3xl tracking-wider gold-text">
-            HANESIS ENGINE CHECK
+            SXI ENGINE CHECK
           </h1>
           <p className="text-sm text-sxi-white/40 mt-1">
             7-step pipeline diagnostics
