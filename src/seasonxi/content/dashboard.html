@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeasonXI Production Dashboard</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0B0D12;
+  color: #F5F7FA;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+.header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: #C9A24A;
+  letter-spacing: 4px;
+}
+.header p {
+  color: #888;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ─── Player Selector ─── */
+.player-input-section {
+  background: #141820;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.player-input-section input {
+  width: 100%;
+  background: #1a1f2e;
+  border: 1px solid #2a3040;
+  color: #F5F7FA;
+  font-size: 20px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  outline: none;
+}
+.player-input-section input:focus {
+  border-color: #C9A24A;
+}
+.player-input-section input::placeholder {
+  color: #555;
+}
+
+/* ─── Action Buttons ─── */
+.action-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover { transform: scale(1.03); }
+.btn-load { background: #6C3FC5; color: white; }
+.btn-today { background: #1B8A2E; color: white; }
+.btn-preview { background: #C9A24A; color: #0B0D12; }
+.btn-render { background: #E74C3C; color: white; }
+
+/* ─── Settings Grid ─── */
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.setting-chip {
+  background: #1a1f2e;
+  border: 1px solid #2a3040;
+  border-radius: 10px;
+  padding: 12px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+}
+.setting-chip:hover { border-color: #C9A24A; }
+.setting-chip.active { border-color: #C9A24A; background: #1f2535; }
+.setting-chip .label { color: #888; font-size: 11px; display: block; margin-bottom: 4px; }
+.setting-chip .value { color: #F5F7FA; font-weight: 600; }
+
+/* ─── Day Selector ─── */
+.day-selector {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+.day-btn {
+  background: #1a1f2e;
+  border: 1px solid #2a3040;
+  color: #aaa;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.day-btn:hover { border-color: #C9A24A; color: #F5F7FA; }
+.day-btn.active { background: #C9A24A; color: #0B0D12; border-color: #C9A24A; }
+
+/* ─── Today Queue ─── */
+.queue-section {
+  background: #141820;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.queue-section h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #C9A24A;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.queue-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #1a1f2e;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+.queue-item:hover { border-color: #C9A24A; }
+.queue-item.selected { border-color: #C9A24A; background: #1f2535; }
+.queue-item .num {
+  background: #C9A24A;
+  color: #0B0D12;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.queue-item .info { flex: 1; }
+.queue-item .name { font-weight: 600; font-size: 15px; }
+.queue-item .meta { color: #888; font-size: 12px; margin-top: 2px; }
+.queue-item .tier {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.tier-mythic { background: #C9A24A22; color: #C9A24A; border: 1px solid #C9A24A44; }
+.tier-legendary { background: #9B59B622; color: #BB8FCE; border: 1px solid #9B59B644; }
+.tier-elite { background: #3498DB22; color: #85C1E9; border: 1px solid #3498DB44; }
+
+/* ─── Production Panel ─── */
+.prod-panel {
+  background: #141820;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.prod-panel h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #C9A24A;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.prod-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.prod-card {
+  background: #1a1f2e;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid #2a3040;
+}
+.prod-card .card-label {
+  font-size: 11px;
+  color: #C9A24A;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.prod-card select, .prod-card input[type="text"] {
+  width: 100%;
+  background: #0f1219;
+  border: 1px solid #2a3040;
+  color: #F5F7FA;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+.prod-card select:focus, .prod-card input[type="text"]:focus {
+  border-color: #C9A24A;
+}
+
+/* ─── Prompt Preview ─── */
+.prompt-box {
+  background: #0f1219;
+  border: 1px solid #2a3040;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 16px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.6;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+.prompt-box .highlight { color: #C9A24A; font-weight: 600; }
+
+/* ─── Checklist ─── */
+.checklist { margin-top: 16px; }
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #1a1f2e;
+  font-size: 14px;
+}
+.check-item input[type="checkbox"] {
+  accent-color: #C9A24A;
+  width: 18px; height: 18px;
+}
+.check-item.done { color: #555; text-decoration: line-through; }
+
+/* ─── Slider ─── */
+.slider-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+  background: #141820;
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+.slider-item { text-align: center; }
+.slider-item .s-label {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.slider-item .s-value {
+  color: #F5F7FA;
+  font-weight: 600;
+  font-size: 13px;
+}
+.slider-item input[type="range"] {
+  width: 100%;
+  accent-color: #C9A24A;
+  margin-top: 4px;
+}
+
+/* ─── Stats Preview ─── */
+.stats-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+.stat-box {
+  background: #0f1219;
+  border: 1px solid #2a304066;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.stat-box .stat-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: #C9A24A;
+}
+.stat-box .stat-name {
+  font-size: 10px;
+  color: #888;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>SEASONXI</h1>
+  <p>Production Dashboard - SeasonXI Content Engine</p>
+</div>
+
+<div class="container">
+
+  <!-- Player Input -->
+  <div class="player-input-section">
+    <input type="text" id="playerInput" placeholder="Messi 2011-12" value="Messi 2011-12">
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="action-row">
+    <button class="btn btn-load" onclick="loadPlayer()">Load Season</button>
+    <button class="btn btn-today" onclick="showToday()">Today's Queue</button>
+    <button class="btn btn-preview" onclick="previewCard()">Preview</button>
+    <button class="btn btn-render" onclick="renderVideo()">Render MP4</button>
+  </div>
+
+  <!-- Settings -->
+  <div class="settings-grid">
+    <div class="setting-chip active"><span class="label">QUALITY</span><span class="value">1080x1920</span></div>
+    <div class="setting-chip"><span class="label">LANGUAGE</span><span class="value">English</span></div>
+    <div class="setting-chip"><span class="label">DURATION</span><span class="value">13.8s</span></div>
+    <div class="setting-chip"><span class="label">ENGINE</span><span class="value">SXI v1.3</span></div>
+  </div>
+
+  <!-- Day Selector -->
+  <div class="day-selector">
+    <div class="day-btn active" onclick="selectDay(1)">Day 1</div>
+    <div class="day-btn" onclick="selectDay(2)">Day 2</div>
+    <div class="day-btn" onclick="selectDay(3)">Day 3</div>
+    <div class="day-btn" onclick="selectDay(4)">Day 4</div>
+    <div class="day-btn" onclick="selectDay(5)">Day 5</div>
+    <div class="day-btn" onclick="selectDay(6)">Day 6</div>
+    <div class="day-btn" onclick="selectDay(7)">Day 7</div>
+    <div class="day-btn" onclick="selectDay(8)">Day 8</div>
+    <div class="day-btn" onclick="selectDay(9)">Day 9</div>
+    <div class="day-btn" onclick="selectDay(10)">Day 10</div>
+  </div>
+
+  <!-- Today's Queue -->
+  <div class="queue-section">
+    <h3>TODAY'S QUEUE</h3>
+    <div id="queueList">
+      <div class="queue-item selected" onclick="selectPlayer(this, 'messi_2011_12')">
+        <div class="num">1</div>
+        <div class="info">
+          <div class="name">Messi 2011-12</div>
+          <div class="meta">FC Barcelona / RW / 50 Goals</div>
+        </div>
+        <div class="tier tier-mythic">MYTHIC</div>
+      </div>
+      <div class="queue-item" onclick="selectPlayer(this, 'ronaldo_2016_17')">
+        <div class="num">2</div>
+        <div class="info">
+          <div class="name">Ronaldo 2016-17</div>
+          <div class="meta">Real Madrid / LW / 42 Goals</div>
+        </div>
+        <div class="tier tier-mythic">MYTHIC</div>
+      </div>
+      <div class="queue-item" onclick="selectPlayer(this, 'mbappe_2018_19')">
+        <div class="num">3</div>
+        <div class="info">
+          <div class="name">Mbappe 2018-19</div>
+          <div class="meta">PSG / FW / 33 Goals</div>
+        </div>
+        <div class="tier tier-elite">ELITE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Production Panel -->
+  <div class="prod-panel">
+    <h3>PRODUCTION</h3>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="card-label">IMAGE GEN</div>
+        <select>
+          <option>Nanobanana</option>
+          <option>Gemini API</option>
+          <option>Manual Upload</option>
+        </select>
+      </div>
+      <div class="prod-card">
+        <div class="card-label">BGM</div>
+        <select>
+          <option>Suno - Mythic Theme</option>
+          <option>Suno - Dynasty Theme</option>
+          <option>Suno - Breakthrough</option>
+          <option>Manual Upload</option>
+        </select>
+      </div>
+      <div class="prod-card">
+        <div class="card-label">VOICE</div>
+        <select>
+          <option>None (Text Only)</option>
+          <option>2-Line Narration</option>
+          <option>Full Narration</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Stats Preview -->
+    <div id="statsPreview" class="stats-preview">
+      <div class="stat-box"><div class="stat-val">97</div><div class="stat-name">FINISHING</div></div>
+      <div class="stat-box"><div class="stat-val">95</div><div class="stat-name">PLAYMAKING</div></div>
+      <div class="stat-box"><div class="stat-val">99</div><div class="stat-name">DRIBBLING</div></div>
+      <div class="stat-box"><div class="stat-val">55</div><div class="stat-name">DEFENSE</div></div>
+      <div class="stat-box"><div class="stat-val">98</div><div class="stat-name">CLUTCH</div></div>
+      <div class="stat-box"><div class="stat-val">99</div><div class="stat-name">AURA</div></div>
+    </div>
+
+    <!-- Prompt Preview -->
+    <div class="prompt-box" id="promptPreview"><span class="highlight">[BASE]</span> Dark premium football aesthetic, metallic gold accents, cinematic sports atmosphere, semi-realistic, no logo, no watermark
+
+<span class="highlight">[PLAYER: MESSI]</span> Inspired by a legendary Argentine forward playmaker, compact athletic build, short dark brown hair, trimmed beard, calm but deadly expression, genius aura
+
+<span class="highlight">[MOOD: PEAK_MONSTER]</span> Unstoppable, explosive, peak form, aggressive momentum, dominant match-winning energy
+
+<span class="highlight">[SCENE: HOOK]</span> Full body dramatic entrance, stadium background with volumetric lighting
+
+<span class="highlight">[MODIFIERS]</span> TOP_TEXT_SAFE_SPACE, STRONG_AURA, RECOGNIZABLE_FACE_VIBE</div>
+  </div>
+
+  <!-- Sliders -->
+  <div class="slider-row">
+    <div class="slider-item">
+      <div class="s-label">Speed <span class="s-value" id="speedVal">1.0x</span></div>
+      <input type="range" min="5" max="15" value="10" oninput="document.getElementById('speedVal').textContent=this.value/10+'x'">
+    </div>
+    <div class="slider-item">
+      <div class="s-label">Subtitle <span class="s-value" id="subVal">54px</span></div>
+      <input type="range" min="32" max="80" value="54" oninput="document.getElementById('subVal').textContent=this.value+'px'">
+    </div>
+    <div class="slider-item">
+      <div class="s-label">Position <span class="s-value" id="posVal">35%</span></div>
+      <input type="range" min="10" max="60" value="35" oninput="document.getElementById('posVal').textContent=this.value+'%'">
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="prod-panel" style="margin-top: 20px;">
+    <h3>PRODUCTION CHECKLIST</h3>
+    <div class="checklist">
+      <div class="check-item"><input type="checkbox"> Hook Image (Nanobanana)</div>
+      <div class="check-item"><input type="checkbox"> Card Image (Nanobanana)</div>
+      <div class="check-item"><input type="checkbox"> Suno Music</div>
+      <div class="check-item"><input type="checkbox"> JSON Export</div>
+      <div class="check-item"><input type="checkbox"> Remotion Render</div>
+      <div class="check-item"><input type="checkbox"> Audio Merge</div>
+      <div class="check-item"><input type="checkbox"> Final Review</div>
+      <div class="check-item"><input type="checkbox"> Upload</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const SCHEDULE = {
+  1: [
+    {name:"Messi 2011-12", meta:"FC Barcelona / RW / 50 Goals", tier:"mythic", id:"messi_2011_12", ovr:97, stats:{finishing:97,playmaking:95,dribbling:99,defense:55,clutch:98,aura:99}, mood:"PEAK_MONSTER", block:"MESSI", hook:"THIS VERSION WAS BROKEN"},
+    {name:"Ronaldo 2016-17", meta:"Real Madrid / LW / 42 Goals", tier:"mythic", id:"ronaldo_2016_17", ovr:96, stats:{finishing:99,playmaking:88,dribbling:92,defense:40,clutch:99,aura:98}, mood:"PEAK_MONSTER", block:"RONALDO", hook:"BUILT FOR BIG GAMES"},
+    {name:"Mbappe 2018-19", meta:"PSG / FW / 33 Goals", tier:"elite", id:"mbappe_2018_19", ovr:93, stats:{finishing:94,playmaking:85,dribbling:96,defense:35,clutch:90,aura:92}, mood:"BREAKTHROUGH", block:"MBAPPE", hook:"THE NEXT MONSTER"},
+  ],
+  2: [
+    {name:"Messi 2014-15", meta:"FC Barcelona / RW / 43 Goals", tier:"mythic", id:"messi_2014_15", ovr:96, stats:{finishing:96,playmaking:98,dribbling:99,defense:50,clutch:97,aura:99}, mood:"ELEGANT_PRIME", block:"MESSI", hook:"FOOTBALL PERFECTION"},
+    {name:"Ronaldo 2007-08", meta:"Manchester United / RW / 42 Goals", tier:"legendary", id:"ronaldo_2007_08", ovr:95, stats:{finishing:96,playmaking:90,dribbling:94,defense:45,clutch:96,aura:95}, mood:"BREAKTHROUGH", block:"RONALDO", hook:"THE RISE OF A KING"},
+    {name:"Mbappe 2021-22", meta:"PSG / FW / 28 Goals", tier:"mythic", id:"mbappe_2021_22", ovr:95, stats:{finishing:96,playmaking:90,dribbling:97,defense:35,clutch:95,aura:96}, mood:"PEAK_MONSTER", block:"MBAPPE", hook:"THE NEW ERA BEGINS"},
+  ],
+  3: [
+    {name:"Zidane 2005-06", meta:"Real Madrid / AM / 9 Goals", tier:"legendary", id:"zidane_2005_06", ovr:93, stats:{finishing:85,playmaking:97,dribbling:95,defense:50,clutch:95,aura:99}, mood:"ELEGANT_PRIME", block:"ZIDANE", hook:"THE FINAL MASTERPIECE"},
+    {name:"Henry 2003-04", meta:"Arsenal / FW / 30 Goals", tier:"mythic", id:"henry_2003_04", ovr:96, stats:{finishing:97,playmaking:92,dribbling:95,defense:45,clutch:96,aura:98}, mood:"PEAK_MONSTER", block:"HENRY", hook:"INVINCIBLE"},
+    {name:"Ronaldinho 2005-06", meta:"FC Barcelona / AM / 26 Goals", tier:"mythic", id:"ronaldinho_2005_06", ovr:96, stats:{finishing:90,playmaking:98,dribbling:99,defense:35,clutch:92,aura:99}, mood:"PEAK_MONSTER", block:"RONALDINHO", hook:"FOOTBALL WAS JOY"},
+  ],
+  4: [
+    {name:"Salah 2017-18", meta:"Liverpool / RW / 44 Goals", tier:"legendary", id:"salah_2017_18", ovr:93, stats:{finishing:96,playmaking:85,dribbling:93,defense:40,clutch:90,aura:94}, mood:"PEAK_MONSTER", block:"SALAH", hook:"THE EGYPTIAN KING RISES"},
+    {name:"De Bruyne 2019-20", meta:"Manchester City / CM / 13 Goals", tier:"legendary", id:"debruyne_2019_20", ovr:93, stats:{finishing:78,playmaking:99,dribbling:88,defense:65,clutch:88,aura:95}, mood:"ELEGANT_PRIME", block:"DE_BRUYNE", hook:"THE PERFECT MIDFIELDER"},
+    {name:"Son 2021-22", meta:"Tottenham / FW / 23 Goals", tier:"elite", id:"son_2021_22", ovr:91, stats:{finishing:93,playmaking:82,dribbling:90,defense:45,clutch:90,aura:88}, mood:"PEAK_MONSTER", block:"SON", hook:"GOLDEN BOOT. NO PENALTIES."},
+  ],
+  5: [
+    {name:"Lewandowski 2020-21", meta:"Bayern Munich / ST / 41 Goals", tier:"mythic", id:"lewandowski_2020_21", ovr:96, stats:{finishing:99,playmaking:80,dribbling:85,defense:40,clutch:97,aura:97}, mood:"PEAK_MONSTER", block:"LEWANDOWSKI", hook:"41 GOALS. RECORD BROKEN."},
+    {name:"Suarez 2015-16", meta:"FC Barcelona / ST / 40 Goals", tier:"mythic", id:"suarez_2015_16", ovr:95, stats:{finishing:98,playmaking:88,dribbling:90,defense:45,clutch:95,aura:96}, mood:"PEAK_MONSTER", block:"SUAREZ", hook:"THE COMPLETE STRIKER"},
+    {name:"Haaland 2022-23", meta:"Manchester City / ST / 36 Goals", tier:"mythic", id:"haaland_2022_23", ovr:95, stats:{finishing:99,playmaking:72,dribbling:80,defense:35,clutch:96,aura:96}, mood:"PEAK_MONSTER", block:"HAALAND", hook:"NOT FROM THIS PLANET"},
+  ],
+  6: [
+    {name:"Iniesta 2011-12", meta:"FC Barcelona / CM / 5 Goals", tier:"legendary", id:"iniesta_2011_12", ovr:93, stats:{finishing:70,playmaking:98,dribbling:96,defense:60,clutch:92,aura:97}, mood:"ELEGANT_PRIME", block:"INIESTA", hook:"THE INVISIBLE CONDUCTOR"},
+    {name:"Modric 2017-18", meta:"Real Madrid / CM / 4 Goals", tier:"legendary", id:"modric_2017_18", ovr:93, stats:{finishing:72,playmaking:96,dribbling:93,defense:68,clutch:94,aura:96}, mood:"ELEGANT_PRIME", block:"MODRIC", hook:"THE BALLON D'OR MIDFIELDER"},
+    {name:"Kaka 2006-07", meta:"AC Milan / AM / 14 Goals", tier:"mythic", id:"kaka_2006_07", ovr:96, stats:{finishing:92,playmaking:95,dribbling:96,defense:40,clutch:96,aura:98}, mood:"PEAK_MONSTER", block:"KAKA", hook:"THE LAST CLASSIC 10"},
+  ],
+  7: [
+    {name:"Maldini 2004-05", meta:"AC Milan / CB / 2 Goals", tier:"legendary", id:"maldini_2004_05", ovr:92, stats:{finishing:35,playmaking:65,dribbling:72,defense:99,clutch:90,aura:98}, mood:"ELEGANT_PRIME", block:"MALDINI", hook:"DEFENDING IS AN ART"},
+    {name:"Van Dijk 2018-19", meta:"Liverpool / CB / 6 Goals", tier:"elite", id:"vandijk_2018_19", ovr:91, stats:{finishing:55,playmaking:70,dribbling:68,defense:97,clutch:90,aura:95}, mood:"PEAK_MONSTER", block:"VAN_DIJK", hook:"THE WALL"},
+    {name:"Neuer 2013-14", meta:"Bayern Munich / GK", tier:"legendary", id:"neuer_2013_14", ovr:93, stats:{finishing:30,playmaking:65,dribbling:50,defense:97,clutch:94,aura:96}, mood:"PEAK_MONSTER", block:"NEUER", hook:"THE SWEEPER KEEPER"},
+  ],
+  8: [
+    {name:"Son 2019-20", meta:"Tottenham / FW / 18 Goals", tier:"elite", id:"son_2019_20", ovr:89, stats:{finishing:92,playmaking:82,dribbling:90,defense:45,clutch:85,aura:88}, mood:"ELEGANT_PRIME", block:"SON", hook:"UCL FINAL TO GOLDEN BOOT"},
+    {name:"Hazard 2018-19", meta:"Chelsea / LW / 21 Goals", tier:"legendary", id:"hazard_2018_19", ovr:92, stats:{finishing:88,playmaking:93,dribbling:97,defense:40,clutch:88,aura:93}, mood:"ELEGANT_PRIME", block:"HAZARD", hook:"THE CHELSEA MAESTRO"},
+    {name:"Aguero 2011-12", meta:"Manchester City / ST / 23 Goals", tier:"legendary", id:"aguero_2011_12", ovr:92, stats:{finishing:95,playmaking:78,dribbling:88,defense:35,clutch:99,aura:95}, mood:"PEAK_MONSTER", block:"AGUERO", hook:"THAT MOMENT"},
+  ],
+  9: [
+    {name:"Totti 2006-07", meta:"AS Roma / FW / 26 Goals", tier:"legendary", id:"totti_2006_07", ovr:92, stats:{finishing:90,playmaking:94,dribbling:92,defense:38,clutch:90,aura:97}, mood:"ELEGANT_PRIME", block:"TOTTI", hook:"THE ETERNAL KING"},
+    {name:"Ribery 2012-13", meta:"Bayern Munich / LW / 11 Goals", tier:"legendary", id:"ribery_2012_13", ovr:92, stats:{finishing:82,playmaking:93,dribbling:96,defense:50,clutch:90,aura:93}, mood:"PEAK_MONSTER", block:"RIBERY", hook:"THE TREBLE MACHINE"},
+    {name:"Neymar 2017-18", meta:"PSG / LW / 28 Goals", tier:"elite", id:"neymar_2017_18", ovr:89, stats:{finishing:90,playmaking:90,dribbling:97,defense:30,clutch:78,aura:85}, mood:"BREAKTHROUGH", block:"NEYMAR", hook:"THE ARTIST IN PARIS"},
+  ],
+  10: [
+    {name:"Messi 2018-19", meta:"FC Barcelona / RW / 36 Goals", tier:"legendary", id:"messi_2018_19", ovr:94, stats:{finishing:95,playmaking:96,dribbling:98,defense:45,clutch:90,aura:97}, mood:"ELEGANT_PRIME", block:"MESSI", hook:"THE LAST BARCELONA PEAK"},
+    {name:"Ronaldo 2013-14", meta:"Real Madrid / LW / 51 Goals", tier:"mythic", id:"ronaldo_2013_14", ovr:96, stats:{finishing:99,playmaking:85,dribbling:90,defense:38,clutch:99,aura:98}, mood:"PEAK_MONSTER", block:"RONALDO", hook:"17 UCL GOALS"},
+    {name:"Mbappe 2023-24", meta:"PSG / FW / 44 Goals", tier:"elite", id:"mbappe_2023_24", ovr:92, stats:{finishing:95,playmaking:85,dribbling:95,defense:32,clutch:88,aura:90}, mood:"ELEGANT_PRIME", block:"MBAPPE", hook:"THE DEPARTURE SEASON"},
+  ],
+};
+
+let currentDay = 1;
+let currentPlayer = null;
+
+function selectDay(day) {
+  currentDay = day;
+  document.querySelectorAll('.day-btn').forEach((b,i) => b.classList.toggle('active', i+1===day));
+  renderQueue(day);
+}
+
+function renderQueue(day) {
+  const items = SCHEDULE[day] || [];
+  const list = document.getElementById('queueList');
+  list.innerHTML = items.map((p, i) => `
+    <div class="queue-item ${i===0?'selected':''}" onclick="selectPlayer(this, '${p.id}')">
+      <div class="num">${i+1}</div>
+      <div class="info">
+        <div class="name">${p.name}</div>
+        <div class="meta">${p.meta}</div>
+      </div>
+      <div class="tier tier-${p.tier}">${p.tier.toUpperCase()}</div>
+    </div>
+  `).join('');
+  if(items.length > 0) loadPlayerData(items[0]);
+}
+
+function selectPlayer(el, id) {
+  document.querySelectorAll('.queue-item').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+  const items = SCHEDULE[currentDay] || [];
+  const p = items.find(x => x.id === id);
+  if(p) loadPlayerData(p);
+}
+
+function loadPlayerData(p) {
+  currentPlayer = p;
+  document.getElementById('playerInput').value = p.name;
+
+  // Update stats
+  const stats = p.stats;
+  const preview = document.getElementById('statsPreview');
+  preview.innerHTML = Object.entries(stats).map(([k,v]) => `
+    <div class="stat-box">
+      <div class="stat-val">${v}</div>
+      <div class="stat-name">${k.toUpperCase()}</div>
+    </div>
+  `).join('');
+
+  // Update prompt
+  document.getElementById('promptPreview').innerHTML =
+    `<span class="highlight">[BASE]</span> Dark premium football aesthetic, metallic gold accents, cinematic sports atmosphere, semi-realistic, no logo, no watermark\n\n` +
+    `<span class="highlight">[PLAYER: ${p.block}]</span> (see player_blocks.txt)\n\n` +
+    `<span class="highlight">[MOOD: ${p.mood}]</span> (see season_moods.txt)\n\n` +
+    `<span class="highlight">[HOOK]</span> "${p.hook}"\n\n` +
+    `<span class="highlight">[SCENE: HOOK]</span> Full body dramatic entrance\n` +
+    `<span class="highlight">[MODIFIERS]</span> TOP_TEXT_SAFE_SPACE, STRONG_AURA, RECOGNIZABLE_FACE_VIBE`;
+}
+
+function loadPlayer() { alert('Load: ' + document.getElementById('playerInput').value); }
+function showToday() { selectDay(currentDay); }
+function previewCard() { alert('Opening Remotion Studio...'); }
+function renderVideo() { alert('Rendering: ' + (currentPlayer?.id || 'none')); }
+
+// Init
+renderQueue(1);
+</script>
+</body>
+</html>
