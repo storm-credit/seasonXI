@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 import yaml
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -301,6 +301,17 @@ def assemble_prompt_api(player_id: str, season: str, scene: str = "HOOK"):
         return {"prompt": prompt, "player_block": player_block, "mood": mood, "scene": scene}
     except Exception as e:
         raise HTTPException(500, str(e))
+
+
+# ─── API: Upload Image (Drag & Drop) ─────────────────────────
+@app.post("/api/upload-image")
+async def upload_image(file: UploadFile, filename: str = Form(...)):
+    """Save uploaded image to remotion/public/."""
+    out_path = REMOTION_DIR / "public" / filename
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    content = await file.read()
+    out_path.write_bytes(content)
+    return {"status": "saved", "filename": filename, "size": len(content), "path": str(out_path)}
 
 
 # ─── API: Prompts List ────────────────────────────────────────

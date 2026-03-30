@@ -350,19 +350,8 @@ body {
     <div class="setting-chip"><span class="label">ENGINE</span><span class="value">SXI v1.3</span></div>
   </div>
 
-  <!-- Day Selector -->
-  <div class="day-selector">
-    <div class="day-btn active" onclick="selectDay(1)">Day 1</div>
-    <div class="day-btn" onclick="selectDay(2)">Day 2</div>
-    <div class="day-btn" onclick="selectDay(3)">Day 3</div>
-    <div class="day-btn" onclick="selectDay(4)">Day 4</div>
-    <div class="day-btn" onclick="selectDay(5)">Day 5</div>
-    <div class="day-btn" onclick="selectDay(6)">Day 6</div>
-    <div class="day-btn" onclick="selectDay(7)">Day 7</div>
-    <div class="day-btn" onclick="selectDay(8)">Day 8</div>
-    <div class="day-btn" onclick="selectDay(9)">Day 9</div>
-    <div class="day-btn" onclick="selectDay(10)">Day 10</div>
-  </div>
+  <!-- Date Selector -->
+  <div class="day-selector" id="dateSelector"></div>
 
   <!-- Today's Queue -->
   <div class="queue-section">
@@ -490,88 +479,107 @@ body {
     </div>
   </div>
 
+  <!-- Image Drop Zone -->
+  <div class="prod-panel" style="margin-top: 20px;">
+    <h3>IMAGE UPLOAD</h3>
+    <div id="dropZone" style="border:2px dashed #C9A24A;border-radius:12px;padding:40px 20px;text-align:center;cursor:pointer;transition:all 0.3s;background:rgba(201,162,74,0.03);">
+      <div style="font-size:36px;margin-bottom:8px;opacity:0.5;">📸</div>
+      <div style="color:#C9A24A;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;">DROP HOOK IMAGE HERE</div>
+      <div style="color:#888;font-size:12px;margin-top:6px;">또는 클릭해서 파일 선택</div>
+      <div id="dropStatus" style="color:#2ecc71;font-size:13px;margin-top:10px;"></div>
+      <input type="file" id="fileInput" accept="image/*" hidden>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:10px;">
+      <button class="btn btn-load" style="flex:1;font-size:12px;" onclick="dropAsType('hook')">Save as HOOK</button>
+      <button class="btn btn-today" style="flex:1;font-size:12px;" onclick="dropAsType('card')">Save as CARD</button>
+    </div>
+  </div>
+
+  <!-- Midjourney Prompt -->
+  <div class="prod-panel" style="margin-top: 20px;">
+    <h3>MIDJOURNEY PROMPT</h3>
+    <div id="mjPrompt" style="background:#0a0c10;border:1px solid #333;border-radius:8px;padding:12px;font-size:11px;color:#ccc;max-height:120px;overflow-y:auto;word-break:break-all;font-family:monospace;line-height:1.5;"></div>
+    <div style="display:flex;gap:8px;margin-top:10px;">
+      <button class="btn" style="flex:1;background:#5865F2;color:white;font-size:12px;" onclick="copyMjPrompt('HOOK')">Copy HOOK Prompt</button>
+      <button class="btn" style="flex:1;background:#4752C4;color:white;font-size:12px;" onclick="copyMjPrompt('CARD')">Copy CARD Prompt</button>
+    </div>
+  </div>
+
   <!-- Checklist -->
   <div class="prod-panel" style="margin-top: 20px;">
     <h3>PRODUCTION CHECKLIST</h3>
     <div class="checklist">
-      <div class="check-item"><input type="checkbox"> Hook Image (Nanobanana)</div>
-      <div class="check-item"><input type="checkbox"> Card Image (Nanobanana)</div>
-      <div class="check-item"><input type="checkbox"> Suno Music</div>
-      <div class="check-item"><input type="checkbox"> JSON Export</div>
-      <div class="check-item"><input type="checkbox"> Remotion Render</div>
-      <div class="check-item"><input type="checkbox"> Audio Merge</div>
-      <div class="check-item"><input type="checkbox"> Final Review</div>
-      <div class="check-item"><input type="checkbox"> Upload</div>
+      <div class="check-item"><input type="checkbox" id="chk_hook"> Hook Image (Midjourney)</div>
+      <div class="check-item"><input type="checkbox" id="chk_card"> Card Image (선택)</div>
+      <div class="check-item"><input type="checkbox" id="chk_music"> Suno Music</div>
+      <div class="check-item"><input type="checkbox" id="chk_json"> JSON Export</div>
+      <div class="check-item"><input type="checkbox" id="chk_render"> Remotion Render</div>
+      <div class="check-item"><input type="checkbox" id="chk_review"> Final Review</div>
+      <div class="check-item"><input type="checkbox" id="chk_upload"> Upload</div>
     </div>
   </div>
 
 </div>
 
 <script>
-const SCHEDULE = {
-  1: [
-    {name:"Messi 2011-12", meta:"FC Barcelona / RW / 50 Goals", tier:"mythic", id:"messi_2011_12", ovr:97, stats:{finishing:97,playmaking:95,dribbling:99,defense:55,clutch:98,aura:99}, mood:"PEAK_MONSTER", block:"MESSI", hook:"THIS VERSION WAS BROKEN"},
-    {name:"Ronaldo 2016-17", meta:"Real Madrid / LW / 42 Goals", tier:"mythic", id:"ronaldo_2016_17", ovr:96, stats:{finishing:99,playmaking:88,dribbling:92,defense:40,clutch:99,aura:98}, mood:"PEAK_MONSTER", block:"RONALDO", hook:"BUILT FOR BIG GAMES"},
-    {name:"Mbappe 2018-19", meta:"PSG / FW / 33 Goals", tier:"elite", id:"mbappe_2018_19", ovr:93, stats:{finishing:94,playmaking:85,dribbling:96,defense:35,clutch:90,aura:92}, mood:"BREAKTHROUGH", block:"MBAPPE", hook:"THE NEXT MONSTER"},
-  ],
-  2: [
-    {name:"Messi 2014-15", meta:"FC Barcelona / RW / 43 Goals", tier:"mythic", id:"messi_2014_15", ovr:96, stats:{finishing:96,playmaking:98,dribbling:99,defense:50,clutch:97,aura:99}, mood:"ELEGANT_PRIME", block:"MESSI", hook:"FOOTBALL PERFECTION"},
-    {name:"Ronaldo 2007-08", meta:"Manchester United / RW / 42 Goals", tier:"legendary", id:"ronaldo_2007_08", ovr:95, stats:{finishing:96,playmaking:90,dribbling:94,defense:45,clutch:96,aura:95}, mood:"BREAKTHROUGH", block:"RONALDO", hook:"THE RISE OF A KING"},
-    {name:"Mbappe 2021-22", meta:"PSG / FW / 28 Goals", tier:"mythic", id:"mbappe_2021_22", ovr:95, stats:{finishing:96,playmaking:90,dribbling:97,defense:35,clutch:95,aura:96}, mood:"PEAK_MONSTER", block:"MBAPPE", hook:"THE NEW ERA BEGINS"},
-  ],
-  3: [
-    {name:"Zidane 2005-06", meta:"Real Madrid / AM / 9 Goals", tier:"legendary", id:"zidane_2005_06", ovr:93, stats:{finishing:85,playmaking:97,dribbling:95,defense:50,clutch:95,aura:99}, mood:"ELEGANT_PRIME", block:"ZIDANE", hook:"THE FINAL MASTERPIECE"},
-    {name:"Henry 2003-04", meta:"Arsenal / FW / 30 Goals", tier:"mythic", id:"henry_2003_04", ovr:96, stats:{finishing:97,playmaking:92,dribbling:95,defense:45,clutch:96,aura:98}, mood:"PEAK_MONSTER", block:"HENRY", hook:"INVINCIBLE"},
-    {name:"Ronaldinho 2005-06", meta:"FC Barcelona / AM / 26 Goals", tier:"mythic", id:"ronaldinho_2005_06", ovr:96, stats:{finishing:90,playmaking:98,dribbling:99,defense:35,clutch:92,aura:99}, mood:"PEAK_MONSTER", block:"RONALDINHO", hook:"FOOTBALL WAS JOY"},
-  ],
-  4: [
-    {name:"Salah 2017-18", meta:"Liverpool / RW / 44 Goals", tier:"legendary", id:"salah_2017_18", ovr:93, stats:{finishing:96,playmaking:85,dribbling:93,defense:40,clutch:90,aura:94}, mood:"PEAK_MONSTER", block:"SALAH", hook:"THE EGYPTIAN KING RISES"},
-    {name:"De Bruyne 2019-20", meta:"Manchester City / CM / 13 Goals", tier:"legendary", id:"debruyne_2019_20", ovr:93, stats:{finishing:78,playmaking:99,dribbling:88,defense:65,clutch:88,aura:95}, mood:"ELEGANT_PRIME", block:"DE_BRUYNE", hook:"THE PERFECT MIDFIELDER"},
-    {name:"Son 2021-22", meta:"Tottenham / FW / 23 Goals", tier:"elite", id:"son_2021_22", ovr:91, stats:{finishing:93,playmaking:82,dribbling:90,defense:45,clutch:90,aura:88}, mood:"PEAK_MONSTER", block:"SON", hook:"GOLDEN BOOT. NO PENALTIES."},
-  ],
-  5: [
-    {name:"Lewandowski 2020-21", meta:"Bayern Munich / ST / 41 Goals", tier:"mythic", id:"lewandowski_2020_21", ovr:96, stats:{finishing:99,playmaking:80,dribbling:85,defense:40,clutch:97,aura:97}, mood:"PEAK_MONSTER", block:"LEWANDOWSKI", hook:"41 GOALS. RECORD BROKEN."},
-    {name:"Suarez 2015-16", meta:"FC Barcelona / ST / 40 Goals", tier:"mythic", id:"suarez_2015_16", ovr:95, stats:{finishing:98,playmaking:88,dribbling:90,defense:45,clutch:95,aura:96}, mood:"PEAK_MONSTER", block:"SUAREZ", hook:"THE COMPLETE STRIKER"},
-    {name:"Haaland 2022-23", meta:"Manchester City / ST / 36 Goals", tier:"mythic", id:"haaland_2022_23", ovr:95, stats:{finishing:99,playmaking:72,dribbling:80,defense:35,clutch:96,aura:96}, mood:"PEAK_MONSTER", block:"HAALAND", hook:"NOT FROM THIS PLANET"},
-  ],
-  6: [
-    {name:"Iniesta 2011-12", meta:"FC Barcelona / CM / 5 Goals", tier:"legendary", id:"iniesta_2011_12", ovr:93, stats:{finishing:70,playmaking:98,dribbling:96,defense:60,clutch:92,aura:97}, mood:"ELEGANT_PRIME", block:"INIESTA", hook:"THE INVISIBLE CONDUCTOR"},
-    {name:"Modric 2017-18", meta:"Real Madrid / CM / 4 Goals", tier:"legendary", id:"modric_2017_18", ovr:93, stats:{finishing:72,playmaking:96,dribbling:93,defense:68,clutch:94,aura:96}, mood:"ELEGANT_PRIME", block:"MODRIC", hook:"THE BALLON D'OR MIDFIELDER"},
-    {name:"Kaka 2006-07", meta:"AC Milan / AM / 14 Goals", tier:"mythic", id:"kaka_2006_07", ovr:96, stats:{finishing:92,playmaking:95,dribbling:96,defense:40,clutch:96,aura:98}, mood:"PEAK_MONSTER", block:"KAKA", hook:"THE LAST CLASSIC 10"},
-  ],
-  7: [
-    {name:"Maldini 2004-05", meta:"AC Milan / CB / 2 Goals", tier:"legendary", id:"maldini_2004_05", ovr:92, stats:{finishing:35,playmaking:65,dribbling:72,defense:99,clutch:90,aura:98}, mood:"ELEGANT_PRIME", block:"MALDINI", hook:"DEFENDING IS AN ART"},
-    {name:"Van Dijk 2018-19", meta:"Liverpool / CB / 6 Goals", tier:"elite", id:"vandijk_2018_19", ovr:91, stats:{finishing:55,playmaking:70,dribbling:68,defense:97,clutch:90,aura:95}, mood:"PEAK_MONSTER", block:"VAN_DIJK", hook:"THE WALL"},
-    {name:"Neuer 2013-14", meta:"Bayern Munich / GK", tier:"legendary", id:"neuer_2013_14", ovr:93, stats:{finishing:30,playmaking:65,dribbling:50,defense:97,clutch:94,aura:96}, mood:"PEAK_MONSTER", block:"NEUER", hook:"THE SWEEPER KEEPER"},
-  ],
-  8: [
-    {name:"Son 2019-20", meta:"Tottenham / FW / 18 Goals", tier:"elite", id:"son_2019_20", ovr:89, stats:{finishing:92,playmaking:82,dribbling:90,defense:45,clutch:85,aura:88}, mood:"ELEGANT_PRIME", block:"SON", hook:"UCL FINAL TO GOLDEN BOOT"},
-    {name:"Hazard 2018-19", meta:"Chelsea / LW / 21 Goals", tier:"legendary", id:"hazard_2018_19", ovr:92, stats:{finishing:88,playmaking:93,dribbling:97,defense:40,clutch:88,aura:93}, mood:"ELEGANT_PRIME", block:"HAZARD", hook:"THE CHELSEA MAESTRO"},
-    {name:"Aguero 2011-12", meta:"Manchester City / ST / 23 Goals", tier:"legendary", id:"aguero_2011_12", ovr:92, stats:{finishing:95,playmaking:78,dribbling:88,defense:35,clutch:99,aura:95}, mood:"PEAK_MONSTER", block:"AGUERO", hook:"THAT MOMENT"},
-  ],
-  9: [
-    {name:"Totti 2006-07", meta:"AS Roma / FW / 26 Goals", tier:"legendary", id:"totti_2006_07", ovr:92, stats:{finishing:90,playmaking:94,dribbling:92,defense:38,clutch:90,aura:97}, mood:"ELEGANT_PRIME", block:"TOTTI", hook:"THE ETERNAL KING"},
-    {name:"Ribery 2012-13", meta:"Bayern Munich / LW / 11 Goals", tier:"legendary", id:"ribery_2012_13", ovr:92, stats:{finishing:82,playmaking:93,dribbling:96,defense:50,clutch:90,aura:93}, mood:"PEAK_MONSTER", block:"RIBERY", hook:"THE TREBLE MACHINE"},
-    {name:"Neymar 2017-18", meta:"PSG / LW / 28 Goals", tier:"elite", id:"neymar_2017_18", ovr:89, stats:{finishing:90,playmaking:90,dribbling:97,defense:30,clutch:78,aura:85}, mood:"BREAKTHROUGH", block:"NEYMAR", hook:"THE ARTIST IN PARIS"},
-  ],
-  10: [
-    {name:"Messi 2018-19", meta:"FC Barcelona / RW / 36 Goals", tier:"legendary", id:"messi_2018_19", ovr:94, stats:{finishing:95,playmaking:96,dribbling:98,defense:45,clutch:90,aura:97}, mood:"ELEGANT_PRIME", block:"MESSI", hook:"THE LAST BARCELONA PEAK"},
-    {name:"Ronaldo 2013-14", meta:"Real Madrid / LW / 51 Goals", tier:"mythic", id:"ronaldo_2013_14", ovr:96, stats:{finishing:99,playmaking:85,dribbling:90,defense:38,clutch:99,aura:98}, mood:"PEAK_MONSTER", block:"RONALDO", hook:"17 UCL GOALS"},
-    {name:"Mbappe 2023-24", meta:"PSG / FW / 44 Goals", tier:"elite", id:"mbappe_2023_24", ovr:92, stats:{finishing:95,playmaking:85,dribbling:95,defense:32,clutch:88,aura:90}, mood:"ELEGANT_PRIME", block:"MBAPPE", hook:"THE DEPARTURE SEASON"},
-  ],
-};
+// Schedule data (indexed by day offset 0-9)
+const SCHEDULE_DATA = [
+  [{name:"Messi 2011-12",meta:"FC Barcelona / RW / 50 Goals",tier:"mythic",id:"messi_2011_12",player_id:"messi",season:"2011-12",ovr:97,stats:{finishing:97,playmaking:95,dribbling:99,defense:55,clutch:98,aura:99},mood:"PEAK_MONSTER",block:"MESSI",hook:"THIS VERSION WAS BROKEN"},
+   {name:"Ronaldo 2016-17",meta:"Real Madrid / LW / 42 Goals",tier:"mythic",id:"ronaldo_2016_17",player_id:"ronaldo",season:"2016-17",ovr:96,stats:{finishing:99,playmaking:88,dribbling:92,defense:40,clutch:99,aura:98},mood:"PEAK_MONSTER",block:"RONALDO",hook:"BUILT FOR BIG GAMES"},
+   {name:"Mbappe 2018-19",meta:"PSG / FW / 33 Goals",tier:"elite",id:"mbappe_2018_19",player_id:"mbappe",season:"2018-19",ovr:93,stats:{finishing:94,playmaking:85,dribbling:96,defense:35,clutch:90,aura:92},mood:"BREAKTHROUGH",block:"MBAPPE",hook:"THE NEXT MONSTER"}],
+  [{name:"Messi 2014-15",meta:"FC Barcelona / RW / 43 Goals",tier:"mythic",id:"messi_2014_15",player_id:"messi",season:"2014-15",ovr:96,stats:{finishing:96,playmaking:98,dribbling:99,defense:50,clutch:97,aura:99},mood:"ELEGANT_PRIME",block:"MESSI",hook:"FOOTBALL PERFECTION"},
+   {name:"Ronaldo 2007-08",meta:"Manchester United / RW / 42 Goals",tier:"legendary",id:"ronaldo_2007_08",player_id:"ronaldo",season:"2007-08",ovr:95,stats:{finishing:96,playmaking:90,dribbling:94,defense:45,clutch:96,aura:95},mood:"BREAKTHROUGH",block:"RONALDO",hook:"THE RISE OF A KING"},
+   {name:"Mbappe 2021-22",meta:"PSG / FW / 28 Goals",tier:"mythic",id:"mbappe_2021_22",player_id:"mbappe",season:"2021-22",ovr:95,stats:{finishing:96,playmaking:90,dribbling:97,defense:35,clutch:95,aura:96},mood:"PEAK_MONSTER",block:"MBAPPE",hook:"THE NEW ERA BEGINS"}],
+  [{name:"Zidane 2005-06",meta:"Real Madrid / AM / 9 Goals",tier:"legendary",id:"zidane_2005_06",player_id:"zidane",season:"2005-06",ovr:93,stats:{finishing:85,playmaking:97,dribbling:95,defense:50,clutch:95,aura:99},mood:"ELEGANT_PRIME",block:"ZIDANE",hook:"THE FINAL MASTERPIECE"},
+   {name:"Henry 2003-04",meta:"Arsenal / FW / 30 Goals",tier:"mythic",id:"henry_2003_04",player_id:"henry",season:"2003-04",ovr:96,stats:{finishing:97,playmaking:92,dribbling:95,defense:45,clutch:96,aura:98},mood:"PEAK_MONSTER",block:"HENRY",hook:"INVINCIBLE"},
+   {name:"Ronaldinho 2005-06",meta:"FC Barcelona / AM / 26 Goals",tier:"mythic",id:"ronaldinho_2005_06",player_id:"ronaldinho",season:"2005-06",ovr:96,stats:{finishing:90,playmaking:98,dribbling:99,defense:35,clutch:92,aura:99},mood:"PEAK_MONSTER",block:"RONALDINHO",hook:"FOOTBALL WAS JOY"}],
+  [{name:"Salah 2017-18",meta:"Liverpool / RW / 44 Goals",tier:"legendary",id:"salah_2017_18",player_id:"salah",season:"2017-18",ovr:93,stats:{finishing:96,playmaking:85,dribbling:93,defense:40,clutch:90,aura:94},mood:"PEAK_MONSTER",block:"SALAH",hook:"THE EGYPTIAN KING RISES"},
+   {name:"De Bruyne 2019-20",meta:"Manchester City / CM / 13 Goals",tier:"legendary",id:"debruyne_2019_20",player_id:"debruyne",season:"2019-20",ovr:93,stats:{finishing:78,playmaking:99,dribbling:88,defense:65,clutch:88,aura:95},mood:"ELEGANT_PRIME",block:"DE_BRUYNE",hook:"THE PERFECT MIDFIELDER"},
+   {name:"Son 2021-22",meta:"Tottenham / FW / 23 Goals",tier:"elite",id:"son_2021_22",player_id:"son",season:"2021-22",ovr:91,stats:{finishing:93,playmaking:82,dribbling:90,defense:45,clutch:90,aura:88},mood:"PEAK_MONSTER",block:"SON",hook:"GOLDEN BOOT. NO PENALTIES."}],
+  [{name:"Lewandowski 2020-21",meta:"Bayern Munich / ST / 41 Goals",tier:"mythic",id:"lewandowski_2020_21",player_id:"lewandowski",season:"2020-21",ovr:96,stats:{finishing:99,playmaking:80,dribbling:85,defense:40,clutch:97,aura:97},mood:"PEAK_MONSTER",block:"LEWANDOWSKI",hook:"41 GOALS. RECORD BROKEN."},
+   {name:"Suarez 2015-16",meta:"FC Barcelona / ST / 40 Goals",tier:"mythic",id:"suarez_2015_16",player_id:"suarez",season:"2015-16",ovr:95,stats:{finishing:98,playmaking:88,dribbling:90,defense:45,clutch:95,aura:96},mood:"PEAK_MONSTER",block:"SUAREZ",hook:"THE COMPLETE STRIKER"},
+   {name:"Haaland 2022-23",meta:"Manchester City / ST / 36 Goals",tier:"mythic",id:"haaland_2022_23",player_id:"haaland",season:"2022-23",ovr:95,stats:{finishing:99,playmaking:72,dribbling:80,defense:35,clutch:96,aura:96},mood:"PEAK_MONSTER",block:"HAALAND",hook:"NOT FROM THIS PLANET"}],
+  [{name:"Iniesta 2011-12",meta:"FC Barcelona / CM / 5 Goals",tier:"legendary",id:"iniesta_2011_12",player_id:"iniesta",season:"2011-12",ovr:93,stats:{finishing:70,playmaking:98,dribbling:96,defense:60,clutch:92,aura:97},mood:"ELEGANT_PRIME",block:"INIESTA",hook:"THE INVISIBLE CONDUCTOR"},
+   {name:"Modric 2017-18",meta:"Real Madrid / CM / 4 Goals",tier:"legendary",id:"modric_2017_18",player_id:"modric",season:"2017-18",ovr:93,stats:{finishing:72,playmaking:96,dribbling:93,defense:68,clutch:94,aura:96},mood:"ELEGANT_PRIME",block:"MODRIC",hook:"THE BALLON D'OR MIDFIELDER"},
+   {name:"Kaka 2006-07",meta:"AC Milan / AM / 14 Goals",tier:"mythic",id:"kaka_2006_07",player_id:"kaka",season:"2006-07",ovr:96,stats:{finishing:92,playmaking:95,dribbling:96,defense:40,clutch:96,aura:98},mood:"PEAK_MONSTER",block:"KAKA",hook:"THE LAST CLASSIC 10"}],
+  [{name:"Maldini 2004-05",meta:"AC Milan / CB / 2 Goals",tier:"legendary",id:"maldini_2004_05",player_id:"maldini",season:"2004-05",ovr:92,stats:{finishing:35,playmaking:65,dribbling:72,defense:99,clutch:90,aura:98},mood:"ELEGANT_PRIME",block:"MALDINI",hook:"DEFENDING IS AN ART"},
+   {name:"Van Dijk 2018-19",meta:"Liverpool / CB / 6 Goals",tier:"elite",id:"vandijk_2018_19",player_id:"vandijk",season:"2018-19",ovr:91,stats:{finishing:55,playmaking:70,dribbling:68,defense:97,clutch:90,aura:95},mood:"PEAK_MONSTER",block:"VAN_DIJK",hook:"THE WALL"},
+   {name:"Neuer 2013-14",meta:"Bayern Munich / GK",tier:"legendary",id:"neuer_2013_14",player_id:"neuer",season:"2013-14",ovr:93,stats:{finishing:30,playmaking:65,dribbling:50,defense:97,clutch:94,aura:96},mood:"PEAK_MONSTER",block:"NEUER",hook:"THE SWEEPER KEEPER"}],
+  [{name:"Son 2019-20",meta:"Tottenham / FW / 18 Goals",tier:"elite",id:"son_2019_20",player_id:"son",season:"2019-20",ovr:89,stats:{finishing:92,playmaking:82,dribbling:90,defense:45,clutch:85,aura:88},mood:"ELEGANT_PRIME",block:"SON",hook:"UCL FINAL TO GOLDEN BOOT"},
+   {name:"Hazard 2018-19",meta:"Chelsea / LW / 21 Goals",tier:"legendary",id:"hazard_2018_19",player_id:"hazard",season:"2018-19",ovr:92,stats:{finishing:88,playmaking:93,dribbling:97,defense:40,clutch:88,aura:93},mood:"ELEGANT_PRIME",block:"HAZARD",hook:"THE CHELSEA MAESTRO"},
+   {name:"Aguero 2011-12",meta:"Manchester City / ST / 23 Goals",tier:"legendary",id:"aguero_2011_12",player_id:"aguero",season:"2011-12",ovr:92,stats:{finishing:95,playmaking:78,dribbling:88,defense:35,clutch:99,aura:95},mood:"PEAK_MONSTER",block:"AGUERO",hook:"THAT MOMENT"}],
+  [{name:"Totti 2006-07",meta:"AS Roma / FW / 26 Goals",tier:"legendary",id:"totti_2006_07",player_id:"totti",season:"2006-07",ovr:92,stats:{finishing:90,playmaking:94,dribbling:92,defense:38,clutch:90,aura:97},mood:"ELEGANT_PRIME",block:"TOTTI",hook:"THE ETERNAL KING"},
+   {name:"Ribery 2012-13",meta:"Bayern Munich / LW / 11 Goals",tier:"legendary",id:"ribery_2012_13",player_id:"ribery",season:"2012-13",ovr:92,stats:{finishing:82,playmaking:93,dribbling:96,defense:50,clutch:90,aura:93},mood:"PEAK_MONSTER",block:"RIBERY",hook:"THE TREBLE MACHINE"},
+   {name:"Neymar 2017-18",meta:"PSG / LW / 28 Goals",tier:"elite",id:"neymar_2017_18",player_id:"neymar",season:"2017-18",ovr:89,stats:{finishing:90,playmaking:90,dribbling:97,defense:30,clutch:78,aura:85},mood:"BREAKTHROUGH",block:"NEYMAR",hook:"THE ARTIST IN PARIS"}],
+  [{name:"Messi 2018-19",meta:"FC Barcelona / RW / 36 Goals",tier:"legendary",id:"messi_2018_19",player_id:"messi",season:"2018-19",ovr:94,stats:{finishing:95,playmaking:96,dribbling:98,defense:45,clutch:90,aura:97},mood:"ELEGANT_PRIME",block:"MESSI",hook:"THE LAST BARCELONA PEAK"},
+   {name:"Ronaldo 2013-14",meta:"Real Madrid / LW / 51 Goals",tier:"mythic",id:"ronaldo_2013_14",player_id:"ronaldo",season:"2013-14",ovr:96,stats:{finishing:99,playmaking:85,dribbling:90,defense:38,clutch:99,aura:98},mood:"PEAK_MONSTER",block:"RONALDO",hook:"17 UCL GOALS"},
+   {name:"Mbappe 2023-24",meta:"PSG / FW / 44 Goals",tier:"elite",id:"mbappe_2023_24",player_id:"mbappe",season:"2023-24",ovr:92,stats:{finishing:95,playmaking:85,dribbling:95,defense:32,clutch:88,aura:90},mood:"ELEGANT_PRIME",block:"MBAPPE",hook:"THE DEPARTURE SEASON"}],
+];
 
-let currentDay = 1;
+// Build date-keyed schedule from today
+const SCHEDULE = {};
+const SCHEDULE_START = new Date();
+SCHEDULE_START.setHours(0,0,0,0);
+SCHEDULE_DATA.forEach((items, i) => {
+  const d = new Date(SCHEDULE_START);
+  d.setDate(d.getDate() + i);
+  const key = d.toISOString().slice(0,10);
+  SCHEDULE[key] = items;
+});
+
+let currentDay = Object.keys(SCHEDULE)[0];
 let currentPlayer = null;
 
-function selectDay(day) {
-  currentDay = day;
-  document.querySelectorAll('.day-btn').forEach((b,i) => b.classList.toggle('active', i+1===day));
-  renderQueue(day);
+function selectDay(dateKey) {
+  currentDay = dateKey;
+  document.querySelectorAll('.day-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.date === dateKey);
+  });
+  renderQueue(dateKey);
 }
 
-function renderQueue(day) {
-  const items = SCHEDULE[day] || [];
+function renderQueue(dateKey) {
+  const items = SCHEDULE[dateKey] || [];
   const list = document.getElementById('queueList');
   list.innerHTML = items.map((p, i) => `
     <div class="queue-item ${i===0?'selected':''}" onclick="selectPlayer(this, '${p.id}')">
@@ -608,7 +616,7 @@ function loadPlayerData(p) {
     </div>
   `).join('');
 
-  // Update prompt
+  // Update Nanobanana/Gemini prompt
   document.getElementById('promptPreview').innerHTML =
     `<span class="highlight">[BASE]</span> Dark premium football aesthetic, metallic gold accents, cinematic sports atmosphere, semi-realistic, no logo, no watermark\n\n` +
     `<span class="highlight">[PLAYER: ${p.block}]</span> (see player_blocks.txt)\n\n` +
@@ -616,6 +624,15 @@ function loadPlayerData(p) {
     `<span class="highlight">[HOOK]</span> "${p.hook}"\n\n` +
     `<span class="highlight">[SCENE: HOOK]</span> Full body dramatic entrance\n` +
     `<span class="highlight">[MODIFIERS]</span> TOP_TEXT_SAFE_SPACE, STRONG_AURA, RECOGNIZABLE_FACE_VIBE`;
+
+  // Update Midjourney prompt
+  updateMjPrompt();
+
+  // Reset checklist
+  document.querySelectorAll('.checklist input[type=checkbox]').forEach(c => c.checked = false);
+
+  // Reset drop zone
+  document.getElementById('dropStatus').textContent = '';
 }
 
 const API = 'http://localhost:8800/api';
@@ -749,7 +766,137 @@ async function saveSettings() {
   } catch(e) { alert('Save failed'); }
 }
 
-function showToday() { selectDay(currentDay); }
+function showToday() {
+  // Find today's date in schedule
+  const today = new Date().toISOString().slice(0,10);
+  const dayKeys = Object.keys(SCHEDULE);
+  for (const k of dayKeys) {
+    if (k === today) { selectDay(k); return; }
+  }
+  selectDay(dayKeys[0]); // fallback to first
+}
+
+// ─── Date Selector Init ───
+function initDateSelector() {
+  const container = document.getElementById('dateSelector');
+  const keys = Object.keys(SCHEDULE);
+  container.innerHTML = keys.map((k, i) => {
+    const d = new Date(k + 'T00:00:00');
+    const label = `${d.getMonth()+1}/${d.getDate()}`;
+    return `<div class="day-btn ${i===0?'active':''}" onclick="selectDay('${k}')">${label}</div>`;
+  }).join('');
+}
+
+// ─── Drop Zone ───
+let droppedFile = null;
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.style.borderColor='#E2C674'; dropZone.style.background='rgba(201,162,74,0.1)'; });
+dropZone.addEventListener('dragleave', e => { dropZone.style.borderColor='#C9A24A'; dropZone.style.background='rgba(201,162,74,0.03)'; });
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.style.borderColor='#C9A24A'; dropZone.style.background='rgba(201,162,74,0.03)';
+  if (e.dataTransfer.files.length > 0) {
+    droppedFile = e.dataTransfer.files[0];
+    document.getElementById('dropStatus').textContent = `Ready: ${droppedFile.name} (${(droppedFile.size/1024).toFixed(0)}KB)`;
+  }
+});
+dropZone.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', e => {
+  if (e.target.files.length > 0) {
+    droppedFile = e.target.files[0];
+    document.getElementById('dropStatus').textContent = `Ready: ${droppedFile.name} (${(droppedFile.size/1024).toFixed(0)}KB)`;
+  }
+});
+
+async function dropAsType(type) {
+  if (!droppedFile) { alert('이미지를 먼저 드래그하세요'); return; }
+  if (!currentPlayer) { alert('선수를 먼저 선택하세요'); return; }
+  const pid = currentPlayer.player_id || currentPlayer.id;
+  const season = (currentPlayer.season || '').replace('-','_') || pid.match(/\d{4}_\d{2}/)?.[0];
+  const filename = `${pid.split('_').slice(0,-2).join('_') || pid}_${season}_${type}.png`;
+
+  const formData = new FormData();
+  formData.append('file', droppedFile);
+  formData.append('filename', filename);
+
+  try {
+    const res = await fetch(`${API}/upload-image`, {method:'POST', body: formData});
+    const data = await res.json();
+    document.getElementById('dropStatus').textContent = `Saved: ${data.filename}`;
+    droppedFile = null;
+    // Auto-check
+    if (type === 'hook') document.getElementById('chk_hook').checked = true;
+    if (type === 'card') document.getElementById('chk_card').checked = true;
+  } catch(e) {
+    alert('Upload failed: ' + e.message);
+  }
+}
+
+// ─── Midjourney Prompt ───
+const MJ_BASE = 'premium cinematic football card art, dark navy and black tones, metallic gold accents, dramatic stadium floodlights, semi-realistic sports illustration, single male football player, dynamic pose, high contrast, depth of field, atmospheric rain particles, no text, no logos, no watermark';
+
+const MJ_PLAYERS = {
+  MESSI: 'compact athletic Argentine forward, short dark brown hair, trimmed beard, calm genius expression, low center of gravity, elegant dribbling stance, blue and red vertical striped kit',
+  RONALDO: 'tall muscular Portuguese forward, sharp jawline, short styled dark hair, intense dominant expression, explosive heroic posture, powerful shooting stance, white kit with gold trim',
+  MBAPPE: 'young athletic French forward, short dark hair, focused determined expression, explosive speed energy, dynamic sprinting pose, dark blue kit',
+  SON: 'lean athletic Korean forward, short black hair, clean-shaven, focused determined expression, explosive speed, dynamic left-footed shooting pose, white kit',
+  HAALAND: 'tall imposing Scandinavian striker, long blonde hair tied back, intense predatory expression, raw power aura, brutal forward charge, light blue kit',
+  ZIDANE: 'elegant French midfielder, shaved head, tall graceful build, composed masterful expression, smooth body control, orchestrating pose, white kit',
+  DE_BRUYNE: 'Belgian midfielder, ginger-blonde hair, determined intelligent expression, commanding midfield presence, passing or through-ball pose, light blue kit',
+  HENRY: 'tall athletic French striker, short dark hair, confident cool expression, explosive speed and power, celebrating or striking pose, red and white kit',
+  RONALDINHO: 'Brazilian attacking midfielder, long curly dark hair, joyful confident smile, creative genius aura, dribbling with flair, blue and red striped kit',
+  SALAH: 'Egyptian forward, dark curly afro hair, short beard, intense focused expression, explosive left-footed cutting inside, red kit',
+  LEWANDOWSKI: 'tall Polish striker, athletic build, short dark hair, predatory focused expression, clinical finishing posture, red kit',
+  SUAREZ: 'stocky Uruguayan striker, dark hair, short beard, fierce aggressive expression, powerful shooting stance, blue and red striped kit',
+  INIESTA: 'compact Spanish midfielder, receding dark hair, calm intelligent expression, perfect body balance, elegant close control, blue and red striped kit',
+  MODRIC: 'lean Croatian midfielder, long dark blonde hair, composed focused expression, graceful movement, precise passing stance, white kit',
+  KAKA: 'tall elegant Brazilian attacking midfielder, short brown hair, serene confident expression, graceful running stride, smooth dribbling, red and black striped kit',
+  MALDINI: 'tall Italian defender, distinguished short dark hair slightly graying, calm authoritative expression, perfect defensive posture, commanding presence, red and black striped kit',
+  VAN_DIJK: 'tall imposing Dutch defender, short dark hair, short beard, calm dominant expression, commanding aerial presence, red kit',
+  NEUER: 'tall German goalkeeper, short blonde hair, intense alert expression, athletic sweeper-keeper stance, commanding presence, dark goalkeeper kit',
+  HAZARD: 'compact Belgian forward, short dark hair, playful confident expression, low center of gravity, explosive dribbling stance, blue kit',
+  AGUERO: 'compact Argentine striker, dark hair, determined clutch expression, explosive finishing posture, celebrating iconic goal, light blue kit',
+  TOTTI: 'Italian forward, slightly longer brown hair, charismatic captain expression, elegant creative stance, regal presence, dark red and gold kit',
+  RIBERY: 'French winger, short dark hair with scar, intense competitive expression, explosive pace energy, cutting inside dribble, red kit',
+  NEYMAR: 'Brazilian forward, styled dark hair with blonde highlights, creative showman expression, flashy dribbling flair, dynamic body movement, dark blue kit with pink accents',
+};
+
+const MJ_MOODS = {
+  PEAK_MONSTER: 'unstoppable explosive energy, peak dominance, aggressive momentum, intense contrast lighting, maximum aura',
+  ELEGANT_PRIME: 'controlled elegance, complete mastery, refined cinematic atmosphere, balanced power and intelligence',
+  BREAKTHROUGH: 'raw hungry energy, emerging talent explosion, electric atmosphere, bright dynamic accents',
+  DECLINE_TRANSITION: 'reflective veteran energy, emotional weight, controlled intensity, quieter powerful tone',
+};
+
+const MJ_SCENES = {
+  HOOK: 'full body dramatic entrance shot, player dominating frame, facing camera, maximum presence, strongest lighting, emerging from darkness, space at top for text',
+  CARD: '3/4 body stable composition, player centered, clean readable silhouette, suitable for card frame overlay, slightly less dramatic than hook',
+};
+
+function buildMjPrompt(scene) {
+  if (!currentPlayer) return '';
+  const block = currentPlayer.block || currentPlayer.player_block || 'MESSI';
+  const mood = currentPlayer.mood || currentPlayer.season_mood || 'PEAK_MONSTER';
+  const player = MJ_PLAYERS[block] || MJ_PLAYERS.MESSI;
+  const moodText = MJ_MOODS[mood] || MJ_MOODS.PEAK_MONSTER;
+  const sceneText = MJ_SCENES[scene] || MJ_SCENES.HOOK;
+  return `/imagine ${MJ_BASE}, ${player}, ${moodText}, ${sceneText} --ar 9:16 --v 6.1 --s 750 --q 2`;
+}
+
+function updateMjPrompt() {
+  const el = document.getElementById('mjPrompt');
+  if (el && currentPlayer) {
+    el.textContent = buildMjPrompt('HOOK');
+  }
+}
+
+async function copyMjPrompt(scene) {
+  const prompt = buildMjPrompt(scene);
+  await navigator.clipboard.writeText(prompt);
+  alert(`${scene} prompt copied! Discord에 붙여넣기`);
+}
 
 // ─── Generate Image ───
 async function generateImage(scene) {
@@ -792,8 +939,21 @@ document.getElementById('playerInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') searchPlayer();
 });
 
-// Init
-renderQueue(1);
+// ─── Init ───
+// Build date selector buttons
+const dateSelector = document.getElementById('dateSelector');
+const dateKeys = Object.keys(SCHEDULE);
+const today = new Date().toISOString().slice(0,10);
+dateSelector.innerHTML = dateKeys.map((k, i) => {
+  const d = new Date(k + 'T12:00:00');
+  const month = d.getMonth() + 1;
+  const day = d.getDate();
+  const isToday = k === today;
+  return `<div class="day-btn ${i===0?'active':''}" data-date="${k}" onclick="selectDay('${k}')">${isToday?'Today':month+'/'+day}</div>`;
+}).join('');
+
+// Load first day
+selectDay(dateKeys[0]);
 </script>
 </body>
 </html>
