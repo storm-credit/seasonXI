@@ -21,6 +21,8 @@ import pandas as pd
 
 from seasonxi.constants import SCORE_BASE, SCORE_RANGE, score_to_tier
 from seasonxi.ratings.confidence import compute_confidence
+from seasonxi.ratings.league_adjustment import apply_league_adjustment
+from seasonxi.ratings.team_debiasing import debias_team_feature
 
 
 def _scale(raw: float, confidence: float, base: int = SCORE_BASE, rng: int = SCORE_RANGE) -> float:
@@ -194,24 +196,186 @@ def rate_midfielder(row: pd.Series, confidence: float) -> dict:
     }
 
 
+def rate_defender(row: pd.Series, confidence: float) -> dict:
+    """Compute 6 scores + overall for a Defender (CB/FB).
+
+    DF philosophy: defense & control are primary, finishing is compressed.
+    """
+    finishing_raw = (
+        0.40 * _safe_get(row, "goals_pct_role")
+        + 0.30 * _safe_get(row, "xg_pct_role")
+        + 0.30 * _safe_get(row, "shots_pct_role")
+    )
+    creation_raw = (
+        0.30 * _safe_get(row, "assists_pct_role")
+        + 0.25 * _safe_get(row, "xa_pct_role")
+        + 0.25 * _safe_get(row, "key_passes_pct_role")
+        + 0.20 * _safe_get(row, "prog_passes_pct_role")
+    )
+    control_raw = (
+        0.30 * _safe_get(row, "prog_passes_pct_role")
+        + 0.25 * _safe_get(row, "prog_carries_pct_role")
+        + 0.25 * _safe_get(row, "minutes_share")
+        + 0.20 * _safe_get(row, "dribbles_pct_role")
+    )
+    defense_raw = (
+        0.30 * _safe_get(row, "tackles_pct_role")
+        + 0.25 * _safe_get(row, "interceptions_pct_role")
+        + 0.25 * _safe_get(row, "clearances_pct_role")
+        + 0.20 * _safe_get(row, "aerials_pct_role")
+    )
+    clutch_raw = (
+        0.30 * _safe_get(row, "clean_sheets_pct_role")
+        + 0.30 * _safe_get(row, "team_success_pct", 0.5)
+        + 0.20 * _safe_get(row, "minutes_share")
+        + 0.20 * _safe_get(row, "team_goal_contribution")
+    )
+
+    perf_proxy = (defense_raw + control_raw + creation_raw) / 3.0
+    role_dominance = (
+        _safe_get(row, "tackles_pct_role")
+        + _safe_get(row, "interceptions_pct_role")
+        + _safe_get(row, "clearances_pct_role")
+        + _safe_get(row, "aerials_pct_role")
+    ) / 4.0
+    aura_raw = (
+        0.30 * perf_proxy
+        + 0.25 * _safe_get(row, "team_success_pct", 0.5)
+        + 0.25 * role_dominance
+        + 0.20 * _safe_get(row, "minutes_share")
+    )
+
+    finishing = _scale(finishing_raw, confidence, base=40, rng=40)  # compressed for DF
+    creation = _scale(creation_raw, confidence)
+    control = _scale(control_raw, confidence)
+    defense = _scale(defense_raw, confidence)
+    clutch = _scale(clutch_raw, confidence)
+    aura = _scale(aura_raw, confidence)
+
+    overall_raw = (
+        0.05 * finishing_raw
+        + 0.10 * creation_raw
+        + 0.20 * control_raw
+        + 0.35 * defense_raw
+        + 0.15 * clutch_raw
+        + 0.15 * aura_raw
+    )
+    overall = _scale(overall_raw, confidence)
+
+    return {
+        "finishing": finishing, "creation": creation, "control": control,
+        "defense": defense, "clutch": clutch, "aura": aura, "overall": overall,
+        "_raws": {
+            "finishing": finishing_raw, "creation": creation_raw,
+            "control": control_raw, "defense": defense_raw,
+            "clutch": clutch_raw, "aura": aura_raw, "overall": overall_raw,
+        },
+    }
+
+
+def rate_goalkeeper(row: pd.Series, confidence: float) -> dict:
+    """Compute 6 scores + overall for a Goalkeeper.
+
+    GK philosophy: defense = saves/clean sheets, control = distribution,
+    finishing/creation are heavily compressed.
+    """
+    # GK has minimal attacking contribution
+    finishing_raw = 0.0
+    creation_raw = (
+        0.50 * _safe_get(row, "prog_passes_pct_role")
+        + 0.50 * _safe_get(row, "key_passes_pct_role")
+    )
+    control_raw = (
+        0.40 * _safe_get(row, "prog_passes_pct_role")
+        + 0.30 * _safe_get(row, "minutes_share")
+        + 0.30 * _safe_get(row, "gk_pass_completion_pct_role", 0.5)
+    )
+    defense_raw = (
+        0.35 * _safe_get(row, "gk_saves_pct_role")
+        + 0.25 * _safe_get(row, "clean_sheets_pct_role")
+        + 0.20 * _safe_get(row, "gk_psxg_diff_pct_role")
+        + 0.20 * _safe_get(row, "gk_crosses_stopped_pct_role")
+    )
+    clutch_raw = (
+        0.35 * _safe_get(row, "clean_sheets_pct_role")
+        + 0.35 * _safe_get(row, "team_success_pct", 0.5)
+        + 0.30 * _safe_get(row, "minutes_share")
+    )
+
+    perf_proxy = (defense_raw + control_raw) / 2.0
+    aura_raw = (
+        0.35 * perf_proxy
+        + 0.30 * _safe_get(row, "team_success_pct", 0.5)
+        + 0.20 * _safe_get(row, "clean_sheets_pct_role")
+        + 0.15 * _safe_get(row, "minutes_share")
+    )
+
+    finishing = _scale(finishing_raw, confidence, base=30, rng=20)  # heavily compressed
+    creation = _scale(creation_raw, confidence, base=35, rng=35)   # compressed
+    control = _scale(control_raw, confidence)
+    defense = _scale(defense_raw, confidence)
+    clutch = _scale(clutch_raw, confidence)
+    aura = _scale(aura_raw, confidence)
+
+    overall_raw = (
+        0.00 * finishing_raw
+        + 0.05 * creation_raw
+        + 0.15 * control_raw
+        + 0.45 * defense_raw
+        + 0.20 * clutch_raw
+        + 0.15 * aura_raw
+    )
+    overall = _scale(overall_raw, confidence)
+
+    return {
+        "finishing": finishing, "creation": creation, "control": control,
+        "defense": defense, "clutch": clutch, "aura": aura, "overall": overall,
+        "_raws": {
+            "finishing": finishing_raw, "creation": creation_raw,
+            "control": control_raw, "defense": defense_raw,
+            "clutch": clutch_raw, "aura": aura_raw, "overall": overall_raw,
+        },
+    }
+
+
 ROLE_RATERS = {
     "FW": rate_forward,
     "MF": rate_midfielder,
+    "DF": rate_defender,
+    "GK": rate_goalkeeper,
 }
 
 
 def compute_ratings(features_df: pd.DataFrame) -> pd.DataFrame:
-    """Compute ratings for all players in the features DataFrame."""
+    """Compute ratings for all players in the features DataFrame.
+
+    Pipeline: raw features → league adjustment → team debiasing → role rating → scaling
+    """
     results = []
 
     for _, row in features_df.iterrows():
         role = row.get("role_bucket", row.get("primary_position", "FW"))
         rater = ROLE_RATERS.get(role)
         if rater is None:
-            continue  # DF/GK not supported in V1
+            continue
 
-        confidence = compute_confidence(int(row.get("minutes_played", 0)))
-        scores = rater(row, confidence)
+        # Pre-processing: league adjustment on percentile features
+        league_id = row.get("league_id", row.get("competition_id", ""))
+        row_adj = row.copy()
+        pct_cols = [c for c in row.index if c.endswith("_pct_role")]
+        for col in pct_cols:
+            if pd.notna(row_adj[col]):
+                row_adj[col] = apply_league_adjustment(float(row_adj[col]), str(league_id))
+
+        # Pre-processing: team debiasing on team-derived features
+        team_success = float(row_adj.get("team_success_pct", 0.5))
+        if pd.notna(row_adj.get("team_goal_contribution")):
+            row_adj["team_goal_contribution"] = debias_team_feature(
+                float(row_adj["team_goal_contribution"]), team_success
+            )
+
+        confidence = compute_confidence(int(row_adj.get("minutes_played", 0)))
+        scores = rater(row_adj, confidence)
 
         # Build explanation
         explanation = _build_explanation(row, scores, role)
