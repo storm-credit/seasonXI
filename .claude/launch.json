@@ -8,6 +8,12 @@
       "port": 8765
     },
     {
+      "name": "seasonxi-api",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "seasonxi.api.server"],
+      "port": 8800
+    },
+    {
       "name": "remotion-studio",
       "runtimeExecutable": "cmd",
       "runtimeArgs": ["/c", "cd remotion && npx remotion studio --port 3334"],

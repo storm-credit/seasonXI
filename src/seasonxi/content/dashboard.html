@@ -334,10 +334,12 @@ body {
 
   <!-- Action Buttons -->
   <div class="action-row">
-    <button class="btn btn-load" onclick="loadPlayer()">Load Season</button>
+    <button class="btn btn-load" onclick="searchPlayer()">Load Season</button>
     <button class="btn btn-today" onclick="showToday()">Today's Queue</button>
-    <button class="btn btn-preview" onclick="previewCard()">Preview</button>
+    <button class="btn btn-preview" onclick="exportJson()">Export JSON</button>
     <button class="btn btn-render" onclick="renderVideo()">Render MP4</button>
+    <button class="btn" style="background:#555;color:white" onclick="runEngineCheck()">Engine Check</button>
+    <button class="btn" style="background:#333;color:#aaa" onclick="toggleSettings()">Settings</button>
   </div>
 
   <!-- Settings -->
@@ -459,6 +461,28 @@ body {
     <div class="slider-item">
       <div class="s-label">Position <span class="s-value" id="posVal">35%</span></div>
       <input type="range" min="10" max="60" value="35" oninput="document.getElementById('posVal').textContent=this.value+'%'">
+    </div>
+  </div>
+
+  <!-- Settings Panel -->
+  <div class="prod-panel" style="margin-top: 20px;" id="settingsPanel" hidden>
+    <h3>SETTINGS</h3>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="card-label">GEMINI API KEY</div>
+        <input type="password" id="geminiKey" placeholder="AIza...">
+      </div>
+      <div class="prod-card">
+        <div class="card-label">OUTPUT DIR</div>
+        <input type="text" id="outputDir" value="outputs/">
+      </div>
+      <div class="prod-card">
+        <div class="card-label">REMOTION PORT</div>
+        <input type="text" id="remotionPort" value="3334">
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:12px;">
+      <button class="btn btn-today" onclick="saveSettings()">Save Settings</button>
     </div>
   </div>
 
@@ -590,10 +614,143 @@ function loadPlayerData(p) {
     `<span class="highlight">[MODIFIERS]</span> TOP_TEXT_SAFE_SPACE, STRONG_AURA, RECOGNIZABLE_FACE_VIBE`;
 }
 
-function loadPlayer() { alert('Load: ' + document.getElementById('playerInput').value); }
+const API = 'http://localhost:8800/api';
+
+// ─── Search (Live from Obsidian) ───
+async function searchPlayer() {
+  const q = document.getElementById('playerInput').value;
+  try {
+    const res = await fetch(`${API}/search?q=${encodeURIComponent(q)}`);
+    const data = await res.json();
+    if (data.length === 0) { alert('Not found: ' + q); return; }
+
+    const list = document.getElementById('queueList');
+    list.innerHTML = data.slice(0, 10).map((p, i) => `
+      <div class="queue-item ${i===0?'selected':''}" onclick="loadFromApi('${p.player_id}','${p.season}')">
+        <div class="num">${i+1}</div>
+        <div class="info">
+          <div class="name">${p.display_name} ${p.season_label}</div>
+          <div class="meta">${p.club} / ${p.position} / ${p.goals} Goals</div>
+        </div>
+        <div class="tier tier-${p.tier.toLowerCase()}">${p.tier}</div>
+      </div>
+    `).join('');
+    if (data[0]) loadApiData(data[0]);
+  } catch(e) {
+    alert('API not running. Start: uv run python -m seasonxi.api.server');
+  }
+}
+
+// ─── Load from API ───
+async function loadFromApi(playerId, season) {
+  try {
+    const res = await fetch(`${API}/season/${playerId}/${season}`);
+    const data = await res.json();
+    loadApiData(data);
+  } catch(e) { console.error(e); }
+}
+
+function loadApiData(p) {
+  currentPlayer = p;
+  document.getElementById('playerInput').value = `${p.display_name} ${p.season_label}`;
+
+  const preview = document.getElementById('statsPreview');
+  preview.innerHTML = Object.entries(p.stats).map(([k,v]) => `
+    <div class="stat-box">
+      <div class="stat-val">${v}</div>
+      <div class="stat-name">${k.toUpperCase()}</div>
+    </div>
+  `).join('');
+
+  // Load assembled prompt
+  loadPrompt(p.player_id, p.season);
+}
+
+// ─── Prompt Assembly ───
+async function loadPrompt(playerId, season) {
+  try {
+    const res = await fetch(`${API}/prompt/${playerId}/${season}?scene=HOOK`);
+    const data = await res.json();
+    document.getElementById('promptPreview').innerHTML =
+      `<span class="highlight">[BASE]</span>\n${data.base}\n\n` +
+      `<span class="highlight">[PLAYER: ${data.player_block_name}]</span>\n${data.player_block}\n\n` +
+      `<span class="highlight">[MOOD: ${data.mood_name}]</span>\n${data.mood}\n\n` +
+      `<span class="highlight">[SCENE: ${data.scene_name}]</span>\n${data.scene}`;
+  } catch(e) {
+    console.log('Prompt API not available, using fallback');
+  }
+}
+
+// ─── Export JSON ───
+async function exportJson() {
+  if (!currentPlayer) { alert('Select a player first'); return; }
+  try {
+    const res = await fetch(`${API}/export/${currentPlayer.player_id}/${currentPlayer.season}`, {method:'POST'});
+    const data = await res.json();
+    alert('Exported: ' + data.path);
+  } catch(e) { alert('API error: ' + e.message); }
+}
+
+// ─── Render Video ───
+async function renderVideo() {
+  if (!currentPlayer) { alert('Select a player first'); return; }
+  try {
+    const res = await fetch(`${API}/render/${currentPlayer.player_id}/${currentPlayer.season}`, {method:'POST'});
+    const data = await res.json();
+    alert('Rendering started! PID: ' + data.pid);
+  } catch(e) { alert('API error: ' + e.message); }
+}
+
+// ─── Engine Check ───
+async function runEngineCheck() {
+  try {
+    const res = await fetch(`${API}/engine-check`);
+    const data = await res.json();
+    const box = document.getElementById('promptPreview');
+    box.innerHTML = `<span class="highlight">[HANESIS ENGINE CHECK]</span>\n\n` +
+      data.output.replace(/\[OK\]/g, '<span style="color:#2ecc71">[OK]</span>')
+               .replace(/\[WARN\]/g, '<span style="color:#f39c12">[WARN]</span>')
+               .replace(/\[FAIL\]/g, '<span style="color:#e74c3c">[FAIL]</span>');
+  } catch(e) { alert('API not running'); }
+}
+
+// ─── Settings ───
+function toggleSettings() {
+  const panel = document.getElementById('settingsPanel');
+  panel.hidden = !panel.hidden;
+  if (!panel.hidden) loadSettings();
+}
+
+async function loadSettings() {
+  try {
+    const res = await fetch(`${API}/settings`);
+    const data = await res.json();
+    document.getElementById('geminiKey').value = data.gemini_api_key_masked || '';
+    document.getElementById('outputDir').value = data.output_dir || 'outputs/';
+    document.getElementById('remotionPort').value = data.remotion_port || 3334;
+  } catch(e) {}
+}
+
+async function saveSettings() {
+  const key = document.getElementById('geminiKey').value;
+  const body = {
+    output_dir: document.getElementById('outputDir').value,
+    remotion_port: parseInt(document.getElementById('remotionPort').value),
+  };
+  if (key && !key.includes('...')) body.gemini_api_key = key;
+  try {
+    await fetch(`${API}/settings`, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+    alert('Settings saved!');
+    toggleSettings();
+  } catch(e) { alert('Save failed'); }
+}
+
 function showToday() { selectDay(currentDay); }
-function previewCard() { alert('Opening Remotion Studio...'); }
-function renderVideo() { alert('Rendering: ' + (currentPlayer?.id || 'none')); }
+
+// ─── Input: Enter key search ───
+document.getElementById('playerInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') searchPlayer();
+});
 
 // Init
 renderQueue(1);
