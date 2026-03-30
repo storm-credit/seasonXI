@@ -21,11 +21,11 @@ export const KeyStats: React.FC<{ data: CardData }> = ({ data }) => {
       alignItems: 'center', justifyContent: 'center', gap: 32,
       overflow: 'hidden',
     }}>
-      {/* Scene background: graph1 fading remnant */}
-      <Img src={staticFile('graph1.jpg')} style={{
+      {/* Scene background: stats2.jpg - golden stat panel */}
+      <Img src={staticFile('stats2.jpg')} style={{
         position: 'absolute', width: '100%', height: '100%',
-        objectFit: 'cover', opacity: bgOpacity * 3,
-        filter: 'brightness(0.3) contrast(1.1)',
+        objectFit: 'cover', opacity: 0.5,
+        filter: 'brightness(0.4) contrast(1.2)',
       }} />
 
       {/* Fading grid from previous scene */}
