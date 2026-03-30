@@ -1,0 +1,32 @@
+## MODIFIERS — 생성 결과 미세 조정용
+## 필요할 때만 프롬프트 끝에 추가
+
+## TOP_TEXT_SAFE_SPACE
+Leave clean empty space in the upper 20% of the image for title text overlay.
+
+## CLEANER_SILHOUETTE
+Use a cleaner composition with a more readable silhouette and less background distraction.
+
+## STRONG_AURA
+Add a stronger mythic aura burst behind the player while keeping the scene elegant.
+
+## SIMPLE_KIT
+Keep the kit simple, realistic, premium, and readable. Avoid overdesigned fantasy details.
+
+## RECOGNIZABLE_FACE_VIBE
+Make the player clearly recognizable by facial vibe, hairstyle, beard, and body language, but not an exact copy.
+
+## LESS_BACKGROUND
+Reduce background complexity. Focus on the player with a simpler, darker backdrop.
+
+## MORE_DRAMATIC
+Increase cinematic drama. Stronger light beams, more particles, deeper contrast.
+
+## CARD_FRAME_FIT
+Ensure the player fits cleanly within a vertical card frame. Leave margin on all sides for cropping.
+
+## LOWER_BODY_VISIBLE
+Make sure the full body including feet and ball are visible. Do not crop below the knees.
+
+## CALM_EXPRESSION
+The player should have a calm, focused, confident expression rather than aggressive or shouting.
