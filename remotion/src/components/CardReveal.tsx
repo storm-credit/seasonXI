@@ -47,8 +47,8 @@ export const CardReveal: React.FC<{ data: CardData }> = ({ data }) => {
       {/* Player info - top left */}
       <div style={{ position: 'absolute', top: 60, left: 50, zIndex: 10 }}>
         <div style={{
-          fontFamily: 'Bebas Neue, sans-serif', fontSize: 64,
-          color: COLORS.white, letterSpacing: 4,
+          fontFamily: 'Bebas Neue, sans-serif', fontSize: 80,
+          color: COLORS.white, letterSpacing: 6,
           transform: `translateY(${nameY}px)`, opacity: nameOpacity,
           textShadow: `0 2px 20px rgba(0,0,0,0.8)`,
         }}>{data.player.toUpperCase()}</div>
@@ -59,18 +59,18 @@ export const CardReveal: React.FC<{ data: CardData }> = ({ data }) => {
           alignItems: 'center',
         }}>
           <span style={{
-            fontFamily: 'Montserrat', fontWeight: 600, fontSize: 22, color: COLORS.gold,
+            fontFamily: 'Montserrat', fontWeight: 600, fontSize: 28, color: COLORS.gold,
           }}>{data.season}</span>
           <span style={{
-            fontFamily: 'Montserrat', fontWeight: 700, fontSize: 16, color: COLORS.white,
+            fontFamily: 'Montserrat', fontWeight: 700, fontSize: 20, color: COLORS.white,
             background: `${COLORS.gold}25`, border: `1px solid ${COLORS.gold}55`,
-            padding: '3px 14px', borderRadius: 5, letterSpacing: 3,
+            padding: '4px 16px', borderRadius: 5, letterSpacing: 4,
           }}>{data.position}</span>
         </div>
 
         <div style={{
-          fontFamily: 'Montserrat', fontWeight: 500, fontSize: 16,
-          color: `${COLORS.white}55`, marginTop: 6, opacity: metaOpacity,
+          fontFamily: 'Montserrat', fontWeight: 500, fontSize: 20,
+          color: `${COLORS.white}66`, marginTop: 8, opacity: metaOpacity,
         }}>{data.club}</div>
       </div>
 
