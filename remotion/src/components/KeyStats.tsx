@@ -12,65 +12,60 @@ export const KeyStats: React.FC<{ data: CardData }> = ({ data }) => {
        ...allStats.filter(([k]) => !signature_stats.includes(k))].slice(0, 3)
     : allStats.slice(0, 3);
 
-  // Background: fading hex grid remnant
-  const bgOpacity = interpolate(frame, [0, 10], [0.08, 0.03], { extrapolateRight: 'clamp' });
+  // stats2.jpg has 6 panel slots arranged vertically
+  // We place 3 stats in slots 2, 3, 4 (0-indexed)
+  // Each slot is roughly 1/6 of the panel height
+  // Panel spans roughly from 8% to 92% of height
+  const panelTop = 0.12;    // where the first slot starts
+  const panelBottom = 0.88; // where the last slot ends
+  const slotCount = 6;
+  const slotHeight = (panelBottom - panelTop) / slotCount;
+
+  // Place in slots 1, 2, 3 (second, third, fourth rows)
+  const slotPositions = [1, 2, 3].map(slot => {
+    const center = panelTop + slotHeight * slot + slotHeight / 2;
+    return center * 100; // as percentage
+  });
 
   return (
     <AbsoluteFill style={{
-      background: `linear-gradient(170deg, ${COLORS.black}, ${COLORS.navy}88, ${COLORS.black})`,
-      alignItems: 'center', justifyContent: 'center', gap: 0,
+      background: COLORS.black,
       overflow: 'hidden',
     }}>
       {/* Scene background: stats2.jpg - golden stat panel */}
       <Img src={staticFile(getBg(data, 'stats'))} style={{
         position: 'absolute', width: '100%', height: '100%',
-        objectFit: 'cover', opacity: 0.85,
-        filter: 'brightness(0.6) contrast(1.1)',
+        objectFit: 'cover', opacity: 0.9,
+        filter: 'brightness(0.65) contrast(1.1)',
       }} />
 
-      {/* Fading grid from previous scene */}
-      <div style={{
-        position: 'absolute', inset: 0, opacity: bgOpacity,
-        backgroundImage: `
-          linear-gradient(${COLORS.gold}15 1px, transparent 1px),
-          linear-gradient(90deg, ${COLORS.gold}15 1px, transparent 1px)
-        `,
-        backgroundSize: '40px 40px',
-      }} />
-
-      {/* Label */}
-      <div style={{
-        position: 'absolute', top: 50,
-        fontFamily: 'Montserrat, sans-serif', fontWeight: 600,
-        fontSize: 11, color: `${COLORS.gold}44`, letterSpacing: 4,
-        opacity: interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' }),
-      }}>SIGNATURE ABILITIES</div>
-
-      {/* Stats - staggered entrance */}
+      {/* Stats placed in panel slots */}
       {top3.map(([key, val], i) => {
-        const delay = i * 10; // 0.33s stagger
+        const delay = i * 10;
         const op = interpolate(frame, [delay, delay + 8], [0, 1], { extrapolateRight: 'clamp' });
-        const slideY = interpolate(frame, [delay, delay + 8], [40, 0], { extrapolateRight: 'clamp' });
         const sc = interpolate(frame, [delay + 5, delay + 10, delay + 14], [0.85, 1.08, 1.0], { extrapolateRight: 'clamp' });
-        const isFirst = i === 0;
 
         return (
           <div key={key} style={{
-            textAlign: 'center', opacity: op,
-            transform: `translateY(${slideY}px) scale(${sc})`,
-            marginBottom: 40,
+            position: 'absolute',
+            top: `${slotPositions[i]}%`,
+            left: '50%',
+            transform: `translate(-50%, -50%) scale(${sc})`,
+            opacity: op,
+            textAlign: 'center',
+            width: '80%',
           }}>
             <div style={{
               fontFamily: 'Bebas Neue, sans-serif',
-              fontSize: 130,
+              fontSize: 100,
               color: COLORS.softGold, lineHeight: 1,
               textShadow: `0 0 30px ${COLORS.gold}40`,
             }}>{val}</div>
             <div style={{
               fontFamily: 'Montserrat, sans-serif', fontWeight: 700,
-              fontSize: 22,
-              color: `${COLORS.white}CC`,
-              letterSpacing: 6, textTransform: 'uppercase', marginTop: 6,
+              fontSize: 18,
+              color: `${COLORS.white}BB`,
+              letterSpacing: 6, textTransform: 'uppercase', marginTop: 2,
             }}>{key}</div>
           </div>
         );
