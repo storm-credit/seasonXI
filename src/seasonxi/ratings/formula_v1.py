@@ -51,10 +51,12 @@ def _safe_get(row: pd.Series, col: str, default: float = 0.0) -> float:
 # ---------------------------------------------------------------------------
 def rate_forward(row: pd.Series, confidence: float) -> dict:
     """Compute 6 scores + overall for a Forward."""
+    # v1.2: added goals_minus_xg for finishing quality
     finishing_raw = (
-        0.35 * _safe_get(row, "goals_pct_role")
-        + 0.25 * _safe_get(row, "xg_pct_role")
-        + 0.20 * _safe_get(row, "shots_pct_role")
+        0.30 * _safe_get(row, "goals_pct_role")
+        + 0.20 * _safe_get(row, "xg_pct_role")
+        + 0.15 * _safe_get(row, "shots_pct_role")
+        + 0.15 * _safe_get(row, "goals_minus_xg_pct_role")
         + 0.20 * _safe_get(row, "team_goal_contribution")
     )
     creation_raw = (
@@ -139,11 +141,13 @@ def rate_midfielder(row: pd.Series, confidence: float) -> dict:
         + 0.20 * _safe_get(row, "key_passes_pct_role")
         + 0.25 * _safe_get(row, "prog_passes_pct_role")
     )
+    # v1.2: added pass_completion for MF ball control quality
     control_raw = (
-        0.25 * _safe_get(row, "prog_carries_pct_role")
+        0.20 * _safe_get(row, "prog_carries_pct_role")
         + 0.25 * _safe_get(row, "prog_passes_pct_role")
-        + 0.20 * _safe_get(row, "dribbles_pct_role")
-        + 0.15 * _safe_get(row, "minutes_share")
+        + 0.15 * _safe_get(row, "dribbles_pct_role")
+        + 0.15 * _safe_get(row, "pass_completion_pct_role", 0.5)
+        + 0.10 * _safe_get(row, "minutes_share")
         + 0.15 * _safe_get(row, "xa_pct_role")
     )
     # v1.2: added pressures, reduced minutes_share
@@ -217,19 +221,22 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
         + 0.25 * _safe_get(row, "key_passes_pct_role")
         + 0.20 * _safe_get(row, "prog_passes_pct_role")
     )
+    # v1.2: added pass_completion for DF build-up quality
     control_raw = (
-        0.30 * _safe_get(row, "prog_passes_pct_role")
-        + 0.25 * _safe_get(row, "prog_carries_pct_role")
-        + 0.25 * _safe_get(row, "minutes_share")
-        + 0.20 * _safe_get(row, "dribbles_pct_role")
+        0.25 * _safe_get(row, "prog_passes_pct_role")
+        + 0.20 * _safe_get(row, "prog_carries_pct_role")
+        + 0.20 * _safe_get(row, "pass_completion_pct_role", 0.5)
+        + 0.20 * _safe_get(row, "minutes_share")
+        + 0.15 * _safe_get(row, "dribbles_pct_role")
     )
-    # v1.2: added pressures for modern defensive evaluation
+    # v1.2: added pressures + aerial_duel_success for modern defense
     defense_raw = (
-        0.25 * _safe_get(row, "tackles_pct_role")
-        + 0.20 * _safe_get(row, "interceptions_pct_role")
+        0.20 * _safe_get(row, "tackles_pct_role")
+        + 0.15 * _safe_get(row, "interceptions_pct_role")
         + 0.20 * _safe_get(row, "clearances_pct_role")
         + 0.15 * _safe_get(row, "aerials_pct_role")
-        + 0.20 * _safe_get(row, "pressures_pct_role")
+        + 0.15 * _safe_get(row, "pressures_pct_role")
+        + 0.15 * _safe_get(row, "aerial_duel_success_pct_role")
     )
     clutch_raw = (
         0.30 * _safe_get(row, "clean_sheets_pct_role")
@@ -292,10 +299,12 @@ def rate_goalkeeper(row: pd.Series, confidence: float) -> dict:
         0.50 * _safe_get(row, "prog_passes_pct_role")
         + 0.50 * _safe_get(row, "key_passes_pct_role")
     )
+    # v1.2: expanded GK distribution evaluation
     control_raw = (
-        0.40 * _safe_get(row, "prog_passes_pct_role")
-        + 0.30 * _safe_get(row, "minutes_share")
-        + 0.30 * _safe_get(row, "gk_pass_completion_pct_role", 0.5)
+        0.30 * _safe_get(row, "prog_passes_pct_role")
+        + 0.25 * _safe_get(row, "gk_pass_completion_pct_role", 0.5)
+        + 0.20 * _safe_get(row, "gk_launch_pct_role", 0.5)
+        + 0.25 * _safe_get(row, "minutes_share")
     )
     # v1.2: PSxG raised to 35%, saves reduced to 20%
     defense_raw = (

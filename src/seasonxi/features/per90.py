@@ -7,6 +7,9 @@ COUNTING_STATS = [
     "goals", "assists", "shots", "shots_on_target",
     "key_passes", "progressive_passes", "progressive_carries", "successful_dribbles",
     "tackles", "interceptions", "clearances", "aerial_duels_won",
+    # v1.2 additions
+    "pressures", "successful_pressures", "ball_recoveries",
+    "aerials_won", "aerials_lost",  # for duel success rate
 ]
 
 # Mapping from raw column to per90 column
@@ -24,6 +27,11 @@ P90_MAP["tackles"] = "tackles_p90"
 P90_MAP["interceptions"] = "interceptions_p90"
 P90_MAP["clearances"] = "clearances_p90"
 P90_MAP["aerial_duels_won"] = "aerials_won_p90"
+P90_MAP["pressures"] = "pressures_p90"
+P90_MAP["successful_pressures"] = "successful_pressures_p90"
+P90_MAP["ball_recoveries"] = "ball_recoveries_p90"
+P90_MAP["aerials_won"] = "aerials_won_p90_v2"  # alternate source
+P90_MAP["aerials_lost"] = "aerials_lost_p90"
 
 
 def compute_per90(df: pd.DataFrame, min_minutes: int = 450) -> pd.DataFrame:
@@ -58,5 +66,32 @@ def compute_per90(df: pd.DataFrame, min_minutes: int = 450) -> pd.DataFrame:
     # Minutes share: minutes / (team matches * 90)
     # Approximate: assume 38-match league
     out["minutes_share"] = out["minutes_played"] / (38 * 90)
+
+    # --- v1.2: New derived features ---
+
+    # Goals - xG: finishing quality (positive = overperformer)
+    if "xg" in out.columns and "goals" in out.columns:
+        out["goals_minus_xg"] = out["goals"] - out["xg"]
+        out["goals_minus_xg_p90"] = out["goals_minus_xg"] / nineties
+
+    # Pressure success rate (0.0-1.0)
+    if "pressures" in out.columns and "successful_pressures" in out.columns:
+        out["pressure_success_rate"] = (
+            out["successful_pressures"] / out["pressures"].clip(lower=1)
+        )
+        out["pressures_p90"] = out["pressures"] / nineties
+
+    # Duel success rate (aerial)
+    if "aerials_won" in out.columns and "aerials_lost" in out.columns:
+        total_aerials = out["aerials_won"] + out["aerials_lost"]
+        out["aerial_duel_success_rate"] = (
+            out["aerials_won"] / total_aerials.clip(lower=1)
+        )
+
+    # Pass completion rate (if available)
+    if "passes_completed" in out.columns and "passes_attempted" in out.columns:
+        out["pass_completion_rate"] = (
+            out["passes_completed"] / out["passes_attempted"].clip(lower=1)
+        )
 
     return out
