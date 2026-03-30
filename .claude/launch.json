@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8765", "--directory", "src/seasonxi/content"],
       "port": 8765
+    },
+    {
+      "name": "remotion-studio",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd remotion && npx remotion studio --port 3334"],
+      "port": 3334
     }
   ]
 }
