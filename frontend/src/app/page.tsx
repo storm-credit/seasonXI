@@ -23,16 +23,49 @@ export default function DashboardPage() {
   const currentDayPlayers = SCHEDULE[selectedDay]?.players || [];
 
   const handleSelectSeason = useCallback(async (playerId: string, season: string) => {
+    setLoading(true);
     try {
-      setLoading(true);
       const data = await loadSeason(playerId, season);
-      setSelectedSeason(data);
+      if (data && data.player_id) {
+        setSelectedSeason(data);
+        setLoading(false);
+        return;
+      }
     } catch {
-      // Failed to load - keep current state
-    } finally {
-      setLoading(false);
+      // API failed — use local fallback
     }
-  }, []);
+
+    // Fallback: build from schedule data
+    const player = currentDayPlayers.find(p => p.player_id === playerId);
+    if (player) {
+      setSelectedSeason({
+        id: playerId,
+        player_id: playerId,
+        display_name: player.player_name.split(" ").pop()?.toUpperCase() || player.player_name,
+        player_name: player.player_name,
+        season: player.season,
+        season_label: player.season,
+        club: player.club,
+        position: "FW",
+        ovr: player.tier === "MYTHIC" ? 96 : player.tier === "LEGENDARY" ? 92 : 88,
+        tier: player.tier,
+        hook: "",
+        stats: { finishing: 90, playmaking: 85, dribbling: 90, defense: 45, clutch: 88, aura: 90 },
+        goals: 0,
+        assists: 0,
+        commentary: "",
+        achievement: "",
+        verdict: `${player.tier} SEASON`,
+        cta: "",
+        player_block: player.player_name.split(" ").pop()?.toUpperCase() || "MESSI",
+        season_mood: "PEAK_MONSTER",
+        suno_title: "",
+        suno_style: "",
+        status: "draft",
+      });
+    }
+    setLoading(false);
+  }, [currentDayPlayers]);
 
   const handleExportJSON = useCallback(async () => {
     if (!selectedSeason) return;
