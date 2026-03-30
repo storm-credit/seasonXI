@@ -894,8 +894,20 @@ function updateMjPrompt() {
 
 async function copyMjPrompt(scene) {
   const prompt = buildMjPrompt(scene);
-  await navigator.clipboard.writeText(prompt);
-  alert(`${scene} prompt copied! Discord에 붙여넣기`);
+  try {
+    await navigator.clipboard.writeText(prompt);
+  } catch(e) {
+    // Fallback for non-HTTPS contexts
+    const ta = document.createElement('textarea');
+    ta.value = prompt;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+  alert(`${scene} prompt copied!\n\nDiscord /imagine 에 붙여넣기`);
 }
 
 // ─── Generate Image ───
