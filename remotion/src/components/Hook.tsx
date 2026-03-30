@@ -76,33 +76,32 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
         animation: 'none',
       }} />
 
-      {/* Player name + season - top */}
+      {/* Top subtle info line - small, late fade */}
       <div style={{
-        position: 'absolute', top: '5%', left: '5%',
-        opacity: textOpacity,
-        transform: `translateY(${interpolate(frame, [28, 36], [-20, 0], { extrapolateRight: 'clamp' })}px)`,
+        position: 'absolute', top: '6%', width: '100%',
+        textAlign: 'center',
+        opacity: interpolate(frame, [16, 26], [0, 0.75], { extrapolateRight: 'clamp' }),
       }}>
         <div style={{
-          fontFamily: 'Bebas Neue, sans-serif', fontSize: 72,
+          fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: 20,
           color: COLORS.white, letterSpacing: 6,
-          textShadow: `0 2px 30px rgba(0,0,0,0.9)`,
-        }}>{data.player.toUpperCase()}</div>
-        <div style={{
-          fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: 24,
-          color: COLORS.gold, letterSpacing: 4, marginTop: -4,
-        }}>{data.season}</div>
+        }}>
+          {data.player.toUpperCase()}{'  '}
+          <span style={{ color: COLORS.gold }}>{data.season}</span>
+          {'  ·  '}{data.club}
+        </div>
       </div>
 
-      {/* Hook text - bottom */}
+      {/* Main hook text - upper center (~32%) */}
       <div style={{
-        position: 'absolute', bottom: '8%', width: '100%',
+        position: 'absolute', top: '28%', width: '100%',
         textAlign: 'center', opacity: textOpacity,
         transform: `scale(${textScale})`,
       }}>
         <div style={{
-          fontFamily: 'Bebas Neue, sans-serif', fontSize: 56,
-          color: COLORS.white, letterSpacing: 5,
-          textShadow: `0 2px 40px rgba(0,0,0,0.9), 0 0 60px ${auraColor}30`,
+          fontFamily: 'Bebas Neue, sans-serif', fontSize: 64,
+          color: COLORS.white, letterSpacing: 6, lineHeight: 1.2,
+          textShadow: `0 2px 40px rgba(0,0,0,0.9), 0 0 60px ${auraColor}20`,
         }}>{data.hook}</div>
       </div>
 
