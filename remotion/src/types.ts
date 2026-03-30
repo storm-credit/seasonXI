@@ -84,14 +84,14 @@ export const COLORS = {
   mythicGold: '#FFD700',
 } as const;
 
-// 8-scene timing (30fps, 15 seconds = 450 frames)
+// 8-scene timing (30fps, 13.8 seconds = 414 frames)
 export const SCENE_TIMING = {
-  hook:        { start: 0,   end: 45  },  // 0.0 - 1.5s
-  cardReveal:  { start: 45,  end: 90  },  // 1.5 - 3.0s
-  ovrShock:    { start: 90,  end: 135 },  // 3.0 - 4.5s
-  hexGraph:    { start: 135, end: 180 },  // 4.5 - 6.0s
-  keyStats:    { start: 180, end: 240 },  // 6.0 - 8.0s
-  playStyle:   { start: 240, end: 315 },  // 8.0 - 10.5s
-  achievement: { start: 315, end: 375 },  // 10.5 - 12.5s
-  verdict:     { start: 375, end: 450 },  // 12.5 - 15.0s
+  hook:        { start: 0,   end: 42  },  // 0.0 - 1.4s  시선 강탈
+  cardReveal:  { start: 42,  end: 90  },  // 1.4 - 3.0s  정체 공개
+  ovrShock:    { start: 90,  end: 126 },  // 3.0 - 4.2s  OVR 충격
+  hexGraph:    { start: 126, end: 171 },  // 4.2 - 5.7s  그래프 분석
+  keyStats:    { start: 171, end: 219 },  // 5.7 - 7.3s  시그니처 스탯
+  playStyle:   { start: 219, end: 264 },  // 7.3 - 8.8s  코멘터리
+  achievement: { start: 264, end: 309 },  // 8.8 - 10.3s 마일스톤
+  verdict:     { start: 309, end: 414 },  // 10.3 - 13.8s 판정 + 엔드
 } as const;
