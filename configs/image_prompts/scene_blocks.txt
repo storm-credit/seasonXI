@@ -1,0 +1,83 @@
+# SeasonXI Scene Blocks
+# Append one of these after the season mood block.
+# Final structure: base + player + season + scene
+#
+# Not all scenes need a generated image.
+# Hook = must generate (main player image)
+# Card Reveal = reuse Hook image
+# OVR/Graph/Stats = UI-only (no image generation needed)
+# Commentary = optional background image
+# Achievement = optional background image
+# Verdict = UI-only
+
+
+## HOOK
+Scene context:
+- this is the opening reveal shot
+- player should dominate the entire frame
+- full body or strong 3/4 body
+- facing slightly toward camera
+- maximum presence and aura
+- strongest lighting and atmosphere
+- space at the bottom 20% for text overlay
+- the image should feel like the player is "appearing" or "emerging"
+- highest drama and intensity of all scenes
+
+
+## HOOK_CLOSEUP
+Scene context:
+- tight upper body or face-focused composition
+- intense eye contact toward camera
+- dramatic rim lighting on face and shoulders
+- space at bottom 30% for text overlay
+- this is for when you want a more intimate, intense hook
+- maximum emotional weight
+
+
+## CARD_BACKGROUND
+Scene context:
+- this is a background-only image, no player figure
+- dark stadium atmosphere from behind the goal
+- cinematic floodlights creating god rays
+- wet pitch reflecting light
+- subtle fog or mist
+- empty but atmospheric
+- designed to sit behind a card UI overlay
+- very dark, mostly silhouette and light
+
+
+## COMMENTARY_BG
+Scene context:
+- atmospheric background for a text-heavy scene
+- abstract football motion blur
+- diagonal light streaks suggesting speed
+- very dark with subtle golden light accents
+- no player visible
+- no ball visible
+- pure mood and atmosphere
+- text will be placed over this image
+- keep it minimal and cinematic
+
+
+## ACHIEVEMENT_BG
+Scene context:
+- background for a big number / achievement display
+- stadium interior shot from pitch level
+- looking up at floodlights
+- dramatic upward perspective
+- subtle lens flare
+- goal net visible but soft-focused
+- celebratory atmosphere without visible players
+- dark with golden highlight accents
+- space in center for large text/number overlay
+
+
+## DUAL_POSE
+Scene context:
+- same player shown in TWO different poses side by side
+- left side: controlled, composed stance
+- right side: explosive, dynamic action
+- split composition with subtle dividing line
+- this is for comparison or before/after scenes
+- both poses should feel like the same player in the same session
+- maintain consistent lighting across both sides
