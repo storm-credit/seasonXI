@@ -24,7 +24,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], all
 
 # ─── Paths ────────────────────────────────────────────────────
 PROJECT_ROOT = Path(__file__).resolve().parents[3]  # seasonXI/
-OBSIDIAN_VAULT = Path(r"C:\Users\Storm Credit\Desktop\쇼츠\seasonXI")
+OBSIDIAN_VAULT = Path(os.getenv("OBSIDIAN_VAULT_PATH", r"C:\Users\Storm Credit\Desktop\쇼츠\seasonXI"))
 PLAYERS_DIR = OBSIDIAN_VAULT / "01_Players"
 CONFIGS_DIR = PROJECT_ROOT / "configs"
 REMOTION_DIR = PROJECT_ROOT / "remotion"

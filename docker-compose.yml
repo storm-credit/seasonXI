@@ -10,7 +10,10 @@ services:
       - ./configs:/app/configs
       - ./data:/app/data
       - ./.env:/app/.env:ro
+      - "C:/Users/Storm Credit/Desktop/쇼츠/seasonXI:/app/obsidian_vault:ro"
     env_file: .env
+    environment:
+      - OBSIDIAN_VAULT_PATH=/app/obsidian_vault
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8800/api/search?q=messi')"]

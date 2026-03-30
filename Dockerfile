@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Python deps
 COPY pyproject.toml uv.lock ./
-RUN pip install uv && uv sync --frozen --no-dev
+RUN touch README.md && pip install uv && uv sync --frozen --no-dev
 
 # App code
 COPY src/ src/
