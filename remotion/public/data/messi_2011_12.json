@@ -1,0 +1,52 @@
+{
+  "player_id": "messi",
+  "player_name": "Lionel Messi",
+  "display_name": "MESSI",
+  "season": "2011-12",
+  "season_label": "2011–12",
+  "club": "FC Barcelona",
+  "club_short": "Barcelona",
+  "position": "RW",
+  "role_bucket": "FW",
+  "ovr": 97,
+  "stats": {
+    "finishing": 97,
+    "playmaking": 95,
+    "dribbling": 99,
+    "defense": 55,
+    "clutch": 98,
+    "aura": 99
+  },
+  "tier": "MYTHIC",
+  "hook": "THIS VERSION WAS BROKEN",
+  "commentary": "IMPOSSIBLE TO STOP IN TIGHT SPACES",
+  "achievement": "50 LEAGUE GOALS",
+  "verdict": "MYTHIC SEASON",
+  "cta": "WHO TOPS THIS?",
+  "goals": 50,
+  "assists": 16,
+  "minutes": 3200,
+  "signature_stats": [
+    "DRIBBLING",
+    "AURA",
+    "CLUTCH"
+  ],
+  "music_theme": "messi_core",
+  "season_mood": "PEAK_MONSTER",
+  "player_block": "MESSI",
+  "assets": {
+    "image_main": "/03_Assets/images/Messi/messi_2011_12_main.png",
+    "image_card": "/03_Assets/images/Messi/messi_2011_12_card.png"
+  },
+  "backgrounds": {
+    "hook": "hook1.jpg",
+    "ovr": "ovr2.jpg",
+    "graph": "graph1.jpg",
+    "stats": "stats2.jpg",
+    "commentary": "commentary2.jpg",
+    "milestone": "milestone1.jpg",
+    "verdict": "verdict2.jpg",
+    "end": "end2.jpg"
+  },
+  "status": "ready"
+}
