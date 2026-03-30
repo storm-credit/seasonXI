@@ -33,24 +33,12 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
       {/* Scene background: hook1.jpg */}
       <Img src={staticFile(getBg(data, 'hook'))} style={{
         position: 'absolute', width: '100%', height: '100%',
-        objectFit: 'cover', opacity: imgOpacity * 0.5,
-        filter: 'brightness(0.6)',
+        objectFit: 'cover', opacity: imgOpacity * 0.8,
+        filter: 'brightness(0.5) contrast(1.2)',
+        transform: `scale(${bgZoom})`,
       }} />
 
-      {/* Player image - FULL SCREEN foreground */}
-      {playerMain && (
-        <div style={{
-          position: 'absolute', inset: 0,
-          transform: `scale(${scale * bgZoom}) translate(${shakeX}px, ${shakeY}px)`,
-          opacity: imgOpacity,
-        }}>
-          <Img src={imgSrc} style={{
-            width: '100%', height: '100%',
-            objectFit: 'cover', objectPosition: 'top center',
-            filter: 'brightness(0.9) contrast(1.1)',
-          }} />
-        </div>
-      )}
+      {/* No player image in Hook — reveal in Card scene */}
 
       {/* Dark vignette overlay */}
       <div style={{
