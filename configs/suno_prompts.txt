@@ -1,0 +1,56 @@
+## SeasonXI — Suno Music Prompts (Instrumental)
+## 사용법: Suno에서 Title + Style 입력, Lyrics는 "Instrumental" 또는 비워두기
+
+
+## ============================================
+## MESSI — 우아함 / 천재성 / 신성함
+## ============================================
+
+### Messi 2011-12 (PEAK_MONSTER)
+Title: Messi 2011-12 Mythic Theme
+Style: Short cinematic football theme, instrumental, premium sports soundtrack, dark elegant energy, mythic and emotional, explosive but controlled, elite football highlight music, divine genius aura, stadium atmosphere, orchestral strings with electronic bass drops
+
+### Messi 2014-15 (ELEGANT_PRIME)
+Title: Messi 2014-15 Perfection Theme
+Style: Short cinematic football theme, instrumental, premium sports soundtrack, elegant and refined, orchestral beauty, controlled mastery, flowing melody, graceful yet powerful, complete footballer energy, golden era soundtrack, piano with subtle strings
+
+
+## ============================================
+## RONALDO — 지배 / 왕조 / 클러치
+## ============================================
+
+### Ronaldo 2016-17 (PEAK_MONSTER)
+Title: Ronaldo 2016-17 Dynasty Theme
+Style: Short cinematic football theme, instrumental, premium sports soundtrack, powerful and dominant, anthemic energy, victorious and intense, big game atmosphere, king of champions league, aggressive drums with brass, dark and majestic, stadium roar undertone
+
+### Ronaldo 2007-08 (BREAKTHROUGH)
+Title: Ronaldo 2007-08 Rise Theme
+Style: Short cinematic football theme, instrumental, premium sports soundtrack, explosive rising energy, raw power and speed, breakthrough moment, electric guitar riffs with orchestral build, youthful aggression, unstoppable force, fast tempo, adrenaline rush
+
+
+## ============================================
+## MBAPPÉ — 속도 / 젊은 파괴력 / 미래형
+## ============================================
+
+### Mbappé 2018-19 (BREAKTHROUGH)
+Title: Mbappe 2018-19 Next Gen Theme
+Style: Short cinematic football theme, instrumental, premium sports soundtrack, modern and fast, electronic beats with trap elements, youthful explosive energy, speed and destruction, futuristic sports anthem, dark bass with sharp synths, next generation superstar
+
+### Mbappé 2021-22 (PEAK_MONSTER)
+Title: Mbappe 2021-22 Speed Kills Theme
+Style: Short cinematic football theme, instrumental, premium sports soundtrack, relentless speed energy, aggressive electronic, dark and intense, fastest player alive, modern football dominance, heavy bass drops with cinematic strings, lethal precision
+
+
+## ============================================
+## 공통 규칙
+## ============================================
+## - 길이: 15~30초면 충분 (쇼츠용)
+## - Lyrics: "Instrumental" 입력 또는 비워두기
+## - 모든 프롬프트에 공통으로 들어가는 키워드:
+##   "short cinematic football theme, instrumental, premium sports soundtrack"
+## - 선수별 차이는 감정/에너지 키워드로 구분
+##
+## 선수별 핵심 톤:
+##   Messi = elegant, divine, genius, orchestral
+##   Ronaldo = powerful, dominant, anthemic, majestic
+##   Mbappé = fast, modern, electronic, explosive
