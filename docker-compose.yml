@@ -21,6 +21,22 @@ services:
       timeout: 10s
       retries: 3
 
+  frontend:
+    build: ./frontend
+    container_name: seasonxi-frontend
+    ports:
+      - "3001:3001"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8800
+    depends_on:
+      - api
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3001', r => process.exit(r.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   remotion:
     build: ./remotion
     container_name: seasonxi-remotion
