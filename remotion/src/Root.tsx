@@ -28,9 +28,9 @@ const MESSI_2011: CardData = {
   verdict: "MYTHIC SEASON",
   cta: "WHO TOPS THIS?",
   // Images
-  image_main: "/messi_2011_12.png",
-  image_card: "/messi_2011_12.png",
-  image: "/messi_2011_12.png",
+  image_main: "/messi_2011_12_main.png",
+  image_card: "/messi_2011_12_card.png",
+  image: "/messi_2011_12_main.png",
   backgrounds: {
     hook: "hook1.jpg",
     ovr: "ovr2.jpg",
