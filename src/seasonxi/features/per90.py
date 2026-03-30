@@ -63,9 +63,14 @@ def compute_per90(df: pd.DataFrame, min_minutes: int = 450) -> pd.DataFrame:
     else:
         out["team_goal_contribution"] = 0.0
 
-    # Minutes share: minutes / (team matches * 90)
-    # Approximate: assume 38-match league
-    out["minutes_share"] = out["minutes_played"] / (38 * 90)
+    # Minutes share: minutes / (league matches * 90)
+    # v1.2: league-aware (Bundesliga=34, others=38)
+    league_matches_map = {"GER1": 34}  # only exceptions
+    if "league_id" in out.columns:
+        league_max_min = out["league_id"].map(league_matches_map).fillna(38) * 90
+    else:
+        league_max_min = 38 * 90
+    out["minutes_share"] = out["minutes_played"] / league_max_min
 
     # --- v1.2: New derived features ---
 

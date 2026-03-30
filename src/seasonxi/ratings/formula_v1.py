@@ -403,7 +403,7 @@ def compute_ratings(features_df: pd.DataFrame) -> pd.DataFrame:
         tier = score_to_tier(scores["overall"])
 
         results.append({
-            "player_season_id": row["player_session_id"] if "player_session_id" in row.index else row.get("player_season_id", ""),
+            "player_season_id": row.get("player_season_id", ""),
             "player_id": row.get("player_id", ""),
             "club_id": row.get("club_id", ""),
             "season_id": row.get("season_id", ""),

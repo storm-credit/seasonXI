@@ -35,18 +35,11 @@ def build_features(conn: duckdb.DuckDBPyConnection | None = None) -> pd.DataFram
         features["xa"] = features["assists"]  # fallback
         features["xa_p90"] = features["assists_p90"]
 
-    # Step 2: league strength adjustment (simple V1)
-    league_factors = {
-        "Premier League": 1.00,
-        "La Liga": 1.00,
-        "Serie A": 0.97,
-        "Bundesliga": 0.97,
-        "Ligue 1": 0.94,
-    }
-    # Get league info from clubs table
-    clubs = conn.execute("SELECT club_id, league_name FROM clubs").fetchdf()
-    features = features.merge(clubs[["club_id", "league_name"]], on="club_id", how="left")
-    features["league_strength_factor"] = features["league_name"].map(league_factors).fillna(1.0)
+    # Step 2: league metadata (actual adjustment applied in formula_v1.py)
+    # v1.2: removed league_factors here to avoid double-application
+    clubs = conn.execute("SELECT club_id, league_name, league_id FROM clubs").fetchdf()
+    features = features.merge(clubs[["club_id", "league_name", "league_id"]], on="club_id", how="left")
+    features["league_strength_factor"] = 1.0  # Applied in ratings, not here
     features["season_era_factor"] = 1.0  # V1: neutral
 
     # Step 3: percentiles within role
@@ -110,13 +103,30 @@ def _fix_position(row: pd.Series) -> str:
     return "FW"
 
 
+# League match counts (v1.2: no more hardcoded 38)
+LEAGUE_MATCHES: dict[str, int] = {
+    "ENG1": 38,  # Premier League
+    "ESP1": 38,  # La Liga
+    "ITA1": 38,  # Serie A
+    "FRA1": 38,  # Ligue 1
+    "GER1": 34,  # Bundesliga (18 teams)
+}
+DEFAULT_MATCHES = 38
+
+
 def _team_success(row: pd.Series, team_map: pd.DataFrame) -> float:
-    """Simple team success score: points / max_possible (114)."""
+    """Team success score: points / max_possible.
+
+    v1.2: league-aware match count (Bundesliga=34, others=38).
+    """
     key = (row["club_id"], row["season_id"])
     if key in team_map.index:
         team = team_map.loc[key]
         points = team["points"] if "points" in team.index else 0
-        return min(1.0, float(points) / 114.0)  # 38 * 3 = 114
+        league_id = str(row.get("league_id", ""))
+        matches = LEAGUE_MATCHES.get(league_id, DEFAULT_MATCHES)
+        max_points = matches * 3
+        return min(1.0, float(points) / max_points)
     return 0.5
 
 
