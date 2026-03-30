@@ -76,14 +76,31 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
         animation: 'none',
       }} />
 
+      {/* Player name + season - top */}
+      <div style={{
+        position: 'absolute', top: '5%', left: '5%',
+        opacity: textOpacity,
+        transform: `translateY(${interpolate(frame, [28, 36], [-20, 0], { extrapolateRight: 'clamp' })}px)`,
+      }}>
+        <div style={{
+          fontFamily: 'Bebas Neue, sans-serif', fontSize: 72,
+          color: COLORS.white, letterSpacing: 6,
+          textShadow: `0 2px 30px rgba(0,0,0,0.9)`,
+        }}>{data.player.toUpperCase()}</div>
+        <div style={{
+          fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: 24,
+          color: COLORS.gold, letterSpacing: 4, marginTop: -4,
+        }}>{data.season}</div>
+      </div>
+
       {/* Hook text - bottom */}
       <div style={{
-        position: 'absolute', bottom: '10%', width: '100%',
+        position: 'absolute', bottom: '8%', width: '100%',
         textAlign: 'center', opacity: textOpacity,
         transform: `scale(${textScale})`,
       }}>
         <div style={{
-          fontFamily: 'Bebas Neue, sans-serif', fontSize: 60,
+          fontFamily: 'Bebas Neue, sans-serif', fontSize: 56,
           color: COLORS.white, letterSpacing: 5,
           textShadow: `0 2px 40px rgba(0,0,0,0.9), 0 0 60px ${auraColor}30`,
         }}>{data.hook}</div>
