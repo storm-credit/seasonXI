@@ -74,20 +74,26 @@ export const CardReveal: React.FC<{ data: CardData }> = ({ data }) => {
         }}>{data.club}</div>
       </div>
 
-      {/* Player image - center/right */}
+      {/* Player image - full screen */}
       {playerCard && (
         <div style={{
-          position: 'absolute', right: -20, bottom: 0,
-          width: '75%', height: '75%',
+          position: 'absolute', inset: 0,
           opacity: imgOpacity, transform: `scale(${imgScale})`,
         }}>
           <Img src={imgSrc} style={{
             width: '100%', height: '100%',
-            objectFit: 'contain', objectPosition: 'bottom right',
-            filter: 'brightness(0.9) contrast(1.1)',
+            objectFit: 'cover', objectPosition: 'top center',
+            filter: 'brightness(0.85) contrast(1.1)',
           }} />
         </div>
       )}
+
+      {/* Dark gradient overlay for text readability */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(180deg, rgba(11,13,18,0.7) 0%, transparent 35%, transparent 70%, rgba(11,13,18,0.5) 100%)',
+        opacity: imgOpacity,
+      }} />
 
       {/* Card frame glow */}
       <div style={{
