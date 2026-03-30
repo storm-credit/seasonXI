@@ -227,3 +227,5 @@ outputs/
 .claude/memory/
 .claude/plans/
 .gemini_cooldowns.json
+client_secrets.json
+token.json

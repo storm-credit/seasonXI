@@ -314,6 +314,51 @@ async def upload_image(file: UploadFile, filename: str = Form(...)):
     return {"status": "saved", "filename": filename, "size": len(content), "path": str(out_path)}
 
 
+# ─── API: YouTube Upload ─────────────────────────────────────
+@app.post("/api/upload-youtube/{player_id}/{season}")
+def upload_youtube(player_id: str, season: str, privacy: str = "unlisted"):
+    """Upload rendered video to YouTube."""
+    video_id = f"{player_id}_{season.replace('-', '_')}"
+    video_path = PROJECT_ROOT / "outputs" / f"{video_id}.mp4"
+
+    if not video_path.exists():
+        # Try remotion outputs
+        video_path = REMOTION_DIR / "outputs" / f"{video_id}.mp4"
+
+    if not video_path.exists():
+        raise HTTPException(404, f"Video not found: {video_id}.mp4")
+
+    try:
+        result = subprocess.Popen(
+            [
+                sys.executable, "-m", "seasonxi.content.youtube_upload",
+                "--video", str(video_path),
+                "--player", player_id,
+                "--season", season,
+                "--privacy", privacy,
+            ],
+            cwd=str(PROJECT_ROOT),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        return {
+            "status": "uploading",
+            "video_id": video_id,
+            "privacy": privacy,
+            "pid": result.pid,
+        }
+    except Exception as e:
+        raise HTTPException(500, str(e))
+
+
+@app.get("/api/youtube-metadata/{player_id}/{season}")
+def youtube_metadata(player_id: str, season: str):
+    """Preview YouTube upload metadata."""
+    from seasonxi.content.youtube_upload import build_upload_metadata
+    metadata = build_upload_metadata(player_id=player_id, season=season)
+    return metadata
+
+
 # ─── API: Prompts List ────────────────────────────────────────
 @app.get("/api/prompts")
 def list_prompts():

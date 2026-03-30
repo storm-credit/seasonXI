@@ -1,0 +1,12 @@
+.git
+.venv
+__pycache__
+*.pyc
+node_modules
+.env
+.gemini_cooldowns.json
+remotion/node_modules
+remotion/outputs
+notebooks
+*.duckdb
+*.duckdb.wal

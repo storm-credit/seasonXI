@@ -372,6 +372,7 @@ body {
     <button class="btn btn-today" onclick="showToday()">Today's Queue</button>
     <button class="btn btn-preview" onclick="exportJson()">Export JSON</button>
     <button class="btn btn-render" onclick="renderVideo()">Render MP4</button>
+    <button class="btn" style="background:#FF0000;color:white" onclick="uploadYouTube()">Upload YouTube</button>
     <button class="btn" style="background:#555;color:white" onclick="runEngineCheck()">Engine Check</button>
     <button class="btn" style="background:#333;color:#aaa" onclick="toggleSettings()">Settings</button>
   </div>
@@ -961,6 +962,51 @@ async function copyMjPrompt(scene) {
     document.body.removeChild(ta);
   }
   showModal('COPIED', `${scene} prompt copied!\n\nDiscord /imagine 에 붙여넣기`, '📋');
+}
+
+// ─── YouTube Upload ───
+async function uploadYouTube() {
+  if (!currentPlayer) { showModal('NO PLAYER', '선수를 먼저 선택하세요', '⚠️'); return; }
+  const pid = currentPlayer.player_id || currentPlayer.id?.split('_').slice(0,-2).join('_') || 'messi';
+  const season = currentPlayer.season || currentPlayer.id?.match(/\d{4}.?\d{2}/)?.[0]?.replace('_','-') || '2011-12';
+
+  // Preview metadata first
+  try {
+    const metaRes = await fetch(`${API}/youtube-metadata/${pid}/${season}`);
+    const meta = await metaRes.json();
+    const title = meta.snippet?.title || '';
+    const desc = meta.snippet?.description || '';
+
+    showModal('YOUTUBE UPLOAD', `Title: ${title}\n\nPrivacy: unlisted\n\n업로드 하시겠습니까?`, '🔴');
+
+    // Replace OK button with Upload + Cancel
+    const modal = document.querySelector('.sxi-modal');
+    if (modal) {
+      modal.querySelector('.sxi-modal-btn').outerHTML = `
+        <div style="display:flex;gap:10px;justify-content:center;">
+          <button class="sxi-modal-btn" style="background:#FF0000;" onclick="doYouTubeUpload('${pid}','${season}')">Upload</button>
+          <button class="sxi-modal-btn" style="background:#333;color:#aaa;" onclick="this.closest('.sxi-modal-overlay').remove()">Cancel</button>
+        </div>
+      `;
+    }
+  } catch(e) {
+    showModal('ERROR', 'API 연결 확인\n' + e.message, '❌');
+  }
+}
+
+async function doYouTubeUpload(pid, season) {
+  document.querySelector('.sxi-modal-overlay')?.remove();
+  showModal('UPLOADING', '유튜브 업로드 중...', '⏳');
+  try {
+    const res = await fetch(`${API}/upload-youtube/${pid}/${season}?privacy=unlisted`, {method:'POST'});
+    const data = await res.json();
+    document.querySelector('.sxi-modal-overlay')?.remove();
+    showModal('UPLOADED', `PID: ${data.pid}\n\n업로드 진행 중. 콘솔에서 확인.`, '✅');
+    document.getElementById('chk_upload').checked = true;
+  } catch(e) {
+    document.querySelector('.sxi-modal-overlay')?.remove();
+    showModal('UPLOAD FAILED', e.message, '❌');
+  }
 }
 
 // ─── Generate Image ───
