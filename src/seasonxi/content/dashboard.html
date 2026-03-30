@@ -531,11 +531,11 @@ body {
 
   <!-- Midjourney Prompt -->
   <div class="prod-panel" style="margin-top: 20px;">
-    <h3>MIDJOURNEY PROMPT</h3>
+    <h3>NANOBANANA PROMPT</h3>
     <div id="mjPrompt" style="background:#0a0c10;border:1px solid #333;border-radius:8px;padding:12px;font-size:11px;color:#ccc;max-height:120px;overflow-y:auto;word-break:break-all;font-family:monospace;line-height:1.5;"></div>
     <div style="display:flex;gap:8px;margin-top:10px;">
-      <button class="btn" style="flex:1;background:#5865F2;color:white;font-size:12px;" onclick="copyMjPrompt('HOOK')">Copy HOOK Prompt</button>
-      <button class="btn" style="flex:1;background:#4752C4;color:white;font-size:12px;" onclick="copyMjPrompt('CARD')">Copy CARD Prompt</button>
+      <button class="btn" style="flex:1;background:#C9A24A;color:#0B0D12;font-size:12px;font-weight:700;" onclick="copyMjPrompt('HOOK')">Copy HOOK</button>
+      <button class="btn" style="flex:1;background:#8B7530;color:white;font-size:12px;" onclick="copyMjPrompt('CARD')">Copy CARD</button>
     </div>
   </div>
 
@@ -660,7 +660,7 @@ function loadPlayerData(p) {
     `<span class="highlight">[MODIFIERS]</span> TOP_TEXT_SAFE_SPACE, STRONG_AURA, RECOGNIZABLE_FACE_VIBE`;
 
   // Update Midjourney prompt
-  updateMjPrompt();
+  updateNbPrompt();
 
   // Reset checklist
   document.querySelectorAll('.checklist input[type=checkbox]').forEach(c => c.checked = false);
@@ -887,65 +887,66 @@ async function dropAsType(type) {
 }
 
 // ─── Midjourney Prompt ───
-const MJ_BASE = 'premium cinematic football card art, dark navy and black tones, metallic gold accents, dramatic stadium floodlights, semi-realistic sports illustration, single male football player, dynamic pose, high contrast, depth of field, atmospheric rain particles, no text, no logos, no watermark';
+// Nanobanana prompt system (can use real names)
+const NB_BASE = 'Create a premium vertical football poster image in 9:16 format. Semi-realistic cinematic sports art, dark navy and black tones, metallic gold accents, dramatic stadium floodlights, high contrast, depth of field, atmospheric rain particles, no text, no logos, no watermark. Single male football player, dynamic action pose.';
 
-const MJ_PLAYERS = {
-  MESSI: 'compact athletic Argentine forward, short dark brown hair, trimmed beard, calm genius expression, low center of gravity, elegant dribbling stance, blue and red vertical striped kit',
-  RONALDO: 'tall muscular Portuguese forward, sharp jawline, short styled dark hair, intense dominant expression, explosive heroic posture, powerful shooting stance, white kit with gold trim',
-  MBAPPE: 'young athletic French forward, short dark hair, focused determined expression, explosive speed energy, dynamic sprinting pose, dark blue kit',
-  SON: 'lean athletic Korean forward, short black hair, clean-shaven, focused determined expression, explosive speed, dynamic left-footed shooting pose, white kit',
-  HAALAND: 'tall imposing Scandinavian striker, long blonde hair tied back, intense predatory expression, raw power aura, brutal forward charge, light blue kit',
-  ZIDANE: 'elegant French midfielder, shaved head, tall graceful build, composed masterful expression, smooth body control, orchestrating pose, white kit',
-  DE_BRUYNE: 'Belgian midfielder, ginger-blonde hair, determined intelligent expression, commanding midfield presence, passing or through-ball pose, light blue kit',
-  HENRY: 'tall athletic French striker, short dark hair, confident cool expression, explosive speed and power, celebrating or striking pose, red and white kit',
-  RONALDINHO: 'Brazilian attacking midfielder, long curly dark hair, joyful confident smile, creative genius aura, dribbling with flair, blue and red striped kit',
-  SALAH: 'Egyptian forward, dark curly afro hair, short beard, intense focused expression, explosive left-footed cutting inside, red kit',
-  LEWANDOWSKI: 'tall Polish striker, athletic build, short dark hair, predatory focused expression, clinical finishing posture, red kit',
-  SUAREZ: 'stocky Uruguayan striker, dark hair, short beard, fierce aggressive expression, powerful shooting stance, blue and red striped kit',
-  INIESTA: 'compact Spanish midfielder, receding dark hair, calm intelligent expression, perfect body balance, elegant close control, blue and red striped kit',
-  MODRIC: 'lean Croatian midfielder, long dark blonde hair, composed focused expression, graceful movement, precise passing stance, white kit',
-  KAKA: 'tall elegant Brazilian attacking midfielder, short brown hair, serene confident expression, graceful running stride, smooth dribbling, red and black striped kit',
-  MALDINI: 'tall Italian defender, distinguished short dark hair slightly graying, calm authoritative expression, perfect defensive posture, commanding presence, red and black striped kit',
-  VAN_DIJK: 'tall imposing Dutch defender, short dark hair, short beard, calm dominant expression, commanding aerial presence, red kit',
-  NEUER: 'tall German goalkeeper, short blonde hair, intense alert expression, athletic sweeper-keeper stance, commanding presence, dark goalkeeper kit',
-  HAZARD: 'compact Belgian forward, short dark hair, playful confident expression, low center of gravity, explosive dribbling stance, blue kit',
-  AGUERO: 'compact Argentine striker, dark hair, determined clutch expression, explosive finishing posture, celebrating iconic goal, light blue kit',
-  TOTTI: 'Italian forward, slightly longer brown hair, charismatic captain expression, elegant creative stance, regal presence, dark red and gold kit',
-  RIBERY: 'French winger, short dark hair with scar, intense competitive expression, explosive pace energy, cutting inside dribble, red kit',
-  NEYMAR: 'Brazilian forward, styled dark hair with blonde highlights, creative showman expression, flashy dribbling flair, dynamic body movement, dark blue kit with pink accents',
+const NB_PLAYERS = {
+  MESSI: 'Lionel Messi, FC Barcelona, compact build, short dark brown hair, trimmed beard, calm genius expression, elegant dribbling stance, blue and red striped kit',
+  RONALDO: 'Cristiano Ronaldo, Real Madrid, tall muscular build, sharp jawline, short styled dark hair, intense dominant expression, powerful shooting stance, white kit',
+  MBAPPE: 'Kylian Mbappé, PSG, young athletic build, short dark hair, focused expression, explosive sprinting pose, dark blue kit',
+  SON: 'Son Heung-min, Tottenham, lean athletic build, short black hair, clean-shaven, determined expression, left-footed shooting pose, white kit',
+  HAALAND: 'Erling Haaland, Manchester City, tall imposing muscular build, long blonde hair tied back, predatory expression, brutal forward charge, light blue kit',
+  ZIDANE: 'Zinedine Zidane, Real Madrid, shaved head, tall graceful build, composed masterful expression, orchestrating pose, white kit',
+  DE_BRUYNE: 'Kevin De Bruyne, Manchester City, ginger-blonde hair, intelligent expression, commanding midfield presence, through-ball pose, light blue kit',
+  HENRY: 'Thierry Henry, Arsenal, tall athletic build, short dark hair, confident cool expression, explosive striking pose, red and white kit',
+  RONALDINHO: 'Ronaldinho, FC Barcelona, long curly dark hair, joyful confident smile, creative genius aura, dribbling with flair, blue and red striped kit',
+  SALAH: 'Mohamed Salah, Liverpool, dark curly afro hair, short beard, intense expression, cutting inside on left foot, red kit',
+  LEWANDOWSKI: 'Robert Lewandowski, Bayern Munich, tall athletic build, short dark hair, predatory expression, clinical finishing posture, red kit',
+  SUAREZ: 'Luis Suárez, FC Barcelona, stocky build, dark hair, short beard, fierce aggressive expression, powerful shooting stance, blue and red striped kit',
+  INIESTA: 'Andrés Iniesta, FC Barcelona, compact build, receding dark hair, calm intelligent expression, elegant close control, blue and red striped kit',
+  MODRIC: 'Luka Modrić, Real Madrid, lean build, long dark blonde hair, composed expression, graceful passing stance, white kit',
+  KAKA: 'Kaká, AC Milan, tall elegant build, short brown hair, serene confident expression, graceful running stride, red and black striped kit',
+  MALDINI: 'Paolo Maldini, AC Milan, tall distinguished build, short dark hair slightly graying, calm authoritative expression, commanding defensive posture, red and black striped kit',
+  VAN_DIJK: 'Virgil van Dijk, Liverpool, tall imposing build, short dark hair, short beard, calm dominant expression, commanding aerial presence, red kit',
+  NEUER: 'Manuel Neuer, Bayern Munich, tall athletic build, short blonde hair, intense alert expression, sweeper-keeper stance, dark goalkeeper kit',
+  HAZARD: 'Eden Hazard, Chelsea, compact build, short dark hair, playful confident expression, explosive dribbling stance, blue kit',
+  AGUERO: 'Sergio Agüero, Manchester City, compact build, dark hair, determined clutch expression, celebrating iconic goal, light blue kit',
+  TOTTI: 'Francesco Totti, AS Roma, slightly longer brown hair, charismatic captain expression, elegant creative stance, dark red and gold kit',
+  RIBERY: 'Franck Ribéry, Bayern Munich, short dark hair, intense competitive expression, explosive cutting inside dribble, red kit',
+  NEYMAR: 'Neymar Jr, PSG, styled dark hair with blonde highlights, creative showman expression, flashy dribbling flair, dark blue kit',
 };
 
-const MJ_MOODS = {
-  PEAK_MONSTER: 'unstoppable explosive energy, peak dominance, aggressive momentum, intense contrast lighting, maximum aura',
-  ELEGANT_PRIME: 'controlled elegance, complete mastery, refined cinematic atmosphere, balanced power and intelligence',
-  BREAKTHROUGH: 'raw hungry energy, emerging talent explosion, electric atmosphere, bright dynamic accents',
-  DECLINE_TRANSITION: 'reflective veteran energy, emotional weight, controlled intensity, quieter powerful tone',
+const NB_MOODS = {
+  PEAK_MONSTER: 'unstoppable explosive energy, peak dominance, aggressive momentum, intense contrast lighting, mythic aura burst, maximum intensity',
+  ELEGANT_PRIME: 'controlled elegance, complete mastery, refined cinematic atmosphere, balanced power and intelligence, golden era energy',
+  BREAKTHROUGH: 'raw hungry energy, emerging talent explosion, electric atmosphere, bright dynamic accents, youthful fire',
+  DECLINE_TRANSITION: 'reflective veteran energy, emotional weight, controlled intensity, quieter powerful tone, legacy aura',
 };
 
-const MJ_SCENES = {
-  HOOK: 'full body dramatic entrance shot, player dominating frame, facing camera, maximum presence, strongest lighting, emerging from darkness, space at top for text',
-  CARD: '3/4 body stable composition, player centered, clean readable silhouette, suitable for card frame overlay, slightly less dramatic than hook',
+const NB_SCENES = {
+  HOOK: 'Full body dramatic entrance shot, player dominating the entire frame, facing slightly toward camera, maximum presence, strongest lighting, emerging from darkness, space at the top 20% for text overlay, highest drama',
+  CARD: '3/4 body stable composition, player centered in frame, clean readable silhouette, suitable for card frame overlay, slightly less dramatic, good for cropping',
 };
 
-function buildMjPrompt(scene) {
+function buildNbPrompt(scene) {
   if (!currentPlayer) return '';
   const block = currentPlayer.block || currentPlayer.player_block || 'MESSI';
   const mood = currentPlayer.mood || currentPlayer.season_mood || 'PEAK_MONSTER';
-  const player = MJ_PLAYERS[block] || MJ_PLAYERS.MESSI;
-  const moodText = MJ_MOODS[mood] || MJ_MOODS.PEAK_MONSTER;
-  const sceneText = MJ_SCENES[scene] || MJ_SCENES.HOOK;
-  return `/imagine ${MJ_BASE}, ${player}, ${moodText}, ${sceneText} --ar 9:16 --v 6.1 --s 750 --q 2`;
+  const player = NB_PLAYERS[block] || NB_PLAYERS.MESSI;
+  const moodText = NB_MOODS[mood] || NB_MOODS.PEAK_MONSTER;
+  const sceneText = NB_SCENES[scene] || NB_SCENES.HOOK;
+  return `${NB_BASE}\n\nPlayer: ${player}\n\nSeason mood: ${moodText}\n\nScene: ${sceneText}\n\nDo not change the core SeasonXI visual identity: dark premium palette, cinematic football lighting, metallic gold accents, elite sports-card tone, single-player composition, serious mythic atmosphere.`;
 }
 
-function updateMjPrompt() {
+function updateNbPrompt() {
   const el = document.getElementById('mjPrompt');
   if (el && currentPlayer) {
-    el.textContent = buildMjPrompt('HOOK');
+    el.textContent = buildNbPrompt('HOOK');
   }
 }
 
 async function copyMjPrompt(scene) {
-  const prompt = buildMjPrompt(scene);
+  const prompt = buildNbPrompt(scene);
   try {
     await navigator.clipboard.writeText(prompt);
   } catch(e) {
