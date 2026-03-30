@@ -20,12 +20,50 @@ export interface CardData {
   achievement_detail: string;
   verdict: string;
   cta: string;
-  image?: string;
+  // Dual image system
+  image?: string;          // legacy: single image fallback
+  image_main?: string;     // Hook용: dramatic full-body
+  image_card?: string;     // Card Reveal용: card-frame fit
+  // Scene backgrounds (common set)
+  backgrounds?: {
+    hook: string;
+    ovr: string;
+    graph: string;
+    stats: string;
+    commentary: string;
+    milestone: string;
+    verdict: string;
+    end: string;
+  };
   aura_type?: string;
   aura_color?: string;
   entrance_effect?: string;
   signature_stats?: string[];
   club_accent_color?: string;
+}
+
+// Resolve player image: prefer specific, fallback to legacy
+export function getPlayerMain(data: CardData): string {
+  return data.image_main || data.image || '';
+}
+export function getPlayerCard(data: CardData): string {
+  return data.image_card || data.image || '';
+}
+
+// Resolve scene background with defaults
+const DEFAULT_BG: Record<string, string> = {
+  hook: 'hook1.jpg',
+  ovr: 'ovr2.jpg',
+  graph: 'graph1.jpg',
+  stats: 'stats2.jpg',
+  commentary: 'commentary2.jpg',
+  milestone: 'milestone1.jpg',
+  verdict: 'verdict2.jpg',
+  end: 'end2.jpg',
+};
+type SceneKey = keyof typeof DEFAULT_BG;
+export function getBg(data: CardData, scene: SceneKey): string {
+  return data.backgrounds?.[scene as keyof NonNullable<CardData['backgrounds']>] || DEFAULT_BG[scene];
 }
 
 // Brand colors

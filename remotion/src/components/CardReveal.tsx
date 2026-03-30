@@ -1,5 +1,5 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
-import { CardData, COLORS } from '../types';
+import { CardData, COLORS, getPlayerCard } from '../types';
 
 export const CardReveal: React.FC<{ data: CardData }> = ({ data }) => {
   const frame = useCurrentFrame();
@@ -23,7 +23,8 @@ export const CardReveal: React.FC<{ data: CardData }> = ({ data }) => {
   const scanY = interpolate(frame, [0, 45], [-10, 110], { extrapolateRight: 'clamp' });
 
   const accentColor = data.club_accent_color || COLORS.gold;
-  const imgSrc = data.image ? staticFile(data.image.replace(/^\//, '')) : '';
+  const playerCard = getPlayerCard(data);
+  const imgSrc = playerCard ? staticFile(playerCard.replace(/^\//, '')) : '';
 
   return (
     <AbsoluteFill style={{
@@ -74,7 +75,7 @@ export const CardReveal: React.FC<{ data: CardData }> = ({ data }) => {
       </div>
 
       {/* Player image - center/right */}
-      {data.image && (
+      {playerCard && (
         <div style={{
           position: 'absolute', right: -20, bottom: 0,
           width: '75%', height: '75%',

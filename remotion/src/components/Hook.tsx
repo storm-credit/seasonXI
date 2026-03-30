@@ -1,5 +1,5 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
-import { CardData, COLORS } from '../types';
+import { CardData, COLORS, getPlayerMain, getBg } from '../types';
 
 export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
   const frame = useCurrentFrame();
@@ -25,19 +25,20 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
     : data.aura_color === 'blue_trail' ? '#4488FF'
     : COLORS.softGold;
 
-  const imgSrc = data.image ? staticFile(data.image.replace(/^\//, '')) : '';
+  const playerMain = getPlayerMain(data);
+  const imgSrc = playerMain ? staticFile(playerMain.replace(/^\//, '')) : '';
 
   return (
     <AbsoluteFill style={{ background: COLORS.black, overflow: 'hidden' }}>
       {/* Scene background: hook1.jpg */}
-      <Img src={staticFile('hook1.jpg')} style={{
+      <Img src={staticFile(getBg(data, 'hook'))} style={{
         position: 'absolute', width: '100%', height: '100%',
         objectFit: 'cover', opacity: imgOpacity * 0.5,
         filter: 'brightness(0.6)',
       }} />
 
       {/* Player image - FULL SCREEN foreground */}
-      {data.image && (
+      {playerMain && (
         <div style={{
           position: 'absolute', inset: 0,
           transform: `scale(${scale * bgZoom}) translate(${shakeX}px, ${shakeY}px)`,
@@ -89,7 +90,7 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
       </div>
 
       {/* Placeholder if no image */}
-      {!data.image && (
+      {!playerMain && (
         <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'center' }}>
           <div style={{
             width: '70%', height: '60%', borderRadius: 16,

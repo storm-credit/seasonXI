@@ -1,0 +1,52 @@
+## PLAYER_CARD PROMPT — Card Reveal Scene용 (안정적/카드 프레임 맞춤)
+## 용도: 카드 템플릿 안에 넣을 선수 이미지
+## 사용법: 아래 공통 프롬프트 + player_blocks.txt에서 선수 블록 복사 + season_moods.txt에서 무드 복사
+
+Create a premium vertical 9:16 football player image for a SeasonXI card reveal scene.
+
+Style:
+- semi-realistic
+- cinematic football card art
+- premium sports card visual
+- dark navy and black tones
+- metallic gold accents
+- high contrast
+- slightly stylized, not photorealistic
+- not cartoon
+- not anime
+
+Composition:
+- full-body or strong 3/4-body framing
+- player centered cleanly for card placement
+- enough space around the body for cropping into a card frame
+- stadium background but less dramatic than a poster
+- subtle rain and cinematic light
+- readable silhouette
+- premium football card reveal composition
+- the player should look clean, iconic, and easy to place inside a card template
+
+## 여기에 player_blocks.txt에서 선수 블록 붙이기
+## 여기에 season_moods.txt에서 무드 붙이기
+
+Keep the core SeasonXI visual identity:
+- dark premium football aesthetic
+- deep navy and black tones
+- metallic gold accents
+- cinematic sports atmosphere
+- high contrast
+- elegant elite mythic tone
+- vertical 9:16 composition
+- single player only
+- no logos
+- no watermark
+- no extra text
+- no cartoon
+- no anime
+- no exact club crest
+- no sponsor logo
+- no sportswear brand logo
+
+## 잘 안 나올 때 추가 문구:
+## 얼굴 약하면: Make the player clearly recognizable by facial vibe, hairstyle, beard, and body language.
+## 너무 과하면: Keep the kit simple, realistic, premium, and readable. Avoid overdesigned fantasy details.
+## 너무 복잡하면: Use a cleaner composition with a more readable silhouette and less background distraction.

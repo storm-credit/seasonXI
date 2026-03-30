@@ -1,5 +1,5 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
-import { CardData, COLORS } from '../types';
+import { CardData, COLORS, getBg } from '../types';
 
 export const Achievement: React.FC<{ data: CardData }> = ({ data }) => {
   const frame = useCurrentFrame();
@@ -23,7 +23,7 @@ export const Achievement: React.FC<{ data: CardData }> = ({ data }) => {
       overflow: 'hidden',
     }}>
       {/* Scene background: milestone1.jpg */}
-      <Img src={staticFile('milestone1.jpg')} style={{
+      <Img src={staticFile(getBg(data, 'milestone'))} style={{
         position: 'absolute', width: '100%', height: '100%',
         objectFit: 'cover', opacity: 0.4,
         filter: 'brightness(0.45) contrast(1.2)',

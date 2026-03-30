@@ -1,5 +1,5 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
-import { CardData, COLORS } from '../types';
+import { CardData, COLORS, getBg } from '../types';
 
 export const PlayStyle: React.FC<{ data: CardData }> = ({ data }) => {
   const frame = useCurrentFrame();
@@ -22,7 +22,7 @@ export const PlayStyle: React.FC<{ data: CardData }> = ({ data }) => {
       overflow: 'hidden',
     }}>
       {/* Scene background: commentary2.jpg */}
-      <Img src={staticFile('commentary2.jpg')} style={{
+      <Img src={staticFile(getBg(data, 'commentary'))} style={{
         position: 'absolute', width: '100%', height: '100%',
         objectFit: 'cover', opacity: 0.3,
         filter: 'brightness(0.4)',

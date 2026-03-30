@@ -1,0 +1,48 @@
+## PLAYER_MAIN PROMPT — Hook Scene용 (드라마틱/임팩트)
+## 용도: Hook 씬 배경에 합성할 전신 선수 이미지
+## 사용법: 아래 공통 프롬프트 + player_blocks.txt에서 선수 블록 복사 + season_moods.txt에서 무드 복사
+
+Create a premium vertical 9:16 football hero image for a SeasonXI hook scene.
+
+Style:
+- semi-realistic
+- cinematic football poster
+- premium sports key art
+- high contrast
+- dark navy and black palette
+- metallic gold highlights
+- slightly stylized, not photorealistic
+- not cartoon
+- not anime
+
+Composition:
+- full-body player
+- dramatic forward-running or dribbling pose
+- player centered and dominant
+- strong aura burst or cinematic energy behind the player
+- night stadium background
+- subtle rain, particles, and stadium light bloom
+- intense but elegant
+- strong emotional presence
+- hook-scene impact
+
+## 여기에 player_blocks.txt에서 선수 블록 붙이기
+## 여기에 season_moods.txt에서 무드 붙이기
+
+Keep the core SeasonXI visual identity:
+- dark premium football aesthetic
+- deep navy and black tones
+- metallic gold accents
+- cinematic sports atmosphere
+- high contrast
+- elegant elite mythic tone
+- vertical 9:16 composition
+- single player only
+- no logos
+- no watermark
+- no extra text
+- no cartoon
+- no anime
+- no exact club crest
+- no sponsor logo
+- no sportswear brand logo

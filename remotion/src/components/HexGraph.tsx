@@ -1,5 +1,5 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
-import { CardData, COLORS } from '../types';
+import { CardData, COLORS, getBg } from '../types';
 
 const LABELS = ['Finishing', 'Playmaking', 'Defense', 'Clutch', 'Aura', 'Dribbling'];
 const ANGLES = [-90, -30, 30, 90, 150, 210].map(a => (a * Math.PI) / 180);
@@ -36,7 +36,7 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
   return (
     <AbsoluteFill style={{ background: COLORS.black, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
       {/* Scene background: graph1.jpg */}
-      <Img src={staticFile('graph1.jpg')} style={{
+      <Img src={staticFile(getBg(data, 'graph'))} style={{
         position: 'absolute', width: '100%', height: '100%',
         objectFit: 'cover', opacity: 0.35,
         filter: 'brightness(0.4) contrast(1.2)',

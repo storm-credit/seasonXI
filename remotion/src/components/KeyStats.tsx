@@ -1,5 +1,5 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
-import { CardData, COLORS } from '../types';
+import { CardData, COLORS, getBg } from '../types';
 
 export const KeyStats: React.FC<{ data: CardData }> = ({ data }) => {
   const frame = useCurrentFrame();
@@ -22,7 +22,7 @@ export const KeyStats: React.FC<{ data: CardData }> = ({ data }) => {
       overflow: 'hidden',
     }}>
       {/* Scene background: stats2.jpg - golden stat panel */}
-      <Img src={staticFile('stats2.jpg')} style={{
+      <Img src={staticFile(getBg(data, 'stats'))} style={{
         position: 'absolute', width: '100%', height: '100%',
         objectFit: 'cover', opacity: 0.5,
         filter: 'brightness(0.4) contrast(1.2)',
