@@ -1,0 +1,52 @@
+{
+  "player_id": "mbappe",
+  "player_name": "Kylian Mbappé",
+  "display_name": "MBAPPÉ",
+  "season": "2018-19",
+  "season_label": "2018–19",
+  "club": "Paris Saint-Germain",
+  "club_short": "PSG",
+  "position": "RW",
+  "role_bucket": "FW",
+  "ovr": 91,
+  "stats": {
+    "finishing": 93,
+    "playmaking": 80,
+    "dribbling": 94,
+    "defense": 35,
+    "clutch": 88,
+    "aura": 90
+  },
+  "tier": "LEGENDARY",
+  "hook": "THE NEXT GENERATION",
+  "commentary": "PURE SPEED AND DESTRUCTION",
+  "achievement": "LIGUE 1 TOP SCORER",
+  "verdict": "LEGENDARY SEASON",
+  "cta": "ALREADY BETTER THAN HENRY?",
+  "goals": 33,
+  "assists": 7,
+  "minutes": 2800,
+  "signature_stats": [
+    "DRIBBLING",
+    "FINISHING",
+    "AURA"
+  ],
+  "music_theme": "mbappe_core",
+  "season_mood": "PEAK_MONSTER",
+  "player_block": "MBAPPE",
+  "assets": {
+    "image_main": null,
+    "image_card": null
+  },
+  "backgrounds": {
+    "hook": "hook1.jpg",
+    "ovr": "ovr2.jpg",
+    "graph": "graph1.jpg",
+    "stats": "stats2.jpg",
+    "commentary": "commentary2.jpg",
+    "milestone": "milestone1.jpg",
+    "verdict": "verdict2.jpg",
+    "end": "end2.jpg"
+  },
+  "status": "draft"
+}

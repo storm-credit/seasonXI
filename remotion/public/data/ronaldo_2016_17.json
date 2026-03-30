@@ -1,0 +1,52 @@
+{
+  "player_id": "ronaldo",
+  "player_name": "Cristiano Ronaldo",
+  "display_name": "RONALDO",
+  "season": "2016-17",
+  "season_label": "2016–17",
+  "club": "Real Madrid",
+  "club_short": "Real Madrid",
+  "position": "LW",
+  "role_bucket": "FW",
+  "ovr": 96,
+  "stats": {
+    "finishing": 98,
+    "playmaking": 78,
+    "dribbling": 85,
+    "defense": 45,
+    "clutch": 99,
+    "aura": 97
+  },
+  "tier": "MYTHIC",
+  "hook": "THE KING OF EUROPE",
+  "commentary": "UNSTOPPABLE IN THE KNOCKOUT ROUNDS",
+  "achievement": "UCL + LA LIGA DOUBLE",
+  "verdict": "MYTHIC SEASON",
+  "cta": "BETTER THAN 2013-14?",
+  "goals": 42,
+  "assists": 11,
+  "minutes": 3200,
+  "signature_stats": [
+    "CLUTCH",
+    "FINISHING",
+    "AURA"
+  ],
+  "music_theme": "ronaldo_core",
+  "season_mood": "PEAK_MONSTER",
+  "player_block": "RONALDO",
+  "assets": {
+    "image_main": null,
+    "image_card": null
+  },
+  "backgrounds": {
+    "hook": "hook1.jpg",
+    "ovr": "ovr2.jpg",
+    "graph": "graph1.jpg",
+    "stats": "stats2.jpg",
+    "commentary": "commentary2.jpg",
+    "milestone": "milestone1.jpg",
+    "verdict": "verdict2.jpg",
+    "end": "end2.jpg"
+  },
+  "status": "draft"
+}

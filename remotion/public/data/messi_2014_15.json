@@ -1,0 +1,52 @@
+{
+  "player_id": "messi",
+  "player_name": "Lionel Messi",
+  "display_name": "MESSI",
+  "season": "2014-15",
+  "season_label": "2014–15",
+  "club": "FC Barcelona",
+  "club_short": "Barcelona",
+  "position": "RW",
+  "role_bucket": "FW",
+  "ovr": 96,
+  "stats": {
+    "finishing": 96,
+    "playmaking": 97,
+    "dribbling": 98,
+    "defense": 50,
+    "clutch": 96,
+    "aura": 98
+  },
+  "tier": "MYTHIC",
+  "hook": "THE COMPLETE VERSION",
+  "commentary": "EVERY TOUCH WAS PERFECTION",
+  "achievement": "TREBLE WINNER",
+  "verdict": "MYTHIC SEASON",
+  "cta": "PEAK MESSI OR 2011-12?",
+  "goals": 58,
+  "assists": 27,
+  "minutes": 3400,
+  "signature_stats": [
+    "PLAYMAKING",
+    "DRIBBLING",
+    "AURA"
+  ],
+  "music_theme": "messi_core",
+  "season_mood": "ELEGANT_PRIME",
+  "player_block": "MESSI",
+  "assets": {
+    "image_main": null,
+    "image_card": null
+  },
+  "backgrounds": {
+    "hook": "hook1.jpg",
+    "ovr": "ovr2.jpg",
+    "graph": "graph1.jpg",
+    "stats": "stats2.jpg",
+    "commentary": "commentary2.jpg",
+    "milestone": "milestone1.jpg",
+    "verdict": "verdict2.jpg",
+    "end": "end2.jpg"
+  },
+  "status": "draft"
+}

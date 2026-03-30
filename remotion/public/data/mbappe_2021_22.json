@@ -1,0 +1,52 @@
+{
+  "player_id": "mbappe",
+  "player_name": "Kylian Mbappé",
+  "display_name": "MBAPPÉ",
+  "season": "2021-22",
+  "season_label": "2021–22",
+  "club": "Paris Saint-Germain",
+  "club_short": "PSG",
+  "position": "CF",
+  "role_bucket": "FW",
+  "ovr": 93,
+  "stats": {
+    "finishing": 95,
+    "playmaking": 84,
+    "dribbling": 93,
+    "defense": 32,
+    "clutch": 91,
+    "aura": 92
+  },
+  "tier": "LEGENDARY",
+  "hook": "SPEED KILLS",
+  "commentary": "THE FASTEST PLAYER ON THE PLANET",
+  "achievement": "39 GOALS",
+  "verdict": "LEGENDARY SEASON",
+  "cta": "FASTER THAN PEAK HENRY?",
+  "goals": 39,
+  "assists": 26,
+  "minutes": 3100,
+  "signature_stats": [
+    "FINISHING",
+    "DRIBBLING",
+    "CLUTCH"
+  ],
+  "music_theme": "mbappe_core",
+  "season_mood": "PEAK_MONSTER",
+  "player_block": "MBAPPE",
+  "assets": {
+    "image_main": null,
+    "image_card": null
+  },
+  "backgrounds": {
+    "hook": "hook1.jpg",
+    "ovr": "ovr2.jpg",
+    "graph": "graph1.jpg",
+    "stats": "stats2.jpg",
+    "commentary": "commentary2.jpg",
+    "milestone": "milestone1.jpg",
+    "verdict": "verdict2.jpg",
+    "end": "end2.jpg"
+  },
+  "status": "draft"
+}
