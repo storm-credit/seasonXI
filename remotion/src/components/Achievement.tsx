@@ -52,11 +52,26 @@ export const Achievement: React.FC<{ data: CardData }> = ({ data }) => {
 
       {/* Achievement text */}
       <div style={{
-        fontFamily: 'Bebas Neue, sans-serif', fontSize: 38, color: COLORS.white,
-        letterSpacing: 5, marginTop: 4,
+        fontFamily: 'Bebas Neue, sans-serif', fontSize: 42, color: COLORS.white,
+        letterSpacing: 6, marginTop: 4,
         opacity: textOpacity, transform: `translateY(${textY}px)`,
         textShadow: `0 2px 20px rgba(0,0,0,0.6)`,
       }}>{data.achievement}</div>
+
+      {/* Achievement detail */}
+      <div style={{
+        fontFamily: 'Montserrat, sans-serif', fontWeight: 500, fontSize: 18,
+        color: `${COLORS.white}55`, letterSpacing: 3, marginTop: 12,
+        opacity: interpolate(frame, [24, 32], [0, 1], { extrapolateRight: 'clamp' }),
+      }}>{data.achievement_detail}</div>
+
+      {/* Top context label */}
+      <div style={{
+        position: 'absolute', top: '8%', width: '100%', textAlign: 'center',
+        fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: 16,
+        color: `${COLORS.gold}66`, letterSpacing: 5,
+        opacity: textOpacity,
+      }}>{data.season} · {data.club}</div>
 
       {/* Corner details */}
       <div style={{
