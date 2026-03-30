@@ -253,6 +253,56 @@ def engine_check():
         raise HTTPException(500, str(e))
 
 
+# ─── API: Generate Image (Gemini) ────────────────────────────
+@app.post("/api/generate-image/{player_id}/{season}")
+def generate_image_api(player_id: str, season: str, scene: str = "HOOK", count: int = 1):
+    """Generate player image using Gemini API."""
+    try:
+        result = subprocess.Popen(
+            [
+                sys.executable, "-m", "seasonxi.content.generate_image",
+                "--player", player_id,
+                "--season", season,
+                "--scene", scene,
+                "--count", str(count),
+            ],
+            cwd=str(PROJECT_ROOT),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        return {
+            "status": "generating",
+            "player_id": player_id,
+            "season": season,
+            "scene": scene,
+            "count": count,
+            "pid": result.pid,
+        }
+    except Exception as e:
+        raise HTTPException(500, str(e))
+
+
+@app.post("/api/assemble-prompt/{player_id}/{season}")
+def assemble_prompt_api(player_id: str, season: str, scene: str = "HOOK"):
+    """Assemble full prompt text for copy-paste to Nanobanana."""
+    try:
+        from seasonxi.content.generate_image import assemble_prompt, load_season_doc
+        data = load_season_doc(player_id, season)
+        player_block = data.get("player_block", player_id.upper())
+        mood = data.get("season_mood", "PEAK_MONSTER")
+        mod_key = "hook_modifiers" if "HOOK" in scene.upper() else "card_modifiers"
+        modifiers = data.get(mod_key, [])
+        if isinstance(modifiers, list):
+            modifiers = [m for m in modifiers if m]
+        else:
+            modifiers = []
+
+        prompt = assemble_prompt(player_block, mood, scene, modifiers)
+        return {"prompt": prompt, "player_block": player_block, "mood": mood, "scene": scene}
+    except Exception as e:
+        raise HTTPException(500, str(e))
+
+
 # ─── API: Prompts List ────────────────────────────────────────
 @app.get("/api/prompts")
 def list_prompts():

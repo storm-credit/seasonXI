@@ -401,11 +401,15 @@ body {
     <div class="prod-grid">
       <div class="prod-card">
         <div class="card-label">IMAGE GEN</div>
-        <select>
-          <option>Nanobanana</option>
-          <option>Gemini API</option>
-          <option>Manual Upload</option>
+        <select id="imageGenMethod">
+          <option value="nanobanana">Nanobanana (복사)</option>
+          <option value="gemini">Gemini API (자동)</option>
         </select>
+        <div style="margin-top:8px;display:flex;gap:6px;">
+          <button class="btn btn-load" style="font-size:11px;padding:4px 10px;" onclick="generateImage('HOOK')">Hook</button>
+          <button class="btn btn-today" style="font-size:11px;padding:4px 10px;" onclick="generateImage('HOOK_CLOSEUP')">Card</button>
+          <button class="btn btn-preview" style="font-size:11px;padding:4px 10px;" onclick="copyPrompt()">Copy Prompt</button>
+        </div>
       </div>
       <div class="prod-card">
         <div class="card-label">BGM</div>
@@ -746,6 +750,42 @@ async function saveSettings() {
 }
 
 function showToday() { selectDay(currentDay); }
+
+// ─── Generate Image ───
+async function generateImage(scene) {
+  if (!currentPlayer) { alert('Select a player first'); return; }
+  const method = document.getElementById('imageGenMethod').value;
+  const pid = currentPlayer.player_id || currentPlayer.id?.split('_').slice(0,-2).join('_');
+  const season = currentPlayer.season || currentPlayer.id?.match(/\d{4}_\d{2}/)?.[0]?.replace('_','-');
+
+  if (method === 'nanobanana') {
+    copyPrompt(scene);
+    return;
+  }
+
+  try {
+    const res = await fetch(`${API}/generate-image/${pid}/${season}?scene=${scene}&count=2`, {method:'POST'});
+    const data = await res.json();
+    alert(`Generating ${scene} image! PID: ${data.pid}\nCheck remotion/public/ for results.`);
+  } catch(e) { alert('API error: ' + e.message); }
+}
+
+// ─── Copy Prompt ───
+async function copyPrompt(scene) {
+  if (!currentPlayer) { alert('Select a player first'); return; }
+  scene = scene || 'HOOK';
+  const pid = currentPlayer.player_id || currentPlayer.id?.split('_').slice(0,-2).join('_');
+  const season = currentPlayer.season || currentPlayer.id?.match(/\d{4}_\d{2}/)?.[0]?.replace('_','-');
+
+  try {
+    const res = await fetch(`${API}/assemble-prompt/${pid}/${season}?scene=${scene}`);
+    const data = await res.json();
+    await navigator.clipboard.writeText(data.prompt);
+    alert(`Prompt copied! (${data.player_block} + ${data.mood} + ${data.scene})\n\nPaste into Nanobanana.`);
+  } catch(e) {
+    alert('Copy failed. Check API is running.');
+  }
+}
 
 // ─── Input: Enter key search ───
 document.getElementById('playerInput').addEventListener('keydown', e => {
