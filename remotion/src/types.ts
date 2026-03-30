@@ -84,14 +84,14 @@ export const COLORS = {
   mythicGold: '#FFD700',
 } as const;
 
-// NEW 8-cut timing (30fps, ~8.2 seconds = 246 frames)
+// 8-scene timing (30fps, 15 seconds = 450 frames)
 export const SCENE_TIMING = {
-  hook:       { start: 0,   end: 36  },  // 0.0 - 1.2s  시선 강탈
-  cardReveal: { start: 36,  end: 66  },  // 1.2 - 2.2s  정체 공개
-  stat1:      { start: 66,  end: 96  },  // 2.2 - 3.2s  핵심 스탯 1
-  stat2:      { start: 96,  end: 126 },  // 3.2 - 4.2s  핵심 스탯 2
-  compare:    { start: 126, end: 150 },  // 4.2 - 5.0s  비교
-  energy:     { start: 150, end: 180 },  // 5.0 - 6.0s  감정
-  legend:     { start: 180, end: 210 },  // 6.0 - 7.0s  레전드 확정
-  outro:      { start: 210, end: 246 },  // 7.0 - 8.2s  마무리
+  hook:        { start: 0,   end: 45  },  // 0.0 - 1.5s
+  cardReveal:  { start: 45,  end: 90  },  // 1.5 - 3.0s
+  ovrShock:    { start: 90,  end: 135 },  // 3.0 - 4.5s
+  hexGraph:    { start: 135, end: 180 },  // 4.5 - 6.0s
+  keyStats:    { start: 180, end: 240 },  // 6.0 - 8.0s
+  playStyle:   { start: 240, end: 315 },  // 8.0 - 10.5s
+  achievement: { start: 315, end: 375 },  // 10.5 - 12.5s
+  verdict:     { start: 375, end: 450 },  // 12.5 - 15.0s
 } as const;
