@@ -74,10 +74,12 @@ export const CardReveal: React.FC<{ data: CardData }> = ({ data }) => {
         }}>{data.club}</div>
       </div>
 
-      {/* Player image - full screen */}
+      {/* Player image - inside card frame, filled large */}
       {playerCard && (
         <div style={{
-          position: 'absolute', inset: 0,
+          position: 'absolute',
+          top: '12%', left: '8%', right: '8%', bottom: '8%',
+          overflow: 'hidden', borderRadius: 12,
           opacity: imgOpacity, transform: `scale(${imgScale})`,
         }}>
           <Img src={imgSrc} style={{
