@@ -38,7 +38,20 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
         transform: `scale(${bgZoom})`,
       }} />
 
-      {/* No player image in Hook — reveal in Card scene */}
+      {/* Player silhouette - dark, mysterious, hint only */}
+      {playerMain && (
+        <div style={{
+          position: 'absolute', inset: 0,
+          transform: `scale(${scale * bgZoom}) translate(${shakeX}px, ${shakeY}px)`,
+          opacity: imgOpacity * 0.35,
+        }}>
+          <Img src={imgSrc} style={{
+            width: '100%', height: '100%',
+            objectFit: 'cover', objectPosition: 'top center',
+            filter: 'brightness(0.3) contrast(1.3)',
+          }} />
+        </div>
+      )}
 
       {/* Dark vignette overlay */}
       <div style={{
