@@ -6,29 +6,29 @@
   "season_label": "2016–17",
   "club": "Real Madrid",
   "club_short": "Real Madrid",
-  "position": "LW",
+  "position": "LW/ST",
   "role_bucket": "FW",
   "ovr": 96,
   "stats": {
-    "finishing": 98,
-    "playmaking": 78,
-    "dribbling": 85,
-    "defense": 45,
+    "finishing": 99,
+    "playmaking": 88,
+    "dribbling": 92,
+    "defense": 40,
     "clutch": 99,
-    "aura": 97
+    "aura": 98
   },
   "tier": "MYTHIC",
-  "hook": "THE KING OF EUROPE",
-  "commentary": "UNSTOPPABLE IN THE KNOCKOUT ROUNDS",
-  "achievement": "UCL + LA LIGA DOUBLE",
+  "hook": "BUILT FOR BIG GAMES",
+  "commentary": "THE ULTIMATE CLUTCH PLAYER",
+  "achievement": "UCL WINNER",
   "verdict": "MYTHIC SEASON",
-  "cta": "BETTER THAN 2013-14?",
+  "cta": "WHO WAS BETTER?",
   "goals": 42,
-  "assists": 11,
+  "assists": 12,
   "minutes": 3200,
   "signature_stats": [
-    "CLUTCH",
     "FINISHING",
+    "CLUTCH",
     "AURA"
   ],
   "music_theme": "ronaldo_core",
@@ -48,5 +48,5 @@
     "verdict": "verdict2.jpg",
     "end": "end2.jpg"
   },
-  "status": "draft"
+  "status": "ready"
 }

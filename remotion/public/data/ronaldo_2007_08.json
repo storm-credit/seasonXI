@@ -11,20 +11,20 @@
   "ovr": 95,
   "stats": {
     "finishing": 96,
-    "playmaking": 82,
-    "dribbling": 93,
-    "defense": 48,
-    "clutch": 95,
+    "playmaking": 90,
+    "dribbling": 94,
+    "defense": 45,
+    "clutch": 96,
     "aura": 95
   },
-  "tier": "MYTHIC",
-  "hook": "THE EXPLOSION",
-  "commentary": "RAW POWER MEETS PURE SKILL",
-  "achievement": "UCL + PL DOUBLE",
-  "verdict": "MYTHIC SEASON",
-  "cta": "BEST PL SEASON EVER?",
+  "tier": "LEGENDARY",
+  "hook": "THE RISE OF A KING",
+  "commentary": "UNSTOPPABLE FROM THE WING",
+  "achievement": "42 GOALS",
+  "verdict": "LEGENDARY SEASON",
+  "cta": "PRIME START?",
   "goals": 42,
-  "assists": 13,
+  "assists": 8,
   "minutes": 3500,
   "signature_stats": [
     "FINISHING",
@@ -32,7 +32,7 @@
     "CLUTCH"
   ],
   "music_theme": "ronaldo_core",
-  "season_mood": "PEAK_MONSTER",
+  "season_mood": "BREAKTHROUGH",
   "player_block": "RONALDO",
   "assets": {
     "image_main": null,
@@ -48,5 +48,5 @@
     "verdict": "verdict2.jpg",
     "end": "end2.jpg"
   },
-  "status": "draft"
+  "status": "ready"
 }

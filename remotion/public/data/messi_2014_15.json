@@ -11,24 +11,24 @@
   "ovr": 96,
   "stats": {
     "finishing": 96,
-    "playmaking": 97,
-    "dribbling": 98,
+    "playmaking": 98,
+    "dribbling": 99,
     "defense": 50,
-    "clutch": 96,
-    "aura": 98
+    "clutch": 97,
+    "aura": 99
   },
   "tier": "MYTHIC",
-  "hook": "THE COMPLETE VERSION",
-  "commentary": "EVERY TOUCH WAS PERFECTION",
+  "hook": "FOOTBALL PERFECTION",
+  "commentary": "COMPLETE IN EVERY WAY",
   "achievement": "TREBLE WINNER",
   "verdict": "MYTHIC SEASON",
-  "cta": "PEAK MESSI OR 2011-12?",
-  "goals": 58,
-  "assists": 27,
+  "cta": "BETTER THAN 2011?",
+  "goals": 43,
+  "assists": 21,
   "minutes": 3400,
   "signature_stats": [
-    "PLAYMAKING",
     "DRIBBLING",
+    "PLAYMAKING",
     "AURA"
   ],
   "music_theme": "messi_core",
@@ -48,5 +48,5 @@
     "verdict": "verdict2.jpg",
     "end": "end2.jpg"
   },
-  "status": "draft"
+  "status": "ready"
 }

@@ -1,34 +1,34 @@
 {
   "player_id": "mbappe",
   "player_name": "Kylian Mbappé",
-  "display_name": "MBAPPÉ",
+  "display_name": "MBAPPE",
   "season": "2021-22",
   "season_label": "2021–22",
-  "club": "Paris Saint-Germain",
+  "club": "PSG",
   "club_short": "PSG",
-  "position": "CF",
+  "position": "FW",
   "role_bucket": "FW",
-  "ovr": 93,
+  "ovr": 95,
   "stats": {
-    "finishing": 95,
-    "playmaking": 84,
-    "dribbling": 93,
-    "defense": 32,
-    "clutch": 91,
-    "aura": 92
+    "finishing": 96,
+    "playmaking": 90,
+    "dribbling": 97,
+    "defense": 35,
+    "clutch": 95,
+    "aura": 96
   },
-  "tier": "LEGENDARY",
-  "hook": "SPEED KILLS",
-  "commentary": "THE FASTEST PLAYER ON THE PLANET",
-  "achievement": "39 GOALS",
-  "verdict": "LEGENDARY SEASON",
-  "cta": "FASTER THAN PEAK HENRY?",
-  "goals": 39,
-  "assists": 26,
+  "tier": "MYTHIC",
+  "hook": "THE NEW ERA BEGINS",
+  "commentary": "THE MOST DANGEROUS FORWARD",
+  "achievement": "28 GOALS 17 ASSISTS",
+  "verdict": "MYTHIC SEASON",
+  "cta": "BEST IN THE WORLD?",
+  "goals": 28,
+  "assists": 17,
   "minutes": 3100,
   "signature_stats": [
-    "FINISHING",
     "DRIBBLING",
+    "FINISHING",
     "CLUTCH"
   ],
   "music_theme": "mbappe_core",
@@ -48,5 +48,5 @@
     "verdict": "verdict2.jpg",
     "end": "end2.jpg"
   },
-  "status": "draft"
+  "status": "ready"
 }
