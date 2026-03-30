@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeasonXI Production Dashboard</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0B0D12;
+  color: #F5F7FA;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+.header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: #C9A24A;
+  letter-spacing: 4px;
+}
+.header p {
+  color: #888;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ─── Player Selector ─── */
+.player-input-section {
+  background: #141820;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.player-input-section input {
+  width: 100%;
+  background: #1a1f2e;
+  border: 1px solid #2a3040;
+  color: #F5F7FA;
+  font-size: 20px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  outline: none;
+}
+.player-input-section input:focus {
+  border-color: #C9A24A;
+}
+.player-input-section input::placeholder {
+  color: #555;
+}
+
+/* ─── Action Buttons ─── */
+.action-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover { transform: scale(1.03); }
+.btn-load { background: #6C3FC5; color: white; }
+.btn-today { background: #1B8A2E; color: white; }
+.btn-preview { background: #C9A24A; color: #0B0D12; }
+.btn-render { background: #E74C3C; color: white; }
+
+/* ─── Settings Grid ─── */
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.setting-chip {
+  background: #1a1f2e;
+  border: 1px solid #2a3040;
+  border-radius: 10px;
+  padding: 12px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+}
+.setting-chip:hover { border-color: #C9A24A; }
+.setting-chip.active { border-color: #C9A24A; background: #1f2535; }
+.setting-chip .label { color: #888; font-size: 11px; display: block; margin-bottom: 4px; }
+.setting-chip .value { color: #F5F7FA; font-weight: 600; }
+
+/* ─── Day Selector ─── */
+.day-selector {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+.day-btn {
+  background: #1a1f2e;
+  border: 1px solid #2a3040;
+  color: #aaa;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.day-btn:hover { border-color: #C9A24A; color: #F5F7FA; }
+.day-btn.active { background: #C9A24A; color: #0B0D12; border-color: #C9A24A; }
+
+/* ─── Today Queue ─── */
+.queue-section {
+  background: #141820;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.queue-section h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #C9A24A;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.queue-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #1a1f2e;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+.queue-item:hover { border-color: #C9A24A; }
+.queue-item.selected { border-color: #C9A24A; background: #1f2535; }
+.queue-item .num {
+  background: #C9A24A;
+  color: #0B0D12;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.queue-item .info { flex: 1; }
+.queue-item .name { font-weight: 600; font-size: 15px; }
+.queue-item .meta { color: #888; font-size: 12px; margin-top: 2px; }
+.queue-item .tier {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.tier-mythic { background: #C9A24A22; color: #C9A24A; border: 1px solid #C9A24A44; }
+.tier-legendary { background: #9B59B622; color: #BB8FCE; border: 1px solid #9B59B644; }
+.tier-elite { background: #3498DB22; color: #85C1E9; border: 1px solid #3498DB44; }
+
+/* ─── Production Panel ─── */
+.prod-panel {
+  background: #141820;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.prod-panel h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #C9A24A;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.prod-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.prod-card {
+  background: #1a1f2e;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid #2a3040;
+}
+.prod-card .card-label {
+  font-size: 11px;
+  color: #C9A24A;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.prod-card select, .prod-card input[type="text"] {
+  width: 100%;
+  background: #0f1219;
+  border: 1px solid #2a3040;
+  color: #F5F7FA;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+.prod-card select:focus, .prod-card input[type="text"]:focus {
+  border-color: #C9A24A;
+}
+
+/* ─── Prompt Preview ─── */
+.prompt-box {
+  background: #0f1219;
+  border: 1px solid #2a3040;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 16px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.6;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+.prompt-box .highlight { color: #C9A24A; font-weight: 600; }
+
+/* ─── Checklist ─── */
+.checklist { margin-top: 16px; }
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #1a1f2e;
+  font-size: 14px;
+}
+.check-item input[type="checkbox"] {
+  accent-color: #C9A24A;
+  width: 18px; height: 18px;
+}
+.check-item.done { color: #555; text-decoration: line-through; }
+
+/* ─── Slider ─── */
+.slider-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+  background: #141820;
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+.slider-item { text-align: center; }
+.slider-item .s-label {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.slider-item .s-value {
+  color: #F5F7FA;
+  font-weight: 600;
+  font-size: 13px;
+}
+.slider-item input[type="range"] {
+  width: 100%;
+  accent-color: #C9A24A;
+  margin-top: 4px;
+}
+
+/* ─── Stats Preview ─── */
+.stats-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+.stat-box {
+  background: #0f1219;
+  border: 1px solid #2a304066;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.stat-box .stat-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: #C9A24A;
+}
+.stat-box .stat-name {
+  font-size: 10px;
+  color: #888;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+/* ─── Custom Modal ─── */
+.sxi-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999; backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease;
+}
+.sxi-modal {
+  background: linear-gradient(135deg, #0F1C2E 0%, #0B0D12 100%);
+  border: 1px solid #C9A24A; border-radius: 16px;
+  padding: 32px 28px; max-width: 420px; width: 90%;
+  text-align: center; position: relative;
+  box-shadow: 0 0 40px rgba(201,162,74,0.15), 0 20px 60px rgba(0,0,0,0.5);
+  animation: modalSlide 0.3s ease;
+}
+.sxi-modal-icon { font-size: 36px; margin-bottom: 12px; }
+.sxi-modal-title {
+  font-family: 'Bebas Neue', sans-serif; font-size: 22px;
+  color: #C9A24A; letter-spacing: 3px; margin-bottom: 8px;
+}
+.sxi-modal-body {
+  color: #aaa; font-size: 13px; line-height: 1.6; margin-bottom: 20px;
+  white-space: pre-line;
+}
+.sxi-modal-btn {
+  background: linear-gradient(135deg, #C9A24A, #E2C674);
+  color: #0B0D12; border: none; border-radius: 8px;
+  padding: 10px 32px; font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px; letter-spacing: 2px; cursor: pointer;
+  transition: all 0.2s;
+}
+.sxi-modal-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(201,162,74,0.3); }
+@keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+@keyframes modalSlide { from { opacity:0; transform:translateY(20px) scale(0.95) } to { opacity:1; transform:translateY(0) scale(1) } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>SEASONXI</h1>
+  <p>Production Dashboard - SeasonXI Content Engine</p>
+</div>
+
+<div class="container">
+
+  <!-- Player Input -->
+  <div class="player-input-section">
+    <input type="text" id="playerInput" placeholder="Messi 2011-12" value="Messi 2011-12">
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="action-row">
+    <button class="btn btn-load" onclick="searchPlayer()">Load Season</button>
+    <button class="btn btn-today" onclick="showToday()">Today's Queue</button>
+    <button class="btn btn-preview" onclick="exportJson()">Export JSON</button>
+    <button class="btn btn-render" onclick="renderVideo()">Render MP4</button>
+    <button class="btn" style="background:#FF0000;color:white" onclick="uploadYouTube()">Upload YouTube</button>
+    <button class="btn" style="background:#555;color:white" onclick="runEngineCheck()">Engine Check</button>
+    <button class="btn" style="background:#333;color:#aaa" onclick="toggleSettings()">Settings</button>
+  </div>
+
+  <!-- Settings -->
+  <div class="settings-grid">
+    <div class="setting-chip active"><span class="label">QUALITY</span><span class="value">1080x1920</span></div>
+    <div class="setting-chip"><span class="label">LANGUAGE</span><span class="value">English</span></div>
+    <div class="setting-chip"><span class="label">DURATION</span><span class="value">13.8s</span></div>
+    <div class="setting-chip"><span class="label">ENGINE</span><span class="value">SXI v1.3</span></div>
+  </div>
+
+  <!-- Date Selector -->
+  <div class="day-selector" id="dateSelector"></div>
+
+  <!-- Today's Queue -->
+  <div class="queue-section">
+    <h3>TODAY'S QUEUE</h3>
+    <div id="queueList">
+      <div class="queue-item selected" onclick="selectPlayer(this, 'messi_2011_12')">
+        <div class="num">1</div>
+        <div class="info">
+          <div class="name">Messi 2011-12</div>
+          <div class="meta">FC Barcelona / RW / 50 Goals</div>
+        </div>
+        <div class="tier tier-mythic">MYTHIC</div>
+      </div>
+      <div class="queue-item" onclick="selectPlayer(this, 'ronaldo_2016_17')">
+        <div class="num">2</div>
+        <div class="info">
+          <div class="name">Ronaldo 2016-17</div>
+          <div class="meta">Real Madrid / LW / 42 Goals</div>
+        </div>
+        <div class="tier tier-mythic">MYTHIC</div>
+      </div>
+      <div class="queue-item" onclick="selectPlayer(this, 'mbappe_2018_19')">
+        <div class="num">3</div>
+        <div class="info">
+          <div class="name">Mbappe 2018-19</div>
+          <div class="meta">PSG / FW / 33 Goals</div>
+        </div>
+        <div class="tier tier-elite">ELITE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Production Panel -->
+  <div class="prod-panel">
+    <h3>PRODUCTION</h3>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="card-label">IMAGE GEN</div>
+        <select id="imageGenMethod">
+          <option value="nanobanana">Nanobanana (복사)</option>
+          <option value="gemini">Gemini API (자동)</option>
+        </select>
+        <div style="margin-top:8px;display:flex;gap:6px;">
+          <button class="btn btn-load" style="font-size:11px;padding:4px 10px;" onclick="generateImage('HOOK')">Hook</button>
+          <button class="btn btn-today" style="font-size:11px;padding:4px 10px;" onclick="generateImage('HOOK_CLOSEUP')">Card</button>
+          <button class="btn btn-preview" style="font-size:11px;padding:4px 10px;" onclick="copyPrompt()">Copy Prompt</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="card-label">BGM</div>
+        <select>
+          <option>Suno - Mythic Theme</option>
+          <option>Suno - Dynasty Theme</option>
+          <option>Suno - Breakthrough</option>
+          <option>Manual Upload</option>
+        </select>
+      </div>
+      <div class="prod-card">
+        <div class="card-label">VOICE</div>
+        <select>
+          <option>None (Text Only)</option>
+          <option>2-Line Narration</option>
+          <option>Full Narration</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Stats Preview -->
+    <div id="statsPreview" class="stats-preview">
+      <div class="stat-box"><div class="stat-val">97</div><div class="stat-name">FINISHING</div></div>
+      <div class="stat-box"><div class="stat-val">95</div><div class="stat-name">PLAYMAKING</div></div>
+      <div class="stat-box"><div class="stat-val">99</div><div class="stat-name">DRIBBLING</div></div>
+      <div class="stat-box"><div class="stat-val">55</div><div class="stat-name">DEFENSE</div></div>
+      <div class="stat-box"><div class="stat-val">98</div><div class="stat-name">CLUTCH</div></div>
+      <div class="stat-box"><div class="stat-val">99</div><div class="stat-name">AURA</div></div>
+    </div>
+
+    <!-- Prompt Preview -->
+    <div class="prompt-box" id="promptPreview"><span class="highlight">[BASE]</span> Dark premium football aesthetic, metallic gold accents, cinematic sports atmosphere, semi-realistic, no logo, no watermark
+
+<span class="highlight">[PLAYER: MESSI]</span> Inspired by a legendary Argentine forward playmaker, compact athletic build, short dark brown hair, trimmed beard, calm but deadly expression, genius aura
+
+<span class="highlight">[MOOD: PEAK_MONSTER]</span> Unstoppable, explosive, peak form, aggressive momentum, dominant match-winning energy
+
+<span class="highlight">[SCENE: HOOK]</span> Full body dramatic entrance, stadium background with volumetric lighting
+
+<span class="highlight">[MODIFIERS]</span> TOP_TEXT_SAFE_SPACE, STRONG_AURA, RECOGNIZABLE_FACE_VIBE</div>
+  </div>
+
+  <!-- Sliders -->
+  <div class="slider-row">
+    <div class="slider-item">
+      <div class="s-label">Speed <span class="s-value" id="speedVal">1.0x</span></div>
+      <input type="range" min="5" max="15" value="10" oninput="document.getElementById('speedVal').textContent=this.value/10+'x'">
+    </div>
+    <div class="slider-item">
+      <div class="s-label">Subtitle <span class="s-value" id="subVal">54px</span></div>
+      <input type="range" min="32" max="80" value="54" oninput="document.getElementById('subVal').textContent=this.value+'px'">
+    </div>
+    <div class="slider-item">
+      <div class="s-label">Position <span class="s-value" id="posVal">35%</span></div>
+      <input type="range" min="10" max="60" value="35" oninput="document.getElementById('posVal').textContent=this.value+'%'">
+    </div>
+  </div>
+
+  <!-- Settings Panel -->
+  <div class="prod-panel" style="margin-top: 20px;" id="settingsPanel" hidden>
+    <h3>SETTINGS</h3>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="card-label">GEMINI API KEY</div>
+        <input type="password" id="geminiKey" placeholder="AIza...">
+      </div>
+      <div class="prod-card">
+        <div class="card-label">OUTPUT DIR</div>
+        <input type="text" id="outputDir" value="outputs/">
+      </div>
+      <div class="prod-card">
+        <div class="card-label">REMOTION PORT</div>
+        <input type="text" id="remotionPort" value="3334">
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:12px;">
+      <button class="btn btn-today" onclick="saveSettings()">Save Settings</button>
+    </div>
+  </div>
+
+  <!-- Image Drop Zone -->
+  <div class="prod-panel" style="margin-top: 20px;">
+    <h3>IMAGE UPLOAD</h3>
+    <div id="dropZone" style="border:2px dashed #C9A24A;border-radius:12px;padding:40px 20px;text-align:center;cursor:pointer;transition:all 0.3s;background:rgba(201,162,74,0.03);">
+      <div style="font-size:36px;margin-bottom:8px;opacity:0.5;">📸</div>
+      <div style="color:#C9A24A;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;">DROP HOOK IMAGE HERE</div>
+      <div style="color:#888;font-size:12px;margin-top:6px;">또는 클릭해서 파일 선택</div>
+      <div id="dropStatus" style="color:#2ecc71;font-size:13px;margin-top:10px;"></div>
+      <input type="file" id="fileInput" accept="image/*" hidden>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:10px;">
+      <button class="btn btn-load" style="flex:1;font-size:12px;" onclick="dropAsType('hook')">Save as HOOK</button>
+      <button class="btn btn-today" style="flex:1;font-size:12px;" onclick="dropAsType('card')">Save as CARD</button>
+    </div>
+  </div>
+
+  <!-- Midjourney Prompt -->
+  <div class="prod-panel" style="margin-top: 20px;">
+    <h3>NANOBANANA PROMPT</h3>
+    <div id="mjPrompt" style="background:#0a0c10;border:1px solid #333;border-radius:8px;padding:12px;font-size:11px;color:#ccc;max-height:120px;overflow-y:auto;word-break:break-all;font-family:monospace;line-height:1.5;"></div>
+    <div style="display:flex;gap:8px;margin-top:10px;">
+      <button class="btn" style="flex:1;background:#C9A24A;color:#0B0D12;font-size:12px;font-weight:700;" onclick="copyMjPrompt('HOOK')">Copy HOOK</button>
+      <button class="btn" style="flex:1;background:#8B7530;color:white;font-size:12px;" onclick="copyMjPrompt('CARD')">Copy CARD</button>
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="prod-panel" style="margin-top: 20px;">
+    <h3>PRODUCTION CHECKLIST</h3>
+    <div class="checklist">
+      <div class="check-item"><input type="checkbox" id="chk_hook"> Hook Image (Midjourney)</div>
+      <div class="check-item"><input type="checkbox" id="chk_card"> Card Image (선택)</div>
+      <div class="check-item"><input type="checkbox" id="chk_music"> Suno Music</div>
+      <div class="check-item"><input type="checkbox" id="chk_json"> JSON Export</div>
+      <div class="check-item"><input type="checkbox" id="chk_render"> Remotion Render</div>
+      <div class="check-item"><input type="checkbox" id="chk_review"> Final Review</div>
+      <div class="check-item"><input type="checkbox" id="chk_upload"> Upload</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Schedule data (indexed by day offset 0-9)
+const SCHEDULE_DATA = [
+  [{name:"Messi 2011-12",meta:"FC Barcelona / RW / 50 Goals",tier:"mythic",id:"messi_2011_12",player_id:"messi",season:"2011-12",ovr:97,stats:{finishing:97,playmaking:95,dribbling:99,defense:55,clutch:98,aura:99},mood:"PEAK_MONSTER",block:"MESSI",hook:"THIS VERSION WAS BROKEN"},
+   {name:"Ronaldo 2016-17",meta:"Real Madrid / LW / 42 Goals",tier:"mythic",id:"ronaldo_2016_17",player_id:"ronaldo",season:"2016-17",ovr:96,stats:{finishing:99,playmaking:88,dribbling:92,defense:40,clutch:99,aura:98},mood:"PEAK_MONSTER",block:"RONALDO",hook:"BUILT FOR BIG GAMES"},
+   {name:"Mbappe 2018-19",meta:"PSG / FW / 33 Goals",tier:"elite",id:"mbappe_2018_19",player_id:"mbappe",season:"2018-19",ovr:93,stats:{finishing:94,playmaking:85,dribbling:96,defense:35,clutch:90,aura:92},mood:"BREAKTHROUGH",block:"MBAPPE",hook:"THE NEXT MONSTER"}],
+  [{name:"Messi 2014-15",meta:"FC Barcelona / RW / 43 Goals",tier:"mythic",id:"messi_2014_15",player_id:"messi",season:"2014-15",ovr:96,stats:{finishing:96,playmaking:98,dribbling:99,defense:50,clutch:97,aura:99},mood:"ELEGANT_PRIME",block:"MESSI",hook:"FOOTBALL PERFECTION"},
+   {name:"Ronaldo 2007-08",meta:"Manchester United / RW / 42 Goals",tier:"legendary",id:"ronaldo_2007_08",player_id:"ronaldo",season:"2007-08",ovr:95,stats:{finishing:96,playmaking:90,dribbling:94,defense:45,clutch:96,aura:95},mood:"BREAKTHROUGH",block:"RONALDO",hook:"THE RISE OF A KING"},
+   {name:"Mbappe 2021-22",meta:"PSG / FW / 28 Goals",tier:"mythic",id:"mbappe_2021_22",player_id:"mbappe",season:"2021-22",ovr:95,stats:{finishing:96,playmaking:90,dribbling:97,defense:35,clutch:95,aura:96},mood:"PEAK_MONSTER",block:"MBAPPE",hook:"THE NEW ERA BEGINS"}],
+  [{name:"Zidane 2005-06",meta:"Real Madrid / AM / 9 Goals",tier:"legendary",id:"zidane_2005_06",player_id:"zidane",season:"2005-06",ovr:93,stats:{finishing:85,playmaking:97,dribbling:95,defense:50,clutch:95,aura:99},mood:"ELEGANT_PRIME",block:"ZIDANE",hook:"THE FINAL MASTERPIECE"},
+   {name:"Henry 2003-04",meta:"Arsenal / FW / 30 Goals",tier:"mythic",id:"henry_2003_04",player_id:"henry",season:"2003-04",ovr:96,stats:{finishing:97,playmaking:92,dribbling:95,defense:45,clutch:96,aura:98},mood:"PEAK_MONSTER",block:"HENRY",hook:"INVINCIBLE"},
+   {name:"Ronaldinho 2005-06",meta:"FC Barcelona / AM / 26 Goals",tier:"mythic",id:"ronaldinho_2005_06",player_id:"ronaldinho",season:"2005-06",ovr:96,stats:{finishing:90,playmaking:98,dribbling:99,defense:35,clutch:92,aura:99},mood:"PEAK_MONSTER",block:"RONALDINHO",hook:"FOOTBALL WAS JOY"}],
+  [{name:"Salah 2017-18",meta:"Liverpool / RW / 44 Goals",tier:"legendary",id:"salah_2017_18",player_id:"salah",season:"2017-18",ovr:93,stats:{finishing:96,playmaking:85,dribbling:93,defense:40,clutch:90,aura:94},mood:"PEAK_MONSTER",block:"SALAH",hook:"THE EGYPTIAN KING RISES"},
+   {name:"De Bruyne 2019-20",meta:"Manchester City / CM / 13 Goals",tier:"legendary",id:"debruyne_2019_20",player_id:"debruyne",season:"2019-20",ovr:93,stats:{finishing:78,playmaking:99,dribbling:88,defense:65,clutch:88,aura:95},mood:"ELEGANT_PRIME",block:"DE_BRUYNE",hook:"THE PERFECT MIDFIELDER"},
+   {name:"Son 2021-22",meta:"Tottenham / FW / 23 Goals",tier:"elite",id:"son_2021_22",player_id:"son",season:"2021-22",ovr:91,stats:{finishing:93,playmaking:82,dribbling:90,defense:45,clutch:90,aura:88},mood:"PEAK_MONSTER",block:"SON",hook:"GOLDEN BOOT. NO PENALTIES."}],
+  [{name:"Lewandowski 2020-21",meta:"Bayern Munich / ST / 41 Goals",tier:"mythic",id:"lewandowski_2020_21",player_id:"lewandowski",season:"2020-21",ovr:96,stats:{finishing:99,playmaking:80,dribbling:85,defense:40,clutch:97,aura:97},mood:"PEAK_MONSTER",block:"LEWANDOWSKI",hook:"41 GOALS. RECORD BROKEN."},
+   {name:"Suarez 2015-16",meta:"FC Barcelona / ST / 40 Goals",tier:"mythic",id:"suarez_2015_16",player_id:"suarez",season:"2015-16",ovr:95,stats:{finishing:98,playmaking:88,dribbling:90,defense:45,clutch:95,aura:96},mood:"PEAK_MONSTER",block:"SUAREZ",hook:"THE COMPLETE STRIKER"},
+   {name:"Haaland 2022-23",meta:"Manchester City / ST / 36 Goals",tier:"mythic",id:"haaland_2022_23",player_id:"haaland",season:"2022-23",ovr:95,stats:{finishing:99,playmaking:72,dribbling:80,defense:35,clutch:96,aura:96},mood:"PEAK_MONSTER",block:"HAALAND",hook:"NOT FROM THIS PLANET"}],
+  [{name:"Iniesta 2011-12",meta:"FC Barcelona / CM / 5 Goals",tier:"legendary",id:"iniesta_2011_12",player_id:"iniesta",season:"2011-12",ovr:93,stats:{finishing:70,playmaking:98,dribbling:96,defense:60,clutch:92,aura:97},mood:"ELEGANT_PRIME",block:"INIESTA",hook:"THE INVISIBLE CONDUCTOR"},
+   {name:"Modric 2017-18",meta:"Real Madrid / CM / 4 Goals",tier:"legendary",id:"modric_2017_18",player_id:"modric",season:"2017-18",ovr:93,stats:{finishing:72,playmaking:96,dribbling:93,defense:68,clutch:94,aura:96},mood:"ELEGANT_PRIME",block:"MODRIC",hook:"THE BALLON D'OR MIDFIELDER"},
+   {name:"Kaka 2006-07",meta:"AC Milan / AM / 14 Goals",tier:"mythic",id:"kaka_2006_07",player_id:"kaka",season:"2006-07",ovr:96,stats:{finishing:92,playmaking:95,dribbling:96,defense:40,clutch:96,aura:98},mood:"PEAK_MONSTER",block:"KAKA",hook:"THE LAST CLASSIC 10"}],
+  [{name:"Maldini 2004-05",meta:"AC Milan / CB / 2 Goals",tier:"legendary",id:"maldini_2004_05",player_id:"maldini",season:"2004-05",ovr:92,stats:{finishing:35,playmaking:65,dribbling:72,defense:99,clutch:90,aura:98},mood:"ELEGANT_PRIME",block:"MALDINI",hook:"DEFENDING IS AN ART"},
+   {name:"Van Dijk 2018-19",meta:"Liverpool / CB / 6 Goals",tier:"elite",id:"vandijk_2018_19",player_id:"vandijk",season:"2018-19",ovr:91,stats:{finishing:55,playmaking:70,dribbling:68,defense:97,clutch:90,aura:95},mood:"PEAK_MONSTER",block:"VAN_DIJK",hook:"THE WALL"},
+   {name:"Neuer 2013-14",meta:"Bayern Munich / GK",tier:"legendary",id:"neuer_2013_14",player_id:"neuer",season:"2013-14",ovr:93,stats:{finishing:30,playmaking:65,dribbling:50,defense:97,clutch:94,aura:96},mood:"PEAK_MONSTER",block:"NEUER",hook:"THE SWEEPER KEEPER"}],
+  [{name:"Son 2019-20",meta:"Tottenham / FW / 18 Goals",tier:"elite",id:"son_2019_20",player_id:"son",season:"2019-20",ovr:89,stats:{finishing:92,playmaking:82,dribbling:90,defense:45,clutch:85,aura:88},mood:"ELEGANT_PRIME",block:"SON",hook:"UCL FINAL TO GOLDEN BOOT"},
+   {name:"Hazard 2018-19",meta:"Chelsea / LW / 21 Goals",tier:"legendary",id:"hazard_2018_19",player_id:"hazard",season:"2018-19",ovr:92,stats:{finishing:88,playmaking:93,dribbling:97,defense:40,clutch:88,aura:93},mood:"ELEGANT_PRIME",block:"HAZARD",hook:"THE CHELSEA MAESTRO"},
+   {name:"Aguero 2011-12",meta:"Manchester City / ST / 23 Goals",tier:"legendary",id:"aguero_2011_12",player_id:"aguero",season:"2011-12",ovr:92,stats:{finishing:95,playmaking:78,dribbling:88,defense:35,clutch:99,aura:95},mood:"PEAK_MONSTER",block:"AGUERO",hook:"THAT MOMENT"}],
+  [{name:"Totti 2006-07",meta:"AS Roma / FW / 26 Goals",tier:"legendary",id:"totti_2006_07",player_id:"totti",season:"2006-07",ovr:92,stats:{finishing:90,playmaking:94,dribbling:92,defense:38,clutch:90,aura:97},mood:"ELEGANT_PRIME",block:"TOTTI",hook:"THE ETERNAL KING"},
+   {name:"Ribery 2012-13",meta:"Bayern Munich / LW / 11 Goals",tier:"legendary",id:"ribery_2012_13",player_id:"ribery",season:"2012-13",ovr:92,stats:{finishing:82,playmaking:93,dribbling:96,defense:50,clutch:90,aura:93},mood:"PEAK_MONSTER",block:"RIBERY",hook:"THE TREBLE MACHINE"},
+   {name:"Neymar 2017-18",meta:"PSG / LW / 28 Goals",tier:"elite",id:"neymar_2017_18",player_id:"neymar",season:"2017-18",ovr:89,stats:{finishing:90,playmaking:90,dribbling:97,defense:30,clutch:78,aura:85},mood:"BREAKTHROUGH",block:"NEYMAR",hook:"THE ARTIST IN PARIS"}],
+  [{name:"Messi 2018-19",meta:"FC Barcelona / RW / 36 Goals",tier:"legendary",id:"messi_2018_19",player_id:"messi",season:"2018-19",ovr:94,stats:{finishing:95,playmaking:96,dribbling:98,defense:45,clutch:90,aura:97},mood:"ELEGANT_PRIME",block:"MESSI",hook:"THE LAST BARCELONA PEAK"},
+   {name:"Ronaldo 2013-14",meta:"Real Madrid / LW / 51 Goals",tier:"mythic",id:"ronaldo_2013_14",player_id:"ronaldo",season:"2013-14",ovr:96,stats:{finishing:99,playmaking:85,dribbling:90,defense:38,clutch:99,aura:98},mood:"PEAK_MONSTER",block:"RONALDO",hook:"17 UCL GOALS"},
+   {name:"Mbappe 2023-24",meta:"PSG / FW / 44 Goals",tier:"elite",id:"mbappe_2023_24",player_id:"mbappe",season:"2023-24",ovr:92,stats:{finishing:95,playmaking:85,dribbling:95,defense:32,clutch:88,aura:90},mood:"ELEGANT_PRIME",block:"MBAPPE",hook:"THE DEPARTURE SEASON"}],
+];
+
+// Build date-keyed schedule from today
+const SCHEDULE = {};
+const SCHEDULE_START = new Date();
+SCHEDULE_START.setHours(0,0,0,0);
+SCHEDULE_DATA.forEach((items, i) => {
+  const d = new Date(SCHEDULE_START);
+  d.setDate(d.getDate() + i);
+  const key = d.toISOString().slice(0,10);
+  SCHEDULE[key] = items;
+});
+
+let currentDay = Object.keys(SCHEDULE)[0];
+let currentPlayer = null;
+
+function selectDay(dateKey) {
+  currentDay = dateKey;
+  document.querySelectorAll('.day-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.date === dateKey);
+  });
+  renderQueue(dateKey);
+}
+
+function renderQueue(dateKey) {
+  const items = SCHEDULE[dateKey] || [];
+  const list = document.getElementById('queueList');
+  list.innerHTML = items.map((p, i) => `
+    <div class="queue-item ${i===0?'selected':''}" onclick="selectPlayer(this, '${p.id}')">
+      <div class="num">${i+1}</div>
+      <div class="info">
+        <div class="name">${p.name}</div>
+        <div class="meta">${p.meta}</div>
+      </div>
+      <div class="tier tier-${p.tier}">${p.tier.toUpperCase()}</div>
+    </div>
+  `).join('');
+  if(items.length > 0) loadPlayerData(items[0]);
+}
+
+function selectPlayer(el, id) {
+  document.querySelectorAll('.queue-item').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+  const items = SCHEDULE[currentDay] || [];
+  const p = items.find(x => x.id === id);
+  if(p) loadPlayerData(p);
+}
+
+function loadPlayerData(p) {
+  currentPlayer = p;
+  document.getElementById('playerInput').value = p.name;
+
+  // Update stats
+  const stats = p.stats;
+  const preview = document.getElementById('statsPreview');
+  preview.innerHTML = Object.entries(stats).map(([k,v]) => `
+    <div class="stat-box">
+      <div class="stat-val">${v}</div>
+      <div class="stat-name">${k.toUpperCase()}</div>
+    </div>
+  `).join('');
+
+  // Update Nanobanana/Gemini prompt
+  document.getElementById('promptPreview').innerHTML =
+    `<span class="highlight">[BASE]</span> Dark premium football aesthetic, metallic gold accents, cinematic sports atmosphere, semi-realistic, no logo, no watermark\n\n` +
+    `<span class="highlight">[PLAYER: ${p.block}]</span> (see player_blocks.txt)\n\n` +
+    `<span class="highlight">[MOOD: ${p.mood}]</span> (see season_moods.txt)\n\n` +
+    `<span class="highlight">[HOOK]</span> "${p.hook}"\n\n` +
+    `<span class="highlight">[SCENE: HOOK]</span> Full body dramatic entrance\n` +
+    `<span class="highlight">[MODIFIERS]</span> TOP_TEXT_SAFE_SPACE, STRONG_AURA, RECOGNIZABLE_FACE_VIBE`;
+
+  // Update Midjourney prompt
+  updateNbPrompt();
+
+  // Reset checklist
+  document.querySelectorAll('.checklist input[type=checkbox]').forEach(c => c.checked = false);
+
+  // Reset drop zone
+  document.getElementById('dropStatus').textContent = '';
+}
+
+const API = 'http://localhost:8800/api';
+
+// ─── Custom Modal ───
+function showModal(title, body, icon = '✅') {
+  const overlay = document.createElement('div');
+  overlay.className = 'sxi-modal-overlay';
+  overlay.innerHTML = `
+    <div class="sxi-modal">
+      <div class="sxi-modal-icon">${icon}</div>
+      <div class="sxi-modal-title">${title}</div>
+      <div class="sxi-modal-body">${body}</div>
+      <button class="sxi-modal-btn" onclick="this.closest('.sxi-modal-overlay').remove()">OK</button>
+    </div>
+  `;
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+  // Auto-focus OK button
+  overlay.querySelector('.sxi-modal-btn').focus();
+}
+
+// ─── Search (Live from Obsidian) ───
+async function searchPlayer() {
+  const q = document.getElementById('playerInput').value;
+  try {
+    const res = await fetch(`${API}/search?q=${encodeURIComponent(q)}`);
+    const data = await res.json();
+    if (data.length === 0) { showModal('NOT FOUND', q + ' 검색 결과 없음', '🔍'); return; }
+
+    const list = document.getElementById('queueList');
+    list.innerHTML = data.slice(0, 10).map((p, i) => `
+      <div class="queue-item ${i===0?'selected':''}" onclick="loadFromApi('${p.player_id}','${p.season}')">
+        <div class="num">${i+1}</div>
+        <div class="info">
+          <div class="name">${p.display_name} ${p.season_label}</div>
+          <div class="meta">${p.club} / ${p.position} / ${p.goals} Goals</div>
+        </div>
+        <div class="tier tier-${p.tier.toLowerCase()}">${p.tier}</div>
+      </div>
+    `).join('');
+    if (data[0]) loadApiData(data[0]);
+  } catch(e) {
+    showModal('API OFFLINE', 'Start server:\nuv run python -m seasonxi.api.server', '⚠️');
+  }
+}
+
+// ─── Load from API ───
+async function loadFromApi(playerId, season) {
+  try {
+    const res = await fetch(`${API}/season/${playerId}/${season}`);
+    const data = await res.json();
+    loadApiData(data);
+  } catch(e) { console.error(e); }
+}
+
+function loadApiData(p) {
+  currentPlayer = p;
+  document.getElementById('playerInput').value = `${p.display_name} ${p.season_label}`;
+
+  const preview = document.getElementById('statsPreview');
+  preview.innerHTML = Object.entries(p.stats).map(([k,v]) => `
+    <div class="stat-box">
+      <div class="stat-val">${v}</div>
+      <div class="stat-name">${k.toUpperCase()}</div>
+    </div>
+  `).join('');
+
+  // Load assembled prompt
+  loadPrompt(p.player_id, p.season);
+}
+
+// ─── Prompt Assembly ───
+async function loadPrompt(playerId, season) {
+  try {
+    const res = await fetch(`${API}/prompt/${playerId}/${season}?scene=HOOK`);
+    const data = await res.json();
+    document.getElementById('promptPreview').innerHTML =
+      `<span class="highlight">[BASE]</span>\n${data.base}\n\n` +
+      `<span class="highlight">[PLAYER: ${data.player_block_name}]</span>\n${data.player_block}\n\n` +
+      `<span class="highlight">[MOOD: ${data.mood_name}]</span>\n${data.mood}\n\n` +
+      `<span class="highlight">[SCENE: ${data.scene_name}]</span>\n${data.scene}`;
+  } catch(e) {
+    console.log('Prompt API not available, using fallback');
+  }
+}
+
+// ─── Export JSON ───
+async function exportJson() {
+  if (!currentPlayer) { showModal('NO PLAYER', '선수를 먼저 선택하세요', '⚠️'); return; }
+  try {
+    const res = await fetch(`${API}/export/${currentPlayer.player_id}/${currentPlayer.season}`, {method:'POST'});
+    const data = await res.json();
+    showModal('EXPORTED', data.path, '📦');
+  } catch(e) { showModal('ERROR', e.message, '❌'); }
+}
+
+// ─── Render Video ───
+async function renderVideo() {
+  if (!currentPlayer) { showModal('NO PLAYER', '선수를 먼저 선택하세요', '⚠️'); return; }
+  try {
+    const res = await fetch(`${API}/render/${currentPlayer.player_id}/${currentPlayer.season}`, {method:'POST'});
+    const data = await res.json();
+    showModal('RENDERING', 'PID: ' + data.pid + '\n완료 후 outputs/ 확인', '🎬');
+  } catch(e) { showModal('ERROR', e.message, '❌'); }
+}
+
+// ─── Engine Check ───
+async function runEngineCheck() {
+  try {
+    const res = await fetch(`${API}/engine-check`);
+    const data = await res.json();
+    const box = document.getElementById('promptPreview');
+    box.innerHTML = `<span class="highlight">[HANESIS ENGINE CHECK]</span>\n\n` +
+      data.output.replace(/\[OK\]/g, '<span style="color:#2ecc71">[OK]</span>')
+               .replace(/\[WARN\]/g, '<span style="color:#f39c12">[WARN]</span>')
+               .replace(/\[FAIL\]/g, '<span style="color:#e74c3c">[FAIL]</span>');
+  } catch(e) { showModal('API OFFLINE', 'Server를 먼저 시작하세요', '⚠️'); }
+}
+
+// ─── Settings ───
+function toggleSettings() {
+  const panel = document.getElementById('settingsPanel');
+  panel.hidden = !panel.hidden;
+  if (!panel.hidden) loadSettings();
+}
+
+async function loadSettings() {
+  try {
+    const res = await fetch(`${API}/settings`);
+    const data = await res.json();
+    document.getElementById('geminiKey').value = data.gemini_api_key_masked || '';
+    document.getElementById('outputDir').value = data.output_dir || 'outputs/';
+    document.getElementById('remotionPort').value = data.remotion_port || 3334;
+  } catch(e) {}
+}
+
+async function saveSettings() {
+  const key = document.getElementById('geminiKey').value;
+  const body = {
+    output_dir: document.getElementById('outputDir').value,
+    remotion_port: parseInt(document.getElementById('remotionPort').value),
+  };
+  if (key && !key.includes('...')) body.gemini_api_key = key;
+  try {
+    await fetch(`${API}/settings`, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+    showModal('SAVED', 'Settings 저장 완료', '⚙️');
+    toggleSettings();
+  } catch(e) { showModal('ERROR', 'Save failed', '❌'); }
+}
+
+function showToday() {
+  // Find today's date in schedule
+  const today = new Date().toISOString().slice(0,10);
+  const dayKeys = Object.keys(SCHEDULE);
+  for (const k of dayKeys) {
+    if (k === today) { selectDay(k); return; }
+  }
+  selectDay(dayKeys[0]); // fallback to first
+}
+
+// ─── Date Selector Init ───
+function initDateSelector() {
+  const container = document.getElementById('dateSelector');
+  const keys = Object.keys(SCHEDULE);
+  container.innerHTML = keys.map((k, i) => {
+    const d = new Date(k + 'T00:00:00');
+    const label = `${d.getMonth()+1}/${d.getDate()}`;
+    return `<div class="day-btn ${i===0?'active':''}" onclick="selectDay('${k}')">${label}</div>`;
+  }).join('');
+}
+
+// ─── Drop Zone ───
+let droppedFile = null;
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.style.borderColor='#E2C674'; dropZone.style.background='rgba(201,162,74,0.1)'; });
+dropZone.addEventListener('dragleave', e => { dropZone.style.borderColor='#C9A24A'; dropZone.style.background='rgba(201,162,74,0.03)'; });
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.style.borderColor='#C9A24A'; dropZone.style.background='rgba(201,162,74,0.03)';
+  if (e.dataTransfer.files.length > 0) {
+    droppedFile = e.dataTransfer.files[0];
+    document.getElementById('dropStatus').textContent = `Ready: ${droppedFile.name} (${(droppedFile.size/1024).toFixed(0)}KB)`;
+  }
+});
+dropZone.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', e => {
+  if (e.target.files.length > 0) {
+    droppedFile = e.target.files[0];
+    document.getElementById('dropStatus').textContent = `Ready: ${droppedFile.name} (${(droppedFile.size/1024).toFixed(0)}KB)`;
+  }
+});
+
+async function dropAsType(type) {
+  if (!droppedFile) { showModal('NO IMAGE', '이미지를 먼저 드래그하세요', '📸'); return; }
+  if (!currentPlayer) { showModal('NO PLAYER', '선수를 먼저 선택하세요', '⚠️'); return; }
+  const pid = currentPlayer.player_id || currentPlayer.id;
+  const season = (currentPlayer.season || '').replace('-','_') || pid.match(/\d{4}_\d{2}/)?.[0];
+  const filename = `${pid.split('_').slice(0,-2).join('_') || pid}_${season}_${type}.png`;
+
+  const formData = new FormData();
+  formData.append('file', droppedFile);
+  formData.append('filename', filename);
+
+  try {
+    const res = await fetch(`${API}/upload-image`, {method:'POST', body: formData});
+    const data = await res.json();
+    document.getElementById('dropStatus').textContent = `Saved: ${data.filename}`;
+    droppedFile = null;
+    // Auto-check
+    if (type === 'hook') document.getElementById('chk_hook').checked = true;
+    if (type === 'card') document.getElementById('chk_card').checked = true;
+  } catch(e) {
+    showModal('UPLOAD FAILED', e.message, '❌');
+  }
+}
+
+// ─── Midjourney Prompt ───
+// Nanobanana prompt system (can use real names)
+const NB_BASE = 'Create a premium vertical football poster image in 9:16 format. Semi-realistic cinematic sports art, dark navy and black tones, metallic gold accents, dramatic stadium floodlights, high contrast, depth of field, atmospheric rain particles, no text, no logos, no watermark. Single male football player, dynamic action pose.';
+
+const NB_PLAYERS = {
+  MESSI: 'Lionel Messi, FC Barcelona, compact build, short dark brown hair, trimmed beard, calm genius expression, elegant dribbling stance, blue and red striped kit',
+  RONALDO: 'Cristiano Ronaldo, Real Madrid, tall muscular build, sharp jawline, short styled dark hair, intense dominant expression, powerful shooting stance, white kit',
+  MBAPPE: 'Kylian Mbappé, PSG, young athletic build, short dark hair, focused expression, explosive sprinting pose, dark blue kit',
+  SON: 'Son Heung-min, Tottenham, lean athletic build, short black hair, clean-shaven, determined expression, left-footed shooting pose, white kit',
+  HAALAND: 'Erling Haaland, Manchester City, tall imposing muscular build, long blonde hair tied back, predatory expression, brutal forward charge, light blue kit',
+  ZIDANE: 'Zinedine Zidane, Real Madrid, shaved head, tall graceful build, composed masterful expression, orchestrating pose, white kit',
+  DE_BRUYNE: 'Kevin De Bruyne, Manchester City, ginger-blonde hair, intelligent expression, commanding midfield presence, through-ball pose, light blue kit',
+  HENRY: 'Thierry Henry, Arsenal, tall athletic build, short dark hair, confident cool expression, explosive striking pose, red and white kit',
+  RONALDINHO: 'Ronaldinho, FC Barcelona, long curly dark hair, joyful confident smile, creative genius aura, dribbling with flair, blue and red striped kit',
+  SALAH: 'Mohamed Salah, Liverpool, dark curly afro hair, short beard, intense expression, cutting inside on left foot, red kit',
+  LEWANDOWSKI: 'Robert Lewandowski, Bayern Munich, tall athletic build, short dark hair, predatory expression, clinical finishing posture, red kit',
+  SUAREZ: 'Luis Suárez, FC Barcelona, stocky build, dark hair, short beard, fierce aggressive expression, powerful shooting stance, blue and red striped kit',
+  INIESTA: 'Andrés Iniesta, FC Barcelona, compact build, receding dark hair, calm intelligent expression, elegant close control, blue and red striped kit',
+  MODRIC: 'Luka Modrić, Real Madrid, lean build, long dark blonde hair, composed expression, graceful passing stance, white kit',
+  KAKA: 'Kaká, AC Milan, tall elegant build, short brown hair, serene confident expression, graceful running stride, red and black striped kit',
+  MALDINI: 'Paolo Maldini, AC Milan, tall distinguished build, short dark hair slightly graying, calm authoritative expression, commanding defensive posture, red and black striped kit',
+  VAN_DIJK: 'Virgil van Dijk, Liverpool, tall imposing build, short dark hair, short beard, calm dominant expression, commanding aerial presence, red kit',
+  NEUER: 'Manuel Neuer, Bayern Munich, tall athletic build, short blonde hair, intense alert expression, sweeper-keeper stance, dark goalkeeper kit',
+  HAZARD: 'Eden Hazard, Chelsea, compact build, short dark hair, playful confident expression, explosive dribbling stance, blue kit',
+  AGUERO: 'Sergio Agüero, Manchester City, compact build, dark hair, determined clutch expression, celebrating iconic goal, light blue kit',
+  TOTTI: 'Francesco Totti, AS Roma, slightly longer brown hair, charismatic captain expression, elegant creative stance, dark red and gold kit',
+  RIBERY: 'Franck Ribéry, Bayern Munich, short dark hair, intense competitive expression, explosive cutting inside dribble, red kit',
+  NEYMAR: 'Neymar Jr, PSG, styled dark hair with blonde highlights, creative showman expression, flashy dribbling flair, dark blue kit',
+};
+
+const NB_MOODS = {
+  PEAK_MONSTER: 'unstoppable explosive energy, peak dominance, aggressive momentum, intense contrast lighting, mythic aura burst, maximum intensity',
+  ELEGANT_PRIME: 'controlled elegance, complete mastery, refined cinematic atmosphere, balanced power and intelligence, golden era energy',
+  BREAKTHROUGH: 'raw hungry energy, emerging talent explosion, electric atmosphere, bright dynamic accents, youthful fire',
+  DECLINE_TRANSITION: 'reflective veteran energy, emotional weight, controlled intensity, quieter powerful tone, legacy aura',
+};
+
+const NB_SCENES = {
+  HOOK: 'Full body dramatic entrance shot, player dominating the entire frame, facing slightly toward camera, maximum presence, strongest lighting, emerging from darkness, space at the top 20% for text overlay, highest drama',
+  CARD: '3/4 body stable composition, player centered in frame, clean readable silhouette, suitable for card frame overlay, slightly less dramatic, good for cropping',
+};
+
+function buildNbPrompt(scene) {
+  if (!currentPlayer) return '';
+  const block = currentPlayer.block || currentPlayer.player_block || 'MESSI';
+  const mood = currentPlayer.mood || currentPlayer.season_mood || 'PEAK_MONSTER';
+  const player = NB_PLAYERS[block] || NB_PLAYERS.MESSI;
+  const moodText = NB_MOODS[mood] || NB_MOODS.PEAK_MONSTER;
+  const sceneText = NB_SCENES[scene] || NB_SCENES.HOOK;
+  return `${NB_BASE}\n\nPlayer: ${player}\n\nSeason mood: ${moodText}\n\nScene: ${sceneText}\n\nDo not change the core SeasonXI visual identity: dark premium palette, cinematic football lighting, metallic gold accents, elite sports-card tone, single-player composition, serious mythic atmosphere.`;
+}
+
+function updateNbPrompt() {
+  const el = document.getElementById('mjPrompt');
+  if (el && currentPlayer) {
+    el.textContent = buildNbPrompt('HOOK');
+  }
+}
+
+async function copyMjPrompt(scene) {
+  const prompt = buildNbPrompt(scene);
+  try {
+    await navigator.clipboard.writeText(prompt);
+  } catch(e) {
+    // Fallback for non-HTTPS contexts
+    const ta = document.createElement('textarea');
+    ta.value = prompt;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+  showModal('COPIED', `${scene} prompt copied!\n\nDiscord /imagine 에 붙여넣기`, '📋');
+}
+
+// ─── YouTube Upload ───
+async function uploadYouTube() {
+  if (!currentPlayer) { showModal('NO PLAYER', '선수를 먼저 선택하세요', '⚠️'); return; }
+  const pid = currentPlayer.player_id || currentPlayer.id?.split('_').slice(0,-2).join('_') || 'messi';
+  const season = currentPlayer.season || currentPlayer.id?.match(/\d{4}.?\d{2}/)?.[0]?.replace('_','-') || '2011-12';
+
+  // Preview metadata first
+  try {
+    const metaRes = await fetch(`${API}/youtube-metadata/${pid}/${season}`);
+    const meta = await metaRes.json();
+    const title = meta.snippet?.title || '';
+    const desc = meta.snippet?.description || '';
+
+    showModal('YOUTUBE UPLOAD', `Title: ${title}\n\nPrivacy: unlisted\n\n업로드 하시겠습니까?`, '🔴');
+
+    // Replace OK button with Upload + Cancel
+    const modal = document.querySelector('.sxi-modal');
+    if (modal) {
+      modal.querySelector('.sxi-modal-btn').outerHTML = `
+        <div style="display:flex;gap:10px;justify-content:center;">
+          <button class="sxi-modal-btn" style="background:#FF0000;" onclick="doYouTubeUpload('${pid}','${season}')">Upload</button>
+          <button class="sxi-modal-btn" style="background:#333;color:#aaa;" onclick="this.closest('.sxi-modal-overlay').remove()">Cancel</button>
+        </div>
+      `;
+    }
+  } catch(e) {
+    showModal('ERROR', 'API 연결 확인\n' + e.message, '❌');
+  }
+}
+
+async function doYouTubeUpload(pid, season) {
+  document.querySelector('.sxi-modal-overlay')?.remove();
+  showModal('UPLOADING', '유튜브 업로드 중...', '⏳');
+  try {
+    const res = await fetch(`${API}/upload-youtube/${pid}/${season}?privacy=unlisted`, {method:'POST'});
+    const data = await res.json();
+    document.querySelector('.sxi-modal-overlay')?.remove();
+    showModal('UPLOADED', `PID: ${data.pid}\n\n업로드 진행 중. 콘솔에서 확인.`, '✅');
+    document.getElementById('chk_upload').checked = true;
+  } catch(e) {
+    document.querySelector('.sxi-modal-overlay')?.remove();
+    showModal('UPLOAD FAILED', e.message, '❌');
+  }
+}
+
+// ─── Generate Image ───
+async function generateImage(scene) {
+  if (!currentPlayer) { showModal('NO PLAYER', '선수를 먼저 선택하세요', '⚠️'); return; }
+  const method = document.getElementById('imageGenMethod').value;
+  const pid = currentPlayer.player_id || currentPlayer.id?.split('_').slice(0,-2).join('_');
+  const season = currentPlayer.season || currentPlayer.id?.match(/\d{4}_\d{2}/)?.[0]?.replace('_','-');
+
+  if (method === 'nanobanana') {
+    copyPrompt(scene);
+    return;
+  }
+
+  try {
+    const res = await fetch(`${API}/generate-image/${pid}/${season}?scene=${scene}&count=2`, {method:'POST'});
+    const data = await res.json();
+    showModal('GENERATING', `PID: ${data.pid}\nremotionpublic/ 확인`, '🎨');
+  } catch(e) { showModal('ERROR', e.message, '❌'); }
+}
+
+// ─── Copy Prompt ───
+async function copyPrompt(scene) {
+  if (!currentPlayer) { showModal('NO PLAYER', '선수를 먼저 선택하세요', '⚠️'); return; }
+  scene = scene || 'HOOK';
+  const pid = currentPlayer.player_id || currentPlayer.id?.split('_').slice(0,-2).join('_');
+  const season = currentPlayer.season || currentPlayer.id?.match(/\d{4}_\d{2}/)?.[0]?.replace('_','-');
+
+  try {
+    const res = await fetch(`${API}/assemble-prompt/${pid}/${season}?scene=${scene}`);
+    const data = await res.json();
+    await navigator.clipboard.writeText(data.prompt);
+    showModal('COPIED', `${data.player_block} + ${data.mood} + ${data.scene}\n\nNanobanana에 붙여넣기`, '📋');
+  } catch(e) {
+    showModal('COPY FAILED', 'API가 실행 중인지 확인하세요', '❌');
+  }
+}
+
+// ─── Input: Enter key search ───
+document.getElementById('playerInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') searchPlayer();
+});
+
+// ─── Init ───
+// Build date selector buttons
+const dateSelector = document.getElementById('dateSelector');
+const dateKeys = Object.keys(SCHEDULE);
+const today = new Date().toISOString().slice(0,10);
+dateSelector.innerHTML = dateKeys.map((k, i) => {
+  const d = new Date(k + 'T12:00:00');
+  const month = d.getMonth() + 1;
+  const day = d.getDate();
+  const isToday = k === today;
+  return `<div class="day-btn ${i===0?'active':''}" data-date="${k}" onclick="selectDay('${k}')">${isToday?'Today':month+'/'+day}</div>`;
+}).join('');
+
+// Load first day
+selectDay(dateKeys[0]);
+</script>
+</body>
+</html>
