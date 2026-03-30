@@ -261,9 +261,18 @@ def check_evaluate() -> list[str]:
         counts = {t.value: 0 for t in Tier}
         rater = ROLE_RATERS[role]
         for _ in range(2000):
-            pct = random.betavariate(2.5, 2.5)
-            minutes = random.randint(500, 3400)
-            scores = rater(_make_mock_row(pct), compute_confidence(minutes))
+            # Realistic: each feature has independent percentile
+            # with correlation (base + noise per feature)
+            base_talent = random.betavariate(2.5, 2.5)
+            row_data = {}
+            for k in _make_mock_row(0.5).index:
+                noise = random.gauss(0, 0.15)
+                row_data[k] = max(0.0, min(1.0, base_talent + noise))
+            row_data["team_goal_contribution"] = base_talent * 0.4
+            row = pd.Series(row_data)
+            # Most players play 1500+ minutes (realistic)
+            minutes = random.randint(900, 3400)
+            scores = rater(row, compute_confidence(minutes))
             counts[score_to_tier(scores["overall"]).value] += 1
 
         total = sum(counts.values())

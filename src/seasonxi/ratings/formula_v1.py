@@ -34,9 +34,25 @@ from seasonxi.ratings.league_adjustment import apply_league_adjustment
 from seasonxi.ratings.team_debiasing import debias_team_feature
 
 
+def _stretch(x: float, k: float = 4.0) -> float:
+    """Sigmoid stretch to spread out middle-heavy distributions.
+
+    Normalizes output to exact [0, 1] range by rescaling sigmoid.
+    k=4.0 gives good spread with reachable Mythic (~1-2%).
+    """
+    import math
+    sig = lambda v: 1.0 / (1.0 + math.exp(-k * (v - 0.5)))
+    raw = sig(x)
+    # Normalize: map sig(0)..sig(1) to 0..1
+    lo, hi = sig(0.0), sig(1.0)
+    return (raw - lo) / (hi - lo)
+
+
 def _scale(raw: float, confidence: float, base: int = SCORE_BASE, rng: int = SCORE_RANGE) -> float:
-    """Scale a 0–1 raw score to card score."""
-    return base + rng * max(0.0, min(1.0, raw)) * confidence
+    """Scale a 0-1 raw score to card score with sigmoid stretch."""
+    clamped = max(0.0, min(1.0, raw))
+    stretched = _stretch(clamped)
+    return base + rng * stretched * confidence
 
 
 def _safe_get(row: pd.Series, col: str, default: float = 0.0) -> float:
@@ -71,12 +87,14 @@ def rate_forward(row: pd.Series, confidence: float) -> dict:
         + 0.20 * _safe_get(row, "prog_passes_pct_role")
         + 0.15 * _safe_get(row, "minutes_share")
     )
-    # v1.2: added pressures, reduced minutes_share dependency
+    # v1.3: added ball_recoveries, pressure_success
     defense_raw = (
-        0.30 * _safe_get(row, "tackles_pct_role")
-        + 0.25 * _safe_get(row, "interceptions_pct_role")
-        + 0.30 * _safe_get(row, "pressures_pct_role")
-        + 0.15 * _safe_get(row, "minutes_share")
+        0.20 * _safe_get(row, "tackles_pct_role")
+        + 0.15 * _safe_get(row, "interceptions_pct_role")
+        + 0.25 * _safe_get(row, "pressures_pct_role")
+        + 0.15 * _safe_get(row, "pressure_success_pct_role")
+        + 0.15 * _safe_get(row, "ball_recoveries_pct_role")
+        + 0.10 * _safe_get(row, "minutes_share")
     )
     clutch_raw = (
         0.45 * _safe_get(row, "team_goal_contribution")
@@ -150,12 +168,14 @@ def rate_midfielder(row: pd.Series, confidence: float) -> dict:
         + 0.10 * _safe_get(row, "minutes_share")
         + 0.15 * _safe_get(row, "xa_pct_role")
     )
-    # v1.2: added pressures, reduced minutes_share
+    # v1.3: added ball_recoveries, pressure_success
     defense_raw = (
-        0.30 * _safe_get(row, "tackles_pct_role")
-        + 0.25 * _safe_get(row, "interceptions_pct_role")
-        + 0.15 * _safe_get(row, "clearances_pct_role")
+        0.20 * _safe_get(row, "tackles_pct_role")
+        + 0.15 * _safe_get(row, "interceptions_pct_role")
+        + 0.10 * _safe_get(row, "clearances_pct_role")
         + 0.20 * _safe_get(row, "pressures_pct_role")
+        + 0.10 * _safe_get(row, "pressure_success_pct_role")
+        + 0.15 * _safe_get(row, "ball_recoveries_pct_role")
         + 0.10 * _safe_get(row, "minutes_share")
     )
     clutch_raw = (
@@ -229,14 +249,16 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
         + 0.20 * _safe_get(row, "minutes_share")
         + 0.15 * _safe_get(row, "dribbles_pct_role")
     )
-    # v1.2: added pressures + aerial_duel_success for modern defense
+    # v1.3: added ball_recoveries, pressure_success for DF
     defense_raw = (
-        0.20 * _safe_get(row, "tackles_pct_role")
-        + 0.15 * _safe_get(row, "interceptions_pct_role")
-        + 0.20 * _safe_get(row, "clearances_pct_role")
-        + 0.15 * _safe_get(row, "aerials_pct_role")
+        0.15 * _safe_get(row, "tackles_pct_role")
+        + 0.10 * _safe_get(row, "interceptions_pct_role")
+        + 0.15 * _safe_get(row, "clearances_pct_role")
+        + 0.10 * _safe_get(row, "aerials_pct_role")
         + 0.15 * _safe_get(row, "pressures_pct_role")
-        + 0.15 * _safe_get(row, "aerial_duel_success_pct_role")
+        + 0.10 * _safe_get(row, "aerial_duel_success_pct_role")
+        + 0.10 * _safe_get(row, "pressure_success_pct_role")
+        + 0.15 * _safe_get(row, "ball_recoveries_pct_role")
     )
     clutch_raw = (
         0.30 * _safe_get(row, "clean_sheets_pct_role")
