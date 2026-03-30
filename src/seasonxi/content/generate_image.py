@@ -19,6 +19,8 @@ load_dotenv(Path(__file__).resolve().parents[3] / ".env")
 
 CONFIGS = Path(__file__).resolve().parents[3] / "configs" / "image_prompts"
 OUTPUT_DIR = Path(__file__).resolve().parents[3] / "remotion" / "public"
+COOLDOWN_FILE = Path(__file__).resolve().parents[3] / ".gemini_cooldowns.json"
+COOLDOWN_HOURS = 24
 
 # ── Prompt file readers ──────────────────────────────────────────────
 
@@ -109,6 +111,33 @@ def load_season_doc(player_id: str, season: str) -> dict:
 
 # ── Gemini image generation ──────────────────────────────────────────
 
+def _load_cooldowns() -> dict:
+    """Load cooldown timestamps from disk."""
+    if COOLDOWN_FILE.exists():
+        import json
+        return json.loads(COOLDOWN_FILE.read_text(encoding="utf-8"))
+    return {}
+
+def _save_cooldowns(data: dict):
+    """Save cooldown timestamps to disk."""
+    import json
+    COOLDOWN_FILE.write_text(json.dumps(data, indent=2), encoding="utf-8")
+
+def _mark_rate_limited(api_key: str):
+    """Mark a key as rate limited for COOLDOWN_HOURS."""
+    cooldowns = _load_cooldowns()
+    cooldowns[api_key[-8:]] = time.time()  # store last 8 chars as key id
+    _save_cooldowns(cooldowns)
+
+def _is_cooled_down(api_key: str) -> bool:
+    """Check if a key is still in cooldown."""
+    cooldowns = _load_cooldowns()
+    key_id = api_key[-8:]
+    if key_id not in cooldowns:
+        return False
+    elapsed = time.time() - cooldowns[key_id]
+    return elapsed < COOLDOWN_HOURS * 3600
+
 def get_api_keys() -> list[str]:
     """Get all available Gemini API keys for rotation."""
     keys = []
@@ -121,6 +150,15 @@ def get_api_keys() -> list[str]:
             keys.append(v)
     return keys
 
+def get_available_keys() -> list[tuple[int, str]]:
+    """Get keys that are NOT in cooldown. Returns (index, key) pairs."""
+    all_keys = get_api_keys()
+    available = []
+    for i, key in enumerate(all_keys):
+        if not _is_cooled_down(key):
+            available.append((i, key))
+    return available
+
 def generate_image(
     prompt: str,
     output_path: Path,
@@ -130,25 +168,36 @@ def generate_image(
     from google import genai
     from google.genai import types
 
-    keys = get_api_keys()
-    if not keys:
+    all_keys = get_api_keys()
+    if not all_keys:
         raise RuntimeError("No GEMINI_API_KEY found in .env")
 
-    # Models to try in order of preference
+    available = get_available_keys()
+    if not available:
+        # Show when keys will be available again
+        cooldowns = _load_cooldowns()
+        earliest = min(cooldowns.values()) + COOLDOWN_HOURS * 3600
+        remaining = earliest - time.time()
+        hrs = int(remaining // 3600)
+        mins = int((remaining % 3600) // 60)
+        raise RuntimeError(
+            f"All {len(all_keys)} keys are in 24h cooldown. "
+            f"Next available in ~{hrs}h {mins}m. Use Nanobanana (Copy Prompt) instead."
+        )
+
+    print(f"  {len(available)}/{len(all_keys)} keys available (rest in cooldown)")
+
     image_models = [
         "gemini-3.1-flash-image-preview",
         "gemini-3-pro-image-preview",
         "gemini-2.5-flash-image",
     ]
 
-    # Try all models x all keys until one works
     for model_name in image_models:
         print(f"\n  Model: {model_name}")
-        for offset in range(len(keys)):
-            idx = (key_index + offset) % len(keys)
-            api_key = keys[idx]
+        for idx, api_key in available:
             client = genai.Client(api_key=api_key)
-            print(f"    Key #{idx + 1}/{len(keys)}...")
+            print(f"    Key #{idx + 1}/{len(all_keys)}...")
 
             try:
                 response = client.models.generate_content(
@@ -168,7 +217,8 @@ def generate_image(
             except Exception as e:
                 err_str = str(e)
                 if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
-                    print(f"    Rate limited, next key...")
+                    _mark_rate_limited(api_key)
+                    print(f"    Rate limited → 24h cooldown. Next key...")
                     continue
                 elif "404" in err_str or "NOT_FOUND" in err_str:
                     print(f"    Model not available, next model...")

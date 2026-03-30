@@ -226,3 +226,4 @@ outputs/
 .claude/commands/
 .claude/memory/
 .claude/plans/
+.gemini_cooldowns.json
