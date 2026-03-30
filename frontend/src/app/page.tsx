@@ -14,6 +14,7 @@ import StatsPanel from "@/components/production/StatsPanel";
 import PromptBuilder from "@/components/production/PromptBuilder";
 import ImageUpload from "@/components/production/ImageUpload";
 import VideoPreview from "@/components/production/VideoPreview";
+import MusicPanel from "@/components/production/MusicPanel";
 
 export default function DashboardPage() {
   const [selectedDay, setSelectedDay] = useState(0);
@@ -137,8 +138,9 @@ export default function DashboardPage() {
               <StatsPanel stats={selectedSeason?.stats || null} />
               <PromptBuilder season={selectedSeason} />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <ImageUpload />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <ImageUpload season={selectedSeason} />
+              <MusicPanel season={selectedSeason} />
               <VideoPreview compact />
             </div>
           </div>

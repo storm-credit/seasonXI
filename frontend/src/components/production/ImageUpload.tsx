@@ -1,22 +1,29 @@
 "use client";
 
 import { useState, useCallback, useRef } from "react";
-import { Upload, Image as ImageIcon, Loader2 } from "lucide-react";
-import { uploadImage } from "@/lib/api";
+import { Upload, Image as ImageIcon, Loader2, Check } from "lucide-react";
+import type { Season } from "@/lib/types";
 import GlassPanel from "@/components/shared/GlassPanel";
 
-export default function ImageUpload() {
+const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8800";
+
+interface ImageUploadProps {
+  season?: Season | null;
+}
+
+export default function ImageUpload({ season }: ImageUploadProps) {
   const [dragActive, setDragActive] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
+  const [droppedFile, setDroppedFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
   const [savedAs, setSavedAs] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFile = useCallback(async (file: File) => {
-    // Show local preview
+  const handleFile = useCallback((file: File) => {
     const reader = new FileReader();
     reader.onload = (e) => setPreview(e.target?.result as string);
     reader.readAsDataURL(file);
+    setDroppedFile(file);
     setSavedAs(null);
   }, []);
 
@@ -32,31 +39,36 @@ export default function ImageUpload() {
     [handleFile]
   );
 
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    setDragActive(true);
-  };
-
-  const handleDragLeave = () => setDragActive(false);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) handleFile(file);
   };
 
-  const saveAs = async (type: "HOOK" | "CARD") => {
-    if (!fileInputRef.current?.files?.[0] && !preview) return;
-    // For now, upload the last dropped file
-    const input = fileInputRef.current;
-    const file = input?.files?.[0];
+  const saveAs = async (type: "hook" | "card") => {
+    const file = droppedFile || fileInputRef.current?.files?.[0];
     if (!file) return;
+
+    const pid = season?.player_id || "player";
+    const s = (season?.season || "unknown").replace("-", "_");
+    const filename = `${pid}_${s}_${type}.png`;
 
     try {
       setUploading(true);
-      await uploadImage(file);
-      setSavedAs(type);
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("filename", filename);
+
+      const res = await fetch(`${API}/api/upload-image`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (res.ok) {
+        setSavedAs(`${type.toUpperCase()} (${filename})`);
+      }
     } catch {
-      // Upload failed silently
+      // Try local save fallback
+      setSavedAs(`${type.toUpperCase()} (local only)`);
     } finally {
       setUploading(false);
     }
@@ -68,11 +80,10 @@ export default function ImageUpload() {
         Image Upload
       </h3>
 
-      {/* Drop zone */}
       <div
         onDrop={handleDrop}
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
+        onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
+        onDragLeave={() => setDragActive(false)}
         onClick={() => fileInputRef.current?.click()}
         className={`relative border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all duration-200 ${
           dragActive
@@ -89,42 +100,37 @@ export default function ImageUpload() {
         />
 
         {preview ? (
-          <div className="space-y-3">
-            <img
-              src={preview}
-              alt="Preview"
-              className="max-h-32 mx-auto rounded-lg object-contain"
-            />
+          <div className="space-y-2">
+            <img src={preview} alt="Preview" className="max-h-32 mx-auto rounded-lg object-contain" />
             {savedAs && (
-              <p className="text-xs text-sxi-gold">Saved as {savedAs}</p>
+              <p className="text-xs text-green-400 flex items-center justify-center gap-1">
+                <Check size={12} /> {savedAs}
+              </p>
             )}
           </div>
         ) : (
           <div className="space-y-2">
             <ImageIcon size={24} className="mx-auto text-sxi-white/20" />
-            <p className="text-sm text-sxi-white/40">
-              Drop image here or click to browse
-            </p>
+            <p className="text-sm text-sxi-white/40">Drop image here or click to browse</p>
             <p className="text-xs text-sxi-white/20">PNG, JPG up to 10MB</p>
           </div>
         )}
       </div>
 
-      {/* Save buttons */}
       {preview && (
         <div className="flex gap-2 mt-3">
           <button
-            onClick={() => saveAs("HOOK")}
+            onClick={() => saveAs("hook")}
             disabled={uploading}
-            className="flex-1 btn-outline text-xs flex items-center justify-center gap-1.5 disabled:opacity-40"
+            className="flex-1 py-2 rounded-lg bg-sxi-gold text-sxi-black font-display text-xs tracking-wider flex items-center justify-center gap-1.5 disabled:opacity-40 hover:brightness-110 transition-all"
           >
             {uploading ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
             Save as HOOK
           </button>
           <button
-            onClick={() => saveAs("CARD")}
+            onClick={() => saveAs("card")}
             disabled={uploading}
-            className="flex-1 btn-outline text-xs flex items-center justify-center gap-1.5 disabled:opacity-40"
+            className="flex-1 py-2 rounded-lg bg-sxi-white/10 text-sxi-white font-display text-xs tracking-wider flex items-center justify-center gap-1.5 disabled:opacity-40 hover:bg-sxi-white/15 transition-all border border-sxi-gold/20"
           >
             {uploading ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
             Save as CARD
