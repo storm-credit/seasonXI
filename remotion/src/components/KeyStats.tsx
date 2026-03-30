@@ -18,14 +18,14 @@ export const KeyStats: React.FC<{ data: CardData }> = ({ data }) => {
   return (
     <AbsoluteFill style={{
       background: `linear-gradient(170deg, ${COLORS.black}, ${COLORS.navy}88, ${COLORS.black})`,
-      alignItems: 'center', justifyContent: 'center', gap: 32,
+      alignItems: 'center', justifyContent: 'center', gap: 0,
       overflow: 'hidden',
     }}>
       {/* Scene background: stats2.jpg - golden stat panel */}
       <Img src={staticFile(getBg(data, 'stats'))} style={{
         position: 'absolute', width: '100%', height: '100%',
-        objectFit: 'cover', opacity: 0.5,
-        filter: 'brightness(0.4) contrast(1.2)',
+        objectFit: 'cover', opacity: 0.85,
+        filter: 'brightness(0.6) contrast(1.1)',
       }} />
 
       {/* Fading grid from previous scene */}
@@ -58,18 +58,19 @@ export const KeyStats: React.FC<{ data: CardData }> = ({ data }) => {
           <div key={key} style={{
             textAlign: 'center', opacity: op,
             transform: `translateY(${slideY}px) scale(${sc})`,
+            marginBottom: 40,
           }}>
             <div style={{
               fontFamily: 'Bebas Neue, sans-serif',
-              fontSize: isFirst ? 110 : 80,
+              fontSize: 130,
               color: COLORS.softGold, lineHeight: 1,
-              textShadow: isFirst ? `0 0 30px ${COLORS.gold}40` : 'none',
+              textShadow: `0 0 30px ${COLORS.gold}40`,
             }}>{val}</div>
             <div style={{
-              fontFamily: 'Montserrat, sans-serif', fontWeight: 600,
-              fontSize: isFirst ? 20 : 16,
-              color: isFirst ? `${COLORS.white}CC` : `${COLORS.white}77`,
-              letterSpacing: 4, textTransform: 'uppercase', marginTop: 4,
+              fontFamily: 'Montserrat, sans-serif', fontWeight: 700,
+              fontSize: 22,
+              color: `${COLORS.white}CC`,
+              letterSpacing: 6, textTransform: 'uppercase', marginTop: 6,
             }}>{key}</div>
           </div>
         );

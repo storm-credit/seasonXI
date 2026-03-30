@@ -60,7 +60,7 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
         opacity,
       }}>PERFORMANCE INDEX</div>
 
-      <svg viewBox="0 0 480 440" style={{ width: 440, height: 400, opacity }}>
+      <svg viewBox="0 0 480 440" style={{ width: 700, height: 640, opacity }}>
         {/* Background rings */}
         {[1, 0.66, 0.33].map((s, i) => (
           <polygon key={i} points={hexRing(cx, cy, r * s)} fill="none"
@@ -89,10 +89,10 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
             <g key={label}>
               <text x={lx} y={ly} fill={`${COLORS.white}88`}
                 fontFamily="Montserrat, sans-serif" fontWeight={600}
-                fontSize={11} textAnchor="middle" dominantBaseline="middle"
+                fontSize={13} textAnchor="middle" dominantBaseline="middle"
                 letterSpacing={1}>{label.toUpperCase()}</text>
               <text x={vx} y={vy + 15} fill={COLORS.softGold}
-                fontFamily="Bebas Neue, sans-serif" fontSize={20}
+                fontFamily="Bebas Neue, sans-serif" fontSize={24}
                 textAnchor="middle" opacity={valOp}>{vals[i]}</text>
             </g>
           );

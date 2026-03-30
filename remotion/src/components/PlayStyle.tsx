@@ -24,8 +24,8 @@ export const PlayStyle: React.FC<{ data: CardData }> = ({ data }) => {
       {/* Scene background: commentary2.jpg */}
       <Img src={staticFile(getBg(data, 'commentary'))} style={{
         position: 'absolute', width: '100%', height: '100%',
-        objectFit: 'cover', opacity: 0.3,
-        filter: 'brightness(0.4)',
+        objectFit: 'cover', opacity: 0.7,
+        filter: 'brightness(0.5) contrast(1.1)',
       }} />
 
       {/* Diagonal motion lines */}
@@ -50,7 +50,7 @@ export const PlayStyle: React.FC<{ data: CardData }> = ({ data }) => {
         textAlign: 'center', maxWidth: '90%',
       }}>
         <div style={{
-          fontFamily: 'Bebas Neue, sans-serif', fontSize: 40,
+          fontFamily: 'Bebas Neue, sans-serif', fontSize: 52,
           color: COLORS.white, letterSpacing: 3, lineHeight: 1.3,
           textShadow: `0 2px 30px rgba(0,0,0,0.5)`,
         }}>{mainLine.toUpperCase()}</div>
