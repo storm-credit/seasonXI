@@ -229,3 +229,5 @@ outputs/
 .gemini_cooldowns.json
 client_secrets.json
 token.json
+frontend/node_modules
+frontend/.next
