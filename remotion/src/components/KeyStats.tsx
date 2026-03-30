@@ -15,8 +15,9 @@ export const KeyStats: React.FC<{ data: CardData }> = ({ data }) => {
   // stats2.jpg slot centers (% from top), manually matched to the image
   // Big slots (numbers): 1, 3, 5
   // Small slots (labels): 2, 4, 6
-  const numberY = [13, 38, 63];   // centers of big dark slots
-  const labelY  = [24, 49, 74];   // centers of small label slots
+  // Measured from stats2.jpg pixel analysis (1536x2746)
+  const numberY = [22.6, 46.9, 71.7];  // centers of big dark slots
+  const labelY  = [32.8, 57.5, 81.5];  // centers of small label slots
 
   return (
     <AbsoluteFill style={{
