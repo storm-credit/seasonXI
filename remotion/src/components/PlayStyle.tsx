@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
 import { CardData, COLORS } from '../types';
 
 export const PlayStyle: React.FC<{ data: CardData }> = ({ data }) => {
@@ -17,10 +17,17 @@ export const PlayStyle: React.FC<{ data: CardData }> = ({ data }) => {
 
   return (
     <AbsoluteFill style={{
-      background: `radial-gradient(ellipse at 40% 50%, ${accentColor}08, transparent 50%), ${COLORS.black}`,
+      background: COLORS.black,
       alignItems: 'center', justifyContent: 'center', padding: 50,
       overflow: 'hidden',
     }}>
+      {/* Scene background: commentary2.jpg */}
+      <Img src={staticFile('commentary2.jpg')} style={{
+        position: 'absolute', width: '100%', height: '100%',
+        objectFit: 'cover', opacity: 0.3,
+        filter: 'brightness(0.4)',
+      }} />
+
       {/* Diagonal motion lines */}
       <div style={{
         position: 'absolute', inset: -100, opacity: bgLineOpacity,

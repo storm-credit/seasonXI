@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
 import { CardData, COLORS } from '../types';
 
 export const Verdict: React.FC<{ data: CardData }> = ({ data }) => {
@@ -29,6 +29,20 @@ export const Verdict: React.FC<{ data: CardData }> = ({ data }) => {
 
   return (
     <AbsoluteFill style={{ background: COLORS.black, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+      {/* Scene background: verdict2.jpg → end2.jpg blend */}
+      <Img src={staticFile('verdict2.jpg')} style={{
+        position: 'absolute', width: '100%', height: '100%',
+        objectFit: 'cover',
+        opacity: interpolate(frame, [0, 40, 60], [0.5, 0.5, 0.3], { extrapolateRight: 'clamp' }),
+        filter: 'brightness(0.35) contrast(1.3)',
+      }} />
+      <Img src={staticFile('end2.jpg')} style={{
+        position: 'absolute', width: '100%', height: '100%',
+        objectFit: 'cover',
+        opacity: interpolate(frame, [40, 55], [0, 0.4], { extrapolateRight: 'clamp' }),
+        filter: 'brightness(0.3)',
+      }} />
+
       {/* Gold burst ring */}
       <div style={{
         position: 'absolute', width: 400, height: 400, borderRadius: '50%',

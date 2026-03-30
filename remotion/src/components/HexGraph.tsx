@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
 import { CardData, COLORS } from '../types';
 
 const LABELS = ['Finishing', 'Playmaking', 'Defense', 'Clutch', 'Aura', 'Dribbling'];
@@ -35,6 +35,13 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
 
   return (
     <AbsoluteFill style={{ background: COLORS.black, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+      {/* Scene background: graph1.jpg */}
+      <Img src={staticFile('graph1.jpg')} style={{
+        position: 'absolute', width: '100%', height: '100%',
+        objectFit: 'cover', opacity: 0.35,
+        filter: 'brightness(0.4) contrast(1.2)',
+      }} />
+
       {/* HUD grid background */}
       <div style={{
         position: 'absolute', inset: 0, opacity: 0.08,

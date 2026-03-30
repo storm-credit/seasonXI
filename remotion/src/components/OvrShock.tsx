@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
 import { CardData, COLORS } from '../types';
 
 export const OvrShock: React.FC<{ data: CardData }> = ({ data }) => {
@@ -32,6 +32,13 @@ export const OvrShock: React.FC<{ data: CardData }> = ({ data }) => {
       background: COLORS.black,
       alignItems: 'center', justifyContent: 'center',
     }}>
+      {/* Scene background: ovr2.jpg */}
+      <Img src={staticFile('ovr2.jpg')} style={{
+        position: 'absolute', width: '100%', height: '100%',
+        objectFit: 'cover', opacity: 0.7,
+        filter: 'brightness(0.5) contrast(1.2)',
+      }} />
+
       {/* Deep radial glow */}
       <div style={{
         position: 'absolute', width: 600, height: 600, borderRadius: '50%',

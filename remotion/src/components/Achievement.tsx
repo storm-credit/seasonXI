@@ -1,4 +1,4 @@
-import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
 import { CardData, COLORS } from '../types';
 
 export const Achievement: React.FC<{ data: CardData }> = ({ data }) => {
@@ -22,6 +22,13 @@ export const Achievement: React.FC<{ data: CardData }> = ({ data }) => {
       alignItems: 'center', justifyContent: 'center',
       overflow: 'hidden',
     }}>
+      {/* Scene background: milestone1.jpg */}
+      <Img src={staticFile('milestone1.jpg')} style={{
+        position: 'absolute', width: '100%', height: '100%',
+        objectFit: 'cover', opacity: 0.4,
+        filter: 'brightness(0.45) contrast(1.2)',
+      }} />
+
       {/* Stadium light streaks */}
       <div style={{
         position: 'absolute', top: 0, width: '120%', height: '40%',

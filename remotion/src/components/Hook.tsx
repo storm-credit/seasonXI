@@ -29,7 +29,14 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
 
   return (
     <AbsoluteFill style={{ background: COLORS.black, overflow: 'hidden' }}>
-      {/* Player image - FULL SCREEN background */}
+      {/* Scene background: hook1.jpg */}
+      <Img src={staticFile('hook1.jpg')} style={{
+        position: 'absolute', width: '100%', height: '100%',
+        objectFit: 'cover', opacity: imgOpacity * 0.5,
+        filter: 'brightness(0.6)',
+      }} />
+
+      {/* Player image - FULL SCREEN foreground */}
       {data.image && (
         <div style={{
           position: 'absolute', inset: 0,
@@ -39,7 +46,7 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
           <Img src={imgSrc} style={{
             width: '100%', height: '100%',
             objectFit: 'cover', objectPosition: 'top center',
-            filter: 'brightness(0.85) contrast(1.15)',
+            filter: 'brightness(0.9) contrast(1.1)',
           }} />
         </div>
       )}
@@ -47,7 +54,7 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
       {/* Dark vignette overlay */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(11,13,18,0.7) 80%)',
+        background: 'radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(11,13,18,0.6) 80%)',
         opacity: imgOpacity,
       }} />
 
