@@ -1,33 +1,57 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Copy, Check, Sparkles } from "lucide-react";
+import { Copy, Check, Sparkles, Music } from "lucide-react";
 import type { Season } from "@/lib/types";
 import { buildNanobananaPrompt } from "@/lib/constants";
 import GlassPanel from "@/components/shared/GlassPanel";
+
+type TabType = "hook" | "card" | "suno";
 
 interface PromptBuilderProps {
   season: Season | null;
 }
 
+function buildSunoPrompt(s: Season): string {
+  const name = s.display_name || "PLAYER";
+  const season = s.season_label || s.season;
+  const tier = s.tier || "ELITE";
+  const mood = s.season_mood || "PEAK_MONSTER";
+
+  const moodStyles: Record<string, string> = {
+    PEAK_MONSTER: "dark elegant energy, mythic and emotional, explosive but controlled, elite football highlight music",
+    ELEGANT_PRIME: "refined orchestral atmosphere, elegant and complete, emotional but controlled, smooth dramatic rise",
+    BREAKTHROUGH: "explosive young superstar energy, fast and sharp, futuristic stadium pulse, dynamic rise",
+    DECLINE_TRANSITION: "reflective and emotional, controlled intensity, veteran legacy energy, bittersweet",
+  };
+
+  return [
+    `Title: ${name} ${season} ${tier} Theme`,
+    ``,
+    `Style: Short cinematic football theme, instrumental, premium sports soundtrack, ${moodStyles[mood] || moodStyles.PEAK_MONSTER}, stadium atmosphere`,
+    ``,
+    `Lyrics: Instrumental`,
+  ].join("\n");
+}
+
 export default function PromptBuilder({ season }: PromptBuilderProps) {
-  const [copiedHook, setCopiedHook] = useState(false);
-  const [copiedCard, setCopiedCard] = useState(false);
-  const [activeTab, setActiveTab] = useState<"hook" | "card">("hook");
+  const [copied, setCopied] = useState<TabType | null>(null);
+  const [activeTab, setActiveTab] = useState<TabType>("hook");
 
   const getPrompt = useCallback(
-    (scene: "HOOK" | "CARD") => {
+    (tab: TabType) => {
       if (!season) return "";
+      if (tab === "suno") return buildSunoPrompt(season);
       const block = season.player_block || season.display_name || "MESSI";
       const mood = season.season_mood || "PEAK_MONSTER";
-      return buildNanobananaPrompt(block, mood, scene);
+      return buildNanobananaPrompt(block, mood, tab === "hook" ? "HOOK" : "CARD");
     },
     [season]
   );
 
   const copyToClipboard = useCallback(
-    async (type: "hook" | "card") => {
-      const prompt = getPrompt(type === "hook" ? "HOOK" : "CARD");
+    async (type: TabType) => {
+      const prompt = getPrompt(type);
       try {
         await navigator.clipboard.writeText(prompt);
       } catch {
@@ -40,13 +64,8 @@ export default function PromptBuilder({ season }: PromptBuilderProps) {
         document.execCommand("copy");
         document.body.removeChild(ta);
       }
-      if (type === "hook") {
-        setCopiedHook(true);
-        setTimeout(() => setCopiedHook(false), 2000);
-      } else {
-        setCopiedCard(true);
-        setTimeout(() => setCopiedCard(false), 2000);
-      }
+      setCopied(type);
+      setTimeout(() => setCopied(null), 2000);
     },
     [getPrompt]
   );
@@ -93,23 +112,35 @@ export default function PromptBuilder({ season }: PromptBuilderProps) {
         >
           CARD
         </button>
+        <button
+          onClick={() => setActiveTab("suno")}
+          className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all flex items-center gap-1 ${
+            activeTab === "suno"
+              ? "bg-purple-500 text-white"
+              : "bg-sxi-white/5 text-sxi-white/50 hover:text-sxi-white"
+          }`}
+        >
+          <Music size={10} /> SUNO
+        </button>
       </div>
 
       {/* Prompt display */}
       <pre className="text-xs text-sxi-white/60 bg-[rgba(0,0,0,0.3)] border border-[rgba(201,162,74,0.08)] rounded-lg p-3 whitespace-pre-wrap max-h-48 overflow-y-auto leading-relaxed mb-3">
-        {getPrompt(activeTab === "hook" ? "HOOK" : "CARD")}
+        {getPrompt(activeTab)}
       </pre>
 
       {/* Copy button */}
       <button
         onClick={() => copyToClipboard(activeTab)}
         className={`w-full py-2.5 rounded-lg font-display text-sm tracking-wider transition-all flex items-center justify-center gap-2 ${
-          (activeTab === "hook" ? copiedHook : copiedCard)
+          copied === activeTab
             ? "bg-green-500/20 text-green-400 border border-green-500/30"
-            : "bg-sxi-gold text-sxi-black hover:brightness-110"
+            : activeTab === "suno"
+              ? "bg-purple-500 text-white hover:brightness-110"
+              : "bg-sxi-gold text-sxi-black hover:brightness-110"
         }`}
       >
-        {(activeTab === "hook" ? copiedHook : copiedCard) ? (
+        {copied === activeTab ? (
           <>
             <Check size={14} /> COPIED!
           </>
