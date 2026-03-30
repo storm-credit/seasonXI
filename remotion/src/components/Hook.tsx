@@ -83,7 +83,7 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
         transform: `scale(${textScale})`,
       }}>
         <div style={{
-          fontFamily: 'Bebas Neue, sans-serif', fontSize: 48,
+          fontFamily: 'Bebas Neue, sans-serif', fontSize: 60,
           color: COLORS.white, letterSpacing: 5,
           textShadow: `0 2px 40px rgba(0,0,0,0.9), 0 0 60px ${auraColor}30`,
         }}>{data.hook}</div>

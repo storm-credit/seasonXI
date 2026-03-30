@@ -39,7 +39,7 @@ export const PlayStyle: React.FC<{ data: CardData }> = ({ data }) => {
       <div style={{
         position: 'absolute', top: 50, left: 50,
         fontFamily: 'Montserrat, sans-serif', fontWeight: 600,
-        fontSize: 11, color: `${COLORS.gold}44`, letterSpacing: 4,
+        fontSize: 16, color: `${COLORS.gold}55`, letterSpacing: 5,
         opacity: mainOpacity,
       }}>SEASON TRAIT</div>
 
@@ -50,7 +50,7 @@ export const PlayStyle: React.FC<{ data: CardData }> = ({ data }) => {
         textAlign: 'center', maxWidth: '90%',
       }}>
         <div style={{
-          fontFamily: 'Bebas Neue, sans-serif', fontSize: 52,
+          fontFamily: 'Bebas Neue, sans-serif', fontSize: 64,
           color: COLORS.white, letterSpacing: 3, lineHeight: 1.3,
           textShadow: `0 2px 30px rgba(0,0,0,0.5)`,
         }}>{mainLine.toUpperCase()}</div>

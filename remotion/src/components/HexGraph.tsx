@@ -31,7 +31,7 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
 
   const topSig = sigStats[0] ? { name: sigStats[0], val: data.stats[sigStats[0] as keyof typeof data.stats] } : null;
 
-  const cx = 240, cy = 220, r = 160;
+  const cx = 270, cy = 270, r = 130;
 
   return (
     <AbsoluteFill style={{ background: COLORS.black, alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
@@ -60,7 +60,7 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
         opacity,
       }}>PERFORMANCE INDEX</div>
 
-      <svg viewBox="0 0 480 440" style={{ width: 700, height: 640, opacity }}>
+      <svg viewBox="0 0 540 540" style={{ width: 800, height: 800, opacity }}>
         {/* Background rings */}
         {[1, 0.66, 0.33].map((s, i) => (
           <polygon key={i} points={hexRing(cx, cy, r * s)} fill="none"
@@ -80,20 +80,20 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
 
         {/* Labels + values */}
         {LABELS.map((label, i) => {
-          const lx = cx + (r + 45) * Math.cos(ANGLES[i]);
-          const ly = cy + (r + 45) * Math.sin(ANGLES[i]);
-          const vx = cx + (r + 45) * Math.cos(ANGLES[i]);
-          const vy = cy + (r + 45) * Math.sin(ANGLES[i]);
+          const lx = cx + (r + 55) * Math.cos(ANGLES[i]);
+          const ly = cy + (r + 55) * Math.sin(ANGLES[i]);
+          const vx = cx + (r + 55) * Math.cos(ANGLES[i]);
+          const vy = cy + (r + 55) * Math.sin(ANGLES[i]);
           const valOp = interpolate(frame, [16 + i * 2, 22 + i * 2], [0, 1], { extrapolateRight: 'clamp' });
           return (
             <g key={label}>
-              <text x={vx} y={vy - 2} fill={COLORS.softGold}
-                fontFamily="Bebas Neue, sans-serif" fontSize={28}
+              <text x={vx} y={vy - 4} fill={COLORS.softGold}
+                fontFamily="Bebas Neue, sans-serif" fontSize={36}
                 textAnchor="middle" dominantBaseline="middle"
                 opacity={valOp}>{vals[i]}</text>
-              <text x={lx} y={ly + 18} fill={`${COLORS.white}99`}
+              <text x={lx} y={ly + 22} fill={`${COLORS.white}AA`}
                 fontFamily="Montserrat, sans-serif" fontWeight={700}
-                fontSize={10} textAnchor="middle" dominantBaseline="middle"
+                fontSize={13} textAnchor="middle" dominantBaseline="middle"
                 letterSpacing={2}>{label.toUpperCase()}</text>
             </g>
           );

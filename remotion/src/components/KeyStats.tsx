@@ -15,15 +15,15 @@ export const KeyStats: React.FC<{ data: CardData }> = ({ data }) => {
   // stats2.jpg has 6 slots: 1,3,5 are big (dark), 2,4,6 are small (label)
   // Layout: slot1=number, slot2=label, slot3=number, slot4=label, slot5=number, slot6=label
   // Panel spans roughly 8% to 90% of height
-  const panelTop = 0.08;
-  const panelBottom = 0.90;
+  const panelTop = 0.06;
+  const panelBottom = 0.94;
   const totalHeight = panelBottom - panelTop;
 
-  // 6 slots: big slots are ~2x height of small slots
+  // 6 slots: big slots (~2.5x) for numbers, small slots (~1x) for labels
   // Pattern: big, small, big, small, big, small
-  // Ratio: big=2, small=1 → total units = 2+1+2+1+2+1 = 9
-  const unit = totalHeight / 9;
-  const slotSizes = [2, 1, 2, 1, 2, 1]; // big, small, big, small, big, small
+  // Ratio: 2.5+1+2.5+1+2.5+1 = 10.5
+  const unit = totalHeight / 10.5;
+  const slotSizes = [2.5, 1, 2.5, 1, 2.5, 1];
 
   // Calculate center of each slot
   const slotCenters: number[] = [];
