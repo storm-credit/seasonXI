@@ -34,6 +34,20 @@ Scene context:
 - maximum emotional weight
 
 
+## EMOTION_CLOSEUP
+Scene context:
+- this is a mid-video emotional shot, NOT the opening
+- tight face and upper chest framing
+- the player should look focused, intense, or in the zone
+- sweat on skin, rain particles, or breath visible for realism
+- dramatic side lighting creating strong shadows on face
+- dark moody background, very shallow depth of field
+- the feeling should be "this player was unstoppable"
+- space at bottom 25% for one line of text overlay
+- more intimate and emotional than the hook shot
+- cinematic portrait feel, like a movie close-up
+
+
 ## CARD_BACKGROUND
 Scene context:
 - this is a background-only image, no player figure
