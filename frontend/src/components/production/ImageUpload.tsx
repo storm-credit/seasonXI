@@ -9,9 +9,10 @@ const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8800";
 
 interface ImageUploadProps {
   season?: Season | null;
+  onSaved?: (type: "hook" | "card") => void;
 }
 
-export default function ImageUpload({ season }: ImageUploadProps) {
+export default function ImageUpload({ season, onSaved }: ImageUploadProps) {
   const [dragActive, setDragActive] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
   const [droppedFile, setDroppedFile] = useState<File | null>(null);
@@ -65,6 +66,7 @@ export default function ImageUpload({ season }: ImageUploadProps) {
 
       if (res.ok) {
         setSavedAs(`${type.toUpperCase()} (${filename})`);
+        onSaved?.(type);
       }
     } catch {
       // Try local save fallback

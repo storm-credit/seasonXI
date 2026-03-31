@@ -9,9 +9,10 @@ const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8800";
 
 interface MusicPanelProps {
   season?: Season | null;
+  onSaved?: () => void;
 }
 
-export default function MusicPanel({ season }: MusicPanelProps) {
+export default function MusicPanel({ season, onSaved }: MusicPanelProps) {
   const [file, setFile] = useState<File | null>(null);
   const [playing, setPlaying] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -58,6 +59,7 @@ export default function MusicPanel({ season }: MusicPanelProps) {
 
       if (res.ok) {
         setSaved(true);
+        onSaved?.();
       }
     } catch {
       setSaved(true); // local only

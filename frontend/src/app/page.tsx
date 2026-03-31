@@ -9,7 +9,7 @@ import Header from "@/components/layout/Header";
 import DaySchedule from "@/components/dashboard/DaySchedule";
 import PlayerQueue from "@/components/dashboard/PlayerQueue";
 import PlayerCard from "@/components/dashboard/PlayerCard";
-import ProductionChecklist from "@/components/dashboard/ProductionChecklist";
+import ProductionChecklist, { type ChecklistState } from "@/components/dashboard/ProductionChecklist";
 import StatsPanel from "@/components/production/StatsPanel";
 import PromptBuilder from "@/components/production/PromptBuilder";
 import ImageUpload from "@/components/production/ImageUpload";
@@ -20,11 +20,28 @@ export default function DashboardPage() {
   const [selectedDay, setSelectedDay] = useState(0);
   const [selectedSeason, setSelectedSeason] = useState<Season | null>(null);
   const [loading, setLoading] = useState(false);
+  const [checklist, setChecklist] = useState<ChecklistState>({
+    hookImage: false, cardImage: false, sunoMusic: false,
+    jsonExport: false, rendered: false, reviewed: false, uploaded: false,
+  });
+
+  const checkItem = (key: keyof ChecklistState) => {
+    setChecklist(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const autoCheck = (key: keyof ChecklistState) => {
+    setChecklist(prev => ({ ...prev, [key]: true }));
+  };
 
   const currentDayPlayers = SCHEDULE[selectedDay]?.players || [];
 
   const handleSelectSeason = useCallback(async (playerId: string, season: string) => {
     setLoading(true);
+    // Reset checklist for new player
+    setChecklist({
+      hookImage: false, cardImage: false, sunoMusic: false,
+      jsonExport: false, rendered: false, reviewed: false, uploaded: false,
+    });
     try {
       const data = await loadSeason(playerId, season);
       if (data && data.player_id) {
@@ -73,6 +90,7 @@ export default function DashboardPage() {
     try {
       setLoading(true);
       await exportJSON(selectedSeason.player_id, selectedSeason.season);
+      autoCheck("jsonExport");
     } catch {
       // Export failed
     } finally {
@@ -85,6 +103,7 @@ export default function DashboardPage() {
     try {
       setLoading(true);
       await triggerRender(selectedSeason.player_id, selectedSeason.season);
+      autoCheck("rendered");
     } catch {
       // Render failed
     } finally {
@@ -97,6 +116,7 @@ export default function DashboardPage() {
     try {
       setLoading(true);
       await uploadYouTube(selectedSeason.player_id, selectedSeason.season);
+      autoCheck("uploaded");
     } catch {
       // Upload failed
     } finally {
@@ -129,7 +149,7 @@ export default function DashboardPage() {
               onSelect={handleSelectSeason}
             />
             <PlayerCard season={selectedSeason} />
-            <ProductionChecklist />
+            <ProductionChecklist state={checklist} onChange={checkItem} />
           </div>
 
           {/* Right column: Production tools */}
@@ -139,8 +159,8 @@ export default function DashboardPage() {
               <PromptBuilder season={selectedSeason} />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <ImageUpload season={selectedSeason} />
-              <MusicPanel season={selectedSeason} />
+              <ImageUpload season={selectedSeason} onSaved={(type) => autoCheck(type === "hook" ? "hookImage" : "cardImage")} />
+              <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
               <VideoPreview compact />
             </div>
           </div>
