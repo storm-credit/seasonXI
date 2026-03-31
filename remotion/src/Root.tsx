@@ -21,6 +21,7 @@ const DEFAULT_DATA: CardData = {
   stat2_label: "GOALS IN A YEAR",
   compare_text: "MORE THAN AN ENTIRE TEAM",
   energy_text: "UNSTOPPABLE",
+  closeup_text: "NO ONE COULD STOP HIM",
   legend_text: "THE GREATEST PEAK EVER",
   outro_sub: "THE PEAK OF FOOTBALL",
   play_style: "IMPOSSIBLE TO STOP IN TIGHT SPACES",
@@ -48,7 +49,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="SeasonCard"
         component={SeasonCard}
-        durationInFrames={414}
+        durationInFrames={435}
         fps={30}
         width={1080}
         height={1920}

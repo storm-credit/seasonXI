@@ -21,6 +21,7 @@ export interface CardData {
   stat2_label: string;
   compare_text: string;
   energy_text: string;
+  closeup_text: string;   // 감정 컷 문구 (예: "NO ONE COULD STOP HIM")
   legend_text: string;
   outro_sub: string;
   // Legacy fields
@@ -84,14 +85,16 @@ export const COLORS = {
   mythicGold: '#FFD700',
 } as const;
 
-// 8-scene timing (30fps, 13.8 seconds = 414 frames)
+// 9-scene timing (30fps, 14.5 seconds = 435 frames)
+// Key change: added playerCloseup (4컷) for emotion/person shot
 export const SCENE_TIMING = {
-  hook:        { start: 0,   end: 42  },  // 0.0 - 1.4s  시선 강탈
-  cardReveal:  { start: 42,  end: 90  },  // 1.4 - 3.0s  정체 공개
-  ovrShock:    { start: 90,  end: 126 },  // 3.0 - 4.2s  OVR 충격
-  hexGraph:    { start: 126, end: 171 },  // 4.2 - 5.7s  그래프 분석
-  keyStats:    { start: 171, end: 219 },  // 5.7 - 7.3s  시그니처 스탯
-  playStyle:   { start: 219, end: 264 },  // 7.3 - 8.8s  코멘터리
-  achievement: { start: 264, end: 309 },  // 8.8 - 10.3s 마일스톤
-  verdict:     { start: 309, end: 414 },  // 10.3 - 13.8s 판정 + 엔드
+  hook:          { start: 0,   end: 42  },  // 0.0 - 1.4s  선수 실루엣 + 훅 텍스트
+  cardReveal:    { start: 42,  end: 87  },  // 1.4 - 2.9s  카드 리빌
+  ovrShock:      { start: 87,  end: 120 },  // 2.9 - 4.0s  OVR 충격
+  playerCloseup: { start: 120, end: 153 },  // 4.0 - 5.1s  선수 클로즈업 + 감정 문구
+  hexGraph:      { start: 153, end: 195 },  // 5.1 - 6.5s  그래프 채워짐
+  keyStats:      { start: 195, end: 240 },  // 6.5 - 8.0s  시그니처 스탯 (하나씩)
+  playStyle:     { start: 240, end: 279 },  // 8.0 - 9.3s  코멘터리
+  achievement:   { start: 279, end: 330 },  // 9.3 - 11.0s 마일스톤
+  verdict:       { start: 330, end: 435 },  // 11.0 - 14.5s 판정 + 엔드
 } as const;
