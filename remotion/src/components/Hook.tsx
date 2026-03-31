@@ -4,22 +4,23 @@ import { CardData, COLORS, getPlayerMain, getBg } from '../types';
 export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
   const frame = useCurrentFrame();
 
-  // 0.0-0.2s: black
-  // 0.2s: flash
-  // 0.4s: player zoom in with shake
-  // 0.7s: aura spreads
-  // 1.0s: text appears
+  // 0.0s: player silhouette IMMEDIATELY visible (dark)
+  // 0.2s: flash + player brightens
+  // 0.4s: aura spreads + zoom settles
+  // 0.6s: hook text appears (big, bold)
 
-  const flashOpacity = interpolate(frame, [5, 8, 14], [0, 1, 0], { extrapolateRight: 'clamp' });
-  const imgOpacity = interpolate(frame, [8, 16], [0, 1], { extrapolateRight: 'clamp' });
-  const scale = interpolate(frame, [8, 20, 45], [1.2, 1.0, 1.03], { extrapolateRight: 'clamp' });
-  const shakeX = frame > 6 && frame < 16 ? Math.sin(frame * 4) * 4 : 0;
-  const shakeY = frame > 6 && frame < 16 ? Math.cos(frame * 5) * 3 : 0;
-  const textOpacity = interpolate(frame, [28, 36], [0, 1], { extrapolateRight: 'clamp' });
-  const textScale = interpolate(frame, [28, 34, 38], [1.3, 0.95, 1.0], { extrapolateRight: 'clamp' });
-  const glowOpacity = interpolate(frame, [16, 28], [0, 0.7], { extrapolateRight: 'clamp' });
-  // Slow continuous zoom for life
-  const bgZoom = interpolate(frame, [0, 45], [1.05, 1.0], { extrapolateRight: 'clamp' });
+  // Player visible from frame 0 — dark silhouette, then brightens
+  const playerBrightness = interpolate(frame, [0, 6, 12], [0.15, 0.25, 0.4], { extrapolateRight: 'clamp' });
+  const flashOpacity = interpolate(frame, [4, 7, 12], [0, 1, 0], { extrapolateRight: 'clamp' });
+  const imgOpacity = interpolate(frame, [0, 4], [0.5, 1], { extrapolateRight: 'clamp' });
+  const scale = interpolate(frame, [0, 12, 36], [1.15, 1.0, 1.03], { extrapolateRight: 'clamp' });
+  const shakeX = frame > 4 && frame < 14 ? Math.sin(frame * 4) * 3 : 0;
+  const shakeY = frame > 4 && frame < 14 ? Math.cos(frame * 5) * 2 : 0;
+  // Text appears faster — 0.6s instead of 0.9s
+  const textOpacity = interpolate(frame, [18, 24], [0, 1], { extrapolateRight: 'clamp' });
+  const textScale = interpolate(frame, [18, 22, 26], [1.2, 0.97, 1.0], { extrapolateRight: 'clamp' });
+  const glowOpacity = interpolate(frame, [8, 20], [0, 0.8], { extrapolateRight: 'clamp' });
+  const bgZoom = interpolate(frame, [0, 36], [1.08, 1.0], { extrapolateRight: 'clamp' });
 
   const auraColor = data.aura_color === 'gold_flare' ? '#FFD700'
     : data.aura_color === 'blue_trail' ? '#4488FF'
@@ -38,17 +39,17 @@ export const Hook: React.FC<{ data: CardData }> = ({ data }) => {
         transform: `scale(${bgZoom})`,
       }} />
 
-      {/* Player silhouette - dark, mysterious, hint only */}
+      {/* Player — visible from frame 0 as dark silhouette, brightens on flash */}
       {playerMain && (
         <div style={{
           position: 'absolute', inset: 0,
           transform: `scale(${scale * bgZoom}) translate(${shakeX}px, ${shakeY}px)`,
-          opacity: imgOpacity * 0.35,
+          opacity: imgOpacity,
         }}>
           <Img src={imgSrc} style={{
             width: '100%', height: '100%',
             objectFit: 'cover', objectPosition: 'top center',
-            filter: 'brightness(0.3) contrast(1.3)',
+            filter: `brightness(${playerBrightness}) contrast(1.3)`,
           }} />
         </div>
       )}

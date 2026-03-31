@@ -100,22 +100,24 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
         })}
       </svg>
 
-      {/* Signature stat callout */}
+      {/* Signature stat callout — BIG, appears last 0.3s */}
       {topSig && (
         <div style={{
-          position: 'absolute', bottom: 60,
-          opacity: calloutOpacity, transform: `translateY(${calloutY}px)`,
+          position: 'absolute', bottom: 80, left: 0, right: 0,
+          opacity: calloutOpacity,
+          transform: `translateY(${calloutY}px) scale(${interpolate(frame, [28, 34], [0.8, 1.0], { extrapolateRight: 'clamp' })})`,
           textAlign: 'center',
         }}>
           <span style={{
-            fontFamily: 'Bebas Neue, sans-serif', fontSize: 48, color: COLORS.softGold,
-            textShadow: `0 0 20px ${COLORS.gold}40`,
+            fontFamily: 'Bebas Neue, sans-serif', fontSize: 90, color: COLORS.softGold,
+            textShadow: `0 0 40px ${COLORS.gold}60, 0 0 80px ${COLORS.gold}20`,
+            lineHeight: 1,
           }}>{topSig.val}</span>
-          <span style={{
-            fontFamily: 'Montserrat, sans-serif', fontWeight: 600,
-            fontSize: 18, color: `${COLORS.white}88`, letterSpacing: 3,
-            marginLeft: 12, textTransform: 'uppercase',
-          }}>{topSig.name}</span>
+          <div style={{
+            fontFamily: 'Montserrat, sans-serif', fontWeight: 700,
+            fontSize: 22, color: `${COLORS.white}AA`, letterSpacing: 6,
+            textTransform: 'uppercase', marginTop: 4,
+          }}>{topSig.name}</div>
         </div>
       )}
     </AbsoluteFill>
