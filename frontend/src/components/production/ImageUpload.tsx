@@ -142,7 +142,7 @@ export default function ImageUpload({ season, onSaved }: ImageUploadProps) {
             className="flex-1 py-2 rounded-lg bg-sxi-gold text-sxi-black font-display text-xs tracking-wider flex items-center justify-center gap-1.5 disabled:opacity-40 hover:brightness-110 transition-all"
           >
             {uploading ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
-            Save as HOOK
+            HOOK
           </button>
           <button
             onClick={() => saveAs("card")}
@@ -150,7 +150,15 @@ export default function ImageUpload({ season, onSaved }: ImageUploadProps) {
             className="flex-1 py-2 rounded-lg bg-sxi-white/10 text-sxi-white font-display text-xs tracking-wider flex items-center justify-center gap-1.5 disabled:opacity-40 hover:bg-sxi-white/15 transition-all border border-sxi-gold/20"
           >
             {uploading ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
-            Save as CARD
+            CARD
+          </button>
+          <button
+            onClick={() => saveAs("closeup")}
+            disabled={uploading}
+            className="flex-1 py-2 rounded-lg bg-rose-500/80 text-white font-display text-xs tracking-wider flex items-center justify-center gap-1.5 disabled:opacity-40 hover:brightness-110 transition-all"
+          >
+            {uploading ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
+            CLOSEUP
           </button>
         </div>
       )}
