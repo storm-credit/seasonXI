@@ -1,0 +1,55 @@
+Create a premium vertical 9:16 football player image for a SeasonXI card reveal scene.
+
+Style:
+- semi-realistic
+- cinematic football card art
+- premium sports card visual
+- dark and gold toned background
+- clean lighting
+- slightly stylized, not photorealistic
+- not cartoon
+- not anime
+
+Player:
+- inspired by Cristiano Ronaldo during the 2016-17 season
+- tall, strong athletic build
+- short styled hair
+- confident and composed expression
+- controlled, elite striker presence
+
+Season mood:
+- dominant
+- composed
+- elite finisher
+- legendary consistency
+
+Kit:
+- fictional football kit inspired by Real Madrid 2016-17
+- clean white with subtle gold tone
+- simple premium football kit
+- no crest
+- no sponsor
+- no logos
+
+Composition:
+- full body or 3/4 body framing
+- centered composition
+- clear readable silhouette
+- balanced vertical layout for card placement
+- stable iconic pose
+- less dramatic than hook
+
+Background:
+- controlled stadium lighting
+- minimal distraction
+- refined premium feel
+
+Restrictions:
+- no extra players
+- no text
+- no watermark
+- no brand logos
+
+Goal:
+- create a stable football player image for card UI
+- must fit naturally inside a card frame

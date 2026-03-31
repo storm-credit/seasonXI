@@ -1,0 +1,57 @@
+Create a premium vertical 9:16 football player image for a SeasonXI card reveal scene.
+
+Style:
+- semi-realistic
+- cinematic football card art
+- premium sports card visual
+- dark navy and black tones
+- metallic gold accents
+- high contrast
+- slightly stylized, not photorealistic
+- not cartoon
+- not anime
+
+Player:
+- inspired by Kylian Mbappe during the 2018-19 season
+- young athletic build
+- short dark hair
+- confident youthful expression
+- sharp and modern energy
+- emerging superstar presence
+
+Season mood:
+- emerging elite
+- sharp and fast
+- modern football energy
+- breakthrough confidence
+
+Kit:
+- fictional football kit inspired by PSG 2018-19
+- dark blue base
+- simple premium football kit
+- no crest
+- no sponsor
+- no logos
+
+Composition:
+- full body or 3/4 body framing
+- centered composition
+- clear readable silhouette
+- balanced vertical layout for card placement
+- stable but energetic pose
+- less dramatic than hook
+
+Background:
+- controlled stadium lighting
+- minimal distraction
+- refined modern feel
+
+Restrictions:
+- no extra players
+- no text
+- no watermark
+- no brand logos
+
+Goal:
+- create a clean football player image for card UI
+- must fit naturally inside a card frame
