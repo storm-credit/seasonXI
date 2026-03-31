@@ -27,8 +27,9 @@ export const PlayerCloseup: React.FC<{ data: CardData }> = ({ data }) => {
   // Vignette pulse
   const vignetteOpacity = interpolate(frame, [0, 15, 30], [0.5, 0.7, 0.6], { extrapolateRight: 'clamp' });
 
-  // Closeup text — use closeup_text, or fallback to energy_text, or generate from hook
-  const closeupText = data.closeup_text || data.energy_text || 'NO ONE COULD STOP HIM';
+  // Closeup text — commentary merged here
+  // Priority: closeup_text > play_style (commentary) > energy_text > default
+  const closeupText = data.closeup_text || data.play_style || data.energy_text || 'NO ONE COULD STOP HIM';
 
   return (
     <AbsoluteFill style={{ background: COLORS.black, overflow: 'hidden' }}>

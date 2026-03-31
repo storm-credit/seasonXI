@@ -85,16 +85,16 @@ export const COLORS = {
   mythicGold: '#FFD700',
 } as const;
 
-// 9-scene timing (30fps, 14.5 seconds = 435 frames)
-// Key change: added playerCloseup (4컷) for emotion/person shot
+// 7-scene timing (30fps, 11 seconds = 330 frames)
+// Compact Shorts structure: person → data → person → proof → verdict
+// Stats removed (graph shows 6 stats already)
+// Commentary merged into Closeup (face + text)
 export const SCENE_TIMING = {
-  hook:          { start: 0,   end: 42  },  // 0.0 - 1.4s  선수 실루엣 + 훅 텍스트
-  cardReveal:    { start: 42,  end: 87  },  // 1.4 - 2.9s  카드 리빌
-  ovrShock:      { start: 87,  end: 120 },  // 2.9 - 4.0s  OVR 충격
-  playerCloseup: { start: 120, end: 153 },  // 4.0 - 5.1s  선수 클로즈업 + 감정 문구
-  hexGraph:      { start: 153, end: 195 },  // 5.1 - 6.5s  그래프 채워짐
-  keyStats:      { start: 195, end: 240 },  // 6.5 - 8.0s  시그니처 스탯 (하나씩)
-  playStyle:     { start: 240, end: 279 },  // 8.0 - 9.3s  코멘터리
-  achievement:   { start: 279, end: 330 },  // 9.3 - 11.0s 마일스톤
-  verdict:       { start: 330, end: 435 },  // 11.0 - 14.5s 판정 + 엔드
+  hook:          { start: 0,   end: 30  },  // 0.0 - 1.0s  선수 + 훅 텍스트
+  cardReveal:    { start: 30,  end: 66  },  // 1.0 - 2.2s  카드 리빌
+  ovrShock:      { start: 66,  end: 90  },  // 2.2 - 3.0s  OVR 충격
+  hexGraph:      { start: 90,  end: 129 },  // 3.0 - 4.3s  그래프 빠르게 채워짐
+  playerCloseup: { start: 129, end: 159 },  // 4.3 - 5.3s  얼굴 + 코멘터리 합침
+  achievement:   { start: 159, end: 195 },  // 5.3 - 6.5s  업적 숫자
+  verdict:       { start: 195, end: 330 },  // 6.5 - 11.0s 판정 + 엔드 + CTA
 } as const;

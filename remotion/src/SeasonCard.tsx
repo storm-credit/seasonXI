@@ -3,34 +3,31 @@ import { CardData, SCENE_TIMING } from './types';
 import { Hook } from './components/Hook';
 import { CardReveal } from './components/CardReveal';
 import { OvrShock } from './components/OvrShock';
-import { PlayerCloseup } from './components/PlayerCloseup';
 import { HexGraph } from './components/HexGraph';
-import { KeyStats } from './components/KeyStats';
-import { PlayStyle } from './components/PlayStyle';
+import { PlayerCloseup } from './components/PlayerCloseup';
 import { Achievement } from './components/Achievement';
 import { Verdict } from './components/Verdict';
 
 /**
- * 9-scene structure (14.5s):
+ * 7-scene Shorts structure (11s):
  *
- * 1. Hook         — 선수 실루엣 + 훅 텍스트 (시선 강탈)
+ * 1. Hook         — 선수 + 훅 텍스트 (스크롤 멈춤)
  * 2. Card Reveal  — 카드 리빌 (정체 공개)
- * 3. OVR Shock    — 97 OVR (충격)
- * 4. Player Close — 선수 클로즈업 + 감정 문구 ← NEW (사람 컷)
- * 5. Hex Graph    — 그래프 채워짐 (분석)
- * 6. Key Stats    — 시그니처 스탯 하나씩 (증거)
- * 7. Commentary   — 해설 한 줄 (의미)
- * 8. Achievement  — 업적 숫자 (증거)
- * 9. Verdict      — 판정 + 엔드 (선언)
+ * 3. OVR Shock    — 97 OVR (숫자 충격)
+ * 4. Hex Graph    — 6스탯 그래프 빠르게 채워짐 (분석 = 차별화)
+ * 5. Closeup      — 선수 얼굴 + 코멘터리 합침 (사람 + 해설)
+ * 6. Achievement  — 50 LEAGUE GOALS (증거)
+ * 7. Verdict      — MYTHIC SEASON + CTA (판정)
  *
- * 흐름: 사람 → 데이터 → 사람 → 데이터 → 판정
+ * 흐름: 사람 → 카드 → 숫자 → 분석 → 사람 → 증거 → 판정
+ * 핵심: 11초 완주율 최적, 그래프가 매니아 차별화
  */
 export const SeasonCard: React.FC<{ data: CardData }> = ({ data }) => {
   const T = SCENE_TIMING;
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#0B0D12' }}>
-      {/* 1. Hook — 시선 강탈 */}
+      {/* 1. Hook — 스크롤 멈춤 */}
       <Sequence from={T.hook.start} durationInFrames={T.hook.end - T.hook.start}>
         <Hook data={data} />
       </Sequence>
@@ -40,37 +37,27 @@ export const SeasonCard: React.FC<{ data: CardData }> = ({ data }) => {
         <CardReveal data={data} />
       </Sequence>
 
-      {/* 3. OVR Shock — 충격 */}
+      {/* 3. OVR Shock — 숫자 충격 */}
       <Sequence from={T.ovrShock.start} durationInFrames={T.ovrShock.end - T.ovrShock.start}>
         <OvrShock data={data} />
       </Sequence>
 
-      {/* 4. Player Closeup — 감정/몰입 (사람 컷) */}
-      <Sequence from={T.playerCloseup.start} durationInFrames={T.playerCloseup.end - T.playerCloseup.start}>
-        <PlayerCloseup data={data} />
-      </Sequence>
-
-      {/* 5. Hex Graph — 분석 */}
+      {/* 4. Hex Graph — 6스탯 분석 (매니아 차별화) */}
       <Sequence from={T.hexGraph.start} durationInFrames={T.hexGraph.end - T.hexGraph.start}>
         <HexGraph data={data} />
       </Sequence>
 
-      {/* 6. Key Stats — 시그니처 스탯 */}
-      <Sequence from={T.keyStats.start} durationInFrames={T.keyStats.end - T.keyStats.start}>
-        <KeyStats data={data} />
+      {/* 5. Closeup — 선수 얼굴 + 코멘터리 (사람 + 해설 합침) */}
+      <Sequence from={T.playerCloseup.start} durationInFrames={T.playerCloseup.end - T.playerCloseup.start}>
+        <PlayerCloseup data={data} />
       </Sequence>
 
-      {/* 7. Commentary — 해설 */}
-      <Sequence from={T.playStyle.start} durationInFrames={T.playStyle.end - T.playStyle.start}>
-        <PlayStyle data={data} />
-      </Sequence>
-
-      {/* 8. Achievement — 업적 */}
+      {/* 6. Achievement — 증거 */}
       <Sequence from={T.achievement.start} durationInFrames={T.achievement.end - T.achievement.start}>
         <Achievement data={data} />
       </Sequence>
 
-      {/* 9. Verdict — 판정 + 엔드 */}
+      {/* 7. Verdict — 판정 + CTA */}
       <Sequence from={T.verdict.start} durationInFrames={T.verdict.end - T.verdict.start}>
         <Verdict data={data} />
       </Sequence>

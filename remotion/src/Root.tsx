@@ -49,7 +49,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="SeasonCard"
         component={SeasonCard}
-        durationInFrames={435}
+        durationInFrames={330}
         fps={30}
         width={1080}
         height={1920}
