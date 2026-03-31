@@ -303,6 +303,30 @@ def assemble_prompt_api(player_id: str, season: str, scene: str = "HOOK"):
         raise HTTPException(500, str(e))
 
 
+# ─── API: Check Existing Assets ───────────────────────────────
+@app.get("/api/assets/{player_id}/{season}")
+def check_assets(player_id: str, season: str):
+    """Check which assets already exist for a player/season."""
+    s = season.replace("-", "_")
+    pub = REMOTION_DIR / "public"
+
+    assets = {}
+    for asset_type in ["hook", "card", "main", "bgm"]:
+        for ext in ["png", "jpg", "mp3", "wav", "m4a"]:
+            path = pub / f"{player_id}_{s}_{asset_type}.{ext}"
+            if path.exists():
+                assets[asset_type] = {
+                    "exists": True,
+                    "filename": path.name,
+                    "size": path.stat().st_size,
+                }
+                break
+        if asset_type not in assets:
+            assets[asset_type] = {"exists": False}
+
+    return assets
+
+
 # ─── API: Upload Image (Drag & Drop) ─────────────────────────
 @app.post("/api/upload-image")
 async def upload_image(file: UploadFile, filename: str = Form(...)):

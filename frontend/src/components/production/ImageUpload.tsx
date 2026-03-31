@@ -53,6 +53,22 @@ export default function ImageUpload({ season, onSaved }: ImageUploadProps) {
     const s = (season?.season || "unknown").replace("-", "_");
     const filename = `${pid}_${s}_${type}.png`;
 
+    // Check if file already exists
+    try {
+      const res = await fetch(`${API}/api/assets/${pid}/${season?.season || "unknown"}`);
+      if (res.ok) {
+        const assets = await res.json();
+        if (assets[type]?.exists) {
+          const ok = window.confirm(
+            `${type.toUpperCase()} 이미지가 이미 있습니다.\n(${assets[type].filename})\n\n덮어쓰시겠습니까?`
+          );
+          if (!ok) return;
+        }
+      }
+    } catch {
+      // Can't check — proceed anyway
+    }
+
     try {
       setUploading(true);
       const formData = new FormData();
@@ -69,7 +85,6 @@ export default function ImageUpload({ season, onSaved }: ImageUploadProps) {
         onSaved?.(type);
       }
     } catch {
-      // Try local save fallback
       setSavedAs(`${type.toUpperCase()} (local only)`);
     } finally {
       setUploading(false);

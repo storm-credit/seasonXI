@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { SCHEDULE } from "@/lib/constants";
-import { loadSeason, exportJSON, triggerRender, uploadYouTube } from "@/lib/api";
+import { loadSeason, exportJSON, triggerRender, uploadYouTube, checkAssets } from "@/lib/api";
 import type { Season } from "@/lib/types";
 
 import Header from "@/components/layout/Header";
@@ -37,11 +37,23 @@ export default function DashboardPage() {
 
   const handleSelectSeason = useCallback(async (playerId: string, season: string) => {
     setLoading(true);
-    // Reset checklist for new player
-    setChecklist({
+    // Reset checklist, then check existing assets
+    const freshChecklist: ChecklistState = {
       hookImage: false, cardImage: false, sunoMusic: false,
       jsonExport: false, rendered: false, reviewed: false, uploaded: false,
-    });
+    };
+    setChecklist(freshChecklist);
+
+    // Check existing files
+    try {
+      const assets = await checkAssets(playerId, season);
+      if (assets.hook?.exists) freshChecklist.hookImage = true;
+      if (assets.card?.exists) freshChecklist.cardImage = true;
+      if (assets.bgm?.exists) freshChecklist.sunoMusic = true;
+      setChecklist({ ...freshChecklist });
+    } catch {
+      // API unavailable — skip asset check
+    }
     try {
       const data = await loadSeason(playerId, season);
       if (data && data.player_id) {

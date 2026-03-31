@@ -46,6 +46,22 @@ export default function MusicPanel({ season, onSaved }: MusicPanelProps) {
     const s = (season?.season || "unknown").replace("-", "_");
     const filename = `${pid}_${s}_bgm.mp3`;
 
+    // Check if BGM already exists
+    try {
+      const res = await fetch(`${API}/api/assets/${pid}/${season?.season || "unknown"}`);
+      if (res.ok) {
+        const assets = await res.json();
+        if (assets.bgm?.exists) {
+          const ok = window.confirm(
+            `BGM이 이미 있습니다.\n(${assets.bgm.filename})\n\n덮어쓰시겠습니까?`
+          );
+          if (!ok) return;
+        }
+      }
+    } catch {
+      // Can't check — proceed
+    }
+
     try {
       setUploading(true);
       const formData = new FormData();
@@ -62,7 +78,7 @@ export default function MusicPanel({ season, onSaved }: MusicPanelProps) {
         onSaved?.();
       }
     } catch {
-      setSaved(true); // local only
+      setSaved(true);
     } finally {
       setUploading(false);
     }
