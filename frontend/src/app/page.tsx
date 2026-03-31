@@ -171,7 +171,11 @@ export default function DashboardPage() {
               <PromptBuilder season={selectedSeason} />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <ImageUpload season={selectedSeason} onSaved={(type) => autoCheck(type === "hook" ? "hookImage" : "cardImage")} />
+              <ImageUpload season={selectedSeason} onSaved={(type) => {
+                if (type === "hook") autoCheck("hookImage");
+                else if (type === "card") autoCheck("cardImage");
+                // closeup doesn't have its own checklist item — counts as card
+              }} />
               <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
               <VideoPreview compact />
             </div>

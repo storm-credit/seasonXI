@@ -9,7 +9,7 @@ const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8800";
 
 interface ImageUploadProps {
   season?: Season | null;
-  onSaved?: (type: "hook" | "card") => void;
+  onSaved?: (type: "hook" | "card" | "closeup") => void;
 }
 
 export default function ImageUpload({ season, onSaved }: ImageUploadProps) {
@@ -45,7 +45,7 @@ export default function ImageUpload({ season, onSaved }: ImageUploadProps) {
     if (file) handleFile(file);
   };
 
-  const saveAs = async (type: "hook" | "card") => {
+  const saveAs = async (type: "hook" | "card" | "closeup") => {
     const file = droppedFile || fileInputRef.current?.files?.[0];
     if (!file) return;
 
