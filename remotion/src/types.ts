@@ -85,16 +85,15 @@ export const COLORS = {
   mythicGold: '#FFD700',
 } as const;
 
-// 7-scene timing (30fps, 11 seconds = 330 frames)
-// Compact Shorts structure: person → data → person → proof → verdict
-// Stats removed (graph shows 6 stats already)
-// Commentary merged into Closeup (face + text)
+// 7-scene timing (30fps, 12 seconds = 360 frames)
+// Shorts-optimized: person → card → number → analysis → person → proof → verdict
+// Each cut has breathing room, verdict tight but complete
 export const SCENE_TIMING = {
-  hook:          { start: 0,   end: 30  },  // 0.0 - 1.0s  선수 + 훅 텍스트
-  cardReveal:    { start: 30,  end: 66  },  // 1.0 - 2.2s  카드 리빌
-  ovrShock:      { start: 66,  end: 90  },  // 2.2 - 3.0s  OVR 충격
-  hexGraph:      { start: 90,  end: 129 },  // 3.0 - 4.3s  그래프 빠르게 채워짐
-  playerCloseup: { start: 129, end: 159 },  // 4.3 - 5.3s  얼굴 + 코멘터리 합침
-  achievement:   { start: 159, end: 195 },  // 5.3 - 6.5s  업적 숫자
-  verdict:       { start: 195, end: 330 },  // 6.5 - 11.0s 판정 + 엔드 + CTA
+  hook:          { start: 0,   end: 36  },  // 0.0 - 1.2s  선수 + 훅 텍스트
+  cardReveal:    { start: 36,  end: 75  },  // 1.2 - 2.5s  카드 리빌
+  ovrShock:      { start: 75,  end: 105 },  // 2.5 - 3.5s  OVR 충격
+  hexGraph:      { start: 105, end: 150 },  // 3.5 - 5.0s  그래프 채워짐 + 핵심 스탯 강조
+  playerCloseup: { start: 150, end: 186 },  // 5.0 - 6.2s  얼굴 + 코멘터리 합침
+  achievement:   { start: 186, end: 225 },  // 6.2 - 7.5s  업적 숫자
+  verdict:       { start: 225, end: 360 },  // 7.5 - 12.0s 판정 + 엔드 + CTA
 } as const;
