@@ -111,22 +111,22 @@ export default function DashboardPage() {
           loading={loading}
         />
 
-        <div className="flex-1 overflow-y-auto p-5 space-y-4">
+        <div className="flex-1 flex flex-col p-4 gap-3 overflow-hidden">
           {/* Row 1: Card + Stats + Prompt */}
-          <div className="grid grid-cols-12 gap-4 items-stretch">
-            <div className="col-span-3">
+          <div className="grid grid-cols-12 gap-4 items-stretch min-h-0 flex-1">
+            <div className="col-span-3 min-h-0">
               <PlayerCard season={selectedSeason} />
             </div>
-            <div className="col-span-4">
+            <div className="col-span-4 min-h-0">
               <StatsPanel stats={selectedSeason?.stats || null} />
             </div>
-            <div className="col-span-5">
+            <div className="col-span-5 min-h-0">
               <PromptBuilder season={selectedSeason} />
             </div>
           </div>
 
-          {/* Row 2: Image → Music → Video → Checklist (작업 순서) */}
-          <div className="grid grid-cols-12 gap-4 items-stretch">
+          {/* Row 2: Image → Music → Video → Checklist */}
+          <div className="grid grid-cols-12 gap-4 items-stretch min-h-0 flex-1">
             <div className="col-span-3" id="image-upload">
               <ImageUpload season={selectedSeason} onSaved={(type) => {
                 if (type === "hook") autoCheck("hookImage");
