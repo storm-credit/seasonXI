@@ -27,12 +27,12 @@ export const NAV_ITEMS = [
 ];
 
 export const STAT_LABELS: Record<string, string> = {
-  finishing: "Finishing",
-  playmaking: "Playmaking",
-  dribbling: "Dribbling",
-  defense: "Defense",
-  clutch: "Clutch",
-  aura: "Aura",
+  att: "ATT",
+  def: "DEF",
+  pace: "PACE",
+  aura: "AURA",
+  stamina: "STA",
+  mental: "MEN",
 };
 
 export const CHECKLIST_ITEMS = [

@@ -5,12 +5,12 @@ export interface CardData {
   position: string;
   ovr: number;
   stats: {
-    finishing: number;
-    playmaking: number;
-    dribbling: number;
-    defense: number;
-    clutch: number;
+    att: number;
+    def: number;
+    pace: number;
     aura: number;
+    stamina: number;
+    mental: number;
   };
   tier: string;
   hook: string;

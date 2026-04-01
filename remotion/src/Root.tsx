@@ -12,7 +12,7 @@ const DEFAULT_DATA: CardData = {
   club: "FC Barcelona",
   position: "RW",
   ovr: 97,
-  stats: { finishing: 97, playmaking: 95, dribbling: 99, defense: 55, clutch: 98, aura: 99 },
+  stats: { att: 97, def: 45, pace: 90, aura: 99, stamina: 78, mental: 98 },
   tier: "MYTHIC",
   hook: "THIS VERSION WAS BROKEN",
   stat1_number: "73",

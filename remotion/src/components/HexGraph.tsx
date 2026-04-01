@@ -1,7 +1,7 @@
 import { AbsoluteFill, interpolate, useCurrentFrame, Img, staticFile } from 'remotion';
 import { CardData, COLORS, getBg } from '../types';
 
-const LABELS = ['Finishing', 'Playmaking', 'Defense', 'Clutch', 'Aura', 'Dribbling'];
+const LABELS = ['ATT', 'DEF', 'PACE', 'AURA', 'STA', 'MEN'];
 const ANGLES = [-90, -30, 30, 90, 150, 210].map(a => (a * Math.PI) / 180);
 
 function hexPts(vals: number[], cx: number, cy: number, r: number, p: number): string {
@@ -17,8 +17,8 @@ function hexRing(cx: number, cy: number, r: number): string {
 
 export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
   const frame = useCurrentFrame();
-  const { finishing, playmaking, defense, clutch, aura, dribbling } = data.stats;
-  const vals = [finishing, playmaking, defense, clutch, aura, dribbling];
+  const { att, def: defense, pace, aura, stamina, mental } = data.stats;
+  const vals = [att, defense, pace, aura, stamina, mental];
 
   const progress = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
   const opacity = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: 'clamp' });

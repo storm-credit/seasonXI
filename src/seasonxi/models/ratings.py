@@ -1,4 +1,4 @@
-"""Rating output model — Layer C."""
+"""Rating output model — Layer C (v2.0: ATT/DEF/PACE/AURA/STAMINA/MENTAL)."""
 
 from datetime import datetime
 
@@ -14,19 +14,19 @@ class SeasonXIRating(BaseModel):
     role_bucket: str
     role_subtype: str = ""
 
-    finishing_score: float = Field(ge=0, le=99)
-    creation_score: float = Field(ge=0, le=99)
-    control_score: float = Field(ge=0, le=99)
-    defense_score: float = Field(ge=0, le=99)
-    clutch_score: float = Field(ge=0, le=99)
+    att_score: float = Field(ge=0, le=99)
+    def_score: float = Field(ge=0, le=99)
+    pace_score: float = Field(ge=0, le=99)
     aura_score: float = Field(ge=0, le=99)
+    stamina_score: float = Field(ge=0, le=99)
+    mental_score: float = Field(ge=0, le=99)
     overall_score: float = Field(ge=0, le=99)
 
     confidence_score: float = Field(ge=0, le=1)
     tier_label: str  # Mythic / Legendary / Elite / Gold / Silver / Bronze
 
     explanation_json: str = "{}"
-    formula_version: str = "v1"
+    formula_version: str = "v2"
     generated_at: datetime = Field(default_factory=datetime.now)
 
 
@@ -38,12 +38,12 @@ class CardOutput(BaseModel):
     club: str
     role: str
     overall: int
-    finishing: int
-    creation: int
-    control: int
+    att: int
     defense: int
-    clutch: int
+    pace: int
     aura: int
+    stamina: int
+    mental: int
     tier: str
     confidence: float
     explanation: dict | None = None

@@ -59,7 +59,7 @@ export default function DashboardPage() {
         club: player.club, position: "FW",
         ovr: player.tier === "MYTHIC" ? 96 : player.tier === "LEGENDARY" ? 92 : 88,
         tier: player.tier, hook: "",
-        stats: { finishing: 90, playmaking: 85, dribbling: 90, defense: 45, clutch: 88, aura: 90 },
+        stats: { att: 90, def: 45, pace: 85, aura: 90, stamina: 80, mental: 88 },
         goals: 0, assists: 0, commentary: "", achievement: "",
         verdict: `${player.tier} SEASON`, cta: "",
         player_block: player.player_name.split(" ").pop()?.toUpperCase() || "MESSI",

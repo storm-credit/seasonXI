@@ -11,12 +11,12 @@ export interface Season {
   tier: string;
   hook: string;
   stats: {
-    finishing: number;
-    playmaking: number;
-    dribbling: number;
-    defense: number;
-    clutch: number;
+    att: number;
+    def: number;
+    pace: number;
     aura: number;
+    stamina: number;
+    mental: number;
   };
   goals: number;
   assists: number;

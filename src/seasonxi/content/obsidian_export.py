@@ -31,8 +31,8 @@ FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---", re.DOTALL)
 REQUIRED_FIELDS = [
     "player_id", "player_name", "display_name",
     "season", "season_label", "club", "position",
-    "ovr", "finishing", "playmaking", "dribbling",
-    "defense", "clutch", "aura", "tier",
+    "ovr", "att", "defense", "pace",
+    "aura", "stamina", "mental", "tier",
     "hook", "commentary", "achievement", "verdict",
 ]
 
@@ -65,12 +65,12 @@ def build_export(data: dict) -> dict:
         "role_bucket": data.get("role_bucket", ""),
         "ovr": data["ovr"],
         "stats": {
-            "finishing": data["finishing"],
-            "playmaking": data["playmaking"],
-            "dribbling": data["dribbling"],
-            "defense": data["defense"],
-            "clutch": data["clutch"],
+            "att": data["att"],
+            "def": data["defense"],
+            "pace": data["pace"],
             "aura": data["aura"],
+            "stamina": data["stamina"],
+            "mental": data["mental"],
         },
         "tier": data["tier"],
         "hook": data["hook"],

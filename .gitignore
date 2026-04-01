@@ -231,3 +231,4 @@ client_secrets.json
 token.json
 frontend/node_modules
 frontend/.next
+client_secret_*.json
