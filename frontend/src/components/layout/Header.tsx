@@ -129,33 +129,7 @@ export default function Header({
         </div>
       )}
 
-      {/* Actions */}
-      <div className="flex items-center gap-2">
-        <button
-          onClick={onExportJSON}
-          disabled={!selectedSeason || loading}
-          className="btn-outline flex items-center gap-2 text-sm disabled:opacity-30 disabled:cursor-not-allowed"
-        >
-          <FileJson size={14} />
-          <span className="hidden sm:inline">Export</span>
-        </button>
-        <button
-          onClick={onRender}
-          disabled={!selectedSeason || loading}
-          className="btn-outline flex items-center gap-2 text-sm disabled:opacity-30 disabled:cursor-not-allowed"
-        >
-          <Video size={14} />
-          <span className="hidden sm:inline">Render</span>
-        </button>
-        <button
-          onClick={onUpload}
-          disabled={!selectedSeason || loading}
-          className="btn-gold flex items-center gap-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {loading ? <Loader2 size={14} className="animate-spin" /> : <Upload size={14} />}
-          <span className="hidden sm:inline">Upload</span>
-        </button>
-      </div>
+      {/* Status only — actions moved to panels below */}
     </header>
   );
 }

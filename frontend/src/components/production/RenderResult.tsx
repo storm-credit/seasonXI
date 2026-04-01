@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Film, Download, Loader2, Play } from "lucide-react";
+import { Film, Download, Loader2, Play, FileJson } from "lucide-react";
 import type { Season } from "@/lib/types";
 import GlassPanel from "@/components/shared/GlassPanel";
 
@@ -10,9 +10,10 @@ const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8800";
 interface RenderResultProps {
   season?: Season | null;
   onRender?: () => void;
+  onExport?: () => void;
 }
 
-export default function RenderResult({ season, onRender }: RenderResultProps) {
+export default function RenderResult({ season, onRender, onExport }: RenderResultProps) {
   const [rendering, setRendering] = useState(false);
   const [rendered, setRendered] = useState(false);
   const [videoFilename, setVideoFilename] = useState<string | null>(null);
@@ -76,10 +77,16 @@ export default function RenderResult({ season, onRender }: RenderResultProps) {
           </a>
         </div>
       ) : (
-        <button onClick={handleRender} disabled={rendering}
-          className="w-full py-2.5 rounded-lg bg-sxi-gold/20 text-sxi-gold border border-sxi-gold/30 font-display text-xs tracking-wider flex items-center justify-center gap-2 hover:bg-sxi-gold/30 transition-all disabled:opacity-40">
-          {rendering ? <><Loader2 size={12} className="animate-spin" /> RENDERING...</> : <><Film size={12} /> RENDER MP4</>}
-        </button>
+        <div className="space-y-2">
+          <button onClick={async () => { onExport?.(); }}
+            className="w-full py-2 rounded-lg bg-sxi-white/5 text-sxi-white/70 border border-sxi-white/10 font-display text-xs tracking-wider flex items-center justify-center gap-2 hover:bg-sxi-white/10 transition-all">
+            <FileJson size={12} /> EXPORT JSON
+          </button>
+          <button onClick={handleRender} disabled={rendering}
+            className="w-full py-2.5 rounded-lg bg-sxi-gold/20 text-sxi-gold border border-sxi-gold/30 font-display text-xs tracking-wider flex items-center justify-center gap-2 hover:bg-sxi-gold/30 transition-all disabled:opacity-40">
+            {rendering ? <><Loader2 size={12} className="animate-spin" /> RENDERING...</> : <><Film size={12} /> RENDER MP4</>}
+          </button>
+        </div>
       )}
     </GlassPanel>
   );

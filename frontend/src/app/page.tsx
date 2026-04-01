@@ -189,7 +189,7 @@ export default function DashboardPage() {
                   <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <RenderResult season={selectedSeason} onRender={() => autoCheck("rendered")} />
+                  <RenderResult season={selectedSeason} onRender={() => autoCheck("rendered")} onExport={handleExportJSON} />
                   <YouTubePreview season={selectedSeason} onUpload={() => autoCheck("uploaded")} />
                 </div>
               </div>

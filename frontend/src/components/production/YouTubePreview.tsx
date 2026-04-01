@@ -41,13 +41,9 @@ function buildAutoMeta(s: Season) {
     name.toLowerCase(),
     "seasonxi",
     "football",
-    "shorts",
     tier.toLowerCase(),
     label.replace(/\s/g, ""),
-    club.toLowerCase().replace(/\s/g, ""),
-    "footballcards",
-    "playerratings",
-  ].filter(Boolean);
+  ];
 
   return { title, description, tags };
 }
