@@ -43,14 +43,7 @@ export default function StoryframePage() {
 
   return (
     <div className="flex flex-col h-full">
-      <Header
-        selectedSeason={selectedSeason}
-        onSelectSeason={handleSelectSeason}
-        onExportJSON={() => {}}
-        onRender={handleRender}
-        onUpload={() => {}}
-        loading={loading}
-      />
+      <Header selectedSeason={selectedSeason} />
 
       <div className="flex-1 overflow-y-auto p-6">
         <div className="mb-6">
