@@ -142,8 +142,8 @@ def rate_forward(row: pd.Series, confidence: float) -> dict:
     mental_raw = (
         0.30 * _safe_get(row, "pass_completion_pct_role")
         + 0.25 * _safe_get(row, "aerial_duel_success_pct_role")
-        + 0.25 * _safe_get(row, "team_success_pct", 0.5)
-        + 0.20 * _safe_get(row, "minutes_share")
+        + 0.15 * _safe_get(row, "team_success_pct", 0.5)
+        + 0.30 * _safe_get(row, "minutes_share")
     )
 
     att = _scale(att_raw, confidence)
@@ -212,9 +212,9 @@ def rate_midfielder(row: pd.Series, confidence: float) -> dict:
     )
     mental_raw = (
         0.30 * _safe_get(row, "pass_completion_pct_role")
-        + 0.25 * _safe_get(row, "team_success_pct", 0.5)
+        + 0.15 * _safe_get(row, "team_success_pct", 0.5)
         + 0.25 * _safe_get(row, "aerial_duel_success_pct_role")
-        + 0.20 * _safe_get(row, "pressure_success_pct_role")
+        + 0.30 * _safe_get(row, "pressure_success_pct_role")
     )
 
     att = _scale(att_raw, confidence)
@@ -283,8 +283,8 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
     mental_raw = (
         0.30 * _safe_get(row, "pass_completion_pct_role")
         + 0.25 * _safe_get(row, "aerial_duel_success_pct_role")
-        + 0.25 * _safe_get(row, "team_success_pct", 0.5)
-        + 0.20 * _safe_get(row, "clean_sheets_pct_role")
+        + 0.15 * _safe_get(row, "team_success_pct", 0.5)
+        + 0.30 * _safe_get(row, "clean_sheets_pct_role")
     )
 
     att = _scale(att_raw, confidence, base=30, rng=35)  # compressed for DF
@@ -342,9 +342,9 @@ def rate_goalkeeper(row: pd.Series, confidence: float) -> dict:
     )
     mental_raw = (
         0.30 * _safe_get(row, "gk_psxg_diff_pct_role")
-        + 0.25 * _safe_get(row, "team_success_pct", 0.5)
+        + 0.15 * _safe_get(row, "team_success_pct", 0.5)
         + 0.25 * _safe_get(row, "clean_sheets_pct_role")
-        + 0.20 * _safe_get(row, "gk_pass_completion_pct_role", 0.5)
+        + 0.30 * _safe_get(row, "gk_pass_completion_pct_role", 0.5)
     )
 
     att = _scale(att_raw, confidence, base=30, rng=20)  # fixed ~30
