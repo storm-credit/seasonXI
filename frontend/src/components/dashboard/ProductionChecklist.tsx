@@ -37,7 +37,7 @@ export default function ProductionChecklist({ state, onChange, onAction }: Produ
   const progress = total > 0 ? (completedCount / total) * 100 : 0;
 
   return (
-    <GlassPanel className="p-4">
+    <GlassPanel className="p-4 h-full overflow-auto">
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase">
           Production Checklist

@@ -75,7 +75,7 @@ export default function PromptBuilder({ season }: PromptBuilderProps) {
 
   if (!season) {
     return (
-      <GlassPanel className="p-4">
+      <GlassPanel className="p-4 h-full overflow-auto">
         <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase mb-3">
           Prompt Builder
         </h3>
@@ -85,7 +85,7 @@ export default function PromptBuilder({ season }: PromptBuilderProps) {
   }
 
   return (
-    <GlassPanel className="p-4">
+    <GlassPanel className="p-4 h-full overflow-auto">
       <div className="flex items-center gap-2 mb-4">
         <Sparkles size={14} className="text-sxi-gold" />
         <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase">

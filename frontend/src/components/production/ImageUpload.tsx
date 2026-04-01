@@ -87,7 +87,7 @@ export default function ImageUpload({ season, onSaved }: ImageUploadProps) {
   const hasExisting = existingTypes.some(t => existing[t]?.exists);
 
   return (
-    <GlassPanel className="p-4">
+    <GlassPanel className="p-4 h-full overflow-auto">
       <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase mb-3">
         Image Upload
       </h3>

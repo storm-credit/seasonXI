@@ -86,7 +86,7 @@ export default function MusicPanel({ season, onSaved }: MusicPanelProps) {
   const hasAudio = !!(file || existingBgm);
 
   return (
-    <GlassPanel className="p-4">
+    <GlassPanel className="p-4 h-full overflow-auto">
       <div className="flex items-center gap-2 mb-3">
         <Music size={14} className="text-purple-400" />
         <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase">

@@ -19,7 +19,7 @@ export default function StatsPanel({ stats }: StatsPanelProps) {
 
   if (!stats) {
     return (
-      <GlassPanel className="p-4">
+      <GlassPanel className="p-4 h-full overflow-auto">
         <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase mb-4">
           Stats
         </h3>

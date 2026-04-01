@@ -13,7 +13,7 @@ interface PlayerCardProps {
 export default function PlayerCard({ season }: PlayerCardProps) {
   if (!season) {
     return (
-      <GlassPanel className="p-8 text-center min-h-[300px] flex items-center justify-center">
+      <GlassPanel className="p-8 text-center h-full flex items-center justify-center">
         <div>
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[rgba(201,162,74,0.08)] border border-sxi-gold/10 flex items-center justify-center">
             <span className="font-display text-2xl text-sxi-gold/30">XI</span>
@@ -30,7 +30,7 @@ export default function PlayerCard({ season }: PlayerCardProps) {
   const tierColor = TIER_CONFIG[tierKey]?.color || TIER_CONFIG.BRONZE.color;
 
   return (
-    <GlassPanel className="p-5" glow>
+    <GlassPanel className="p-5 h-full overflow-auto" glow>
       {/* Header */}
       <div className="flex items-start gap-4 mb-5">
         {/* OVR Circle */}

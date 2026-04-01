@@ -104,36 +104,36 @@ export default function DashboardPage() {
       <main className="flex-1 flex flex-col overflow-hidden">
 
         <div className="flex-1 flex flex-col p-4 gap-3 overflow-hidden">
-          {/* Row 1: Card + Stats + Prompt */}
-          <div className="grid grid-cols-12 gap-4 items-stretch min-h-0 flex-1">
-            <div className="col-span-3 min-h-0">
+          {/* Row 1: Card + Stats + Prompt — fixed height */}
+          <div className="grid grid-cols-12 gap-3" style={{ height: "calc(50% - 6px)" }}>
+            <div className="col-span-3 overflow-hidden">
               <PlayerCard season={selectedSeason} />
             </div>
-            <div className="col-span-4 min-h-0">
+            <div className="col-span-4 overflow-hidden">
               <StatsPanel stats={selectedSeason?.stats || null} />
             </div>
-            <div className="col-span-5 min-h-0">
+            <div className="col-span-5 overflow-hidden">
               <PromptBuilder season={selectedSeason} />
             </div>
           </div>
 
-          {/* Row 2: Image → Music → Video → Checklist */}
-          <div className="grid grid-cols-12 gap-4 items-stretch min-h-0 flex-1">
-            <div className="col-span-3" id="image-upload">
+          {/* Row 2: Image → Music → Video → Checklist — fixed height */}
+          <div className="grid grid-cols-12 gap-3" style={{ height: "calc(50% - 6px)" }}>
+            <div className="col-span-3 overflow-hidden" id="image-upload">
               <ImageUpload season={selectedSeason} onSaved={(type) => {
                 if (type === "hook") autoCheck("hookImage");
                 else if (type === "card") autoCheck("cardImage");
               }} />
             </div>
-            <div className="col-span-3" id="music-panel">
+            <div className="col-span-3 overflow-hidden" id="music-panel">
               <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
             </div>
-            <div className="col-span-3" id="video-preview">
+            <div className="col-span-3 overflow-hidden" id="video-preview">
               <VideoPreview season={selectedSeason} compact
                 onRenderComplete={() => autoCheck("rendered")}
                 onUploadYouTube={() => autoCheck("uploaded")} />
             </div>
-            <div className="col-span-3">
+            <div className="col-span-3 overflow-hidden">
               <ProductionChecklist state={checklist} onChange={checkItem} onAction={handleChecklistAction} />
             </div>
           </div>
