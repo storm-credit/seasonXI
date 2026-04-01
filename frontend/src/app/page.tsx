@@ -172,20 +172,27 @@ export default function DashboardPage() {
               <StatsPanel stats={selectedSeason?.stats || null} />
               <PromptBuilder season={selectedSeason} />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <ImageUpload season={selectedSeason} onSaved={(type) => {
-                if (type === "hook") autoCheck("hookImage");
-                else if (type === "card") autoCheck("cardImage");
-                // closeup doesn't have its own checklist item — counts as card
-              }} />
-              <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
-              <VideoPreview compact />
-            </div>
+            {/* Media row: Video left (big) + Upload/Music/Render right */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+              {/* Video Preview — left, tall */}
+              <div className="md:col-span-4">
+                <VideoPreview compact={false} />
+              </div>
 
-            {/* Bottom row: Render + YouTube */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <RenderResult season={selectedSeason} onRender={() => autoCheck("rendered")} />
-              <YouTubePreview season={selectedSeason} onUpload={() => autoCheck("uploaded")} />
+              {/* Right stack: Image + Music + Render + YouTube */}
+              <div className="md:col-span-8 space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <ImageUpload season={selectedSeason} onSaved={(type) => {
+                    if (type === "hook") autoCheck("hookImage");
+                    else if (type === "card") autoCheck("cardImage");
+                  }} />
+                  <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <RenderResult season={selectedSeason} onRender={() => autoCheck("rendered")} />
+                  <YouTubePreview season={selectedSeason} onUpload={() => autoCheck("uploaded")} />
+                </div>
+              </div>
             </div>
           </div>
         </div>

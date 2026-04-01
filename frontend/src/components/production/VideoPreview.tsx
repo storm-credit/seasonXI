@@ -44,7 +44,7 @@ export default function VideoPreview({
 
       {/* 9:16 vertical frame */}
       <div className={`relative rounded-lg overflow-hidden border border-[rgba(201,162,74,0.1)] bg-black mx-auto ${
-        compact ? "w-[160px] h-[284px]" : "w-[240px] h-[426px]"
+        compact ? "w-[160px] h-[284px]" : "w-full h-[500px]"
       }`}>
         <iframe
           key={key}
