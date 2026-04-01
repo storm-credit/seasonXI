@@ -15,6 +15,8 @@ import PromptBuilder from "@/components/production/PromptBuilder";
 import ImageUpload from "@/components/production/ImageUpload";
 import VideoPreview from "@/components/production/VideoPreview";
 import MusicPanel from "@/components/production/MusicPanel";
+import YouTubePreview from "@/components/production/YouTubePreview";
+import RenderResult from "@/components/production/RenderResult";
 
 export default function DashboardPage() {
   const [selectedDay, setSelectedDay] = useState(0);
@@ -178,6 +180,12 @@ export default function DashboardPage() {
               }} />
               <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
               <VideoPreview compact />
+            </div>
+
+            {/* Bottom row: Render + YouTube */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <RenderResult season={selectedSeason} onRender={() => autoCheck("rendered")} />
+              <YouTubePreview season={selectedSeason} onUpload={() => autoCheck("uploaded")} />
             </div>
           </div>
         </div>
