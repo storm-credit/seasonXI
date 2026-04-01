@@ -121,11 +121,12 @@ def rate_forward(row: pd.Series, confidence: float) -> dict:
     clutch = _scale(clutch_raw, confidence)
     aura = _scale(aura_raw, confidence)
 
+    # v1.3: rebalanced — ATK 60% DEF 16% OTH 24%
     overall_raw = (
-        0.30 * finishing_raw
-        + 0.20 * creation_raw
-        + 0.18 * control_raw
-        + 0.08 * defense_raw
+        0.25 * finishing_raw
+        + 0.18 * creation_raw
+        + 0.17 * control_raw
+        + 0.16 * defense_raw    # 8% → 16% (pressing matters for FW)
         + 0.12 * clutch_raw
         + 0.12 * aura_raw
     )
@@ -203,11 +204,12 @@ def rate_midfielder(row: pd.Series, confidence: float) -> dict:
     clutch = _scale(clutch_raw, confidence)
     aura = _scale(aura_raw, confidence)
 
+    # v1.3: rebalanced — ATK 55% DEF 23% OTH 22%
     overall_raw = (
-        0.16 * finishing_raw
-        + 0.24 * creation_raw
-        + 0.24 * control_raw
-        + 0.14 * defense_raw
+        0.14 * finishing_raw
+        + 0.20 * creation_raw
+        + 0.21 * control_raw
+        + 0.23 * defense_raw    # 14% → 23% (MF must defend too)
         + 0.10 * clutch_raw
         + 0.12 * aura_raw
     )
@@ -286,12 +288,12 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
     clutch = _scale(clutch_raw, confidence)
     aura = _scale(aura_raw, confidence)
 
-    # v1.2: DF creation weight raised 0.10→0.12 for modern fullbacks
+    # v1.3: rebalanced — ATK 30% DEF 40% OTH 30%
     overall_raw = (
         0.05 * finishing_raw
-        + 0.12 * creation_raw
-        + 0.18 * control_raw
-        + 0.35 * defense_raw
+        + 0.10 * creation_raw
+        + 0.15 * control_raw
+        + 0.40 * defense_raw    # 35% → 40% (defense is primary)
         + 0.15 * clutch_raw
         + 0.15 * aura_raw
     )
