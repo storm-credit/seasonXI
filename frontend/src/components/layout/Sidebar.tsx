@@ -44,7 +44,7 @@ export default function Sidebar({
   };
 
   return (
-    <aside className="w-56 flex-shrink-0 h-screen flex flex-col border-r border-[rgba(201,162,74,0.12)] bg-[rgba(11,13,18,0.95)]">
+    <aside className="w-64 flex-shrink-0 h-screen flex flex-col border-r border-[rgba(201,162,74,0.12)] bg-[rgba(11,13,18,0.95)]">
       {/* Logo */}
       <div className="px-4 py-4 border-b border-[rgba(201,162,74,0.1)]">
         <div className="flex items-center gap-2">
