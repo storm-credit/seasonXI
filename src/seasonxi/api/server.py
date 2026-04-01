@@ -200,23 +200,39 @@ def _extract_block(text: str, block_name: str) -> str:
 # ─── API: Render Video ────────────────────────────────────────
 @app.post("/api/render/{player_id}/{season}")
 def render_video(player_id: str, season: str):
-    """Trigger Remotion render for a season."""
+    """Trigger Remotion render via npx remotion render."""
     video_id = f"{player_id}_{season.replace('-', '_')}"
-    script = PROJECT_ROOT / "scripts" / "render_video.py"
+    output_path = PROJECT_ROOT / "outputs" / f"{video_id}.mp4"
+    remotion_dir = REMOTION_DIR
 
-    if not script.exists():
-        raise HTTPException(404, "render_video.py not found")
+    # Try direct npx remotion render (works on host, not in Docker)
+    try:
+        import shutil
+        npx = shutil.which("npx")
+        if npx:
+            result = subprocess.Popen(
+                [npx, "remotion", "render", "SeasonCard",
+                 "--output", str(output_path)],
+                cwd=str(remotion_dir),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+            return {"status": "rendering", "video_id": video_id, "pid": result.pid}
+    except Exception:
+        pass
 
+    # Fallback: try docker exec on remotion container
     try:
         result = subprocess.Popen(
-            [sys.executable, str(script), video_id],
-            cwd=str(PROJECT_ROOT),
+            ["docker", "exec", "seasonxi-remotion",
+             "npx", "remotion", "render", "SeasonCard",
+             "--output", f"/app/outputs/{video_id}.mp4"],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
         )
         return {"status": "rendering", "video_id": video_id, "pid": result.pid}
     except Exception as e:
-        raise HTTPException(500, str(e))
+        raise HTTPException(500, f"Cannot render: {e}")
 
 
 # ─── API: Pipeline Cards (real data) ──────────────────────────

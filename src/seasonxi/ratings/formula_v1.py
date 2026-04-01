@@ -41,7 +41,7 @@ from seasonxi.ratings.league_adjustment import apply_league_adjustment
 from seasonxi.ratings.team_debiasing import debias_team_feature
 
 
-def _adaptive_overall(raws: dict[str, float], base_weights: dict[str, float], boost: float = 0.07) -> float:
+def _adaptive_overall(raws: dict[str, float], base_weights: dict[str, float], boost: float = 0.03) -> float:
     """Compute overall with adaptive weighting based on player's strengths.
 
     Identifies top 2 stats by raw value and shifts weight toward them.
@@ -158,14 +158,27 @@ def rate_forward(row: pd.Series, confidence: float) -> dict:
             "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
     base_w = {"att": 0.30, "def": 0.10, "pace": 0.15,
               "aura": 0.15, "stamina": 0.10, "mental": 0.20}
-    overall_raw = _adaptive_overall(raws, base_w)
-    overall = _scale(overall_raw, confidence)
+
+    # OVR = weighted average of SCALED stats (not raw)
+    # This ensures OVR is consistent with visible stats
+    scores = {"att": att, "def": defense, "pace": pace,
+              "aura": aura, "stamina": stamina, "mental": mental}
+    adjusted_w = base_w.copy()
+    # Adaptive: boost top 2 stats slightly
+    sorted_stats = sorted(raws.items(), key=lambda x: x[1], reverse=True)
+    top2 = {sorted_stats[0][0], sorted_stats[1][0]}
+    bot2 = {sorted_stats[-1][0], sorted_stats[-2][0]}
+    for k in adjusted_w:
+        if k in top2: adjusted_w[k] += 0.03
+        elif k in bot2: adjusted_w[k] = max(0, adjusted_w[k] - 0.03)
+    total_w = sum(adjusted_w.values())
+    overall = sum(scores[k] * (adjusted_w[k] / total_w) for k in scores)
 
     return {
         "att": att, "def": defense, "pace": pace,
         "aura": aura, "stamina": stamina, "mental": mental,
         "overall": overall,
-        "_raws": {**raws, "overall": overall_raw},
+        "_raws": {**raws, "overall": sum(raws[k] * (base_w[k]) for k in raws)},
     }
 
 
@@ -229,14 +242,21 @@ def rate_midfielder(row: pd.Series, confidence: float) -> dict:
             "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
     base_w = {"att": 0.15, "def": 0.20, "pace": 0.10,
               "aura": 0.15, "stamina": 0.20, "mental": 0.20}
-    overall_raw = _adaptive_overall(raws, base_w)
-    overall = _scale(overall_raw, confidence)
+    scores = {"att": att, "def": defense, "pace": pace,
+              "aura": aura, "stamina": stamina, "mental": mental}
+    adjusted_w = base_w.copy()
+    sorted_stats = sorted(raws.items(), key=lambda x: x[1], reverse=True)
+    for k in adjusted_w:
+        if k in {sorted_stats[0][0], sorted_stats[1][0]}: adjusted_w[k] += 0.03
+        elif k in {sorted_stats[-1][0], sorted_stats[-2][0]}: adjusted_w[k] = max(0, adjusted_w[k] - 0.03)
+    total_w = sum(adjusted_w.values())
+    overall = sum(scores[k] * (adjusted_w[k] / total_w) for k in scores)
 
     return {
         "att": att, "def": defense, "pace": pace,
         "aura": aura, "stamina": stamina, "mental": mental,
         "overall": overall,
-        "_raws": {**raws, "overall": overall_raw},
+        "_raws": {**raws, "overall": sum(raws[k] * base_w[k] for k in raws)},
     }
 
 
@@ -299,14 +319,21 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
             "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
     base_w = {"att": 0.05, "def": 0.35, "pace": 0.10,
               "aura": 0.15, "stamina": 0.15, "mental": 0.20}
-    overall_raw = _adaptive_overall(raws, base_w)
-    overall = _scale(overall_raw, confidence)
+    scores = {"att": att, "def": defense, "pace": pace,
+              "aura": aura, "stamina": stamina, "mental": mental}
+    adjusted_w = base_w.copy()
+    sorted_stats = sorted(raws.items(), key=lambda x: x[1], reverse=True)
+    for k in adjusted_w:
+        if k in {sorted_stats[0][0], sorted_stats[1][0]}: adjusted_w[k] += 0.03
+        elif k in {sorted_stats[-1][0], sorted_stats[-2][0]}: adjusted_w[k] = max(0, adjusted_w[k] - 0.03)
+    total_w = sum(adjusted_w.values())
+    overall = sum(scores[k] * (adjusted_w[k] / total_w) for k in scores)
 
     return {
         "att": att, "def": defense, "pace": pace,
         "aura": aura, "stamina": stamina, "mental": mental,
         "overall": overall,
-        "_raws": {**raws, "overall": overall_raw},
+        "_raws": {**raws, "overall": sum(raws[k] * base_w[k] for k in raws)},
     }
 
 
@@ -359,14 +386,21 @@ def rate_goalkeeper(row: pd.Series, confidence: float) -> dict:
             "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
     base_w = {"att": 0.00, "def": 0.40, "pace": 0.05,
               "aura": 0.15, "stamina": 0.10, "mental": 0.30}
-    overall_raw = _adaptive_overall(raws, base_w)
-    overall = _scale(overall_raw, confidence)
+    scores = {"att": att, "def": defense, "pace": pace,
+              "aura": aura, "stamina": stamina, "mental": mental}
+    adjusted_w = base_w.copy()
+    sorted_stats = sorted(raws.items(), key=lambda x: x[1], reverse=True)
+    for k in adjusted_w:
+        if k in {sorted_stats[0][0], sorted_stats[1][0]}: adjusted_w[k] += 0.03
+        elif k in {sorted_stats[-1][0], sorted_stats[-2][0]}: adjusted_w[k] = max(0, adjusted_w[k] - 0.03)
+    total_w = sum(adjusted_w.values())
+    overall = sum(scores[k] * (adjusted_w[k] / total_w) for k in scores)
 
     return {
         "att": att, "def": defense, "pace": pace,
         "aura": aura, "stamina": stamina, "mental": mental,
         "overall": overall,
-        "_raws": {**raws, "overall": overall_raw},
+        "_raws": {**raws, "overall": sum(raws[k] * base_w[k] for k in raws)},
     }
 
 
