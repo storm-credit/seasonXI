@@ -219,6 +219,66 @@ def render_video(player_id: str, season: str):
         raise HTTPException(500, str(e))
 
 
+# ─── API: Pipeline Cards (real data) ──────────────────────────
+@app.get("/api/pipeline-cards")
+def get_pipeline_cards(q: str = ""):
+    """Get cards from pipeline results (2030 players)."""
+    cards_file = PROJECT_ROOT / "outputs" / "cards" / "_all_cards_v2_merged.json"
+    if not cards_file.exists():
+        return []
+    cards = json.loads(cards_file.read_text(encoding="utf-8"))
+    if q:
+        cards = [c for c in cards if q.lower() in c.get("player_name", "").lower()]
+    return cards[:50]
+
+
+@app.post("/api/pipeline-export/{player_name}")
+def pipeline_export(player_name: str):
+    """Export a player from pipeline results to Remotion JSON."""
+    cards_file = PROJECT_ROOT / "outputs" / "cards" / "_all_cards_v2_merged.json"
+    if not cards_file.exists():
+        raise HTTPException(404, "Pipeline not run yet")
+
+    cards = json.loads(cards_file.read_text(encoding="utf-8"))
+    match = [c for c in cards if player_name.lower() in c.get("player_name", "").lower()]
+    if not match:
+        raise HTTPException(404, f"Player not found: {player_name}")
+
+    card = match[0]
+    remotion_data = {
+        "player": card["player_name"].split()[-1].upper(),
+        "season": "2021-22",
+        "club": card["club"],
+        "position": card["position"],
+        "ovr": int(card["overall"]),
+        "stats": {
+            "att": int(card["att"]),
+            "def": int(card["def"]),
+            "pace": int(card["pace"]),
+            "aura": int(card["aura"]),
+            "stamina": int(card["stamina"]),
+            "mental": int(card["mental"]),
+        },
+        "tier": card["tier"],
+        "hook": f"THIS WAS {card['tier'].upper()}",
+        "play_style": f"{card['goals']} GOALS {card['assists']} ASSISTS",
+        "achievement": "GOALS",
+        "achievement_number": str(card["goals"]),
+        "verdict": f"{card['tier'].upper()} SEASON",
+        "cta": "WHO WAS BETTER?",
+        "closeup_text": "UNSTOPPABLE",
+        "energy_text": card["tier"].upper(),
+    }
+
+    out_dir = REMOTION_DIR / "public" / "data"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    name_clean = card["player_name"].lower().replace(" ", "_")
+    out_path = out_dir / f"{name_clean}_2021_22.json"
+    out_path.write_text(json.dumps(remotion_data, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    return {"status": "exported", "path": str(out_path), "player": card["player_name"], "ovr": card["overall"], "tier": card["tier"]}
+
+
 # ─── API: Render Status ──────────────────────────────────────
 @app.get("/api/render-status/{player_id}/{season}")
 def render_status(player_id: str, season: str):
