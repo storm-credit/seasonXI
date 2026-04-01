@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import { SCHEDULE } from "@/lib/constants";
 import { loadSeason, exportJSON, checkAssets } from "@/lib/api";
 import type { Season } from "@/lib/types";
-import { type ChecklistState } from "@/components/dashboard/ProductionChecklist";
+import ProductionChecklist, { type ChecklistState } from "@/components/dashboard/ProductionChecklist";
 
 import Sidebar from "@/components/layout/Sidebar";
 import Header from "@/components/layout/Header";
@@ -28,6 +28,9 @@ export default function DashboardPage() {
   const autoCheck = (key: keyof ChecklistState) => {
     setChecklist(prev => ({ ...prev, [key]: true }));
   };
+  const checkItem = (key: keyof ChecklistState) => {
+    setChecklist(prev => ({ ...prev, [key]: !prev[key] }));
+  };
 
   const currentDayPlayers = SCHEDULE[selectedDay]?.players || [];
 
@@ -38,7 +41,6 @@ export default function DashboardPage() {
       jsonExport: false, rendered: false, reviewed: false, uploaded: false,
     };
     setChecklist(fresh);
-
     try {
       const assets = await checkAssets(playerId, season);
       if (assets.hook?.exists) fresh.hookImage = true;
@@ -46,12 +48,10 @@ export default function DashboardPage() {
       if (assets.bgm?.exists) fresh.sunoMusic = true;
       setChecklist({ ...fresh });
     } catch { /* skip */ }
-
     try {
       const data = await loadSeason(playerId, season);
       if (data?.player_id) { setSelectedSeason(data); setLoading(false); return; }
     } catch { /* fallback */ }
-
     const player = currentDayPlayers.find(p => p.player_id === playerId);
     if (player) {
       setSelectedSeason({
@@ -93,17 +93,15 @@ export default function DashboardPage() {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Sidebar with schedule tree + checklist */}
+      {/* Sidebar — nav + schedule tree */}
       <Sidebar
         selectedDay={selectedDay}
         onSelectDay={setSelectedDay}
         selectedPlayerId={selectedSeason?.player_id || null}
         onSelectPlayer={handleSelectSeason}
-        checklist={checklist}
-        onChecklistAction={handleChecklistAction}
       />
 
-      {/* Main content — single screen, no scroll ideally */}
+      {/* Main */}
       <main className="flex-1 flex flex-col overflow-hidden">
         <Header
           selectedSeason={selectedSeason}
@@ -114,9 +112,9 @@ export default function DashboardPage() {
           loading={loading}
         />
 
-        <div className="flex-1 overflow-y-auto p-4">
-          {/* Top row: Card + Stats + Prompt */}
-          <div className="grid grid-cols-12 gap-3 mb-3">
+        <div className="flex-1 overflow-y-auto p-5 space-y-4">
+          {/* Row 1: Card + Stats + Prompt */}
+          <div className="grid grid-cols-12 gap-4">
             <div className="col-span-3">
               <PlayerCard season={selectedSeason} />
             </div>
@@ -128,8 +126,8 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Bottom row: Video + Image + Music + YouTube */}
-          <div className="grid grid-cols-12 gap-3">
+          {/* Row 2: Video + Image + Music + YouTube */}
+          <div className="grid grid-cols-12 gap-4">
             <div className="col-span-3" id="video-preview">
               <VideoPreview season={selectedSeason} onRenderComplete={() => autoCheck("rendered")} />
             </div>
@@ -146,6 +144,9 @@ export default function DashboardPage() {
               <YouTubePreview season={selectedSeason} onUpload={() => autoCheck("uploaded")} />
             </div>
           </div>
+
+          {/* Row 3: Checklist */}
+          <ProductionChecklist state={checklist} onChange={checkItem} onAction={handleChecklistAction} />
         </div>
       </main>
     </div>
