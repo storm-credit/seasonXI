@@ -14,7 +14,6 @@ import PromptBuilder from "@/components/production/PromptBuilder";
 import ImageUpload from "@/components/production/ImageUpload";
 import VideoPreview from "@/components/production/VideoPreview";
 import MusicPanel from "@/components/production/MusicPanel";
-import YouTubePreview from "@/components/production/YouTubePreview";
 
 export default function DashboardPage() {
   const [selectedDay, setSelectedDay] = useState(0);
@@ -126,10 +125,12 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Row 2: Video + Image + Music + YouTube */}
+          {/* Row 2: Video + Image + Music + Checklist */}
           <div className="grid grid-cols-12 gap-4">
             <div className="col-span-3" id="video-preview">
-              <VideoPreview season={selectedSeason} onRenderComplete={() => autoCheck("rendered")} />
+              <VideoPreview season={selectedSeason}
+                onRenderComplete={() => autoCheck("rendered")}
+                onUploadYouTube={() => autoCheck("uploaded")} />
             </div>
             <div className="col-span-3" id="image-upload">
               <ImageUpload season={selectedSeason} onSaved={(type) => {
@@ -140,13 +141,10 @@ export default function DashboardPage() {
             <div className="col-span-3" id="music-panel">
               <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
             </div>
-            <div className="col-span-3" id="youtube-panel">
-              <YouTubePreview season={selectedSeason} onUpload={() => autoCheck("uploaded")} />
+            <div className="col-span-3">
+              <ProductionChecklist state={checklist} onChange={checkItem} onAction={handleChecklistAction} />
             </div>
           </div>
-
-          {/* Row 3: Checklist */}
-          <ProductionChecklist state={checklist} onChange={checkItem} onAction={handleChecklistAction} />
         </div>
       </main>
     </div>

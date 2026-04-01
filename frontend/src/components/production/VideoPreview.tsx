@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Film, ExternalLink, Play, Loader2, Download } from "lucide-react";
+import { Film, ExternalLink, Play, Loader2, Download, Upload } from "lucide-react";
 import type { Season } from "@/lib/types";
 import GlassPanel from "@/components/shared/GlassPanel";
 
@@ -12,6 +12,7 @@ interface VideoPreviewProps {
   compact?: boolean;
   remotionPort?: number;
   onRenderComplete?: () => void;
+  onUploadYouTube?: () => void;
 }
 
 export default function VideoPreview({
@@ -19,7 +20,9 @@ export default function VideoPreview({
   compact = false,
   remotionPort = 3334,
   onRenderComplete,
+  onUploadYouTube,
 }: VideoPreviewProps) {
+  const [showYouTube, setShowYouTube] = useState(false);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [videoFilename, setVideoFilename] = useState<string | null>(null);
   const [rendering, setRendering] = useState(false);
@@ -129,10 +132,16 @@ export default function VideoPreview({
               style={{ width: "100%", maxWidth: compact ? 180 : 260, aspectRatio: "9/16" }}
             />
             {videoFilename && (
-              <a href={videoUrl} download={videoFilename}
-                className="w-full max-w-[260px] py-1.5 rounded-lg bg-sxi-gold text-sxi-black font-display text-[10px] tracking-wider flex items-center justify-center gap-1.5 hover:brightness-110 transition-all">
-                <Download size={10} /> DOWNLOAD
-              </a>
+              <div className="w-full max-w-[260px] space-y-1.5">
+                <a href={videoUrl} download={videoFilename}
+                  className="w-full py-1.5 rounded-lg bg-sxi-gold text-sxi-black font-display text-[10px] tracking-wider flex items-center justify-center gap-1.5 hover:brightness-110 transition-all">
+                  <Download size={10} /> DOWNLOAD
+                </a>
+                <button onClick={() => { setShowYouTube(true); onUploadYouTube?.(); }}
+                  className="w-full py-1.5 rounded-lg bg-red-600 text-white font-display text-[10px] tracking-wider flex items-center justify-center gap-1.5 hover:bg-red-500 transition-all">
+                  <Upload size={10} /> UPLOAD YOUTUBE
+                </button>
+              </div>
             )}
           </div>
         ) : rendering ? (
