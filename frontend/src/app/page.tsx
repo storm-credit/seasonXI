@@ -102,14 +102,7 @@ export default function DashboardPage() {
 
       {/* Main */}
       <main className="flex-1 flex flex-col overflow-hidden">
-        <Header
-          selectedSeason={selectedSeason}
-          onSelectSeason={handleSelectSeason}
-          onExportJSON={handleExportJSON}
-          onRender={() => {}}
-          onUpload={() => {}}
-          loading={loading}
-        />
+        <Header selectedSeason={selectedSeason} />
 
         <div className="flex-1 flex flex-col p-4 gap-3 overflow-hidden">
           {/* Row 1: Card + Stats + Prompt */}

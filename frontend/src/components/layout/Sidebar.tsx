@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard, BarChart3, Film, Settings,
-  ChevronDown, ChevronRight,
+  ChevronDown, ChevronRight, Search, Loader2,
 } from "lucide-react";
 import { SCHEDULE } from "@/lib/constants";
+import { searchPlayers } from "@/lib/api";
+import type { SearchResult } from "@/lib/types";
 
 const NAV_ITEMS = [
   { label: "Dashboard", href: "/", icon: LayoutDashboard },
@@ -28,6 +30,10 @@ export default function Sidebar({
 }: SidebarProps) {
   const pathname = usePathname();
   const [expandedDays, setExpandedDays] = useState<Set<number>>(new Set([0]));
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [searching, setSearching] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const toggleDay = (idx: number) => {
     const next = new Set(expandedDays);
@@ -66,6 +72,48 @@ export default function Sidebar({
           );
         })}
       </nav>
+
+      {/* Search */}
+      <div className="px-3 py-2 border-b border-[rgba(201,162,74,0.08)]">
+        <div className="relative">
+          <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-sxi-white/25" />
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => {
+              const v = e.target.value;
+              setQuery(v);
+              if (timeoutRef.current) clearTimeout(timeoutRef.current);
+              if (!v.trim()) { setResults([]); return; }
+              timeoutRef.current = setTimeout(async () => {
+                setSearching(true);
+                try {
+                  const data = await searchPlayers(v);
+                  setResults(data);
+                } catch { setResults([]); }
+                setSearching(false);
+              }, 300);
+            }}
+            placeholder="Search player..."
+            className="w-full pl-8 pr-3 py-1.5 bg-[rgba(245,247,250,0.04)] border border-[rgba(201,162,74,0.12)] rounded-md text-sm text-sxi-white placeholder:text-sxi-white/25 focus:outline-none focus:border-sxi-gold/40 transition-colors"
+          />
+          {searching && <Loader2 size={12} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-sxi-gold animate-spin" />}
+        </div>
+        {results.length > 0 && (
+          <div className="mt-1 max-h-40 overflow-y-auto space-y-0.5">
+            {results.map(r =>
+              r.seasons.map(s => (
+                <button key={`${r.player_id}-${s}`}
+                  onClick={() => { onSelectPlayer(r.player_id, s); setQuery(""); setResults([]); }}
+                  className="w-full text-left px-2 py-1.5 rounded-md text-sm text-sxi-white/60 hover:text-sxi-gold hover:bg-[rgba(201,162,74,0.08)] transition-colors flex justify-between">
+                  <span>{r.player_name}</span>
+                  <span className="text-xs text-sxi-white/30">{s}</span>
+                </button>
+              ))
+            )}
+          </div>
+        )}
+      </div>
 
       {/* Schedule Tree */}
       <div className="flex-1 overflow-y-auto px-2 py-3">
