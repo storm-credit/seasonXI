@@ -113,7 +113,7 @@ export default function DashboardPage() {
 
         <div className="flex-1 overflow-y-auto p-5 space-y-4">
           {/* Row 1: Card + Stats + Prompt */}
-          <div className="grid grid-cols-12 gap-4">
+          <div className="grid grid-cols-12 gap-4 items-stretch">
             <div className="col-span-3">
               <PlayerCard season={selectedSeason} />
             </div>
@@ -125,13 +125,8 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Row 2: Video + Image + Music + Checklist */}
-          <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-3" id="video-preview">
-              <VideoPreview season={selectedSeason}
-                onRenderComplete={() => autoCheck("rendered")}
-                onUploadYouTube={() => autoCheck("uploaded")} />
-            </div>
+          {/* Row 2: Image → Music → Video → Checklist (작업 순서) */}
+          <div className="grid grid-cols-12 gap-4 items-stretch">
             <div className="col-span-3" id="image-upload">
               <ImageUpload season={selectedSeason} onSaved={(type) => {
                 if (type === "hook") autoCheck("hookImage");
@@ -140,6 +135,11 @@ export default function DashboardPage() {
             </div>
             <div className="col-span-3" id="music-panel">
               <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
+            </div>
+            <div className="col-span-3" id="video-preview">
+              <VideoPreview season={selectedSeason} compact
+                onRenderComplete={() => autoCheck("rendered")}
+                onUploadYouTube={() => autoCheck("uploaded")} />
             </div>
             <div className="col-span-3">
               <ProductionChecklist state={checklist} onChange={checkItem} onAction={handleChecklistAction} />

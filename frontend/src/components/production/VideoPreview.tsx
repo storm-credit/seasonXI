@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Film, ExternalLink, Play, Loader2, Download, Upload } from "lucide-react";
 import type { Season } from "@/lib/types";
 import GlassPanel from "@/components/shared/GlassPanel";
@@ -22,7 +22,7 @@ export default function VideoPreview({
   onRenderComplete,
   onUploadYouTube,
 }: VideoPreviewProps) {
-  const [showYouTube, setShowYouTube] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [videoFilename, setVideoFilename] = useState<string | null>(null);
   const [rendering, setRendering] = useState(false);
@@ -112,6 +112,7 @@ export default function VideoPreview({
   };
 
   return (
+    <>
     <GlassPanel className="p-4 h-full flex flex-col">
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase">
@@ -125,21 +126,26 @@ export default function VideoPreview({
 
       <div className="flex-1 flex flex-col items-center justify-center">
         {videoUrl ? (
-          /* Video player */
-          <div className="w-full flex flex-col items-center gap-3">
-            <video src={videoUrl} controls loop
-              className="rounded-lg border border-sxi-gold/20 bg-black"
-              style={{ width: "100%", maxWidth: compact ? 180 : 260, aspectRatio: "9/16" }}
-            />
+          /* Video player — compact thumbnail, click to expand */
+          <div className="w-full flex flex-col items-center gap-2">
+            <div className="relative cursor-pointer group" onClick={() => setShowModal(true)}>
+              <video src={videoUrl} muted
+                className="rounded-lg border border-sxi-gold/20 bg-black"
+                style={{ width: "100%", maxWidth: 140, maxHeight: 200, objectFit: "cover" }}
+              />
+              <div className="absolute inset-0 bg-black/40 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <Play size={24} className="text-white" />
+              </div>
+            </div>
             {videoFilename && (
-              <div className="w-full max-w-[260px] space-y-1.5">
+              <div className="w-full space-y-1">
                 <a href={videoUrl} download={videoFilename}
-                  className="w-full py-1.5 rounded-lg bg-sxi-gold text-sxi-black font-display text-[10px] tracking-wider flex items-center justify-center gap-1.5 hover:brightness-110 transition-all">
+                  className="w-full py-1 rounded-lg bg-sxi-gold text-sxi-black font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:brightness-110 transition-all">
                   <Download size={10} /> DOWNLOAD
                 </a>
-                <button onClick={() => { setShowYouTube(true); onUploadYouTube?.(); }}
-                  className="w-full py-1.5 rounded-lg bg-red-600 text-white font-display text-[10px] tracking-wider flex items-center justify-center gap-1.5 hover:bg-red-500 transition-all">
-                  <Upload size={10} /> UPLOAD YOUTUBE
+                <button onClick={() => onUploadYouTube?.()}
+                  className="w-full py-1 rounded-lg bg-red-600 text-white font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:bg-red-500 transition-all">
+                  <Upload size={10} /> YOUTUBE
                 </button>
               </div>
             )}
@@ -176,5 +182,23 @@ export default function VideoPreview({
         )}
       </div>
     </GlassPanel>
+
+      {/* Full-screen video modal */}
+      {showModal && videoUrl && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50"
+          onClick={() => setShowModal(false)}>
+          <div className="relative" onClick={e => e.stopPropagation()}>
+            <video src={videoUrl} controls autoPlay loop
+              className="rounded-xl border border-sxi-gold/30"
+              style={{ maxHeight: "85vh", aspectRatio: "9/16" }}
+            />
+            <button onClick={() => setShowModal(false)}
+              className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-sxi-black border border-sxi-gold/30 text-sxi-white/60 hover:text-white flex items-center justify-center text-sm">
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
