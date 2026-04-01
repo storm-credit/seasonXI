@@ -1,0 +1,220 @@
+"""Merge FBref + Understat and run HANESIS pipeline.
+
+FBref has: goals, assists, shots, appearances, minutes, position, team
+Understat adds: xG, xA, key_passes, xGChain, xGBuildup
+"""
+import pandas as pd
+from pathlib import Path
+from thefuzz import fuzz
+
+from seasonxi.ratings.formula_v1 import ROLE_RATERS, STAT_NAMES
+from seasonxi.ratings.confidence import compute_confidence
+from seasonxi.constants import score_to_tier
+
+print("=" * 65)
+print("  HANESIS PIPELINE — FBref + Understat MERGED")
+print("=" * 65)
+
+# ── H: HARVEST ────────────────────────────────────────────────
+print("\n[H] HARVEST")
+
+# Load FBref
+fbref_dfs = []
+for csv in sorted(Path("data/raw/fbref").glob("*_players.csv")):
+    df = pd.read_csv(csv)
+    league = csv.stem.split("_")[0]
+    df["league_id"] = league
+    fbref_dfs.append(df)
+fbref = pd.concat(fbref_dfs, ignore_index=True)
+print(f"  FBref: {len(fbref)} players")
+
+# Load Understat
+us = pd.read_csv("data/raw/understat/all_leagues_2021_2022.csv")
+us_league_map = {
+    "ENG-Premier League": "epl", "ESP-La Liga": "laliga",
+    "ITA-Serie A": "seriea", "GER-Bundesliga": "bundesliga",
+    "FRA-Ligue 1": "ligue1",
+}
+us["league_id"] = us["league_name"].map(us_league_map)
+print(f"  Understat: {len(us)} players")
+
+# ── A: ALIGN (Fuzzy match FBref <-> Understat) ────────────────
+print("\n[A] ALIGN: Matching FBref <-> Understat...")
+
+def normalize_name(name):
+    if pd.isna(name): return ""
+    return str(name).lower().strip()
+
+matched = 0
+for idx, fb_row in fbref.iterrows():
+    fb_name = normalize_name(fb_row["player_name"])
+    fb_league = fb_row["league_id"]
+
+    # Find best match in Understat for same league
+    us_league = us[us["league_id"] == fb_league]
+    best_score = 0
+    best_idx = None
+
+    for us_idx, us_row in us_league.iterrows():
+        us_name = normalize_name(us_row["player"])
+        score = fuzz.ratio(fb_name, us_name)
+        if score > best_score:
+            best_score = score
+            best_idx = us_idx
+
+    if best_score >= 80 and best_idx is not None:
+        us_row = us.loc[best_idx]
+        fbref.loc[idx, "xg"] = us_row["xg"]
+        fbref.loc[idx, "xa"] = us_row["xa"]
+        fbref.loc[idx, "key_passes"] = us_row["key_passes"]
+        matched += 1
+
+print(f"  Matched: {matched}/{len(fbref)} ({matched/len(fbref)*100:.0f}%)")
+
+# ── N: NORMALIZE ──────────────────────────────────────────────
+print("\n[N] NORMALIZE")
+
+MIN_MINUTES = 450
+filtered = fbref[fbref["minutes_played"] >= MIN_MINUTES].copy()
+print(f"  After {MIN_MINUTES}min filter: {len(filtered)}")
+
+# Position classification
+def classify_pos(pos, goals):
+    if pd.isna(pos): return "MF"
+    pos = str(pos).upper()
+    if "GK" in pos: return "GK"
+    if "FW" in pos: return "FW"
+    if "DF" in pos: return "DF"
+    return "MF"
+
+filtered["role_bucket"] = filtered.apply(
+    lambda r: classify_pos(r.get("primary_position"), r.get("goals", 0)), axis=1
+)
+
+# Per90
+stats_p90 = ["goals","assists","shots","key_passes","xg","xa",
+             "tackles","interceptions","clearances","aerial_duels_won","clean_sheets"]
+for s in stats_p90:
+    if s in filtered.columns:
+        filtered[f"{s}_p90"] = filtered[s].fillna(0) / (filtered["minutes_played"] / 90)
+
+# Derived
+filtered["goals_minus_xg_p90"] = filtered.get("goals_p90", 0) - filtered.get("xg_p90", 0)
+
+# Context
+league_games = {"epl":38,"laliga":38,"seriea":38,"bundesliga":34,"ligue1":38}
+filtered["team_goal_contribution"] = (
+    (filtered["goals"].fillna(0) + filtered["assists"].fillna(0))
+    / filtered["team_goals_scored"].clip(lower=1)
+).clip(0,1)
+filtered["max_pts"] = filtered["league_id"].map(lambda x: league_games.get(x,38)*3)
+filtered["team_success_pct"] = (filtered["team_points"] / filtered["max_pts"]).clip(0,1)
+filtered["minutes_share"] = filtered["minutes_played"] / (
+    filtered["league_id"].map(lambda x: league_games.get(x,38)) * 90
+)
+
+# Percentile within role
+pct_map = [
+    ("goals_p90","goals_pct_role"), ("xg_p90","xg_pct_role"),
+    ("shots_p90","shots_pct_role"), ("goals_minus_xg_p90","goals_minus_xg_pct_role"),
+    ("assists_p90","assists_pct_role"), ("xa_p90","xa_pct_role"),
+    ("key_passes_p90","key_passes_pct_role"),
+    ("tackles_p90","tackles_pct_role"), ("interceptions_p90","interceptions_pct_role"),
+    ("clearances_p90","clearances_pct_role"), ("aerial_duels_won_p90","aerials_pct_role"),
+    ("clean_sheets_p90","clean_sheets_pct_role"),
+]
+for src, dst in pct_map:
+    if src in filtered.columns:
+        filtered[dst] = filtered.groupby("role_bucket")[src].rank(pct=True).fillna(0.5)
+    else:
+        filtered[dst] = 0.5
+
+# Proxy missing
+for col in ["prog_passes_pct_role","prog_carries_pct_role","dribbles_pct_role",
+            "pass_completion_pct_role","pressures_pct_role","pressure_success_pct_role",
+            "aerial_duel_success_pct_role","ball_recoveries_pct_role",
+            "gk_saves_pct_role","gk_psxg_diff_pct_role","gk_crosses_stopped_pct_role",
+            "gk_pass_completion_pct_role","gk_launch_pct_role"]:
+    if col not in filtered.columns:
+        # Use related features as proxy
+        if "prog" in col and "key_passes_pct_role" in filtered.columns:
+            filtered[col] = filtered["key_passes_pct_role"]
+        elif "dribble" in col and "goals_pct_role" in filtered.columns:
+            filtered[col] = (filtered["goals_pct_role"] + filtered["assists_pct_role"]) / 2
+        elif "press" in col and "tackles_pct_role" in filtered.columns:
+            filtered[col] = filtered["tackles_pct_role"]
+        elif "pass_comp" in col and "assists_pct_role" in filtered.columns:
+            filtered[col] = filtered["assists_pct_role"]
+        elif "ball_rec" in col and "interceptions_pct_role" in filtered.columns:
+            filtered[col] = filtered["interceptions_pct_role"]
+        elif "aerial_duel_success" in col and "aerials_pct_role" in filtered.columns:
+            filtered[col] = filtered["aerials_pct_role"]
+        elif "gk" in col and "clean_sheets_pct_role" in filtered.columns:
+            filtered[col] = filtered["clean_sheets_pct_role"]
+        else:
+            filtered[col] = 0.5
+
+print(f"  Features: {len([c for c in filtered.columns if c.endswith('_pct_role')])} percentiles")
+
+# ── E: EVALUATE ───────────────────────────────────────────────
+print("\n[E] EVALUATE")
+
+results = []
+for _, row in filtered.iterrows():
+    role = row["role_bucket"]
+    rater = ROLE_RATERS.get(role)
+    if not rater: continue
+    conf = compute_confidence(int(row["minutes_played"]))
+    scores = rater(row, conf)
+    tier = score_to_tier(scores["overall"]).value
+    results.append({
+        "player_name": row["player_name"], "club": row["club_name"],
+        "league": row["league_id"], "position": role,
+        "minutes": int(row["minutes_played"]),
+        "goals": int(row.get("goals",0)), "assists": int(row.get("assists",0)),
+        "xg": round(float(row.get("xg",0)),1), "xa": round(float(row.get("xa",0)),1),
+        **{d: round(scores[d],1) for d in STAT_NAMES},
+        "overall": round(scores["overall"],1), "confidence": round(conf,3),
+        "tier": tier,
+    })
+
+ratings = pd.DataFrame(results)
+print(f"  Rated: {len(ratings)} players")
+
+# ── S: VALIDATE ───────────────────────────────────────────────
+print("\n[S] VALIDATE: Known players")
+
+known = ["Salah","Son","Benzema","Lewandowski","De Bruyne","Van Dijk",
+         "Mbappe","Kane","Modric","Haaland"]
+for name in known:
+    m = ratings[ratings["player_name"].str.contains(name, case=False, na=False)]
+    if len(m) == 0:
+        print(f"  NOT FOUND: {name}")
+        continue
+    p = m.iloc[0]
+    print(f"  {p['player_name']:25s} {p['position']:3s} ATT:{p['att']:3.0f} DEF:{p['def']:3.0f} PAC:{p['pace']:3.0f} AUR:{p['aura']:3.0f} STA:{p['stamina']:3.0f} MEN:{p['mental']:3.0f} | OVR:{p['overall']:5.1f} {p['tier']}")
+
+# ── I: INFER ──────────────────────────────────────────────────
+print("\n[I] INFER: Top 20")
+top20 = ratings.nlargest(20, "overall")
+for i, (_, p) in enumerate(top20.iterrows()):
+    print(f"  {i+1:2d}. {p['player_name']:25s} {p['club']:20s} {p['position']:3s} OVR:{p['overall']:5.1f} {p['tier']}")
+
+print("\n  TIER DISTRIBUTION:")
+td = ratings["tier"].value_counts()
+total = len(ratings)
+for t in ["Mythic","Legendary","Elite","Gold","Silver","Bronze"]:
+    c = td.get(t,0)
+    print(f"    {t:10s} {c:4d} ({c/total*100:5.1f}%)")
+
+# ── S: STORYFRAME ─────────────────────────────────────────────
+print("\n[S] STORYFRAME")
+out = Path("outputs/cards")
+out.mkdir(parents=True, exist_ok=True)
+ratings.to_json(out / "_all_cards_v2_merged.json", orient="records", indent=2, force_ascii=False)
+top20.to_json(out / "_top20_v2_merged.json", orient="records", indent=2, force_ascii=False)
+print(f"  Exported: {len(ratings)} cards")
+
+print("\n" + "=" * 65)
+print(f"  DONE: {len(ratings)} players, Mythic={td.get('Mythic',0)}, Legendary={td.get('Legendary',0)}")
+print("=" * 65)
