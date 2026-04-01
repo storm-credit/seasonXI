@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Youtube, Copy, Check, Upload, ExternalLink } from "lucide-react";
+import { Video, Copy, Check, Upload, ExternalLink } from "lucide-react";
 import type { Season } from "@/lib/types";
 import GlassPanel from "@/components/shared/GlassPanel";
 
@@ -93,7 +93,7 @@ export default function YouTubePreview({ season, onUpload }: YouTubePreviewProps
     return (
       <GlassPanel className="p-4">
         <div className="flex items-center gap-2 mb-3">
-          <Youtube size={14} className="text-red-500" />
+          <Video size={14} className="text-red-500" />
           <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase">YouTube</h3>
         </div>
         <p className="text-xs text-sxi-white/30 text-center py-4">Select a player to preview</p>
@@ -104,7 +104,7 @@ export default function YouTubePreview({ season, onUpload }: YouTubePreviewProps
   return (
     <GlassPanel className="p-4">
       <div className="flex items-center gap-2 mb-3">
-        <Youtube size={14} className="text-red-500" />
+        <Video size={14} className="text-red-500" />
         <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase">YouTube Upload</h3>
       </div>
 
