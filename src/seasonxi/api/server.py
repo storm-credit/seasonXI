@@ -311,20 +311,53 @@ def check_assets(player_id: str, season: str):
     pub = REMOTION_DIR / "public"
 
     assets = {}
-    for asset_type in ["hook", "card", "main", "bgm"]:
+    for asset_type in ["hook", "card", "closeup", "main", "bgm"]:
+        found = False
         for ext in ["png", "jpg", "mp3", "wav", "m4a"]:
-            path = pub / f"{player_id}_{s}_{asset_type}.{ext}"
-            if path.exists():
-                assets[asset_type] = {
-                    "exists": True,
-                    "filename": path.name,
-                    "size": path.stat().st_size,
-                }
+            # Try multiple naming patterns
+            patterns = [
+                f"{player_id}_{s}_{asset_type}.{ext}",
+                f"{player_id}_*_{s}_{asset_type}.{ext}",
+            ]
+            for pattern in patterns:
+                if "*" in pattern:
+                    matches = list(pub.glob(pattern))
+                    if matches:
+                        path = matches[0]
+                        assets[asset_type] = {
+                            "exists": True,
+                            "filename": path.name,
+                            "size": path.stat().st_size,
+                            "url": f"/remotion/public/{path.name}",
+                        }
+                        found = True
+                        break
+                else:
+                    path = pub / pattern
+                    if path.exists():
+                        assets[asset_type] = {
+                            "exists": True,
+                            "filename": path.name,
+                            "size": path.stat().st_size,
+                            "url": f"/remotion/public/{path.name}",
+                        }
+                        found = True
+                        break
+            if found:
                 break
-        if asset_type not in assets:
+        if not found:
             assets[asset_type] = {"exists": False}
 
     return assets
+
+
+@app.get("/api/asset-file/{filename}")
+def serve_asset(filename: str):
+    """Serve an asset file (image/audio) from remotion/public."""
+    path = REMOTION_DIR / "public" / filename
+    if not path.exists():
+        raise HTTPException(404, f"File not found: {filename}")
+    return FileResponse(path)
 
 
 # ─── API: Upload Image (Drag & Drop) ─────────────────────────
