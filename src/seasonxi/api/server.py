@@ -219,6 +219,19 @@ def render_video(player_id: str, season: str):
         raise HTTPException(500, str(e))
 
 
+# ─── API: Render Status ──────────────────────────────────────
+@app.get("/api/render-status/{player_id}/{season}")
+def render_status(player_id: str, season: str):
+    """Check if a rendered video exists."""
+    vid = f"{player_id}_{season.replace('-', '_')}"
+    for d in [PROJECT_ROOT / "outputs", REMOTION_DIR / "outputs"]:
+        for name in [f"{vid}.mp4", f"{vid}_FINAL.mp4", f"{vid}_7cut_12s.mp4"]:
+            p = d / name
+            if p.exists():
+                return {"status": "done", "filename": name, "size": p.stat().st_size}
+    return {"status": "pending"}
+
+
 # ─── API: Export JSON ─────────────────────────────────────────
 @app.post("/api/export/{player_id}/{season}")
 def export_json(player_id: str, season: str):
