@@ -2,14 +2,13 @@
 
 import { useState, useCallback } from "react";
 import { SCHEDULE } from "@/lib/constants";
-import { loadSeason, exportJSON, triggerRender, uploadYouTube, checkAssets } from "@/lib/api";
+import { loadSeason, exportJSON, checkAssets } from "@/lib/api";
 import type { Season } from "@/lib/types";
+import { type ChecklistState } from "@/components/dashboard/ProductionChecklist";
 
+import Sidebar from "@/components/layout/Sidebar";
 import Header from "@/components/layout/Header";
-import DaySchedule from "@/components/dashboard/DaySchedule";
-import PlayerQueue from "@/components/dashboard/PlayerQueue";
 import PlayerCard from "@/components/dashboard/PlayerCard";
-import ProductionChecklist, { type ChecklistState } from "@/components/dashboard/ProductionChecklist";
 import StatsPanel from "@/components/production/StatsPanel";
 import PromptBuilder from "@/components/production/PromptBuilder";
 import ImageUpload from "@/components/production/ImageUpload";
@@ -26,99 +25,47 @@ export default function DashboardPage() {
     jsonExport: false, rendered: false, reviewed: false, uploaded: false,
   });
 
-  const checkItem = (key: keyof ChecklistState) => {
-    setChecklist(prev => ({ ...prev, [key]: !prev[key] }));
-  };
-
   const autoCheck = (key: keyof ChecklistState) => {
     setChecklist(prev => ({ ...prev, [key]: true }));
   };
-
-  // Checklist action handler — each item triggers its action
-  const handleChecklistAction = useCallback((key: keyof ChecklistState) => {
-    switch (key) {
-      case "hookImage":
-      case "cardImage":
-        // Scroll to image upload
-        document.getElementById("image-upload")?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "sunoMusic":
-        document.getElementById("music-panel")?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "jsonExport":
-        handleExportJSON();
-        break;
-      case "rendered":
-        document.getElementById("video-preview")?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "reviewed":
-        document.getElementById("video-preview")?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "uploaded":
-        document.getElementById("youtube-panel")?.scrollIntoView({ behavior: "smooth" });
-        break;
-    }
-  }, []);
 
   const currentDayPlayers = SCHEDULE[selectedDay]?.players || [];
 
   const handleSelectSeason = useCallback(async (playerId: string, season: string) => {
     setLoading(true);
-    // Reset checklist, then check existing assets
-    const freshChecklist: ChecklistState = {
+    const fresh: ChecklistState = {
       hookImage: false, cardImage: false, sunoMusic: false,
       jsonExport: false, rendered: false, reviewed: false, uploaded: false,
     };
-    setChecklist(freshChecklist);
+    setChecklist(fresh);
 
-    // Check existing files
     try {
       const assets = await checkAssets(playerId, season);
-      if (assets.hook?.exists) freshChecklist.hookImage = true;
-      if (assets.card?.exists) freshChecklist.cardImage = true;
-      if (assets.bgm?.exists) freshChecklist.sunoMusic = true;
-      setChecklist({ ...freshChecklist });
-    } catch {
-      // API unavailable — skip asset check
-    }
+      if (assets.hook?.exists) fresh.hookImage = true;
+      if (assets.card?.exists) fresh.cardImage = true;
+      if (assets.bgm?.exists) fresh.sunoMusic = true;
+      setChecklist({ ...fresh });
+    } catch { /* skip */ }
+
     try {
       const data = await loadSeason(playerId, season);
-      if (data && data.player_id) {
-        setSelectedSeason(data);
-        setLoading(false);
-        return;
-      }
-    } catch {
-      // API failed — use local fallback
-    }
+      if (data?.player_id) { setSelectedSeason(data); setLoading(false); return; }
+    } catch { /* fallback */ }
 
-    // Fallback: build from schedule data
     const player = currentDayPlayers.find(p => p.player_id === playerId);
     if (player) {
       setSelectedSeason({
-        id: playerId,
-        player_id: playerId,
+        id: playerId, player_id: playerId,
         display_name: player.player_name.split(" ").pop()?.toUpperCase() || player.player_name,
-        player_name: player.player_name,
-        season: player.season,
-        season_label: player.season,
-        club: player.club,
-        position: "FW",
+        player_name: player.player_name, season: player.season, season_label: player.season,
+        club: player.club, position: "FW",
         ovr: player.tier === "MYTHIC" ? 96 : player.tier === "LEGENDARY" ? 92 : 88,
-        tier: player.tier,
-        hook: "",
+        tier: player.tier, hook: "",
         stats: { finishing: 90, playmaking: 85, dribbling: 90, defense: 45, clutch: 88, aura: 90 },
-        goals: 0,
-        assists: 0,
-        commentary: "",
-        achievement: "",
-        verdict: `${player.tier} SEASON`,
-        cta: "",
+        goals: 0, assists: 0, commentary: "", achievement: "",
+        verdict: `${player.tier} SEASON`, cta: "",
         player_block: player.player_name.split(" ").pop()?.toUpperCase() || "MESSI",
-        season_mood: "PEAK_MONSTER",
-        suno_title: "",
-        suno_style: "",
-        status: "draft",
+        season_mood: "PEAK_MONSTER", suno_title: "", suno_style: "", status: "draft",
       });
     }
     setLoading(false);
@@ -126,105 +73,81 @@ export default function DashboardPage() {
 
   const handleExportJSON = useCallback(async () => {
     if (!selectedSeason) return;
-    try {
-      setLoading(true);
-      await exportJSON(selectedSeason.player_id, selectedSeason.season);
-      autoCheck("jsonExport");
-    } catch {
-      // Export failed
-    } finally {
-      setLoading(false);
-    }
+    try { await exportJSON(selectedSeason.player_id, selectedSeason.season); autoCheck("jsonExport"); }
+    catch { /* fail */ }
   }, [selectedSeason]);
 
-  const handleRender = useCallback(async () => {
-    if (!selectedSeason) return;
-    try {
-      setLoading(true);
-      await triggerRender(selectedSeason.player_id, selectedSeason.season);
-      autoCheck("rendered");
-    } catch {
-      // Render failed
-    } finally {
-      setLoading(false);
+  const handleChecklistAction = useCallback((key: keyof ChecklistState) => {
+    switch (key) {
+      case "hookImage": case "cardImage":
+        document.getElementById("image-upload")?.scrollIntoView({ behavior: "smooth" }); break;
+      case "sunoMusic":
+        document.getElementById("music-panel")?.scrollIntoView({ behavior: "smooth" }); break;
+      case "jsonExport": handleExportJSON(); break;
+      case "rendered": case "reviewed":
+        document.getElementById("video-preview")?.scrollIntoView({ behavior: "smooth" }); break;
+      case "uploaded":
+        document.getElementById("youtube-panel")?.scrollIntoView({ behavior: "smooth" }); break;
     }
-  }, [selectedSeason]);
-
-  const handleUpload = useCallback(async () => {
-    if (!selectedSeason) return;
-    try {
-      setLoading(true);
-      await uploadYouTube(selectedSeason.player_id, selectedSeason.season);
-      autoCheck("uploaded");
-    } catch {
-      // Upload failed
-    } finally {
-      setLoading(false);
-    }
-  }, [selectedSeason]);
+  }, [handleExportJSON]);
 
   return (
-    <div className="flex flex-col h-full">
-      <Header
-        selectedSeason={selectedSeason}
-        onSelectSeason={handleSelectSeason}
-        onExportJSON={handleExportJSON}
-        onRender={handleRender}
-        onUpload={handleUpload}
-        loading={loading}
+    <div className="flex h-screen overflow-hidden">
+      {/* Sidebar with schedule tree + checklist */}
+      <Sidebar
+        selectedDay={selectedDay}
+        onSelectDay={setSelectedDay}
+        selectedPlayerId={selectedSeason?.player_id || null}
+        onSelectPlayer={handleSelectSeason}
+        checklist={checklist}
+        onChecklistAction={handleChecklistAction}
       />
 
-      <div className="flex-1 overflow-y-auto p-6 space-y-6">
-        {/* Day schedule tabs */}
-        <DaySchedule selectedDay={selectedDay} onSelectDay={setSelectedDay} />
+      {/* Main content — single screen, no scroll ideally */}
+      <main className="flex-1 flex flex-col overflow-hidden">
+        <Header
+          selectedSeason={selectedSeason}
+          onSelectSeason={handleSelectSeason}
+          onExportJSON={handleExportJSON}
+          onRender={() => {}}
+          onUpload={() => {}}
+          loading={loading}
+        />
 
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Left column: Queue + Card */}
-          <div className="lg:col-span-4 space-y-4">
-            <PlayerQueue
-              players={currentDayPlayers}
-              selectedPlayerId={selectedSeason?.player_id || null}
-              onSelect={handleSelectSeason}
-            />
-            <PlayerCard season={selectedSeason} />
-            <ProductionChecklist state={checklist} onChange={checkItem} onAction={handleChecklistAction} />
-          </div>
-
-          {/* Right column: Production tools */}
-          <div className="lg:col-span-8 space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="flex-1 overflow-y-auto p-4">
+          {/* Top row: Card + Stats + Prompt */}
+          <div className="grid grid-cols-12 gap-3 mb-3">
+            <div className="col-span-3">
+              <PlayerCard season={selectedSeason} />
+            </div>
+            <div className="col-span-4">
               <StatsPanel stats={selectedSeason?.stats || null} />
+            </div>
+            <div className="col-span-5">
               <PromptBuilder season={selectedSeason} />
             </div>
-            {/* Media row: Video left (big) + Upload/Music/Render right */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-              {/* Video Preview — left, tall */}
-              <div className="md:col-span-4" id="video-preview">
-                <VideoPreview season={selectedSeason} onRenderComplete={() => autoCheck("rendered")} />
-              </div>
+          </div>
 
-              {/* Right stack: Image + Music + YouTube */}
-              <div className="md:col-span-8 space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div id="image-upload">
-                    <ImageUpload season={selectedSeason} onSaved={(type) => {
-                      if (type === "hook") autoCheck("hookImage");
-                      else if (type === "card") autoCheck("cardImage");
-                    }} />
-                  </div>
-                  <div id="music-panel">
-                    <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
-                  </div>
-                </div>
-                <div id="youtube-panel">
-                  <YouTubePreview season={selectedSeason} onUpload={() => autoCheck("uploaded")} />
-                </div>
-              </div>
+          {/* Bottom row: Video + Image + Music + YouTube */}
+          <div className="grid grid-cols-12 gap-3">
+            <div className="col-span-3" id="video-preview">
+              <VideoPreview season={selectedSeason} onRenderComplete={() => autoCheck("rendered")} />
+            </div>
+            <div className="col-span-3" id="image-upload">
+              <ImageUpload season={selectedSeason} onSaved={(type) => {
+                if (type === "hook") autoCheck("hookImage");
+                else if (type === "card") autoCheck("cardImage");
+              }} />
+            </div>
+            <div className="col-span-3" id="music-panel">
+              <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
+            </div>
+            <div className="col-span-3" id="youtube-panel">
+              <YouTubePreview season={selectedSeason} onUpload={() => autoCheck("uploaded")} />
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
