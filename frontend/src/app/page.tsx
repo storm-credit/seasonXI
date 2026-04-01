@@ -7,7 +7,6 @@ import type { Season } from "@/lib/types";
 import ProductionChecklist, { type ChecklistState } from "@/components/dashboard/ProductionChecklist";
 
 import Sidebar from "@/components/layout/Sidebar";
-import Header from "@/components/layout/Header";
 import PlayerCard from "@/components/dashboard/PlayerCard";
 import StatsPanel from "@/components/production/StatsPanel";
 import PromptBuilder from "@/components/production/PromptBuilder";
@@ -97,12 +96,12 @@ export default function DashboardPage() {
         selectedDay={selectedDay}
         onSelectDay={setSelectedDay}
         selectedPlayerId={selectedSeason?.player_id || null}
+        selectedSeason={selectedSeason}
         onSelectPlayer={handleSelectSeason}
       />
 
-      {/* Main */}
+      {/* Main — no header, full height */}
       <main className="flex-1 flex flex-col overflow-hidden">
-        <Header selectedSeason={selectedSeason} />
 
         <div className="flex-1 flex flex-col p-4 gap-3 overflow-hidden">
           {/* Row 1: Card + Stats + Prompt */}

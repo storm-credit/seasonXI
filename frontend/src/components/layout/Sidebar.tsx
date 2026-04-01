@@ -22,11 +22,12 @@ interface SidebarProps {
   selectedDay: number;
   onSelectDay: (day: number) => void;
   selectedPlayerId: string | null;
+  selectedSeason?: { display_name: string; season_label: string; club: string; tier: string } | null;
   onSelectPlayer: (playerId: string, season: string) => void;
 }
 
 export default function Sidebar({
-  selectedDay, onSelectDay, selectedPlayerId, onSelectPlayer,
+  selectedDay, onSelectDay, selectedPlayerId, selectedSeason, onSelectPlayer,
 }: SidebarProps) {
   const pathname = usePathname();
   const [expandedDays, setExpandedDays] = useState<Set<number>>(new Set([0]));
@@ -72,6 +73,25 @@ export default function Sidebar({
           );
         })}
       </nav>
+
+      {/* Selected Player */}
+      {selectedSeason && (
+        <div className="px-4 py-2.5 border-b border-[rgba(201,162,74,0.1)] bg-[rgba(201,162,74,0.05)]">
+          <div className="flex items-center gap-2">
+            <span className="font-display text-base tracking-wider text-sxi-gold">
+              {selectedSeason.display_name}
+            </span>
+            <span className={`text-[9px] px-1.5 py-0.5 rounded font-display tracking-wider ${
+              selectedSeason.tier === "MYTHIC" ? "bg-sxi-gold/20 text-sxi-gold" :
+              selectedSeason.tier === "LEGENDARY" ? "bg-purple-500/20 text-purple-300" :
+              "bg-blue-500/20 text-blue-300"
+            }`}>{selectedSeason.tier}</span>
+          </div>
+          <p className="text-xs text-sxi-white/40 mt-0.5">
+            {selectedSeason.season_label} · {selectedSeason.club}
+          </p>
+        </div>
+      )}
 
       {/* Search */}
       <div className="px-3 py-2 border-b border-[rgba(201,162,74,0.08)]">
