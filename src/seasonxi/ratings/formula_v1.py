@@ -41,7 +41,7 @@ from seasonxi.ratings.league_adjustment import apply_league_adjustment
 from seasonxi.ratings.team_debiasing import debias_team_feature
 
 
-def _stretch(x: float, k: float = 4.0) -> float:
+def _stretch(x: float, k: float = 5.0) -> float:
     """Sigmoid stretch to spread out middle-heavy distributions."""
     sig = lambda v: 1.0 / (1.0 + math.exp(-k * (v - 0.5)))
     raw = sig(x)
@@ -99,9 +99,10 @@ def rate_forward(row: pd.Series, confidence: float) -> dict:
         + 0.30 * _safe_get(row, "team_goal_contribution")
     )
     stamina_raw = (
-        0.35 * _safe_get(row, "pressures_pct_role")
-        + 0.35 * _safe_get(row, "minutes_share")
-        + 0.30 * _safe_get(row, "team_goal_contribution")
+        0.30 * _safe_get(row, "minutes_share")
+        + 0.25 * _safe_get(row, "ball_recoveries_pct_role")
+        + 0.25 * _safe_get(row, "pressure_success_pct_role")
+        + 0.20 * _safe_get(row, "tackles_pct_role")
     )
     mental_raw = (
         0.30 * _safe_get(row, "pass_completion_pct_role")
@@ -170,9 +171,9 @@ def rate_midfielder(row: pd.Series, confidence: float) -> dict:
         + 0.30 * _safe_get(row, "team_goal_contribution")
     )
     stamina_raw = (
-        0.30 * _safe_get(row, "pressures_pct_role")
-        + 0.30 * _safe_get(row, "minutes_share")
-        + 0.20 * _safe_get(row, "ball_recoveries_pct_role")
+        0.30 * _safe_get(row, "minutes_share")
+        + 0.25 * _safe_get(row, "ball_recoveries_pct_role")
+        + 0.25 * _safe_get(row, "prog_carries_pct_role")
         + 0.20 * _safe_get(row, "tackles_pct_role")
     )
     mental_raw = (
