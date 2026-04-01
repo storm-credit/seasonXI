@@ -176,7 +176,7 @@ export default function DashboardPage() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
               {/* Video Preview — left, tall */}
               <div className="md:col-span-4">
-                <VideoPreview compact={false} />
+                <VideoPreview season={selectedSeason} />
               </div>
 
               {/* Right stack: Image + Music + Render + YouTube */}

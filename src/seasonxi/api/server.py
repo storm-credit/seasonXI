@@ -353,11 +353,20 @@ def check_assets(player_id: str, season: str):
 
 @app.get("/api/asset-file/{filename}")
 def serve_asset(filename: str):
-    """Serve an asset file (image/audio) from remotion/public."""
+    """Serve an asset file (image/audio/video) from remotion/public or outputs."""
+    # Check remotion/public first
     path = REMOTION_DIR / "public" / filename
-    if not path.exists():
-        raise HTTPException(404, f"File not found: {filename}")
-    return FileResponse(path)
+    if path.exists():
+        return FileResponse(path)
+    # Check outputs
+    path = OUTPUTS_DIR / filename
+    if path.exists():
+        return FileResponse(path)
+    # Check remotion outputs
+    path = REMOTION_DIR / "outputs" / filename
+    if path.exists():
+        return FileResponse(path)
+    raise HTTPException(404, f"File not found: {filename}")
 
 
 # ─── API: Upload Image (Drag & Drop) ─────────────────────────
