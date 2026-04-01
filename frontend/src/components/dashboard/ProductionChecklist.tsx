@@ -13,22 +13,25 @@ export interface ChecklistState {
   uploaded: boolean;
 }
 
+type ActionKey = keyof ChecklistState;
+
 interface ProductionChecklistProps {
   state: ChecklistState;
-  onChange: (key: keyof ChecklistState) => void;
+  onChange: (key: ActionKey) => void;
+  onAction: (key: ActionKey) => void;
 }
 
-const ITEMS: { key: keyof ChecklistState; label: string; icon: typeof Image; auto?: boolean }[] = [
-  { key: "hookImage", label: "Hook Image", icon: Image, auto: true },
-  { key: "cardImage", label: "Card Image", icon: Image, auto: true },
-  { key: "sunoMusic", label: "Suno Music", icon: Music, auto: true },
-  { key: "jsonExport", label: "JSON Export", icon: FileJson },
-  { key: "rendered", label: "Render MP4", icon: Film },
-  { key: "reviewed", label: "Final Review", icon: Eye },
-  { key: "uploaded", label: "Upload YouTube", icon: UploadIcon },
+const ITEMS: { key: ActionKey; label: string; icon: typeof Image; actionLabel: string }[] = [
+  { key: "hookImage", label: "Hook Image", icon: Image, actionLabel: "Upload" },
+  { key: "cardImage", label: "Card Image", icon: Image, actionLabel: "Upload" },
+  { key: "sunoMusic", label: "Suno Music", icon: Music, actionLabel: "Upload" },
+  { key: "jsonExport", label: "JSON Export", icon: FileJson, actionLabel: "Export" },
+  { key: "rendered", label: "Render MP4", icon: Film, actionLabel: "Render" },
+  { key: "reviewed", label: "Final Review", icon: Eye, actionLabel: "Play" },
+  { key: "uploaded", label: "Upload YouTube", icon: UploadIcon, actionLabel: "Upload" },
 ];
 
-export default function ProductionChecklist({ state, onChange }: ProductionChecklistProps) {
+export default function ProductionChecklist({ state, onChange, onAction }: ProductionChecklistProps) {
   const completedCount = Object.values(state).filter(Boolean).length;
   const total = ITEMS.length;
   const progress = total > 0 ? (completedCount / total) * 100 : 0;
@@ -58,38 +61,49 @@ export default function ProductionChecklist({ state, onChange }: ProductionCheck
         />
       </div>
 
-      {/* Items */}
+      {/* Items — clickable actions */}
       <div className="space-y-1">
         {ITEMS.map((item) => {
           const checked = state[item.key];
           const Icon = item.icon;
           return (
-            <button
-              key={item.key}
-              onClick={() => onChange(item.key)}
-              className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-left ${
-                checked
-                  ? "bg-[rgba(201,162,74,0.06)]"
-                  : "hover:bg-[rgba(245,247,250,0.03)]"
-              }`}
-            >
-              {checked ? (
-                <CheckCircle2 size={16} className="text-green-400 flex-shrink-0" />
-              ) : (
-                <Circle size={16} className="text-sxi-white/20 flex-shrink-0" />
-              )}
+            <div key={item.key} className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
+              checked ? "bg-[rgba(201,162,74,0.06)]" : "hover:bg-[rgba(245,247,250,0.03)]"
+            }`}>
+              {/* Check toggle */}
+              <button onClick={() => onChange(item.key)} className="flex-shrink-0">
+                {checked ? (
+                  <CheckCircle2 size={16} className="text-green-400" />
+                ) : (
+                  <Circle size={16} className="text-sxi-white/20" />
+                )}
+              </button>
+
               <Icon size={13} className={checked ? "text-sxi-gold/60" : "text-sxi-white/20"} />
+
+              {/* Label */}
               <span className={`text-sm flex-1 ${
                 checked ? "text-sxi-white/40 line-through" : "text-sxi-white/80"
               }`}>
                 {item.label}
               </span>
-              {checked && item.auto && (
-                <span className="text-[10px] text-green-400/60 bg-green-400/10 px-1.5 py-0.5 rounded">
-                  AUTO
+
+              {/* Action button */}
+              {!checked && (
+                <button
+                  onClick={() => onAction(item.key)}
+                  className="text-[9px] text-sxi-gold bg-sxi-gold/10 hover:bg-sxi-gold/20 px-2 py-0.5 rounded font-display tracking-wider transition-colors"
+                >
+                  {item.actionLabel}
+                </button>
+              )}
+
+              {checked && (
+                <span className="text-[9px] text-green-400/60 bg-green-400/10 px-1.5 py-0.5 rounded">
+                  DONE
                 </span>
               )}
-            </button>
+            </div>
           );
         })}
       </div>

@@ -16,7 +16,6 @@ import ImageUpload from "@/components/production/ImageUpload";
 import VideoPreview from "@/components/production/VideoPreview";
 import MusicPanel from "@/components/production/MusicPanel";
 import YouTubePreview from "@/components/production/YouTubePreview";
-import RenderResult from "@/components/production/RenderResult";
 
 export default function DashboardPage() {
   const [selectedDay, setSelectedDay] = useState(0);
@@ -34,6 +33,32 @@ export default function DashboardPage() {
   const autoCheck = (key: keyof ChecklistState) => {
     setChecklist(prev => ({ ...prev, [key]: true }));
   };
+
+  // Checklist action handler — each item triggers its action
+  const handleChecklistAction = useCallback((key: keyof ChecklistState) => {
+    switch (key) {
+      case "hookImage":
+      case "cardImage":
+        // Scroll to image upload
+        document.getElementById("image-upload")?.scrollIntoView({ behavior: "smooth" });
+        break;
+      case "sunoMusic":
+        document.getElementById("music-panel")?.scrollIntoView({ behavior: "smooth" });
+        break;
+      case "jsonExport":
+        handleExportJSON();
+        break;
+      case "rendered":
+        document.getElementById("video-preview")?.scrollIntoView({ behavior: "smooth" });
+        break;
+      case "reviewed":
+        document.getElementById("video-preview")?.scrollIntoView({ behavior: "smooth" });
+        break;
+      case "uploaded":
+        document.getElementById("youtube-panel")?.scrollIntoView({ behavior: "smooth" });
+        break;
+    }
+  }, []);
 
   const currentDayPlayers = SCHEDULE[selectedDay]?.players || [];
 
@@ -163,7 +188,7 @@ export default function DashboardPage() {
               onSelect={handleSelectSeason}
             />
             <PlayerCard season={selectedSeason} />
-            <ProductionChecklist state={checklist} onChange={checkItem} />
+            <ProductionChecklist state={checklist} onChange={checkItem} onAction={handleChecklistAction} />
           </div>
 
           {/* Right column: Production tools */}
@@ -175,21 +200,24 @@ export default function DashboardPage() {
             {/* Media row: Video left (big) + Upload/Music/Render right */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
               {/* Video Preview — left, tall */}
-              <div className="md:col-span-4">
-                <VideoPreview season={selectedSeason} />
+              <div className="md:col-span-4" id="video-preview">
+                <VideoPreview season={selectedSeason} onRenderComplete={() => autoCheck("rendered")} />
               </div>
 
-              {/* Right stack: Image + Music + Render + YouTube */}
+              {/* Right stack: Image + Music + YouTube */}
               <div className="md:col-span-8 space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <ImageUpload season={selectedSeason} onSaved={(type) => {
-                    if (type === "hook") autoCheck("hookImage");
-                    else if (type === "card") autoCheck("cardImage");
-                  }} />
-                  <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
+                  <div id="image-upload">
+                    <ImageUpload season={selectedSeason} onSaved={(type) => {
+                      if (type === "hook") autoCheck("hookImage");
+                      else if (type === "card") autoCheck("cardImage");
+                    }} />
+                  </div>
+                  <div id="music-panel">
+                    <MusicPanel season={selectedSeason} onSaved={() => autoCheck("sunoMusic")} />
+                  </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <RenderResult season={selectedSeason} onRender={() => autoCheck("rendered")} onExport={handleExportJSON} />
+                <div id="youtube-panel">
                   <YouTubePreview season={selectedSeason} onUpload={() => autoCheck("uploaded")} />
                 </div>
               </div>

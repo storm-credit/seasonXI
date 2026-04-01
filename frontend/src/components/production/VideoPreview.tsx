@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Film, ExternalLink, Play } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Film, ExternalLink, Play, Loader2, Download } from "lucide-react";
 import type { Season } from "@/lib/types";
 import GlassPanel from "@/components/shared/GlassPanel";
 
@@ -11,79 +11,161 @@ interface VideoPreviewProps {
   season?: Season | null;
   compact?: boolean;
   remotionPort?: number;
+  onRenderComplete?: () => void;
 }
 
 export default function VideoPreview({
   season,
   compact = false,
   remotionPort = 3334,
+  onRenderComplete,
 }: VideoPreviewProps) {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [videoFilename, setVideoFilename] = useState<string | null>(null);
+  const [rendering, setRendering] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [statusText, setStatusText] = useState("");
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const progressRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     setVideoUrl(null);
+    setVideoFilename(null);
+    setRendering(false);
+    setProgress(0);
+    if (pollRef.current) clearInterval(pollRef.current);
+    if (progressRef.current) clearInterval(progressRef.current);
     if (!season?.player_id || !season?.season) return;
-
-    const vid = `${season.player_id}_${season.season.replace("-", "_")}`;
-
-    // Check multiple possible filenames
-    const candidates = [
-      `${vid}.mp4`,
-      `${vid}_FINAL.mp4`,
-      `${vid}_7cut_12s.mp4`,
-    ];
-
-    (async () => {
-      for (const name of candidates) {
-        try {
-          const res = await fetch(`${API}/api/asset-file/${name}`, { method: "HEAD" });
-          if (res.ok) {
-            setVideoUrl(`${API}/api/asset-file/${name}`);
-            return;
-          }
-        } catch { /* try next */ }
-      }
-    })();
+    checkVideo();
   }, [season?.player_id, season?.season]);
 
+  useEffect(() => {
+    return () => {
+      if (pollRef.current) clearInterval(pollRef.current);
+      if (progressRef.current) clearInterval(progressRef.current);
+    };
+  }, []);
+
+  const checkVideo = async () => {
+    if (!season) return;
+    try {
+      const res = await fetch(`${API}/api/render-status/${season.player_id}/${season.season}`);
+      const data = await res.json();
+      if (data.status === "done") {
+        setVideoUrl(`${API}/api/asset-file/${data.filename}`);
+        setVideoFilename(data.filename);
+      }
+    } catch { /* silent */ }
+  };
+
+  const startRender = async () => {
+    if (!season) return;
+    setRendering(true);
+    setProgress(0);
+    setStatusText("Starting...");
+
+    try {
+      await fetch(`${API}/api/render/${season.player_id}/${season.season}`, { method: "POST" });
+
+      const steps = [
+        { at: 5, text: "Rendering frames..." },
+        { at: 20, text: "Hook scene..." },
+        { at: 35, text: "Card Reveal..." },
+        { at: 50, text: "Graph + Closeup..." },
+        { at: 70, text: "Achievement..." },
+        { at: 85, text: "Encoding MP4..." },
+        { at: 95, text: "Finalizing..." },
+      ];
+
+      let p = 0;
+      progressRef.current = setInterval(() => {
+        p += 2;
+        if (p > 95) p = 95;
+        setProgress(p);
+        const step = steps.filter(s => s.at <= p).pop();
+        if (step) setStatusText(step.text);
+      }, 300);
+
+      pollRef.current = setInterval(async () => {
+        try {
+          const res = await fetch(`${API}/api/render-status/${season.player_id}/${season.season}`);
+          const data = await res.json();
+          if (data.status === "done") {
+            if (progressRef.current) clearInterval(progressRef.current);
+            if (pollRef.current) clearInterval(pollRef.current);
+            setProgress(100);
+            setStatusText("Complete!");
+            setVideoUrl(`${API}/api/asset-file/${data.filename}`);
+            setVideoFilename(data.filename);
+            setRendering(false);
+            onRenderComplete?.();
+          }
+        } catch { /* continue */ }
+      }, 2000);
+    } catch {
+      setRendering(false);
+      setStatusText("Failed");
+    }
+  };
+
   return (
-    <GlassPanel className="p-4">
+    <GlassPanel className="p-4 h-full flex flex-col">
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase">
           Video Preview
         </h3>
-        <a
-          href={`http://localhost:${remotionPort}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[10px] text-sxi-white/30 hover:text-sxi-gold flex items-center gap-1 transition-colors"
-        >
-          Remotion Studio <ExternalLink size={10} />
+        <a href={`http://localhost:${remotionPort}`} target="_blank" rel="noopener noreferrer"
+          className="text-[10px] text-sxi-white/30 hover:text-sxi-gold flex items-center gap-1 transition-colors">
+          Studio <ExternalLink size={10} />
         </a>
       </div>
 
-      {videoUrl ? (
-        <div className="flex justify-center">
-          <video
-            src={videoUrl}
-            controls
-            loop
-            className="rounded-lg border border-sxi-gold/20 bg-black"
-            style={{ width: "100%", maxWidth: compact ? 200 : 280, aspectRatio: "9/16" }}
-          >
-            Your browser does not support video playback.
-          </video>
-        </div>
-      ) : (
-        <div className="flex flex-col items-center justify-center py-8 text-center">
-          <div className="w-16 h-28 rounded-lg border-2 border-dashed border-sxi-white/10 flex items-center justify-center mb-3">
-            <Play size={20} className="text-sxi-white/15" />
+      <div className="flex-1 flex flex-col items-center justify-center">
+        {videoUrl ? (
+          /* Video player */
+          <div className="w-full flex flex-col items-center gap-3">
+            <video src={videoUrl} controls loop
+              className="rounded-lg border border-sxi-gold/20 bg-black"
+              style={{ width: "100%", maxWidth: compact ? 180 : 260, aspectRatio: "9/16" }}
+            />
+            {videoFilename && (
+              <a href={videoUrl} download={videoFilename}
+                className="w-full max-w-[260px] py-1.5 rounded-lg bg-sxi-gold text-sxi-black font-display text-[10px] tracking-wider flex items-center justify-center gap-1.5 hover:brightness-110 transition-all">
+                <Download size={10} /> DOWNLOAD
+              </a>
+            )}
           </div>
-          <p className="text-xs text-sxi-white/30">
-            {season ? "No video yet — click RENDER MP4" : "Select a player"}
-          </p>
-        </div>
-      )}
+        ) : rendering ? (
+          /* Rendering progress */
+          <div className="w-full space-y-3 px-2">
+            <div className="text-center">
+              <Loader2 size={28} className="mx-auto text-sxi-gold animate-spin mb-2" />
+              <p className="text-xs text-sxi-white/70">{statusText}</p>
+            </div>
+            <div className="h-2 bg-[rgba(245,247,250,0.05)] rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-sxi-gold to-sxi-gold-soft rounded-full transition-all duration-300"
+                style={{ width: `${progress}%` }} />
+            </div>
+            <p className="text-[10px] text-sxi-white/40 text-center">{progress}%</p>
+          </div>
+        ) : (
+          /* No video — show render button */
+          <div className="text-center space-y-3">
+            <div className="w-16 h-28 rounded-lg border-2 border-dashed border-sxi-white/10 flex items-center justify-center mx-auto">
+              <Play size={20} className="text-sxi-white/15" />
+            </div>
+            <p className="text-[10px] text-sxi-white/30">
+              {season ? "No video yet" : "Select a player"}
+            </p>
+            {season && (
+              <button onClick={startRender}
+                className="px-6 py-2 rounded-lg bg-sxi-gold/20 text-sxi-gold border border-sxi-gold/30 font-display text-xs tracking-wider flex items-center justify-center gap-2 hover:bg-sxi-gold/30 transition-all mx-auto">
+                <Film size={12} /> RENDER MP4
+              </button>
+            )}
+          </div>
+        )}
+      </div>
     </GlassPanel>
   );
 }
