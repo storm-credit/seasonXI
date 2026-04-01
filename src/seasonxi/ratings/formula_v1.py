@@ -41,6 +41,41 @@ from seasonxi.ratings.league_adjustment import apply_league_adjustment
 from seasonxi.ratings.team_debiasing import debias_team_feature
 
 
+def _adaptive_overall(raws: dict[str, float], base_weights: dict[str, float], boost: float = 0.07) -> float:
+    """Compute overall with adaptive weighting based on player's strengths.
+
+    Identifies top 2 stats by raw value and shifts weight toward them.
+    This ensures creative players aren't penalized for low stamina,
+    and defensive players aren't penalized for low attack.
+
+    boost=0.05 means top 2 stats get +5% each, bottom 2 lose -5% each.
+    """
+    # Rank stats by raw value (exclude overall)
+    stat_items = [(k, v) for k, v in raws.items() if k != "overall"]
+    stat_items.sort(key=lambda x: x[1], reverse=True)
+
+    # Identify top 2 and bottom 2
+    top_keys = {stat_items[0][0], stat_items[1][0]}
+    bottom_keys = {stat_items[-1][0], stat_items[-2][0]}
+
+    # Adjust weights
+    adjusted = {}
+    for stat, base_w in base_weights.items():
+        if stat in top_keys:
+            adjusted[stat] = base_w + boost
+        elif stat in bottom_keys:
+            adjusted[stat] = max(0.0, base_w - boost)
+        else:
+            adjusted[stat] = base_w
+
+    # Normalize to sum=1.0
+    total_w = sum(adjusted.values())
+    if total_w > 0:
+        adjusted = {k: v / total_w for k, v in adjusted.items()}
+
+    return sum(raws.get(k, 0) * w for k, w in adjusted.items())
+
+
 def _stretch(x: float, k: float = 5.0) -> float:
     """Sigmoid stretch to spread out middle-heavy distributions."""
     sig = lambda v: 1.0 / (1.0 + math.exp(-k * (v - 0.5)))
@@ -118,20 +153,19 @@ def rate_forward(row: pd.Series, confidence: float) -> dict:
     stamina = _scale(stamina_raw, confidence)
     mental = _scale(mental_raw, confidence)
 
-    # FW overall: ATT 30% DEF 10% PACE 15% AURA 15% STA 10% MEN 20%
-    overall_raw = (
-        0.30 * att_raw + 0.10 * def_raw + 0.15 * pace_raw
-        + 0.15 * aura_raw + 0.10 * stamina_raw + 0.20 * mental_raw
-    )
+    # FW base: ATT 30% DEF 10% PACE 15% AURA 15% STA 10% MEN 20%
+    raws = {"att": att_raw, "def": def_raw, "pace": pace_raw,
+            "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
+    base_w = {"att": 0.30, "def": 0.10, "pace": 0.15,
+              "aura": 0.15, "stamina": 0.10, "mental": 0.20}
+    overall_raw = _adaptive_overall(raws, base_w)
     overall = _scale(overall_raw, confidence)
 
     return {
         "att": att, "def": defense, "pace": pace,
         "aura": aura, "stamina": stamina, "mental": mental,
         "overall": overall,
-        "_raws": {"att": att_raw, "def": def_raw, "pace": pace_raw,
-                  "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw,
-                  "overall": overall_raw},
+        "_raws": {**raws, "overall": overall_raw},
     }
 
 
@@ -190,20 +224,19 @@ def rate_midfielder(row: pd.Series, confidence: float) -> dict:
     stamina = _scale(stamina_raw, confidence)
     mental = _scale(mental_raw, confidence)
 
-    # MF overall: ATT 15% DEF 20% PACE 10% AURA 15% STA 20% MEN 20%
-    overall_raw = (
-        0.15 * att_raw + 0.20 * def_raw + 0.10 * pace_raw
-        + 0.15 * aura_raw + 0.20 * stamina_raw + 0.20 * mental_raw
-    )
+    # MF base: ATT 15% DEF 20% PACE 10% AURA 15% STA 20% MEN 20%
+    raws = {"att": att_raw, "def": def_raw, "pace": pace_raw,
+            "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
+    base_w = {"att": 0.15, "def": 0.20, "pace": 0.10,
+              "aura": 0.15, "stamina": 0.20, "mental": 0.20}
+    overall_raw = _adaptive_overall(raws, base_w)
     overall = _scale(overall_raw, confidence)
 
     return {
         "att": att, "def": defense, "pace": pace,
         "aura": aura, "stamina": stamina, "mental": mental,
         "overall": overall,
-        "_raws": {"att": att_raw, "def": def_raw, "pace": pace_raw,
-                  "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw,
-                  "overall": overall_raw},
+        "_raws": {**raws, "overall": overall_raw},
     }
 
 
@@ -261,20 +294,19 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
     stamina = _scale(stamina_raw, confidence)
     mental = _scale(mental_raw, confidence)
 
-    # DF overall: ATT 5% DEF 35% PACE 10% AURA 15% STA 15% MEN 20%
-    overall_raw = (
-        0.05 * att_raw + 0.35 * def_raw + 0.10 * pace_raw
-        + 0.15 * aura_raw + 0.15 * stamina_raw + 0.20 * mental_raw
-    )
+    # DF base: ATT 5% DEF 35% PACE 10% AURA 15% STA 15% MEN 20%
+    raws = {"att": att_raw, "def": def_raw, "pace": pace_raw,
+            "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
+    base_w = {"att": 0.05, "def": 0.35, "pace": 0.10,
+              "aura": 0.15, "stamina": 0.15, "mental": 0.20}
+    overall_raw = _adaptive_overall(raws, base_w)
     overall = _scale(overall_raw, confidence)
 
     return {
         "att": att, "def": defense, "pace": pace,
         "aura": aura, "stamina": stamina, "mental": mental,
         "overall": overall,
-        "_raws": {"att": att_raw, "def": def_raw, "pace": pace_raw,
-                  "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw,
-                  "overall": overall_raw},
+        "_raws": {**raws, "overall": overall_raw},
     }
 
 
@@ -322,20 +354,19 @@ def rate_goalkeeper(row: pd.Series, confidence: float) -> dict:
     stamina = _scale(stamina_raw, confidence)
     mental = _scale(mental_raw, confidence)
 
-    # GK overall: ATT 0% DEF 40% PACE 5% AURA 15% STA 10% MEN 30%
-    overall_raw = (
-        0.00 * att_raw + 0.40 * def_raw + 0.05 * pace_raw
-        + 0.15 * aura_raw + 0.10 * stamina_raw + 0.30 * mental_raw
-    )
+    # GK base: ATT 0% DEF 40% PACE 5% AURA 15% STA 10% MEN 30%
+    raws = {"att": att_raw, "def": def_raw, "pace": pace_raw,
+            "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
+    base_w = {"att": 0.00, "def": 0.40, "pace": 0.05,
+              "aura": 0.15, "stamina": 0.10, "mental": 0.30}
+    overall_raw = _adaptive_overall(raws, base_w)
     overall = _scale(overall_raw, confidence)
 
     return {
         "att": att, "def": defense, "pace": pace,
         "aura": aura, "stamina": stamina, "mental": mental,
         "overall": overall,
-        "_raws": {"att": att_raw, "def": def_raw, "pace": pace_raw,
-                  "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw,
-                  "overall": overall_raw},
+        "_raws": {**raws, "overall": overall_raw},
     }
 
 
