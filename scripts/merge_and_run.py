@@ -69,7 +69,34 @@ for idx, fb_row in fbref.iterrows():
         fbref.loc[idx, "key_passes"] = us_row["key_passes"]
         matched += 1
 
-print(f"  Matched: {matched}/{len(fbref)} ({matched/len(fbref)*100:.0f}%)")
+print(f"  Understat matched: {matched}/{len(fbref)} ({matched/len(fbref)*100:.0f}%)")
+
+# Merge defense data (tackles_won, interceptions)
+print("  Loading defense data...")
+defense_map = {"epl": "epl", "laliga": "laliga", "seriea": "seriea",
+               "bundesliga": "bundesliga", "ligue1": "ligue1"}
+def_matched = 0
+for league_key in defense_map:
+    def_path = Path(f"data/raw/fbref_extra/{league_key}_defense.csv")
+    if not def_path.exists():
+        print(f"    {league_key}: no defense file")
+        continue
+    def_df = pd.read_csv(def_path)
+    print(f"    {league_key}: {len(def_df)} defense rows")
+
+    for _, def_row in def_df.iterrows():
+        def_name = normalize_name(def_row["player_name"])
+        # Find match in fbref for this league
+        league_mask = fbref["league_id"] == league_key
+        for idx in fbref[league_mask].index:
+            fb_name = normalize_name(fbref.loc[idx, "player_name"])
+            if fuzz.ratio(fb_name, def_name) >= 85:
+                fbref.loc[idx, "tackles"] = def_row.get("tackles_won", 0)
+                fbref.loc[idx, "interceptions"] = def_row.get("interceptions", 0)
+                def_matched += 1
+                break
+
+print(f"  Defense matched: {def_matched}")
 
 # ── N: NORMALIZE ──────────────────────────────────────────────
 print("\n[N] NORMALIZE")
@@ -129,26 +156,51 @@ for src, dst in pct_map:
     else:
         filtered[dst] = 0.5
 
-# Proxy missing
+# Proxy missing features — smarter estimation from available data
+# For DF: interceptions correlates with clearances/aerials
+# For FW: key_passes correlates with progressive actions
+# For MF: tackles correlates with pressures
 for col in ["prog_passes_pct_role","prog_carries_pct_role","dribbles_pct_role",
             "pass_completion_pct_role","pressures_pct_role","pressure_success_pct_role",
             "aerial_duel_success_pct_role","ball_recoveries_pct_role",
             "gk_saves_pct_role","gk_psxg_diff_pct_role","gk_crosses_stopped_pct_role",
-            "gk_pass_completion_pct_role","gk_launch_pct_role"]:
-    if col not in filtered.columns:
-        # Use related features as proxy
+            "gk_pass_completion_pct_role","gk_launch_pct_role",
+            "clearances_pct_role","aerials_pct_role"]:
+    if col not in filtered.columns or filtered[col].isna().all() or (filtered[col] == 0.5).all():
         if "prog" in col and "key_passes_pct_role" in filtered.columns:
             filtered[col] = filtered["key_passes_pct_role"]
-        elif "dribble" in col and "goals_pct_role" in filtered.columns:
-            filtered[col] = (filtered["goals_pct_role"] + filtered["assists_pct_role"]) / 2
+        elif "dribble" in col:
+            # FW: goals proxy, DF: low, MF: assists proxy
+            filtered[col] = filtered.apply(
+                lambda r: r.get("goals_pct_role",0.5) * 0.7 + r.get("assists_pct_role",0.5) * 0.3
+                if r["role_bucket"] == "FW"
+                else r.get("assists_pct_role",0.5) * 0.5 + r.get("tackles_pct_role",0.5) * 0.5
+                if r["role_bucket"] == "MF"
+                else 0.3, axis=1)
         elif "press" in col and "tackles_pct_role" in filtered.columns:
-            filtered[col] = filtered["tackles_pct_role"]
-        elif "pass_comp" in col and "assists_pct_role" in filtered.columns:
-            filtered[col] = filtered["assists_pct_role"]
-        elif "ball_rec" in col and "interceptions_pct_role" in filtered.columns:
-            filtered[col] = filtered["interceptions_pct_role"]
-        elif "aerial_duel_success" in col and "aerials_pct_role" in filtered.columns:
-            filtered[col] = filtered["aerials_pct_role"]
+            filtered[col] = filtered["tackles_pct_role"] * 0.8 + filtered.get("interceptions_pct_role", pd.Series(0.5, index=filtered.index)) * 0.2
+        elif "pass_comp" in col:
+            # DF: high if interceptions high (reads game well)
+            # MF/FW: assists proxy
+            filtered[col] = filtered.apply(
+                lambda r: r.get("interceptions_pct_role",0.5) * 0.6 + 0.3
+                if r["role_bucket"] == "DF"
+                else r.get("assists_pct_role",0.5) * 0.7 + r.get("key_passes_pct_role",0.5) * 0.3, axis=1).clip(0,1)
+        elif "ball_rec" in col:
+            filtered[col] = (filtered.get("interceptions_pct_role", pd.Series(0.5, index=filtered.index)) * 0.6
+                           + filtered.get("tackles_pct_role", pd.Series(0.5, index=filtered.index)) * 0.4)
+        elif "aerial" in col and "clearances" not in col:
+            # DF: interceptions proxy (good defenders win aerials)
+            filtered[col] = filtered.apply(
+                lambda r: r.get("interceptions_pct_role",0.5) * 0.7 + r.get("tackles_pct_role",0.5) * 0.3
+                if r["role_bucket"] == "DF"
+                else r.get("goals_pct_role",0.5) * 0.3 + 0.3, axis=1).clip(0,1)
+        elif "clearances" in col:
+            # DF: strongly correlated with interceptions
+            filtered[col] = filtered.apply(
+                lambda r: r.get("interceptions_pct_role",0.5) * 0.8 + r.get("tackles_pct_role",0.5) * 0.2
+                if r["role_bucket"] in ["DF","GK"]
+                else 0.3, axis=1)
         elif "gk" in col and "clean_sheets_pct_role" in filtered.columns:
             filtered[col] = filtered["clean_sheets_pct_role"]
         else:

@@ -134,10 +134,10 @@ def rate_forward(row: pd.Series, confidence: float) -> dict:
         + 0.30 * _safe_get(row, "team_goal_contribution")
     )
     stamina_raw = (
-        0.30 * _safe_get(row, "minutes_share")
-        + 0.25 * _safe_get(row, "ball_recoveries_pct_role")
-        + 0.25 * _safe_get(row, "pressure_success_pct_role")
-        + 0.20 * _safe_get(row, "tackles_pct_role")
+        0.35 * _safe_get(row, "minutes_share")
+        + 0.25 * _safe_get(row, "key_passes_pct_role")  # activity proxy for FW
+        + 0.20 * _safe_get(row, "shots_pct_role")        # shot volume = active
+        + 0.20 * _safe_get(row, "team_goal_contribution")
     )
     mental_raw = (
         0.30 * _safe_get(row, "pass_completion_pct_role")
@@ -273,12 +273,12 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
         + 0.25 * _safe_get(row, "prog_passes_pct_role")
     )
     def_raw = (
-        0.25 * _safe_get(row, "tackles_pct_role")
-        + 0.20 * _safe_get(row, "interceptions_pct_role")
-        + 0.20 * _safe_get(row, "clearances_pct_role")
-        + 0.15 * _safe_get(row, "aerials_pct_role")
+        0.15 * _safe_get(row, "tackles_pct_role")       # low tackles = good positioning
+        + 0.35 * _safe_get(row, "interceptions_pct_role") # real data, most important
+        + 0.15 * _safe_get(row, "clearances_pct_role")
+        + 0.10 * _safe_get(row, "aerials_pct_role")
         + 0.10 * _safe_get(row, "pressures_pct_role")
-        + 0.10 * _safe_get(row, "ball_recoveries_pct_role")
+        + 0.15 * _safe_get(row, "clean_sheets_pct_role")  # team defense quality
     )
     pace_raw = (
         0.35 * _safe_get(row, "prog_carries_pct_role")
