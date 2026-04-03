@@ -381,11 +381,12 @@ def rate_goalkeeper(row: pd.Series, confidence: float) -> dict:
     stamina = _scale(stamina_raw, confidence)
     mental = _scale(mental_raw, confidence)
 
-    # GK base: ATT 0% DEF 40% PACE 5% AURA 15% STA 10% MEN 30%
+    # GK base: ATT 10% DEF 35% PACE 5% AURA 10% STA 10% MEN 30%
+    # ATT 10% — the fixed 30 pulls OVR down significantly (GK ceiling ~92)
     raws = {"att": att_raw, "def": def_raw, "pace": pace_raw,
             "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
-    base_w = {"att": 0.00, "def": 0.40, "pace": 0.05,
-              "aura": 0.15, "stamina": 0.10, "mental": 0.30}
+    base_w = {"att": 0.10, "def": 0.35, "pace": 0.05,
+              "aura": 0.10, "stamina": 0.10, "mental": 0.30}
     scores = {"att": att, "def": defense, "pace": pace,
               "aura": aura, "stamina": stamina, "mental": mental}
     adjusted_w = base_w.copy()

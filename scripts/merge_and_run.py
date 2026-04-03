@@ -98,6 +98,40 @@ for league_key in defense_map:
 
 print(f"  Defense matched: {def_matched}")
 
+# Merge Sofascore data (clearances, dribbles, pass accuracy, duels, clean_sheets)
+print("  Loading Sofascore data...")
+sf_path = Path("data/raw/sofascore/sofascore_all_leagues_2021_2022.csv")
+sf_matched = 0
+if sf_path.exists():
+    sf = pd.read_csv(sf_path, sep='~')
+    sf_league_map = {"epl": "epl", "laliga": "laliga", "seriea": "seriea",
+                     "bundesliga": "bundesliga", "ligue1": "ligue1"}
+    print(f"    Sofascore: {len(sf)} players")
+
+    for _, sf_row in sf.iterrows():
+        sf_name = normalize_name(str(sf_row.get("player_name", "")))
+        sf_league = str(sf_row.get("league", ""))
+
+        league_mask = fbref["league_id"] == sf_league
+        for idx in fbref[league_mask].index:
+            fb_name = normalize_name(fbref.loc[idx, "player_name"])
+            if fuzz.ratio(fb_name, sf_name) >= 80:
+                fbref.loc[idx, "clearances"] = sf_row.get("clearances", 0)
+                fbref.loc[idx, "successful_dribbles"] = sf_row.get("dribbles", 0)
+                fbref.loc[idx, "clean_sheets"] = sf_row.get("clean_sheets", 0)
+                # Pass completion
+                total_p = sf_row.get("total_passes", 0)
+                if total_p > 0:
+                    fbref.loc[idx, "pass_completion_pct"] = sf_row.get("accurate_passes", 0) / total_p
+                # Duels
+                fbref.loc[idx, "duels_won"] = sf_row.get("duels_won", 0)
+                sf_matched += 1
+                break
+
+    print(f"  Sofascore matched: {sf_matched}")
+else:
+    print("  Sofascore: file not found")
+
 # ── N: NORMALIZE ──────────────────────────────────────────────
 print("\n[N] NORMALIZE")
 
@@ -120,7 +154,8 @@ filtered["role_bucket"] = filtered.apply(
 
 # Per90
 stats_p90 = ["goals","assists","shots","key_passes","xg","xa",
-             "tackles","interceptions","clearances","aerial_duels_won","clean_sheets"]
+             "tackles","interceptions","clearances","aerial_duels_won","clean_sheets",
+             "successful_dribbles","duels_won"]
 for s in stats_p90:
     if s in filtered.columns:
         filtered[f"{s}_p90"] = filtered[s].fillna(0) / (filtered["minutes_played"] / 90)
@@ -149,7 +184,13 @@ pct_map = [
     ("tackles_p90","tackles_pct_role"), ("interceptions_p90","interceptions_pct_role"),
     ("clearances_p90","clearances_pct_role"), ("aerial_duels_won_p90","aerials_pct_role"),
     ("clean_sheets_p90","clean_sheets_pct_role"),
+    ("successful_dribbles_p90","dribbles_pct_role"),
+    ("duels_won_p90","aerial_duel_success_pct_role"),
 ]
+
+# Pass completion (not per90 — it's already a rate)
+if "pass_completion_pct" in filtered.columns:
+    filtered["pass_completion_pct_role"] = filtered.groupby("role_bucket")["pass_completion_pct"].rank(pct=True).fillna(0.5)
 for src, dst in pct_map:
     if src in filtered.columns:
         filtered[dst] = filtered.groupby("role_bucket")[src].rank(pct=True).fillna(0.5)
