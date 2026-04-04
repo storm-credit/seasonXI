@@ -232,3 +232,5 @@ token.json
 frontend/node_modules
 frontend/.next
 client_secret_*.json
+__pycache__
+downloaded_files/
