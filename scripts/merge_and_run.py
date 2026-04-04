@@ -145,17 +145,53 @@ filtered = fbref[fbref["minutes_played"] >= MIN_MINUTES].copy()
 print(f"  After {MIN_MINUTES}min filter: {len(filtered)}")
 
 # Position classification
-def classify_pos(pos, goals):
-    if pd.isna(pos): return "MF"
-    pos = str(pos).upper()
+def classify_pos(row):
+    """Smart position classification.
+
+    Handles: MF who are really FW (Salah), DF,MF hybrids (Trent),
+    season-specific position changes, multi-position strings.
+    """
+    pos = row.get("primary_position", "")
+    if pd.isna(pos): pos = ""
+    pos = str(pos).upper().replace(",", "")
+
+    goals = row.get("goals", 0) or 0
+    xg = row.get("xg", 0) or 0
+    assists = row.get("assists", 0) or 0
+    minutes = row.get("minutes_played", 0) or 1
+
     if "GK" in pos: return "GK"
+
+    # Explicit FW
+    if pos.startswith("FW"): return "FW"
+
+    # MFFW or FWMF — check if more attacker or midfielder
+    if "FW" in pos and "MF" in pos:
+        goals_p90 = goals / (minutes / 90) if minutes > 0 else 0
+        return "FW" if goals_p90 > 0.25 or goals >= 8 else "MF"
+
     if "FW" in pos: return "FW"
+
+    # Pure MF — but check if actually an attacker
+    if pos == "MF" or pos.startswith("MF"):
+        goals_p90 = goals / (minutes / 90) if minutes > 0 else 0
+        # High scorers are FW (Salah as MF with 29 goals)
+        if goals >= 15 or (goals >= 10 and xg >= 10):
+            return "FW"
+        # High xG suggests forward role
+        if xg >= 12:
+            return "FW"
+        return "MF"
+
+    # DFMF or MFDF
+    if "DF" in pos and "MF" in pos:
+        return "MF" if assists >= 5 or goals >= 3 else "DF"
+
     if "DF" in pos: return "DF"
+
     return "MF"
 
-filtered["role_bucket"] = filtered.apply(
-    lambda r: classify_pos(r.get("primary_position"), r.get("goals", 0)), axis=1
-)
+filtered["role_bucket"] = filtered.apply(classify_pos, axis=1)
 
 # Per90
 stats_p90 = ["goals","assists","shots","key_passes","xg","xa",
