@@ -1,0 +1,26 @@
+{
+  "player": "BENZEMA",
+  "season": "2021-22",
+  "club": "Real Madrid",
+  "position": "FW",
+  "ovr": 95,
+  "stats": {
+    "att": 98,
+    "def": 47,
+    "pace": 98,
+    "aura": 91,
+    "stamina": 80,
+    "mental": 91
+  },
+  "tier": "Mythic",
+  "hook": "THE COMPLETE STRIKER",
+  "play_style": "LETHAL IN EVERY WAY",
+  "achievement": "LEAGUE GOALS",
+  "achievement_number": "27",
+  "verdict": "MYTHIC SEASON",
+  "cta": "WHO WAS BETTER?",
+  "closeup_text": "UNSTOPPABLE",
+  "energy_text": "PURE CLASS",
+  "image_main": "/messi_2011_12_main.png",
+  "image_card": "/messi_2011_12_card.png"
+}
