@@ -342,29 +342,43 @@ def engine_check():
         raise HTTPException(500, str(e))
 
 
-# ─── API: Generate Image (Gemini) ────────────────────────────
+# ─── API: Generate Image (Imagen 4 + Nano Banana + Gemini fallback) ──
 @app.post("/api/generate-image/{player_id}/{season}")
 def generate_image_api(player_id: str, season: str, scene: str = "HOOK", count: int = 1):
-    """Generate player image using Gemini API."""
+    """Generate player image using full fallback chain: Imagen 4 → Nano Banana → Gemini.
+
+    Runs as subprocess so the API returns immediately with a PID for status tracking.
+    """
     try:
+        # Check for ready-to-paste prompt file first
+        s_clean = season.replace("-", "_")
+        scene_lower = scene.lower()
+        prompt_file = CONFIGS_DIR / "image_prompts" / "prompt_sets" / f"{player_id}_{s_clean}_{scene_lower}.txt"
+
+        cmd = [
+            sys.executable, "-m", "seasonxi.content.generate_image",
+            "--player", player_id,
+            "--season", season,
+            "--scene", scene,
+            "--count", str(count),
+        ]
+        if prompt_file.exists():
+            cmd.extend(["--prompt-file", str(prompt_file)])
+
         result = subprocess.Popen(
-            [
-                sys.executable, "-m", "seasonxi.content.generate_image",
-                "--player", player_id,
-                "--season", season,
-                "--scene", scene,
-                "--count", str(count),
-            ],
+            cmd,
             cwd=str(PROJECT_ROOT),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
         )
         return {
             "status": "generating",
+            "engine": "imagen4+nano+gemini",
             "player_id": player_id,
             "season": season,
             "scene": scene,
             "count": count,
+            "prompt_file": str(prompt_file) if prompt_file.exists() else None,
             "pid": result.pid,
         }
     except Exception as e:

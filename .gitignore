@@ -227,8 +227,12 @@ outputs/
 .claude/memory/
 .claude/plans/
 .gemini_cooldowns.json
+.image_key_state.json
 client_secrets.json
 token.json
+vertex-sa-key.json
+*-sa-key.json
+*.service-account.json
 frontend/node_modules
 frontend/.next
 client_secret_*.json
