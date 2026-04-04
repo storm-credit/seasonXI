@@ -124,31 +124,32 @@ export default function VideoPreview({
         </a>
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center">
+      <div className="flex-1 flex flex-col">
         {videoUrl ? (
-          /* Video player — compact thumbnail, click to expand */
-          <div className="w-full flex flex-col items-center gap-2">
-            <div className="relative cursor-pointer group" onClick={() => setShowModal(true)}>
-              <video src={videoUrl} muted
-                className="rounded-lg border border-sxi-gold/20 bg-black"
-                style={{ width: "100%", maxWidth: 140, maxHeight: 200, objectFit: "cover" }}
+          /* Video player — inline, fills panel */
+          <div className="w-full flex flex-col gap-2 flex-1">
+            <div className="flex-1 flex items-center justify-center bg-black rounded-lg overflow-hidden border border-sxi-gold/20">
+              <video
+                src={videoUrl}
+                controls
+                autoPlay
+                loop
+                className="w-full h-full rounded-lg"
+                style={{ maxHeight: "100%", objectFit: "contain" }}
               />
-              <div className="absolute inset-0 bg-black/40 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <Play size={24} className="text-white" />
-              </div>
             </div>
             {videoFilename && (
-              <div className="w-full space-y-1">
+              <div className="flex gap-1.5">
                 <a href={videoUrl} download={videoFilename}
-                  className="w-full py-1 rounded-lg bg-sxi-gold text-sxi-black font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:brightness-110 transition-all">
+                  className="flex-1 py-1.5 rounded-lg bg-sxi-gold text-sxi-black font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:brightness-110 transition-all">
                   <Download size={10} /> DOWNLOAD
                 </a>
                 <button onClick={() => onUploadYouTube?.()}
-                  className="w-full py-1 rounded-lg bg-red-600 text-white font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:bg-red-500 transition-all">
+                  className="flex-1 py-1.5 rounded-lg bg-red-600 text-white font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:bg-red-500 transition-all">
                   <Upload size={10} /> YOUTUBE
                 </button>
                 <button onClick={startRender} disabled={rendering}
-                  className="w-full py-1 rounded-lg bg-sxi-white/5 text-sxi-white/50 border border-sxi-gold/20 font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:bg-sxi-gold/10 hover:text-sxi-gold transition-all">
+                  className="flex-1 py-1.5 rounded-lg bg-sxi-white/5 text-sxi-white/50 border border-sxi-gold/20 font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:bg-sxi-gold/10 hover:text-sxi-gold transition-all">
                   <Film size={10} /> RE-RENDER
                 </button>
               </div>

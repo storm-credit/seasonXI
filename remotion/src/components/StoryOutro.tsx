@@ -148,7 +148,7 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
           style={{
             fontFamily: '"Inter", "Montserrat", sans-serif',
             fontWeight: 500,
-            fontSize: 20,
+            fontSize: 24,
             color: `${COLORS.white}55`,
             letterSpacing: 5,
             textTransform: 'uppercase',
@@ -172,8 +172,8 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
           style={{
             fontFamily: '"Inter", "Montserrat", sans-serif',
             fontWeight: 600,
-            fontSize: 18,
-            color: `${COLORS.white}44`,
+            fontSize: 22,
+            color: `${COLORS.white}55`,
             letterSpacing: 3,
           }}
         >
@@ -182,8 +182,8 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
         <div
           style={{
             fontFamily: '"Bebas Neue", "Inter", sans-serif',
-            fontSize: 13,
-            color: `${accentColor}44`,
+            fontSize: 18,
+            color: `${accentColor}55`,
             letterSpacing: 4,
             marginTop: 6,
           }}
@@ -206,9 +206,9 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
         <div
           style={{
             fontFamily: '"Inter","Montserrat",sans-serif',
-            fontWeight: 500,
-            fontSize: 18,
-            color: `${COLORS.white}80`,
+            fontWeight: 600,
+            fontSize: 28,
+            color: `${COLORS.white}88`,
             letterSpacing: 3,
             textTransform: 'uppercase',
           }}
@@ -232,7 +232,7 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
             style={{
               fontFamily: '"Bebas Neue","Inter",sans-serif',
               fontWeight: 700,
-              fontSize: 14,
+              fontSize: 22,
               color: accentColor,
               letterSpacing: 4,
               textTransform: 'uppercase',

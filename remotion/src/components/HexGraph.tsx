@@ -55,8 +55,8 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
       {/* Label: PERFORMANCE INDEX */}
       <div style={{
         position: 'absolute', top: 50, left: 50,
-        fontFamily: 'Montserrat, sans-serif', fontWeight: 600,
-        fontSize: 11, color: `${COLORS.gold}55`, letterSpacing: 4,
+        fontFamily: 'Montserrat, sans-serif', fontWeight: 700,
+        fontSize: 22, color: `${COLORS.gold}77`, letterSpacing: 4,
         opacity,
       }}>PERFORMANCE INDEX</div>
 
@@ -91,9 +91,9 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
                 fontFamily="Bebas Neue, sans-serif" fontSize={36}
                 textAnchor="middle" dominantBaseline="middle"
                 opacity={valOp}>{vals[i]}</text>
-              <text x={lx} y={ly + 22} fill={`${COLORS.white}AA`}
+              <text x={lx} y={ly + 26} fill={`${COLORS.white}AA`}
                 fontFamily="Montserrat, sans-serif" fontWeight={700}
-                fontSize={13} textAnchor="middle" dominantBaseline="middle"
+                fontSize={18} textAnchor="middle" dominantBaseline="middle"
                 letterSpacing={2}>{label.toUpperCase()}</text>
             </g>
           );

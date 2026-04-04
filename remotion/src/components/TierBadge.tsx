@@ -122,7 +122,7 @@ export const TierBadge: React.FC<TierBadgeProps> = ({ tier, ovr, delay = 0 }) =>
           style={{
             fontFamily: '"Inter", "Montserrat", sans-serif',
             fontWeight: 600,
-            fontSize: 13,
+            fontSize: 20,
             color: `${config.color}66`,
             letterSpacing: 5,
             marginBottom: 10,
@@ -169,10 +169,10 @@ export const TierBadge: React.FC<TierBadgeProps> = ({ tier, ovr, delay = 0 }) =>
           <span style={{ color: config.color }}>{displayOvr}</span>
           <span
             style={{
-              fontSize: 22,
+              fontSize: 28,
               color: `${COLORS.white}55`,
               letterSpacing: 2,
-              marginLeft: 6,
+              marginLeft: 8,
             }}
           >
             OVR

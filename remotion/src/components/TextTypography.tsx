@@ -147,7 +147,7 @@ export const TextTypography: React.FC<TextTypographyProps> = ({
                 style={{
                   fontFamily: '"Inter", "Montserrat", sans-serif',
                   fontWeight: 700,
-                  fontSize: 26,
+                  fontSize: 32,
                   color: COLORS.white,
                   letterSpacing: 5,
                   textTransform: 'uppercase',

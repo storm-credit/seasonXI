@@ -165,7 +165,7 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
             style={{
               fontFamily: '"Inter","Montserrat",sans-serif',
               fontWeight: 600,
-              fontSize: 10,
+              fontSize: 16,
               color: `${COLORS.white}88`,
               letterSpacing: 3,
               textTransform: 'uppercase',
@@ -259,31 +259,31 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
             style={{
               fontFamily: '"Inter","Montserrat",sans-serif',
               fontWeight: 700,
-              fontSize: 18,
+              fontSize: 28,
               color: COLORS.white,
               letterSpacing: 4,
             }}
           >
             {data.player_name.toUpperCase()}
           </span>
-          <span style={{ color: `${COLORS.gold}55`, fontSize: 14 }}>·</span>
+          <span style={{ color: `${COLORS.gold}55`, fontSize: 20 }}>·</span>
           <span
             style={{
               fontFamily: '"Inter","Montserrat",sans-serif',
               fontWeight: 600,
-              fontSize: 16,
+              fontSize: 22,
               color: COLORS.gold,
               letterSpacing: 3,
             }}
           >
             {data.season}
           </span>
-          <span style={{ color: `${COLORS.gold}55`, fontSize: 14 }}>·</span>
+          <span style={{ color: `${COLORS.gold}55`, fontSize: 20 }}>·</span>
           <span
             style={{
               fontFamily: '"Inter","Montserrat",sans-serif',
               fontWeight: 500,
-              fontSize: 14,
+              fontSize: 18,
               color: `${COLORS.white}66`,
               letterSpacing: 2,
             }}
@@ -386,7 +386,7 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
           style={{
             fontFamily: '"Inter","Montserrat",sans-serif',
             fontWeight: 600,
-            fontSize: 13,
+            fontSize: 18,
             color: `${COLORS.gold}88`,
             letterSpacing: 5,
             textTransform: 'uppercase',
@@ -422,9 +422,9 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
             style={{
               fontFamily: '"Inter","Montserrat",sans-serif',
               fontWeight: 400,
-              fontSize: 28,
+              fontSize: 36,
               color: `${COLORS.white}CC`,
-              lineHeight: 1.55,
+              lineHeight: 1.6,
               marginBottom: 24,
               opacity: storyOpacity,
               transform: `translateY(${storyY}px)`,
@@ -448,12 +448,12 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
               style={{
                 fontFamily: '"Inter","Montserrat",sans-serif',
                 fontWeight: 700,
-                fontSize: 14,
+                fontSize: 20,
                 color: i === 2 ? COLORS.gold : `${COLORS.white}88`,
                 background: i === 2 ? `${COLORS.gold}15` : 'rgba(255,255,255,0.06)',
                 border: `1px solid ${i === 2 ? COLORS.gold + '40' : 'rgba(255,255,255,0.1)'}`,
                 borderRadius: 6,
-                padding: '6px 16px',
+                padding: '8px 20px',
                 letterSpacing: 2,
                 textTransform: 'uppercase',
               }}
@@ -842,19 +842,19 @@ const StatsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         <div
           style={{
             fontFamily: '"Inter","Montserrat",sans-serif',
-            fontWeight: 600,
-            fontSize: 12,
-            color: `${COLORS.gold}66`,
+            fontWeight: 700,
+            fontSize: 40,
+            color: `${COLORS.gold}88`,
             letterSpacing: 5,
             textTransform: 'uppercase',
-            marginBottom: 20,
-            textAlign: 'right',
+            marginBottom: 24,
+            textAlign: 'center',
           }}
         >
           Performance Index
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           {barStats.map((s, i) => {
             const delay = i * 12;
             const localProgress = interpolate(
@@ -874,10 +874,10 @@ const StatsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
                   style={{
                     fontFamily: '"Inter","Montserrat",sans-serif',
                     fontWeight: 700,
-                    fontSize: 13,
-                    color: `${COLORS.white}77`,
+                    fontSize: 36,
+                    color: `${COLORS.white}88`,
                     letterSpacing: 3,
-                    width: 52,
+                    width: 90,
                     textAlign: 'right',
                     flexShrink: 0,
                   }}
@@ -889,9 +889,9 @@ const StatsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
                 <div
                   style={{
                     flex: 1,
-                    height: 6,
-                    background: 'rgba(255,255,255,0.06)',
-                    borderRadius: 3,
+                    height: 16,
+                    background: 'rgba(255,255,255,0.08)',
+                    borderRadius: 8,
                     overflow: 'hidden',
                   }}
                 >
@@ -900,8 +900,8 @@ const StatsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
                       height: '100%',
                       width: `${localProgress * 100}%`,
                       background: `linear-gradient(90deg, ${COLORS.gold}88, ${COLORS.gold})`,
-                      borderRadius: 3,
-                      boxShadow: `0 0 8px ${COLORS.gold}40`,
+                      borderRadius: 8,
+                      boxShadow: `0 0 12px ${COLORS.gold}50`,
                     }}
                   />
                 </div>
@@ -911,9 +911,9 @@ const StatsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
                   style={{
                     fontFamily: '"Bebas Neue","Inter",sans-serif',
                     fontWeight: 700,
-                    fontSize: 22,
+                    fontSize: 48,
                     color: COLORS.gold,
-                    width: 40,
+                    width: 70,
                     opacity: valOpacity,
                   }}
                 >
@@ -1010,7 +1010,7 @@ const VerdictScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
           style={{
             fontFamily: '"Bebas Neue","Inter",sans-serif',
             fontWeight: 900,
-            fontSize: 56,
+            fontSize: 68,
             color: COLORS.white,
             letterSpacing: 4,
             lineHeight: 1.2,
@@ -1036,7 +1036,7 @@ const VerdictScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
           style={{
             fontFamily: '"Inter","Montserrat",sans-serif',
             fontWeight: 600,
-            fontSize: 16,
+            fontSize: 22,
             color: COLORS.white,
             letterSpacing: 3,
           }}
