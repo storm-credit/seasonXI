@@ -200,39 +200,29 @@ def _extract_block(text: str, block_name: str) -> str:
 # ─── API: Render Video ────────────────────────────────────────
 @app.post("/api/render/{player_id}/{season}")
 def render_video(player_id: str, season: str):
-    """Trigger Remotion render via npx remotion render."""
+    """Trigger Remotion render via render-server HTTP API."""
+    import urllib.request
     video_id = f"{player_id}_{season.replace('-', '_')}"
-    output_path = PROJECT_ROOT / "outputs" / f"{video_id}.mp4"
-    remotion_dir = REMOTION_DIR
 
-    # Try direct npx remotion render (works on host, not in Docker)
-    try:
-        import shutil
-        npx = shutil.which("npx")
-        if npx:
-            result = subprocess.Popen(
-                [npx, "remotion", "render", "SeasonStory",
-                 "--output", str(output_path)],
-                cwd=str(remotion_dir),
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-            )
-            return {"status": "rendering", "video_id": video_id, "pid": result.pid}
-    except Exception:
-        pass
+    # Send render request to Remotion render-server (port 3335)
+    render_url = "http://seasonxi-remotion:3335/render"
+    payload = json.dumps({
+        "composition": "SeasonStory",
+        "output": f"/app/outputs/{video_id}.mp4",
+    }).encode()
 
-    # Fallback: try docker exec on remotion container
     try:
-        result = subprocess.Popen(
-            ["docker", "exec", "seasonxi-remotion",
-             "npx", "remotion", "render", "SeasonStory",
-             "--output", f"/app/outputs/{video_id}.mp4"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
+        req = urllib.request.Request(
+            render_url,
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST",
         )
-        return {"status": "rendering", "video_id": video_id, "pid": result.pid}
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            result = json.loads(resp.read())
+            return {"status": "rendering", "video_id": video_id, **result}
     except Exception as e:
-        raise HTTPException(500, f"Cannot render: {e}")
+        raise HTTPException(500, f"Render server error: {e}")
 
 
 # ─── API: Pipeline Cards (real data) ──────────────────────────

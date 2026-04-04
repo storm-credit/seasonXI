@@ -68,6 +68,8 @@ const DEFAULT_STORY_DATA: StoryCardData = {
   hookImage: "benzema_2021-22/benzema_2021_22_hook_v1.png",
   cardImage: "benzema_2021-22/benzema_2021_22_card_v1.png",
   closeupImage: "benzema_2021-22/benzema_2021_22_closeup_v1.png",
+  narrationSrc: "benzema_2021-22/narration.mp3",
+  bgmSrc: "benzema_2021-22/bgm.mp3",
   hookStat: "44 GOALS",
   hookLine: "THE KING RECLAIMS HIS THRONE",
   nextTeaser: "NEXT: SALAH 2021-22",

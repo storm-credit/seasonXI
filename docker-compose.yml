@@ -42,6 +42,7 @@ services:
     container_name: seasonxi-remotion
     ports:
       - "3334:3334"
+      - "3335:3335"
     volumes:
       - ./remotion/public:/app/public
       - ./outputs:/app/outputs

@@ -14,10 +14,12 @@ RUN npm ci
 # App code
 COPY src/ src/
 COPY tsconfig.json ./
+COPY render-server.js ./
 
 # Public dir will be mounted as volume
 RUN mkdir -p public outputs
 
-EXPOSE 3334
+EXPOSE 3334 3335
 
-CMD ["npx", "remotion", "studio", "--port", "3334", "--disable-keyboard-shortcuts"]
+# Run both Remotion Studio + Render Server
+CMD ["sh", "-c", "node render-server.js & npx remotion studio --port 3334 --disable-keyboard-shortcuts"]
