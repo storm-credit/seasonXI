@@ -240,7 +240,7 @@ def check_evaluate() -> list[str]:
     for role, rater in ROLE_RATERS.items():
         scores_floor = rater(_make_mock_row(0.0), 1.0)
         scores_ceil = rater(_make_mock_row(1.0), 1.0)
-        for dim in ["finishing", "creation", "control", "defense", "clutch", "aura", "overall"]:
+        for dim in ["att", "def", "pace", "aura", "stamina", "mental", "overall"]:
             lo, hi = scores_floor[dim], scores_ceil[dim]
             if lo < 29:
                 issues.append(f"WARN: {role}.{dim}: floor={lo:.1f} (below 30)")
