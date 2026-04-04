@@ -710,6 +710,21 @@ wheels = [
 ]
 
 [[package]]
+name = "edge-tts"
+version = "7.2.8"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiohttp" },
+    { name = "certifi" },
+    { name = "tabulate" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3f/60/afbf548b43c78355e03926c6b1fff7500303a2da4d84db9e1324119e21ae/edge_tts-7.2.8.tar.gz", hash = "sha256:fcf185a0d527a0d2d003f9d5841facc1d5e0e7b3b88d5df9c32990402c6b8cd0", size = 27875, upload-time = "2026-03-22T19:57:50.962Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8c/2b/a8cb687b92a2690d2ad171f0c2fd1c8f18690363cca7618bab2bbe4cdf2b/edge_tts-7.2.8-py3-none-any.whl", hash = "sha256:361fe48ce7ef613adbe30f664e3765dd71029c6cb57427279eff8ad6df2eb211", size = 31026, upload-time = "2026-03-22T19:57:49.672Z" },
+]
+
+[[package]]
 name = "exceptiongroup"
 version = "1.3.1"
 source = { registry = "https://pypi.org/simple" }
@@ -3395,6 +3410,7 @@ source = { editable = "." }
 dependencies = [
     { name = "aiohttp" },
     { name = "duckdb" },
+    { name = "edge-tts" },
     { name = "fastapi" },
     { name = "google-api-python-client" },
     { name = "google-auth-oauthlib" },
@@ -3436,6 +3452,7 @@ dev = [
 requires-dist = [
     { name = "aiohttp", specifier = ">=3.13.5" },
     { name = "duckdb", specifier = ">=1.1" },
+    { name = "edge-tts", specifier = ">=7.2.8" },
     { name = "fastapi", specifier = ">=0.135.2" },
     { name = "google-api-python-client", specifier = ">=2.193.0" },
     { name = "google-auth-oauthlib", specifier = ">=1.3.0" },
@@ -3668,6 +3685,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/73/1a/ed3544579628c5709bae6fae2255e94c6982a9ff77d42d8ba59fd2f3b21a/tabcompleter-1.4.0.tar.gz", hash = "sha256:7562a9938e62f8e7c3be612c3ac4e14c5ec4307b58ba9031c148260e866e8814", size = 10431, upload-time = "2024-10-28T00:44:52.665Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/65/44/bb509c3d2c0b5a87e7a5af1d5917a402a32ff026f777a6d7cb6990746cbb/tabcompleter-1.4.0-py3-none-any.whl", hash = "sha256:d744aa735b49c0a6cc2fb8fcd40077fec47425e4388301010b14e6ce3311368b", size = 6725, upload-time = "2024-10-28T00:44:51.267Z" },
+]
+
+[[package]]
+name = "tabulate"
+version = "0.10.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/46/58/8c37dea7bbf769b20d58e7ace7e5edfe65b849442b00ffcdd56be88697c6/tabulate-0.10.0.tar.gz", hash = "sha256:e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d", size = 91754, upload-time = "2026-03-04T18:55:34.402Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/99/55/db07de81b5c630da5cbf5c7df646580ca26dfaefa593667fc6f2fe016d2e/tabulate-0.10.0-py3-none-any.whl", hash = "sha256:f0b0622e567335c8fabaaa659f1b33bcb6ddfe2e496071b743aa113f8774f2d3", size = 39814, upload-time = "2026-03-04T18:55:31.284Z" },
 ]
 
 [[package]]
