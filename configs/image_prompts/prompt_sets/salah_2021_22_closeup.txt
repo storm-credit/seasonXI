@@ -10,10 +10,10 @@ Visual identity (MUST follow):
 - result should feel like a cinematic movie close-up portrait
 
 Player:
-- Karim Benzema, Real Madrid, 2021-22
-- strong facial structure, short dark hair, trimmed beard
-- intense focused eyes, confident slightly aggressive expression
-- dominant alpha aura
+- Mohamed Salah, Liverpool, 2021-22
+- dark curly afro hair, short trimmed beard
+- intense burning eyes, fierce determined expression
+- relentless warrior energy
 
 Composition:
 - EXTREME CLOSEUP face and chest only
@@ -22,7 +22,7 @@ Composition:
 - very dark blurred background
 - gold rim light on face edge
 - cinematic portrait feel, like a movie close-up
-- space at bottom 25% for tier badge overlay (MYTHIC/LEGENDARY)
+- space at bottom 25% for tier badge overlay (LEGENDARY)
 - space at top 15% for subtle atmospheric glow
 
 Restrictions:
@@ -30,5 +30,4 @@ Restrictions:
 
 Goal:
 - create a powerful emotional closeup for the verdict/rating moment
-- this man just won the Ballon d'Or
-- image will be used with LEGENDARY badge overlay and slow zoom
+- this man gave everything and still wanted more

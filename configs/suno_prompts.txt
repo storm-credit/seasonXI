@@ -1,68 +1,48 @@
-## SeasonXI — Suno Instrumental Prompts
+## SeasonXI — Suno 60s Instrumental Prompts (v2)
 ## 사용법: Title + Style 복붙, Lyrics는 "Instrumental" 입력
-## 공통: 전부 가사 없음 (instrumental only)
+## 공통: 가사 없음, 나레이션 BGM으로 사용 (보컬 X)
+## 구조: intro(0-15s) → build(15-28s) → drop(28-35s) → main(35-52s) → outro(52-60s)
 
 
 ## ============================================
-## 1. MESSI 2011-12 (MYTHIC / PEAK_MONSTER)
+## 1. BENZEMA 2021-22 (LEGENDARY / LATE BLOOMER)
 ## ============================================
-Title: Messi 2011-12 Mythic Theme
-Style: 20 second cinematic football theme, instrumental, premium sports soundtrack, dark elegant energy, mythic and emotional, explosive but controlled, elite football highlight music, divine genius aura, subtle orchestral layers, modern pulse, stadium atmosphere
+Title: Benzema 2021-22 Legacy Theme
+Style: 60 second cinematic football documentary soundtrack, instrumental only, no vocals, dark orchestral intro with solo piano, slow emotional build with strings, dramatic percussion drop at 30 seconds, powerful main theme with brass and drums, triumphant but restrained, Ballon d'Or energy, late bloomer narrative, quiet to explosive arc, background music for narration, stadium atmosphere, fade out ending
 Lyrics: Instrumental
 
 
 ## ============================================
-## 2. RONALDO 2016-17 (MYTHIC / PEAK_MONSTER)
+## 2. SALAH 2021-22 (LEGENDARY / RELENTLESS)
 ## ============================================
-Title: Ronaldo 2016-17 Dynasty Theme
-Style: 20 second cinematic football theme, instrumental, premium sports anthem, dominant and heroic, powerful elite football energy, dark gold sports atmosphere, dramatic percussion, controlled aggression, royal stadium tension, legendary big-game aura
+Title: Salah 2021-22 Relentless Theme
+Style: 60 second cinematic football documentary soundtrack, instrumental only, no vocals, dark moody opening with ambient pads, driving rhythmic build with electronic pulse, intense percussion drop at 30 seconds, energetic main theme with powerful drums, relentless forward momentum, Premier League intensity, heartbreak and glory mixed, background music for narration, Anfield atmosphere, emotional fade out
 Lyrics: Instrumental
 
 
 ## ============================================
-## 3. MBAPPÉ 2018-19 (ELITE / BREAKTHROUGH)
+## 3. LEWANDOWSKI 2021-22 (ELITE / GOAL MACHINE)
 ## ============================================
-Title: Mbappe 2018-19 Breakthrough Theme
-Style: 20 second cinematic football theme, instrumental, explosive young superstar energy, premium sports soundtrack, fast and sharp, dark modern football atmosphere, elegant aggression, futuristic stadium pulse, dynamic rise, elite highlight music
+Title: Lewandowski 2021-22 Machine Theme
+Style: 60 second cinematic football documentary soundtrack, instrumental only, no vocals, mechanical precision opening with minimal piano, calculated build with industrial percussion, heavy bass drop at 30 seconds, relentless main theme with dark electronic beats, clinical and cold energy, Bundesliga power, machine-like efficiency, pure striker mentality, background music for narration, stadium tension, clean ending
 Lyrics: Instrumental
 
 
 ## ============================================
-## 4. MESSI 2014-15 (MYTHIC / ELEGANT_PRIME)
+## 공통 DNA (60초 나레이션 BGM)
 ## ============================================
-Title: Messi 2014-15 Perfect Season Theme
-Style: 20 second cinematic football theme, instrumental, elegant and complete, premium sports soundtrack, refined orchestral football atmosphere, mythic and intelligent, emotional but controlled, elite football greatness, smooth dramatic rise, stadium aura
-Lyrics: Instrumental
-
-
-## ============================================
-## 5. RONALDO 2007-08 (LEGENDARY / BREAKTHROUGH)
-## ============================================
-Title: Ronaldo 2007-08 Rise of a King Theme
-Style: 20 second cinematic football theme, instrumental, rising superstar energy, premium sports soundtrack, explosive and stylish, dramatic football atmosphere, confident and aggressive, elite momentum, stadium electricity, powerful modern pulse
-Lyrics: Instrumental
-
+## 핵심: 나레이션 위에 깔리는 음악이므로 보컬/멜로디가 과하면 안 됨
+## 0-15초: 낮고 어두운 인트로 (나레이션이 주인공)
+## 15-28초: 텐션 빌드업 (스토리 고조)
+## 28-35초: 드롭/클라이맥스 (카드 리빌 — 나레이션 멈춤, 음악이 주인공)
+## 35-52초: 메인 테마 유지 (판정 나레이션)
+## 52-60초: 페이드아웃
 
 ## ============================================
-## 6. MBAPPÉ 2021-22 (MYTHIC / PEAK_MONSTER)
+## 보정 문구
 ## ============================================
-Title: Mbappe 2021-22 Elite Monster Theme
-Style: 20 second cinematic football theme, instrumental, elite forward energy, premium sports soundtrack, explosive but polished, sharp and modern football atmosphere, dark luxury sports mood, stadium pulse, confident and dangerous, big-match momentum
-Lyrics: Instrumental
-
-
-## ============================================
-## 선수별 음악 DNA
-## ============================================
-## Messi  = divine, elegant, mythic, refined, orchestral
-## Ronaldo = dominant, heroic, royal, powerful, percussion
-## Mbappé  = explosive, fast, sharp, modern, electronic
-
-## ============================================
-## 보정 문구 (잘 안 나올 때 Style 뒤에 추가)
-## ============================================
-## 너무 짧으면: 20 second duration, extended cinematic build, longer dramatic arc
-## 너무 약하면: stronger opening impact, more tension in the first second
-## 너무 과하면: more refined, less aggressive, cleaner premium sports tone
-## 너무 EDM:   less EDM, more cinematic sports soundtrack
-## 구조 명시:  intro build (0-5s), main theme (5-12s), climax and resolve (12-20s)
+## 너무 짧으면: 60 second duration, full cinematic arc
+## 멜로디 과하면: more ambient, less melodic, background texture only
+## 드롭 약하면: stronger percussion drop at 30 seconds, maximum impact
+## 너무 EDM: less EDM, more cinematic orchestral, documentary tone
+## 보컬 나오면: strictly instrumental, no vocals, no humming, no chanting

@@ -10,33 +10,32 @@ Visual identity (MUST follow):
 - result should feel like top-tier football video game card splash art
 
 Player:
-- Karim Benzema, Real Madrid, 2021-22 Ballon d'Or season
-- tall athletic build, strong frame
-- short dark hair, trimmed beard
-- intense confident expression
-- alpha predator aura
-- clinical finishing stance
-- white kit with gold trim (no crest, no sponsor)
+- Mohamed Salah, Liverpool, 2021-22 Premier League Golden Boot season
+- lean athletic build, explosive pace
+- dark curly afro hair, short trimmed beard
+- intense focused expression, relentless energy
+- cutting inside on his left foot
+- red kit with subtle gold trim (no crest, no sponsor)
 
 Season mood:
-- unstoppable, peak dominance
-- Ballon d'Or level performance
-- clutch king energy
-- Champions League destroyer
+- relentless, unstoppable, carrying the team alone
+- Premier League top scorer energy
+- every sprint is a threat
+- quadruple chaser intensity
 
 Composition:
-- FULL BODY running with ball
+- FULL BODY sprinting with ball at feet
 - dramatic dark stadium, heavy rain
-- explosive gold aura behind player
+- explosive red and gold aura behind player
 - low angle shot looking up
 - player at bottom 40% of frame
 - empty dark space on top for text
-- maximum drama and intensity
+- maximum speed and intensity
 - cinematic floodlights, atmospheric particles
 
 Restrictions:
 - no extra players, no text, no logos, no watermark
 
 Goal:
-- create a dominant opening shot that screams "this man won everything"
+- create a dominant opening shot of the Premier League's most dangerous forward
 - image will be displayed for 15 seconds with slow Ken Burns zoom

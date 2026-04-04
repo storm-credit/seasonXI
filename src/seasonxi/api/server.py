@@ -211,7 +211,7 @@ def render_video(player_id: str, season: str):
         npx = shutil.which("npx")
         if npx:
             result = subprocess.Popen(
-                [npx, "remotion", "render", "SeasonCard",
+                [npx, "remotion", "render", "SeasonStory",
                  "--output", str(output_path)],
                 cwd=str(remotion_dir),
                 stdout=subprocess.PIPE,
@@ -225,7 +225,7 @@ def render_video(player_id: str, season: str):
     try:
         result = subprocess.Popen(
             ["docker", "exec", "seasonxi-remotion",
-             "npx", "remotion", "render", "SeasonCard",
+             "npx", "remotion", "render", "SeasonStory",
              "--output", f"/app/outputs/{video_id}.mp4"],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -414,15 +414,45 @@ def check_assets(player_id: str, season: str):
     pub = REMOTION_DIR / "public"
 
     assets = {}
+    # Player folder: e.g., benzema_2021-22/
+    player_folder = pub / f"{player_id}_{season}"
+
     for asset_type in ["hook", "card", "closeup", "main", "bgm"]:
         found = False
         for ext in ["png", "jpg", "mp3", "wav", "m4a"]:
-            # Try multiple naming patterns
-            patterns = [
+            # Pattern 1: In player subfolder (new structure)
+            # e.g., benzema_2021-22/benzema_2021_22_hook_v1.png
+            if player_folder.exists():
+                folder_patterns = [
+                    f"{player_id}_{s}_{asset_type}_v*.{ext}",
+                    f"{player_id}_{s}_{asset_type}.{ext}",
+                    f"*_{asset_type}_v*.{ext}",
+                    f"*_{asset_type}.{ext}",
+                ]
+                for pattern in folder_patterns:
+                    matches = list(player_folder.glob(pattern))
+                    if matches:
+                        path = matches[0]
+                        rel = path.relative_to(pub)
+                        assets[asset_type] = {
+                            "exists": True,
+                            "filename": path.name,
+                            "size": path.stat().st_size,
+                            "url": f"/remotion/public/{rel.as_posix()}",
+                        }
+                        found = True
+                        break
+                if found:
+                    break
+
+            # Pattern 2: Flat in public/ (legacy)
+            flat_patterns = [
                 f"{player_id}_{s}_{asset_type}.{ext}",
+                f"{player_id}_{s}_{asset_type}_v*.{ext}",
                 f"{player_id}_*_{s}_{asset_type}.{ext}",
+                f"{player_id}_*_{s}_{asset_type}_v*.{ext}",
             ]
-            for pattern in patterns:
+            for pattern in flat_patterns:
                 if "*" in pattern:
                     matches = list(pub.glob(pattern))
                     if matches:
@@ -454,10 +484,10 @@ def check_assets(player_id: str, season: str):
     return assets
 
 
-@app.get("/api/asset-file/{filename}")
+@app.get("/api/asset-file/{filename:path}")
 def serve_asset(filename: str):
     """Serve an asset file (image/audio/video) from remotion/public or outputs."""
-    # Check remotion/public first
+    # Check remotion/public (supports subfolders like benzema_2021-22/hook_v1.png)
     path = REMOTION_DIR / "public" / filename
     if path.exists():
         return FileResponse(path)

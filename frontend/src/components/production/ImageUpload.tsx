@@ -11,6 +11,7 @@ interface AssetInfo {
   exists: boolean;
   filename?: string;
   size?: number;
+  url?: string;
 }
 
 interface ImageUploadProps {
@@ -105,7 +106,7 @@ export default function ImageUpload({ season, onSaved }: ImageUploadProps) {
             return (
               <div key={type} className="relative group">
                 <img
-                  src={`${API}/api/asset-file/${asset.filename}`}
+                  src={`${API}/api/asset-file/${asset.url?.replace('/remotion/public/', '') || asset.filename}`}
                   alt={type}
                   className="aspect-[9/16] w-full rounded-lg object-cover border border-sxi-gold/20"
                 />

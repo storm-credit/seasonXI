@@ -10,33 +10,32 @@ Visual identity (MUST follow):
 - result should feel like top-tier football video game card splash art
 
 Player:
-- Karim Benzema, Real Madrid, 2021-22 Ballon d'Or season
-- tall athletic build, strong frame
-- short dark hair, trimmed beard
-- intense confident expression
-- alpha predator aura
-- clinical finishing stance
-- white kit with gold trim (no crest, no sponsor)
+- Robert Lewandowski, Bayern Munich, 2021-22 European Golden Boot season
+- tall strong athletic build, powerful frame
+- short dark hair, clean shaven or light stubble
+- cold predatory expression, clinical killer instinct
+- shooting stance, about to strike
+- red kit with subtle gold trim (no crest, no sponsor)
 
 Season mood:
-- unstoppable, peak dominance
-- Ballon d'Or level performance
-- clutch king energy
-- Champions League destroyer
+- clinical, machine-like efficiency
+- 35 goals, top scorer in Europe
+- pure striker, no wasted movement
+- cold precision, every touch is a death sentence
 
 Composition:
-- FULL BODY running with ball
+- FULL BODY in striking pose, about to shoot
 - dramatic dark stadium, heavy rain
-- explosive gold aura behind player
+- explosive red and gold energy behind player
 - low angle shot looking up
 - player at bottom 40% of frame
 - empty dark space on top for text
-- maximum drama and intensity
+- maximum power and precision
 - cinematic floodlights, atmospheric particles
 
 Restrictions:
 - no extra players, no text, no logos, no watermark
 
 Goal:
-- create a dominant opening shot that screams "this man won everything"
+- create a dominant opening shot of the most clinical striker alive
 - image will be displayed for 15 seconds with slow Ken Burns zoom

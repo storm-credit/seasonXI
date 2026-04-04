@@ -19,20 +19,39 @@ function buildSunoPrompt(s: Season): string {
   const mood = s.season_mood || "PEAK_MONSTER";
 
   const moodStyles: Record<string, string> = {
-    PEAK_MONSTER: "dark elegant energy, mythic and emotional, explosive but controlled, elite football highlight music",
-    ELEGANT_PRIME: "refined orchestral atmosphere, elegant and complete, emotional but controlled, smooth dramatic rise",
-    BREAKTHROUGH: "explosive young superstar energy, fast and sharp, futuristic stadium pulse, dynamic rise",
-    DECLINE_TRANSITION: "reflective and emotional, controlled intensity, veteran legacy energy, bittersweet",
+    PEAK_MONSTER: "cinematic dark orchestral, epic football documentary, instrumental, powerful brass, dramatic percussion, no vocals",
+    ELEGANT_PRIME: "cinematic elegant orchestral, refined football documentary, instrumental, graceful strings, emotional piano, no vocals",
+    BREAKTHROUGH: "cinematic electronic hybrid, energetic football documentary, instrumental, driving beats, modern pulse, no vocals",
+    DECLINE_TRANSITION: "cinematic melancholic orchestral, emotional football documentary, instrumental, reflective piano, bittersweet strings, no vocals",
   };
 
   return [
     `Title: ${name} ${season} ${tier} Theme`,
     ``,
-    `Style: 20 second cinematic football theme, instrumental, premium sports soundtrack, ${moodStyles[mood] || moodStyles.PEAK_MONSTER}, stadium atmosphere, strong opening impact, builds to dramatic climax, clean ending`,
+    `Style: ${moodStyles[mood] || moodStyles.PEAK_MONSTER}`,
     ``,
-    `Lyrics: Instrumental`,
+    `Lyrics:`,
+    `[Intro]`,
+    `(quiet solo piano, minimal, dark atmosphere, slow build)`,
     ``,
-    `[Duration: 20 seconds minimum]`,
+    `[Verse]`,
+    `(strings enter, tension rising, emotional build, soft percussion)`,
+    ``,
+    `[Build]`,
+    `(drums building, brass swelling, growing intensity, stadium energy)`,
+    ``,
+    `[Drop]`,
+    `(full orchestra hit, maximum impact, powerful percussion, epic moment)`,
+    ``,
+    `[Chorus]`,
+    `(triumphant main theme, brass and drums, powerful but controlled, heroic)`,
+    ``,
+    `[Bridge]`,
+    `(sustained energy, emotional peak, strings and brass together)`,
+    ``,
+    `[Outro]`,
+    `(gradual fade, piano returns, reflective, quiet ending)`,
+    `[End]`,
   ].join("\n");
 }
 

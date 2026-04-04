@@ -1,10 +1,9 @@
 import { Composition } from 'remotion';
 import { SeasonCard } from './SeasonCard';
-import { CardData } from './types';
+import { SeasonStory } from './SeasonStory';
+import { CardData, StoryCardData } from './types';
 
-// Load player data from JSON file via input props
-// Usage: npx remotion render SeasonCard --props='{"src":"data/messi_2011_12.json"}'
-// Or falls back to default Messi data
+// ─── Default props ────────────────────────────────────────────────────────────
 
 const DEFAULT_DATA: CardData = {
   player: "MESSI",
@@ -43,9 +42,56 @@ const DEFAULT_DATA: CardData = {
   signature_stats: ["dribbling", "aura", "clutch"],
 };
 
+/**
+ * Default SeasonStory data — Benzema 2021-22 (first video in the pipeline).
+ *
+ * Image paths follow the new subfolder convention:
+ *   remotion/public/{player_id}_{season}/...
+ *
+ * Override at render time with --props='{"data": {...}}'
+ */
+const DEFAULT_STORY_DATA: StoryCardData = {
+  player_name: "Karim Benzema",
+  club: "Real Madrid",
+  season: "2021-22",
+  position: "CF",
+  tier: "LEGENDARY",
+  ovr: 92,
+  att: 94,
+  def: 42,
+  pace: 78,
+  aura: 95,
+  stamina: 80,
+  mental: 93,
+  goals: 44,
+  assists: 15,
+  hookImage: "benzema_2021-22/benzema_2021_22_hook_v1.png",
+  cardImage: "benzema_2021-22/benzema_2021_22_card_v1.png",
+  closeupImage: "benzema_2021-22/benzema_2021_22_closeup_v1.png",
+  hookLine: "THE KING RECLAIMS HIS THRONE",
+  storyText: "At 34, when every pundit had written him off, Karim Benzema delivered the greatest season of his career — and arguably the greatest individual campaign in Champions League history.",
+  highlights: [
+    { number: "44", label: "Goals", delay: 0 },
+    { number: "15", label: "Assists", delay: 35 },
+    { number: "15", label: "UCL Goals", delay: 70 },
+  ],
+  verdictText: "The Season That Rewrote History",
+  subtitles: [
+    { startFrame: 30,  endFrame: 120, text: "They said his best days were behind him.",   highlight: "best days" },
+    { startFrame: 180, endFrame: 300, text: "Then 2021-22 happened.",                     highlight: "2021-22" },
+    { startFrame: 480, endFrame: 600, text: "44 goals. 15 assists.",                       highlight: "44 goals" },
+    { startFrame: 630, endFrame: 740, text: "A Champions League for the ages.",            highlight: "Champions League" },
+    { startFrame: 960, endFrame: 1040, text: "The card says it all.",                      highlight: undefined },
+    { startFrame: 1380, endFrame: 1500, text: "Legendary. Undeniable.",                   highlight: "Legendary" },
+  ],
+};
+
+// ─── Root ─────────────────────────────────────────────────────────────────────
+
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* ── Legacy 12-second card (backward compatible) ─────────────── */}
       <Composition
         id="SeasonCard"
         component={SeasonCard}
@@ -59,7 +105,6 @@ export const RemotionRoot: React.FC = () => {
           if (props.data && (props.data as any).src) {
             const response = await fetch(`/public/data/${(props.data as any).src}`);
             const json = await response.json();
-            // Map JSON export format to CardData
             return {
               props: {
                 data: {
@@ -84,6 +129,33 @@ export const RemotionRoot: React.FC = () => {
                   signature_stats: json.signature_stats || [],
                   backgrounds: json.backgrounds || DEFAULT_DATA.backgrounds,
                 } as CardData,
+              },
+            };
+          }
+          return { props };
+        }}
+      />
+
+      {/* ── New 60-second narration documentary ─────────────────────── */}
+      <Composition
+        id="SeasonStory"
+        component={SeasonStory}
+        durationInFrames={1800}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ data: DEFAULT_STORY_DATA }}
+        calculateMetadata={async ({ props }) => {
+          // Allow loading from a JSON file via props.data.src
+          if (props.data && (props.data as any).src) {
+            const response = await fetch(`/public/data/${(props.data as any).src}`);
+            const json = await response.json();
+            return {
+              props: {
+                data: {
+                  ...DEFAULT_STORY_DATA,
+                  ...json,
+                } as StoryCardData,
               },
             };
           }

@@ -1,3 +1,57 @@
+// ─── SeasonStory (60s narration-driven) types ───────────────────────────────
+
+export interface SubtitleCue {
+  startFrame: number;
+  endFrame: number;
+  text: string;
+  highlight?: string; // word(s) to highlight in gold
+}
+
+export interface StoryCardData {
+  player_name: string;
+  club: string;
+  season: string;
+  position: string;
+  tier: string;
+  ovr: number;
+  att: number;
+  def: number;
+  pace: number;
+  aura: number;
+  stamina: number;
+  mental: number;
+  goals: number;
+  assists: number;
+  // Images
+  hookImage: string;
+  cardImage: string;
+  closeupImage: string;
+  // Audio
+  narrationSrc?: string;
+  bgmSrc?: string;
+  // Subtitles
+  subtitles?: SubtitleCue[];
+  // Additional story text fields
+  hookLine?: string;        // e.g. "THE SEASON THAT BROKE REALITY"
+  storyText?: string;       // short paragraph for STORY scene
+  highlights?: Array<{ number: string; label: string; delay?: number }>;
+  verdictText?: string;     // e.g. "A GENERATIONAL PEAK"
+}
+
+// 60-second timeline (1800 frames @ 30fps)
+export const STORY_TIMING = {
+  hook:       { start: 0,    end: 150  },  // 0-5s
+  story:      { start: 150,  end: 450  },  // 5-15s
+  highlights: { start: 450,  end: 750  },  // 15-25s
+  emotion:    { start: 750,  end: 900  },  // 25-30s
+  cardReveal: { start: 900,  end: 1050 },  // 30-35s
+  stats:      { start: 1050, end: 1350 },  // 35-45s
+  verdict:    { start: 1350, end: 1650 },  // 45-55s
+  outro:      { start: 1650, end: 1800 },  // 55-60s
+} as const;
+
+// ─── Legacy CardData (12s SeasonCard) ────────────────────────────────────────
+
 export interface CardData {
   player: string;
   season: string;

@@ -47,9 +47,9 @@ export const CHECKLIST_ITEMS = [
 
 function generateSchedule(): ScheduleDay[] {
   const players = [
-    { player_id: "benz_2022", player_name: "Karim Benzema", season: "2021-22", club: "Real Madrid", tier: "LEGENDARY" as TierName },
-    { player_id: "salah_2022", player_name: "Mohamed Salah", season: "2021-22", club: "Liverpool", tier: "LEGENDARY" as TierName },
-    { player_id: "lewandowski_2022", player_name: "Robert Lewandowski", season: "2021-22", club: "Bayern Munich", tier: "ELITE" as TierName },
+    { player_id: "benzema", player_name: "Karim Benzema", season: "2021-22", club: "Real Madrid", tier: "LEGENDARY" as TierName },
+    { player_id: "salah", player_name: "Mohamed Salah", season: "2021-22", club: "Liverpool", tier: "LEGENDARY" as TierName },
+    { player_id: "lewandowski", player_name: "Robert Lewandowski", season: "2021-22", club: "Bayern Munich", tier: "ELITE" as TierName },
     { player_id: "neymar_2015", player_name: "Neymar", season: "2014-15", club: "Barcelona", tier: "LEGENDARY" as TierName },
     { player_id: "ribery_2013", player_name: "Franck Ribery", season: "2012-13", club: "Bayern Munich", tier: "ELITE" as TierName },
     { player_id: "hazard_2019", player_name: "Eden Hazard", season: "2018-19", club: "Chelsea", tier: "ELITE" as TierName },
@@ -104,6 +104,7 @@ export const SCHEDULE: ScheduleDay[] = generateSchedule();
 export const NB_BASE = `Create a premium vertical football poster image in 9:16 format. Semi-realistic cinematic sports art, dark navy and black tones, metallic gold accents, dramatic stadium floodlights, high contrast, depth of field, atmospheric rain particles, no text, no logos, no watermark. Single male football player, dynamic action pose.`;
 
 export const NB_PLAYERS: Record<string, string> = {
+  BENZEMA: 'Karim Benzema, Real Madrid, tall strong athletic build, short dark hair, trimmed beard, intense confident expression, clinical finishing stance, white kit with gold trim',
   MESSI: 'Lionel Messi, FC Barcelona, compact build, short dark brown hair, trimmed beard, calm genius expression, elegant dribbling stance, blue and red striped kit',
   RONALDO: 'Cristiano Ronaldo, Real Madrid, tall muscular build, sharp jawline, short styled dark hair, intense dominant expression, powerful shooting stance, white kit',
   MBAPPE: 'Kylian Mbappé, PSG, young athletic build, short dark hair, focused expression, explosive sprinting pose, dark blue kit',
