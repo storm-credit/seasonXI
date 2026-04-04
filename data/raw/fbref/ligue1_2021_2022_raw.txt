@@ -1,0 +1,417 @@
+Yunis Abdelhamid~Reims~DF~34~34~2983~2~0~18~6~5~1~43~44~12~46~11~13~14
+Salis Abdul Samed~Clermont Foot~MF~31~29~2462~1~0~18~5~12~3~38~69~17~36~9~9~20
+Laurent Abergel~Lorient~MF~34~34~2956~0~2~30~7~9~0~35~63~16~36~8~12~18
+Yacine Adli~Bordeaux~MF,FW~36~25~2260~1~7~32~15~5~0~52~91~20~31~6~13~19
+Lucien Agoume~Brest~MF~27~21~1868~0~0~15~1~6~0~49~57~11~48~13~9~16
+Nayef Aguerd~Rennes~DF~31~31~2735~2~2~25~7~3~1~82~40~4~66~20~6~12
+Ruben Aguilar~Monaco~DF~28~22~2140~0~2~10~2~4~0~65~40~3~69~20~9~9
+Anel Ahmedhodžić~Bordeaux~DF~15~15~1350~0~1~8~4~6~0~52~91~20~31~6~13~19
+Jean-Eudes Aholou~Strasbourg~MF~25~11~1004~1~1~17~2~2~0~60~43~6~63~17~12~9
+Ludovic Ajorque~Strasbourg~FW~36~31~2738~12~8~60~28~5~1~60~43~6~63~17~12~9
+Doğan Alemdar~Rennes~GK~12~12~1080~0~0~0~0~1~0~82~40~4~66~20~6~12
+Mohamed Ali Cho~Angers~FW~32~21~1837~4~1~42~16~6~2~44~55~14~41~10~11~17
+Jim Allevinah~Clermont Foot~MF,FW~30~13~1488~1~2~43~15~1~0~38~69~17~36~9~9~20
+Ibrahim Amadou~Metz~DF,MF~10~10~812~1~0~3~2~4~0~35~69~19~31~6~13~19
+Benjamin André~Lille~MF~33~33~2752~2~1~16~5~12~1~48~48~10~55~14~13~11
+Houssem Aouar~Lyon~MF~36~29~2504~6~4~76~24~1~0~66~51~8~61~17~11~10
+Adil Aouchiche~Saint-Étienne~MF~35~11~1081~0~4~21~10~2~0~42~77~18~32~7~11~20
+Dennis Appiah~Nantes~DF~32~22~2099~0~0~2~0~4~0~55~48~9~55~15~10~13
+Lorenz Assignon~Rennes~DF~20~5~616~0~2~6~4~0~0~82~40~4~66~20~6~12
+Youcef Atal~Nice~DF~17~13~1140~2~1~13~5~4~0~52~36~5~66~20~7~11
+Loïc Bade~Rennes~DF~14~11~985~0~1~7~0~3~1~82~40~4~66~20~6~12
+Benoît Badiashile~Monaco~DF~24~21~1838~1~0~14~4~4~0~65~40~3~69~20~9~9
+Stéphane Bahoken~Angers~FW~29~12~1099~3~1~23~13~0~0~44~55~14~41~10~11~17
+Stefan Bajic~Saint-Étienne~GK~7~4~510~0~0~1~1~0~0~42~77~18~32~7~11~20
+Leonardo Balerdi~Marseille~DF,MF~17~10~950~0~0~2~0~4~1~63~38~2~71~21~8~9
+Abdoulaye Bamba~Angers~MF,DF~10~4~458~0~0~1~0~1~0~44~55~14~41~10~11~17
+Jonathan Bamba~Lille~MF~31~28~2428~1~2~51~12~3~0~48~48~10~55~14~13~11
+Melvin Bard~Nice~DF~33~30~2589~2~2~5~2~3~0~52~36~5~66~20~7~11
+Youcef Belaïli~Brest~MF,FW~13~11~825~3~2~17~8~2~0~49~57~11~48~13~9~16
+Haris Belkebla~Brest~MF~31~26~2310~0~0~5~1~2~0~49~57~11~48~13~9~16
+Jean-Ricner Bellegarde~Strasbourg~MF~36~26~2332~2~3~31~7~5~0~60~43~6~63~17~12~9
+Wissam Ben Yedder~Monaco~FW~37~29~2529~25~5~72~44~3~0~65~40~3~69~20~9~9
+Walter Benítez~Nice~GK~37~37~3330~0~0~0~0~2~0~52~36~5~66~20~7~11
+Nabil Bentaleb~Angers~MF~18~18~1515~1~0~16~8~4~0~44~55~14~41~10~11~17
+Mitchell van Bergen~Reims~FW,MF~20~11~983~0~0~12~6~1~0~43~44~12~46~11~13~14
+Valon Berisha~Reims~MF~13~5~455~0~1~4~0~2~1~43~44~12~46~11~13~14
+Paul Bernardoni~Angers~GK~13~13~1170~0~0~0~0~0~0~44~55~14~41~10~11~17
+Paul Bernardoni~Saint-Étienne~GK~19~19~1710~0~0~0~0~0~0~42~77~18~32~7~11~20
+Juan Bernat~Paris Saint-Germain~DF,MF~15~12~958~0~0~1~1~2~0~90~36~1~86~26~8~4
+Dimitry Bertaud~Montpellier~GK~11~9~833~0~0~0~0~0~0~49~61~13~43~12~7~19
+Jason Berthomier~Clermont Foot~MF~29~22~1732~1~5~23~5~0~0~38~69~17~36~9~9~20
+Giulian Biancone~Troyes~DF,MF~33~26~2292~1~2~30~9~10~0~37~53~15~38~9~11~18
+El Bilal Touré~Reims~FW,MF~21~15~1194~2~4~32~11~2~0~43~44~12~46~11~13~14
+Jean-Claude Billong~Clermont Foot~DF~15~10~980~0~0~5~1~2~0~38~69~17~36~9~9~20
+Marco Bizot~Brest~GK~38~38~3420~0~1~0~0~1~0~49~57~11~48~13~9~16
+Ludovic Blas~Nantes~MF,FW~35~35~2961~10~5~90~37~10~0~55~48~9~55~15~10~13
+Myron Boadu~Monaco~FW~31~7~960~4~1~21~8~0~0~65~40~3~69~20~9~9
+Jérôme Boateng~Lyon~DF~24~19~1622~0~1~5~3~6~0~66~51~8~61~17~11~10
+Quentin Boisgard~Lorient~MF,FW~25~9~958~1~1~16~8~3~0~35~63~16~36~8~12~18
+Sven Botman~Lille~DF~25~25~2250~3~1~15~5~4~0~48~48~10~55~14~13~11
+Denis Bouanga~Saint-Étienne~FW,MF~34~28~2436~9~6~81~30~4~1~42~77~18~32~7~11~20
+Hicham Boudaoui~Nice~MF~29~21~1621~3~2~15~5~7~0~52~36~5~66~20~7~11
+Ryad Boudebouz~Saint-Étienne~MF,FW~30~27~2252~3~4~28~10~2~0~42~77~18~32~7~11~20
+Sofiane Boufal~Angers~FW,MF~29~28~2330~8~4~63~27~6~0~44~55~14~41~10~11~17
+Farid Boulaya~Metz~MF,FW~24~18~1526~4~2~19~6~1~1~35~69~19~31~6~13~19
+Benjamin Bourigeaud~Rennes~MF,FW~38~38~3193~11~12~51~21~2~0~82~40~4~66~20~6~12
+Lilian Brassier~Brest~DF~31~23~2263~1~0~11~2~4~0~49~57~11~48~13~9~16
+Dylan Bronn~Metz~DF~30~28~2545~1~2~15~8~10~1~35~69~19~31~6~13~19
+Osman Bukari~Nantes~MF,FW~24~10~1012~2~4~20~9~1~0~55~48~9~55~15~10~13
+Maxime Busi~Reims~DF,MF~18~13~1296~1~0~7~2~3~0~43~44~12~46~11~13~14
+Jimmy Cabot~Angers~MF~24~24~2008~0~5~11~3~4~0~44~55~14~41~10~11~17
+Anthony Caci~Strasbourg~DF,MF~37~26~2395~1~3~15~4~4~0~60~43~6~63~17~12~9
+Yannick Cahuzac~Lens~MF~17~6~618~0~0~1~0~1~1~62~48~7~62~17~11~10
+Marc-Aurèle Caillard~Metz~GK~19~17~1542~0~0~0~0~1~0~35~69~19~31~6~13~19
+Duje Ćaleta-Car~Marseille~DF~26~24~2057~2~0~12~4~6~0~63~38~2~71~21~8~9
+Mahdi Camara~Saint-Étienne~MF,DF~35~34~3073~3~0~28~16~8~0~42~77~18~32~7~11~20
+Fali Candé~Metz~DF,MF~11~11~973~0~2~6~2~2~0~35~69~19~31~6~13~19
+Pierrick Capelle~Angers~MF~30~12~1193~0~1~17~1~1~0~44~55~14~41~10~11~17
+Maxence Caqueret~Lyon~MF~31~26~2335~0~0~15~2~5~0~66~51~8~61~17~11~10
+Irvin Cardona~Brest~FW,MF~32~13~1334~4~2~26~12~2~0~49~57~11~48~13~9~16
+Igor Carioca~Lorient~DF,MF~28~17~1578~0~0~14~6~3~0~35~63~16~36~8~12~18
+Moreto Cassamã~Reims~MF~17~11~801~2~0~11~7~1~0~43~44~12~46~11~13~14
+Jean-Charles Castelletto~Nantes~DF~28~28~2510~1~0~16~5~8~0~55~48~9~55~15~10~13
+Zeki Çelik~Lille~DF~32~30~2696~2~3~22~3~10~0~48~48~10~55~14~13~11
+Fabien Centonze~Metz~MF,DF~19~18~1586~4~1~15~7~3~0~35~69~19~31~6~13~19
+Dylan Chambost~Troyes~MF~19~9~753~0~1~10~1~0~0~37~53~15~38~9~11~18
+Brendan Chardonnet~Brest~DF~32~31~2686~3~0~13~7~6~1~49~57~11~48~13~9~16
+Xavier Chavalerin~Troyes~MF~34~31~2717~5~2~29~10~4~0~37~53~15~38~9~11~18
+Pedro Chirivella~Nantes~MF~31~31~2637~3~1~21~6~6~0~55~48~9~55~15~10~13
+Joris Chotard~Montpellier~MF~36~33~2935~1~1~18~3~5~0~49~61~13~43~12~7~19
+Jonathan Clauss~Lens~MF~37~35~3046~5~11~40~17~3~0~62~48~7~62~17~11~10
+Marcus Coco~Nantes~MF,FW~24~9~930~1~1~12~3~3~1~55~48~9~55~15~10~13
+Abdu Conté~Troyes~DF,MF~17~17~1347~0~1~5~1~2~0~37~53~15~38~9~11~18
+Sébastien Corchia~Nantes~DF,MF~28~13~1324~0~3~11~3~0~1~55~48~9~55~15~10~13
+David Costa~Lens~MF,FW~33~16~1464~3~5~25~8~2~0~62~48~7~62~17~11~10
+Benoît Costil~Bordeaux~GK~25~25~2250~0~0~0~0~1~0~52~91~20~31~6~13~19
+Kalifa Coulibaly~Nantes~FW~21~9~850~5~0~25~10~1~0~55~48~9~55~15~10~13
+Nicolas Cozza~Montpellier~DF~34~32~2770~2~2~7~3~2~1~49~61~13~43~12~7~19
+Wylan Cyprien~Nantes~MF~24~17~1490~2~3~20~8~3~0~55~48~9~55~15~10~13
+Lucas Da Cunha~Clermont Foot~FW,MF~15~11~836~2~0~18~6~0~0~38~69~17~36~9~9~20
+Damien Da Silva~Lyon~DF~17~13~1126~0~0~11~1~5~1~66~51~8~61~17~11~10
+Flavius Daniliuc~Nice~DF~24~14~1293~0~0~4~0~4~0~52~36~5~66~20~7~11
+Kevin Danso~Lens~DF~33~32~2790~2~2~13~4~9~2~62~48~7~62~17~11~10
+Dante~Nice~DF~34~33~2870~0~0~13~3~7~3~52~36~5~66~20~7~11
+Jonathan David~Lille~FW~38~32~2804~15~0~70~33~3~0~48~48~10~55~14~13~11
+Konrad De La Fuente~Marseille~FW,MF~16~9~785~0~2~15~4~1~0~63~38~2~71~21~8~9
+Romain Del Castillo~Brest~MF~19~13~975~0~6~12~3~1~1~49~57~11~48~13~9~16
+Thomas Delaine~Metz~MF,DF~29~26~2316~1~2~18~5~4~0~35~69~19~31~6~13~19
+Andy Delort~Nice~FW~32~26~2448~16~2~100~42~3~0~52~36~5~66~20~7~11
+Moussa Dembélé~Lyon~FW~30~25~2207~21~4~87~45~6~0~66~51~8~61~17~11~10
+Jason Denayer~Lyon~DF~15~12~1002~3~0~6~4~2~0~66~51~8~61~17~11~10
+Arthur Desmas~Clermont Foot~GK~15~15~1304~0~0~0~0~0~0~38~69~17~36~9~9~20
+Ángel Di María~Paris Saint-Germain~FW,MF~26~19~1645~5~7~51~22~2~0~90~36~1~86~26~8~4
+Abdou Diallo~Paris Saint-Germain~DF~12~10~877~0~1~2~1~1~0~90~36~1~86~26~8~4
+Habib Diallo~Strasbourg~FW~31~16~1541~11~1~53~23~2~0~60~43~6~63~17~12~9
+Stéphane Diarra~Lorient~FW,MF~15~5~525~0~0~13~5~2~0~35~63~16~36~8~12~18
+Bamba Dieng~Marseille~FW,MF~25~11~975~7~1~34~18~0~1~63~38~2~71~21~8~9
+Javairô Dilrosun~Bordeaux~MF,FW~32~19~1732~2~6~41~10~3~0~52~91~20~31~6~13~19
+Tristan Dingomé~Troyes~MF,FW~25~12~1077~2~4~20~4~3~0~37~53~15~38~9~11~18
+Sinaly Diomande~Lyon~DF~11~5~579~0~0~3~0~2~0~66~51~8~61~17~11~10
+Sofiane Diop~Monaco~MF~30~24~1948~6~4~37~13~6~0~65~40~3~69~20~9~9
+Axel Disasi~Monaco~DF~32~30~2721~1~0~20~3~5~0~65~40~3~69~20~9~9
+Tiago Djaló~Lille~DF~28~26~2329~1~1~12~5~4~0~48~48~10~55~14~13~11
+Alexander Djiku~Strasbourg~DF~31~30~2694~1~0~15~7~10~1~60~43~6~63~17~12~9
+Ouparine Djoco~Clermont Foot~GK~24~23~2116~0~0~0~0~1~0~38~69~17~36~9~9~20
+Jeremy Doku~Rennes~MF,FW~14~4~469~1~2~5~2~2~0~82~40~4~66~20~6~12
+Kasper Dolberg~Nice~FW~26~19~1492~6~2~40~16~0~0~52~36~5~66~20~7~11
+Gianluigi Donnarumma~Paris Saint-Germain~GK~17~17~1530~0~0~0~0~3~0~90~36~1~86~26~8~4
+Jodel Dossou~Clermont Foot~MF,FW~35~23~2008~3~1~52~17~4~0~38~69~17~36~9~9~20
+Cheick Doucouré~Lens~MF~34~33~2946~1~4~31~11~7~1~62~48~7~62~17~11~10
+Souleyman Doumbia~Angers~MF,DF~27~27~2219~0~1~15~3~10~1~44~55~14~41~10~11~17
+Julian Draxler~Paris Saint-Germain~FW,MF~18~5~548~2~1~9~3~0~0~90~36~1~86~26~8~4
+Matthieu Dreyer~Lorient~GK~16~16~1440~0~0~0~0~0~0~35~63~16~36~8~12~18
+Leo Dubois~Lyon~DF,MF~23~20~1742~0~0~10~1~5~0~66~51~8~61~17~11~10
+Jean-Kevin Duverne~Brest~DF~37~33~3007~1~3~12~3~1~0~49~57~11~48~13~9~16
+Enzo Ebosse~Angers~DF,MF~27~21~1890~0~0~3~0~1~0~44~55~14~41~10~11~17
+Hugo Ekitike~Reims~FW~24~15~1273~10~3~31~18~1~1~43~44~12~46~11~13~14
+Alberth Elis~Bordeaux~FW,MF~20~16~1409~9~1~31~12~2~0~52~91~20~31~6~13~19
+Maxime Estève~Montpellier~DF~24~20~1857~0~0~5~1~2~0~49~61~13~43~12~7~19
+Fábio~Nantes~DF,MF~27~21~1667~0~2~11~1~8~1~55~48~9~55~15~10~13
+Wout Faes~Reims~DF~37~37~3330~4~0~22~9~2~0~43~44~12~46~11~13~14
+Romain Faivre~Brest~MF~21~20~1795~7~5~38~18~1~0~49~57~11~48~13~9~16
+Romain Faivre~Lyon~MF~14~9~889~3~0~20~6~0~0~66~51~8~61~17~11~10
+Wuilker Faríñez~Lens~GK~13~11~1105~0~0~0~0~0~0~62~48~7~62~17~11~10
+Julien Faussurier~Brest~MF,DF~16~4~489~0~1~4~2~1~0~49~57~11~48~13~9~16
+Jordan Ferri~Montpellier~MF~34~33~2911~0~2~14~2~13~1~49~61~13~43~12~7~19
+Karol Fila~Strasbourg~DF,MF~16~7~560~0~0~0~0~3~0~60~43~6~63~17~12~9
+Alexis Flips~Reims~MF~25~13~1056~2~4~19~10~2~0~43~44~12~46~11~13~14
+Seko Fofana~Lens~MF~38~38~3357~8~1~97~32~2~0~62~48~7~62~17~11~10
+Youssouf Fofana~Monaco~MF~33~23~2190~0~4~30~6~4~0~65~40~3~69~20~9~9
+Thomas Foket~Reims~MF,DF~29~26~2235~1~0~8~3~5~0~43~44~12~46~11~13~14
+José Fonte~Lille~DF~38~38~3420~0~2~23~6~4~0~48~48~10~55~14~13~11
+Przemysław Frankowski~Lens~MF~37~28~2448~6~5~33~14~5~0~62~48~7~62~17~11~10
+Fransérgio~Bordeaux~MF~26~14~1258~0~1~14~2~7~0~52~91~20~31~6~13~19
+Angelo Fulgini~Angers~MF,FW~36~35~2929~5~4~58~17~6~0~44~55~14~41~10~11~17
+Gauthier Gallon~Troyes~GK~31~31~2790~0~0~0~0~2~0~37~53~15~38~9~11~18
+Kévin Gameiro~Strasbourg~FW~35~28~2385~11~3~69~29~0~0~60~43~6~63~17~12~9
+Idrissa Gana Gueye~Paris Saint-Germain~MF~26~18~1641~3~1~24~7~4~0~90~36~1~86~26~8~4
+Ignatius Ganago~Lens~FW~28~11~1024~5~1~30~11~2~0~62~48~7~62~17~11~10
+Johan Gastien~Clermont Foot~MF~32~32~2746~0~1~24~7~8~2~38~69~17~36~9~9~20
+Valère Germain~Montpellier~FW~34~22~1970~4~3~31~16~3~0~49~61~13~43~12~7~19
+Gerson~Marseille~MF,FW~35~29~2544~9~4~45~18~3~0~63~38~2~71~21~8~9
+Willem Geubbels~Nantes~MF,FW~22~4~544~2~1~12~3~1~0~55~48~9~55~15~10~13
+Nicholas Gioacchini~Montpellier~MF~28~3~497~0~2~11~2~0~0~49~61~13~43~12~7~19
+Jimmy Giraudon~Troyes~DF~19~18~1619~0~0~0~0~5~1~37~53~15~38~9~11~18
+Andrei Girotto~Nantes~DF,MF~36~36~3146~6~1~45~10~8~0~55~48~9~55~15~10~13
+Aleksandr Golovin~Monaco~MF~27~17~1502~3~4~23~8~4~1~65~40~3~69~20~9~9
+Angel Gomes~Lille~MF~24~12~954~1~1~14~2~3~0~48~48~10~55~14~13~11
+Alfred Gomis~Rennes~GK~25~25~2250~0~0~0~0~1~0~82~40~4~66~20~6~12
+Álvaro González~Marseille~DF,MF~6~5~451~0~0~2~0~1~0~63~38~2~71~21~8~9
+Amine Gouiri~Nice~FW,MF~38~32~2754~10~9~75~35~3~0~52~36~5~66~20~7~11
+Lucas Gourna-Douath~Saint-Étienne~MF~31~20~1804~1~0~11~1~7~0~42~77~18~32~7~11~20
+Jonathan Gradit~Lens~DF~35~35~3067~0~0~5~0~7~0~62~48~7~62~17~11~10
+Andrew Gravillon~Reims~DF~26~24~2135~0~0~16~4~9~2~43~44~12~46~11~13~14
+Adrian Grbić~Lorient~FW~16~4~518~1~0~12~7~0~0~35~63~16~36~8~12~18
+Ivo Grbić~Lille~GK~21~21~1890~0~0~0~0~3~0~48~48~10~55~14~13~11
+Etienne Green~Saint-Étienne~GK~15~15~1197~0~0~0~0~1~1~42~77~18~32~7~11~20
+Gabriel Gudmundsson~Lille~DF,MF~30~15~1344~1~0~19~6~3~0~48~48~10~55~14~13~11
+Mattéo Guendouzi~Marseille~MF~38~35~3152~4~6~47~18~6~0~63~38~2~71~21~8~9
+Lamine Gueye~Metz~MF,FW~14~7~555~0~3~13~7~0~0~35~69~19~31~6~13~19
+Pape Gueye~Marseille~MF,DF~28~17~1528~0~1~31~4~7~0~63~38~2~71~21~8~9
+Josuha Guilavogui~Bordeaux~MF,DF~15~15~1331~1~1~9~3~4~0~52~91~20~31~6~13~19
+Frederic Guilbert~Strasbourg~DF,MF~33~28~2516~0~4~24~5~4~0~60~43~6~63~17~12~9
+Bruno Guimarães~Lyon~MF~20~19~1634~0~3~11~2~2~0~66~51~8~61~17~11~10
+Serhou Guirassy~Rennes~FW~37~7~1016~9~0~46~17~1~0~82~40~4~66~20~6~12
+Malo Gusto~Lyon~DF,MF~30~21~1884~0~4~11~0~3~0~66~51~8~61~17~11~10
+Massadio Haïdara~Lens~MF,DF~20~12~1076~1~1~5~2~5~1~62~48~7~62~17~11~10
+Oualid El Hajjam~Troyes~DF~19~12~1072~1~1~11~3~2~0~37~53~15~38~9~11~18
+Achraf Hakimi~Paris Saint-Germain~DF,MF~32~28~2479~4~6~20~10~3~1~90~36~1~86~26~8~4
+Pierre-Yves Hamel~Clermont Foot~FW~17~6~523~0~0~13~4~2~0~38~69~17~36~9~9~20
+Romain Hamouma~Saint-Étienne~FW,MF~22~7~886~2~1~23~7~2~0~42~77~18~32~7~11~20
+Amine Harit~Marseille~MF,FW~23~12~1165~4~4~14~6~1~0~63~38~2~71~21~8~9
+Henrique~Lyon~DF,MF~18~12~1105~0~1~5~0~3~0~66~51~8~61~17~11~10
+Luis Henrique~Marseille~MF,FW~20~7~699~0~1~6~2~0~0~63~38~2~71~21~8~9
+Christophe Hérelle~Brest~DF~23~23~1932~0~0~6~2~6~0~49~57~11~48~13~9~16
+Ander Herrera~Paris Saint-Germain~MF~19~12~1091~3~2~14~3~2~0~90~36~1~86~26~8~4
+Franck Honorat~Brest~MF,FW~34~34~2899~11~4~59~30~3~0~49~57~11~48~13~9~16
+Cédric Hountondji~Clermont Foot~DF~23~23~2034~1~0~8~3~2~0~38~69~17~36~9~9~20
+Mauro Icardi~Paris Saint-Germain~FW~24~10~1027~4~0~28~10~1~0~90~36~1~86~26~8~4
+Jonathan Iglesias~Clermont Foot~MF~15~5~579~0~0~1~0~0~0~38~69~17~36~9~9~20
+Danylo Ihnatenko~Bordeaux~MF~11~7~692~0~3~12~1~3~1~52~91~20~31~6~13~19
+Jonathan Ikone~Lille~MF,FW~18~13~1062~1~0~22~8~1~0~48~48~10~55~14~13~11
+Bonke Innocent~Lorient~MF~12~11~874~0~0~3~1~4~0~35~63~16~36~8~12~18
+Ismail Jakobs~Monaco~DF,MF~28~10~1203~0~1~5~1~1~0~65~40~3~69~20~9~9
+Abdel Jalil Medioub~Bordeaux~DF~10~6~622~0~0~3~0~0~0~52~91~20~31~6~13~19
+Léo Jardim~Lille~GK~17~17~1530~0~0~0~0~0~0~48~48~10~55~14~13~11
+Jemerson~Metz~DF~15~15~1202~0~0~4~3~3~2~35~69~19~31~6~13~19
+Moritz Jenz~Lorient~DF~17~16~1381~1~0~9~1~5~1~35~63~16~36~8~12~18
+Issa Kaboré~Troyes~DF,MF~31~26~2254~0~1~7~2~8~2~37~53~15~38~9~11~18
+Tino Kadewere~Lyon~MF,FW~15~3~506~1~0~18~7~0~1~66~51~8~61~17~11~10
+Gaël Kakuta~Lens~MF,FW~29~20~1673~3~2~41~15~1~0~62~48~7~62~17~11~10
+Arnaud Kalimuendo~Lens~FW~32~27~2148~12~0~61~31~1~1~62~48~7~62~17~11~10
+Boubacar Kamara~Marseille~MF,DF~34~31~2778~1~0~21~3~5~0~63~38~2~71~21~8~9
+Hassane Kamara~Nice~MF,DF~11~7~544~0~0~12~0~2~0~52~36~5~66~20~7~11
+Jean-Armel Kana-Biyik~Metz~DF~10~8~664~0~0~1~0~1~0~35~69~19~31~6~13~19
+Ilan Kebbal~Reims~MF,FW~31~21~1772~1~4~27~6~1~0~43~44~12~46~11~13~14
+Thilo Kehrer~Paris Saint-Germain~DF~27~16~1513~2~0~9~4~0~0~90~36~1~86~26~8~4
+Saîf-Eddine Khaoui~Clermont Foot~MF,FW~23~9~927~1~0~20~7~1~0~38~69~17~36~9~9~20
+Wahbi Khazri~Saint-Étienne~FW,MF~30~26~2225~10~0~72~22~6~0~42~77~18~32~7~11~20
+Presnel Kimpembe~Paris Saint-Germain~DF~30~29~2576~1~0~7~1~6~0~90~36~1~86~26~8~4
+Justin Kluivert~Nice~MF~27~24~1868~4~5~30~10~6~1~52~36~5~66~20~7~11
+Randal Kolo Muani~Nantes~FW,MF~36~34~2948~12~4~56~27~2~0~55~48~9~55~15~10~13
+Timothée Kolodziejczak~Saint-Étienne~DF,MF~30~30~2565~2~3~15~6~4~1~42~77~18~32~7~11~20
+Ghislain Konan~Reims~MF,DF~28~28~2418~1~3~19~5~1~0~43~44~12~46~11~13~14
+Ibrahima Koné~Lorient~FW~16~6~732~5~1~14~8~2~0~35~63~16~36~8~12~18
+Youssouf Koné~Troyes~DF,MF~21~11~980~0~1~9~3~2~1~37~53~15~38~9~11~18
+Laurent Koscielny~Bordeaux~DF~11~11~933~0~1~0~0~2~0~52~91~20~31~6~13~19
+Rominigue Kouamé~Troyes~MF~34~34~2968~1~2~37~11~5~0~37~53~15~38~9~11~18
+Boubakar Kouyaté~Metz~DF~30~30~2665~1~0~22~6~8~1~35~69~19~31~6~13~19
+Jean-Philippe Krasso~Saint-Étienne~FW~16~5~453~1~1~12~2~0~0~42~77~18~32~7~11~20
+Enock Kwateng~Bordeaux~DF,MF~29~22~2002~1~0~7~3~6~1~52~91~20~31~6~13~19
+Gaëtan Laborde~Rennes~FW~34~32~2729~12~8~88~37~1~0~82~40~4~66~20~6~12
+Tom Lacoux~Bordeaux~MF~13~11~907~0~0~2~0~5~0~52~91~20~31~6~13~19
+Alban Lafont~Nantes~GK~38~38~3420~0~0~0~0~3~0~55~48~9~55~15~10~13
+Mohamed Lamine Bayo~Clermont Foot~FW~32~27~2413~14~5~66~29~1~0~38~69~17~36~9~9~20
+Didier Lamkel Zé~Metz~FW~9~8~605~3~0~14~7~2~0~35~69~19~31~6~13~19
+Julien Laporte~Lorient~DF~33~33~2891~2~0~17~3~7~0~35~63~16~36~8~12~18
+Paul Lasne~Brest~MF~15~9~847~0~1~7~1~1~0~49~57~11~48~13~9~16
+Armand Lauriente~Lorient~FW,MF~35~28~2477~6~2~86~37~5~0~35~63~16~36~8~12~18
+Jérémy Le Douaron~Brest~FW,MF~32~16~1446~5~3~34~16~0~0~49~57~11~48~13~9~16
+Enzo Le Fée~Lorient~MF,FW~36~25~2194~2~3~34~9~2~0~35~63~16~36~8~12~18
+Vincent Le Goff~Lorient~DF,MF~34~34~3060~1~1~26~4~1~0~35~63~16~36~8~12~18
+Maxime Le Marchand~Strasbourg~DF~12~9~860~1~1~3~2~4~0~60~43~6~63~17~12~9
+Jean-Louis Leca~Lens~GK~27~27~2313~0~0~0~0~3~1~62~48~7~62~17~11~10
+Mario Lemina~Nice~MF~32~24~1967~2~0~16~4~7~1~52~36~5~66~20~7~11
+Fabien Lemoine~Lorient~MF~21~13~1117~0~1~4~0~5~0~35~63~16~36~8~12~18
+Léo Leroy~Montpellier~MF~24~7~626~0~0~8~3~3~0~49~61~13~43~12~7~19
+Dimitri Liénard~Strasbourg~DF,MF~33~23~2044~2~3~22~3~8~0~60~43~6~63~17~12~9
+Pol Lirola~Marseille~DF,MF~34~19~1770~1~2~13~2~1~0~63~38~2~71~21~8~9
+Bradley Locko~Reims~MF,DF~24~11~1011~1~1~6~1~4~0~43~44~12~46~11~13~14
+Anthony Lopes~Lyon~GK~34~34~2982~0~0~0~0~1~1~66~51~8~61~17~11~10
+Pau López~Marseille~GK~29~29~2610~0~1~0~0~4~0~63~38~2~71~21~8~9
+Dion Lopy~Reims~MF~26~19~1642~0~0~16~2~4~0~43~44~12~46~11~13~14
+Jordan Lotomba~Nice~DF~30~19~1782~0~0~9~2~4~0~52~36~5~66~20~7~11
+Jean Lucas~Monaco~MF~28~18~1445~1~1~26~9~3~1~65~40~3~69~20~9~9
+Castello Lukeba~Lyon~DF~24~24~2095~2~0~6~3~1~0~66~51~8~61~17~11~10
+Deiver Machado~Lens~MF~22~5~523~0~1~2~0~1~0~62~48~7~62~17~11~10
+Yvann Macon~Saint-Étienne~DF,MF~22~19~1529~0~0~15~4~7~0~42~77~18~32~7~11~20
+Louis Mafouta~Metz~FW~15~5~525~2~0~9~7~0~0~35~69~19~31~6~13~19
+Hugo Magnetti~Brest~MF~28~16~1463~0~1~17~2~4~0~49~57~11~48~13~9~16
+Yohann Magnin~Clermont Foot~MF,DF~24~19~1717~1~0~19~3~2~0~38~69~17~36~9~9~20
+Habib Maïga~Metz~MF~17~16~1267~2~0~11~5~6~0~35~69~19~31~6~13~19
+Lovro Majer~Rennes~MF~29~21~1832~6~8~45~18~1~0~82~40~4~66~20~6~12
+Vincent Manceau~Angers~DF~28~25~2361~0~0~3~0~2~1~44~55~14~41~10~11~17
+Steve Mandanda~Marseille~GK~9~9~810~0~0~0~0~0~0~63~38~2~71~21~8~9
+Reinildo Mandava~Lille~DF~18~18~1524~1~0~6~3~7~0~48~48~10~55~14~13~11
+Anthony Mandrea~Angers~GK~10~10~900~0~0~0~0~0~0~44~55~14~41~10~11~17
+Eliaquim Mangala~Saint-Étienne~DF~14~14~1179~1~0~3~1~9~0~42~77~18~32~7~11~20
+Thomas Mangani~Angers~MF~33~25~2193~7~2~17~9~6~0~44~55~14~41~10~11~17
+Ricardo Mangas~Bordeaux~DF,MF~29~27~2353~3~1~17~5~2~0~52~91~20~31~6~13~19
+Sekou Mara~Bordeaux~FW~26~8~905~6~0~39~18~2~0~52~91~20~31~6~13~19
+Marcelo~Bordeaux~DF~11~11~898~0~0~3~0~4~0~52~91~20~31~6~13~19
+Guillermo Maripán~Monaco~DF~26~21~1832~0~0~7~2~5~0~65~40~3~69~20~9~9
+Marquinhos~Paris Saint-Germain~DF~32~32~2861~5~0~21~8~5~0~90~36~1~86~26~8~4
+Jonas Martin~Rennes~MF~29~24~2105~1~1~21~4~8~0~82~40~4~66~20~6~12
+Gelson Martins~Monaco~MF~32~24~1905~4~3~30~11~4~0~65~40~3~69~20~9~9
+Pape Matar Sarr~Metz~MF~33~22~2129~1~3~31~8~7~0~35~69~19~31~6~13~19
+Eliot Matazo~Monaco~MF~18~8~790~0~0~4~1~1~0~65~40~3~69~20~9~9
+Azor Matusiwa~Reims~MF~29~29~2463~1~1~11~6~8~1~43~44~12~46~11~13~14
+Stephy Mavididi~Montpellier~MF,FW~30~27~2299~8~3~59~24~4~0~49~61~13~43~12~7~19
+Kylian Mbappé~Paris Saint-Germain~FW~35~34~3023~28~17~147~68~10~0~90~36~1~86~26~8~4
+Amadou Mbengue~Metz~DF~12~5~610~0~0~3~0~4~0~35~69~19~31~6~13~19
+Hianga'a Mbock~Brest~MF~14~9~799~0~0~9~0~3~0~49~57~11~48~13~9~16
+Nathanael Mbuku~Reims~FW,MF~31~18~1418~2~1~33~13~1~0~43~44~12~46~11~13~14
+Facundo Medina~Lens~DF~31~30~2593~1~0~9~2~11~0~62~48~7~62~17~11~10
+Birger Meling~Rennes~DF~31~20~1829~0~4~3~1~3~0~82~40~4~66~20~6~12
+Houboulang Mendes~Lorient~DF~36~36~3220~0~1~21~5~5~1~35~63~16~36~8~12~18
+Nuno Mendes~Paris Saint-Germain~DF~27~18~1658~0~1~7~1~3~0~90~36~1~86~26~8~4
+Thiago Mendes~Lyon~MF,DF~29~21~1863~1~1~16~5~3~1~66~51~8~61~17~11~10
+Arial Mendy~Clermont Foot~DF,MF~18~9~792~0~0~10~3~1~0~38~69~17~36~9~9~20
+Batista Mendy~Angers~MF,DF~34~27~2413~1~1~14~6~5~0~44~55~14~41~10~11~17
+Gideon Mensah~Bordeaux~DF,MF~23~13~1208~0~2~2~0~1~1~52~91~20~31~6~13~19
+Quentin Merlin~Nantes~DF,MF~28~21~1926~2~3~11~4~0~0~55~48~9~55~15~10~13
+Lionel Messi~Paris Saint-Germain~FW,MF~26~24~2153~6~14~89~29~0~0~90~36~1~86~26~8~4
+Mexer~Bordeaux~DF~16~14~1227~1~0~5~1~2~0~52~91~20~31~6~13~19
+William Mikelbrencis~Metz~MF,DF~9~8~610~0~1~5~1~0~0~35~69~19~31~6~13~19
+Arkadiusz Milik~Marseille~FW,MF~23~15~1416~7~2~52~19~1~0~63~38~2~71~21~8~9
+Terem Moffi~Lorient~FW~37~34~2711~8~4~60~23~1~0~35~63~16~36~8~12~18
+Florent Mollet~Montpellier~MF~35~32~2630~6~2~55~18~6~0~49~61~13~43~12~7~19
+Thomas Monconduit~Lorient~MF~34~26~2248~3~2~36~12~5~0~35~63~16~36~8~12~18
+Jérémy Morel~Lorient~DF~9~6~604~0~0~1~0~0~0~35~63~16~36~8~12~18
+Lebo Mothiba~Troyes~MF,FW~13~5~522~2~0~6~3~1~0~37~53~15~38~9~11~18
+Harold Moukoudi~Saint-Étienne~DF~24~17~1661~0~0~7~2~3~0~42~77~18~32~7~11~20
+Jessy Moulin~Troyes~GK~7~7~630~0~0~0~0~3~1~37~53~15~38~9~11~18
+Steve Mounié~Brest~FW~35~25~2312~9~2~75~25~2~0~49~57~11~48~13~9~16
+Samuel Moutoussamy~Nantes~MF~30~16~1509~0~1~14~7~5~0~55~48~9~55~15~10~13
+Marshall Munetsi~Reims~MF,DF~24~20~1885~5~1~31~14~7~0~43~44~12~46~11~13~14
+Kévin N'Doram~Metz~MF~19~16~1235~0~0~7~1~5~0~35~69~19~31~6~13~19
+Vital N'Simba~Clermont Foot~DF~34~31~2789~1~3~19~5~4~0~38~69~17~36~9~9~20
+Mickael Nade~Saint-Étienne~DF~30~29~2563~1~0~7~1~4~0~42~77~18~32~7~11~20
+Paul Nardi~Lorient~GK~22~22~1980~0~0~0~0~1~0~35~63~16~36~8~12~18
+Keylor Navas~Paris Saint-Germain~GK~21~21~1856~0~0~0~0~0~1~90~36~1~86~26~8~4
+Papa Ndiaga Yade~Metz~MF,FW~18~5~696~0~1~8~0~3~0~35~69~19~31~6~13~19
+Tanguy Ndombele~Lyon~MF~11~7~701~0~2~5~0~3~0~66~51~8~61~17~11~10
+Neymar~Paris Saint-Germain~FW,MF~22~22~1851~13~6~54~30~10~0~90~36~1~86~26~8~4
+Yvan Neyou~Saint-Étienne~MF~16~12~936~0~0~6~2~4~1~42~77~18~32~7~11~20
+Opa Nguette~Metz~MF,FW~26~10~1048~2~2~23~7~1~0~35~69~19~31~6~13~19
+Sikou Niakaté~Metz~DF~12~8~661~0~0~4~0~2~0~35~69~19~31~6~13~19
+Ibrahima Niane~Metz~FW~26~20~1582~3~1~43~10~2~1~35~69~19~31~6~13~19
+M'Baye Niang~Bordeaux~FW~22~7~777~3~1~26~11~3~0~52~91~20~31~6~13~19
+Arnaud Nordin~Saint-Étienne~MF,FW~36~20~1874~4~4~44~19~4~0~42~77~18~32~7~11~20
+Alexander Nübel~Monaco~GK~38~38~3420~0~0~0~0~1~0~65~40~3~69~20~9~9
+Gerzino Nyamsi~Strasbourg~DF~34~33~2984~0~2~27~6~4~0~60~43~6~63~17~12~9
+Florent Ogier~Clermont Foot~DF~30~29~2429~1~0~7~3~6~0~38~69~17~36~9~9~20
+Warmed Omari~Rennes~DF~34~31~2796~0~0~5~1~6~0~82~40~4~66~20~6~12
+Jonas Omlin~Montpellier~GK~29~29~2587~0~0~0~0~0~1~49~61~13~43~12~7~19
+Amadou Onana~Lille~MF~32~11~1359~1~0~15~6~2~1~48~48~10~55~14~13~11
+Jean Onana~Bordeaux~MF~23~23~1832~3~2~21~4~3~1~52~91~20~31~6~13~19
+Otávio~Bordeaux~MF~16~13~1147~0~0~12~3~3~0~52~91~20~31~6~13~19
+Dango Ouattara~Lorient~MF,FW~25~7~812~1~2~23~7~4~0~35~63~16~36~8~12~18
+Remi Oudin~Bordeaux~MF,FW~33~20~1737~4~5~57~16~6~0~52~91~20~31~6~13~19
+Alexandre Oukidja~Metz~GK~21~21~1875~0~0~0~0~2~1~35~69~19~31~6~13~19
+Azzedine Ounahi~Angers~MF~32~16~1633~2~1~26~4~2~0~44~55~14~41~10~11~17
+Ambroise Oyongo~Montpellier~DF,MF~11~7~659~1~0~5~3~5~0~49~61~13~43~12~7~19
+Vincent Pajot~Metz~MF~30~27~2311~1~0~14~3~6~1~35~69~19~31~6~13~19
+Nicolas Pallois~Nantes~DF~30~29~2447~1~0~8~3~8~1~55~48~9~55~15~10~13
+Erik Palmer-Brown~Troyes~DF~21~19~1734~0~0~4~0~2~0~37~53~15~38~9~11~18
+Emerson Palmieri~Lyon~DF,MF~29~26~2264~1~2~16~5~3~1~66~51~8~61~17~11~10
+Lucas Paquetá~Lyon~MF,FW~35~32~2699~9~6~87~34~3~0~66~51~8~61~17~11~10
+Leandro Paredes~Paris Saint-Germain~MF~15~10~838~1~2~8~2~3~0~90~36~1~86~26~8~4
+Strahinja Pavlović~Monaco~DF~7~5~451~0~0~5~1~4~1~65~40~3~69~20~9~9
+Dimitri Payet~Marseille~FW,MF~31~28~2592~12~10~64~22~3~0~63~38~2~71~21~8~9
+Timothee Pembele~Bordeaux~DF,MF~26~17~1414~1~1~18~5~3~0~52~91~20~31~6~13~19
+Danilo Pereira~Paris Saint-Germain~MF~27~22~2038~5~0~19~9~2~0~90~36~1~86~26~8~4
+Mathias Pereira Lage~Angers~MF,DF~24~11~1040~4~2~19~6~0~0~44~55~14~41~10~11~17
+Luan Peres Petroni~Marseille~DF~34~29~2679~0~2~3~0~6~0~63~38~2~71~21~8~9
+Lucas Perrin~Strasbourg~DF~31~29~2502~1~1~9~3~5~0~60~43~6~63~17~12~9
+Danijel Petković~Angers~GK~15~15~1350~0~0~0~0~1~0~44~55~14~41~10~11~17
+Léo Pétrot~Lorient~DF~22~21~1815~1~0~5~3~0~0~35~63~16~36~8~12~18
+Ronaël Pierre-Gabriel~Brest~DF~30~29~2548~0~1~5~2~6~0~49~57~11~48~13~9~16
+Gaëtan Poussin~Bordeaux~GK~13~13~1170~0~0~0~0~3~0~52~91~20~31~6~13~19
+Sanjin Prcić~Strasbourg~MF~32~27~2186~1~0~46~11~4~0~60~43~6~63~17~12~9
+Nicolas de Préville~Metz~FW,MF~27~24~1969~5~2~41~10~5~0~35~69~19~31~6~13~19
+Predrag Rajković~Reims~GK~38~38~3420~0~0~0~0~3~0~43~44~12~46~11~13~14
+Adil Rami~Troyes~DF~17~14~1171~3~0~5~3~1~0~37~53~15~38~9~11~18
+Sergio Ramos~Paris Saint-Germain~DF~12~8~801~2~0~12~4~3~1~90~36~1~86~26~8~4
+Elba Rashani~Clermont Foot~MF,FW~29~22~1759~8~3~30~12~3~0~38~69~17~36~9~9~20
+Renaud Ripart~Troyes~MF,FW~28~22~1893~2~2~42~14~2~0~37~53~15~38~9~11~18
+Mihailo Ristić~Montpellier~DF~29~19~1803~1~3~18~5~3~1~49~61~13~43~12~7~19
+Stian Rode Gregersen~Bordeaux~DF~24~22~1953~1~1~6~1~7~0~52~91~20~31~6~13~19
+Gerson Rodrigues~Troyes~FW,MF~12~9~848~1~1~23~7~6~0~37~53~15~38~9~11~18
+Valentin Rongier~Marseille~DF,MF~32~25~2194~0~1~27~8~3~0~63~38~2~71~21~8~9
+Pablo Rosario~Nice~MF~36~31~2729~0~2~19~3~7~0~52~36~5~66~20~7~11
+Roli Pereira de Sa~Nantes~MF~17~5~573~0~0~5~1~1~0~55~48~9~55~15~10~13
+Falaye Sacko~Saint-Étienne~DF~9~8~667~0~0~1~0~0~0~42~77~18~32~7~11~20
+Wesley Saïd~Lens~FW,MF~21~7~654~5~0~25~11~2~0~62~48~7~62~17~11~10
+Mamadou Sakho~Montpellier~DF~29~29~2575~0~0~1~0~3~0~49~61~13~43~12~7~19
+William Saliba~Marseille~DF,MF~36~36~3240~0~0~16~2~5~0~63~38~2~71~21~8~9
+Yoann Salmier~Troyes~DF~31~30~2668~0~1~9~1~5~0~37~53~15~38~9~11~18
+Mama Samba Baldé~Troyes~MF,FW~30~20~1717~3~2~48~18~1~1~37~53~15~38~9~11~18
+Junior Sambia~Montpellier~DF,MF~30~16~1533~1~0~21~6~5~1~49~61~13~43~12~7~19
+Renato Sanches~Lille~MF,FW~25~20~1651~2~5~22~4~8~1~48~48~10~55~14~13~11
+Baptiste Santamaria~Rennes~MF,DF~34~28~2518~2~1~34~7~7~0~82~40~4~66~20~6~12
+Martin Satriano~Brest~FW~15~11~932~4~0~24~9~5~0~49~57~11~48~13~9~16
+Téji Savanier~Montpellier~MF~29~28~2414~8~7~81~39~9~2~49~61~13~43~12~7~19
+Morgan Schneiderlin~Nice~MF~20~5~649~0~1~2~0~1~1~52~36~5~66~20~7~11
+Alidu Seidu~Clermont Foot~DF~21~16~1410~0~0~9~1~7~2~38~69~17~36~9~9~20
+Matz Sels~Strasbourg~GK~37~37~3330~0~0~2~0~1~0~60~43~6~63~17~12~9
+Xherdan Shaqiri~Lyon~MF~11~9~679~2~3~13~5~0~0~66~51~8~61~17~11~10
+Djibril Sidibé~Monaco~DF~17~12~949~0~0~4~1~6~0~65~40~3~69~20~9~9
+Caio Henrique Oliveira Silva~Monaco~DF,MF~34~31~2662~2~8~18~6~5~0~65~40~3~69~20~9~9
+Gabriel Silva~Saint-Étienne~DF,MF~13~9~713~0~0~1~0~1~0~42~77~18~32~7~11~20
+Moses Simon~Nantes~MF,FW~30~29~2332~6~8~42~19~3~0~55~48~9~55~15~10~13
+Ibrahima Sissoko~Strasbourg~MF,DF~35~26~2303~2~5~25~6~6~0~60~43~6~63~17~12~9
+Islam Slimani~Lyon~FW~12~6~573~1~1~12~4~3~0~66~51~8~61~17~11~10
+Florian Sotoca~Lens~FW,MF~35~28~2480~6~4~71~26~7~0~62~48~7~62~17~11~10
+Arnaud Souquet~Montpellier~DF~34~27~2334~1~3~17~5~4~0~49~61~13~43~12~7~19
+Saidou Sow~Saint-Étienne~DF~13~11~989~2~1~3~2~2~0~42~77~18~32~7~11~20
+Calvin Stengs~Nice~MF~24~11~1073~1~1~21~5~1~0~52~36~5~66~20~7~11
+Kamaldeen Sulemana~Rennes~MF,FW~20~11~1015~4~2~26~8~3~0~82~40~4~66~20~6~12
+Flavien Tait~Rennes~MF~28~24~2125~5~3~40~11~3~0~82~40~4~66~20~6~12
+Florian Tardieu~Troyes~MF~30~29~2632~4~2~24~9~6~0~37~53~15~38~9~11~18
+Aurélien Tchouaméni~Monaco~MF~35~33~2929~3~2~56~11~11~1~65~40~3~69~20~9~9
+Martin Terrier~Rennes~FW,MF~37~37~2779~21~3~88~47~1~0~82~40~4~66~20~6~12
+Tetê~Lyon~FW,MF~9~7~583~2~5~17~7~1~0~66~51~8~61~17~11~10
+Sada Thioub~Saint-Étienne~MF~17~11~950~0~1~5~0~2~0~42~77~18~32~7~11~20
+Romain Thomas~Angers~DF~30~29~2563~2~0~14~5~9~0~44~55~14~41~10~11~17
+Adrien Thomasson~Strasbourg~MF~31~27~2389~8~4~48~19~2~1~60~43~6~63~17~12~9
+Matheus Thuler~Montpellier~DF~16~10~855~0~0~1~0~3~1~49~61~13~43~12~7~19
+Khéphren Thuram~Nice~MF~36~20~1901~4~2~22~6~4~0~52~36~5~66~20~7~11
+Jean-Clair Todibo~Nice~DF~36~35~3115~1~0~18~5~6~0~52~36~5~66~20~7~11
+Karl Toko Ekambi~Lyon~MF,FW~30~26~2296~12~5~76~38~3~0~66~51~8~61~17~11~10
+Yoann Touzghar~Troyes~FW~28~16~1457~4~0~28~12~0~0~37~53~15~38~9~11~18
+Boubacar Traoré~Metz~MF~27~17~1726~1~1~22~5~9~1~35~69~19~31~6~13~19
+Charles Traore~Nantes~DF~16~7~718~0~0~0~0~3~0~55~48~9~55~15~10~13
+Hamari Traoré~Rennes~DF~33~33~2890~3~10~31~9~4~0~82~40~4~66~20~6~12
+Ismaël Traoré~Angers~DF~37~36~3215~4~1~25~10~1~0~44~55~14~41~10~11~17
+Miguel Trauco~Saint-Étienne~DF,MF~17~12~1112~1~0~11~3~3~0~42~77~18~32~7~11~20
+Adrien Truffert~Rennes~DF~30~18~1639~3~2~19~6~4~0~82~40~4~66~20~6~12
+Matthieu Udol~Metz~DF~12~11~1007~1~0~5~2~0~0~35~69~19~31~6~13~19
+Ike Ugbo~Troyes~FW~14~11~814~5~0~16~7~0~0~37~53~15~38~9~11~18
+Hwang Ui-jo~Bordeaux~FW~32~29~2508~11~2~55~22~3~0~52~91~20~31~6~13~19
+Cengiz Ünder~Marseille~FW,MF~32~25~2200~10~2~58~20~2~1~63~38~2~71~21~8~9
+Jere Uronen~Brest~DF,MF~15~10~878~0~0~4~1~0~0~49~57~11~48~13~9~16
+Vanderson~Monaco~MF,DF~17~12~1120~2~1~14~6~3~0~65~40~3~69~20~9~9
+Marco Verratti~Paris Saint-Germain~MF~24~23~1937~2~2~7~1~12~0~90~36~1~86~26~8~4
+Kevin Volland~Monaco~MF,FW~34~29~2436~9~9~50~25~10~0~65~40~3~69~20~9~9
+Elye Wahi~Montpellier~FW,MF~33~21~1786~10~1~43~21~2~0~49~61~13~43~12~7~19
+Timothy Weah~Lille~MF,FW~29~17~1616~3~4~33~8~2~1~48~48~10~55~14~13~11
+Georginio Wijnaldum~Paris Saint-Germain~MF,FW~31~18~1653~1~3~22~2~2~0~90~36~1~86~26~8~4
+Christopher Wooh~Lens~DF~14~11~1050~0~1~8~3~2~0~62~48~7~62~17~11~10
+Xeka~Lille~MF~23~19~1619~3~0~22~5~10~0~48~48~10~55~14~13~11
+Yusuf Yazıcı~Lille~MF,FW~15~5~509~1~1~10~6~3~0~48~48~10~55~14~13~11
+Burak Yılmaz~Lille~FW~31~25~2211~4~3~71~28~9~1~48~48~10~55~14~13~11
+Zaydou Youssouf~Saint-Étienne~MF~30~18~1553~1~0~20~6~3~1~42~77~18~32~7~11~20
+Akim Zedadka~Clermont Foot~DF~38~37~3337~0~3~31~6~5~0~38~69~17~36~9~9~20
+Edon Zhegrova~Lille~MF~13~5~481~2~1~15~7~2~1~48~48~10~55~14~13~11

@@ -1,0 +1,403 @@
+player_season_id,player_id,player_name,club_id,club_name,season_id,season_label,primary_position,appearances,starts,minutes_played,goals,assists,shots,shots_on_target,key_passes,progressive_passes,progressive_carries,successful_dribbles,xg,xa,tackles,interceptions,clearances,aerial_duels_won,yellow_cards,red_cards,clean_sheets,team_goals_scored,team_goals_conceded,league_name,final_table_rank,team_points,team_wins,team_draws,team_losses
+max-aarons-norwich-city-2021-2022,max-aarons,Max Aarons,norwich-city,Norwich City,2021-2022,2021/22,DF,34,32,2881,0,2,13,2,0,0,0,0,0,0,0,0,0,0,8,0,0,23,84,Premier League,20,22,5,7,26
+che-adams-southampton-2021-2022,che-adams,Che Adams,southampton,Southampton,2021-2022,2021/22,FW,30,23,2039,7,3,49,24,0,0,0,0,0,0,0,0,0,0,0,0,0,43,67,Premier League,15,40,9,13,16
+rayan-ait-nouri-wolves-2021-2022,rayan-ait-nouri,Rayan Aït-Nouri,wolves,Wolves,2021-2022,2021/22,MF,23,20,1828,1,2,13,4,0,0,0,0,0,0,0,0,0,0,4,0,0,38,43,Premier League,10,51,15,6,17
+kristoffer-ajer-brentford-2021-2022,kristoffer-ajer,Kristoffer Ajer,brentford,Brentford,2021-2022,2021/22,DF,24,23,1995,1,3,7,1,0,0,0,0,0,0,0,0,0,0,5,0,0,48,56,Premier League,13,46,13,7,18
+nathan-ake-manchester-city-2021-2022,nathan-ake,Nathan Aké,manchester-city,Manchester City,2021-2022,2021/22,DF,14,10,923,2,0,5,2,0,0,0,0,0,0,0,0,0,0,0,0,0,99,26,Premier League,1,93,29,6,3
+marc-albrighton-leicester-city-2021-2022,marc-albrighton,Marc Albrighton,leicester-city,Leicester City,2021-2022,2021/22,MF,17,11,1132,1,2,4,1,0,0,0,0,0,0,0,0,0,0,3,0,0,62,59,Premier League,8,52,14,10,14
+thiago-alcantara-liverpool-2021-2022,thiago-alcantara,Thiago Alcántara,liverpool,Liverpool,2021-2022,2021/22,MF,25,17,1534,1,4,25,6,0,0,0,0,0,0,0,0,0,0,2,0,0,94,26,Premier League,2,92,28,8,2
+trent-alexander-arnold-liverpool-2021-2022,trent-alexander-arnold,Trent Alexander-Arnold,liverpool,Liverpool,2021-2022,2021/22,DF,32,32,2853,2,12,51,15,0,0,0,0,0,0,0,0,0,0,2,0,0,94,26,Premier League,2,92,28,8,2
+alisson-liverpool-2021-2022,alisson,Alisson,liverpool,Liverpool,2021-2022,2021/22,GK,36,36,3240,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,94,26,Premier League,2,92,28,8,2
+allan-everton-2021-2022,allan,Allan,everton,Everton,2021-2022,2021/22,MF,28,25,2183,0,2,7,3,0,0,0,0,0,0,0,0,0,0,7,1,0,43,66,Premier League,16,39,11,6,21
+dele-alli-tottenham-hotspur-2021-2022,dele-alli,Dele Alli,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,10,8,657,1,0,4,3,0,0,0,0,0,0,0,0,0,0,1,0,0,69,40,Premier League,4,71,22,5,11
+miguel-almiron-newcastle-united-2021-2022,miguel-almiron,Miguel Almirón,newcastle-united,Newcastle United,2021-2022,2021/22,MF,30,19,1716,1,0,32,7,0,0,0,0,0,0,0,0,0,0,2,0,0,44,62,Premier League,11,49,13,10,15
+marcos-alonso-chelsea-2021-2022,marcos-alonso,Marcos Alonso,chelsea,Chelsea,2021-2022,2021/22,MF,28,25,2167,4,4,43,11,0,0,0,0,0,0,0,0,0,0,8,0,0,76,33,Premier League,3,74,21,11,6
+daniel-amartey-leicester-city-2021-2022,daniel-amartey,Daniel Amartey,leicester-city,Leicester City,2021-2022,2021/22,DF,28,23,2123,0,0,2,1,0,0,0,0,0,0,0,0,0,0,4,0,0,62,59,Premier League,8,52,14,10,14
+joachim-andersen-crystal-palace-2021-2022,joachim-andersen,Joachim Andersen,crystal-palace,Crystal Palace,2021-2022,2021/22,DF,34,32,2916,0,3,8,3,0,0,0,0,0,0,0,0,0,0,4,0,0,50,46,Premier League,12,48,11,15,12
+michail-antonio-west-ham-united-2021-2022,michail-antonio,Michail Antonio,west-ham-united,West Ham United,2021-2022,2021/22,FW,36,34,2971,10,8,83,29,0,0,0,0,0,0,0,0,0,0,8,1,0,60,51,Premier League,7,56,16,8,14
+adam-armstrong-southampton-2021-2022,adam-armstrong,Adam Armstrong,southampton,Southampton,2021-2022,2021/22,FW,23,17,1413,2,2,47,14,0,0,0,0,0,0,0,0,0,0,1,0,0,43,67,Premier League,15,40,9,13,16
+stuart-armstrong-southampton-2021-2022,stuart-armstrong,Stuart Armstrong,southampton,Southampton,2021-2022,2021/22,MF,25,15,1473,2,0,38,9,0,0,0,0,0,0,0,0,0,0,1,0,0,43,67,Premier League,15,40,9,13,16
+pierre-emerick-aubameyang-arsenal-2021-2022,pierre-emerick-aubameyang,Pierre-Emerick Aubameyang,arsenal,Arsenal,2021-2022,2021/22,FW,14,12,1037,4,1,35,18,0,0,0,0,0,0,0,0,0,0,3,0,0,61,48,Premier League,5,69,22,3,13
+jordan-ayew-crystal-palace-2021-2022,jordan-ayew,Jordan Ayew,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,31,23,2019,3,3,35,8,0,0,0,0,0,0,0,0,0,0,2,0,0,50,46,Premier League,12,48,11,15,12
+luke-ayling-leeds-united-2021-2022,luke-ayling,Luke Ayling,leeds-united,Leeds United,2021-2022,2021/22,DF,26,26,2272,2,2,19,4,0,0,0,0,0,0,0,0,0,0,4,1,0,42,79,Premier League,17,38,9,11,18
+cesar-azpilicueta-chelsea-2021-2022,cesar-azpilicueta,César Azpilicueta,chelsea,Chelsea,2021-2022,2021/22,DF,27,24,2070,1,2,11,4,0,0,0,0,0,0,0,0,0,0,3,0,0,76,33,Premier League,3,74,21,11,6
+daniel-bachmann-watford-2021-2022,daniel-bachmann,Daniel Bachmann,watford,Watford,2021-2022,2021/22,GK,12,12,1080,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,77,Premier League,19,23,6,5,27
+leon-bailey-aston-villa-2021-2022,leon-bailey,Leon Bailey,aston-villa,Aston Villa,2021-2022,2021/22,MF,18,7,761,1,2,21,8,0,0,0,0,0,0,0,0,0,0,3,0,0,52,54,Premier League,14,45,13,6,19
+patrick-bamford-leeds-united-2021-2022,patrick-bamford,Patrick Bamford,leeds-united,Leeds United,2021-2022,2021/22,FW,9,7,559,2,2,20,5,0,0,0,0,0,0,0,0,0,0,2,0,0,42,79,Premier League,17,38,9,11,18
+shandon-baptiste-brentford-2021-2022,shandon-baptiste,Shandon Baptiste,brentford,Brentford,2021-2022,2021/22,MF,22,9,910,1,0,12,4,0,0,0,0,0,0,0,0,0,0,2,1,0,48,56,Premier League,13,46,13,7,18
+ashley-barnes-burnley-2021-2022,ashley-barnes,Ashley Barnes,burnley,Burnley,2021-2022,2021/22,FW,23,8,808,1,0,16,6,0,0,0,0,0,0,0,0,0,0,4,0,0,34,53,Premier League,18,35,7,14,17
+harvey-barnes-leicester-city-2021-2022,harvey-barnes,Harvey Barnes,leicester-city,Leicester City,2021-2022,2021/22,MF,32,24,2101,6,10,66,24,0,0,0,0,0,0,0,0,0,0,2,0,0,62,59,Premier League,8,52,14,10,14
+mads-bech-srensen-brentford-2021-2022,mads-bech-srensen,Mads Bech Sørensen,brentford,Brentford,2021-2022,2021/22,DF,11,9,835,0,0,2,0,0,0,0,0,0,0,0,0,0,0,3,0,0,48,56,Premier League,13,46,13,7,18
+jan-bednarek-southampton-2021-2022,jan-bednarek,Jan Bednarek,southampton,Southampton,2021-2022,2021/22,DF,31,30,2629,4,0,19,7,0,0,0,0,0,0,0,0,0,0,10,0,0,43,67,Premier League,15,40,9,13,16
+donny-van-de-beek-everton-2021-2022,donny-van-de-beek,Donny van de Beek,everton,Everton,2021-2022,2021/22,MF,7,5,483,1,0,5,1,0,0,0,0,0,0,0,0,0,0,1,0,0,43,66,Premier League,16,39,11,6,21
+said-benrahma-west-ham-united-2021-2022,said-benrahma,Saïd Benrahma,west-ham-united,West Ham United,2021-2022,2021/22,MF,32,26,2168,8,6,63,22,0,0,0,0,0,0,0,0,0,0,0,0,0,60,51,Premier League,7,56,16,8,14
+rodrigo-bentancur-tottenham-hotspur-2021-2022,rodrigo-bentancur,Rodrigo Bentancur,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,17,16,1361,0,4,14,2,0,0,0,0,0,0,0,0,0,0,5,0,0,69,40,Premier League,4,71,22,5,11
+christian-benteke-crystal-palace-2021-2022,christian-benteke,Christian Benteke,crystal-palace,Crystal Palace,2021-2022,2021/22,FW,25,11,1145,4,1,38,13,0,0,0,0,0,0,0,0,0,0,3,0,0,50,46,Premier League,12,48,11,15,12
+johann-berg-gumundsson-burnley-2021-2022,johann-berg-gumundsson,Jóhann Berg Guðmundsson,burnley,Burnley,2021-2022,2021/22,MF,18,13,1102,0,1,19,5,0,0,0,0,0,0,0,0,0,0,2,0,0,34,53,Premier League,18,35,7,14,17
+steven-bergwijn-tottenham-hotspur-2021-2022,steven-bergwijn,Steven Bergwijn,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,25,4,565,3,1,19,10,0,0,0,0,0,0,0,0,0,0,1,0,0,69,40,Premier League,4,71,22,5,11
+yves-bissouma-brighton-2021-2022,yves-bissouma,Yves Bissouma,brighton,Brighton,2021-2022,2021/22,MF,26,25,2111,1,2,21,5,0,0,0,0,0,0,0,0,0,0,10,0,0,42,44,Premier League,9,51,12,15,11
+willy-boly-wolves-2021-2022,willy-boly,Willy Boly,wolves,Wolves,2021-2022,2021/22,DF,10,10,900,0,0,2,1,0,0,0,0,0,0,0,0,0,0,1,0,0,38,43,Premier League,10,51,15,6,17
+jarrod-bowen-west-ham-united-2021-2022,jarrod-bowen,Jarrod Bowen,west-ham-united,West Ham United,2021-2022,2021/22,MF,36,34,2983,12,10,80,35,0,0,0,0,0,0,0,0,0,0,6,0,0,60,51,Premier League,7,56,16,8,14
+armando-broja-southampton-2021-2022,armando-broja,Armando Broja,southampton,Southampton,2021-2022,2021/22,FW,32,21,1975,6,0,45,20,0,0,0,0,0,0,0,0,0,0,2,0,0,43,67,Premier League,15,40,9,13,16
+josh-brownhill-burnley-2021-2022,josh-brownhill,Josh Brownhill,burnley,Burnley,2021-2022,2021/22,MF,35,32,2955,2,3,29,9,0,0,0,0,0,0,0,0,0,0,10,0,0,34,53,Premier League,18,35,7,14,17
+emi-buendia-aston-villa-2021-2022,emi-buendia,Emi Buendía,aston-villa,Aston Villa,2021-2022,2021/22,MF,35,22,1899,4,6,44,13,0,0,0,0,0,0,0,0,0,0,1,0,0,52,54,Premier League,14,45,13,6,19
+dan-burn-newcastle-united-2021-2022,dan-burn,Dan Burn,newcastle-united,Newcastle United,2021-2022,2021/22,DF,16,16,1440,0,1,11,1,0,0,0,0,0,0,0,0,0,0,4,0,0,44,62,Premier League,11,49,13,10,15
+dan-burn-brighton-2021-2022,dan-burn,Dan Burn,brighton,Brighton,2021-2022,2021/22,DF,13,12,1022,1,0,7,4,0,0,0,0,0,0,0,0,0,0,4,0,0,42,44,Premier League,9,51,12,15,11
+jack-butland-crystal-palace-2021-2022,jack-butland,Jack Butland,crystal-palace,Crystal Palace,2021-2022,2021/22,GK,9,8,765,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50,46,Premier League,12,48,11,15,12
+sam-byram-norwich-city-2021-2022,sam-byram,Sam Byram,norwich-city,Norwich City,2021-2022,2021/22,DF,15,11,1027,0,0,7,2,0,0,0,0,0,0,0,0,0,0,3,0,0,23,84,Premier League,20,22,5,7,26
+moises-caicedo-brighton-2021-2022,moises-caicedo,Moisés Caicedo,brighton,Brighton,2021-2022,2021/22,MF,8,8,660,1,1,10,4,0,0,0,0,0,0,0,0,0,0,2,0,0,42,44,Premier League,9,51,12,15,11
+dominic-calvert-lewin-everton-2021-2022,dominic-calvert-lewin,Dominic Calvert-Lewin,everton,Everton,2021-2022,2021/22,FW,17,15,1283,5,2,33,13,0,0,0,0,0,0,0,0,0,0,2,0,0,43,66,Premier League,16,39,11,6,21
+joao-cancelo-manchester-city-2021-2022,joao-cancelo,João Cancelo,manchester-city,Manchester City,2021-2022,2021/22,DF,36,36,3227,1,7,81,23,0,0,0,0,0,0,0,0,0,0,7,0,0,99,26,Premier League,1,93,29,6,3
+sergi-canos-brentford-2021-2022,sergi-canos,Sergi Canós,brentford,Brentford,2021-2022,2021/22,MF,31,25,2083,3,2,33,13,0,0,0,0,0,0,0,0,0,0,8,1,0,48,56,Premier League,13,46,13,7,18
+matty-cash-aston-villa-2021-2022,matty-cash,Matty Cash,aston-villa,Aston Villa,2021-2022,2021/22,DF,38,38,3377,4,3,37,13,0,0,0,0,0,0,0,0,0,0,8,0,0,52,54,Premier League,14,45,13,6,19
+timothy-castagne-leicester-city-2021-2022,timothy-castagne,Timothy Castagne,leicester-city,Leicester City,2021-2022,2021/22,DF,27,22,2127,1,0,7,3,0,0,0,0,0,0,0,0,0,0,1,0,0,62,59,Premier League,8,52,14,10,14
+jonny-castro-wolves-2021-2022,jonny-castro,Jonny Castro,wolves,Wolves,2021-2022,2021/22,DF,13,10,1024,2,0,10,5,0,0,0,0,0,0,0,0,0,0,1,0,0,38,43,Premier League,10,51,15,6,17
+craig-cathcart-watford-2021-2022,craig-cathcart,Craig Cathcart,watford,Watford,2021-2022,2021/22,DF,31,27,2396,0,1,3,0,0,0,0,0,0,0,0,0,0,0,3,0,0,34,77,Premier League,19,23,6,5,27
+edinson-cavani-manchester-utd-2021-2022,edinson-cavani,Edinson Cavani,manchester-utd,Manchester Utd,2021-2022,2021/22,FW,15,7,766,2,1,18,8,0,0,0,0,0,0,0,0,0,0,0,0,0,57,57,Premier League,6,58,16,10,12
+trevoh-chalobah-chelsea-2021-2022,trevoh-chalobah,Trevoh Chalobah,chelsea,Chelsea,2021-2022,2021/22,DF,20,17,1449,3,1,9,7,0,0,0,0,0,0,0,0,0,0,2,0,0,76,33,Premier League,3,74,21,11,6
+calum-chambers-aston-villa-2021-2022,calum-chambers,Calum Chambers,aston-villa,Aston Villa,2021-2022,2021/22,DF,11,9,831,1,0,3,1,0,0,0,0,0,0,0,0,0,0,1,0,0,52,54,Premier League,14,45,13,6,19
+ben-chilwell-chelsea-2021-2022,ben-chilwell,Ben Chilwell,chelsea,Chelsea,2021-2022,2021/22,MF,7,6,542,3,1,13,6,0,0,0,0,0,0,0,0,0,0,0,0,0,76,33,Premier League,3,74,21,11,6
+andreas-christensen-chelsea-2021-2022,andreas-christensen,Andreas Christensen,chelsea,Chelsea,2021-2022,2021/22,DF,19,17,1496,0,0,5,0,0,0,0,0,0,0,0,0,0,0,2,0,0,76,33,Premier League,3,74,21,11,6
+ciaran-clark-newcastle-united-2021-2022,ciaran-clark,Ciaran Clark,newcastle-united,Newcastle United,2021-2022,2021/22,DF,13,12,1014,0,1,7,1,0,0,0,0,0,0,0,0,0,0,2,1,0,44,62,Premier League,11,49,13,10,15
+tom-cleverley-watford-2021-2022,tom-cleverley,Tom Cleverley,watford,Watford,2021-2022,2021/22,MF,28,20,1616,0,2,12,7,0,0,0,0,0,0,0,0,0,0,2,0,0,34,77,Premier League,19,23,6,5,27
+nathaniel-clyne-crystal-palace-2021-2022,nathaniel-clyne,Nathaniel Clyne,crystal-palace,Crystal Palace,2021-2022,2021/22,DF,16,15,1351,0,1,3,2,0,0,0,0,0,0,0,0,0,0,1,0,0,50,46,Premier League,12,48,11,15,12
+conor-coady-wolves-2021-2022,conor-coady,Conor Coady,wolves,Wolves,2021-2022,2021/22,DF,38,38,3361,4,0,12,4,0,0,0,0,0,0,0,0,0,0,4,0,0,38,43,Premier League,10,51,15,6,17
+seamus-coleman-everton-2021-2022,seamus-coleman,Séamus Coleman,everton,Everton,2021-2022,2021/22,DF,30,30,2656,1,0,8,1,0,0,0,0,0,0,0,0,0,0,4,0,0,43,66,Premier League,16,39,11,6,21
+nathan-collins-burnley-2021-2022,nathan-collins,Nathan Collins,burnley,Burnley,2021-2022,2021/22,DF,19,18,1670,2,0,14,4,0,0,0,0,0,0,0,0,0,0,2,1,0,34,53,Premier League,18,35,7,14,17
+liam-cooper-leeds-united-2021-2022,liam-cooper,Liam Cooper,leeds-united,Leeds United,2021-2022,2021/22,DF,21,21,1814,0,1,6,1,0,0,0,0,0,0,0,0,0,0,5,0,0,42,79,Premier League,17,38,9,11,18
+jack-cork-burnley-2021-2022,jack-cork,Jack Cork,burnley,Burnley,2021-2022,2021/22,MF,20,20,1670,1,0,7,2,0,0,0,0,0,0,0,0,0,0,4,0,0,34,53,Premier League,18,35,7,14,17
+maxwel-cornet-burnley-2021-2022,maxwel-cornet,Maxwel Cornet,burnley,Burnley,2021-2022,2021/22,MF,26,21,1766,9,1,47,22,0,0,0,0,0,0,0,0,0,0,2,0,0,34,53,Premier League,18,35,7,14,17
+vladimir-coufal-west-ham-united-2021-2022,vladimir-coufal,Vladimír Coufal,west-ham-united,West Ham United,2021-2022,2021/22,DF,28,25,2209,0,4,11,5,0,0,0,0,0,0,0,0,0,0,5,1,0,60,51,Premier League,7,56,16,8,14
+philippe-coutinho-aston-villa-2021-2022,philippe-coutinho,Philippe Coutinho,aston-villa,Aston Villa,2021-2022,2021/22,MF,19,16,1329,5,3,43,16,0,0,0,0,0,0,0,0,0,0,0,0,0,52,54,Premier League,14,45,13,6,19
+aaron-cresswell-west-ham-united-2021-2022,aaron-cresswell,Aaron Cresswell,west-ham-united,West Ham United,2021-2022,2021/22,DF,31,31,2726,2,3,18,4,0,0,0,0,0,0,0,0,0,0,3,0,0,60,51,Premier League,7,56,16,8,14
+cucho-watford-2021-2022,cucho,Cucho,watford,Watford,2021-2022,2021/22,MF,25,11,1147,5,2,33,11,0,0,0,0,0,0,0,0,0,0,3,0,0,34,77,Premier League,19,23,6,5,27
+marc-cucurella-brighton-2021-2022,marc-cucurella,Marc Cucurella,brighton,Brighton,2021-2022,2021/22,DF,35,35,3089,1,1,18,3,0,0,0,0,0,0,0,0,0,0,6,0,0,42,44,Premier League,9,51,12,15,11
+patson-daka-leicester-city-2021-2022,patson-daka,Patson Daka,leicester-city,Leicester City,2021-2022,2021/22,FW,23,13,1159,5,3,26,16,0,0,0,0,0,0,0,0,0,0,2,0,0,62,59,Premier League,8,52,14,10,14
+stuart-dallas-leeds-united-2021-2022,stuart-dallas,Stuart Dallas,leeds-united,Leeds United,2021-2022,2021/22,DF,34,34,2919,1,1,30,9,0,0,0,0,0,0,0,0,0,0,5,0,0,42,79,Premier League,17,38,9,11,18
+diogo-dalot-manchester-utd-2021-2022,diogo-dalot,Diogo Dalot,manchester-utd,Manchester Utd,2021-2022,2021/22,DF,24,19,1801,0,0,13,4,0,0,0,0,0,0,0,0,0,0,4,0,0,57,57,Premier League,6,58,16,10,12
+karl-darlow-newcastle-united-2021-2022,karl-darlow,Karl Darlow,newcastle-united,Newcastle United,2021-2022,2021/22,GK,8,8,720,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,44,62,Premier League,11,49,13,10,15
+ben-davies-tottenham-hotspur-2021-2022,ben-davies,Ben Davies,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,DF,29,28,2538,1,1,18,7,0,0,0,0,0,0,0,0,0,0,6,0,0,69,40,Premier League,4,71,22,5,11
+craig-dawson-west-ham-united-2021-2022,craig-dawson,Craig Dawson,west-ham-united,West Ham United,2021-2022,2021/22,DF,34,30,2754,2,2,25,6,0,0,0,0,0,0,0,0,0,0,5,1,0,60,51,Premier League,7,56,16,8,14
+kevin-de-bruyne-manchester-city-2021-2022,kevin-de-bruyne,Kevin De Bruyne,manchester-city,Manchester City,2021-2022,2021/22,MF,30,25,2201,15,8,77,31,0,0,0,0,0,0,0,0,0,0,2,0,0,99,26,Premier League,1,93,29,6,3
+fabian-delph-everton-2021-2022,fabian-delph,Fabian Delph,everton,Everton,2021-2022,2021/22,MF,11,8,662,0,0,2,0,0,0,0,0,0,0,0,0,0,0,2,0,0,43,66,Premier League,16,39,11,6,21
+leander-dendoncker-wolves-2021-2022,leander-dendoncker,Leander Dendoncker,wolves,Wolves,2021-2022,2021/22,MF,30,21,1950,2,2,23,10,0,0,0,0,0,0,0,0,0,0,4,0,0,38,43,Premier League,10,51,15,6,17
+emmanuel-dennis-watford-2021-2022,emmanuel-dennis,Emmanuel Dennis,watford,Watford,2021-2022,2021/22,MF,33,30,2581,10,6,60,26,0,0,0,0,0,0,0,0,0,0,9,1,0,34,77,Premier League,19,23,6,5,27
+kiernan-dewsbury-hall-leicester-city-2021-2022,kiernan-dewsbury-hall,Kiernan Dewsbury-Hall,leicester-city,Leicester City,2021-2022,2021/22,MF,28,23,2105,1,2,21,3,0,0,0,0,0,0,0,0,0,0,4,0,0,62,59,Premier League,8,52,14,10,14
+ibrahima-diallo-southampton-2021-2022,ibrahima-diallo,Ibrahima Diallo,southampton,Southampton,2021-2022,2021/22,MF,23,10,1023,0,2,8,4,0,0,0,0,0,0,0,0,0,0,1,0,0,43,67,Premier League,15,40,9,13,16
+ruben-dias-manchester-city-2021-2022,ruben-dias,Rúben Dias,manchester-city,Manchester City,2021-2022,2021/22,DF,29,27,2402,2,4,18,3,0,0,0,0,0,0,0,0,0,0,5,0,0,99,26,Premier League,1,93,29,6,3
+luis-diaz-liverpool-2021-2022,luis-diaz,Luis Díaz,liverpool,Liverpool,2021-2022,2021/22,FW,13,11,958,4,3,38,13,0,0,0,0,0,0,0,0,0,0,0,0,0,94,26,Premier League,2,92,28,8,2
+eric-dier-tottenham-hotspur-2021-2022,eric-dier,Eric Dier,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,DF,35,35,3071,0,0,13,5,0,0,0,0,0,0,0,0,0,0,1,0,0,69,40,Premier League,4,71,22,5,11
+lucas-digne-aston-villa-2021-2022,lucas-digne,Lucas Digne,aston-villa,Aston Villa,2021-2022,2021/22,DF,16,16,1269,0,4,9,2,0,0,0,0,0,0,0,0,0,0,2,0,0,52,54,Premier League,14,45,13,6,19
+lucas-digne-everton-2021-2022,lucas-digne,Lucas Digne,everton,Everton,2021-2022,2021/22,DF,13,13,1170,0,0,9,1,0,0,0,0,0,0,0,0,0,0,4,0,0,43,66,Premier League,16,39,11,6,21
+issa-diop-west-ham-united-2021-2022,issa-diop,Issa Diop,west-ham-united,West Ham United,2021-2022,2021/22,DF,13,10,963,0,1,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,60,51,Premier League,7,56,16,8,14
+moussa-djenepo-southampton-2021-2022,moussa-djenepo,Moussa Djenepo,southampton,Southampton,2021-2022,2021/22,MF,12,5,457,0,0,11,1,0,0,0,0,0,0,0,0,0,0,3,0,0,43,67,Premier League,15,40,9,13,16
+matt-doherty-tottenham-hotspur-2021-2022,matt-doherty,Matt Doherty,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,15,9,875,2,4,16,6,0,0,0,0,0,0,0,0,0,0,0,0,0,69,40,Premier League,4,71,22,5,11
+abdoulaye-doucoure-everton-2021-2022,abdoulaye-doucoure,Abdoulaye Doucouré,everton,Everton,2021-2022,2021/22,MF,30,29,2537,2,4,34,11,0,0,0,0,0,0,0,0,0,0,6,0,0,43,66,Premier League,16,39,11,6,21
+kieran-dowell-norwich-city-2021-2022,kieran-dowell,Kieran Dowell,norwich-city,Norwich City,2021-2022,2021/22,MF,19,11,912,1,1,8,2,0,0,0,0,0,0,0,0,0,0,0,0,0,23,84,Premier League,20,22,5,7,26
+martin-dubravka-newcastle-united-2021-2022,martin-dubravka,Martin Dúbravka,newcastle-united,Newcastle United,2021-2022,2021/22,GK,26,26,2340,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,44,62,Premier League,11,49,13,10,15
+shane-duffy-brighton-2021-2022,shane-duffy,Shane Duffy,brighton,Brighton,2021-2022,2021/22,DF,18,15,1436,1,0,22,6,0,0,0,0,0,0,0,0,0,0,7,0,0,42,44,Premier League,9,51,12,15,11
+lewis-dunk-brighton-2021-2022,lewis-dunk,Lewis Dunk,brighton,Brighton,2021-2022,2021/22,DF,29,29,2573,1,0,19,7,0,0,0,0,0,0,0,0,0,0,3,1,0,42,44,Premier League,9,51,12,15,11
+ederson-manchester-city-2021-2022,ederson,Ederson,manchester-city,Manchester City,2021-2022,2021/22,GK,37,37,3330,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,99,26,Premier League,1,93,29,6,3
+odsonne-edouard-crystal-palace-2021-2022,odsonne-edouard,Odsonne Édouard,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,28,18,1564,6,3,40,18,0,0,0,0,0,0,0,0,0,0,4,0,0,50,46,Premier League,12,48,11,15,12
+anthony-elanga-manchester-utd-2021-2022,anthony-elanga,Anthony Elanga,manchester-utd,Manchester Utd,2021-2022,2021/22,MF,21,14,1214,2,2,21,7,0,0,0,0,0,0,0,0,0,0,0,0,0,57,57,Premier League,6,58,16,10,12
+mohamed-elneny-arsenal-2021-2022,mohamed-elneny,Mohamed Elneny,arsenal,Arsenal,2021-2022,2021/22,MF,14,8,806,0,2,8,2,0,0,0,0,0,0,0,0,0,0,1,0,0,61,48,Premier League,5,69,22,3,13
+mohamed-elyounoussi-southampton-2021-2022,mohamed-elyounoussi,Mohamed Elyounoussi,southampton,Southampton,2021-2022,2021/22,MF,30,23,2042,4,2,43,19,0,0,0,0,0,0,0,0,0,0,4,0,0,43,67,Premier League,15,40,9,13,16
+emerson-tottenham-hotspur-2021-2022,emerson,Emerson,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,DF,31,26,2286,1,1,15,4,0,0,0,0,0,0,0,0,0,0,5,0,0,69,40,Premier League,4,71,22,5,11
+christian-eriksen-brentford-2021-2022,christian-eriksen,Christian Eriksen,brentford,Brentford,2021-2022,2021/22,MF,11,10,939,1,4,22,9,0,0,0,0,0,0,0,0,0,0,1,0,0,48,56,Premier League,13,46,13,7,18
+jonny-evans-leicester-city-2021-2022,jonny-evans,Jonny Evans,leicester-city,Leicester City,2021-2022,2021/22,DF,18,16,1348,1,1,3,2,0,0,0,0,0,0,0,0,0,0,3,0,0,62,59,Premier League,8,52,14,10,14
+eberechi-eze-crystal-palace-2021-2022,eberechi-eze,Eberechi Eze,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,13,6,605,1,1,10,1,0,0,0,0,0,0,0,0,0,0,1,0,0,50,46,Premier League,12,48,11,15,12
+ukasz-fabianski-west-ham-united-2021-2022,ukasz-fabianski,Łukasz Fabiański,west-ham-united,West Ham United,2021-2022,2021/22,GK,37,37,3330,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,60,51,Premier League,7,56,16,8,14
+fabinho-liverpool-2021-2022,fabinho,Fabinho,liverpool,Liverpool,2021-2022,2021/22,MF,29,26,2314,5,1,21,10,0,0,0,0,0,0,0,0,0,0,7,0,0,94,26,Premier League,2,92,28,8,2
+kiko-femenia-watford-2021-2022,kiko-femenia,Kiko Femenía,watford,Watford,2021-2022,2021/22,DF,27,26,2142,0,5,3,1,0,0,0,0,0,0,0,0,0,0,2,0,0,34,77,Premier League,19,23,6,5,27
+bruno-fernandes-manchester-utd-2021-2022,bruno-fernandes,Bruno Fernandes,manchester-utd,Manchester Utd,2021-2022,2021/22,MF,36,35,3111,10,6,89,29,0,0,0,0,0,0,0,0,0,0,10,0,0,57,57,Premier League,6,58,16,10,12
+alvaro-fernandez-brentford-2021-2022,alvaro-fernandez,Álvaro Fernández,brentford,Brentford,2021-2022,2021/22,GK,12,12,1080,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,56,Premier League,13,46,13,7,18
+federico-fernandez-newcastle-united-2021-2022,federico-fernandez,Federico Fernández,newcastle-united,Newcastle United,2021-2022,2021/22,DF,7,5,523,0,0,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,44,62,Premier League,11,49,13,10,15
+fernandinho-manchester-city-2021-2022,fernandinho,Fernandinho,manchester-city,Manchester City,2021-2022,2021/22,DF,19,10,964,2,1,18,4,0,0,0,0,0,0,0,0,0,0,1,0,0,99,26,Premier League,1,93,29,6,3
+roberto-firmino-liverpool-2021-2022,roberto-firmino,Roberto Firmino,liverpool,Liverpool,2021-2022,2021/22,FW,20,10,990,5,4,30,11,0,0,0,0,0,0,0,0,0,0,3,0,0,94,26,Premier League,2,92,28,8,2
+junior-firpo-leeds-united-2021-2022,junior-firpo,Junior Firpo,leeds-united,Leeds United,2021-2022,2021/22,DF,24,19,1711,0,2,11,1,0,0,0,0,0,0,0,0,0,0,11,0,0,42,79,Premier League,17,38,9,11,18
+phil-foden-manchester-city-2021-2022,phil-foden,Phil Foden,manchester-city,Manchester City,2021-2022,2021/22,FW,28,24,2128,9,5,57,22,0,0,0,0,0,0,0,0,0,0,1,0,0,99,26,Premier League,1,93,29,6,3
+wesley-fofana-leicester-city-2021-2022,wesley-fofana,Wesley Fofana,leicester-city,Leicester City,2021-2022,2021/22,DF,7,7,630,0,0,3,1,0,0,0,0,0,0,0,0,0,0,2,0,0,62,59,Premier League,8,52,14,10,14
+pablo-fornals-west-ham-united-2021-2022,pablo-fornals,Pablo Fornals,west-ham-united,West Ham United,2021-2022,2021/22,MF,36,32,2795,6,3,43,12,0,0,0,0,0,0,0,0,0,0,4,0,0,60,51,Premier League,7,56,16,8,14
+adam-forshaw-leeds-united-2021-2022,adam-forshaw,Adam Forshaw,leeds-united,Leeds United,2021-2022,2021/22,MF,22,17,1530,0,1,14,4,0,0,0,0,0,0,0,0,0,0,5,0,0,42,79,Premier League,17,38,9,11,18
+fraser-forster-southampton-2021-2022,fraser-forster,Fraser Forster,southampton,Southampton,2021-2022,2021/22,GK,19,19,1710,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,43,67,Premier League,15,40,9,13,16
+ben-foster-watford-2021-2022,ben-foster,Ben Foster,watford,Watford,2021-2022,2021/22,GK,26,26,2340,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,77,Premier League,19,23,6,5,27
+ryan-fraser-newcastle-united-2021-2022,ryan-fraser,Ryan Fraser,newcastle-united,Newcastle United,2021-2022,2021/22,MF,27,18,1465,2,3,24,8,0,0,0,0,0,0,0,0,0,0,3,0,0,44,62,Premier League,11,49,13,10,15
+fred-manchester-utd-2021-2022,fred,Fred,manchester-utd,Manchester Utd,2021-2022,2021/22,MF,28,24,2028,4,4,15,9,0,0,0,0,0,0,0,0,0,0,5,0,0,57,57,Premier League,6,58,16,10,12
+conor-gallagher-crystal-palace-2021-2022,conor-gallagher,Conor Gallagher,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,34,33,2845,8,3,52,22,0,0,0,0,0,0,0,0,0,0,10,0,0,50,46,Premier League,12,48,11,15,12
+david-de-gea-manchester-utd-2021-2022,david-de-gea,David de Gea,manchester-utd,Manchester Utd,2021-2022,2021/22,GK,38,38,3420,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,57,57,Premier League,6,58,16,10,12
+joe-gelhardt-leeds-united-2021-2022,joe-gelhardt,Joe Gelhardt,leeds-united,Leeds United,2021-2022,2021/22,FW,20,5,746,2,2,23,10,0,0,0,0,0,0,0,0,0,0,4,0,0,42,79,Premier League,17,38,9,11,18
+saman-ghoddos-brentford-2021-2022,saman-ghoddos,Saman Ghoddos,brentford,Brentford,2021-2022,2021/22,MF,17,4,536,1,1,8,3,0,0,0,0,0,0,0,0,0,0,2,0,0,48,56,Premier League,13,46,13,7,18
+dimitris-giannoulis-norwich-city-2021-2022,dimitris-giannoulis,Dimitris Giannoulis,norwich-city,Norwich City,2021-2022,2021/22,DF,18,14,1169,0,1,2,1,0,0,0,0,0,0,0,0,0,0,2,0,0,23,84,Premier League,20,22,5,7,26
+ben-gibson-norwich-city-2021-2022,ben-gibson,Ben Gibson,norwich-city,Norwich City,2021-2022,2021/22,DF,28,28,2494,0,0,8,4,0,0,0,0,0,0,0,0,0,0,5,1,0,23,84,Premier League,20,22,5,7,26
+billy-gilmour-norwich-city-2021-2022,billy-gilmour,Billy Gilmour,norwich-city,Norwich City,2021-2022,2021/22,MF,24,21,1855,0,1,18,3,0,0,0,0,0,0,0,0,0,0,2,0,0,23,84,Premier League,20,22,5,7,26
+ben-godfrey-everton-2021-2022,ben-godfrey,Ben Godfrey,everton,Everton,2021-2022,2021/22,DF,23,23,2029,0,0,18,7,0,0,0,0,0,0,0,0,0,0,6,0,0,43,66,Premier League,16,39,11,6,21
+andre-gomes-everton-2021-2022,andre-gomes,André Gomes,everton,Everton,2021-2022,2021/22,MF,14,7,619,0,1,14,4,0,0,0,0,0,0,0,0,0,0,3,0,0,43,66,Premier League,16,39,11,6,21
+charlie-goode-brentford-2021-2022,charlie-goode,Charlie Goode,brentford,Brentford,2021-2022,2021/22,DF,6,4,450,0,0,2,0,0,0,0,0,0,0,0,0,0,0,3,0,0,48,56,Premier League,13,46,13,7,18
+anthony-gordon-everton-2021-2022,anthony-gordon,Anthony Gordon,everton,Everton,2021-2022,2021/22,MF,35,25,2285,4,2,44,18,0,0,0,0,0,0,0,0,0,0,4,0,0,43,66,Premier League,16,39,11,6,21
+demarai-gray-everton-2021-2022,demarai-gray,Demarai Gray,everton,Everton,2021-2022,2021/22,MF,34,28,2338,5,4,65,17,0,0,0,0,0,0,0,0,0,0,3,0,0,43,66,Premier League,16,39,11,6,21
+jack-grealish-manchester-city-2021-2022,jack-grealish,Jack Grealish,manchester-city,Manchester City,2021-2022,2021/22,MF,26,22,1914,3,3,44,15,0,0,0,0,0,0,0,0,0,0,3,0,0,99,26,Premier League,1,93,29,6,3
+mason-greenwood-manchester-utd-2021-2022,mason-greenwood,Mason Greenwood,manchester-utd,Manchester Utd,2021-2022,2021/22,MF,18,16,1271,5,1,48,19,0,0,0,0,0,0,0,0,0,0,1,0,0,57,57,Premier League,6,58,16,10,12
+pascal-gro-brighton-2021-2022,pascal-gro,Pascal Groß,brighton,Brighton,2021-2022,2021/22,MF,29,24,2038,2,4,23,8,0,0,0,0,0,0,0,0,0,0,1,0,0,42,44,Premier League,9,51,12,15,11
+vicente-guaita-crystal-palace-2021-2022,vicente-guaita,Vicente Guaita,crystal-palace,Crystal Palace,2021-2022,2021/22,GK,30,30,2655,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,50,46,Premier League,12,48,11,15,12
+marc-guehi-crystal-palace-2021-2022,marc-guehi,Marc Guéhi,crystal-palace,Crystal Palace,2021-2022,2021/22,DF,36,36,3222,2,1,19,5,0,0,0,0,0,0,0,0,0,0,4,0,0,50,46,Premier League,12,48,11,15,12
+bruno-guimaraes-newcastle-united-2021-2022,bruno-guimaraes,Bruno Guimarães,newcastle-united,Newcastle United,2021-2022,2021/22,MF,17,11,1034,5,1,23,12,0,0,0,0,0,0,0,0,0,0,4,0,0,44,62,Premier League,11,49,13,10,15
+ilkay-gundogan-manchester-city-2021-2022,ilkay-gundogan,İlkay Gündoğan,manchester-city,Manchester City,2021-2022,2021/22,MF,27,20,1857,8,4,55,19,0,0,0,0,0,0,0,0,0,0,1,0,0,99,26,Premier League,1,93,29,6,3
+angus-gunn-norwich-city-2021-2022,angus-gunn,Angus Gunn,norwich-city,Norwich City,2021-2022,2021/22,GK,9,9,810,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23,84,Premier League,20,22,5,7,26
+grant-hanley-norwich-city-2021-2022,grant-hanley,Grant Hanley,norwich-city,Norwich City,2021-2022,2021/22,DF,33,33,2897,1,0,20,4,0,0,0,0,0,0,0,0,0,0,2,0,0,23,84,Premier League,20,22,5,7,26
+jack-harrison-leeds-united-2021-2022,jack-harrison,Jack Harrison,leeds-united,Leeds United,2021-2022,2021/22,MF,35,32,2639,8,1,43,17,0,0,0,0,0,0,0,0,0,0,3,0,0,42,79,Premier League,17,38,9,11,18
+kai-havertz-chelsea-2021-2022,kai-havertz,Kai Havertz,chelsea,Chelsea,2021-2022,2021/22,MF,29,22,1809,8,3,56,23,0,0,0,0,0,0,0,0,0,0,3,0,0,76,33,Premier League,3,74,21,11,6
+isaac-hayden-newcastle-united-2021-2022,isaac-hayden,Isaac Hayden,newcastle-united,Newcastle United,2021-2022,2021/22,DF,14,12,1002,1,0,5,1,0,0,0,0,0,0,0,0,0,0,5,0,0,44,62,Premier League,11,49,13,10,15
+hwang-hee-chan-wolves-2021-2022,hwang-hee-chan,Hwang Hee-chan,wolves,Wolves,2021-2022,2021/22,MF,30,20,1816,5,1,27,12,0,0,0,0,0,0,0,0,0,0,2,0,0,38,43,Premier League,10,51,15,6,17
+jordan-henderson-liverpool-2021-2022,jordan-henderson,Jordan Henderson,liverpool,Liverpool,2021-2022,2021/22,MF,35,29,2597,2,5,31,6,0,0,0,0,0,0,0,0,0,0,3,0,0,94,26,Premier League,2,92,28,8,2
+rico-henry-brentford-2021-2022,rico-henry,Rico Henry,brentford,Brentford,2021-2022,2021/22,DF,34,33,2776,3,0,14,5,0,0,0,0,0,0,0,0,0,0,2,0,0,48,56,Premier League,13,46,13,7,18
+son-heung-min-tottenham-hotspur-2021-2022,son-heung-min,Son Heung-min,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,35,35,3006,23,7,86,49,0,0,0,0,0,0,0,0,0,0,2,0,0,69,40,Premier League,4,71,22,5,11
+rob-holding-arsenal-2021-2022,rob-holding,Rob Holding,arsenal,Arsenal,2021-2022,2021/22,DF,15,9,845,1,0,4,1,0,0,0,0,0,0,0,0,0,0,4,1,0,61,48,Premier League,5,69,22,3,13
+mason-holgate-everton-2021-2022,mason-holgate,Mason Holgate,everton,Everton,2021-2022,2021/22,DF,25,23,2134,2,1,7,3,0,0,0,0,0,0,0,0,0,0,7,1,0,43,66,Premier League,16,39,11,6,21
+callum-hudson-odoi-chelsea-2021-2022,callum-hudson-odoi,Callum Hudson-Odoi,chelsea,Chelsea,2021-2022,2021/22,MF,15,11,962,1,2,18,7,0,0,0,0,0,0,0,0,0,0,1,0,0,76,33,Premier League,3,74,21,11,6
+will-hughes-crystal-palace-2021-2022,will-hughes,Will Hughes,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,16,13,1053,0,1,6,0,0,0,0,0,0,0,0,0,0,0,6,0,0,50,46,Premier League,12,48,11,15,12
+pierre-hjbjerg-tottenham-hotspur-2021-2022,pierre-hjbjerg,Pierre Højbjerg,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,36,36,3196,2,2,31,11,0,0,0,0,0,0,0,0,0,0,3,0,0,69,40,Premier League,4,71,22,5,11
+adam-idah-norwich-city-2021-2022,adam-idah,Adam Idah,norwich-city,Norwich City,2021-2022,2021/22,MF,17,6,625,1,1,14,4,0,0,0,0,0,0,0,0,0,0,0,0,0,23,84,Premier League,20,22,5,7,26
+kelechi-iheanacho-leicester-city-2021-2022,kelechi-iheanacho,Kelechi Iheanacho,leicester-city,Leicester City,2021-2022,2021/22,FW,26,13,1264,4,5,31,12,0,0,0,0,0,0,0,0,0,0,1,0,0,62,59,Premier League,8,52,14,10,14
+danny-ings-aston-villa-2021-2022,danny-ings,Danny Ings,aston-villa,Aston Villa,2021-2022,2021/22,FW,30,22,1898,7,6,49,18,0,0,0,0,0,0,0,0,0,0,4,0,0,52,54,Premier League,14,45,13,6,19
+alex-iwobi-everton-2021-2022,alex-iwobi,Alex Iwobi,everton,Everton,2021-2022,2021/22,DF,28,22,2035,2,2,24,6,0,0,0,0,0,0,0,0,0,0,1,0,0,43,66,Premier League,16,39,11,6,21
+daniel-james-leeds-united-2021-2022,daniel-james,Daniel James,leeds-united,Leeds United,2021-2022,2021/22,MF,32,29,2366,4,4,50,17,0,0,0,0,0,0,0,0,0,0,7,1,0,42,79,Premier League,17,38,9,11,18
+reece-james-chelsea-2021-2022,reece-james,Reece James,chelsea,Chelsea,2021-2022,2021/22,MF,26,22,1864,5,9,37,10,0,0,0,0,0,0,0,0,0,0,4,1,0,76,33,Premier League,3,74,21,11,6
+vitaly-janelt-brentford-2021-2022,vitaly-janelt,Vitaly Janelt,brentford,Brentford,2021-2022,2021/22,MF,31,27,2298,4,0,30,11,0,0,0,0,0,0,0,0,0,0,3,0,0,48,56,Premier League,13,46,13,7,18
+pontus-jansson-brentford-2021-2022,pontus-jansson,Pontus Jansson,brentford,Brentford,2021-2022,2021/22,DF,37,37,3321,3,1,22,11,0,0,0,0,0,0,0,0,0,0,7,0,0,48,56,Premier League,13,46,13,7,18
+mathias-jensen-brentford-2021-2022,mathias-jensen,Mathias Jensen,brentford,Brentford,2021-2022,2021/22,MF,31,19,1601,0,1,19,5,0,0,0,0,0,0,0,0,0,0,0,0,0,48,56,Premier League,13,46,13,7,18
+gabriel-jesus-manchester-city-2021-2022,gabriel-jesus,Gabriel Jesus,manchester-city,Manchester City,2021-2022,2021/22,FW,28,21,1877,8,8,64,25,0,0,0,0,0,0,0,0,0,0,1,0,0,99,26,Premier League,1,93,29,6,3
+raul-jimenez-wolves-2021-2022,raul-jimenez,Raúl Jiménez,wolves,Wolves,2021-2022,2021/22,FW,34,30,2631,6,4,57,16,0,0,0,0,0,0,0,0,0,0,9,2,0,38,43,Premier League,10,51,15,6,17
+joao-pedro-watford-2021-2022,joao-pedro,João Pedro,watford,Watford,2021-2022,2021/22,MF,28,15,1644,3,1,47,16,0,0,0,0,0,0,0,0,0,0,1,0,0,34,77,Premier League,19,23,6,5,27
+joelinton-newcastle-united-2021-2022,joelinton,Joelinton,newcastle-united,Newcastle United,2021-2022,2021/22,MF,35,30,2558,4,1,45,14,0,0,0,0,0,0,0,0,0,0,8,0,0,44,62,Premier League,11,49,13,10,15
+ben-johnson-west-ham-united-2021-2022,ben-johnson,Ben Johnson,west-ham-united,West Ham United,2021-2022,2021/22,DF,20,16,1397,1,0,5,1,0,0,0,0,0,0,0,0,0,0,1,0,0,60,51,Premier League,7,56,16,8,14
+curtis-jones-liverpool-2021-2022,curtis-jones,Curtis Jones,liverpool,Liverpool,2021-2022,2021/22,MF,15,10,851,1,1,20,7,0,0,0,0,0,0,0,0,0,0,0,0,0,94,26,Premier League,2,92,28,8,2
+jorginho-chelsea-2021-2022,jorginho,Jorginho,chelsea,Chelsea,2021-2022,2021/22,MF,29,26,2273,6,2,16,9,0,0,0,0,0,0,0,0,0,0,5,0,0,76,33,Premier League,3,74,21,11,6
+diogo-jota-liverpool-2021-2022,diogo-jota,Diogo Jota,liverpool,Liverpool,2021-2022,2021/22,FW,35,27,2364,15,4,90,33,0,0,0,0,0,0,0,0,0,0,3,0,0,94,26,Premier League,2,92,28,8,2
+james-justin-leicester-city-2021-2022,james-justin,James Justin,leicester-city,Leicester City,2021-2022,2021/22,DF,13,11,998,0,0,5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,62,59,Premier League,8,52,14,10,14
+mathias-jrgensen-brentford-2021-2022,mathias-jrgensen,Mathias Jørgensen,brentford,Brentford,2021-2022,2021/22,DF,8,6,518,1,0,2,1,0,0,0,0,0,0,0,0,0,0,2,0,0,48,56,Premier League,13,46,13,7,18
+ozan-kabak-norwich-city-2021-2022,ozan-kabak,Ozan Kabak,norwich-city,Norwich City,2021-2022,2021/22,DF,11,11,922,0,0,5,2,0,0,0,0,0,0,0,0,0,0,2,0,0,23,84,Premier League,20,22,5,7,26
+christian-kabasele-watford-2021-2022,christian-kabasele,Christian Kabasele,watford,Watford,2021-2022,2021/22,DF,16,12,1193,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,77,Premier League,19,23,6,5,27
+hassane-kamara-watford-2021-2022,hassane-kamara,Hassane Kamara,watford,Watford,2021-2022,2021/22,DF,19,18,1623,1,0,5,1,0,0,0,0,0,0,0,0,0,0,5,1,0,34,77,Premier League,19,23,6,5,27
+harry-kane-tottenham-hotspur-2021-2022,harry-kane,Harry Kane,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,FW,37,36,3232,17,9,133,55,0,0,0,0,0,0,0,0,0,0,5,0,0,69,40,Premier League,4,71,22,5,11
+ngolo-kante-chelsea-2021-2022,ngolo-kante,N'Golo Kanté,chelsea,Chelsea,2021-2022,2021/22,MF,26,21,1773,2,4,17,9,0,0,0,0,0,0,0,0,0,0,2,0,0,76,33,Premier League,3,74,21,11,6
+edo-kayembe-watford-2021-2022,edo-kayembe,Edo Kayembe,watford,Watford,2021-2022,2021/22,MF,13,9,799,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,77,Premier League,19,23,6,5,27
+michael-keane-everton-2021-2022,michael-keane,Michael Keane,everton,Everton,2021-2022,2021/22,DF,32,31,2792,3,2,20,6,0,0,0,0,0,0,0,0,0,0,4,1,0,43,66,Premier League,16,39,11,6,21
+naby-keita-liverpool-2021-2022,naby-keita,Naby Keïta,liverpool,Liverpool,2021-2022,2021/22,MF,23,14,1173,3,1,26,7,0,0,0,0,0,0,0,0,0,0,3,0,0,94,26,Premier League,2,92,28,8,2
+jonjoe-kenny-everton-2021-2022,jonjoe-kenny,Jonjoe Kenny,everton,Everton,2021-2022,2021/22,DF,15,11,1018,0,1,5,0,0,0,0,0,0,0,0,0,0,0,3,1,0,43,66,Premier League,16,39,11,6,21
+max-kilman-wolves-2021-2022,max-kilman,Max Kilman,wolves,Wolves,2021-2022,2021/22,DF,30,30,2687,1,0,13,4,0,0,0,0,0,0,0,0,0,0,3,0,0,38,43,Premier League,10,51,15,6,17
+joshua-king-watford-2021-2022,joshua-king,Joshua King,watford,Watford,2021-2022,2021/22,MF,32,27,2248,5,3,49,17,0,0,0,0,0,0,0,0,0,0,5,0,0,34,77,Premier League,19,23,6,5,27
+mateusz-klich-leeds-united-2021-2022,mateusz-klich,Mateusz Klich,leeds-united,Leeds United,2021-2022,2021/22,MF,33,26,2073,1,2,42,18,0,0,0,0,0,0,0,0,0,0,5,0,0,42,79,Premier League,17,38,9,11,18
+robin-koch-leeds-united-2021-2022,robin-koch,Robin Koch,leeds-united,Leeds United,2021-2022,2021/22,DF,20,17,1574,0,0,13,1,0,0,0,0,0,0,0,0,0,0,3,0,0,42,79,Premier League,17,38,9,11,18
+ibrahima-konate-liverpool-2021-2022,ibrahima-konate,Ibrahima Konaté,liverpool,Liverpool,2021-2022,2021/22,DF,11,11,990,0,0,4,0,0,0,0,0,0,0,0,0,0,0,2,0,0,94,26,Premier League,2,92,28,8,2
+ezri-konsa-aston-villa-2021-2022,ezri-konsa,Ezri Konsa,aston-villa,Aston Villa,2021-2022,2021/22,DF,29,29,2477,2,0,15,6,0,0,0,0,0,0,0,0,0,0,6,2,0,52,54,Premier League,14,45,13,6,19
+cheikhou-kouyate-crystal-palace-2021-2022,cheikhou-kouyate,Cheikhou Kouyaté,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,27,23,1974,0,1,7,0,0,0,0,0,0,0,0,0,0,0,3,0,0,50,46,Premier League,12,48,11,15,12
+mateo-kovacic-chelsea-2021-2022,mateo-kovacic,Mateo Kovačić,chelsea,Chelsea,2021-2022,2021/22,MF,25,16,1558,2,5,22,6,0,0,0,0,0,0,0,0,0,0,4,0,0,76,33,Premier League,3,74,21,11,6
+emil-krafth-newcastle-united-2021-2022,emil-krafth,Emil Krafth,newcastle-united,Newcastle United,2021-2022,2021/22,DF,20,18,1634,0,1,6,2,0,0,0,0,0,0,0,0,0,0,5,0,0,44,62,Premier League,11,49,13,10,15
+tim-krul-norwich-city-2021-2022,tim-krul,Tim Krul,norwich-city,Norwich City,2021-2022,2021/22,GK,29,29,2610,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,23,84,Premier League,20,22,5,7,26
+juraj-kucka-watford-2021-2022,juraj-kucka,Juraj Kucka,watford,Watford,2021-2022,2021/22,MF,26,22,1920,1,1,46,11,0,0,0,0,0,0,0,0,0,0,5,1,0,34,77,Premier League,19,23,6,5,27
+dejan-kulusevski-tottenham-hotspur-2021-2022,dejan-kulusevski,Dejan Kulusevski,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,18,14,1261,5,8,26,10,0,0,0,0,0,0,0,0,0,0,3,0,0,69,40,Premier League,4,71,22,5,11
+alexandre-lacazette-arsenal-2021-2022,alexandre-lacazette,Alexandre Lacazette,arsenal,Arsenal,2021-2022,2021/22,MF,30,20,1782,4,7,46,15,0,0,0,0,0,0,0,0,0,0,0,0,0,61,48,Premier League,5,69,22,3,13
+adam-lallana-brighton-2021-2022,adam-lallana,Adam Lallana,brighton,Brighton,2021-2022,2021/22,MF,24,18,1561,0,1,19,4,0,0,0,0,0,0,0,0,0,0,4,0,0,42,44,Premier League,9,51,12,15,11
+tariq-lamptey-brighton-2021-2022,tariq-lamptey,Tariq Lamptey,brighton,Brighton,2021-2022,2021/22,DF,30,16,1561,0,2,19,4,0,0,0,0,0,0,0,0,0,0,4,0,0,42,44,Premier League,9,51,12,15,11
+manuel-lanzini-west-ham-united-2021-2022,manuel-lanzini,Manuel Lanzini,west-ham-united,West Ham United,2021-2022,2021/22,MF,30,19,1786,5,3,16,7,0,0,0,0,0,0,0,0,0,0,2,0,0,60,51,Premier League,7,56,16,8,14
+aymeric-laporte-manchester-city-2021-2022,aymeric-laporte,Aymeric Laporte,manchester-city,Manchester City,2021-2022,2021/22,DF,33,33,2828,4,0,35,8,0,0,0,0,0,0,0,0,0,0,5,1,0,99,26,Premier League,1,93,29,6,3
+jamaal-lascelles-newcastle-united-2021-2022,jamaal-lascelles,Jamaal Lascelles,newcastle-united,Newcastle United,2021-2022,2021/22,DF,26,22,2058,1,0,17,4,0,0,0,0,0,0,0,0,0,0,5,0,0,44,62,Premier League,11,49,13,10,15
+pierre-lees-melou-norwich-city-2021-2022,pierre-lees-melou,Pierre Lees-Melou,norwich-city,Norwich City,2021-2022,2021/22,MF,33,27,2265,1,0,33,9,0,0,0,0,0,0,0,0,0,0,5,0,0,23,84,Premier League,20,22,5,7,26
+aaron-lennon-burnley-2021-2022,aaron-lennon,Aaron Lennon,burnley,Burnley,2021-2022,2021/22,MF,28,17,1551,2,0,12,4,0,0,0,0,0,0,0,0,0,0,2,0,0,34,53,Premier League,18,35,7,14,17
+victor-lindelof-manchester-utd-2021-2022,victor-lindelof,Victor Lindelöf,manchester-utd,Manchester Utd,2021-2022,2021/22,DF,28,26,2355,0,2,3,2,0,0,0,0,0,0,0,0,0,0,4,0,0,57,57,Premier League,6,58,16,10,12
+valentino-livramento-southampton-2021-2022,valentino-livramento,Valentino Livramento,southampton,Southampton,2021-2022,2021/22,DF,28,25,2202,1,1,12,3,0,0,0,0,0,0,0,0,0,0,2,0,0,43,67,Premier League,15,40,9,13,16
+diego-llorente-leeds-united-2021-2022,diego-llorente,Diego Llorente,leeds-united,Leeds United,2021-2022,2021/22,DF,28,28,2340,3,0,10,3,0,0,0,0,0,0,0,0,0,0,7,0,0,42,79,Premier League,17,38,9,11,18
+hugo-lloris-tottenham-hotspur-2021-2022,hugo-lloris,Hugo Lloris,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,GK,38,38,3420,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,69,40,Premier League,4,71,22,5,11
+ruben-loftus-cheek-chelsea-2021-2022,ruben-loftus-cheek,Ruben Loftus-Cheek,chelsea,Chelsea,2021-2022,2021/22,MF,24,13,1394,0,2,19,6,0,0,0,0,0,0,0,0,0,0,1,0,0,76,33,Premier League,3,74,21,11,6
+sean-longstaff-newcastle-united-2021-2022,sean-longstaff,Sean Longstaff,newcastle-united,Newcastle United,2021-2022,2021/22,MF,24,15,1464,1,1,15,2,0,0,0,0,0,0,0,0,0,0,1,0,0,44,62,Premier League,11,49,13,10,15
+ademola-lookman-leicester-city-2021-2022,ademola-lookman,Ademola Lookman,leicester-city,Leicester City,2021-2022,2021/22,MF,26,16,1453,6,0,26,12,0,0,0,0,0,0,0,0,0,0,2,0,0,62,59,Premier League,8,52,14,10,14
+imran-louza-watford-2021-2022,imran-louza,Imran Louza,watford,Watford,2021-2022,2021/22,MF,20,17,1416,0,0,17,4,0,0,0,0,0,0,0,0,0,0,6,0,0,34,77,Premier League,19,23,6,5,27
+matthew-lowton-burnley-2021-2022,matthew-lowton,Matthew Lowton,burnley,Burnley,2021-2022,2021/22,DF,25,20,1772,1,2,10,2,0,0,0,0,0,0,0,0,0,0,3,1,0,34,53,Premier League,18,35,7,14,17
+douglas-luiz-aston-villa-2021-2022,douglas-luiz,Douglas Luiz,aston-villa,Aston Villa,2021-2022,2021/22,MF,34,31,2715,2,3,23,8,0,0,0,0,0,0,0,0,0,0,7,0,0,52,54,Premier League,14,45,13,6,19
+romelu-lukaku-chelsea-2021-2022,romelu-lukaku,Romelu Lukaku,chelsea,Chelsea,2021-2022,2021/22,FW,26,16,1589,8,0,43,15,0,0,0,0,0,0,0,0,0,0,1,0,0,76,33,Premier League,3,74,21,11,6
+lyanco-southampton-2021-2022,lyanco,Lyanco,southampton,Southampton,2021-2022,2021/22,DF,15,9,911,0,0,6,1,0,0,0,0,0,0,0,0,0,0,2,0,0,43,67,Premier League,15,40,9,13,16
+alexis-mac-allister-brighton-2021-2022,alexis-mac-allister,Alexis Mac Allister,brighton,Brighton,2021-2022,2021/22,MF,33,22,2123,5,2,60,11,0,0,0,0,0,0,0,0,0,0,4,0,0,42,44,Premier League,9,51,12,15,11
+james-maddison-leicester-city-2021-2022,james-maddison,James Maddison,leicester-city,Leicester City,2021-2022,2021/22,MF,35,28,2459,12,8,72,34,0,0,0,0,0,0,0,0,0,0,3,0,0,62,59,Premier League,8,52,14,10,14
+gabriel-magalhaes-arsenal-2021-2022,gabriel-magalhaes,Gabriel Magalhães,arsenal,Arsenal,2021-2022,2021/22,DF,35,35,3063,5,0,29,12,0,0,0,0,0,0,0,0,0,0,8,1,0,61,48,Premier League,5,69,22,3,13
+harry-maguire-manchester-utd-2021-2022,harry-maguire,Harry Maguire,manchester-utd,Manchester Utd,2021-2022,2021/22,DF,30,28,2515,1,0,23,10,0,0,0,0,0,0,0,0,0,0,9,1,0,57,57,Premier League,6,58,16,10,12
+riyad-mahrez-manchester-city-2021-2022,riyad-mahrez,Riyad Mahrez,manchester-city,Manchester City,2021-2022,2021/22,FW,28,15,1498,11,5,61,23,0,0,0,0,0,0,0,0,0,0,0,0,0,99,26,Premier League,1,93,29,6,3
+sadio-mane-liverpool-2021-2022,sadio-mane,Sadio Mané,liverpool,Liverpool,2021-2022,2021/22,FW,34,32,2819,16,2,98,40,0,0,0,0,0,0,0,0,0,0,5,0,0,94,26,Premier League,2,92,28,8,2
+javier-manquillo-newcastle-united-2021-2022,javier-manquillo,Javier Manquillo,newcastle-united,Newcastle United,2021-2022,2021/22,DF,19,15,1257,1,2,4,2,0,0,0,0,0,0,0,0,0,0,5,0,0,44,62,Premier League,11,49,13,10,15
+fernando-marcal-wolves-2021-2022,fernando-marcal,Fernando Marçal,wolves,Wolves,2021-2022,2021/22,MF,18,17,1449,0,0,11,1,0,0,0,0,0,0,0,0,0,0,3,0,0,38,43,Premier League,10,51,15,6,17
+solly-march-brighton-2021-2022,solly-march,Solly March,brighton,Brighton,2021-2022,2021/22,MF,31,17,1746,0,2,21,11,0,0,0,0,0,0,0,0,0,0,1,0,0,42,44,Premier League,9,51,12,15,11
+gabriel-martinelli-arsenal-2021-2022,gabriel-martinelli,Gabriel Martinelli,arsenal,Arsenal,2021-2022,2021/22,MF,29,21,1860,6,6,52,16,0,0,0,0,0,0,0,0,0,0,3,1,0,61,48,Premier League,5,69,22,3,13
+emiliano-martinez-aston-villa-2021-2022,emiliano-martinez,Emiliano Martínez,aston-villa,Aston Villa,2021-2022,2021/22,GK,36,36,3240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,52,54,Premier League,14,45,13,6,19
+adam-masina-watford-2021-2022,adam-masina,Adam Masina,watford,Watford,2021-2022,2021/22,DF,15,13,1077,0,1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,77,Premier League,19,23,6,5,27
+arthur-masuaku-west-ham-united-2021-2022,arthur-masuaku,Arthur Masuaku,west-ham-united,West Ham United,2021-2022,2021/22,DF,13,6,650,1,1,4,1,0,0,0,0,0,0,0,0,0,0,1,0,0,60,51,Premier League,7,56,16,8,14
+jean-philippe-mateta-crystal-palace-2021-2022,jean-philippe-mateta,Jean-Philippe Mateta,crystal-palace,Crystal Palace,2021-2022,2021/22,FW,22,13,1145,5,1,37,18,0,0,0,0,0,0,0,0,0,0,2,0,0,50,46,Premier League,12,48,11,15,12
+nemanja-matic-manchester-utd-2021-2022,nemanja-matic,Nemanja Matić,manchester-utd,Manchester Utd,2021-2022,2021/22,MF,23,16,1382,0,4,6,1,0,0,0,0,0,0,0,0,0,0,3,0,0,57,57,Premier League,6,58,16,10,12
+joel-matip-liverpool-2021-2022,joel-matip,Joël Matip,liverpool,Liverpool,2021-2022,2021/22,DF,31,31,2790,3,3,34,9,0,0,0,0,0,0,0,0,0,0,2,0,0,94,26,Premier League,2,92,28,8,2
+neal-maupay-brighton-2021-2022,neal-maupay,Neal Maupay,brighton,Brighton,2021-2022,2021/22,FW,32,25,2276,8,2,61,15,0,0,0,0,0,0,0,0,0,0,7,0,0,42,44,Premier League,9,51,12,15,11
+bryan-mbeumo-brentford-2021-2022,bryan-mbeumo,Bryan Mbeumo,brentford,Brentford,2021-2022,2021/22,FW,35,34,2905,4,7,77,22,0,0,0,0,0,0,0,0,0,0,4,0,0,48,56,Premier League,13,46,13,7,18
+james-mcarthur-crystal-palace-2021-2022,james-mcarthur,James McArthur,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,21,15,1439,0,3,9,3,0,0,0,0,0,0,0,0,0,0,4,0,0,50,46,Premier League,12,48,11,15,12
+alex-mccarthy-southampton-2021-2022,alex-mccarthy,Alex McCarthy,southampton,Southampton,2021-2022,2021/22,GK,17,17,1530,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,43,67,Premier League,15,40,9,13,16
+john-mcginn-aston-villa-2021-2022,john-mcginn,John McGinn,aston-villa,Aston Villa,2021-2022,2021/22,MF,35,35,3090,3,4,43,16,0,0,0,0,0,0,0,0,0,0,8,0,0,52,54,Premier League,14,45,13,6,19
+kenny-mclean-norwich-city-2021-2022,kenny-mclean,Kenny McLean,norwich-city,Norwich City,2021-2022,2021/22,MF,31,29,2706,1,0,33,6,0,0,0,0,0,0,0,0,0,0,3,0,0,23,84,Premier League,20,22,5,7,26
+dwight-mcneil-burnley-2021-2022,dwight-mcneil,Dwight McNeil,burnley,Burnley,2021-2022,2021/22,MF,38,35,3107,0,1,52,15,0,0,0,0,0,0,0,0,0,0,1,0,0,34,53,Premier League,18,35,7,14,17
+scott-mctominay-manchester-utd-2021-2022,scott-mctominay,Scott McTominay,manchester-utd,Manchester Utd,2021-2022,2021/22,MF,30,28,2387,1,1,27,7,0,0,0,0,0,0,0,0,0,0,9,0,0,57,57,Premier League,6,58,16,10,12
+ben-mee-burnley-2021-2022,ben-mee,Ben Mee,burnley,Burnley,2021-2022,2021/22,DF,21,21,1839,3,0,19,4,0,0,0,0,0,0,0,0,0,0,3,0,0,34,53,Premier League,18,35,7,14,17
+edouard-mendy-chelsea-2021-2022,edouard-mendy,Edouard Mendy,chelsea,Chelsea,2021-2022,2021/22,GK,34,34,3060,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,76,33,Premier League,3,74,21,11,6
+nampalys-mendy-leicester-city-2021-2022,nampalys-mendy,Nampalys Mendy,leicester-city,Leicester City,2021-2022,2021/22,MF,14,12,1032,0,0,1,1,0,0,0,0,0,0,0,0,0,0,3,0,0,62,59,Premier League,8,52,14,10,14
+illan-meslier-leeds-united-2021-2022,illan-meslier,Illan Meslier,leeds-united,Leeds United,2021-2022,2021/22,GK,38,38,3384,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,42,79,Premier League,17,38,9,11,18
+luka-milivojevic-crystal-palace-2021-2022,luka-milivojevic,Luka Milivojević,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,15,9,774,0,0,8,0,0,0,0,0,0,0,0,0,0,0,1,0,0,50,46,Premier League,12,48,11,15,12
+james-milner-liverpool-2021-2022,james-milner,James Milner,liverpool,Liverpool,2021-2022,2021/22,DF,24,9,853,0,1,10,2,0,0,0,0,0,0,0,0,0,0,2,0,0,94,26,Premier League,2,92,28,8,2
+yerry-mina-everton-2021-2022,yerry-mina,Yerry Mina,everton,Everton,2021-2022,2021/22,DF,13,11,846,0,0,6,2,0,0,0,0,0,0,0,0,0,0,3,0,0,43,66,Premier League,16,39,11,6,21
+tyrone-mings-aston-villa-2021-2022,tyrone-mings,Tyrone Mings,aston-villa,Aston Villa,2021-2022,2021/22,DF,36,35,3189,1,3,21,5,0,0,0,0,0,0,0,0,0,0,11,0,0,52,54,Premier League,14,45,13,6,19
+tyrick-mitchell-crystal-palace-2021-2022,tyrick-mitchell,Tyrick Mitchell,crystal-palace,Crystal Palace,2021-2022,2021/22,DF,36,35,3101,0,2,4,0,0,0,0,0,0,0,0,0,0,0,1,0,0,50,46,Premier League,12,48,11,15,12
+jakub-moder-brighton-2021-2022,jakub-moder,Jakub Moder,brighton,Brighton,2021-2022,2021/22,MF,28,19,1701,0,3,28,6,0,0,0,0,0,0,0,0,0,0,1,0,0,42,44,Premier League,9,51,12,15,11
+mason-mount-chelsea-2021-2022,mason-mount,Mason Mount,chelsea,Chelsea,2021-2022,2021/22,MF,32,27,2363,11,10,76,29,0,0,0,0,0,0,0,0,0,0,4,0,0,76,33,Premier League,3,74,21,11,6
+lucas-moura-tottenham-hotspur-2021-2022,lucas-moura,Lucas Moura,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,34,19,1775,2,6,37,11,0,0,0,0,0,0,0,0,0,0,4,0,0,69,40,Premier League,4,71,22,5,11
+joao-moutinho-wolves-2021-2022,joao-moutinho,João Moutinho,wolves,Wolves,2021-2022,2021/22,MF,35,34,2970,2,1,20,7,0,0,0,0,0,0,0,0,0,0,4,0,0,38,43,Premier League,10,51,15,6,17
+jacob-murphy-newcastle-united-2021-2022,jacob-murphy,Jacob Murphy,newcastle-united,Newcastle United,2021-2022,2021/22,MF,33,13,1473,1,2,27,5,0,0,0,0,0,0,0,0,0,0,4,0,0,44,62,Premier League,11,49,13,10,15
+enock-mwepu-brighton-2021-2022,enock-mwepu,Enock Mwepu,brighton,Brighton,2021-2022,2021/22,MF,18,12,996,2,4,19,8,0,0,0,0,0,0,0,0,0,0,2,0,0,42,44,Premier League,9,51,12,15,11
+vitaliy-mykolenko-everton-2021-2022,vitaliy-mykolenko,Vitaliy Mykolenko,everton,Everton,2021-2022,2021/22,DF,13,12,1055,1,0,8,2,0,0,0,0,0,0,0,0,0,0,0,0,0,43,66,Premier League,16,39,11,6,21
+marvelous-nakamba-aston-villa-2021-2022,marvelous-nakamba,Marvelous Nakamba,aston-villa,Aston Villa,2021-2022,2021/22,MF,16,10,904,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,52,54,Premier League,14,45,13,6,19
+wilfred-ndidi-leicester-city-2021-2022,wilfred-ndidi,Wilfred Ndidi,leicester-city,Leicester City,2021-2022,2021/22,DF,19,18,1618,0,0,14,4,0,0,0,0,0,0,0,0,0,0,4,0,0,62,59,Premier League,8,52,14,10,14
+tanguy-ndombele-tottenham-hotspur-2021-2022,tanguy-ndombele,Tanguy Ndombele,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,9,6,484,1,1,9,3,0,0,0,0,0,0,0,0,0,0,1,0,0,69,40,Premier League,4,71,22,5,11
+pedro-neto-wolves-2021-2022,pedro-neto,Pedro Neto,wolves,Wolves,2021-2022,2021/22,MF,13,5,466,1,1,17,4,0,0,0,0,0,0,0,0,0,0,3,0,0,38,43,Premier League,10,51,15,6,17
+ruben-neves-wolves-2021-2022,ruben-neves,Rúben Neves,wolves,Wolves,2021-2022,2021/22,MF,33,31,2661,4,2,42,16,0,0,0,0,0,0,0,0,0,0,9,0,0,38,43,Premier League,10,51,15,6,17
+jeremy-ngakia-watford-2021-2022,jeremy-ngakia,Jeremy Ngakia,watford,Watford,2021-2022,2021/22,DF,16,9,903,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,77,Premier League,19,23,6,5,27
+saul-niguez-chelsea-2021-2022,saul-niguez,Saúl Ñíguez,chelsea,Chelsea,2021-2022,2021/22,MF,10,5,480,0,0,5,1,0,0,0,0,0,0,0,0,0,0,1,0,0,76,33,Premier League,3,74,21,11,6
+eddie-nketiah-arsenal-2021-2022,eddie-nketiah,Eddie Nketiah,arsenal,Arsenal,2021-2022,2021/22,FW,21,8,835,5,1,28,12,0,0,0,0,0,0,0,0,0,0,3,0,0,61,48,Premier League,5,69,22,3,13
+mathias-normann-norwich-city-2021-2022,mathias-normann,Mathias Normann,norwich-city,Norwich City,2021-2022,2021/22,MF,23,20,1645,1,2,26,5,0,0,0,0,0,0,0,0,0,0,6,0,0,23,84,Premier League,20,22,5,7,26
+christian-nrgaard-brentford-2021-2022,christian-nrgaard,Christian Nørgaard,brentford,Brentford,2021-2022,2021/22,MF,35,35,3054,3,4,27,9,0,0,0,0,0,0,0,0,0,0,8,0,0,48,56,Premier League,13,46,13,7,18
+angelo-ogbonna-west-ham-united-2021-2022,angelo-ogbonna,Angelo Ogbonna,west-ham-united,West Ham United,2021-2022,2021/22,DF,11,11,921,1,0,3,1,0,0,0,0,0,0,0,0,0,0,1,0,0,60,51,Premier League,7,56,16,8,14
+michael-olise-crystal-palace-2021-2022,michael-olise,Michael Olise,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,26,12,1141,2,5,19,10,0,0,0,0,0,0,0,0,0,0,4,0,0,50,46,Premier League,12,48,11,15,12
+frank-onyeka-brentford-2021-2022,frank-onyeka,Frank Onyeka,brentford,Brentford,2021-2022,2021/22,MF,20,12,1045,0,0,16,5,0,0,0,0,0,0,0,0,0,0,4,0,0,48,56,Premier League,13,46,13,7,18
+alex-oxlade-chamberlain-liverpool-2021-2022,alex-oxlade-chamberlain,Alex Oxlade-Chamberlain,liverpool,Liverpool,2021-2022,2021/22,MF,17,9,785,2,1,21,3,0,0,0,0,0,0,0,0,0,0,0,0,0,94,26,Premier League,2,92,28,8,2
+thomas-partey-arsenal-2021-2022,thomas-partey,Thomas Partey,arsenal,Arsenal,2021-2022,2021/22,MF,24,23,2028,2,1,44,10,0,0,0,0,0,0,0,0,0,0,6,0,0,61,48,Premier League,5,69,22,3,13
+nicolas-pepe-arsenal-2021-2022,nicolas-pepe,Nicolas Pépé,arsenal,Arsenal,2021-2022,2021/22,MF,20,5,696,1,2,23,8,0,0,0,0,0,0,0,0,0,0,0,0,0,61,48,Premier League,5,69,22,3,13
+ricardo-pereira-leicester-city-2021-2022,ricardo-pereira,Ricardo Pereira,leicester-city,Leicester City,2021-2022,2021/22,DF,14,13,991,1,3,10,2,0,0,0,0,0,0,0,0,0,0,3,0,0,62,59,Premier League,8,52,14,10,14
+romain-perraud-southampton-2021-2022,romain-perraud,Romain Perraud,southampton,Southampton,2021-2022,2021/22,DF,20,18,1623,0,1,19,3,0,0,0,0,0,0,0,0,0,0,3,0,0,43,67,Premier League,15,40,9,13,16
+kalvin-phillips-leeds-united-2021-2022,kalvin-phillips,Kalvin Phillips,leeds-united,Leeds United,2021-2022,2021/22,MF,20,18,1596,0,1,15,3,0,0,0,0,0,0,0,0,0,0,4,0,0,42,79,Premier League,17,38,9,11,18
+jordan-pickford-everton-2021-2022,jordan-pickford,Jordan Pickford,everton,Everton,2021-2022,2021/22,GK,35,35,3150,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,43,66,Premier League,16,39,11,6,21
+erik-pieters-burnley-2021-2022,erik-pieters,Erik Pieters,burnley,Burnley,2021-2022,2021/22,DF,12,8,730,0,1,7,0,0,0,0,0,0,0,0,0,0,0,1,0,0,34,53,Premier League,18,35,7,14,17
+ethan-pinnock-brentford-2021-2022,ethan-pinnock,Ethan Pinnock,brentford,Brentford,2021-2022,2021/22,DF,32,32,2694,1,1,16,9,0,0,0,0,0,0,0,0,0,0,1,0,0,48,56,Premier League,13,46,13,7,18
+daniel-podence-wolves-2021-2022,daniel-podence,Daniel Podence,wolves,Wolves,2021-2022,2021/22,MF,26,15,1484,2,3,35,15,0,0,0,0,0,0,0,0,0,0,2,0,0,38,43,Premier League,10,51,15,6,17
+paul-pogba-manchester-utd-2021-2022,paul-pogba,Paul Pogba,manchester-utd,Manchester Utd,2021-2022,2021/22,MF,20,16,1349,1,9,32,8,0,0,0,0,0,0,0,0,0,0,7,1,0,57,57,Premier League,6,58,16,10,12
+nick-pope-burnley-2021-2022,nick-pope,Nick Pope,burnley,Burnley,2021-2022,2021/22,GK,36,36,3240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,34,53,Premier League,18,35,7,14,17
+teemu-pukki-norwich-city-2021-2022,teemu-pukki,Teemu Pukki,norwich-city,Norwich City,2021-2022,2021/22,FW,37,37,3253,11,3,71,27,0,0,0,0,0,0,0,0,0,0,4,0,0,23,84,Premier League,20,22,5,7,26
+christian-pulisic-chelsea-2021-2022,christian-pulisic,Christian Pulisic,chelsea,Chelsea,2021-2022,2021/22,MF,22,13,1290,6,2,28,11,0,0,0,0,0,0,0,0,0,0,2,0,0,76,33,Premier League,3,74,21,11,6
+przemysaw-pacheta-norwich-city-2021-2022,przemysaw-pacheta,Przemysław Płacheta,norwich-city,Norwich City,2021-2022,2021/22,MF,12,6,504,0,0,8,7,0,0,0,0,0,0,0,0,0,0,1,0,0,23,84,Premier League,20,22,5,7,26
+aaron-ramsdale-arsenal-2021-2022,aaron-ramsdale,Aaron Ramsdale,arsenal,Arsenal,2021-2022,2021/22,GK,34,34,3060,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,61,48,Premier League,5,69,22,3,13
+jacob-ramsey-aston-villa-2021-2022,jacob-ramsey,Jacob Ramsey,aston-villa,Aston Villa,2021-2022,2021/22,MF,34,29,2467,6,1,34,11,0,0,0,0,0,0,0,0,0,0,6,0,0,52,54,Premier League,14,45,13,6,19
+raphinha-leeds-united-2021-2022,raphinha,Raphinha,leeds-united,Leeds United,2021-2022,2021/22,MF,35,34,2915,11,3,87,25,0,0,0,0,0,0,0,0,0,0,7,0,0,42,79,Premier League,17,38,9,11,18
+marcus-rashford-manchester-utd-2021-2022,marcus-rashford,Marcus Rashford,manchester-utd,Manchester Utd,2021-2022,2021/22,MF,25,13,1235,4,2,22,12,0,0,0,0,0,0,0,0,0,0,2,0,0,57,57,Premier League,6,58,16,10,12
+milot-rashica-norwich-city-2021-2022,milot-rashica,Milot Rashica,norwich-city,Norwich City,2021-2022,2021/22,MF,31,25,2229,1,2,44,17,0,0,0,0,0,0,0,0,0,0,0,0,0,23,84,Premier League,20,22,5,7,26
+david-raya-brentford-2021-2022,david-raya,David Raya,brentford,Brentford,2021-2022,2021/22,GK,24,24,2160,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,48,56,Premier League,13,46,13,7,18
+nathan-redmond-southampton-2021-2022,nathan-redmond,Nathan Redmond,southampton,Southampton,2021-2022,2021/22,MF,27,20,1833,1,5,26,9,0,0,0,0,0,0,0,0,0,0,0,0,0,43,67,Premier League,15,40,9,13,16
+sergio-reguilon-tottenham-hotspur-2021-2022,sergio-reguilon,Sergio Reguilón,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,DF,25,22,1916,2,3,21,9,0,0,0,0,0,0,0,0,0,0,4,0,0,69,40,Premier League,4,71,22,5,11
+declan-rice-west-ham-united-2021-2022,declan-rice,Declan Rice,west-ham-united,West Ham United,2021-2022,2021/22,MF,36,35,3179,1,4,26,8,0,0,0,0,0,0,0,0,0,0,8,0,0,60,51,Premier League,7,56,16,8,14
+richarlison-everton-2021-2022,richarlison,Richarlison,everton,Everton,2021-2022,2021/22,MF,30,28,2523,10,5,73,23,0,0,0,0,0,0,0,0,0,0,9,0,0,43,66,Premier League,16,39,11,6,21
+matt-ritchie-newcastle-united-2021-2022,matt-ritchie,Matt Ritchie,newcastle-united,Newcastle United,2021-2022,2021/22,DF,18,14,1337,0,2,10,1,0,0,0,0,0,0,0,0,0,0,5,0,0,44,62,Premier League,11,49,13,10,15
+connor-roberts-burnley-2021-2022,connor-roberts,Connor Roberts,burnley,Burnley,2021-2022,2021/22,DF,21,19,1692,1,1,6,4,0,0,0,0,0,0,0,0,0,0,2,0,0,34,53,Premier League,18,35,7,14,17
+tyler-roberts-leeds-united-2021-2022,tyler-roberts,Tyler Roberts,leeds-united,Leeds United,2021-2022,2021/22,MF,23,7,987,1,1,30,13,0,0,0,0,0,0,0,0,0,0,5,0,0,42,79,Premier League,17,38,9,11,18
+andrew-robertson-liverpool-2021-2022,andrew-robertson,Andrew Robertson,liverpool,Liverpool,2021-2022,2021/22,DF,29,29,2537,3,10,19,8,0,0,0,0,0,0,0,0,0,0,5,1,0,94,26,Premier League,2,92,28,8,2
+rodri-manchester-city-2021-2022,rodri,Rodri,manchester-city,Manchester City,2021-2022,2021/22,MF,33,33,2884,7,2,45,14,0,0,0,0,0,0,0,0,0,0,5,0,0,99,26,Premier League,1,93,29,6,3
+rodrigo-leeds-united-2021-2022,rodrigo,Rodrigo,leeds-united,Leeds United,2021-2022,2021/22,MF,31,27,2265,6,1,47,18,0,0,0,0,0,0,0,0,0,0,9,0,0,42,79,Premier League,17,38,9,11,18
+jay-rodriguez-burnley-2021-2022,jay-rodriguez,Jay Rodriguez,burnley,Burnley,2021-2022,2021/22,FW,29,13,1382,2,2,41,11,0,0,0,0,0,0,0,0,0,0,3,0,0,34,53,Premier League,18,35,7,14,17
+mads-roerslev-brentford-2021-2022,mads-roerslev,Mads Roerslev,brentford,Brentford,2021-2022,2021/22,DF,21,12,1240,1,1,5,2,0,0,0,0,0,0,0,0,0,0,1,0,0,48,56,Premier League,13,46,13,7,18
+cristian-romero-tottenham-hotspur-2021-2022,cristian-romero,Cristian Romero,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,DF,22,21,1844,1,0,6,2,0,0,0,0,0,0,0,0,0,0,8,0,0,69,40,Premier League,4,71,22,5,11
+oriol-romeu-southampton-2021-2022,oriol-romeu,Oriol Romeu,southampton,Southampton,2021-2022,2021/22,MF,36,34,2889,2,2,24,4,0,0,0,0,0,0,0,0,0,0,9,0,0,43,67,Premier League,15,40,9,13,16
+cristiano-ronaldo-manchester-utd-2021-2022,cristiano-ronaldo,Cristiano Ronaldo,manchester-utd,Manchester Utd,2021-2022,2021/22,FW,30,27,2456,18,3,110,43,0,0,0,0,0,0,0,0,0,0,8,0,0,57,57,Premier League,6,58,16,10,12
+salomon-rondon-everton-2021-2022,salomon-rondon,Salomón Rondón,everton,Everton,2021-2022,2021/22,FW,20,8,790,1,1,21,6,0,0,0,0,0,0,0,0,0,0,3,1,0,43,66,Premier League,16,39,11,6,21
+danny-rose-watford-2021-2022,danny-rose,Danny Rose,watford,Watford,2021-2022,2021/22,DF,8,7,689,0,0,4,1,0,0,0,0,0,0,0,0,0,0,4,0,0,34,77,Premier League,19,23,6,5,27
+antonio-rudiger-chelsea-2021-2022,antonio-rudiger,Antonio Rüdiger,chelsea,Chelsea,2021-2022,2021/22,DF,34,34,3035,3,0,48,13,0,0,0,0,0,0,0,0,0,0,9,0,0,76,33,Premier League,3,74,21,11,6
+lukas-rupp-norwich-city-2021-2022,lukas-rupp,Lukas Rupp,norwich-city,Norwich City,2021-2022,2021/22,MF,19,7,769,0,0,12,2,0,0,0,0,0,0,0,0,0,0,0,0,0,23,84,Premier League,20,22,5,7,26
+jose-sa-wolves-2021-2022,jose-sa,José Sá,wolves,Wolves,2021-2022,2021/22,GK,37,37,3285,0,1,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,38,43,Premier League,10,51,15,6,17
+allan-saint-maximin-newcastle-united-2021-2022,allan-saint-maximin,Allan Saint-Maximin,newcastle-united,Newcastle United,2021-2022,2021/22,MF,35,31,2804,5,5,64,26,0,0,0,0,0,0,0,0,0,0,6,0,0,44,62,Premier League,11,49,13,10,15
+romain-saiss-wolves-2021-2022,romain-saiss,Romain Saïss,wolves,Wolves,2021-2022,2021/22,DF,31,31,2705,2,0,18,6,0,0,0,0,0,0,0,0,0,0,6,0,0,38,43,Premier League,10,51,15,6,17
+bukayo-saka-arsenal-2021-2022,bukayo-saka,Bukayo Saka,arsenal,Arsenal,2021-2022,2021/22,MF,38,36,2978,11,7,97,31,0,0,0,0,0,0,0,0,0,0,6,0,0,61,48,Premier League,5,69,22,3,13
+mohamed-salah-liverpool-2021-2022,mohamed-salah,Mohamed Salah,liverpool,Liverpool,2021-2022,2021/22,FW,35,30,2762,23,13,139,60,0,0,0,0,0,0,0,0,0,0,1,0,0,94,26,Premier League,2,92,28,8,2
+mohammed-salisu-southampton-2021-2022,mohammed-salisu,Mohammed Salisu,southampton,Southampton,2021-2022,2021/22,DF,34,33,2972,0,0,24,10,0,0,0,0,0,0,0,0,0,0,10,1,0,43,67,Premier League,15,40,9,13,16
+albert-sambi-lokonga-arsenal-2021-2022,albert-sambi-lokonga,Albert Sambi Lokonga,arsenal,Arsenal,2021-2022,2021/22,MF,19,12,1134,0,0,20,8,0,0,0,0,0,0,0,0,0,0,5,0,0,61,48,Premier League,5,69,22,3,13
+davinson-sanchez-tottenham-hotspur-2021-2022,davinson-sanchez,Davinson Sánchez,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,DF,23,17,1631,2,0,13,3,0,0,0,0,0,0,0,0,0,0,4,0,0,69,40,Premier League,4,71,22,5,11
+robert-sanchez-brighton-2021-2022,robert-sanchez,Robert Sánchez,brighton,Brighton,2021-2022,2021/22,GK,37,37,3329,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,0,42,44,Premier League,9,51,12,15,11
+jadon-sancho-manchester-utd-2021-2022,jadon-sancho,Jadon Sancho,manchester-utd,Manchester Utd,2021-2022,2021/22,MF,29,20,1900,3,3,26,9,0,0,0,0,0,0,0,0,0,0,0,0,0,57,57,Premier League,6,58,16,10,12
+samir-santos-watford-2021-2022,samir-santos,Samir Santos,watford,Watford,2021-2022,2021/22,DF,19,19,1673,0,0,8,2,0,0,0,0,0,0,0,0,0,0,4,0,0,34,77,Premier League,19,23,6,5,27
+josh-sargent-norwich-city-2021-2022,josh-sargent,Josh Sargent,norwich-city,Norwich City,2021-2022,2021/22,MF,26,18,1572,2,1,23,3,0,0,0,0,0,0,0,0,0,0,1,0,0,23,84,Premier League,20,22,5,7,26
+ismaila-sarr-watford-2021-2022,ismaila-sarr,Ismaila Sarr,watford,Watford,2021-2022,2021/22,MF,22,21,1861,5,2,39,17,0,0,0,0,0,0,0,0,0,0,2,0,0,34,77,Premier League,19,23,6,5,27
+malang-sarr-chelsea-2021-2022,malang-sarr,Malang Sarr,chelsea,Chelsea,2021-2022,2021/22,DF,8,6,546,0,0,1,0,0,0,0,0,0,0,0,0,0,0,2,0,0,76,33,Premier League,3,74,21,11,6
+fabian-schar-newcastle-united-2021-2022,fabian-schar,Fabian Schär,newcastle-united,Newcastle United,2021-2022,2021/22,DF,25,25,2158,2,2,20,7,0,0,0,0,0,0,0,0,0,0,4,0,0,44,62,Premier League,11,49,13,10,15
+jeffrey-schlupp-crystal-palace-2021-2022,jeffrey-schlupp,Jeffrey Schlupp,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,32,20,1851,4,1,33,9,0,0,0,0,0,0,0,0,0,0,1,0,0,50,46,Premier League,12,48,11,15,12
+kasper-schmeichel-leicester-city-2021-2022,kasper-schmeichel,Kasper Schmeichel,leicester-city,Leicester City,2021-2022,2021/22,GK,37,37,3330,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,62,59,Premier League,8,52,14,10,14
+ken-sema-watford-2021-2022,ken-sema,Ken Sema,watford,Watford,2021-2022,2021/22,MF,18,7,852,0,0,3,1,0,0,0,0,0,0,0,0,0,0,1,0,0,34,77,Premier League,19,23,6,5,27
+nelson-semedo-wolves-2021-2022,nelson-semedo,Nélson Semedo,wolves,Wolves,2021-2022,2021/22,MF,25,25,2131,0,1,19,4,0,0,0,0,0,0,0,0,0,0,1,0,0,38,43,Premier League,10,51,15,6,17
+ryan-sessegnon-tottenham-hotspur-2021-2022,ryan-sessegnon,Ryan Sessegnon,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,15,13,1047,0,2,6,1,0,0,0,0,0,0,0,0,0,0,2,0,0,69,40,Premier League,4,71,22,5,11
+jamie-shackleton-leeds-united-2021-2022,jamie-shackleton,Jamie Shackleton,leeds-united,Leeds United,2021-2022,2021/22,DF,14,7,709,0,0,4,1,0,0,0,0,0,0,0,0,0,0,4,0,0,42,79,Premier League,17,38,9,11,18
+luke-shaw-manchester-utd-2021-2022,luke-shaw,Luke Shaw,manchester-utd,Manchester Utd,2021-2022,2021/22,DF,20,19,1601,0,3,6,1,0,0,0,0,0,0,0,0,0,0,8,0,0,57,57,Premier League,6,58,16,10,12
+jonjo-shelvey-newcastle-united-2021-2022,jonjo-shelvey,Jonjo Shelvey,newcastle-united,Newcastle United,2021-2022,2021/22,MF,24,22,1983,2,1,30,14,0,0,0,0,0,0,0,0,0,0,7,1,0,44,62,Premier League,11,49,13,10,15
+bernardo-silva-manchester-city-2021-2022,bernardo-silva,Bernardo Silva,manchester-city,Manchester City,2021-2022,2021/22,MF,35,33,2857,8,4,48,20,0,0,0,0,0,0,0,0,0,0,6,0,0,99,26,Premier League,1,93,29,6,3
+fabio-silva-wolves-2021-2022,fabio-silva,Fábio Silva,wolves,Wolves,2021-2022,2021/22,FW,22,6,572,0,0,19,5,0,0,0,0,0,0,0,0,0,0,0,0,0,38,43,Premier League,10,51,15,6,17
+thiago-silva-chelsea-2021-2022,thiago-silva,Thiago Silva,chelsea,Chelsea,2021-2022,2021/22,DF,32,28,2650,3,0,18,5,0,0,0,0,0,0,0,0,0,0,2,0,0,76,33,Premier League,3,74,21,11,6
+moussa-sissoko-watford-2021-2022,moussa-sissoko,Moussa Sissoko,watford,Watford,2021-2022,2021/22,MF,36,36,3220,2,1,25,8,0,0,0,0,0,0,0,0,0,0,5,0,0,34,77,Premier League,19,23,6,5,27
+oliver-skipp-tottenham-hotspur-2021-2022,oliver-skipp,Oliver Skipp,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,18,14,1350,0,0,4,1,0,0,0,0,0,0,0,0,0,0,6,0,0,69,40,Premier League,4,71,22,5,11
+emile-smith-rowe-arsenal-2021-2022,emile-smith-rowe,Emile Smith Rowe,arsenal,Arsenal,2021-2022,2021/22,MF,33,21,1921,10,2,40,23,0,0,0,0,0,0,0,0,0,0,1,0,0,61,48,Premier League,5,69,22,3,13
+cedric-soares-arsenal-2021-2022,cedric-soares,Cédric Soares,arsenal,Arsenal,2021-2022,2021/22,DF,21,16,1486,1,1,12,1,0,0,0,0,0,0,0,0,0,0,3,0,0,61,48,Premier League,5,69,22,3,13
+tomas-soucek-west-ham-united-2021-2022,tomas-soucek,Tomáš Souček,west-ham-united,West Ham United,2021-2022,2021/22,MF,35,34,3062,5,1,45,12,0,0,0,0,0,0,0,0,0,0,3,0,0,60,51,Premier League,7,56,16,8,14
+boubakary-soumare-leicester-city-2021-2022,boubakary-soumare,Boubakary Soumaré,leicester-city,Leicester City,2021-2022,2021/22,MF,19,12,1102,0,1,6,2,0,0,0,0,0,0,0,0,0,0,0,0,0,62,59,Premier League,8,52,14,10,14
+caglar-soyuncu-leicester-city-2021-2022,caglar-soyuncu,Çağlar Söyüncü,leicester-city,Leicester City,2021-2022,2021/22,DF,28,28,2497,1,0,8,1,0,0,0,0,0,0,0,0,0,0,5,0,0,62,59,Premier League,8,52,14,10,14
+jack-stephens-southampton-2021-2022,jack-stephens,Jack Stephens,southampton,Southampton,2021-2022,2021/22,DF,11,9,811,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,43,67,Premier League,15,40,9,13,16
+raheem-sterling-manchester-city-2021-2022,raheem-sterling,Raheem Sterling,manchester-city,Manchester City,2021-2022,2021/22,MF,30,23,2128,13,5,58,28,0,0,0,0,0,0,0,0,0,0,1,0,0,99,26,Premier League,1,93,29,6,3
+john-stones-manchester-city-2021-2022,john-stones,John Stones,manchester-city,Manchester City,2021-2022,2021/22,DF,14,12,1119,1,0,9,5,0,0,0,0,0,0,0,0,0,0,0,0,0,99,26,Premier League,1,93,29,6,3
+pascal-struijk-leeds-united-2021-2022,pascal-struijk,Pascal Struijk,leeds-united,Leeds United,2021-2022,2021/22,DF,29,22,2055,1,0,11,4,0,0,0,0,0,0,0,0,0,0,6,1,0,42,79,Premier League,17,38,9,11,18
+jakob-srensen-norwich-city-2021-2022,jakob-srensen,Jakob Sørensen,norwich-city,Norwich City,2021-2022,2021/22,DF,10,6,604,0,0,5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,23,84,Premier League,20,22,5,7,26
+japhet-tanganga-tottenham-hotspur-2021-2022,japhet-tanganga,Japhet Tanganga,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,DF,11,10,735,0,0,7,2,0,0,0,0,0,0,0,0,0,0,4,1,0,69,40,Premier League,4,71,22,5,11
+matt-targett-aston-villa-2021-2022,matt-targett,Matt Targett,aston-villa,Aston Villa,2021-2022,2021/22,DF,17,17,1431,1,1,7,2,0,0,0,0,0,0,0,0,0,0,2,0,0,52,54,Premier League,14,45,13,6,19
+matt-targett-newcastle-united-2021-2022,matt-targett,Matt Targett,newcastle-united,Newcastle United,2021-2022,2021/22,DF,16,16,1440,0,0,6,4,0,0,0,0,0,0,0,0,0,0,1,0,0,44,62,Premier League,11,49,13,10,15
+james-tarkowski-burnley-2021-2022,james-tarkowski,James Tarkowski,burnley,Burnley,2021-2022,2021/22,DF,35,35,3106,1,2,23,7,0,0,0,0,0,0,0,0,0,0,11,0,0,34,53,Premier League,18,35,7,14,17
+nuno-tavares-arsenal-2021-2022,nuno-tavares,Nuno Tavares,arsenal,Arsenal,2021-2022,2021/22,DF,22,13,1176,1,1,23,2,0,0,0,0,0,0,0,0,0,0,2,0,0,61,48,Premier League,5,69,22,3,13
+charlie-taylor-burnley-2021-2022,charlie-taylor,Charlie Taylor,burnley,Burnley,2021-2022,2021/22,DF,31,30,2731,0,3,7,0,0,0,0,0,0,0,0,0,0,0,3,0,0,34,53,Premier League,18,35,7,14,17
+nathan-tella-southampton-2021-2022,nathan-tella,Nathan Tella,southampton,Southampton,2021-2022,2021/22,MF,14,10,804,0,1,12,5,0,0,0,0,0,0,0,0,0,0,2,0,0,43,67,Premier League,15,40,9,13,16
+alex-telles-manchester-utd-2021-2022,alex-telles,Alex Telles,manchester-utd,Manchester Utd,2021-2022,2021/22,DF,21,18,1660,0,4,10,3,0,0,0,0,0,0,0,0,0,0,1,0,0,57,57,Premier League,6,58,16,10,12
+luke-thomas-leicester-city-2021-2022,luke-thomas,Luke Thomas,leicester-city,Leicester City,2021-2022,2021/22,DF,22,21,1912,0,1,4,0,0,0,0,0,0,0,0,0,0,0,2,0,0,62,59,Premier League,8,52,14,10,14
+youri-tielemans-leicester-city-2021-2022,youri-tielemans,Youri Tielemans,leicester-city,Leicester City,2021-2022,2021/22,MF,32,29,2631,6,4,59,17,0,0,0,0,0,0,0,0,0,0,3,0,0,62,59,Premier League,8,52,14,10,14
+kieran-tierney-arsenal-2021-2022,kieran-tierney,Kieran Tierney,arsenal,Arsenal,2021-2022,2021/22,DF,22,22,1915,1,3,15,5,0,0,0,0,0,0,0,0,0,0,0,0,0,61,48,Premier League,5,69,22,3,13
+takehiro-tomiyasu-arsenal-2021-2022,takehiro-tomiyasu,Takehiro Tomiyasu,arsenal,Arsenal,2021-2022,2021/22,DF,21,20,1679,0,1,11,2,0,0,0,0,0,0,0,0,0,0,2,0,0,61,48,Premier League,5,69,22,3,13
+james-tomkins-crystal-palace-2021-2022,james-tomkins,James Tomkins,crystal-palace,Crystal Palace,2021-2022,2021/22,DF,8,6,547,1,0,4,2,0,0,0,0,0,0,0,0,0,0,2,0,0,50,46,Premier League,12,48,11,15,12
+ivan-toney-brentford-2021-2022,ivan-toney,Ivan Toney,brentford,Brentford,2021-2022,2021/22,FW,33,32,2909,12,5,88,30,0,0,0,0,0,0,0,0,0,0,8,0,0,48,56,Premier League,13,46,13,7,18
+andros-townsend-everton-2021-2022,andros-townsend,Andros Townsend,everton,Everton,2021-2022,2021/22,MF,21,17,1455,3,2,21,10,0,0,0,0,0,0,0,0,0,0,3,0,0,43,66,Premier League,16,39,11,6,21
+adama-traore-wolves-2021-2022,adama-traore,Adama Traoré,wolves,Wolves,2021-2022,2021/22,MF,20,10,1067,1,0,23,5,0,0,0,0,0,0,0,0,0,0,0,0,0,38,43,Premier League,10,51,15,6,17
+francisco-trincao-wolves-2021-2022,francisco-trincao,Francisco Trincão,wolves,Wolves,2021-2022,2021/22,MF,28,16,1336,2,1,32,14,0,0,0,0,0,0,0,0,0,0,0,0,0,38,43,Premier League,10,51,15,6,17
+william-troost-ekong-watford-2021-2022,william-troost-ekong,William Troost-Ekong,watford,Watford,2021-2022,2021/22,DF,17,15,1390,0,0,2,0,0,0,0,0,0,0,0,0,0,0,3,0,0,34,77,Premier League,19,23,6,5,27
+leandro-trossard-brighton-2021-2022,leandro-trossard,Leandro Trossard,brighton,Brighton,2021-2022,2021/22,MF,34,32,2805,8,3,74,27,0,0,0,0,0,0,0,0,0,0,2,0,0,42,44,Premier League,9,51,12,15,11
+kostas-tsimikas-liverpool-2021-2022,kostas-tsimikas,Kostas Tsimikas,liverpool,Liverpool,2021-2022,2021/22,DF,13,9,877,0,2,8,2,0,0,0,0,0,0,0,0,0,0,3,0,0,94,26,Premier League,2,92,28,8,2
+axel-tuanzebe-aston-villa-2021-2022,axel-tuanzebe,Axel Tuanzebe,aston-villa,Aston Villa,2021-2022,2021/22,DF,9,6,508,0,0,2,1,0,0,0,0,0,0,0,0,0,0,1,0,0,52,54,Premier League,14,45,13,6,19
+virgil-van-dijk-liverpool-2021-2022,virgil-van-dijk,Virgil van Dijk,liverpool,Liverpool,2021-2022,2021/22,DF,34,34,3060,3,1,35,14,0,0,0,0,0,0,0,0,0,0,3,0,0,94,26,Premier League,2,92,28,8,2
+raphael-varane-manchester-utd-2021-2022,raphael-varane,Raphaël Varane,manchester-utd,Manchester Utd,2021-2022,2021/22,DF,22,20,1831,1,1,9,1,0,0,0,0,0,0,0,0,0,0,0,0,0,57,57,Premier League,6,58,16,10,12
+jamie-vardy-leicester-city-2021-2022,jamie-vardy,Jamie Vardy,leicester-city,Leicester City,2021-2022,2021/22,FW,25,20,1806,15,2,54,26,0,0,0,0,0,0,0,0,0,0,2,0,0,62,59,Premier League,8,52,14,10,14
+joel-veltman-brighton-2021-2022,joel-veltman,Joël Veltman,brighton,Brighton,2021-2022,2021/22,DF,34,33,2874,1,1,12,3,0,0,0,0,0,0,0,0,0,0,6,0,0,42,44,Premier League,9,51,12,15,11
+jannik-vestergaard-leicester-city-2021-2022,jannik-vestergaard,Jannik Vestergaard,leicester-city,Leicester City,2021-2022,2021/22,DF,10,6,567,0,0,1,0,0,0,0,0,0,0,0,0,0,0,2,0,0,62,59,Premier League,8,52,14,10,14
+nikola-vlasic-west-ham-united-2021-2022,nikola-vlasic,Nikola Vlašić,west-ham-united,West Ham United,2021-2022,2021/22,MF,19,6,560,1,0,7,3,0,0,0,0,0,0,0,0,0,0,0,0,0,60,51,Premier League,7,56,16,8,14
+matej-vydra-burnley-2021-2022,matej-vydra,Matěj Vydra,burnley,Burnley,2021-2022,2021/22,FW,22,5,679,2,3,19,7,0,0,0,0,0,0,0,0,0,0,1,0,0,34,53,Premier League,18,35,7,14,17
+kyle-walker-manchester-city-2021-2022,kyle-walker,Kyle Walker,manchester-city,Manchester City,2021-2022,2021/22,DF,20,20,1755,0,2,8,2,0,0,0,0,0,0,0,0,0,0,1,0,0,99,26,Premier League,1,93,29,6,3
+kyle-walker-peters-southampton-2021-2022,kyle-walker-peters,Kyle Walker-Peters,southampton,Southampton,2021-2022,2021/22,DF,32,29,2633,1,2,26,7,0,0,0,0,0,0,0,0,0,0,5,0,0,43,67,Premier League,15,40,9,13,16
+aaron-wan-bissaka-manchester-utd-2021-2022,aaron-wan-bissaka,Aaron Wan-Bissaka,manchester-utd,Manchester Utd,2021-2022,2021/22,DF,20,20,1793,0,0,5,1,0,0,0,0,0,0,0,0,0,0,2,0,0,57,57,Premier League,6,58,16,10,12
+joel-ward-crystal-palace-2021-2022,joel-ward,Joel Ward,crystal-palace,Crystal Palace,2021-2022,2021/22,DF,28,27,2487,0,0,10,1,0,0,0,0,0,0,0,0,0,0,8,0,0,50,46,Premier League,12,48,11,15,12
+james-ward-prowse-southampton-2021-2022,james-ward-prowse,James Ward-Prowse,southampton,Southampton,2021-2022,2021/22,MF,36,36,3215,10,5,55,24,0,0,0,0,0,0,0,0,0,0,3,1,0,43,67,Premier League,15,40,9,13,16
+ollie-watkins-aston-villa-2021-2022,ollie-watkins,Ollie Watkins,aston-villa,Aston Villa,2021-2022,2021/22,FW,35,33,2952,11,2,77,32,0,0,0,0,0,0,0,0,0,0,7,0,0,52,54,Premier League,14,45,13,6,19
+adam-webster-brighton-2021-2022,adam-webster,Adam Webster,brighton,Brighton,2021-2022,2021/22,DF,22,16,1434,2,0,8,3,0,0,0,0,0,0,0,0,0,0,5,0,0,42,44,Premier League,9,51,12,15,11
+wout-weghorst-burnley-2021-2022,wout-weghorst,Wout Weghorst,burnley,Burnley,2021-2022,2021/22,FW,20,17,1450,2,3,30,9,0,0,0,0,0,0,0,0,0,0,3,0,0,34,53,Premier League,18,35,7,14,17
+danny-welbeck-brighton-2021-2022,danny-welbeck,Danny Welbeck,brighton,Brighton,2021-2022,2021/22,MF,25,15,1478,6,2,43,22,0,0,0,0,0,0,0,0,0,0,0,0,0,42,44,Premier League,9,51,12,15,11
+timo-werner-chelsea-2021-2022,timo-werner,Timo Werner,chelsea,Chelsea,2021-2022,2021/22,MF,21,15,1283,4,1,45,16,0,0,0,0,0,0,0,0,0,0,1,0,0,76,33,Premier League,3,74,21,11,6
+ashley-westwood-burnley-2021-2022,ashley-westwood,Ashley Westwood,burnley,Burnley,2021-2022,2021/22,MF,27,26,2287,0,3,14,2,0,0,0,0,0,0,0,0,0,0,7,0,0,34,53,Premier League,18,35,7,14,17
+ben-white-arsenal-2021-2022,ben-white,Ben White,arsenal,Arsenal,2021-2022,2021/22,DF,32,32,2880,0,0,12,4,0,0,0,0,0,0,0,0,0,0,3,0,0,61,48,Premier League,5,69,22,3,13
+brandon-williams-norwich-city-2021-2022,brandon-williams,Brandon Williams,norwich-city,Norwich City,2021-2022,2021/22,DF,26,23,2120,0,1,4,1,0,0,0,0,0,0,0,0,0,0,8,0,0,23,84,Premier League,20,22,5,7,26
+joe-willock-newcastle-united-2021-2022,joe-willock,Joe Willock,newcastle-united,Newcastle United,2021-2022,2021/22,MF,29,24,2038,2,0,35,11,0,0,0,0,0,0,0,0,0,0,0,0,0,44,62,Premier League,11,49,13,10,15
+callum-wilson-newcastle-united-2021-2022,callum-wilson,Callum Wilson,newcastle-united,Newcastle United,2021-2022,2021/22,FW,18,16,1386,8,0,35,15,0,0,0,0,0,0,0,0,0,0,4,0,0,44,62,Premier League,11,49,13,10,15
+harry-winks-tottenham-hotspur-2021-2022,harry-winks,Harry Winks,tottenham-hotspur,Tottenham Hotspur,2021-2022,2021/22,MF,19,9,912,0,1,3,1,0,0,0,0,0,0,0,0,0,0,2,0,0,69,40,Premier League,4,71,22,5,11
+yoane-wissa-brentford-2021-2022,yoane-wissa,Yoane Wissa,brentford,Brentford,2021-2022,2021/22,FW,30,12,1284,7,1,32,13,0,0,0,0,0,0,0,0,0,0,0,0,0,48,56,Premier League,13,46,13,7,18
+chris-wood-burnley-2021-2022,chris-wood,Chris Wood,burnley,Burnley,2021-2022,2021/22,FW,17,17,1367,3,0,30,12,0,0,0,0,0,0,0,0,0,0,1,0,0,34,53,Premier League,18,35,7,14,17
+chris-wood-newcastle-united-2021-2022,chris-wood,Chris Wood,newcastle-united,Newcastle United,2021-2022,2021/22,FW,17,15,1327,2,0,21,7,0,0,0,0,0,0,0,0,0,0,0,0,0,44,62,Premier League,11,49,13,10,15
+granit-xhaka-arsenal-2021-2022,granit-xhaka,Granit Xhaka,arsenal,Arsenal,2021-2022,2021/22,MF,27,27,2327,1,2,27,5,0,0,0,0,0,0,0,0,0,0,10,1,0,61,48,Premier League,5,69,22,3,13
+ashley-young-aston-villa-2021-2022,ashley-young,Ashley Young,aston-villa,Aston Villa,2021-2022,2021/22,DF,24,10,1250,0,2,10,3,0,0,0,0,0,0,0,0,0,0,2,0,0,52,54,Premier League,14,45,13,6,19
+wilfried-zaha-crystal-palace-2021-2022,wilfried-zaha,Wilfried Zaha,crystal-palace,Crystal Palace,2021-2022,2021/22,MF,33,31,2760,14,1,69,32,0,0,0,0,0,0,0,0,0,0,6,1,0,50,46,Premier League,12,48,11,15,12
+oleksandr-zinchenko-manchester-city-2021-2022,oleksandr-zinchenko,Oleksandr Zinchenko,manchester-city,Manchester City,2021-2022,2021/22,DF,15,10,1047,0,4,12,4,0,0,0,0,0,0,0,0,0,0,0,0,0,99,26,Premier League,1,93,29,6,3
+hakim-ziyech-chelsea-2021-2022,hakim-ziyech,Hakim Ziyech,chelsea,Chelsea,2021-2022,2021/22,MF,23,14,1319,4,3,52,19,0,0,0,0,0,0,0,0,0,0,3,0,0,76,33,Premier League,3,74,21,11,6
+kurt-zouma-west-ham-united-2021-2022,kurt-zouma,Kurt Zouma,west-ham-united,West Ham United,2021-2022,2021/22,DF,24,24,2078,1,0,6,3,0,0,0,0,0,0,0,0,0,0,1,0,0,60,51,Premier League,7,56,16,8,14
+martin-degaard-arsenal-2021-2022,martin-degaard,Martin Ødegaard,arsenal,Arsenal,2021-2022,2021/22,MF,36,32,2785,7,4,53,21,0,0,0,0,0,0,0,0,0,0,4,0,0,61,48,Premier League,5,69,22,3,13

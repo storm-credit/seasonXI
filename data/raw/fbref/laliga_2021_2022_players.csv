@@ -1,0 +1,427 @@
+player_season_id,player_id,player_name,club_id,club_name,season_id,season_label,primary_position,appearances,starts,minutes_played,goals,assists,shots,shots_on_target,key_passes,progressive_passes,progressive_carries,successful_dribbles,xg,xa,tackles,interceptions,clearances,aerial_duels_won,yellow_cards,red_cards,clean_sheets,team_goals_scored,team_goals_conceded,league_name,final_table_rank,team_points,team_wins,team_draws,team_losses
+luis-abram-granada-2021-2022,luis-abram,Luis Abram,granada,Granada,2021-2022,2021/22,DF,8,6,560,0,0,2,1,0,0,0,0,0,0,0,0,0,0,2,0,0,44,61,La Liga,18,38,8,14,16
+marcos-acuna-sevilla-2021-2022,marcos-acuna,Marcos Acuña,sevilla,Sevilla,2021-2022,2021/22,DF,31,26,2260,1,3,16,5,0,0,0,0,0,0,0,0,0,0,10,0,0,53,30,La Liga,4,70,18,16,4
+martin-agirregabiria-alaves-2021-2022,martin-agirregabiria,Martin Agirregabiria,alaves,Alavés,2021-2022,2021/22,DF,24,17,1616,0,1,4,0,0,0,0,0,0,0,0,0,0,0,4,0,0,31,65,La Liga,20,31,8,7,23
+joseph-aidoo-celta-vigo-2021-2022,joseph-aidoo,Joseph Aidoo,celta-vigo,Celta Vigo,2021-2022,2021/22,DF,32,30,2637,0,0,6,1,0,0,0,0,0,0,0,0,0,0,1,0,0,43,43,La Liga,11,46,12,10,16
+carlos-akapo-cadiz-2021-2022,carlos-akapo,Carlos Akapo,cadiz,Cádiz,2021-2022,2021/22,DF,25,21,1844,0,0,10,1,0,0,0,0,0,0,0,0,0,0,4,0,0,35,51,La Liga,17,39,8,15,15
+paul-akouokou-real-betis-2021-2022,paul-akouokou,Paul Akouokou,real-betis,Real Betis,2021-2022,2021/22,MF,8,6,516,0,0,2,0,0,0,0,0,0,0,0,0,0,0,2,1,0,62,40,La Liga,5,65,19,8,11
+david-alaba-real-madrid-2021-2022,david-alaba,David Alaba,real-madrid,Real Madrid,2021-2022,2021/22,DF,30,30,2642,2,3,21,7,0,0,0,0,0,0,0,0,0,0,2,0,0,80,31,La Liga,1,86,26,8,4
+tomas-alarcon-cadiz-2021-2022,tomas-alarcon,Tomás Alarcón,cadiz,Cádiz,2021-2022,2021/22,MF,23,16,1425,0,1,15,2,0,0,0,0,0,0,0,0,0,0,5,0,0,35,51,La Liga,17,39,8,15,15
+jordi-alba-barcelona-2021-2022,jordi-alba,Jordi Alba,barcelona,Barcelona,2021-2022,2021/22,DF,30,30,2644,2,10,31,6,0,0,0,0,0,0,0,0,0,0,11,0,0,68,38,La Liga,2,73,21,10,7
+raul-albiol-villarreal-2021-2022,raul-albiol,Raúl Albiol,villarreal,Villarreal,2021-2022,2021/22,DF,28,28,2465,0,0,5,1,0,0,0,0,0,0,0,0,0,0,8,0,0,63,37,La Liga,7,59,16,11,11
+paco-alcacer-villarreal-2021-2022,paco-alcacer,Paco Alcácer,villarreal,Villarreal,2021-2022,2021/22,FW,18,10,787,1,3,18,6,0,0,0,0,0,0,0,0,0,0,1,0,0,63,37,La Liga,7,59,16,11,11
+ruben-alcaraz-cadiz-2021-2022,ruben-alcaraz,Rubén Alcaraz,cadiz,Cádiz,2021-2022,2021/22,MF,14,12,1105,2,0,23,6,0,0,0,0,0,0,0,0,0,0,7,0,0,35,51,La Liga,17,39,8,15,15
+omar-alderete-valencia-2021-2022,omar-alderete,Omar Alderete,valencia,Valencia,2021-2022,2021/22,DF,29,28,2403,2,0,17,5,0,0,0,0,0,0,0,0,0,0,15,0,0,48,53,La Liga,9,48,11,15,12
+ivan-alejo-cadiz-2021-2022,ivan-alejo,Iván Alejo,cadiz,Cádiz,2021-2022,2021/22,MF,20,11,1065,2,2,12,4,0,0,0,0,0,0,0,0,0,0,7,0,0,35,51,La Liga,17,39,8,15,15
+carles-alena-getafe-2021-2022,carles-alena,Carles Aleñá,getafe,Getafe,2021-2022,2021/22,MF,33,30,2320,1,2,46,14,0,0,0,0,0,0,0,0,0,0,6,1,0,33,41,La Liga,15,39,8,15,15
+yeray-alvarez-athletic-club-2021-2022,yeray-alvarez,Yeray Álvarez,athletic-club,Athletic Club,2021-2022,2021/22,DF,22,21,1860,0,0,7,0,0,0,0,0,0,0,0,0,0,0,6,0,0,43,36,La Liga,8,55,14,13,11
+dani-alves-barcelona-2021-2022,dani-alves,Dani Alves,barcelona,Barcelona,2021-2022,2021/22,DF,14,13,1098,1,3,5,2,0,0,0,0,0,0,0,0,0,0,2,1,0,68,38,La Liga,2,73,21,10,7
+amath-mallorca-2021-2022,amath,Amath,mallorca,Mallorca,2021-2022,2021/22,MF,19,9,884,0,1,10,3,0,0,0,0,0,0,0,0,0,0,5,0,0,36,63,La Liga,16,39,10,9,19
+marcos-andre-valencia-2021-2022,marcos-andre,Marcos André,valencia,Valencia,2021-2022,2021/22,MF,29,8,973,1,3,30,8,0,0,0,0,0,0,0,0,0,0,3,0,0,48,53,La Liga,9,48,11,15,12
+jose-angel-osasuna-2021-2022,jose-angel,José Ángel,osasuna,Osasuna,2021-2022,2021/22,DF,23,12,1083,1,1,11,3,0,0,0,0,0,0,0,0,0,0,2,1,0,37,51,La Liga,10,47,12,11,15
+mauro-arambarri-getafe-2021-2022,mauro-arambarri,Mauro Arambarri,getafe,Getafe,2021-2022,2021/22,MF,31,31,2663,0,5,37,8,0,0,0,0,0,0,0,0,0,0,13,0,0,33,41,La Liga,15,39,8,15,15
+nestor-araujo-celta-vigo-2021-2022,nestor-araujo,Néstor Araujo,celta-vigo,Celta Vigo,2021-2022,2021/22,DF,34,29,2617,0,0,8,1,0,0,0,0,0,0,0,0,0,0,4,0,0,43,43,La Liga,11,46,12,10,16
+ronald-araujo-barcelona-2021-2022,ronald-araujo,Ronald Araújo,barcelona,Barcelona,2021-2022,2021/22,DF,30,25,2272,4,0,18,10,0,0,0,0,0,0,0,0,0,0,6,0,0,68,38,La Liga,2,73,21,10,7
+santiago-arzamendia-cadiz-2021-2022,santiago-arzamendia,Santiago Arzamendia,cadiz,Cádiz,2021-2022,2021/22,MF,14,5,469,1,0,7,1,0,0,0,0,0,0,0,0,0,0,2,0,0,35,51,La Liga,17,39,8,15,15
+sergio-asenjo-villarreal-2021-2022,sergio-asenjo,Sergio Asenjo,villarreal,Villarreal,2021-2022,2021/22,GK,6,6,540,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,63,37,La Liga,7,59,16,11,11
+marco-asensio-real-madrid-2021-2022,marco-asensio,Marco Asensio,real-madrid,Real Madrid,2021-2022,2021/22,MF,31,19,1731,10,0,64,34,0,0,0,0,0,0,0,0,0,0,2,0,0,80,31,La Liga,1,86,26,8,4
+iago-aspas-celta-vigo-2021-2022,iago-aspas,Iago Aspas,celta-vigo,Celta Vigo,2021-2022,2021/22,FW,37,36,3087,18,5,90,41,0,0,0,0,0,0,0,0,0,0,9,0,0,43,43,La Liga,11,46,12,10,16
+pierre-emerick-aubameyang-barcelona-2021-2022,pierre-emerick-aubameyang,Pierre-Emerick Aubameyang,barcelona,Barcelona,2021-2022,2021/22,FW,17,13,1082,11,1,36,19,0,0,0,0,0,0,0,0,0,0,0,0,0,68,38,La Liga,2,73,21,10,7
+ludwig-augustinsson-sevilla-2021-2022,ludwig-augustinsson,Ludwig Augustinsson,sevilla,Sevilla,2021-2022,2021/22,DF,19,9,793,0,1,4,2,0,0,0,0,0,0,0,0,0,0,3,0,0,53,30,La Liga,4,70,18,16,4
+serge-aurier-villarreal-2021-2022,serge-aurier,Serge Aurier,villarreal,Villarreal,2021-2022,2021/22,DF,19,10,1010,0,1,11,2,0,0,0,0,0,0,0,0,0,0,4,0,0,63,37,La Liga,7,59,16,11,11
+ezequiel-avila-osasuna-2021-2022,ezequiel-avila,Ezequiel Ávila,osasuna,Osasuna,2021-2022,2021/22,MF,36,22,1870,6,1,63,16,0,0,0,0,0,0,0,0,0,0,9,1,0,37,51,La Liga,10,47,12,11,15
+iddrisu-baba-mallorca-2021-2022,iddrisu-baba,Iddrisu Baba,mallorca,Mallorca,2021-2022,2021/22,MF,26,23,1934,2,0,23,9,0,0,0,0,0,0,0,0,0,0,9,0,0,36,63,La Liga,16,39,10,9,19
+carlos-bacca-granada-2021-2022,carlos-bacca,Carlos Bacca,granada,Granada,2021-2022,2021/22,FW,17,4,513,0,1,9,2,0,0,0,0,0,0,0,0,0,0,3,0,0,44,61,La Liga,18,38,8,14,16
+edgar-badia-elche-2021-2022,edgar-badia,Édgar Badía,elche,Elche,2021-2022,2021/22,GK,24,24,2160,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,40,52,La Liga,13,42,11,9,18
+mikel-balenziaga-athletic-club-2021-2022,mikel-balenziaga,Mikel Balenziaga,athletic-club,Athletic Club,2021-2022,2021/22,DF,26,23,2027,0,0,7,2,0,0,0,0,0,0,0,0,0,0,2,0,0,43,36,La Liga,8,55,14,13,11
+ivan-balliu-rayo-vallecano-2021-2022,ivan-balliu,Iván Balliu,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,DF,35,35,3147,1,2,15,3,0,0,0,0,0,0,0,0,0,0,10,1,0,39,50,La Liga,12,42,11,9,18
+enis-bardhi-levante-2021-2022,enis-bardhi,Enis Bardhi,levante,Levante,2021-2022,2021/22,MF,30,17,1701,3,3,43,10,0,0,0,0,0,0,0,0,0,0,3,0,0,51,76,La Liga,19,35,8,11,19
+keidi-bare-espanyol-2021-2022,keidi-bare,Keidi Bare,espanyol,Espanyol,2021-2022,2021/22,MF,25,18,1481,1,1,4,1,0,0,0,0,0,0,0,0,0,0,9,0,0,40,53,La Liga,14,42,10,12,16
+kike-barja-osasuna-2021-2022,kike-barja,Kike Barja,osasuna,Osasuna,2021-2022,2021/22,MF,21,9,865,2,0,17,6,0,0,0,0,0,0,0,0,0,0,2,0,0,37,51,La Liga,10,47,12,11,15
+antonio-barragan-elche-2021-2022,antonio-barragan,Antonio Barragán,elche,Elche,2021-2022,2021/22,DF,16,12,1020,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5,0,0,40,52,La Liga,13,42,11,9,18
+ander-barrenetxea-real-sociedad-2021-2022,ander-barrenetxea,Ander Barrenetxea,real-sociedad,Real Sociedad,2021-2022,2021/22,MF,11,6,547,1,1,8,3,0,0,0,0,0,0,0,0,0,0,0,0,0,40,37,La Liga,6,62,17,11,10
+marc-bartra-real-betis-2021-2022,marc-bartra,Marc Bartra,real-betis,Real Betis,2021-2022,2021/22,DF,23,23,1993,1,0,15,3,0,0,0,0,0,0,0,0,0,0,5,0,0,62,40,La Liga,5,65,19,8,11
+rodrigo-battaglia-mallorca-2021-2022,rodrigo-battaglia,Rodrigo Battaglia,mallorca,Mallorca,2021-2022,2021/22,MF,26,12,1179,0,0,5,1,0,0,0,0,0,0,0,0,0,0,4,0,0,36,63,La Liga,16,39,10,9,19
+bebe-rayo-vallecano-2021-2022,bebe,Bebé,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,MF,29,6,867,1,2,50,8,0,0,0,0,0,0,0,0,0,0,2,0,0,39,50,La Liga,12,42,11,9,18
+hector-bellerin-real-betis-2021-2022,hector-bellerin,Héctor Bellerín,real-betis,Real Betis,2021-2022,2021/22,DF,23,22,1979,0,2,10,2,0,0,0,0,0,0,0,0,0,0,2,1,0,62,40,La Liga,5,65,19,8,11
+fran-beltran-celta-vigo-2021-2022,fran-beltran,Fran Beltrán,celta-vigo,Celta Vigo,2021-2022,2021/22,MF,37,31,2597,1,0,20,4,0,0,0,0,0,0,0,0,0,0,4,0,0,43,43,La Liga,11,46,12,10,16
+dario-benedetto-elche-2021-2022,dario-benedetto,Darío Benedetto,elche,Elche,2021-2022,2021/22,FW,14,6,590,2,1,18,7,0,0,0,0,0,0,0,0,0,0,1,0,0,40,52,La Liga,13,42,11,9,18
+karim-benzema-real-madrid-2021-2022,karim-benzema,Karim Benzema,real-madrid,Real Madrid,2021-2022,2021/22,FW,32,31,2593,27,12,128,59,0,0,0,0,0,0,0,0,0,0,0,0,0,80,31,La Liga,1,86,26,8,4
+yuri-berchiche-athletic-club-2021-2022,yuri-berchiche,Yuri Berchiche,athletic-club,Athletic Club,2021-2022,2021/22,DF,14,11,1015,1,2,8,3,0,0,0,0,0,0,0,0,0,0,3,0,0,43,36,La Liga,8,55,14,13,11
+alex-berenguer-athletic-club-2021-2022,alex-berenguer,Álex Berenguer,athletic-club,Athletic Club,2021-2022,2021/22,MF,34,24,2168,3,6,46,16,0,0,0,0,0,0,0,0,0,0,8,0,0,43,36,La Liga,8,55,14,13,11
+pedro-bigas-elche-2021-2022,pedro-bigas,Pedro Bigas,elche,Elche,2021-2022,2021/22,DF,19,19,1551,1,0,12,3,0,0,0,0,0,0,0,0,0,0,6,0,0,40,52,La Liga,13,42,11,9,18
+yassine-bounou-sevilla-2021-2022,yassine-bounou,Yassine Bounou,sevilla,Sevilla,2021-2022,2021/22,GK,31,31,2790,0,2,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,53,30,La Liga,4,70,18,16,4
+lucas-boye-elche-2021-2022,lucas-boye,Lucas Boyé,elche,Elche,2021-2022,2021/22,FW,24,22,1713,7,3,49,16,0,0,0,0,0,0,0,0,0,0,3,0,0,40,52,La Liga,13,42,11,9,18
+darko-brasanac-osasuna-2021-2022,darko-brasanac,Darko Brašanac,osasuna,Osasuna,2021-2022,2021/22,MF,35,27,2405,1,2,17,5,0,0,0,0,0,0,0,0,0,0,8,0,0,37,51,La Liga,10,47,12,11,15
+claudio-bravo-real-betis-2021-2022,claudio-bravo,Claudio Bravo,real-betis,Real Betis,2021-2022,2021/22,GK,17,17,1456,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,62,40,La Liga,5,65,19,8,11
+ante-budimir-osasuna-2021-2022,ante-budimir,Ante Budimir,osasuna,Osasuna,2021-2022,2021/22,FW,28,20,1738,8,2,45,22,0,0,0,0,0,0,0,0,0,0,3,0,0,37,51,La Liga,10,47,12,11,15
+sergio-busquets-barcelona-2021-2022,sergio-busquets,Sergio Busquets,barcelona,Barcelona,2021-2022,2021/22,MF,36,36,3198,2,0,14,4,0,0,0,0,0,0,0,0,0,0,12,0,0,68,38,La Liga,2,73,21,10,7
+leandro-cabrera-espanyol-2021-2022,leandro-cabrera,Leandro Cabrera,espanyol,Espanyol,2021-2022,2021/22,DF,37,37,3330,2,0,18,6,0,0,0,0,0,0,0,0,0,0,7,0,0,40,53,La Liga,14,42,10,12,16
+martin-caceres-levante-2021-2022,martin-caceres,Martín Cáceres,levante,Levante,2021-2022,2021/22,DF,10,9,663,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,51,76,La Liga,19,35,8,11,19
+cala-cadiz-2021-2022,cala,Cala,cadiz,Cádiz,2021-2022,2021/22,DF,14,10,947,0,0,5,0,0,0,0,0,0,0,0,0,0,0,8,1,0,35,51,La Liga,17,39,8,15,15
+fernando-calero-espanyol-2021-2022,fernando-calero,Fernando Calero,espanyol,Espanyol,2021-2022,2021/22,DF,16,13,1090,0,0,1,0,0,0,0,0,0,0,0,0,0,0,3,0,0,40,53,La Liga,14,42,10,12,16
+eduardo-camavinga-real-madrid-2021-2022,eduardo-camavinga,Eduardo Camavinga,real-madrid,Real Madrid,2021-2022,2021/22,MF,26,13,1236,2,1,12,5,0,0,0,0,0,0,0,0,0,0,8,0,0,80,31,La Liga,1,86,26,8,4
+jose-campana-levante-2021-2022,jose-campana,José Campaña,levante,Levante,2021-2022,2021/22,MF,20,16,1422,2,2,13,6,0,0,0,0,0,0,0,0,0,0,6,1,0,51,76,La Liga,19,35,8,11,19
+sergio-canales-real-betis-2021-2022,sergio-canales,Sergio Canales,real-betis,Real Betis,2021-2022,2021/22,MF,34,33,2791,5,8,54,25,0,0,0,0,0,0,0,0,0,0,6,0,0,62,40,La Liga,5,65,19,8,11
+alex-cantero-levante-2021-2022,alex-cantero,Álex Cantero,levante,Levante,2021-2022,2021/22,MF,25,4,610,0,1,15,5,0,0,0,0,0,0,0,0,0,0,1,0,0,51,76,La Liga,19,35,8,11,19
+etienne-capoue-villarreal-2021-2022,etienne-capoue,Étienne Capoue,villarreal,Villarreal,2021-2022,2021/22,MF,30,26,2290,1,1,14,5,0,0,0,0,0,0,0,0,0,0,9,0,0,63,37,La Liga,7,59,16,11,11
+isaac-carcelen-cadiz-2021-2022,isaac-carcelen,Isaac Carcelen,cadiz,Cádiz,2021-2022,2021/22,DF,25,17,1544,0,1,11,4,0,0,0,0,0,0,0,0,0,0,2,0,0,35,51,La Liga,17,39,8,15,15
+dani-cardenas-levante-2021-2022,dani-cardenas,Dani Cárdenas,levante,Levante,2021-2022,2021/22,GK,24,24,2160,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,51,76,La Liga,19,35,8,11,19
+diego-carlos-sevilla-2021-2022,diego-carlos,Diego Carlos,sevilla,Sevilla,2021-2022,2021/22,DF,34,34,2957,3,0,30,10,0,0,0,0,0,0,0,0,0,0,4,1,0,53,30,La Liga,4,70,18,16,4
+yannick-carrasco-atletico-madrid-2021-2022,yannick-carrasco,Yannick Carrasco,atletico-madrid,Atlético Madrid,2021-2022,2021/22,MF,34,28,2583,6,6,50,12,0,0,0,0,0,0,0,0,0,0,5,0,0,65,43,La Liga,3,71,21,8,9
+guido-carrillo-elche-2021-2022,guido-carrillo,Guido Carrillo,elche,Elche,2021-2022,2021/22,FW,29,11,1168,2,0,23,10,0,0,0,0,0,0,0,0,0,0,3,0,0,40,52,La Liga,13,42,11,9,18
+dani-carvajal-real-madrid-2021-2022,dani-carvajal,Dani Carvajal,real-madrid,Real Madrid,2021-2022,2021/22,DF,24,17,1551,1,3,10,2,0,0,0,0,0,0,0,0,0,0,1,0,0,80,31,La Liga,1,86,26,8,4
+william-carvalho-real-betis-2021-2022,william-carvalho,William Carvalho,real-betis,Real Betis,2021-2022,2021/22,MF,33,20,1805,2,3,33,10,0,0,0,0,0,0,0,0,0,0,6,0,0,62,40,La Liga,5,65,19,8,11
+casemiro-real-madrid-2021-2022,casemiro,Casemiro,real-madrid,Real Madrid,2021-2022,2021/22,MF,32,31,2569,1,3,41,9,0,0,0,0,0,0,0,0,0,0,11,0,0,80,31,La Liga,1,86,26,8,4
+kiko-casilla-elche-2021-2022,kiko-casilla,Kiko Casilla,elche,Elche,2021-2022,2021/22,GK,14,14,1260,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,40,52,La Liga,13,42,11,9,18
+catena-rayo-vallecano-2021-2022,catena,Catena,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,DF,36,36,3240,2,2,23,6,0,0,0,0,0,0,0,0,0,0,8,0,0,39,50,La Liga,12,42,11,9,18
+franco-cervi-celta-vigo-2021-2022,franco-cervi,Franco Cervi,celta-vigo,Celta Vigo,2021-2022,2021/22,MF,33,21,1801,4,3,22,10,0,0,0,0,0,0,0,0,0,0,5,0,0,43,43,La Liga,11,46,12,10,16
+denis-cheryshev-valencia-2021-2022,denis-cheryshev,Denis Cheryshev,valencia,Valencia,2021-2022,2021/22,MF,17,5,563,0,1,10,5,0,0,0,0,0,0,0,0,0,0,1,0,0,48,53,La Liga,9,48,11,15,12
+samuel-chukwueze-villarreal-2021-2022,samuel-chukwueze,Samuel Chukwueze,villarreal,Villarreal,2021-2022,2021/22,MF,27,12,1333,3,3,32,7,0,0,0,0,0,0,0,0,0,0,4,0,0,63,37,La Liga,7,59,16,11,11
+victor-chust-cadiz-2021-2022,victor-chust,Víctor Chust,cadiz,Cádiz,2021-2022,2021/22,DF,25,20,1830,0,0,9,2,0,0,0,0,0,0,0,0,0,0,2,0,0,35,51,La Liga,17,39,8,15,15
+jasper-cillessen-valencia-2021-2022,jasper-cillessen,Jasper Cillessen,valencia,Valencia,2021-2022,2021/22,GK,17,17,1457,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,48,53,La Liga,9,48,11,15,12
+pathe-ciss-rayo-vallecano-2021-2022,pathe-ciss,Pathé Ciss,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,MF,31,11,1097,2,1,19,5,0,0,0,0,0,0,0,0,0,0,5,0,0,39,50,La Liga,12,42,11,9,18
+carlos-clerc-levante-2021-2022,carlos-clerc,Carlos Clerc,levante,Levante,2021-2022,2021/22,DF,19,18,1514,0,0,2,0,0,0,0,0,0,0,0,0,0,0,6,0,0,51,76,La Liga,19,35,8,11,19
+alex-collado-granada-2021-2022,alex-collado,Álex Collado,granada,Granada,2021-2022,2021/22,MF,17,13,1020,2,1,17,8,0,0,0,0,0,0,0,0,0,0,1,0,0,44,61,La Liga,18,38,8,14,16
+santi-comesana-rayo-vallecano-2021-2022,santi-comesana,Santi Comesaña,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,MF,35,32,2682,1,2,32,5,0,0,0,0,0,0,0,0,0,0,12,1,0,39,50,La Liga,12,42,11,9,18
+francis-coquelin-villarreal-2021-2022,francis-coquelin,Francis Coquelin,villarreal,Villarreal,2021-2022,2021/22,MF,20,8,830,2,1,5,2,0,0,0,0,0,0,0,0,0,0,3,0,0,63,37,La Liga,7,59,16,11,11
+jesus-corona-sevilla-2021-2022,jesus-corona,Jesús Corona,sevilla,Sevilla,2021-2022,2021/22,MF,18,12,1157,2,4,12,3,0,0,0,0,0,0,0,0,0,0,2,0,0,53,30,La Liga,4,70,18,16,4
+angel-correa-atletico-madrid-2021-2022,angel-correa,Ángel Correa,atletico-madrid,Atlético Madrid,2021-2022,2021/22,MF,36,21,1856,12,5,50,23,0,0,0,0,0,0,0,0,0,0,3,1,0,65,43,La Liga,3,71,21,8,9
+thierry-correia-valencia-2021-2022,thierry-correia,Thierry Correia,valencia,Valencia,2021-2022,2021/22,DF,19,18,1414,0,1,3,1,0,0,0,0,0,0,0,0,0,0,5,0,0,48,53,La Liga,9,48,11,15,12
+helder-costa-valencia-2021-2022,helder-costa,Hélder Costa,valencia,Valencia,2021-2022,2021/22,MF,22,13,1118,0,1,9,2,0,0,0,0,0,0,0,0,0,0,3,0,0,48,53,La Liga,9,48,11,15,12
+jaume-costa-mallorca-2021-2022,jaume-costa,Jaume Costa,mallorca,Mallorca,2021-2022,2021/22,DF,25,21,1828,0,4,11,2,0,0,0,0,0,0,0,0,0,0,5,1,0,36,63,La Liga,16,39,10,9,19
+thibaut-courtois-real-madrid-2021-2022,thibaut-courtois,Thibaut Courtois,real-madrid,Real Madrid,2021-2022,2021/22,GK,36,36,3240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,80,31,La Liga,1,86,26,8,4
+philippe-coutinho-barcelona-2021-2022,philippe-coutinho,Philippe Coutinho,barcelona,Barcelona,2021-2022,2021/22,MF,12,5,503,2,0,24,7,0,0,0,0,0,0,0,0,0,0,1,0,0,68,38,La Liga,2,73,21,10,7
+juan-cruz-armada-osasuna-2021-2022,juan-cruz-armada,Juan Cruz Armada,osasuna,Osasuna,2021-2022,2021/22,DF,23,22,1934,0,0,3,0,0,0,0,0,0,0,0,0,0,0,4,0,0,37,51,La Liga,10,47,12,11,15
+jorge-cuenca-getafe-2021-2022,jorge-cuenca,Jorge Cuenca,getafe,Getafe,2021-2022,2021/22,DF,32,31,2683,1,0,16,7,0,0,0,0,0,0,0,0,0,0,6,2,0,33,41,La Liga,15,39,8,15,15
+matheus-cunha-atletico-madrid-2021-2022,matheus-cunha,Matheus Cunha,atletico-madrid,Atlético Madrid,2021-2022,2021/22,FW,29,8,1063,6,4,37,15,0,0,0,0,0,0,0,0,0,0,3,0,0,65,43,La Liga,3,71,21,8,9
+arnaut-danjuma-villarreal-2021-2022,arnaut-danjuma,Arnaut Danjuma,villarreal,Villarreal,2021-2022,2021/22,FW,23,17,1472,10,3,62,29,0,0,0,0,0,0,0,0,0,0,1,0,0,63,37,La Liga,7,59,16,11,11
+sergi-darder-espanyol-2021-2022,sergi-darder,Sergi Darder,espanyol,Espanyol,2021-2022,2021/22,MF,36,36,3125,3,9,44,17,0,0,0,0,0,0,0,0,0,0,4,0,0,40,53,La Liga,14,42,10,12,16
+rodrigo-de-paul-atletico-madrid-2021-2022,rodrigo-de-paul,Rodrigo De Paul,atletico-madrid,Atlético Madrid,2021-2022,2021/22,MF,36,24,2151,3,1,24,9,0,0,0,0,0,0,0,0,0,0,7,0,0,65,43,La Liga,3,71,21,8,9
+thomas-delaney-sevilla-2021-2022,thomas-delaney,Thomas Delaney,sevilla,Sevilla,2021-2022,2021/22,MF,26,15,1549,2,1,17,4,0,0,0,0,0,0,0,0,0,0,4,1,0,53,30,La Liga,4,70,18,16,4
+ousmane-dembele-barcelona-2021-2022,ousmane-dembele,Ousmane Dembélé,barcelona,Barcelona,2021-2022,2021/22,MF,21,15,1409,1,13,47,8,0,0,0,0,0,0,0,0,0,0,3,0,0,68,38,La Liga,2,73,21,10,7
+sergino-dest-barcelona-2021-2022,sergino-dest,Sergiño Dest,barcelona,Barcelona,2021-2022,2021/22,DF,21,17,1512,0,3,12,3,0,0,0,0,0,0,0,0,0,0,2,0,0,68,38,La Liga,2,73,21,10,7
+boulaye-dia-villarreal-2021-2022,boulaye-dia,Boulaye Dia,villarreal,Villarreal,2021-2022,2021/22,FW,25,13,1269,5,5,37,11,0,0,0,0,0,0,0,0,0,0,3,0,0,63,37,La Liga,7,59,16,11,11
+mouctar-diakhaby-valencia-2021-2022,mouctar-diakhaby,Mouctar Diakhaby,valencia,Valencia,2021-2022,2021/22,DF,29,21,1948,0,1,8,2,0,0,0,0,0,0,0,0,0,0,11,0,0,48,53,La Liga,9,48,11,15,12
+victor-diaz-granada-2021-2022,victor-diaz,Víctor Díaz,granada,Granada,2021-2022,2021/22,DF,22,18,1500,1,0,12,2,0,0,0,0,0,0,0,0,0,0,5,0,0,44,61,La Liga,18,38,8,14,16
+landry-dimata-espanyol-2021-2022,landry-dimata,Landry Dimata,espanyol,Espanyol,2021-2022,2021/22,FW,17,4,541,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,53,La Liga,14,42,10,12,16
+stole-dimitrievski-rayo-vallecano-2021-2022,stole-dimitrievski,Stole Dimitrievski,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,GK,31,30,2772,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,39,50,La Liga,12,42,11,9,18
+matias-dituro-celta-vigo-2021-2022,matias-dituro,Matías Dituro,celta-vigo,Celta Vigo,2021-2022,2021/22,GK,38,38,3420,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,43,43,La Liga,11,46,12,10,16
+djene-getafe-2021-2022,djene,Djené,getafe,Getafe,2021-2022,2021/22,DF,35,35,3115,0,1,4,1,0,0,0,0,0,0,0,0,0,0,11,1,0,33,41,La Liga,15,39,8,15,15
+marko-dmitrovic-sevilla-2021-2022,marko-dmitrovic,Marko Dmitrović,sevilla,Sevilla,2021-2022,2021/22,GK,6,6,540,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,53,30,La Liga,4,70,18,16,4
+domingos-duarte-granada-2021-2022,domingos-duarte,Domingos Duarte,granada,Granada,2021-2022,2021/22,DF,21,19,1687,1,0,6,1,0,0,0,0,0,0,0,0,0,0,7,1,0,44,61,La Liga,18,38,8,14,16
+oscar-duarte-levante-2021-2022,oscar-duarte,Óscar Duarte,levante,Levante,2021-2022,2021/22,DF,23,20,1773,2,0,19,5,0,0,0,0,0,0,0,0,0,0,5,0,0,51,76,La Liga,19,35,8,11,19
+ruben-duarte-alaves-2021-2022,ruben-duarte,Rubén Duarte,alaves,Alavés,2021-2022,2021/22,DF,34,31,2621,0,4,9,3,0,0,0,0,0,0,0,0,0,0,12,1,0,31,65,La Liga,20,31,8,7,23
+hugo-duro-valencia-2021-2022,hugo-duro,Hugo Duro,valencia,Valencia,2021-2022,2021/22,MF,30,22,1834,7,1,31,15,0,0,0,0,0,0,0,0,0,0,3,1,0,48,53,La Liga,9,48,11,15,12
+aritz-elustondo-real-sociedad-2021-2022,aritz-elustondo,Aritz Elustondo,real-sociedad,Real Sociedad,2021-2022,2021/22,DF,30,22,2105,4,1,14,7,0,0,0,0,0,0,0,0,0,0,3,1,0,40,37,La Liga,6,62,17,11,10
+adri-embarba-espanyol-2021-2022,adri-embarba,Adri Embarba,espanyol,Espanyol,2021-2022,2021/22,MF,32,24,1986,0,2,49,16,0,0,0,0,0,0,0,0,0,0,4,0,0,40,53,La Liga,14,42,10,12,16
+youssef-en-nesyri-sevilla-2021-2022,youssef-en-nesyri,Youssef En-Nesyri,sevilla,Sevilla,2021-2022,2021/22,FW,23,15,1277,5,1,37,14,0,0,0,0,0,0,0,0,0,0,1,0,0,53,30,La Liga,4,70,18,16,4
+gonzalo-escalante-alaves-2021-2022,gonzalo-escalante,Gonzalo Escalante,alaves,Alavés,2021-2022,2021/22,MF,17,15,1300,5,0,16,9,0,0,0,0,0,0,0,0,0,0,8,1,0,31,65,La Liga,20,31,8,7,23
+sergio-escudero-granada-2021-2022,sergio-escudero,Sergio Escudero,granada,Granada,2021-2022,2021/22,DF,27,15,1434,2,1,21,4,0,0,0,0,0,0,0,0,0,0,6,0,0,44,61,La Liga,18,38,8,14,16
+alfonso-espino-cadiz-2021-2022,alfonso-espino,Alfonso Espino,cadiz,Cádiz,2021-2022,2021/22,DF,37,37,3329,2,2,27,7,0,0,0,0,0,0,0,0,0,0,6,0,0,35,51,La Liga,17,39,8,15,15
+pervis-estupinan-villarreal-2021-2022,pervis-estupinan,Pervis Estupiñán,villarreal,Villarreal,2021-2022,2021/22,DF,28,17,1575,0,1,14,4,0,0,0,0,0,0,0,0,0,0,3,0,0,63,37,La Liga,7,59,16,11,11
+abde-ezzalzouli-barcelona-2021-2022,abde-ezzalzouli,Abde Ezzalzouli,barcelona,Barcelona,2021-2022,2021/22,FW,10,6,580,1,0,16,4,0,0,0,0,0,0,0,0,0,0,4,0,0,68,38,La Liga,2,73,21,10,7
+radamel-falcao-rayo-vallecano-2021-2022,radamel-falcao,Radamel Falcao,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,FW,22,8,838,6,0,34,15,0,0,0,0,0,0,0,0,0,0,1,0,0,39,50,La Liga,12,42,11,9,18
+fali-cadiz-2021-2022,fali,Fali,cadiz,Cádiz,2021-2022,2021/22,DF,28,23,1803,0,2,14,0,0,0,0,0,0,0,0,0,0,0,6,0,0,35,51,La Liga,17,39,8,15,15
+nabil-fekir-real-betis-2021-2022,nabil-fekir,Nabil Fekir,real-betis,Real Betis,2021-2022,2021/22,MF,34,33,2794,6,8,84,32,0,0,0,0,0,0,0,0,0,0,7,1,0,62,40,La Liga,5,65,19,8,11
+felipe-atletico-madrid-2021-2022,felipe,Felipe,atletico-madrid,Atlético Madrid,2021-2022,2021/22,DF,26,15,1504,2,1,11,4,0,0,0,0,0,0,0,0,0,0,5,1,0,65,43,La Liga,3,71,21,8,9
+joao-felix-atletico-madrid-2021-2022,joao-felix,João Félix,atletico-madrid,Atlético Madrid,2021-2022,2021/22,FW,24,13,1263,8,4,39,15,0,0,0,0,0,0,0,0,0,0,3,1,0,65,43,La Liga,3,71,21,8,9
+aitor-fernandez-levante-2021-2022,aitor-fernandez,Aitor Fernández,levante,Levante,2021-2022,2021/22,GK,13,13,1166,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,51,76,La Liga,19,35,8,11,19
+alex-fernandez-cadiz-2021-2022,alex-fernandez,Álex Fernández,cadiz,Cádiz,2021-2022,2021/22,MF,32,22,2051,3,2,21,8,0,0,0,0,0,0,0,0,0,0,2,0,0,35,51,La Liga,17,39,8,15,15
+fernando-sevilla-2021-2022,fernando,Fernando,sevilla,Sevilla,2021-2022,2021/22,DF,24,21,1850,1,1,6,1,0,0,0,0,0,0,0,0,0,0,6,0,0,53,30,La Liga,4,70,18,16,4
+fidel-elche-2021-2022,fidel,Fidel,elche,Elche,2021-2022,2021/22,MF,33,29,2261,5,6,18,8,0,0,0,0,0,0,0,0,0,0,9,0,0,40,52,La Liga,13,42,11,9,18
+dimitri-foulquier-valencia-2021-2022,dimitri-foulquier,Dimitri Foulquier,valencia,Valencia,2021-2022,2021/22,DF,29,25,2342,0,1,16,5,0,0,0,0,0,0,0,0,0,0,11,0,0,48,53,La Liga,9,48,11,15,12
+juan-foyth-villarreal-2021-2022,juan-foyth,Juan Foyth,villarreal,Villarreal,2021-2022,2021/22,DF,25,22,1924,1,1,6,2,0,0,0,0,0,0,0,0,0,0,6,1,0,63,37,La Liga,7,59,16,11,11
+enric-franquesa-levante-2021-2022,enric-franquesa,Enric Franquesa,levante,Levante,2021-2022,2021/22,DF,16,6,625,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,51,76,La Liga,19,35,8,11,19
+jorge-de-frutos-levante-2021-2022,jorge-de-frutos,Jorge de Frutos,levante,Levante,2021-2022,2021/22,MF,25,20,1760,4,7,46,20,0,0,0,0,0,0,0,0,0,0,4,0,0,51,76,La Liga,19,35,8,11,19
+javi-galan-celta-vigo-2021-2022,javi-galan,Javi Galán,celta-vigo,Celta Vigo,2021-2022,2021/22,DF,37,37,3298,0,3,19,5,0,0,0,0,0,0,0,0,0,0,8,0,0,43,43,La Liga,11,46,12,10,16
+inigo-ruiz-de-galarreta-mallorca-2021-2022,inigo-ruiz-de-galarreta,Iñigo Ruiz de Galarreta,mallorca,Mallorca,2021-2022,2021/22,MF,22,17,1378,0,0,8,3,0,0,0,0,0,0,0,0,0,0,4,0,0,36,63,La Liga,16,39,10,9,19
+thiago-galhardo-celta-vigo-2021-2022,thiago-galhardo,Thiago Galhardo,celta-vigo,Celta Vigo,2021-2022,2021/22,FW,31,9,1148,2,2,29,15,0,0,0,0,0,0,0,0,0,0,5,0,0,43,43,La Liga,11,46,12,10,16
+alvaro-garcia-rayo-vallecano-2021-2022,alvaro-garcia,Álvaro García,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,MF,36,34,2998,7,4,68,24,0,0,0,0,0,0,0,0,0,0,6,0,0,39,50,La Liga,12,42,11,9,18
+dani-garcia-athletic-club-2021-2022,dani-garcia,Dani García,athletic-club,Athletic Club,2021-2022,2021/22,MF,32,27,2177,0,0,12,2,0,0,0,0,0,0,0,0,0,0,9,0,0,43,36,La Liga,8,55,14,13,11
+david-garcia-osasuna-2021-2022,david-garcia,David García,osasuna,Osasuna,2021-2022,2021/22,DF,35,35,3105,4,0,31,4,0,0,0,0,0,0,0,0,0,0,8,0,0,37,51,La Liga,10,47,12,11,15
+eric-garcia-barcelona-2021-2022,eric-garcia,Eric García,barcelona,Barcelona,2021-2022,2021/22,DF,26,23,2039,0,0,6,4,0,0,0,0,0,0,0,0,0,0,5,1,0,68,38,La Liga,2,73,21,10,7
+fran-garcia-rayo-vallecano-2021-2022,fran-garcia,Fran Garcia,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,DF,34,34,3025,1,0,25,8,0,0,0,0,0,0,0,0,0,0,4,0,0,39,50,La Liga,12,42,11,9,18
+manu-garcia-alaves-2021-2022,manu-garcia,Manu García,alaves,Alavés,2021-2022,2021/22,MF,24,10,1077,0,1,8,1,0,0,0,0,0,0,0,0,0,0,3,0,0,31,65,La Liga,20,31,8,7,23
+raul-garcia-athletic-club-2021-2022,raul-garcia,Raúl García,athletic-club,Athletic Club,2021-2022,2021/22,FW,35,24,1802,6,2,44,14,0,0,0,0,0,0,0,0,0,0,3,0,0,43,36,La Liga,8,55,14,13,11
+ruben-garcia-osasuna-2021-2022,ruben-garcia,Rubén García,osasuna,Osasuna,2021-2022,2021/22,MF,37,30,2375,1,6,33,12,0,0,0,0,0,0,0,0,0,0,1,0,0,37,51,La Liga,10,47,12,11,15
+unai-garcia-osasuna-2021-2022,unai-garcia,Unai García,osasuna,Osasuna,2021-2022,2021/22,DF,18,15,1408,0,0,8,0,0,0,0,0,0,0,0,0,0,0,5,0,0,37,51,La Liga,10,47,12,11,15
+mario-gaspar-villarreal-2021-2022,mario-gaspar,Mario Gaspar,villarreal,Villarreal,2021-2022,2021/22,DF,12,7,623,0,0,4,1,0,0,0,0,0,0,0,0,0,0,1,0,0,63,37,La Liga,7,59,16,11,11
+gavi-barcelona-2021-2022,gavi,Gavi,barcelona,Barcelona,2021-2022,2021/22,MF,34,28,2316,2,5,30,8,0,0,0,0,0,0,0,0,0,0,11,1,0,68,38,La Liga,2,73,21,10,7
+bryan-gil-valencia-2021-2022,bryan-gil,Bryan Gil,valencia,Valencia,2021-2022,2021/22,MF,13,9,753,0,1,11,2,0,0,0,0,0,0,0,0,0,0,3,0,0,48,53,La Liga,9,48,11,15,12
+oscar-gil-espanyol-2021-2022,oscar-gil,Óscar Gil,espanyol,Espanyol,2021-2022,2021/22,DF,22,20,1688,0,2,6,1,0,0,0,0,0,0,0,0,0,0,7,0,0,40,53,La Liga,14,42,10,12,16
+dani-gomez-levante-2021-2022,dani-gomez,Dani Gómez,levante,Levante,2021-2022,2021/22,FW,28,11,1063,4,2,31,14,0,0,0,0,0,0,0,0,0,0,1,0,0,51,76,La Liga,19,35,8,11,19
+maxi-gomez-valencia-2021-2022,maxi-gomez,Maxi Gómez,valencia,Valencia,2021-2022,2021/22,FW,29,21,1956,5,1,43,14,0,0,0,0,0,0,0,0,0,0,7,1,0,48,53,La Liga,9,48,11,15,12
+moi-gomez-villarreal-2021-2022,moi-gomez,Moi Gómez,villarreal,Villarreal,2021-2022,2021/22,MF,29,13,1286,2,2,13,5,0,0,0,0,0,0,0,0,0,0,2,0,0,63,37,La Liga,7,59,16,11,11
+papu-gomez-sevilla-2021-2022,papu-gomez,Papu Gómez,sevilla,Sevilla,2021-2022,2021/22,MF,29,19,1784,5,1,34,12,0,0,0,0,0,0,0,0,0,0,4,0,0,53,30,La Liga,4,70,18,16,4
+sergi-gomez-espanyol-2021-2022,sergi-gomez,Sergi Gómez,espanyol,Espanyol,2021-2022,2021/22,DF,31,31,2720,1,2,8,3,0,0,0,0,0,0,0,0,0,0,1,1,0,40,53,La Liga,14,42,10,12,16
+maxime-gonalons-granada-2021-2022,maxime-gonalons,Maxime Gonalons,granada,Granada,2021-2022,2021/22,MF,25,20,1550,0,2,11,2,0,0,0,0,0,0,0,0,0,0,6,0,0,44,61,La Liga,18,38,8,14,16
+diego-gonzalez-elche-2021-2022,diego-gonzalez,Diego González,elche,Elche,2021-2022,2021/22,DF,28,19,1793,0,0,4,1,0,0,0,0,0,0,0,0,0,0,3,1,0,40,52,La Liga,13,42,11,9,18
+edgar-gonzalez-real-betis-2021-2022,edgar-gonzalez,Édgar González,real-betis,Real Betis,2021-2022,2021/22,DF,21,14,1464,1,1,5,1,0,0,0,0,0,0,0,0,0,0,6,0,0,62,40,La Liga,5,65,19,8,11
+nicolas-gonzalez-barcelona-2021-2022,nicolas-gonzalez,Nicolás González,barcelona,Barcelona,2021-2022,2021/22,MF,27,12,1114,2,1,17,4,0,0,0,0,0,0,0,0,0,0,6,0,0,68,38,La Liga,2,73,21,10,7
+andoni-gorosabel-real-sociedad-2021-2022,andoni-gorosabel,Andoni Gorosabel,real-sociedad,Real Sociedad,2021-2022,2021/22,DF,32,25,2289,0,4,11,1,0,0,0,0,0,0,0,0,0,0,4,0,0,40,37,La Liga,6,62,17,11,10
+antoine-griezmann-atletico-madrid-2021-2022,antoine-griezmann,Antoine Griezmann,atletico-madrid,Atlético Madrid,2021-2022,2021/22,MF,26,21,1695,3,4,43,14,0,0,0,0,0,0,0,0,0,0,3,0,0,65,43,La Liga,3,71,21,8,9
+andres-guardado-real-betis-2021-2022,andres-guardado,Andrés Guardado,real-betis,Real Betis,2021-2022,2021/22,MF,28,17,1393,0,1,15,3,0,0,0,0,0,0,0,0,0,0,4,0,0,62,40,La Liga,5,65,19,8,11
+sergi-guardiola-rayo-vallecano-2021-2022,sergi-guardiola,Sergi Guardiola,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,FW,32,20,1710,8,2,51,18,0,0,0,0,0,0,0,0,0,0,3,0,0,39,50,La Liga,12,42,11,9,18
+nemanja-gudelj-sevilla-2021-2022,nemanja-gudelj,Nemanja Gudelj,sevilla,Sevilla,2021-2022,2021/22,DF,21,9,1046,0,0,4,1,0,0,0,0,0,0,0,0,0,0,5,0,0,53,30,La Liga,4,70,18,16,4
+goncalo-guedes-valencia-2021-2022,goncalo-guedes,Gonçalo Guedes,valencia,Valencia,2021-2022,2021/22,MF,36,30,2606,11,6,69,28,0,0,0,0,0,0,0,0,0,0,3,0,0,48,53,La Liga,9,48,11,15,12
+ander-guevara-real-sociedad-2021-2022,ander-guevara,Ander Guevara,real-sociedad,Real Sociedad,2021-2022,2021/22,MF,17,11,867,0,0,2,0,0,0,0,0,0,0,0,0,0,0,2,0,0,40,37,La Liga,6,62,17,11,10
+hugo-guillamon-valencia-2021-2022,hugo-guillamon,Hugo Guillamón,valencia,Valencia,2021-2022,2021/22,DF,31,28,2361,1,0,7,2,0,0,0,0,0,0,0,0,0,0,11,2,0,48,53,La Liga,9,48,11,15,12
+gerard-gumbau-elche-2021-2022,gerard-gumbau,Gerard Gumbau,elche,Elche,2021-2022,2021/22,MF,31,20,1890,0,4,21,3,0,0,0,0,0,0,0,0,0,0,8,1,0,40,52,La Liga,13,42,11,9,18
+raul-guti-elche-2021-2022,raul-guti,Raúl Guti,elche,Elche,2021-2022,2021/22,MF,31,17,1627,0,0,18,5,0,0,0,0,0,0,0,0,0,0,4,1,0,40,52,La Liga,13,42,11,9,18
+munir-el-haddadi-sevilla-2021-2022,munir-el-haddadi,Munir El Haddadi,sevilla,Sevilla,2021-2022,2021/22,MF,16,4,474,2,0,12,7,0,0,0,0,0,0,0,0,0,0,3,0,0,53,30,La Liga,4,70,18,16,4
+varazdat-haroyan-cadiz-2021-2022,varazdat-haroyan,Varazdat Haroyan,cadiz,Cádiz,2021-2022,2021/22,DF,17,16,1437,1,0,3,2,0,0,0,0,0,0,0,0,0,0,9,0,0,35,51,La Liga,17,39,8,15,15
+eden-hazard-real-madrid-2021-2022,eden-hazard,Eden Hazard,real-madrid,Real Madrid,2021-2022,2021/22,MF,18,7,717,0,1,12,7,0,0,0,0,0,0,0,0,0,0,3,0,0,80,31,La Liga,1,86,26,8,4
+mario-hermoso-atletico-madrid-2021-2022,mario-hermoso,Mario Hermoso,atletico-madrid,Atlético Madrid,2021-2022,2021/22,DF,26,21,1865,2,1,17,4,0,0,0,0,0,0,0,0,0,0,6,1,0,65,43,La Liga,3,71,21,8,9
+aridane-hernandez-osasuna-2021-2022,aridane-hernandez,Aridane Hernández,osasuna,Osasuna,2021-2022,2021/22,DF,15,12,1159,0,0,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,37,51,La Liga,10,47,12,11,15
+luis-hernandez-cadiz-2021-2022,luis-hernandez,Luis Hernández,cadiz,Cádiz,2021-2022,2021/22,DF,16,15,1366,0,0,6,2,0,0,0,0,0,0,0,0,0,0,5,0,0,35,51,La Liga,17,39,8,15,15
+hector-herrera-atletico-madrid-2021-2022,hector-herrera,Héctor Herrera,atletico-madrid,Atlético Madrid,2021-2022,2021/22,MF,21,8,859,0,0,8,3,0,0,0,0,0,0,0,0,0,0,4,0,0,65,43,La Liga,3,71,21,8,9
+sergio-herrera-osasuna-2021-2022,sergio-herrera,Sergio Herrera,osasuna,Osasuna,2021-2022,2021/22,GK,36,36,3240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,37,51,La Liga,10,47,12,11,15
+yangel-herrera-espanyol-2021-2022,yangel-herrera,Yangel Herrera,espanyol,Espanyol,2021-2022,2021/22,MF,23,19,1645,1,1,15,2,0,0,0,0,0,0,0,0,0,0,7,1,0,40,53,La Liga,14,42,10,12,16
+vicente-iborra-villarreal-2021-2022,vicente-iborra,Vicente Iborra,villarreal,Villarreal,2021-2022,2021/22,MF,20,12,1034,0,1,8,2,0,0,0,0,0,0,0,0,0,0,4,0,0,63,37,La Liga,7,59,16,11,11
+oussama-idrissi-cadiz-2021-2022,oussama-idrissi,Oussama Idrissi,cadiz,Cádiz,2021-2022,2021/22,MF,12,11,902,1,1,21,8,0,0,0,0,0,0,0,0,0,0,2,0,0,35,51,La Liga,17,39,8,15,15
+iglesias-getafe-2021-2022,iglesias,Iglesias,getafe,Getafe,2021-2022,2021/22,DF,20,7,719,0,1,5,0,0,0,0,0,0,0,0,0,0,0,1,0,0,33,41,La Liga,15,39,8,15,15
+borja-iglesias-real-betis-2021-2022,borja-iglesias,Borja Iglesias,real-betis,Real Betis,2021-2022,2021/22,FW,33,18,1573,10,0,38,19,0,0,0,0,0,0,0,0,0,0,4,0,0,62,40,La Liga,5,65,19,8,11
+alexander-isak-real-sociedad-2021-2022,alexander-isak,Alexander Isak,real-sociedad,Real Sociedad,2021-2022,2021/22,FW,32,26,2140,6,2,73,35,0,0,0,0,0,0,0,0,0,0,6,0,0,40,37,La Liga,6,62,17,11,10
+jakub-jankto-getafe-2021-2022,jakub-jankto,Jakub Jankto,getafe,Getafe,2021-2022,2021/22,DF,14,6,587,0,2,6,0,0,0,0,0,0,0,0,0,0,0,1,1,0,33,41,La Liga,15,39,8,15,15
+adnan-januzaj-real-sociedad-2021-2022,adnan-januzaj,Adnan Januzaj,real-sociedad,Real Sociedad,2021-2022,2021/22,MF,33,17,1625,3,0,42,15,0,0,0,0,0,0,0,0,0,0,5,0,0,40,37,La Liga,6,62,17,11,10
+jason-alaves-2021-2022,jason,Jason,alaves,Alavés,2021-2022,2021/22,MF,14,10,678,0,1,9,2,0,0,0,0,0,0,0,0,0,0,1,0,0,31,65,La Liga,20,31,8,7,23
+luis-javier-suarez-granada-2021-2022,luis-javier-suarez,Luis Javier Suárez,granada,Granada,2021-2022,2021/22,FW,37,34,2844,8,4,86,25,0,0,0,0,0,0,0,0,0,0,6,0,0,44,61,La Liga,18,38,8,14,16
+joaquin-real-betis-2021-2022,joaquin,Joaquín,real-betis,Real Betis,2021-2022,2021/22,MF,21,2,471,0,1,10,3,0,0,0,0,0,0,0,0,0,0,0,0,0,62,40,La Liga,5,65,19,8,11
+frenkie-de-jong-barcelona-2021-2022,frenkie-de-jong,Frenkie de Jong,barcelona,Barcelona,2021-2022,2021/22,MF,32,30,2476,3,3,17,8,0,0,0,0,0,0,0,0,0,0,7,1,0,68,38,La Liga,2,73,21,10,7
+luuk-de-jong-barcelona-2021-2022,luuk-de-jong,Luuk de Jong,barcelona,Barcelona,2021-2022,2021/22,MF,21,6,654,6,0,24,10,0,0,0,0,0,0,0,0,0,0,1,0,0,68,38,La Liga,2,73,21,10,7
+joan-jordan-sevilla-2021-2022,joan-jordan,Joan Jordán,sevilla,Sevilla,2021-2022,2021/22,MF,36,31,2514,0,1,16,1,0,0,0,0,0,0,0,0,0,0,9,0,0,53,30,La Liga,4,70,18,16,4
+josan-elche-2021-2022,josan,Josan,elche,Elche,2021-2022,2021/22,DF,31,10,1211,2,3,12,5,0,0,0,0,0,0,0,0,0,0,2,0,0,40,52,La Liga,13,42,11,9,18
+willian-jose-real-betis-2021-2022,willian-jose,Willian José,real-betis,Real Betis,2021-2022,2021/22,FW,32,19,1604,9,4,35,12,0,0,0,0,0,0,0,0,0,0,2,0,0,62,40,La Liga,5,65,19,8,11
+joselu-alaves-2021-2022,joselu,Joselu,alaves,Alavés,2021-2022,2021/22,FW,37,35,3122,14,4,97,41,0,0,0,0,0,0,0,0,0,0,0,0,0,31,65,La Liga,20,31,8,7,23
+juanmi-real-betis-2021-2022,juanmi,Juanmi,real-betis,Real Betis,2021-2022,2021/22,MF,33,26,2131,16,4,54,30,0,0,0,0,0,0,0,0,0,0,5,0,0,62,40,La Liga,5,65,19,8,11
+vinicius-junior-real-madrid-2021-2022,vinicius-junior,Vinicius Júnior,real-madrid,Real Madrid,2021-2022,2021/22,MF,35,30,2690,17,10,80,43,0,0,0,0,0,0,0,0,0,0,6,0,0,80,31,La Liga,1,86,26,8,4
+jens-jonsson-cadiz-2021-2022,jens-jonsson,Jens Jønsson,cadiz,Cádiz,2021-2022,2021/22,MF,22,17,1303,0,1,6,0,0,0,0,0,0,0,0,0,0,0,3,0,0,35,51,La Liga,17,39,8,15,15
+lee-kang-in-mallorca-2021-2022,lee-kang-in,Lee Kang-in,mallorca,Mallorca,2021-2022,2021/22,MF,30,15,1411,1,2,36,15,0,0,0,0,0,0,0,0,0,0,4,1,0,36,63,La Liga,16,39,10,9,19
+kike-osasuna-2021-2022,kike,Kiké,osasuna,Osasuna,2021-2022,2021/22,FW,33,18,1862,5,1,53,20,0,0,0,0,0,0,0,0,0,0,2,0,0,37,51,La Liga,10,47,12,11,15
+koke-atletico-madrid-2021-2022,koke,Koke,atletico-madrid,Atlético Madrid,2021-2022,2021/22,MF,31,29,2508,1,2,12,6,0,0,0,0,0,0,0,0,0,0,6,0,0,65,43,La Liga,3,71,21,8,9
+geoffrey-kondogbia-atletico-madrid-2021-2022,geoffrey-kondogbia,Geoffrey Kondogbia,atletico-madrid,Atlético Madrid,2021-2022,2021/22,DF,28,21,1882,1,2,15,1,0,0,0,0,0,0,0,0,0,0,13,2,0,65,43,La Liga,3,71,21,8,9
+jules-kounde-sevilla-2021-2022,jules-kounde,Jules Koundé,sevilla,Sevilla,2021-2022,2021/22,DF,32,31,2736,2,1,13,3,0,0,0,0,0,0,0,0,0,0,2,2,0,53,30,La Liga,4,70,18,16,4
+toni-kroos-real-madrid-2021-2022,toni-kroos,Toni Kroos,real-madrid,Real Madrid,2021-2022,2021/22,MF,28,25,2103,1,3,46,12,0,0,0,0,0,0,0,0,0,0,4,0,0,80,31,La Liga,1,86,26,8,4
+takefusa-kubo-mallorca-2021-2022,takefusa-kubo,Takefusa Kubo,mallorca,Mallorca,2021-2022,2021/22,MF,28,17,1605,1,0,48,8,0,0,0,0,0,0,0,0,0,0,4,0,0,36,63,La Liga,16,39,10,9,19
+victor-laguardia-alaves-2021-2022,victor-laguardia,Víctor Laguardia,alaves,Alavés,2021-2022,2021/22,DF,34,34,3042,3,2,14,5,0,0,0,0,0,0,0,0,0,0,9,0,0,31,65,La Liga,20,31,8,7,23
+erik-lamela-sevilla-2021-2022,erik-lamela,Érik Lamela,sevilla,Sevilla,2021-2022,2021/22,MF,20,10,1015,5,2,21,12,0,0,0,0,0,0,0,0,0,0,5,0,0,53,30,La Liga,4,70,18,16,4
+toni-lato-valencia-2021-2022,toni-lato,Toni Lato,valencia,Valencia,2021-2022,2021/22,DF,11,7,590,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,48,53,La Liga,9,48,11,15,12
+robin-le-normand-real-sociedad-2021-2022,robin-le-normand,Robin Le Normand,real-sociedad,Real Sociedad,2021-2022,2021/22,DF,37,37,3330,1,1,18,5,0,0,0,0,0,0,0,0,0,0,6,0,0,40,37,La Liga,6,62,17,11,10
+jeremias-ledesma-cadiz-2021-2022,jeremias-ledesma,Jeremías Ledesma,cadiz,Cádiz,2021-2022,2021/22,GK,38,38,3420,0,0,1,1,0,0,0,0,0,0,0,0,0,0,4,0,0,35,51,La Liga,17,39,8,15,15
+wu-lei-espanyol-2021-2022,wu-lei,Wu Lei,espanyol,Espanyol,2021-2022,2021/22,MF,23,4,474,1,0,7,5,0,0,0,0,0,0,0,0,0,0,0,0,0,40,53,La Liga,14,42,10,12,16
+florian-lejeune-alaves-2021-2022,florian-lejeune,Florian Lejeune,alaves,Alavés,2021-2022,2021/22,DF,30,30,2699,0,0,22,2,0,0,0,0,0,0,0,0,0,0,9,1,0,31,65,La Liga,20,31,8,7,23
+inigo-lekue-athletic-club-2021-2022,inigo-lekue,Iñigo Lekue,athletic-club,Athletic Club,2021-2022,2021/22,DF,25,22,1925,0,2,7,1,0,0,0,0,0,0,0,0,0,0,3,0,0,43,36,La Liga,8,55,14,13,11
+thomas-lemar-atletico-madrid-2021-2022,thomas-lemar,Thomas Lemar,atletico-madrid,Atlético Madrid,2021-2022,2021/22,MF,24,17,1440,4,5,29,8,0,0,0,0,0,0,0,0,0,0,2,0,0,65,43,La Liga,3,71,21,8,9
+clement-lenglet-barcelona-2021-2022,clement-lenglet,Clément Lenglet,barcelona,Barcelona,2021-2022,2021/22,DF,21,7,826,0,1,2,1,0,0,0,0,0,0,0,0,0,0,4,0,0,68,38,La Liga,2,73,21,10,7
+marcos-llorente-atletico-madrid-2021-2022,marcos-llorente,Marcos Llorente,atletico-madrid,Atlético Madrid,2021-2022,2021/22,DF,29,29,2447,0,2,16,2,0,0,0,0,0,0,0,0,0,0,5,0,0,65,43,La Liga,3,71,21,8,9
+giovani-lo-celso-villarreal-2021-2022,giovani-lo-celso,Giovani Lo Celso,villarreal,Villarreal,2021-2022,2021/22,MF,16,11,994,1,1,18,6,0,0,0,0,0,0,0,0,0,0,3,0,0,63,37,La Liga,7,59,16,11,11
+renan-lodi-atletico-madrid-2021-2022,renan-lodi,Renan Lodi,atletico-madrid,Atlético Madrid,2021-2022,2021/22,DF,29,13,1181,2,2,10,4,0,0,0,0,0,0,0,0,0,0,4,0,0,65,43,La Liga,3,71,21,8,9
+david-lopez-espanyol-2021-2022,david-lopez,David López,espanyol,Espanyol,2021-2022,2021/22,DF,18,8,743,0,0,5,4,0,0,0,0,0,0,0,0,0,0,1,0,0,40,53,La Liga,14,42,10,12,16
+diego-lopez-espanyol-2021-2022,diego-lopez,Diego López,espanyol,Espanyol,2021-2022,2021/22,GK,36,36,3177,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,40,53,La Liga,14,42,10,12,16
+javi-lopez-alaves-2021-2022,javi-lopez,Javi López,alaves,Alavés,2021-2022,2021/22,DF,9,4,462,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,31,65,La Liga,20,31,8,7,23
+unai-lopez-rayo-vallecano-2021-2022,unai-lopez,Unai López,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,MF,27,13,1160,0,0,19,7,0,0,0,0,0,0,0,0,0,0,5,0,0,39,50,La Liga,12,42,11,9,18
+mamadou-loum-alaves-2021-2022,mamadou-loum,Mamadou Loum,alaves,Alavés,2021-2022,2021/22,MF,32,26,2312,2,0,33,8,0,0,0,0,0,0,0,0,0,0,10,0,0,31,65,La Liga,20,31,8,7,23
+anthony-lozano-cadiz-2021-2022,anthony-lozano,Anthony Lozano,cadiz,Cádiz,2021-2022,2021/22,MF,31,21,1672,7,2,49,20,0,0,0,0,0,0,0,0,0,0,8,0,0,35,51,La Liga,17,39,8,15,15
+florentino-luis-getafe-2021-2022,florentino-luis,Florentino Luís,getafe,Getafe,2021-2022,2021/22,MF,22,9,992,0,1,3,1,0,0,0,0,0,0,0,0,0,0,2,0,0,33,41,La Liga,15,39,8,15,15
+jose-luis-gaya-valencia-2021-2022,jose-luis-gaya,José Luis Gayà,valencia,Valencia,2021-2022,2021/22,DF,24,22,1871,2,4,18,9,0,0,0,0,0,0,0,0,0,0,8,2,0,48,53,La Liga,9,48,11,15,12
+jose-luis-morales-levante-2021-2022,jose-luis-morales,José Luis Morales,levante,Levante,2021-2022,2021/22,MF,35,31,2719,13,7,81,36,0,0,0,0,0,0,0,0,0,0,7,0,0,51,76,La Liga,19,35,8,11,19
+darwin-machis-granada-2021-2022,darwin-machis,Darwin Machís,granada,Granada,2021-2022,2021/22,MF,25,16,1376,4,2,37,17,0,0,0,0,0,0,0,0,0,0,2,0,0,44,61,La Liga,18,38,8,14,16
+pablo-maffeo-mallorca-2021-2022,pablo-maffeo,Pablo Maffeo,mallorca,Mallorca,2021-2022,2021/22,DF,35,35,2945,1,4,29,7,0,0,0,0,0,0,0,0,0,0,10,0,0,36,63,La Liga,16,39,10,9,19
+nemanja-maksimovic-getafe-2021-2022,nemanja-maksimovic,Nemanja Maksimović,getafe,Getafe,2021-2022,2021/22,MF,35,34,2936,1,2,31,5,0,0,0,0,0,0,0,0,0,0,5,0,0,33,41,La Liga,15,39,8,15,15
+hugo-mallo-celta-vigo-2021-2022,hugo-mallo,Hugo Mallo,celta-vigo,Celta Vigo,2021-2022,2021/22,DF,21,21,1826,1,1,17,2,0,0,0,0,0,0,0,0,0,0,5,2,0,43,43,La Liga,11,46,12,10,16
+mickael-malsa-levante-2021-2022,mickael-malsa,Mickael Malsa,levante,Levante,2021-2022,2021/22,MF,26,11,1143,1,2,13,2,0,0,0,0,0,0,0,0,0,0,7,0,0,51,76,La Liga,19,35,8,11,19
+giorgi-mamardashvili-valencia-2021-2022,giorgi-mamardashvili,Giorgi Mamardashvili,valencia,Valencia,2021-2022,2021/22,GK,18,18,1620,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,48,53,La Liga,9,48,11,15,12
+reinildo-mandava-atletico-madrid-2021-2022,reinildo-mandava,Reinildo Mandava,atletico-madrid,Atlético Madrid,2021-2022,2021/22,DF,17,15,1298,0,0,2,0,0,0,0,0,0,0,0,0,0,0,5,0,0,65,43,La Liga,3,71,21,8,9
+aissa-mandi-villarreal-2021-2022,aissa-mandi,Aïssa Mandi,villarreal,Villarreal,2021-2022,2021/22,DF,17,14,1375,1,0,10,3,0,0,0,0,0,0,0,0,0,0,3,0,0,63,37,La Liga,7,59,16,11,11
+nikola-maras-rayo-vallecano-2021-2022,nikola-maras,Nikola Maraš,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,DF,16,11,1044,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4,0,0,39,50,La Liga,12,42,11,9,18
+marcelo-real-madrid-2021-2022,marcelo,Marcelo,real-madrid,Real Madrid,2021-2022,2021/22,DF,12,5,525,0,2,8,3,0,0,0,0,0,0,0,0,0,0,0,0,0,80,31,La Liga,1,86,26,8,4
+ivan-marcone-elche-2021-2022,ivan-marcone,Iván Marcone,elche,Elche,2021-2022,2021/22,MF,20,10,809,0,0,2,0,0,0,0,0,0,0,0,0,0,0,5,0,0,40,52,La Liga,13,42,11,9,18
+oscar-de-marcos-athletic-club-2021-2022,oscar-de-marcos,Óscar de Marcos,athletic-club,Athletic Club,2021-2022,2021/22,DF,22,19,1679,1,2,3,3,0,0,0,0,0,0,0,0,0,0,5,0,0,43,36,La Liga,8,55,14,13,11
+jose-maria-gimenez-atletico-madrid-2021-2022,jose-maria-gimenez,José María Giménez,atletico-madrid,Atlético Madrid,2021-2022,2021/22,DF,24,24,2042,1,1,20,7,0,0,0,0,0,0,0,0,0,0,7,0,0,65,43,La Liga,3,71,21,8,9
+roger-marti-levante-2021-2022,roger-marti,Roger Martí,levante,Levante,2021-2022,2021/22,FW,29,25,2115,7,3,49,20,0,0,0,0,0,0,0,0,0,0,8,0,0,51,76,La Liga,19,35,8,11,19
+anthony-martial-sevilla-2021-2022,anthony-martial,Anthony Martial,sevilla,Sevilla,2021-2022,2021/22,MF,9,7,490,0,1,7,3,0,0,0,0,0,0,0,0,0,0,1,0,0,53,30,La Liga,4,70,18,16,4
+inigo-martinez-athletic-club-2021-2022,inigo-martinez,Iñigo Martínez,athletic-club,Athletic Club,2021-2022,2021/22,DF,27,26,2341,3,0,27,9,0,0,0,0,0,0,0,0,0,0,9,2,0,43,36,La Liga,8,55,14,13,11
+javi-martinez-osasuna-2021-2022,javi-martinez,Javi Martínez,osasuna,Osasuna,2021-2022,2021/22,MF,26,9,879,1,1,10,2,0,0,0,0,0,0,0,0,0,0,1,0,0,37,51,La Liga,10,47,12,11,15
+pablo-martinez-levante-2021-2022,pablo-martinez,Pablo Martínez,levante,Levante,2021-2022,2021/22,MF,13,7,656,0,1,11,1,0,0,0,0,0,0,0,0,0,0,2,0,0,51,76,La Liga,19,35,8,11,19
+omar-mascarell-elche-2021-2022,omar-mascarell,Omar Mascarell,elche,Elche,2021-2022,2021/22,MF,32,30,2493,0,0,12,1,0,0,0,0,0,0,0,0,0,0,6,0,0,40,52,La Liga,13,42,11,9,18
+jaime-mata-getafe-2021-2022,jaime-mata,Jaime Mata,getafe,Getafe,2021-2022,2021/22,FW,22,4,672,1,0,10,3,0,0,0,0,0,0,0,0,0,0,7,0,0,33,41,La Liga,15,39,8,15,15
+luis-maximiano-granada-2021-2022,luis-maximiano,Luís Maximiano,granada,Granada,2021-2022,2021/22,GK,35,35,3136,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,44,61,La Liga,18,38,8,14,16
+borja-mayoral-getafe-2021-2022,borja-mayoral,Borja Mayoral,getafe,Getafe,2021-2022,2021/22,FW,18,11,1044,6,1,17,7,0,0,0,0,0,0,0,0,0,0,3,0,0,33,41,La Liga,15,39,8,15,15
+oscar-melendo-espanyol-2021-2022,oscar-melendo,Óscar Melendo,espanyol,Espanyol,2021-2022,2021/22,MF,21,14,990,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,53,La Liga,14,42,10,12,16
+gonzalo-melero-levante-2021-2022,gonzalo-melero,Gonzalo Melero,levante,Levante,2021-2022,2021/22,MF,29,20,1692,7,2,22,11,0,0,0,0,0,0,0,0,0,0,5,0,0,51,76,La Liga,19,35,8,11,19
+memphis-barcelona-2021-2022,memphis,Memphis,barcelona,Barcelona,2021-2022,2021/22,FW,28,20,1851,12,2,61,34,0,0,0,0,0,0,0,0,0,0,3,0,0,68,38,La Liga,2,73,21,10,7
+brais-mendez-celta-vigo-2021-2022,brais-mendez,Brais Méndez,celta-vigo,Celta Vigo,2021-2022,2021/22,MF,37,36,3021,4,5,56,17,0,0,0,0,0,0,0,0,0,0,8,0,0,43,43,La Liga,11,46,12,10,16
+edgar-mendez-alaves-2021-2022,edgar-mendez,Édgar Méndez,alaves,Alavés,2021-2022,2021/22,MF,32,17,1614,1,1,25,8,0,0,0,0,0,0,0,0,0,0,6,0,0,31,65,La Liga,20,31,8,7,23
+ferland-mendy-real-madrid-2021-2022,ferland-mendy,Ferland Mendy,real-madrid,Real Madrid,2021-2022,2021/22,DF,22,20,1734,2,1,12,5,0,0,0,0,0,0,0,0,0,0,4,0,0,80,31,La Liga,1,86,26,8,4
+mikel-merino-real-sociedad-2021-2022,mikel-merino,Mikel Merino,real-sociedad,Real Sociedad,2021-2022,2021/22,MF,34,33,2890,3,2,45,15,0,0,0,0,0,0,0,0,0,0,8,0,0,40,37,La Liga,6,62,17,11,10
+matt-miazga-alaves-2021-2022,matt-miazga,Matt Miazga,alaves,Alavés,2021-2022,2021/22,DF,11,9,833,0,0,7,3,0,0,0,0,0,0,0,0,0,0,2,0,0,31,65,La Liga,20,31,8,7,23
+miguel-alaves-2021-2022,miguel,Miguel,alaves,Alavés,2021-2022,2021/22,MF,22,10,829,1,1,22,4,0,0,0,0,0,0,0,0,0,0,2,0,0,31,65,La Liga,20,31,8,7,23
+eder-militao-real-madrid-2021-2022,eder-militao,Éder Militão,real-madrid,Real Madrid,2021-2022,2021/22,DF,34,34,3031,1,2,33,8,0,0,0,0,0,0,0,0,0,0,5,0,0,80,31,La Liga,1,86,26,8,4
+luis-milla-granada-2021-2022,luis-milla,Luis Milla,granada,Granada,2021-2022,2021/22,MF,34,33,2773,3,3,22,6,0,0,0,0,0,0,0,0,0,0,4,0,0,44,61,La Liga,18,38,8,14,16
+pere-milla-elche-2021-2022,pere-milla,Pere Milla,elche,Elche,2021-2022,2021/22,MF,32,17,1644,8,3,29,14,0,0,0,0,0,0,0,0,0,0,4,0,0,40,52,La Liga,13,42,11,9,18
+santi-mina-celta-vigo-2021-2022,santi-mina,Santi Mina,celta-vigo,Celta Vigo,2021-2022,2021/22,FW,33,30,2367,7,3,59,23,0,0,0,0,0,0,0,0,0,0,4,0,0,43,43,La Liga,11,46,12,10,16
+oscar-mingueza-barcelona-2021-2022,oscar-mingueza,Óscar Mingueza,barcelona,Barcelona,2021-2022,2021/22,DF,19,9,894,0,1,2,1,0,0,0,0,0,0,0,0,0,0,2,0,0,68,38,La Liga,2,73,21,10,7
+rafa-mir-sevilla-2021-2022,rafa-mir,Rafa Mir,sevilla,Sevilla,2021-2022,2021/22,FW,34,18,1808,10,0,61,24,0,0,0,0,0,0,0,0,0,0,6,0,0,53,30,La Liga,4,70,18,16,4
+jorge-miramon-levante-2021-2022,jorge-miramon,Jorge Miramón,levante,Levante,2021-2022,2021/22,DF,29,22,1977,1,0,7,2,0,0,0,0,0,0,0,0,0,0,5,0,0,51,76,La Liga,19,35,8,11,19
+juan-miranda-real-betis-2021-2022,juan-miranda,Juan Miranda,real-betis,Real Betis,2021-2022,2021/22,DF,13,9,783,0,2,6,2,0,0,0,0,0,0,0,0,0,0,3,0,0,62,40,La Liga,5,65,19,8,11
+stefan-mitrovic-getafe-2021-2022,stefan-mitrovic,Stefan Mitrović,getafe,Getafe,2021-2022,2021/22,DF,32,31,2667,1,0,4,2,0,0,0,0,0,0,0,0,0,0,8,1,0,33,41,La Liga,15,39,8,15,15
+luka-modric-real-madrid-2021-2022,luka-modric,Luka Modrić,real-madrid,Real Madrid,2021-2022,2021/22,MF,28,25,2032,2,8,27,11,0,0,0,0,0,0,0,0,0,0,4,0,0,80,31,La Liga,1,86,26,8,4
+johan-mojica-elche-2021-2022,johan-mojica,Johan Mojica,elche,Elche,2021-2022,2021/22,DF,33,32,2855,2,5,16,3,0,0,0,0,0,0,0,0,0,0,4,1,0,40,52,La Liga,13,42,11,9,18
+jorge-molina-granada-2021-2022,jorge-molina,Jorge Molina,granada,Granada,2021-2022,2021/22,FW,35,19,1966,10,5,46,22,0,0,0,0,0,0,0,0,0,0,2,0,0,44,61,La Liga,18,38,8,14,16
+jon-moncayola-osasuna-2021-2022,jon-moncayola,Jon Moncayola,osasuna,Osasuna,2021-2022,2021/22,MF,36,33,2915,2,3,41,12,0,0,0,0,0,0,0,0,0,0,2,0,0,37,51,La Liga,10,47,12,11,15
+monchu-granada-2021-2022,monchu,Monchu,granada,Granada,2021-2022,2021/22,MF,14,7,668,0,0,8,1,0,0,0,0,0,0,0,0,0,0,3,1,0,44,61,La Liga,18,38,8,14,16
+gonzalo-montiel-sevilla-2021-2022,gonzalo-montiel,Gonzalo Montiel,sevilla,Sevilla,2021-2022,2021/22,DF,18,15,1066,1,2,5,1,0,0,0,0,0,0,0,0,0,0,7,0,0,53,30,La Liga,4,70,18,16,4
+angel-montoro-granada-2021-2022,angel-montoro,Ángel Montoro,granada,Granada,2021-2022,2021/22,MF,24,13,1331,1,1,21,5,0,0,0,0,0,0,0,0,0,0,5,0,0,44,61,La Liga,18,38,8,14,16
+martin-montoya-real-betis-2021-2022,martin-montoya,Martín Montoya,real-betis,Real Betis,2021-2022,2021/22,DF,6,6,518,0,1,5,2,0,0,0,0,0,0,0,0,0,0,2,0,0,62,40,La Liga,5,65,19,8,11
+alberto-moreno-villarreal-2021-2022,alberto-moreno,Alberto Moreno,villarreal,Villarreal,2021-2022,2021/22,DF,24,13,1223,3,2,22,10,0,0,0,0,0,0,0,0,0,0,3,0,0,63,37,La Liga,7,59,16,11,11
+alex-moreno-real-betis-2021-2022,alex-moreno,Álex Moreno,real-betis,Real Betis,2021-2022,2021/22,DF,30,28,2404,5,3,27,8,0,0,0,0,0,0,0,0,0,0,3,1,0,62,40,La Liga,5,65,19,8,11
+gerard-moreno-villarreal-2021-2022,gerard-moreno,Gerard Moreno,villarreal,Villarreal,2021-2022,2021/22,FW,17,14,1191,9,3,38,17,0,0,0,0,0,0,0,0,0,0,2,0,0,63,37,La Liga,7,59,16,11,11
+tete-morente-elche-2021-2022,tete-morente,Tete Morente,elche,Elche,2021-2022,2021/22,MF,32,18,1632,3,3,28,8,0,0,0,0,0,0,0,0,0,0,4,0,0,40,52,La Liga,13,42,11,9,18
+ilaix-moriba-valencia-2021-2022,ilaix-moriba,Ilaix Moriba,valencia,Valencia,2021-2022,2021/22,MF,14,9,818,0,0,14,5,0,0,0,0,0,0,0,0,0,0,9,1,0,48,53,La Liga,9,48,11,15,12
+manu-morlanes-espanyol-2021-2022,manu-morlanes,Manu Morlanes,espanyol,Espanyol,2021-2022,2021/22,MF,27,11,1144,2,0,8,2,0,0,0,0,0,0,0,0,0,0,6,1,0,40,53,La Liga,14,42,10,12,16
+loren-moron-espanyol-2021-2022,loren-moron,Loren Morón,espanyol,Espanyol,2021-2022,2021/22,MF,21,4,563,1,0,10,2,0,0,0,0,0,0,0,0,0,0,0,0,0,40,53,La Liga,14,42,10,12,16
+toni-moya-alaves-2021-2022,toni-moya,Toni Moya,alaves,Alavés,2021-2022,2021/22,MF,28,17,1386,0,1,12,2,0,0,0,0,0,0,0,0,0,0,2,0,0,31,65,La Liga,20,31,8,7,23
+iker-muniain-athletic-club-2021-2022,iker-muniain,Iker Muniain,athletic-club,Athletic Club,2021-2022,2021/22,MF,35,34,2785,4,10,41,21,0,0,0,0,0,0,0,0,0,0,3,0,0,43,36,La Liga,8,55,14,13,11
+aihen-munoz-real-sociedad-2021-2022,aihen-munoz,Aihen Muñoz,real-sociedad,Real Sociedad,2021-2022,2021/22,DF,20,15,1342,0,0,7,0,0,0,0,0,0,0,0,0,0,0,4,1,0,40,37,La Liga,6,62,17,11,10
+jeison-murillo-celta-vigo-2021-2022,jeison-murillo,Jeison Murillo,celta-vigo,Celta Vigo,2021-2022,2021/22,DF,19,12,1117,0,0,6,1,0,0,0,0,0,0,0,0,0,0,5,1,0,43,43,La Liga,11,46,12,10,16
+vedat-muriqi-mallorca-2021-2022,vedat-muriqi,Vedat Muriqi,mallorca,Mallorca,2021-2022,2021/22,FW,16,16,1438,5,3,50,17,0,0,0,0,0,0,0,0,0,0,6,0,0,36,63,La Liga,16,39,10,9,19
+yunus-musah-valencia-2021-2022,yunus-musah,Yunus Musah,valencia,Valencia,2021-2022,2021/22,MF,29,13,1259,1,0,7,2,0,0,0,0,0,0,0,0,0,0,5,0,0,48,53,La Liga,9,48,11,15,12
+shkodran-mustafi-levante-2021-2022,shkodran-mustafi,Shkodran Mustafi,levante,Levante,2021-2022,2021/22,DF,11,8,658,1,0,4,2,0,0,0,0,0,0,0,0,0,0,1,0,0,51,76,La Liga,19,35,8,11,19
+nacho-real-madrid-2021-2022,nacho,Nacho,real-madrid,Real Madrid,2021-2022,2021/22,DF,28,17,1555,3,0,10,4,0,0,0,0,0,0,0,0,0,0,7,0,0,80,31,La Liga,1,86,26,8,4
+ximo-navarro-alaves-2021-2022,ximo-navarro,Ximo Navarro,alaves,Alavés,2021-2022,2021/22,DF,18,16,1347,0,0,10,3,0,0,0,0,0,0,0,0,0,0,4,1,0,31,65,La Liga,20,31,8,7,23
+jesus-navas-sevilla-2021-2022,jesus-navas,Jesús Navas,sevilla,Sevilla,2021-2022,2021/22,DF,25,19,1786,0,3,10,1,0,0,0,0,0,0,0,0,0,0,4,0,0,53,30,La Liga,4,70,18,16,4
+alvaro-negredo-cadiz-2021-2022,alvaro-negredo,Álvaro Negredo,cadiz,Cádiz,2021-2022,2021/22,FW,34,24,2157,7,2,68,29,0,0,0,0,0,0,0,0,0,0,3,0,0,35,51,La Liga,17,39,8,15,15
+carlos-neva-granada-2021-2022,carlos-neva,Carlos Neva,granada,Granada,2021-2022,2021/22,DF,26,24,2108,0,0,6,1,0,0,0,0,0,0,0,0,0,0,1,0,0,44,61,La Liga,18,38,8,14,16
+fernando-nino-mallorca-2021-2022,fernando-nino,Fernando Niño,mallorca,Mallorca,2021-2022,2021/22,FW,23,9,884,2,0,23,13,0,0,0,0,0,0,0,0,0,0,2,0,0,36,63,La Liga,16,39,10,9,19
+nolito-celta-vigo-2021-2022,nolito,Nolito,celta-vigo,Celta Vigo,2021-2022,2021/22,MF,32,15,1384,2,0,20,9,0,0,0,0,0,0,0,0,0,0,2,0,0,43,43,La Liga,11,46,12,10,16
+randy-nteka-rayo-vallecano-2021-2022,randy-nteka,Randy Nteka,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,MF,34,16,1462,3,0,29,8,0,0,0,0,0,0,0,0,0,0,2,0,0,39,50,La Liga,12,42,11,9,18
+unai-nunez-athletic-club-2021-2022,unai-nunez,Unai Núñez,athletic-club,Athletic Club,2021-2022,2021/22,DF,9,7,622,0,0,6,1,0,0,0,0,0,0,0,0,0,0,2,0,0,43,36,La Liga,8,55,14,13,11
+jan-oblak-atletico-madrid-2021-2022,jan-oblak,Jan Oblak,atletico-madrid,Atlético Madrid,2021-2022,2021/22,GK,38,38,3420,0,0,1,0,0,0,0,0,0,0,0,0,0,0,2,0,0,65,43,La Liga,3,71,21,8,9
+lucas-ocampos-sevilla-2021-2022,lucas-ocampos,Lucas Ocampos,sevilla,Sevilla,2021-2022,2021/22,MF,30,23,2125,6,4,51,17,0,0,0,0,0,0,0,0,0,0,7,0,0,53,30,La Liga,4,70,18,16,4
+brian-olivan-mallorca-2021-2022,brian-olivan,Brian Oliván,mallorca,Mallorca,2021-2022,2021/22,DF,28,24,2189,1,0,20,8,0,0,0,0,0,0,0,0,0,0,7,0,0,36,63,La Liga,16,39,10,9,19
+mathias-olivera-getafe-2021-2022,mathias-olivera,Mathías Olivera,getafe,Getafe,2021-2022,2021/22,DF,32,32,2803,1,3,24,7,0,0,0,0,0,0,0,0,0,0,10,0,0,33,41,La Liga,15,39,8,15,15
+mikel-oyarzabal-real-sociedad-2021-2022,mikel-oyarzabal,Mikel Oyarzabal,real-sociedad,Real Sociedad,2021-2022,2021/22,MF,22,19,1671,9,3,42,18,0,0,0,0,0,0,0,0,0,0,0,1,0,40,37,La Liga,6,62,17,11,10
+fernando-pacheco-alaves-2021-2022,fernando-pacheco,Fernando Pacheco,alaves,Alavés,2021-2022,2021/22,GK,34,34,3053,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,31,65,La Liga,20,31,8,7,23
+helibelton-palacios-elche-2021-2022,helibelton-palacios,Helibelton Palacios,elche,Elche,2021-2022,2021/22,DF,26,22,1931,0,0,1,0,0,0,0,0,0,0,0,0,0,0,6,0,0,40,52,La Liga,13,42,11,9,18
+isaac-palazon-camacho-rayo-vallecano-2021-2022,isaac-palazon-camacho,Isaac Palazón Camacho,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,MF,34,27,2288,2,4,58,13,0,0,0,0,0,0,0,0,0,0,7,0,0,39,50,La Liga,12,42,11,9,18
+daniel-parejo-villarreal-2021-2022,daniel-parejo,Daniel Parejo,villarreal,Villarreal,2021-2022,2021/22,MF,33,32,2704,2,10,16,6,0,0,0,0,0,0,0,0,0,0,3,0,0,63,37,La Liga,7,59,16,11,11
+javier-pastore-elche-2021-2022,javier-pastore,Javier Pastore,elche,Elche,2021-2022,2021/22,MF,13,6,525,0,0,8,2,0,0,0,0,0,0,0,0,0,0,2,1,0,40,52,La Liga,13,42,11,9,18
+gabriel-paulista-valencia-2021-2022,gabriel-paulista,Gabriel Paulista,valencia,Valencia,2021-2022,2021/22,DF,19,19,1592,2,1,6,3,0,0,0,0,0,0,0,0,0,0,2,0,0,48,53,La Liga,9,48,11,15,12
+alfonso-pedraza-villarreal-2021-2022,alfonso-pedraza,Alfonso Pedraza,villarreal,Villarreal,2021-2022,2021/22,DF,28,19,1701,4,4,22,8,0,0,0,0,0,0,0,0,0,0,2,0,0,63,37,La Liga,7,59,16,11,11
+pedri-barcelona-2021-2022,pedri,Pedri,barcelona,Barcelona,2021-2022,2021/22,MF,12,10,885,3,1,12,6,0,0,0,0,0,0,0,0,0,0,0,0,0,68,38,La Liga,2,73,21,10,7
+adria-pedrosa-espanyol-2021-2022,adria-pedrosa,Adrià Pedrosa,espanyol,Espanyol,2021-2022,2021/22,DF,31,31,2720,1,1,25,7,0,0,0,0,0,0,0,0,0,0,8,0,0,40,53,La Liga,14,42,10,12,16
+facundo-pellistri-alaves-2021-2022,facundo-pellistri,Facundo Pellistri,alaves,Alavés,2021-2022,2021/22,MF,21,6,672,0,0,7,2,0,0,0,0,0,0,0,0,0,0,0,0,0,31,65,La Liga,20,31,8,7,23
+alberto-perea-cadiz-2021-2022,alberto-perea,Alberto Perea,cadiz,Cádiz,2021-2022,2021/22,MF,18,8,777,0,1,17,4,0,0,0,0,0,0,0,0,0,0,2,0,0,35,51,La Liga,17,39,8,15,15
+kike-perez-elche-2021-2022,kike-perez,Kike Pérez,elche,Elche,2021-2022,2021/22,MF,12,5,519,2,0,10,5,0,0,0,0,0,0,0,0,0,0,1,0,0,40,52,La Liga,13,42,11,9,18
+lucas-perez-elche-2021-2022,lucas-perez,Lucas Pérez,elche,Elche,2021-2022,2021/22,FW,18,16,1266,2,1,14,5,0,0,0,0,0,0,0,0,0,0,0,0,0,40,52,La Liga,13,42,11,9,18
+lucas-perez-cadiz-2021-2022,lucas-perez,Lucas Pérez,cadiz,Cádiz,2021-2022,2021/22,FW,15,11,1060,3,2,15,5,0,0,0,0,0,0,0,0,0,0,1,0,0,35,51,La Liga,17,39,8,15,15
+njegos-petrovic-granada-2021-2022,njegos-petrovic,Njegoš Petrović,granada,Granada,2021-2022,2021/22,MF,15,10,918,0,1,9,2,0,0,0,0,0,0,0,0,0,0,5,0,0,44,61,La Liga,18,38,8,14,16
+german-pezzella-real-betis-2021-2022,german-pezzella,Germán Pezzella,real-betis,Real Betis,2021-2022,2021/22,DF,23,22,1988,1,0,19,6,0,0,0,0,0,0,0,0,0,0,5,1,0,62,40,La Liga,5,65,19,8,11
+tomas-pina-isla-alaves-2021-2022,tomas-pina-isla,Tomás Pina Isla,alaves,Alavés,2021-2022,2021/22,MF,29,16,1444,0,0,6,1,0,0,0,0,0,0,0,0,0,0,4,0,0,31,65,La Liga,20,31,8,7,23
+yeremi-pino-villarreal-2021-2022,yeremi-pino,Yeremi Pino,villarreal,Villarreal,2021-2022,2021/22,MF,31,21,1678,6,4,27,15,0,0,0,0,0,0,0,0,0,0,2,0,0,63,37,La Liga,7,59,16,11,11
+gerard-pique-barcelona-2021-2022,gerard-pique,Gerard Piqué,barcelona,Barcelona,2021-2022,2021/22,DF,27,25,2092,1,0,19,3,0,0,0,0,0,0,0,0,0,0,10,1,0,68,38,La Liga,2,73,21,10,7
+ezequiel-ponce-elche-2021-2022,ezequiel-ponce,Ezequiel Ponce,elche,Elche,2021-2022,2021/22,FW,13,5,667,1,0,15,5,0,0,0,0,0,0,0,0,0,0,1,1,0,40,52,La Liga,13,42,11,9,18
+pere-pons-alaves-2021-2022,pere-pons,Pere Pons,alaves,Alavés,2021-2022,2021/22,MF,27,17,1366,1,0,15,4,0,0,0,0,0,0,0,0,0,0,2,0,0,31,65,La Liga,20,31,8,7,23
+portu-real-sociedad-2021-2022,portu,Portu,real-sociedad,Real Sociedad,2021-2022,2021/22,MF,37,17,1590,1,2,25,10,0,0,0,0,0,0,0,0,0,0,5,0,0,40,37,La Liga,6,62,17,11,10
+sergio-postigo-levante-2021-2022,sergio-postigo,Sergio Postigo,levante,Levante,2021-2022,2021/22,DF,13,10,848,0,0,2,0,0,0,0,0,0,0,0,0,0,0,3,0,0,51,76,La Liga,19,35,8,11,19
+abdon-prats-mallorca-2021-2022,abdon-prats,Abdón Prats,mallorca,Mallorca,2021-2022,2021/22,FW,23,6,641,3,0,18,6,0,0,0,0,0,0,0,0,0,0,3,0,0,36,63,La Liga,16,39,10,9,19
+javi-puado-espanyol-2021-2022,javi-puado,Javi Puado,espanyol,Espanyol,2021-2022,2021/22,MF,30,26,2245,4,1,40,12,0,0,0,0,0,0,0,0,0,0,5,0,0,40,53,La Liga,14,42,10,12,16
+marc-pubill-levante-2021-2022,marc-pubill,Marc Pubill,levante,Levante,2021-2022,2021/22,DF,11,5,512,0,1,6,1,0,0,0,0,0,0,0,0,0,0,1,0,0,51,76,La Liga,19,35,8,11,19
+antonio-puertas-granada-2021-2022,antonio-puertas,Antonio Puertas,granada,Granada,2021-2022,2021/22,MF,33,25,2261,6,1,33,15,0,0,0,0,0,0,0,0,0,0,4,0,0,44,61,La Liga,18,38,8,14,16
+riqui-puig-barcelona-2021-2022,riqui-puig,Riqui Puig,barcelona,Barcelona,2021-2022,2021/22,MF,15,2,487,1,0,9,3,0,0,0,0,0,0,0,0,0,0,0,0,0,68,38,La Liga,2,73,21,10,7
+quini-granada-2021-2022,quini,Quini,granada,Granada,2021-2022,2021/22,DF,32,27,2304,0,1,17,2,0,0,0,0,0,0,0,0,0,0,11,0,0,44,61,La Liga,18,38,8,14,16
+uros-racic-valencia-2021-2022,uros-racic,Uroš Račić,valencia,Valencia,2021-2022,2021/22,MF,28,13,1206,0,0,16,1,0,0,0,0,0,0,0,0,0,0,3,1,0,48,53,La Liga,9,48,11,15,12
+nemanja-radoja-levante-2021-2022,nemanja-radoja,Nemanja Radoja,levante,Levante,2021-2022,2021/22,MF,19,17,1214,0,0,5,1,0,0,0,0,0,0,0,0,0,0,3,0,0,51,76,La Liga,19,35,8,11,19
+rafinha-real-sociedad-2021-2022,rafinha,Rafinha,real-sociedad,Real Sociedad,2021-2022,2021/22,MF,17,13,1050,1,0,14,2,0,0,0,0,0,0,0,0,0,0,3,0,0,40,37,La Liga,6,62,17,11,10
+antonio-raillo-mallorca-2021-2022,antonio-raillo,Antonio Raillo,mallorca,Mallorca,2021-2022,2021/22,DF,17,17,1530,2,0,9,4,0,0,0,0,0,0,0,0,0,0,8,0,0,36,63,La Liga,16,39,10,9,19
+ivan-rakitic-sevilla-2021-2022,ivan-rakitic,Ivan Rakitić,sevilla,Sevilla,2021-2022,2021/22,MF,35,26,2182,4,6,31,12,0,0,0,0,0,0,0,0,0,0,5,0,0,53,30,La Liga,4,70,18,16,4
+sandro-ramirez-getafe-2021-2022,sandro-ramirez,Sandro Ramírez,getafe,Getafe,2021-2022,2021/22,FW,29,19,1462,3,0,50,14,0,0,0,0,0,0,0,0,0,0,7,0,0,33,41,La Liga,15,39,8,15,15
+manolo-reina-mallorca-2021-2022,manolo-reina,Manolo Reina,mallorca,Mallorca,2021-2022,2021/22,GK,21,21,1890,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,0,36,63,La Liga,16,39,10,9,19
+karim-rekik-sevilla-2021-2022,karim-rekik,Karim Rekik,sevilla,Sevilla,2021-2022,2021/22,DF,18,11,1098,0,2,4,0,0,0,0,0,0,0,0,0,0,0,2,0,0,53,30,La Liga,4,70,18,16,4
+alex-remiro-real-sociedad-2021-2022,alex-remiro,Álex Remiro,real-sociedad,Real Sociedad,2021-2022,2021/22,GK,35,35,3150,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,40,37,La Liga,6,62,17,11,10
+nico-ribaudo-espanyol-2021-2022,nico-ribaudo,Nico Ribaudo,espanyol,Espanyol,2021-2022,2021/22,MF,31,7,1116,2,0,20,4,0,0,0,0,0,0,0,0,0,0,5,1,0,40,53,La Liga,14,42,10,12,16
+diego-rico-real-sociedad-2021-2022,diego-rico,Diego Rico,real-sociedad,Real Sociedad,2021-2022,2021/22,DF,21,19,1644,0,0,10,1,0,0,0,0,0,0,0,0,0,0,4,0,0,40,37,La Liga,6,62,17,11,10
+sergio-rico-mallorca-2021-2022,sergio-rico,Sergio Rico,mallorca,Mallorca,2021-2022,2021/22,GK,14,14,1260,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,36,63,La Liga,16,39,10,9,19
+luis-rioja-alaves-2021-2022,luis-rioja,Luis Rioja,alaves,Alavés,2021-2022,2021/22,MF,37,36,3111,1,3,44,16,0,0,0,0,0,0,0,0,0,0,3,0,0,31,65,La Liga,20,31,8,7,23
+rober-levante-2021-2022,rober,Rober,levante,Levante,2021-2022,2021/22,DF,27,21,2010,1,0,8,2,0,0,0,0,0,0,0,0,0,0,5,1,0,51,76,La Liga,19,35,8,11,19
+ruben-rochina-granada-2021-2022,ruben-rochina,Rubén Rochina,granada,Granada,2021-2022,2021/22,MF,15,8,743,1,3,15,5,0,0,0,0,0,0,0,0,0,0,3,0,0,44,61,La Liga,18,38,8,14,16
+enzo-roco-elche-2021-2022,enzo-roco,Enzo Roco,elche,Elche,2021-2022,2021/22,DF,30,29,2552,1,0,11,3,0,0,0,0,0,0,0,0,0,0,10,0,0,40,52,La Liga,13,42,11,9,18
+rodri-real-betis-2021-2022,rodri,Rodri,real-betis,Real Betis,2021-2022,2021/22,MF,21,10,881,1,2,15,7,0,0,0,0,0,0,0,0,0,0,1,0,0,62,40,La Liga,5,65,19,8,11
+angel-rodriguez-mallorca-2021-2022,angel-rodriguez,Ángel Rodríguez,mallorca,Mallorca,2021-2022,2021/22,MF,29,19,1544,3,2,28,11,0,0,0,0,0,0,0,0,0,0,4,0,0,36,63,La Liga,16,39,10,9,19
+oscar-rodriguez-arnaiz-getafe-2021-2022,oscar-rodriguez-arnaiz,Óscar Rodríguez Arnaiz,getafe,Getafe,2021-2022,2021/22,MF,18,9,943,0,1,25,8,0,0,0,0,0,0,0,0,0,0,2,0,0,33,41,La Liga,15,39,8,15,15
+dani-rodriguez-mallorca-2021-2022,dani-rodriguez,Dani Rodríguez,mallorca,Mallorca,2021-2022,2021/22,MF,36,33,2832,3,3,42,10,0,0,0,0,0,0,0,0,0,0,7,0,0,36,63,La Liga,16,39,10,9,19
+guido-rodriguez-real-betis-2021-2022,guido-rodriguez,Guido Rodríguez,real-betis,Real Betis,2021-2022,2021/22,MF,32,29,2529,1,2,21,8,0,0,0,0,0,0,0,0,0,0,9,1,0,62,40,La Liga,5,65,19,8,11
+rodrygo-real-madrid-2021-2022,rodrygo,Rodrygo,real-madrid,Real Madrid,2021-2022,2021/22,FW,33,17,1523,4,4,34,15,0,0,0,0,0,0,0,0,0,0,4,0,0,80,31,La Liga,1,86,26,8,4
+aitor-ruibal-real-betis-2021-2022,aitor-ruibal,Aitor Ruibal,real-betis,Real Betis,2021-2022,2021/22,DF,19,9,856,0,0,20,3,0,0,0,0,0,0,0,0,0,0,6,0,0,62,40,La Liga,5,65,19,8,11
+victor-ruiz-real-betis-2021-2022,victor-ruiz,Víctor Ruiz,real-betis,Real Betis,2021-2022,2021/22,DF,18,17,1424,0,0,7,1,0,0,0,0,0,0,0,0,0,0,2,0,0,62,40,La Liga,5,65,19,8,11
+geronimo-rulli-villarreal-2021-2022,geronimo-rulli,Gerónimo Rulli,villarreal,Villarreal,2021-2022,2021/22,GK,32,32,2880,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,63,37,La Liga,7,59,16,11,11
+franco-russo-mallorca-2021-2022,franco-russo,Franco Russo,mallorca,Mallorca,2021-2022,2021/22,DF,19,17,1464,1,0,6,2,0,0,0,0,0,0,0,0,0,0,7,2,0,36,63,La Liga,16,39,10,9,19
+youssouf-sabaly-real-betis-2021-2022,youssouf-sabaly,Youssouf Sabaly,real-betis,Real Betis,2021-2022,2021/22,DF,10,9,788,0,1,4,1,0,0,0,0,0,0,0,0,0,0,1,0,0,62,40,La Liga,5,65,19,8,11
+salvi-cadiz-2021-2022,salvi,Salvi,cadiz,Cádiz,2021-2022,2021/22,MF,23,17,1395,2,1,20,8,0,0,0,0,0,0,0,0,0,0,3,1,0,35,51,La Liga,17,39,8,15,15
+fede-san-emeterio-cadiz-2021-2022,fede-san-emeterio,Fede San Emeterio,cadiz,Cádiz,2021-2022,2021/22,MF,12,10,830,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,35,51,La Liga,17,39,8,15,15
+oihan-sancet-athletic-club-2021-2022,oihan-sancet,Oihan Sancet,athletic-club,Athletic Club,2021-2022,2021/22,FW,27,16,1422,6,4,30,14,0,0,0,0,0,0,0,0,0,0,2,0,0,43,36,La Liga,8,55,14,13,11
+antonio-sanchez-mallorca-2021-2022,antonio-sanchez,Antonio Sánchez,mallorca,Mallorca,2021-2022,2021/22,MF,29,19,1616,1,0,18,4,0,0,0,0,0,0,0,0,0,0,3,1,0,36,63,La Liga,16,39,10,9,19
+german-sanchez-granada-2021-2022,german-sanchez,Germán Sánchez,granada,Granada,2021-2022,2021/22,DF,32,25,2299,2,1,13,4,0,0,0,0,0,0,0,0,0,0,11,1,0,44,61,La Liga,18,38,8,14,16
+manu-sanchez-osasuna-2021-2022,manu-sanchez,Manu Sánchez,osasuna,Osasuna,2021-2022,2021/22,DF,33,25,2257,1,3,6,1,0,0,0,0,0,0,0,0,0,0,6,0,0,37,51,La Liga,10,47,12,11,15
+oier-sanjurjo-osasuna-2021-2022,oier-sanjurjo,Oier Sanjurjo,osasuna,Osasuna,2021-2022,2021/22,MF,25,8,758,1,0,10,1,0,0,0,0,0,0,0,0,0,0,3,0,0,37,51,La Liga,10,47,12,11,15
+esteban-saveljich-rayo-vallecano-2021-2022,esteban-saveljich,Esteban Saveljich,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,DF,21,21,1700,0,0,9,3,0,0,0,0,0,0,0,0,0,0,4,0,0,39,50,La Liga,12,42,11,9,18
+stefan-savic-atletico-madrid-2021-2022,stefan-savic,Stefan Savić,atletico-madrid,Atlético Madrid,2021-2022,2021/22,DF,28,28,2440,0,0,15,5,0,0,0,0,0,0,0,0,0,0,12,0,0,65,43,La Liga,3,71,21,8,9
+salva-sevilla-mallorca-2021-2022,salva-sevilla,Salva Sevilla,mallorca,Mallorca,2021-2022,2021/22,MF,28,17,1507,5,3,26,8,0,0,0,0,0,0,0,0,0,0,2,0,0,36,63,La Liga,16,39,10,9,19
+david-silva-real-sociedad-2021-2022,david-silva,David Silva,real-sociedad,Real Sociedad,2021-2022,2021/22,MF,25,22,1720,2,4,21,6,0,0,0,0,0,0,0,0,0,0,4,1,0,40,37,La Liga,6,62,17,11,10
+rui-silva-real-betis-2021-2022,rui-silva,Rui Silva,real-betis,Real Betis,2021-2022,2021/22,GK,22,21,1964,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,62,40,La Liga,5,65,19,8,11
+unai-simon-athletic-club-2021-2022,unai-simon,Unai Simón,athletic-club,Athletic Club,2021-2022,2021/22,GK,34,34,3060,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,43,36,La Liga,8,55,14,13,11
+ruben-sobrino-cadiz-2021-2022,ruben-sobrino,Rubén Sobrino,cadiz,Cádiz,2021-2022,2021/22,MF,33,19,1861,4,1,33,10,0,0,0,0,0,0,0,0,0,0,4,0,0,35,51,La Liga,17,39,8,15,15
+augusto-solari-celta-vigo-2021-2022,augusto-solari,Augusto Solari,celta-vigo,Celta Vigo,2021-2022,2021/22,MF,26,4,714,0,0,7,1,0,0,0,0,0,0,0,0,0,0,5,0,0,43,43,La Liga,11,46,12,10,16
+roberto-soldado-levante-2021-2022,roberto-soldado,Roberto Soldado,levante,Levante,2021-2022,2021/22,FW,18,7,664,3,2,17,8,0,0,0,0,0,0,0,0,0,0,7,2,0,51,76,La Liga,19,35,8,11,19
+carlos-soler-valencia-2021-2022,carlos-soler,Carlos Soler,valencia,Valencia,2021-2022,2021/22,MF,32,28,2474,11,5,41,21,0,0,0,0,0,0,0,0,0,0,4,0,0,48,53,La Liga,9,48,11,15,12
+son-levante-2021-2022,son,Son,levante,Levante,2021-2022,2021/22,DF,26,22,1971,1,0,14,7,0,0,0,0,0,0,0,0,0,0,5,1,0,51,76,La Liga,19,35,8,11,19
+david-soria-getafe-2021-2022,david-soria,David Soria,getafe,Getafe,2021-2022,2021/22,GK,38,38,3414,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,33,41,La Liga,15,39,8,15,15
+alberto-soro-granada-2021-2022,alberto-soro,Alberto Soro,granada,Granada,2021-2022,2021/22,MF,16,7,578,0,0,7,4,0,0,0,0,0,0,0,0,0,0,0,0,0,44,61,La Liga,18,38,8,14,16
+damian-suarez-getafe-2021-2022,damian-suarez,Damián Suárez,getafe,Getafe,2021-2022,2021/22,DF,35,31,2711,0,3,14,4,0,0,0,0,0,0,0,0,0,0,13,0,0,33,41,La Liga,15,39,8,15,15
+denis-suarez-celta-vigo-2021-2022,denis-suarez,Denis Suárez,celta-vigo,Celta Vigo,2021-2022,2021/22,MF,38,33,2819,4,6,22,8,0,0,0,0,0,0,0,0,0,0,4,0,0,43,43,La Liga,11,46,12,10,16
+luis-suarez-atletico-madrid-2021-2022,luis-suarez,Luis Suárez,atletico-madrid,Atlético Madrid,2021-2022,2021/22,FW,35,20,1835,11,2,54,26,0,0,0,0,0,0,0,0,0,0,7,0,0,65,43,La Liga,3,71,21,8,9
+mario-suarez-rayo-vallecano-2021-2022,mario-suarez,Mario Suárez,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,DF,14,8,712,0,0,9,3,0,0,0,0,0,0,0,0,0,0,2,0,0,39,50,La Liga,12,42,11,9,18
+alexander-sorloth-real-sociedad-2021-2022,alexander-sorloth,Alexander Sørloth,real-sociedad,Real Sociedad,2021-2022,2021/22,FW,33,20,1763,4,0,35,13,0,0,0,0,0,0,0,0,0,0,2,0,0,40,37,La Liga,6,62,17,11,10
+renato-tapia-celta-vigo-2021-2022,renato-tapia,Renato Tapia,celta-vigo,Celta Vigo,2021-2022,2021/22,MF,29,13,1412,0,0,12,3,0,0,0,0,0,0,0,0,0,0,10,0,0,43,43,La Liga,11,46,12,10,16
+cristian-tello-real-betis-2021-2022,cristian-tello,Cristian Tello,real-betis,Real Betis,2021-2022,2021/22,MF,23,5,819,2,2,29,9,0,0,0,0,0,0,0,0,0,0,2,0,0,62,40,La Liga,5,65,19,8,11
+nahuel-tenaglia-alaves-2021-2022,nahuel-tenaglia,Nahuel Tenaglia,alaves,Alavés,2021-2022,2021/22,DF,14,12,1073,0,0,6,1,0,0,0,0,0,0,0,0,0,0,2,0,0,31,65,La Liga,20,31,8,7,23
+marc-andre-ter-stegen-barcelona-2021-2022,marc-andre-ter-stegen,Marc-André ter Stegen,barcelona,Barcelona,2021-2022,2021/22,GK,35,35,3150,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,68,38,La Liga,2,73,21,10,7
+raul-de-tomas-espanyol-2021-2022,raul-de-tomas,Raúl de Tomás,espanyol,Espanyol,2021-2022,2021/22,FW,34,33,2914,17,3,106,45,0,0,0,0,0,0,0,0,0,0,7,2,0,40,53,La Liga,14,42,10,12,16
+raul-torrente-granada-2021-2022,raul-torrente,Raúl Torrente,granada,Granada,2021-2022,2021/22,DF,18,15,1282,0,0,4,0,0,0,0,0,0,0,0,0,0,0,5,0,0,44,61,La Liga,18,38,8,14,16
+ferran-torres-barcelona-2021-2022,ferran-torres,Ferrán Torres,barcelona,Barcelona,2021-2022,2021/22,FW,18,17,1412,4,4,52,19,0,0,0,0,0,0,0,0,0,0,1,0,0,68,38,La Liga,2,73,21,10,7
+oliver-torres-sevilla-2021-2022,oliver-torres,Óliver Torres,sevilla,Sevilla,2021-2022,2021/22,MF,26,11,1008,2,3,14,5,0,0,0,0,0,0,0,0,0,0,2,0,0,53,30,La Liga,4,70,18,16,4
+pau-torres-villarreal-2021-2022,pau-torres,Pau Torres,villarreal,Villarreal,2021-2022,2021/22,DF,33,33,2855,5,1,24,9,0,0,0,0,0,0,0,0,0,0,5,0,0,63,37,La Liga,7,59,16,11,11
+roberto-torres-osasuna-2021-2022,roberto-torres,Roberto Torres,osasuna,Osasuna,2021-2022,2021/22,MF,28,6,809,2,2,15,5,0,0,0,0,0,0,0,0,0,0,3,0,0,37,51,La Liga,10,47,12,11,15
+lucas-torro-osasuna-2021-2022,lucas-torro,Lucas Torró,osasuna,Osasuna,2021-2022,2021/22,MF,33,32,2725,1,0,34,9,0,0,0,0,0,0,0,0,0,0,10,0,0,37,51,La Liga,10,47,12,11,15
+oscar-trejo-rayo-vallecano-2021-2022,oscar-trejo,Óscar Trejo,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,MF,32,24,2007,3,9,23,9,0,0,0,0,0,0,0,0,0,0,13,0,0,39,50,La Liga,12,42,11,9,18
+manu-trigueros-villarreal-2021-2022,manu-trigueros,Manu Trigueros,villarreal,Villarreal,2021-2022,2021/22,MF,35,27,2178,6,4,41,18,0,0,0,0,0,0,0,0,0,0,3,0,0,63,37,La Liga,7,59,16,11,11
+kieran-trippier-atletico-madrid-2021-2022,kieran-trippier,Kieran Trippier,atletico-madrid,Atlético Madrid,2021-2022,2021/22,DF,15,12,976,0,0,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,65,43,La Liga,3,71,21,8,9
+enes-unal-getafe-2021-2022,enes-unal,Enes Ünal,getafe,Getafe,2021-2022,2021/22,FW,37,33,2798,16,1,86,28,0,0,0,0,0,0,0,0,0,0,8,0,0,33,41,La Liga,15,39,8,15,15
+myrto-uzuni-granada-2021-2022,myrto-uzuni,Myrto Uzuni,granada,Granada,2021-2022,2021/22,MF,15,9,856,1,1,11,2,0,0,0,0,0,0,0,0,0,0,4,0,0,44,61,La Liga,18,38,8,14,16
+oscar-valentin-rayo-vallecano-2021-2022,oscar-valentin,Óscar Valentín,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,MF,35,29,2569,0,0,11,2,0,0,0,0,0,0,0,0,0,0,8,0,0,39,50,La Liga,12,42,11,9,18
+martin-valjent-mallorca-2021-2022,martin-valjent,Martin Valjent,mallorca,Mallorca,2021-2022,2021/22,DF,36,36,3181,0,0,10,1,0,0,0,0,0,0,0,0,0,0,4,0,0,36,63,La Liga,16,39,10,9,19
+federico-valverde-real-madrid-2021-2022,federico-valverde,Federico Valverde,real-madrid,Real Madrid,2021-2022,2021/22,MF,31,19,1833,0,1,34,9,0,0,0,0,0,0,0,0,0,0,2,0,0,80,31,La Liga,1,86,26,8,4
+jose-luis-garcia-vaya-levante-2021-2022,jose-luis-garcia-vaya,José Luis García Vayá,levante,Levante,2021-2022,2021/22,MF,29,23,2012,0,0,14,2,0,0,0,0,0,0,0,0,0,0,9,0,0,51,76,La Liga,19,35,8,11,19
+jesus-vazquez-valencia-2021-2022,jesus-vazquez,Jesus Vazquez,valencia,Valencia,2021-2022,2021/22,DF,15,8,813,0,0,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,48,53,La Liga,9,48,11,15,12
+kevin-vazquez-celta-vigo-2021-2022,kevin-vazquez,Kevin Vázquez,celta-vigo,Celta Vigo,2021-2022,2021/22,DF,17,16,1334,0,1,3,1,0,0,0,0,0,0,0,0,0,0,3,0,0,43,43,La Liga,11,46,12,10,16
+lucas-vazquez-real-madrid-2021-2022,lucas-vazquez,Lucas Vázquez,real-madrid,Real Madrid,2021-2022,2021/22,DF,29,20,1833,3,0,18,5,0,0,0,0,0,0,0,0,0,0,3,0,0,80,31,La Liga,1,86,26,8,4
+unai-vencedor-paris-athletic-club-2021-2022,unai-vencedor-paris,Unai Vencedor Paris,athletic-club,Athletic Club,2021-2022,2021/22,MF,34,29,2383,0,0,20,2,0,0,0,0,0,0,0,0,0,0,4,0,0,43,36,La Liga,8,55,14,13,11
+gonzalo-verdu-elche-2021-2022,gonzalo-verdu,Gonzalo Verdú,elche,Elche,2021-2022,2021/22,DF,19,16,1397,0,0,3,0,0,0,0,0,0,0,0,0,0,0,11,0,0,40,52,La Liga,13,42,11,9,18
+mikel-vesga-athletic-club-2021-2022,mikel-vesga,Mikel Vesga,athletic-club,Athletic Club,2021-2022,2021/22,MF,32,17,1358,2,0,14,4,0,0,0,0,0,0,0,0,0,0,7,2,0,43,36,La Liga,8,55,14,13,11
+ruben-vezo-levante-2021-2022,ruben-vezo,Rúben Vezo,levante,Levante,2021-2022,2021/22,DF,32,27,2420,0,0,18,4,0,0,0,0,0,0,0,0,0,0,4,0,0,51,76,La Liga,19,35,8,11,19
+aleix-vidal-espanyol-2021-2022,aleix-vidal,Aleix Vidal,espanyol,Espanyol,2021-2022,2021/22,DF,31,21,1901,2,0,6,3,0,0,0,0,0,0,0,0,0,0,10,0,0,40,53,La Liga,14,42,10,12,16
+nacho-vidal-osasuna-2021-2022,nacho-vidal,Nacho Vidal,osasuna,Osasuna,2021-2022,2021/22,DF,35,33,2902,0,1,20,1,0,0,0,0,0,0,0,0,0,0,9,0,0,37,51,La Liga,10,47,12,11,15
+tonny-vilhena-espanyol-2021-2022,tonny-vilhena,Tonny Vilhena,espanyol,Espanyol,2021-2022,2021/22,MF,17,13,928,1,1,15,3,0,0,0,0,0,0,0,0,0,0,4,0,0,40,53,La Liga,14,42,10,12,16
+asier-villalibre-athletic-club-2021-2022,asier-villalibre,Asier Villalibre,athletic-club,Athletic Club,2021-2022,2021/22,FW,19,3,548,2,0,19,6,0,0,0,0,0,0,0,0,0,0,0,0,0,43,36,La Liga,8,55,14,13,11
+daniel-vivian-athletic-club-2021-2022,daniel-vivian,Daniel Vivian,athletic-club,Athletic Club,2021-2022,2021/22,DF,24,22,1986,2,1,17,8,0,0,0,0,0,0,0,0,0,0,2,0,0,43,36,La Liga,8,55,14,13,11
+sime-vrsaljko-atletico-madrid-2021-2022,sime-vrsaljko,Šime Vrsaljko,atletico-madrid,Atlético Madrid,2021-2022,2021/22,DF,21,10,914,1,2,4,1,0,0,0,0,0,0,0,0,0,0,4,0,0,65,43,La Liga,3,71,21,8,9
+daniel-wass-valencia-2021-2022,daniel-wass,Daniel Wass,valencia,Valencia,2021-2022,2021/22,MF,19,19,1582,1,1,28,8,0,0,0,0,0,0,0,0,0,0,6,0,0,48,53,La Liga,9,48,11,15,12
+inaki-williams-athletic-club-2021-2022,inaki-williams,Iñaki Williams,athletic-club,Athletic Club,2021-2022,2021/22,FW,38,32,2777,8,5,95,37,0,0,0,0,0,0,0,0,0,0,4,0,0,43,36,La Liga,8,55,14,13,11
+nico-williams-athletic-club-2021-2022,nico-williams,Nico Williams,athletic-club,Athletic Club,2021-2022,2021/22,MF,34,11,1337,0,0,33,10,0,0,0,0,0,0,0,0,0,0,4,0,0,43,36,La Liga,8,55,14,13,11
+okay-yokuslu-getafe-2021-2022,okay-yokuslu,Okay Yokuşlu,getafe,Getafe,2021-2022,2021/22,DF,11,5,465,0,0,4,1,0,0,0,0,0,0,0,0,0,0,1,0,0,33,41,La Liga,15,39,8,15,15
+joseba-zaldua-real-sociedad-2021-2022,joseba-zaldua,Joseba Zaldúa,real-sociedad,Real Sociedad,2021-2022,2021/22,DF,24,14,1172,0,0,6,3,0,0,0,0,0,0,0,0,0,0,6,0,0,40,37,La Liga,6,62,17,11,10
+oier-zarraga-athletic-club-2021-2022,oier-zarraga,Oier Zarraga,athletic-club,Athletic Club,2021-2022,2021/22,MF,31,8,1166,1,0,18,4,0,0,0,0,0,0,0,0,0,0,5,0,0,43,36,La Liga,8,55,14,13,11
+luca-zidane-rayo-vallecano-2021-2022,luca-zidane,Luca Zidane,rayo-vallecano,Rayo Vallecano,2021-2022,2021/22,GK,8,8,645,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,39,50,La Liga,12,42,11,9,18
+igor-zubeldia-real-sociedad-2021-2022,igor-zubeldia,Igor Zubeldia,real-sociedad,Real Sociedad,2021-2022,2021/22,DF,26,19,1648,0,1,9,2,0,0,0,0,0,0,0,0,0,0,7,0,0,40,37,La Liga,6,62,17,11,10
+martin-zubimendi-real-sociedad-2021-2022,martin-zubimendi,Martín Zubimendi,real-sociedad,Real Sociedad,2021-2022,2021/22,MF,36,26,2591,2,1,20,9,0,0,0,0,0,0,0,0,0,0,4,0,0,40,37,La Liga,6,62,17,11,10

@@ -1,0 +1,434 @@
+Tammy Abraham~Roma~FW~37~36~3084~17~4~95~39~9~0~59~43~6~63~18~9~11
+Francesco Acerbi~Lazio~DF~30~29~2536~4~0~15~7~2~1~77~58~5~64~18~10~10
+Felix Afena-Gyan~Roma~MF,FW~17~6~668~2~0~17~7~5~1~59~43~6~63~18~9~11
+Kevin Agudelo~Spezia~MF,FW~23~12~1237~3~1~21~11~2~1~41~71~16~36~10~6~22
+Ola Aina~Torino~MF~21~17~1437~0~0~10~4~4~0~46~41~10~50~13~11~14
+Luis Alberto~Lazio~MF~34~27~2353~5~9~47~16~5~0~77~58~5~64~18~10~10
+Giorgio Altare~Cagliari~DF~19~17~1466~1~0~18~6~5~0~34~68~18~30~6~12~20
+Kelvin Amian~Spezia~DF~32~31~2646~1~1~26~9~9~2~41~71~16~36~10~6~22
+Nadiem Amiri~Genoa~MF~13~9~683~0~1~16~6~0~0~27~60~19~28~4~16~18
+Ethan Ampadu~Venezia~MF,DF~29~26~2282~0~3~7~1~13~2~34~69~20~27~6~9~23
+Sofyan Amrabat~Fiorentina~MF~23~8~944~1~0~4~3~6~0~59~51~7~62~19~5~14
+Felipe Anderson~Lazio~FW~38~33~2888~6~8~44~16~2~0~77~58~5~64~18~10~10
+Cristian Ansaldi~Torino~MF~19~5~691~0~3~7~1~2~0~46~41~10~50~13~11~14
+Janis Antiste~Spezia~FW,MF~18~9~796~1~0~11~3~0~0~41~71~16~36~10~6~22
+Mattia Aramu~Venezia~MF,FW~32~25~2100~7~5~59~19~6~0~34~69~20~27~6~9~23
+Marko Arnautovic~Bologna~FW~33~32~2694~14~1~91~34~6~0~44~55~13~46~12~10~16
+Tolgay Arslan~Udinese~MF~30~22~1658~1~0~23~9~9~0~61~58~12~47~11~14~13
+Kristoffer Askildsen~Sampdoria~MF~19~7~754~0~0~7~0~5~0~46~63~15~36~10~6~22
+Kristjan Asllani~Empoli~MF~23~14~1353~1~1~17~6~2~0~50~70~14~41~10~11~17
+Emil Audero~Sampdoria~GK~29~29~2560~0~0~0~0~2~0~46~63~15~36~10~6~22
+Tommaso Augello~Sampdoria~DF~36~25~2395~1~1~7~2~0~0~46~63~15~36~10~6~22
+Kaan Ayhan~Sassuolo~DF~23~14~1354~1~0~5~1~2~1~64~66~11~50~13~11~14
+Milan Badelj~Genoa~MF~34~34~2844~1~0~21~5~4~0~27~60~19~28~4~16~18
+Nedim Bajrami~Empoli~MF~35~23~2054~6~5~53~21~3~0~50~70~14~41~10~11~17
+Tiemoue Bakayoko~Milan~MF~14~5~501~0~0~4~0~3~0~69~31~1~86~26~8~4
+Keita Balde~Cagliari~FW~26~14~1229~3~1~27~11~2~0~34~68~18~30~6~12~20
+Filippo Bandinelli~Empoli~MF~35~24~1955~2~3~35~12~10~0~50~70~14~41~10~11~17
+Mattia Bani~Genoa~DF~17~13~1211~0~0~8~1~1~0~27~60~19~28~4~16~18
+Antonin Barak~Hellas Verona~MF,FW~29~27~2340~11~4~51~24~4~0~65~59~9~53~14~11~13
+Nicolo Barella~Inter~MF~36~36~2913~3~11~68~13~9~0~84~32~2~84~25~9~4
+Musa Barrow~Bologna~MF,FW~34~25~2134~6~6~71~27~0~0~44~55~13~46~12~10~16
+Toma Basic~Lazio~MF~29~9~982~0~2~16~11~3~0~77~58~5~64~18~10~10
+Alessandro Bastoni~Inter~DF~31~29~2311~1~2~8~2~4~0~84~32~2~84~25~9~4
+Simone Bastoni~Spezia~MF,DF~31~26~2288~3~3~28~6~5~1~41~71~16~36~10~6~22
+Rodrigo Becao~Udinese~DF~35~35~3130~2~1~19~5~10~0~61~58~12~47~11~14~13
+Vid Belec~Salernitana~GK~23~21~1938~0~0~0~0~1~0~33~78~17~31~7~10~21
+Raoul Bellanova~Cagliari~MF~31~27~2496~1~2~23~5~3~0~34~68~18~30~6~12~20
+Andrea Belotti~Torino~FW~22~16~1371~8~1~58~20~1~0~46~41~10~50~13~11~14
+Ismael Bennacer~Milan~MF~31~15~1525~2~1~16~6~7~0~69~31~1~86~26~8~4
+Rodrigo Bentancur~Juventus~MF~19~13~1155~0~1~8~1~1~0~57~37~4~70~20~10~8
+Domenico Berardi~Sassuolo~MF,FW~33~33~2819~15~14~110~47~9~0~64~66~11~50~13~11~14
+Bartosz Bereszynski~Sampdoria~DF~35~35~2946~0~3~6~0~12~0~46~63~15~36~10~6~22
+Etrit Berisha~Torino~GK~10~10~900~0~0~0~0~1~0~46~41~10~50~13~11~14
+Federico Bernardeschi~Juventus~MF,FW~28~16~1475~1~3~33~7~5~0~57~37~4~70~20~10~8
+Daniel Bessa~Hellas Verona~MF~24~5~768~1~1~10~2~5~1~65~59~9~53~14~11~13
+Beto~Udinese~FW~28~24~2173~11~0~64~26~1~0~61~58~12~47~11~14~13
+Luis Binks~Bologna~DF~15~7~646~0~0~2~0~3~0~44~55~13~46~12~10~16
+Cristiano Biraghi~Fiorentina~DF~37~37~3153~4~1~38~18~5~1~59~51~7~62~19~5~14
+Davide Biraschi~Genoa~DF~14~11~930~0~0~3~0~4~0~27~60~19~28~4~16~18
+Jeremie Boga~Sassuolo~MF~12~8~670~0~2~15~5~0~0~64~66~11~50~13~11~14
+Jeremie Boga~Atalanta~MF,FW~15~7~764~0~0~21~5~0~0~65~48~8~59~16~11~11
+Emil Bohinen~Salernitana~MF~11~8~699~0~1~4~3~5~0~33~78~17~31~7~10~21
+Giacomo Bonaventura~Fiorentina~MF~31~28~2266~4~4~46~15~8~1~59~51~7~62~19~5~14
+Federico Bonazzoli~Salernitana~FW,MF~32~19~1866~10~0~58~24~6~0~33~78~17~31~7~10~21
+Kevin Bonifazi~Bologna~DF~22~14~1210~0~0~9~1~4~1~44~55~13~46~12~10~16
+Leonardo Bonucci~Juventus~DF~24~22~2005~5~0~17~6~1~0~57~37~4~70~20~10~8
+Josip Brekalo~Torino~MF~32~26~2286~7~2~44~17~1~0~46~41~10~50~13~11~14
+Gleison Bremer~Torino~DF~33~33~2890~3~1~27~12~7~0~46~41~10~50~13~11~14
+Marcelo Brozovic~Inter~MF~35~35~2937~2~1~32~13~7~0~84~32~2~84~25~9~4
+Alessandro Buongiorno~Torino~DF~23~12~1181~0~1~6~1~5~0~46~41~10~50~13~11~14
+Gianluca Busio~Venezia~MF~29~23~1950~1~1~14~5~8~0~34~69~20~27~6~9~23
+Arthur Cabral~Fiorentina~FW~14~8~749~2~2~23~9~1~0~59~51~7~62~19~5~14
+Liberato Cacace~Empoli~DF~10~5~466~0~0~1~0~1~0~50~70~14~41~10~11~17
+Martin Caceres~Cagliari~DF,MF~14~9~832~1~1~7~1~3~1~34~68~18~30~6~12~20
+Davide Calabria~Milan~DF~26~24~2119~2~2~36~8~2~0~69~31~1~86~26~8~4
+Mattia Caldara~Venezia~DF~31~30~2704~1~0~16~7~9~0~34~69~20~27~6~9~23
+Hakan Calhanoglu~Inter~MF~34~33~2480~7~12~65~18~11~0~84~32~2~84~25~9~4
+Jose Callejon~Fiorentina~FW~30~16~1298~1~2~17~5~0~0~59~51~7~62~19~5~14
+Andrea Cambiaso~Genoa~MF,DF~26~21~1790~1~4~14~6~5~1~27~60~19~28~4~16~18
+Antonio Candreva~Sampdoria~MF~36~36~3119~7~10~74~22~6~1~46~63~15~36~10~6~22
+Gianluca Caprari~Hellas Verona~MF,FW~35~33~2739~12~7~67~28~4~0~65~59~9~53~14~11~13
+Francesco Caputo~Sampdoria~FW~36~31~2790~11~3~54~29~0~0~46~63~15~36~10~6~22
+Andrea Carboni~Cagliari~DF~30~25~2215~0~0~10~1~6~0~34~68~18~30~6~12~20
+Nicolo Casale~Hellas Verona~DF,MF~36~30~2586~0~1~10~0~10~0~65~59~9~53~14~11~13
+Gaetano Castrovilli~Fiorentina~MF~23~16~1391~1~1~15~2~4~0~59~51~7~62~19~5~14
+Danilo Cataldi~Lazio~MF~32~19~1707~1~2~12~4~8~0~77~58~5~64~18~10~10
+Pietro Ceccaroni~Venezia~DF~35~35~3122~2~1~19~7~7~1~34~69~20~27~6~9~23
+Federico Ceccherini~Hellas Verona~DF~34~29~2358~1~0~11~2~12~1~65~59~9~53~14~11~13
+Luca Ceppitelli~Cagliari~DF~24~16~1445~1~1~6~1~3~0~34~68~18~30~6~12~20
+Julian Chabot~Sampdoria~DF~11~4~490~0~0~3~1~5~0~46~63~15~36~10~6~22
+Giorgio Chiellini~Juventus~DF~21~16~1354~0~0~4~0~2~0~57~37~4~70~20~10~8
+Federico Chiesa~Juventus~FW,MF~14~11~863~2~2~28~9~0~0~57~37~4~70~20~10~8
+Vlad Chirichis~Sassuolo~DF~29~27~2300~0~0~9~2~4~0~64~66~11~50~13~11~14
+Omar Colley~Sampdoria~DF~32~31~2745~0~0~11~1~6~1~46~63~15~36~10~6~22
+Andrea Consigli~Sassuolo~GK~37~37~3322~0~0~0~0~2~0~64~66~11~50~13~11~14
+Joaquin Correa~Inter~FW~26~12~1025~6~1~34~15~2~0~84~32~2~84~25~9~4
+Lassana Coulibaly~Salernitana~MF~31~29~2332~0~0~22~7~3~0~33~78~17~31~7~10~21
+Mamadou Coulibaly~Salernitana~MF~12~9~808~2~0~10~4~1~0~33~78~17~31~7~10~21
+Alessio Cragno~Cagliari~GK~35~35~3150~0~0~0~0~3~0~34~68~18~30~6~12~20
+Domenico Criscito~Genoa~DF~20~18~1618~6~1~24~7~4~0~27~60~19~28~4~16~18
+Bryan Cristante~Roma~MF~34~29~2678~2~0~40~5~9~0~59~43~6~63~18~9~11
+Domen Crnigoj~Venezia~MF~34~22~1881~3~1~31~12~3~0~34~69~20~27~6~9~23
+Juan Cuadrado~Juventus~MF,DF~33~28~2487~4~3~36~14~9~0~57~37~4~70~20~10~8
+Mickael Cuisance~Venezia~MF~13~13~918~0~0~6~1~2~0~34~69~20~27~6~9~23
+Patrick Cutrone~Empoli~FW~28~15~1401~3~0~50~15~1~0~50~70~14~41~10~11~17
+Danilo D'Ambrosio~Inter~DF~20~9~1000~1~1~14~4~2~0~84~32~2~84~25~9~4
+Mikkel Damsgaard~Sampdoria~MF~11~6~578~0~0~12~3~1~0~46~63~15~36~10~6~22
+Danilo~Juventus~DF,MF~22~22~1893~1~2~13~3~6~0~57~37~4~70~20~10~8
+Matteo Darmian~Inter~MF~25~18~1507~2~1~8~4~4~0~84~32~2~84~25~9~4
+Pawel Dawidowicz~Hellas Verona~DF~17~13~1198~0~0~6~0~3~0~65~59~9~53~14~11~13
+Mattia De Sciglio~Juventus~DF~20~13~1168~1~2~6~2~2~1~57~37~4~70~20~10~8
+Lorenzo De Silvestri~Bologna~MF,DF~31~27~2294~3~2~16~7~7~0~44~55~13~46~12~10~16
+Gregoire Defrel~Sassuolo~FW,MF~38~11~1362~2~2~27~10~3~0~64~66~11~50~13~11~14
+Alessandro Deiola~Cagliari~MF~33~28~2129~4~1~26~13~5~0~34~68~18~30~6~12~20
+Merih Demiral~Atalanta~DF~28~22~1917~1~2~24~6~8~0~65~48~8~59~16~11~11
+Diego Demme~Napoli~MF~19~7~692~1~0~2~1~4~0~74~31~3~79~24~7~7
+Fabio Depaoli~Hellas Verona~MF~18~7~703~1~1~10~4~3~0~65~59~9~53~14~11~13
+Mattia Destro~Genoa~FW~27~21~1744~9~1~54~20~4~0~27~60~19~28~4~16~18
+Gerard Deulofeu~Udinese~FW,MF~34~31~2616~13~5~78~35~9~0~61~58~12~47~11~14~13
+Federico Di Francesco~Empoli~FW,MF~26~17~1367~5~0~26~8~2~0~50~70~14~41~10~11~17
+Giovanni Di Lorenzo~Napoli~DF~33~33~2869~1~4~20~4~3~0~74~31~3~79~24~7~7
+Francesco Di Tacchio~Salernitana~MF,DF~18~14~1255~0~0~14~1~3~0~33~78~17~31~7~10~21
+Brahim Diaz~Milan~MF~31~25~1855~3~3~30~6~4~0~69~31~1~86~26~8~4
+Mitchell Dijks~Bologna~MF,DF~16~7~694~0~2~4~0~2~0~44~55~13~46~12~10~16
+Federico Dimarco~Inter~DF,MF~32~13~1430~2~3~39~18~1~0~84~32~2~84~25~9~4
+Koffi Djidji~Torino~DF~25~21~1735~0~0~10~3~6~1~46~41~10~50~13~11~14
+Berat Djimsiti~Atalanta~DF~31~25~2256~1~1~16~5~6~0~65~48~8~59~16~11~11
+Nicolas Dominguez~Bologna~MF~28~23~2015~0~3~21~3~8~0~44~55~13~46~12~10~16
+Bartlomiej Dragowski~Fiorentina~GK~7~7~556~0~0~0~0~0~1~59~51~7~62~19~5~14
+Radu Dragusin~Salernitana~DF~7~5~488~0~0~0~0~1~0~33~78~17~31~7~10~21
+Radu Dragusin~Sampdoria~DF~13~4~620~0~0~3~0~1~0~46~63~15~36~10~6~22
+Denzel Dumfries~Inter~MF~33~21~2028~5~4~37~18~3~0~84~32~2~84~25~9~4
+Alfred Duncan~Fiorentina~MF~33~21~1931~2~2~11~3~3~0~59~51~7~62~19~5~14
+Paulo Dybala~Juventus~FW,MF~29~26~2061~10~5~99~37~3~0~57~37~4~70~20~10~8
+Edin Dzeko~Inter~FW~36~27~2469~13~6~87~37~2~0~84~32~2~84~25~9~4
+Tyronne Ebuehi~Venezia~DF~19~12~1138~0~0~7~1~1~1~34~69~20~27~6~9~23
+Ederson~Salernitana~MF~15~13~1147~2~1~21~9~5~0~33~78~17~31~7~10~21
+Albin Ekdal~Sampdoria~MF~26~19~1637~1~0~14~2~11~1~46~63~15~36~10~6~22
+Caleb Ekuban~Genoa~FW,MF~30~18~1716~1~2~38~7~2~0~27~60~19~28~4~16~18
+Elif Elmas~Napoli~MF~37~12~1620~3~4~33~11~3~0~74~31~3~79~24~7~7
+Martin Erlic~Spezia~DF~30~30~2576~2~0~15~3~5~0~41~71~16~36~10~6~22
+Wladimiro Falcone~Sampdoria~GK~10~9~855~0~0~0~0~2~0~46~63~15~36~10~6~22
+Davide Faraoni~Hellas Verona~MF~32~30~2572~4~5~30~9~8~1~65~59~9~53~14~11~13
+Mohamed Fares~Genoa~MF,DF~9~6~587~2~1~13~3~2~0~27~60~19~28~4~16~18
+Federico Fazio~Salernitana~DF~16~16~1434~1~0~16~3~3~1~33~78~17~31~7~10~21
+Luiz Felipe~Lazio~DF~31~28~2491~0~0~5~2~9~1~77~58~5~64~18~10~10
+Alex Ferrari~Sampdoria~DF~23~20~1643~1~0~4~1~4~0~46~63~15~36~10~6~22
+Salvador Ferrer~Spezia~DF,MF~27~14~1495~0~3~6~1~3~0~41~71~16~36~10~6~22
+Riccardo Fiamozzi~Empoli~DF~10~7~620~0~1~0~0~1~0~50~70~14~41~10~11~17
+Luca Fiordilino~Venezia~MF~15~5~661~0~0~3~1~2~0~34~69~20~27~6~9~23
+Alessandro Florenzi~Milan~DF,MF~24~12~1152~2~0~22~6~2~0~69~31~1~86~26~8~4
+Davide Frattesi~Sassuolo~MF~36~35~2854~4~3~67~20~6~0~64~66~11~50~13~11~14
+Morten Frendrup~Genoa~DF,MF~10~6~695~0~0~4~2~1~0~27~60~19~28~4~16~18
+Remo Freuler~Atalanta~MF~29~28~2369~1~3~20~6~10~0~65~48~8~59~16~11~11
+Matteo Gabbia~Milan~DF~8~6~537~0~0~1~0~3~0~69~31~1~86~26~8~4
+Manolo Gabbiadini~Sampdoria~FW,MF~18~15~1140~6~2~44~20~3~0~46~63~15~36~10~6~22
+Roberto Gagliardini~Inter~MF~18~6~649~2~2~8~4~2~0~84~32~2~84~25~9~4
+Riccardo Gagliolo~Salernitana~DF,MF~17~12~1138~0~1~8~1~2~0~33~78~17~31~7~10~21
+Pablo Galdames Millan~Genoa~MF~19~11~1028~0~0~12~3~2~0~27~60~19~28~4~16~18
+Paolo Ghiglione~Genoa~MF,DF~13~6~603~0~1~8~4~3~0~27~60~19~28~4~16~18
+Olivier Giroud~Milan~FW~29~22~1892~11~3~63~24~4~0~69~31~1~86~26~8~4
+Diego Godin~Cagliari~DF~11~9~818~0~1~7~0~3~0~34~68~18~30~6~12~20
+Edoardo Goldaniga~Cagliari~DF~11~11~934~0~0~5~1~3~0~34~68~18~30~6~12~20
+Cedric Gondo~Salernitana~FW~14~10~699~1~0~19~8~1~0~33~78~17~31~7~10~21
+Nicolas Gonzalez~Fiorentina~FW~33~26~2357~7~6~72~22~4~1~59~51~7~62~19~5~14
+Robin Gosens~Atalanta~MF~6~5~460~1~0~14~4~2~0~65~48~8~59~16~11~11
+Alberto Grassi~Cagliari~MF~30~26~2174~0~1~24~2~6~1~34~68~18~30~6~12~20
+Koray Gunter~Hellas Verona~DF~30~29~2411~0~0~6~2~10~0~65~59~9~53~14~11~13
+Albert Gudmundsson~Genoa~MF~12~6~607~1~0~9~1~3~0~27~60~19~28~4~16~18
+Emmanuel Gyasi~Spezia~MF,FW~36~35~3035~6~0~38~13~10~0~41~71~16~36~10~6~22
+Norbert Gyomber~Salernitana~DF~31~30~2563~0~0~9~2~9~0~33~78~17~31~7~10~21
+Nicolas Haas~Empoli~MF~16~11~1001~0~2~7~2~3~0~50~70~14~41~10~11~17
+Samir Handanovic~Inter~GK~37~37~3330~0~0~0~0~1~0~84~32~2~84~25~9~4
+Ridgeciano Haps~Venezia~DF,MF~25~24~2056~1~1~12~2~6~0~34~69~20~27~6~9~23
+Abdou Harroui~Sassuolo~MF~22~3~452~0~0~13~2~2~0~64~66~11~50~13~11~14
+Hans Hateboer~Atalanta~MF,DF~21~16~1386~0~0~17~3~2~0~65~48~8~59~16~11~11
+Silvan Hefti~Genoa~DF~16~14~1288~0~0~5~1~1~0~27~60~19~28~4~16~18
+Liam Henderson~Empoli~MF~38~23~2020~2~3~42~17~4~0~50~70~14~41~10~11~17
+Dalbert Henrique~Cagliari~MF~28~27~2081~0~2~10~2~9~0~34~68~18~30~6~12~20
+Matheus Henrique~Sassuolo~MF~25~10~1078~0~1~8~0~3~0~64~66~11~50~13~11~14
+Thomas Henry~Venezia~FW~33~23~2115~9~2~51~24~6~1~34~69~20~27~6~9~23
+Theo Hernandez~Milan~DF~32~30~2711~5~5~42~14~7~2~69~31~1~86~26~8~4
+Hernani~Genoa~MF,FW~18~7~682~0~0~10~4~0~0~27~60~19~28~4~16~18
+Aaron Hickey~Bologna~MF,DF~36~34~2820~5~1~21~13~7~0~44~55~13~46~12~10~16
+Martin Hongla~Hellas Verona~MF~18~7~651~1~0~9~4~3~0~65~59~9~53~14~11~13
+Petko Hristov~Spezia~DF~17~13~1248~1~1~2~1~3~0~41~71~16~36~10~6~22
+Elseid Hysaj~Lazio~DF~29~24~2027~1~0~4~2~3~0~77~58~5~64~18~10~10
+Roger Ibanez~Roma~DF~34~32~2889~3~0~20~6~9~0~59~43~6~63~18~9~11
+Zlatan Ibrahimovic~Milan~FW~23~11~1016~8~2~51~20~2~0~69~31~1~86~26~8~4
+Igor~Fiorentina~DF~30~23~2242~0~0~7~1~3~0~59~51~7~62~19~5~14
+Jonathan Ikone~Fiorentina~FW~17~7~649~1~1~16~6~1~0~59~51~7~62~19~5~14
+Ivan Ilic~Hellas Verona~MF~32~30~2526~1~3~22~5~5~1~65~59~9~53~14~11~13
+Josip Ilicic~Atalanta~MF,FW~20~8~841~3~3~32~7~1~0~65~48~8~59~16~11~11
+Ciro Immobile~Lazio~FW~31~31~2711~27~2~118~59~4~0~77~58~5~64~18~10~10
+Lorenzo Insigne~Napoli~MF,FW~32~28~2290~11~8~94~36~2~0~74~31~3~79~24~7~7
+Ardian Ismajli~Empoli~DF~20~13~1272~0~0~5~1~7~0~50~70~14~41~10~11~17
+Armando Izzo~Torino~DF~11~6~526~0~0~5~4~4~0~46~41~10~50~13~11~14
+Mato Jajalo~Udinese~MF~22~6~629~0~1~5~0~2~0~61~58~12~47~11~14~13
+Pawel Jaroszynski~Salernitana~DF~13~4~516~0~0~2~1~2~0~33~78~17~31~7~10~21
+Juan Jesus~Napoli~DF~21~14~1278~1~0~4~1~1~0~74~31~3~79~24~7~7
+Dennis Johnsen~Venezia~FW,MF~26~17~1445~1~2~14~5~2~0~34~69~20~27~6~9~23
+Hamed Junior Traore~Sassuolo~MF~31~21~1775~7~2~51~22~3~0~64~66~11~50~13~11~14
+Yayah Kallon~Genoa~MF,FW~15~5~636~0~1~11~1~3~0~27~60~19~28~4~16~18
+Pierre Kalulu~Milan~DF~28~21~1944~1~2~5~2~4~0~69~31~1~86~26~8~4
+Rick Karsdorp~Roma~MF,DF~36~32~2883~0~2~2~1~9~1~59~43~6~63~18~9~11
+Grigoris Kastanos~Salernitana~MF,FW~27~16~1348~1~1~28~8~4~1~33~78~17~31~7~10~21
+Moise Kean~Juventus~FW~32~12~1098~5~2~28~10~5~0~57~37~4~70~20~10~8
+Wajdi Kechrida~Salernitana~MF,DF~17~10~952~0~1~6~1~0~0~33~78~17~31~7~10~21
+Franck Kessie~Milan~MF~31~25~2308~6~0~35~10~2~0~69~31~1~86~26~8~4
+Jakub Kiwior~Spezia~MF~22~21~1964~0~0~8~4~6~0~41~71~16~36~10~6~22
+Sofian Kiyine~Venezia~MF,FW~26~14~1239~1~0~20~6~8~1~34~69~20~27~6~9~23
+Simon Kjaer~Milan~DF~11~10~802~0~0~5~1~2~0~69~31~1~86~26~8~4
+Teun Koopmeiners~Atalanta~MF~30~23~2126~4~1~28~9~4~0~65~48~8~59~16~11~11
+Kalidou Koulibaly~Napoli~DF~27~27~2405~3~1~10~7~5~1~74~31~3~79~24~7~7
+Viktor Kovalenko~Spezia~MF~26~16~1325~1~3~9~2~4~0~41~71~16~36~10~6~22
+Rade Krunic~Milan~MF~28~15~1416~0~1~10~2~2~0~69~31~1~86~26~8~4
+Dejan Kulusevski~Juventus~MF,FW~20~5~772~1~3~18~6~1~0~57~37~4~70~20~10~8
+Marash Kumbulla~Roma~DF~17~13~1025~0~0~7~3~6~0~59~43~6~63~18~9~11
+Giorgos Kyriakopoulos~Sassuolo~DF,MF~29~22~1975~0~5~30~10~6~1~64~66~11~50~13~11~14
+Andrea La Mantia~Empoli~FW~18~3~488~2~0~17~3~0~0~50~70~14~41~10~11~17
+Kevin Lasagna~Hellas Verona~MF,FW~28~11~1184~2~4~39~16~1~0~65~59~9~53~14~11~13
+Darko Lazovic~Hellas Verona~MF~34~32~2766~1~7~47~10~2~0~65~59~9~53~14~11~13
+Manuel Lazzari~Lazio~DF~31~16~1665~3~3~12~6~3~0~77~58~5~64~18~10~10
+Rafael Leao~Milan~MF~34~31~2605~11~10~97~38~4~0~69~31~1~86~26~8~4
+Lucas Leiva~Lazio~MF~35~19~1697~0~0~3~0~9~0~77~58~5~64~18~10~10
+Luca Lezzerini~Venezia~GK~6~6~495~0~0~0~0~2~0~34~69~20~27~6~9~23
+Matthijs de Ligt~Juventus~DF~31~29~2674~3~1~20~10~4~1~57~37~4~70~20~10~8
+Karol Linetty~Torino~MF~16~11~896~0~0~13~2~2~0~46~41~10~50~13~11~14
+Stanislav Lobotka~Napoli~MF~23~19~1686~1~0~2~1~2~0~74~31~3~79~24~7~7
+Manuel Locatelli~Juventus~MF~31~23~2160~3~3~21~3~6~0~57~37~4~70~20~10~8
+Maxime Lopez~Sassuolo~MF~35~33~2938~2~1~16~6~14~0~64~66~11~50~13~11~14
+Matteo Lovato~Cagliari~DF~16~14~1238~0~0~6~1~4~0~34~68~18~30~6~12~20
+Hirving Lozano~Napoli~MF,FW~30~20~1613~5~5~50~20~3~0~74~31~3~79~24~7~7
+Jose Luis Palomino~Atalanta~DF~34~30~2672~1~0~14~3~9~0~65~48~8~59~16~11~11
+Sasa Lukic~Torino~MF~35~34~2982~5~4~32~10~10~0~46~41~10~50~13~11~14
+Sebastiano Luperto~Empoli~DF~24~22~1958~0~1~9~4~8~1~50~70~14~41~10~11~17
+Babis Lykogiannis~Cagliari~MF,DF~28~21~1817~1~0~22~7~2~0~34~68~18~30~6~12~20
+Niki Maenpaa~Venezia~GK~17~16~1485~0~1~0~0~1~0~34~69~20~27~6~9~23
+Giulio Maggiore~Spezia~MF~35~33~2819~2~3~42~8~9~0~41~71~16~36~10~6~22
+Giangiacomo Magnani~Hellas Verona~DF~14~5~530~0~0~5~1~3~1~65~59~9~53~14~11~13
+Mike Maignan~Milan~GK~32~32~2880~0~1~0~0~1~0~69~31~1~86~26~8~4
+Ainsley Maitland-Niles~Roma~MF,DF~8~7~487~0~0~3~2~0~0~59~43~6~63~18~9~11
+Jean-Victor Makengo~Udinese~MF~33~26~2351~1~3~32~10~7~1~61~58~12~47~11~14~13
+Nikola Maksimovic~Genoa~DF~14~13~1115~0~0~3~0~2~0~27~60~19~28~4~16~18
+Youssef Maleh~Fiorentina~MF~28~11~1019~2~2~21~5~5~0~59~51~7~62~19~5~14
+Ruslan Malinovskyi~Atalanta~MF,FW~30~19~1592~6~5~57~18~10~0~65~48~8~59~16~11~11
+Rey Manaj~Spezia~FW~30~19~1768~5~0~53~16~9~0~41~71~16~36~10~6~22
+Gianluca Mancini~Roma~DF~33~33~2878~0~0~24~6~16~1~59~43~6~63~18~9~11
+Rolando Mandragora~Torino~MF~21~16~1319~0~2~23~5~7~1~46~41~10~50~13~11~14
+Riccardo Marchizza~Empoli~DF~19~16~1346~0~1~8~1~4~0~50~70~14~41~10~11~17
+Gian Marco Ferrari~Sassuolo~DF~36~35~3124~1~0~25~10~6~1~64~66~11~50~13~11~14
+Pablo Mari~Udinese~DF~15~15~1341~2~0~10~5~2~1~61~58~12~47~11~14~13
+Razvan Marin~Cagliari~MF~36~31~2816~0~5~41~7~6~1~34~68~18~30~6~12~20
+Lautaro Martinez~Inter~FW~35~28~2282~21~3~118~53~6~0~84~32~2~84~25~9~4
+Lucas Martinez Quarta~Fiorentina~DF~20~16~1431~1~0~16~4~8~0~59~51~7~62~19~5~14
+Adam Marusic~Lazio~DF~33~30~2721~1~0~8~3~6~1~77~58~5~64~18~10~10
+Andrea Masiello~Genoa~DF~7~6~515~0~0~2~0~3~0~27~60~19~28~4~16~18
+Ales Mateju~Venezia~DF,MF~9~9~727~0~1~2~2~3~0~34~69~20~27~6~9~23
+Pasquale Mazzocchi~Salernitana~MF,DF~15~15~1269~0~2~5~2~2~0~33~78~17~31~7~10~21
+Pasquale Mazzocchi~Venezia~DF~18~15~1243~0~0~6~0~3~0~34~69~20~27~6~9~23
+Weston McKennie~Juventus~MF~21~15~1369~3~0~23~5~1~0~57~37~4~70~20~10~8
+Gary Medel~Bologna~DF~33~32~2823~0~1~2~0~10~1~44~55~13~46~12~10~16
+Filippo Melegoni~Genoa~MF~25~10~980~1~0~13~7~1~0~27~60~19~28~4~16~18
+Arthur Melo~Juventus~MF~20~11~962~0~0~2~0~3~0~57~37~4~70~20~10~8
+Alex Meret~Napoli~GK~7~7~619~0~0~0~0~0~0~74~31~3~79~24~7~7
+Dries Mertens~Napoli~FW,MF~30~16~1384~11~1~45~20~2~0~74~31~3~79~24~7~7
+Junior Messias~Milan~MF~26~14~1428~5~2~44~17~2~0~69~31~1~86~26~8~4
+Nikola Milenkovic~Fiorentina~DF~34~34~2926~1~0~23~9~10~1~59~51~7~62~19~5~14
+Sergej Milinkovic-Savic~Lazio~MF~37~36~3100~11~10~75~31~6~1~77~58~5~64~18~10~10
+Vanja Milinkovic-Savic~Torino~GK~27~27~2430~0~0~1~0~3~0~46~41~10~50~13~11~14
+Aleksei Miranchuk~Atalanta~MF,FW~19~7~772~2~5~15~4~0~0~65~48~8~59~16~11~11
+Henrikh Mkhitaryan~Roma~MF~31~29~2495~5~6~55~16~4~1~59~43~6~63~18~9~11
+Nahuel Molina~Udinese~MF~35~31~2638~7~2~44~16~7~1~61~58~12~47~11~14~13
+Cristian Molinaro~Venezia~DF~8~6~548~0~1~0~0~0~0~34~69~20~27~6~9~23
+Lorenzo Montipo~Hellas Verona~GK~34~34~3060~0~0~0~0~1~0~65~59~9~53~14~11~13
+Alvaro Morata~Juventus~FW,MF~35~26~2302~9~4~61~25~5~0~57~37~4~70~20~10~8
+Mert Muldur~Sassuolo~DF~31~24~2046~0~0~9~4~5~0~64~66~11~50~13~11~14
+Luis Muriel~Atalanta~FW,MF~27~17~1539~9~8~57~18~1~0~65~48~8~59~16~11~11
+Nicola Murru~Sampdoria~DF~22~13~983~1~0~3~1~5~0~46~63~15~36~10~6~22
+Juan Musso~Atalanta~GK~33~33~2932~0~0~0~0~1~1~65~48~8~59~16~11~11
+Joakim Maehle~Atalanta~MF~26~15~1471~1~1~21~4~2~0~65~48~8~59~16~11~11
+Nahitan Nandez~Cagliari~MF~21~16~1523~0~2~20~2~4~0~34~68~18~30~6~12~20
+Dimitris Nikolaou~Spezia~DF~36~36~3240~0~0~3~0~7~0~41~71~16~36~10~6~22
+Bram Nuytinck~Udinese~DF~27~23~2033~1~0~10~3~2~0~61~58~12~47~11~14~13
+Simeon Nwankwo~Salernitana~FW~19~10~842~1~1~20~6~0~0~33~78~17~31~7~10~21
+M'Bala Nzola~Spezia~FW~21~10~1068~2~1~22~13~2~0~41~71~16~36~10~6~22
+Joel Obi~Salernitana~MF~21~12~1143~0~1~10~2~4~0~33~78~17~31~7~10~21
+Alvaro Odriozola~Fiorentina~DF~25~18~1733~1~2~4~2~4~1~59~51~7~62~19~5~14
+David Okereke~Venezia~FW,MF~32~24~2053~7~0~40~20~5~1~34~69~20~27~6~9~23
+Sergio Oliveira~Roma~MF~14~13~892~2~0~12~6~5~0~59~43~6~63~18~9~11
+Riccardo Orsolini~Bologna~FW,MF~29~21~1785~6~3~53~18~2~0~44~55~13~46~12~10~16
+Victor Osimhen~Napoli~FW~27~23~1983~14~2~91~30~5~1~74~31~3~79~24~7~7
+David Ospina~Napoli~GK~31~31~2790~0~0~0~0~1~0~74~31~3~79~24~7~7
+Goran Pandev~Genoa~FW~20~7~843~0~1~7~4~1~0~27~60~19~28~4~16~18
+Fabiano Parisi~Empoli~DF~25~16~1477~0~1~16~4~5~0~50~70~14~41~10~11~17
+Mario Pasalic~Atalanta~MF,FW~37~24~2002~13~6~50~20~3~0~65~48~8~59~16~11~11
+Patric~Lazio~DF~24~19~1649~1~1~6~2~7~1~77~58~5~64~18~10~10
+Rui Patricio~Roma~GK~38~38~3420~0~0~0~0~2~0~59~43~6~63~18~9~11
+Leonardo Pavoletti~Cagliari~FW~33~14~1518~5~1~36~11~9~0~34~68~18~30~6~12~20
+Pedro~Lazio~FW~32~25~2033~9~4~36~20~5~0~77~58~5~64~18~10~10
+Joao Pedro~Cagliari~FW~37~37~3323~13~4~91~38~9~0~34~68~18~30~6~12~20
+Lorenzo Pellegrini~Roma~MF~28~27~2289~9~3~92~31~8~1~59~43~6~63~18~9~11
+Luca Pellegrini~Juventus~DF,MF~18~15~1107~0~1~6~1~6~0~57~37~4~70~20~10~8
+Gaston Pereiro~Cagliari~FW,MF~29~9~975~4~2~21~9~1~0~34~68~18~30~6~12~20
+Dor Peretz~Venezia~MF~18~4~585~0~1~5~0~2~0~34~69~20~27~6~9~23
+Roberto Pereyra~Udinese~MF,FW~24~22~1794~3~5~30~8~10~1~61~58~12~47~11~14~13
+Carles Perez~Roma~MF~19~3~554~1~1~27~8~2~0~59~43~6~63~18~9~11
+Nehuen Perez~Udinese~DF~20~19~1692~0~1~10~1~6~0~61~58~12~47~11~14~13
+Ivan Perisic~Inter~MF~35~35~2821~8~6~44~18~4~0~84~32~2~84~25~9~4
+Matteo Pessina~Atalanta~MF,FW~27~18~1438~1~1~28~10~0~0~65~48~8~59~16~11~11
+Andrea Petagna~Napoli~FW~24~4~586~3~1~13~6~1~0~74~31~3~79~24~7~7
+Giuseppe Pezzella~Atalanta~MF,DF~21~10~1072~0~2~9~1~3~0~65~48~8~59~16~11~11
+Krzysztof Piatek~Fiorentina~FW~14~9~733~3~0~23~7~0~0~59~51~7~62~19~5~14
+Andrea Pinamonti~Empoli~FW~36~32~2869~13~2~90~28~4~0~50~70~14~41~10~11~17
+Marko Pjaca~Torino~MF~24~13~1149~3~0~21~11~0~0~46~41~10~50~13~11~14
+Tommaso Pobega~Torino~MF~33~24~2240~4~2~48~8~11~0~46~41~10~50~13~11~14
+Matteo Politano~Napoli~MF,FW~33~20~1650~3~4~42~11~3~0~74~31~3~79~24~7~7
+Manolo Portanova~Genoa~MF~24~17~1322~1~0~29~12~4~0~27~60~19~28~4~16~18
+Dennis Praet~Torino~MF~23~17~1539~2~2~23~9~3~0~46~41~10~50~13~11~14
+Ivan Provedel~Spezia~GK~31~31~2761~0~0~1~1~2~0~41~71~16~36~10~6~22
+Ignacio Pussetto~Udinese~FW,MF~28~11~1204~4~4~32~14~4~0~61~58~12~47~11~14~13
+Fabio Quagliarella~Sampdoria~FW~33~19~1664~4~2~58~12~2~0~46~63~15~36~10~6~22
+Adrien Rabiot~Juventus~MF~32~28~2285~0~2~26~7~5~0~57~37~4~70~20~10~8
+Ivan Radovanovic~Salernitana~DF,MF~14~12~1053~1~1~18~5~4~0~33~78~17~31~7~10~21
+Stefan Radu~Lazio~DF~10~6~556~0~0~2~1~2~0~77~58~5~64~18~10~10
+Luca Ranieri~Salernitana~DF,MF~27~25~2103~1~0~9~4~9~0~33~78~17~31~7~10~21
+Giacomo Raspadori~Sassuolo~MF,FW~36~32~2740~10~4~71~25~9~1~64~66~11~50~13~11~14
+Ante Rebic~Milan~FW,MF~24~6~891~2~2~31~6~2~0~69~31~1~86~26~8~4
+Arkadiusz Reca~Spezia~DF,MF~25~22~1772~0~2~8~4~3~0~41~71~16~36~10~6~22
+Pepe Reina~Lazio~GK~15~15~1350~0~1~0~0~3~0~77~58~5~64~18~10~10
+Franck Ribery~Salernitana~MF,FW~23~16~1421~0~2~12~3~3~1~33~78~17~31~7~10~21
+Samuele Ricci~Empoli~MF~21~17~1530~1~1~8~1~1~1~50~70~14~41~10~11~17
+Samuele Ricci~Torino~MF~12~9~722~0~0~4~1~1~0~46~41~10~50~13~11~14
+Tomas Rincon~Sampdoria~MF~17~13~1166~0~0~2~1~3~0~46~63~15~36~10~6~22
+Ricardo Rodriguez~Torino~DF~34~28~2473~0~1~9~0~3~0~46~41~10~50~13~11~14
+Rogerio~Sassuolo~DF~23~19~1729~0~1~14~4~5~0~64~66~11~50~13~11~14
+Alessio Romagnoli~Milan~DF~19~16~1409~1~0~12~5~4~1~69~31~1~86~26~8~4
+Simone Romagnoli~Empoli~DF~19~17~1497~2~0~5~2~3~0~50~70~14~41~10~11~17
+Sergio Romero~Venezia~GK~16~16~1440~0~0~0~0~2~0~34~69~20~27~6~9~23
+Marten de Roon~Atalanta~MF,DF~30~28~2548~3~0~23~5~7~1~65~48~8~59~16~11~11
+Nicolo Rovella~Genoa~MF~21~16~1468~0~3~16~3~5~0~27~60~19~28~4~16~18
+Amir Rrahmani~Napoli~DF~33~33~2927~4~0~22~9~5~0~74~31~3~79~24~7~7
+Daniele Rugani~Juventus~DF~12~9~879~0~0~2~0~2~0~57~37~4~70~20~10~8
+Matteo Ruggeri~Salernitana~MF,DF~14~8~676~0~0~3~0~1~0~33~78~17~31~7~10~21
+Mario Rui~Napoli~DF~34~34~2992~0~5~32~10~7~0~74~31~3~79~24~7~7
+Fabian Ruiz Pena~Napoli~MF~32~29~2384~7~4~39~13~2~0~74~31~3~79~24~7~7
+Abdelhamid Sabiri~Sampdoria~MF,FW~14~9~893~3~2~17~9~3~0~46~63~15~36~10~6~22
+Alexis Saelemaekers~Milan~MF~36~22~1865~1~3~39~12~2~0~69~31~1~86~26~8~4
+Jacopo Sala~Spezia~MF~18~13~880~1~0~4~2~3~0~41~71~16~36~10~6~22
+Lazar Samardzic~Udinese~MF~22~1~490~2~2~17~6~0~0~61~58~12~47~11~14~13
+Antonio Sanabria~Torino~FW~29~22~1803~6~1~49~21~3~0~46~41~10~50~13~11~14
+Alexis Sanchez~Inter~FW~27~7~881~5~2~33~13~0~0~84~32~2~84~25~9~4
+Alex Sandro~Juventus~DF~28~17~1780~0~1~9~2~3~0~57~37~4~70~20~10~8
+Nicola Sansone~Bologna~FW,MF~27~6~896~2~3~24~6~6~0~44~55~13~46~12~10~16
+Samir Santos~Udinese~DF~17~17~1421~0~0~7~3~5~0~61~58~12~47~11~14~13
+Riccardo Saponara~Fiorentina~FW~29~13~1284~3~3~37~14~1~0~59~51~7~62~19~5~14
+Giorgio Scalvini~Atalanta~DF,MF~18~9~763~1~0~16~3~1~0~65~48~8~59~16~11~11
+Gianluca Scamacca~Sassuolo~FW~36~25~2146~16~0~79~37~7~0~64~66~11~50~13~11~14
+Andrea Schiavone~Salernitana~MF~14~5~571~1~0~2~1~1~0~33~78~17~31~7~10~21
+Jerdy Schouten~Bologna~MF~17~16~1392~1~1~6~1~4~1~44~55~13~46~12~10~16
+Stefano Sensi~Sampdoria~MF,FW~11~10~754~1~0~10~4~1~0~46~63~15~36~10~6~22
+Luigi Sepe~Salernitana~GK~16~16~1392~0~0~0~0~2~0~33~78~17~31~7~10~21
+Stephan El Shaarawy~Roma~MF~27~8~1055~3~0~39~12~1~0~59~43~6~63~18~9~11
+Eldor Shomurodov~Roma~FW,MF~28~5~784~3~4~31~12~2~0~59~43~6~63~18~9~11
+Adrien Silva~Sampdoria~MF~17~12~1083~0~1~8~2~3~1~46~63~15~36~10~6~22
+Marco Silvestri~Udinese~GK~35~35~3150~0~0~0~0~1~0~61~58~12~47~11~14~13
+Giovanni Simeone~Hellas Verona~FW~35~32~2653~17~5~70~32~8~0~65~59~9~53~14~11~13
+Wilfried Singo~Torino~MF~35~32~2607~3~4~41~7~5~1~46~41~10~50~13~11~14
+Salvatore Sirigu~Genoa~GK~37~37~3330~0~0~0~0~0~0~27~60~19~28~4~16~18
+Leo Skiri Ostigard~Genoa~DF~15~13~1172~0~0~7~2~4~2~27~60~19~28~4~16~18
+Lukasz Skorupski~Bologna~GK~36~36~3240~0~0~0~0~4~0~44~55~13~46~12~10~16
+Andreas Skov Olsen~Bologna~MF~18~6~747~0~2~7~2~0~0~44~55~13~46~12~10~16
+Milan Skriniar~Inter~DF~35~35~3150~3~0~25~7~3~0~84~32~2~84~25~9~4
+Chris Smalling~Roma~DF~27~23~2091~3~0~10~3~0~0~59~43~6~63~18~9~11
+Brandon Soppy~Udinese~MF~28~7~777~0~0~6~2~4~0~61~58~12~47~11~14~13
+Roberto Soriano~Bologna~MF~35~32~2622~0~4~23~9~6~2~44~55~13~46~12~10~16
+Riccardo Sottil~Fiorentina~FW~24~14~1239~3~2~22~10~4~1~59~51~7~62~19~5~14
+Adama Soumaoro~Bologna~DF~28~26~2266~0~0~8~2~6~2~44~55~13~46~12~10~16
+Marco Sportiello~Atalanta~GK~5~5~450~0~0~0~0~1~0~65~48~8~59~16~11~11
+Petar Stojanovic~Empoli~DF~33~32~2735~1~1~11~4~11~1~50~70~14~41~10~11~17
+Thomas Strakosha~Lazio~GK~23~23~2070~0~0~0~0~2~0~77~58~5~64~18~10~10
+Stefan Strandberg~Salernitana~DF~11~11~933~0~0~9~3~2~1~33~78~17~31~7~10~21
+David Strelec~Spezia~MF,FW~10~7~502~1~0~4~3~0~0~41~71~16~36~10~6~22
+Kevin Strootman~Cagliari~MF~10~7~640~0~0~1~0~4~0~34~68~18~30~6~12~20
+Jens Stryger Larsen~Udinese~MF,DF~11~8~684~0~1~9~4~0~0~61~58~12~47~11~14~13
+Leo Stulac~Empoli~MF~23~8~833~2~2~9~3~1~0~50~70~14~41~10~11~17
+Stefano Sturaro~Genoa~MF~25~24~1766~0~0~9~0~12~0~27~60~19~28~4~16~18
+Isaac Success~Udinese~FW~22~11~911~2~6~25~13~1~1~61~58~12~47~11~14~13
+Bosko Sutalo~Hellas Verona~DF,MF~24~6~920~0~0~4~1~0~0~65~59~9~53~14~11~13
+Mattias Svanberg~Bologna~MF~36~31~2564~3~3~39~13~7~0~44~55~13~46~12~10~16
+Michael Svoboda~Venezia~DF~18~13~1236~0~0~7~0~2~1~34~69~20~27~6~9~23
+Wojciech Szczesny~Juventus~GK~33~33~2970~0~0~0~0~2~0~57~37~4~70~20~10~8
+Adrien Tameze~Hellas Verona~MF~38~26~2574~4~2~23~8~4~0~65~59~9~53~14~11~13
+Ciprian Tatarușanu~Milan~GK~6~6~540~0~0~0~0~0~0~69~31~1~86~26~8~4
+Pietro Terracciano~Fiorentina~GK~32~31~2862~0~0~0~0~0~0~59~51~7~62~19~5~14
+Tanner Tessmann~Venezia~MF~20~6~680~0~0~8~3~1~1~34~69~20~27~6~9~23
+Arthur Theate~Bologna~DF~31~28~2424~2~1~21~6~6~0~44~55~13~46~12~10~16
+Morten Thorsby~Sampdoria~MF~35~35~2943~3~1~26~8~10~0~46~63~15~36~10~6~22
+Jeremy Toljan~Sassuolo~DF~20~15~1399~0~1~3~2~2~0~64~66~11~50~13~11~14
+Rafael Toloi~Atalanta~DF~20~16~1438~1~1~12~2~6~0~65~48~8~59~16~11~11
+Fikayo Tomori~Milan~DF~31~30~2718~0~0~12~4~4~0~69~31~1~86~26~8~4
+Sandro Tonali~Milan~MF~36~31~2600~5~2~38~11~9~0~69~31~1~86~26~8~4
+Lorenzo Tonelli~Empoli~DF~14~8~870~0~0~7~3~4~0~50~70~14~41~10~11~17
+Lucas Torreira~Fiorentina~MF~31~26~2195~5~1~29~13~10~1~59~51~7~62~19~5~14
+Destiny Udogie~Udinese~MF,DF~35~29~2477~5~3~27~12~4~0~61~58~12~47~11~14~13
+Antonio Vacca~Venezia~MF~21~15~1064~0~0~1~0~5~0~34~69~20~27~6~9~23
+Zinho Vanheusden~Genoa~DF~14~11~989~0~0~6~2~3~0~27~60~19~28~4~16~18
+Johan Vasquez~Genoa~DF~28~27~2279~1~0~15~3~7~0~27~60~19~28~4~16~18
+Miguel Veloso~Hellas Verona~MF~22~17~1343~0~3~17~4~7~1~65~59~9~53~14~11~13
+Lorenzo Venuti~Fiorentina~DF~23~20~1571~0~0~7~1~4~0~59~51~7~62~19~5~14
+Daniele Verde~Spezia~MF,FW~33~21~1957~8~6~53~24~2~0~41~71~16~36~10~6~22
+Simone Verdi~Salernitana~MF,FW~15~11~829~5~0~36~15~3~0~33~78~17~31~7~10~21
+Jordan Veretout~Roma~MF~36~26~2319~4~8~29~11~6~0~59~43~6~63~18~9~11
+Freddie Veseli~Salernitana~DF~9~8~596~0~0~1~0~3~1~33~78~17~31~7~10~21
+Guglielmo Vicario~Empoli~GK~38~38~3420~0~0~0~0~1~0~50~70~14~41~10~11~17
+Arturo Vidal~Inter~MF~28~2~741~1~1~18~8~3~0~84~32~2~84~25~9~4
+Ronaldo Vieira~Sampdoria~MF~14~4~495~0~0~1~0~3~0~46~63~15~36~10~6~22
+Emanuel Vignato~Bologna~MF~24~3~594~0~1~5~1~2~0~44~55~13~46~12~10~16
+Matias Vina~Roma~DF,MF~26~18~1565~0~1~12~3~2~0~59~43~6~63~18~9~11
+Mattia Viti~Empoli~DF~20~16~1491~0~0~4~0~3~1~50~70~14~41~10~11~17
+Dusan Vlahovic~Juventus~FW~15~12~1076~7~1~44~19~2~0~57~37~4~70~20~10~8
+Dusan Vlahovic~Fiorentina~FW~21~21~1857~17~2~75~34~2~0~59~51~7~62~19~5~14
+Mergim Vojvoda~Torino~MF~29~22~1976~0~3~18~6~3~0~46~41~10~50~13~11~14
+Stefan de Vrij~Inter~DF~30~28~2410~0~0~21~4~3~0~84~32~2~84~25~9~4
+Walace~Udinese~MF~36~33~2970~1~0~47~11~6~1~61~58~12~47~11~14~13
+Kelvin Yeboah~Genoa~FW,MF~17~9~850~0~1~16~5~2~0~27~60~19~28~4~16~18
+Maya Yoshida~Sampdoria~DF~26~19~1823~2~3~9~4~2~0~46~63~15~36~10~6~22
+Mattia Zaccagni~Lazio~FW~29~21~1876~4~5~33~10~6~0~77~58~5~64~18~10~10
+Denis Zakaria~Juventus~MF~9~6~597~1~1~9~4~1~0~57~37~4~70~20~10~8
+Nicola Zalewski~Roma~MF~16~9~793~0~0~9~4~1~0~59~43~6~63~18~9~11
+Andre-Frank Zambo Anguissa~Napoli~MF~25~21~1926~0~1~20~3~5~0~74~31~3~79~24~7~7
+Nicolo Zaniolo~Roma~FW,MF~28~23~1971~2~1~70~20~12~2~59~43~6~63~18~9~11
+Alessandro Zanoli~Napoli~DF~12~5~457~0~0~0~0~2~0~74~31~3~79~24~7~7
+Duvan Zapata~Atalanta~FW~24~20~1722~10~4~81~34~3~0~65~48~8~59~16~11~11
+Gabriele Zappa~Cagliari~MF,DF~25~11~1144~0~0~6~2~4~1~34~68~18~30~6~12~20
+Davide Zappacosta~Atalanta~MF,DF~34~29~2345~1~5~37~5~6~0~65~48~8~59~16~11~11
+Marvin Zeegelaar~Udinese~DF,MF~14~6~643~0~0~3~0~2~0~61~58~12~47~11~14~13
+Piotr Zielinski~Napoli~MF~35~26~2086~6~5~43~15~1~0~74~31~3~79~24~7~7
+David Zima~Torino~DF~20~13~1314~0~0~5~3~3~0~46~41~10~50~13~11~14
+Jeroen Zoet~Spezia~GK~7~7~630~0~0~0~0~0~0~41~71~16~36~10~6~22
+Nadir Zortea~Salernitana~MF,DF~29~13~1410~1~2~16~4~3~0~33~78~17~31~7~10~21
+Szymon Zurkowski~Empoli~MF~35~29~2307~6~2~47~17~5~0~50~70~14~41~10~11~17
+Milan Djuric~Salernitana~FW~33~23~2165~5~4~50~17~6~0~33~78~17~31~7~10~21
+Filip Djuricic~Sassuolo~MF~12~9~671~2~1~17~6~1~0~64~66~11~50~13~11~14

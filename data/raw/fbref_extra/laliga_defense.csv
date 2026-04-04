@@ -1,0 +1,618 @@
+player_name,club_name,tackles_won,interceptions
+"Luis Abram","Granada",3,5
+"Marcos Acuña","Sevilla",31,16
+"Martin Agirregabiria","Alavés",22,24
+"Julen Agirrezabala","Athletic Club",0,0
+"Sergio Agüero","Barcelona",1,0
+"Álvaro Aguirre","Rayo Vallecano",0,0
+"Joseph Aidoo","Celta Vigo",26,38
+"Carlos Akapo","Cádiz",30,54
+"Ilias Akhomach","Barcelona",1,0
+"Paul Akouokou","Real Betis",7,12
+"David Alaba","Real Madrid",13,24
+"Tomás Alarcón","Cádiz",18,31
+"Jordi Alba","Barcelona",35,33
+"Raúl Albiol","Villarreal",17,20
+"Paco Alcácer","Villarreal",3,6
+"Rubén Alcaraz","Cádiz",20,12
+"Omar Alderete","Valencia",34,34
+"Iván Alejo","Cádiz",15,7
+"Carles Aleñá","Getafe",19,14
+"Hugo Álvarez","Celta Vigo",0,0
+"Yeray Álvarez","Athletic Club",15,44
+"Dani Alves","Barcelona",19,11
+"Emmanuel Amankwaa Akurugu","Getafe",0,1
+"Amath","Mallorca",10,8
+"Florin Andone","Cádiz",1,0
+"Marcos André","Valencia",12,7
+"José Ángel","Osasuna",12,9
+"Josep Antoni Gayá","Mallorca",0,1
+"Mauro Arambarri","Getafe",39,29
+"Néstor Araujo","Celta Vigo",13,28
+"Ronald Araújo","Barcelona",23,23
+"Jesús Areso","Osasuna",3,0
+"Matias Arezo","Granada",3,1
+"Santiago Arias","Granada",6,6
+"Santiago Arzamendia","Cádiz",7,4
+"Sergio Asenjo","Villarreal",0,2
+"Alejandro Asensio","Rayo Vallecano",0,0
+"Marco Asensio","Real Madrid",8,13
+"Iago Aspas","Celta Vigo",7,9
+"Pierre-Emerick Aubameyang","Barcelona",2,2
+"Ludwig Augustinsson","Sevilla",14,6
+"Serge Aurier","Villarreal",8,11
+"Ezequiel Ávila","Osasuna",6,17
+"Iddrisu Baba","Mallorca",29,27
+"Carlos Bacca","Granada",4,1
+"Édgar Badía","Elche",0,0
+"Miguel Baeza","Celta Vigo",0,0
+"Alejandro Balde","Barcelona",1,1
+"Gareth Bale","Real Madrid",1,2
+"Mikel Balenziaga","Athletic Club",25,20
+"Iván Balliu","Rayo Vallecano",23,40
+"Barbero","Osasuna",0,0
+"Barcia","Granada",0,1
+"Enis Bardhi","Levante",11,10
+"Keidi Bare","Espanyol",18,16
+"Kike Barja","Osasuna",10,9
+"Antonio Barragán","Elche",14,18
+"Ander Barrenetxea","Real Sociedad",10,2
+"Marc Bartra","Real Betis",16,32
+"Álvaro Bastida","Cádiz",4,3
+"Rodrigo Battaglia","Mallorca",18,10
+"Jon Bautista","Real Sociedad",0,1
+"Bebé","Rayo Vallecano",7,3
+"Héctor Bellerín","Real Betis",33,23
+"Fran Beltrán","Celta Vigo",42,33
+"Darío Benedetto","Elche",1,1
+"Iker Benito","Osasuna",1,0
+"Pedro Benito","Cádiz",0,0
+"Karim Benzema","Real Madrid",8,5
+"Yuri Berchiche","Athletic Club",11,13
+"Álex Berenguer","Athletic Club",25,14
+"Pedro Bigas","Elche",11,17
+"Antonio Blanco","Real Madrid",0,1
+"Yassine Bounou","Sevilla",0,0
+"Lucas Boyé","Elche",12,2
+"Martin Braithwaite","Barcelona",1,1
+"Darko Brašanac","Osasuna",23,24
+"Claudio Bravo","Real Betis",0,0
+"Yan Brice Eteki","Granada",3,4
+"Ante Budimir","Osasuna",11,4
+"Sergio Busquets","Barcelona",51,42
+"Adrián Butzke","Granada",0,0
+"Erick Cabaco","Getafe",1,4
+"Leandro Cabrera","Espanyol",25,47
+"Martín Cáceres","Levante",2,11
+"Cala","Cádiz",5,11
+"Calderón","Real Betis",0,0
+"Fernando Calero","Espanyol",9,14
+"Víctor Camarasa","Real Betis",1,2
+"Eduardo Camavinga","Real Madrid",35,17
+"José Campaña","Levante",16,22
+"Sergio Canales","Real Betis",13,10
+"Álex Cantero","Levante",4,1
+"Ander Capa","Athletic Club",0,0
+"Étienne Capoue","Villarreal",25,33
+"Isaac Carcelen","Cádiz",31,32
+"Dani Cárdenas","Levante",0,1
+"Carlo","Villarreal",0,0
+"Diego Carlos","Sevilla",24,21
+"Carmona","Sevilla",0,1
+"Yannick Carrasco","Atlético Madrid",20,18
+"Guido Carrillo","Elche",4,1
+"Dani Carvajal","Real Madrid",27,20
+"William Carvalho","Real Betis",32,15
+"Casemiro","Real Madrid",50,41
+"Kiko Casilla","Elche",0,1
+"Catena","Rayo Vallecano",24,30
+"Dani Ceballos","Real Madrid",5,5
+"Franco Cervi","Celta Vigo",43,20
+"Chapela","Cádiz",2,4
+"Chema","Getafe",0,0
+"Denis Cheryshev","Valencia",5,8
+"Samuel Chukwueze","Villarreal",10,5
+"Víctor Chust","Cádiz",11,16
+"Jasper Cillessen","Valencia",0,0
+"Pathé Ciss","Rayo Vallecano",16,30
+"Carlos Clerc","Levante",18,23
+"Coke","Levante",2,2
+"Álex Collado","Granada",13,5
+"Eray Cömert","Valencia",3,2
+"Santi Comesaña","Rayo Vallecano",59,31
+"Diego Conde","Getafe",0,0
+"Francis Coquelin","Villarreal",16,21
+"Jesús Corona","Sevilla",7,9
+"Ángel Correa","Atlético Madrid",8,11
+"Thierry Correia","Valencia",24,18
+"Hélder Costa","Valencia",16,3
+"Jaume Costa","Mallorca",28,23
+"Thibaut Courtois","Real Madrid",1,0
+"Philippe Coutinho","Barcelona",3,4
+"Cristo","Real Sociedad",0,0
+"Juan Cruz Armada","Osasuna",22,17
+"Marc Cucurella","Getafe",1,0
+"Jorge Cuenca","Getafe",32,47
+"Matheus Cunha","Atlético Madrid",12,5
+"Arnaut Danjuma","Villarreal",6,2
+"Sergi Darder","Espanyol",25,24
+"Rodrigo De Paul","Atlético Madrid",30,23
+"Thomas Delaney","Sevilla",25,14
+"Ousmane Dembélé","Barcelona",16,5
+"Yusuf Demir","Barcelona",1,2
+"Sergiño Dest","Barcelona",15,2
+"Boulaye Dia","Villarreal",5,4
+"Mouctar Diakhaby","Valencia",25,33
+"Javier Díaz","Sevilla",0,0
+"Víctor Díaz","Granada",14,17
+"Landry Dimata","Espanyol",2,2
+"Stole Dimitrievski","Rayo Vallecano",0,1
+"Matías Dituro","Celta Vigo",0,0
+"Djené","Getafe",26,60
+"Naïs Djouahra","Real Sociedad",3,2
+"Marko Dmitrović","Sevilla",0,0
+"Jaume Doménech","Valencia",0,0
+"Carlos Dominguez","Celta Vigo",2,5
+"Mario Dominguez","Valencia",0,0
+"John Donald","Elche",5,3
+"Domingos Duarte","Granada",14,22
+"Óscar Duarte","Levante",9,21
+"Rubén Duarte","Alavés",48,57
+"Unai Dufur","Osasuna",0,4
+"Hugo Duro","Getafe",0,0
+"Hugo Duro","Valencia",21,4
+"Aritz Elustondo","Real Sociedad",14,32
+"Adri Embarba","Espanyol",29,20
+"Emerson","Barcelona",2,2
+"Youssef En-Nesyri","Sevilla",5,3
+"Gonzalo Escalante","Alavés",15,18
+"Aarón Escandell","Granada",0,0
+"Sergio Escudero","Granada",26,26
+"Alfonso Espino","Cádiz",69,59
+"Estanis","Barcelona",1,0
+"Pervis Estupiñán","Villarreal",23,27
+"Abde Ezzalzouli","Barcelona",9,9
+"Radamel Falcao","Rayo Vallecano",1,2
+"Fali","Cádiz",19,24
+"Omar Faraj","Levante",0,0
+"Ansu Fati","Barcelona",2,0
+"Aleix Febas","Mallorca",1,0
+"Nabil Fekir","Real Betis",30,7
+"Felipe","Atlético Madrid",15,28
+"João Félix","Atlético Madrid",2,7
+"Aitor Fernández","Levante",1,0
+"Álex Fernández","Cádiz",31,29
+"Fernando","Sevilla",17,31
+"Fidel","Elche",23,7
+"José Fontán","Celta Vigo",3,9
+"Dimitri Foulquier","Granada",0,1
+"Dimitri Foulquier","Valencia",16,30
+"Juan Foyth","Villarreal",50,22
+"Enric Franquesa","Levante",3,6
+"Jorge de Frutos","Levante",15,13
+"Javi Galán","Celta Vigo",68,46
+"Iñigo Ruiz de Galarreta","Mallorca",22,23
+"Thiago Galhardo","Celta Vigo",6,6
+"Álvaro García","Rayo Vallecano",24,41
+"Dani García","Athletic Club",21,25
+"David García","Osasuna",14,54
+"Eric García","Barcelona",17,41
+"Fran Garcia","Rayo Vallecano",39,47
+"Joan García","Espanyol",0,1
+"Manu García","Alavés",9,12
+"Raúl García","Athletic Club",14,9
+"Rubén García","Osasuna",27,24
+"Saúl García","Alavés",1,0
+"Unai García","Osasuna",12,23
+"Mario Gaspar","Villarreal",4,6
+"Gavi","Barcelona",19,29
+"Bryan Gil","Valencia",8,1
+"Óscar Gil","Espanyol",35,20
+"Mario Gila","Real Madrid",0,1
+"Dani Gómez","Levante",4,3
+"Maxi Gómez","Valencia",3,3
+"Moi Gómez","Villarreal",9,7
+"Papu Gómez","Sevilla",12,7
+"Sergi Gómez","Espanyol",23,39
+"Victor Gomez","Espanyol",0,0
+"Maxime Gonalons","Granada",30,18
+"Diego González","Elche",16,17
+"Édgar González","Real Betis",18,24
+"Giovanni González","Mallorca",4,3
+"Nicolás González","Barcelona",21,6
+"Peter González","Real Madrid",0,1
+"Roberto González","Real Betis",4,1
+"Gori","Espanyol",0,0
+"Andoni Gorosabel","Real Sociedad",31,19
+"Jaume Grau","Osasuna",1,0
+"Dominik Greif","Mallorca",0,0
+"Clément Grenier","Mallorca",0,0
+"Antoine Griezmann","Barcelona",4,3
+"Antoine Griezmann","Atlético Madrid",15,7
+"Andrés Guardado","Real Betis",16,22
+"Sergi Guardiola","Rayo Vallecano",9,4
+"Nemanja Gudelj","Sevilla",7,22
+"Gonçalo Guedes","Valencia",14,9
+"Ander Guevara","Real Sociedad",11,13
+"John Guidetti","Alavés",1,0
+"Hugo Guillamón","Valencia",26,29
+"Gerard Gumbau","Elche",20,21
+"Jon Guridi","Real Sociedad",3,3
+"Raúl Guti","Elche",15,21
+"Marcos Mauro López Gutiérrez","Cádiz",0,1
+"Miguel Gutiérrez","Real Madrid",5,4
+"Munir El Haddadi","Sevilla",4,5
+"Varazdat Haroyan","Cádiz",24,14
+"Eden Hazard","Real Madrid",4,2
+"Kike Hermoso","Real Betis",1,0
+"Mario Hermoso","Atlético Madrid",16,29
+"Aridane Hernández","Osasuna",9,20
+"Luis Hernández","Cádiz",6,16
+"Mario Hernández","Rayo Vallecano",4,4
+"Héctor Herrera","Atlético Madrid",7,13
+"Sergio Herrera","Osasuna",3,1
+"Yangel Herrera","Espanyol",31,17
+"Matthew Hoppe","Mallorca",0,0
+"Robert Ibáñez","Osasuna",3,0
+"Vicente Iborra","Villarreal",10,10
+"Oussama Idrissi","Sevilla",0,1
+"Oussama Idrissi","Cádiz",6,3
+"Iglesias","Getafe",11,9
+"Borja Iglesias","Real Betis",4,4
+"Asier Illarramendi","Real Sociedad",4,5
+"Nikita Iosifov","Villarreal",0,0
+"Alexander Isak","Real Sociedad",4,3
+"Isco","Real Madrid",3,2
+"Nicolas Jackson","Villarreal",1,1
+"Jakub Jankto","Getafe",7,5
+"Adnan Januzaj","Real Sociedad",12,13
+"Jason","Valencia",1,0
+"Jason","Alavés",7,8
+"Luis Javier Suárez","Granada",14,5
+"Álvaro Jiménez","Cádiz",3,4
+"Joaquín","Real Betis",3,3
+"Jofre","Espanyol",1,0
+"Frenkie de Jong","Barcelona",20,20
+"Luuk de Jong","Barcelona",7,0
+"Joan Jordán","Sevilla",32,29
+"Josan","Elche",22,11
+"Willian José","Real Betis",13,2
+"Joselu","Alavés",11,7
+"Josema","Elche",2,0
+"Luka Jović","Real Madrid",1,1
+"Miguel Juan Llambrich","Espanyol",2,0
+"José Juan Macías","Getafe",0,1
+"Juanmi","Real Betis",26,10
+"Lago Junior","Mallorca",2,2
+"Vinicius Júnior","Real Madrid",26,5
+"Ferran Jutglà","Barcelona",1,1
+"Jens Jønsson","Cádiz",28,34
+"Lee Kang-in","Mallorca",7,6
+"Kiké","Osasuna",7,3
+"Koba Koindredi","Valencia",3,4
+"Koke","Atlético Madrid",29,22
+"Luca Koleosho","Espanyol",0,0
+"Geoffrey Kondogbia","Atlético Madrid",46,46
+"Jules Koundé","Sevilla",17,21
+"Toni Kroos","Real Madrid",26,12
+"Takefusa Kubo","Mallorca",19,9
+"Víctor Laguardia","Alavés",16,28
+"Diego Lainez","Real Betis",1,0
+"Érik Lamela","Sevilla",20,5
+"Juanmi Latasa","Real Madrid",0,0
+"Toni Lato","Valencia",13,7
+"Robin Le Normand","Real Sociedad",31,45
+"Jeremías Ledesma","Cádiz",2,1
+"Wu Lei","Espanyol",2,4
+"Florian Lejeune","Alavés",24,28
+"Iñigo Lekue","Athletic Club",24,23
+"Thomas Lemar","Atlético Madrid",14,8
+"Ruben Lendinez","Valencia",3,2
+"Clément Lenglet","Barcelona",12,15
+"Javier Llabrés","Mallorca",2,0
+"Marcos Llorente","Atlético Madrid",24,28
+"Giovani Lo Celso","Villarreal",12,3
+"Julen Lobete","Real Sociedad",3,1
+"Renan Lodi","Atlético Madrid",19,13
+"David López","Espanyol",15,9
+"Diego López","Espanyol",0,1
+"Javi López","Alavés",4,4
+"Unai López","Rayo Vallecano",10,9
+"Mamadou Loum","Alavés",20,36
+"Anthony Lozano","Cádiz",4,2
+"Florentino Luís","Getafe",25,25
+"José Luis Gayà","Valencia",21,16
+"José Luis Morales","Levante",17,6
+"Luismi","Sevilla",0,0
+"Andriy Lunin","Real Madrid",0,0
+"Darwin Machís","Granada",13,15
+"Pablo Maffeo","Mallorca",49,47
+"Nemanja Maksimović","Getafe",34,69
+"Hugo Mallo","Celta Vigo",25,24
+"Mickael Malsa","Levante",18,19
+"Giorgi Mamardashvili","Valencia",0,0
+"Reinildo Mandava","Atlético Madrid",25,24
+"Aïssa Mandi","Villarreal",5,15
+"Nikola Maraš","Rayo Vallecano",9,13
+"Marcelo","Real Madrid",4,1
+"Iván Marcone","Elche",13,11
+"Óscar de Marcos","Athletic Club",36,19
+"José Mari","Cádiz",7,7
+"José María Giménez","Atlético Madrid",12,24
+"Mariano","Real Madrid",0,1
+"Mika Mármol","Barcelona",0,0
+"Roger Martí","Levante",15,2
+"Anthony Martial","Sevilla",1,0
+"Martín","Cádiz",2,1
+"Ander Martin","Real Sociedad",0,3
+"Andrés Martín","Rayo Vallecano",0,0
+"Carlos Martín","Atlético Madrid",0,0
+"Iván Martín","Alavés",1,1
+"Iñigo Martínez","Athletic Club",16,40
+"Javi Martínez","Osasuna",15,10
+"Pablo Martínez","Levante",9,16
+"Omar Mascarell","Elche",26,51
+"Jaime Mata","Getafe",5,0
+"Luís Maximiano","Granada",1,1
+"Borja Mayoral","Getafe",5,4
+"Jordi Mboula","Mallorca",3,3
+"Óscar Melendo","Espanyol",4,1
+"Gonzalo Melero","Levante",16,7
+"Memphis","Barcelona",5,2
+"Tomás Mendes","Alavés",0,0
+"Brais Méndez","Celta Vigo",35,37
+"Édgar Méndez","Alavés",16,6
+"Ferland Mendy","Real Madrid",15,16
+"Fran Mérida","Espanyol",3,6
+"Mikel Merino","Real Sociedad",37,23
+"Martín Merquelanz","Rayo Vallecano",1,0
+"Matt Miazga","Alavés",7,11
+"Miguel","Alavés",3,1
+"Éder Militão","Real Madrid",32,53
+"Luis Milla","Granada",29,27
+"Pere Milla","Elche",15,5
+"Santi Mina","Celta Vigo",17,6
+"Óscar Mingueza","Barcelona",11,8
+"Rafa Mir","Sevilla",3,0
+"Jorge Miramón","Levante",21,31
+"Juan Miranda","Real Betis",12,14
+"Stefan Mitrović","Getafe",8,27
+"Luka Modrić","Real Madrid",9,20
+"Johan Mojica","Elche",28,25
+"Jorge Molina","Granada",3,6
+"Jon Moncayola","Osasuna",21,22
+"Monchu","Granada",6,3
+"Gonzalo Montiel","Sevilla",4,11
+"Ángel Montoro","Granada",13,12
+"Martín Montoya","Real Betis",12,11
+"Jon Morcillo","Athletic Club",0,0
+"Alberto Moreno","Villarreal",7,25
+"Álex Moreno","Real Betis",40,31
+"Gerard Moreno","Villarreal",2,5
+"Tete Morente","Elche",14,12
+"Ilaix Moriba","Valencia",17,13
+"Manu Morlanes","Espanyol",15,13
+"Loren Morón","Espanyol",4,2
+"Loren Morón","Real Betis",1,0
+"Cristhian Mosquera","Valencia",3,3
+"Toni Moya","Alavés",10,18
+"Iker Muniain","Athletic Club",12,17
+"Aihen Muñoz","Real Sociedad",17,17
+"Jeison Murillo","Celta Vigo",10,17
+"Vedat Muriqi","Mallorca",3,6
+"Yunus Musah","Valencia",14,14
+"Shkodran Mustafi","Levante",5,16
+"Nacho","Real Madrid",14,37
+"Roberto Navarro","Real Sociedad",3,2
+"Ximo Navarro","Alavés",19,21
+"Jesús Navas","Sevilla",14,17
+"Álvaro Negredo","Cádiz",3,2
+"Neto","Barcelona",0,0
+"Carlos Neva","Granada",20,29
+"Saúl Ñíguez","Atlético Madrid",2,0
+"Fernando Niño","Mallorca",5,4
+"Peru Nolaskoain","Athletic Club",0,0
+"Nolito","Celta Vigo",15,8
+"Randy Nteka","Rayo Vallecano",13,7
+"Unai Núñez","Athletic Club",5,9
+"Allan Nyom","Getafe",1,3
+"Jan Oblak","Atlético Madrid",0,1
+"Lucas Ocampos","Sevilla",25,9
+"Lucas Olaza","Elche",3,4
+"Oier Olazábal","Espanyol",0,0
+"Brian Oliván","Mallorca",20,29
+"Mathías Olivera","Getafe",48,55
+"Javier Ontiveros","Osasuna",0,1
+"Pedro Ortiz","Sevilla",0,0
+"Milutin Osmajić","Cádiz",1,1
+"Jesús Owono","Alavés",0,0
+"Mikel Oyarzabal","Real Sociedad",9,9
+"Fernando Pacheco","Alavés",1,0
+"Jon Pacheco","Real Sociedad",4,6
+"Helibelton Palacios","Elche",40,18
+"Isaac Palazón Camacho","Rayo Vallecano",29,16
+"Daniel Parejo","Villarreal",28,28
+"Raúl Parra","Cádiz",1,0
+"Javier Pastore","Elche",3,4
+"Gabriel Paulista","Valencia",13,38
+"Alfonso Pedraza","Villarreal",18,30
+"Pedri","Barcelona",13,5
+"Adrià Pedrosa","Espanyol",29,24
+"Facundo Pellistri","Alavés",5,5
+"Rubén Peña","Villarreal",0,5
+"Alberto Perea","Cádiz",10,10
+"Iñigo Pérez","Osasuna",2,0
+"Juan Pérez","Osasuna",0,0
+"Kike Pérez","Elche",6,3
+"Lucas Pérez","Elche",1,4
+"Lucas Pérez","Cádiz",3,0
+"Njegoš Petrović","Granada",11,10
+"Alex Petxa","Athletic Club",8,4
+"Germán Pezzella","Real Betis",11,38
+"Pablo Piatti","Elche",5,2
+"Cristiano Piccini","Valencia",8,2
+"Tomás Pina Isla","Alavés",16,20
+"Orbelín Pineda","Celta Vigo",1,0
+"Yeremi Pino","Villarreal",14,7
+"Gerard Piqué","Barcelona",11,35
+"Ezequiel Ponce","Elche",4,1
+"Pere Pons","Alavés",18,6
+"Portu","Real Sociedad",7,5
+"Sergio Postigo","Levante",8,8
+"Darío Poveda","Getafe",0,0
+"José Pozo","Rayo Vallecano",2,0
+"Abdón Prats","Mallorca",2,1
+"Alejandro Primo","Levante",0,0
+"Javi Puado","Espanyol",15,12
+"Marc Pubill","Levante",7,5
+"Antonio Puertas","Granada",24,10
+"Riqui Puig","Barcelona",3,3
+"Yacine Qasmi","Rayo Vallecano",0,0
+"Quini","Granada",37,36
+"Dani Raba","Granada",2,1
+"Dani Raba","Villarreal",0,1
+"Uroš Račić","Valencia",18,14
+"Nemanja Radoja","Levante",8,23
+"Rafinha","Real Sociedad",27,13
+"Antonio Raillo","Mallorca",7,19
+"Ivan Rakitić","Sevilla",20,20
+"Jonás Ramalho","Osasuna",2,4
+"Sandro Ramírez","Getafe",3,3
+"Raúl","Real Betis",0,0
+"Lluís Recasens","Espanyol",0,2
+"Manolo Reina","Mallorca",0,2
+"Karim Rekik","Sevilla",8,8
+"Álex Remiro","Real Sociedad",0,1
+"Nico Ribaudo","Espanyol",7,8
+"Diego Rico","Real Sociedad",22,30
+"Sergio Rico","Mallorca",0,0
+"Luis Rioja","Alavés",17,25
+"Rober","Levante",20,32
+"Sergi Roberto","Barcelona",2,3
+"Rubén Rochina","Granada",14,6
+"Enzo Roco","Elche",20,28
+"Rodri","Real Betis",7,2
+"Kévin Rodrigues","Rayo Vallecano",12,6
+"Ángel Rodríguez","Mallorca",9,3
+"Óscar Rodríguez Arnaiz","Getafe",11,11
+"Óscar Rodríguez Arnaiz","Sevilla",3,5
+"Dani Rodríguez","Mallorca",30,19
+"Guido Rodríguez","Real Betis",52,29
+"Rodrygo","Real Madrid",14,11
+"Leo Román","Mallorca",0,0
+"Iván Romero","Sevilla",2,2
+"Unai Ropero","Alavés",0,0
+"Rubén","Espanyol",1,2
+"Aitor Ruibal","Real Betis",15,7
+"Isma Ruiz","Granada",1,3
+"Víctor Ruiz","Real Betis",9,29
+"Gerónimo Rulli","Villarreal",0,1
+"Franco Russo","Mallorca",10,28
+"Mathew Ryan","Real Sociedad",0,0
+"Youssouf Sabaly","Real Betis",10,13
+"Salvi","Cádiz",10,6
+"Fede San Emeterio","Cádiz",5,10
+"Oihan Sancet","Athletic Club",6,5
+"Antonio Sánchez","Mallorca",26,29
+"Germán Sánchez","Granada",18,28
+"Juanlu Sánchez","Sevilla",0,0
+"Manu Sánchez","Osasuna",36,17
+"Oier Sanjurjo","Osasuna",6,2
+"Yellu Santiago","Valencia",2,0
+"Sergio Santos","Real Madrid",0,0
+"Alvaro Sanz","Barcelona",0,0
+"Marcelo Saracchi","Levante",5,4
+"Joan Sastre Vanrell","Mallorca",3,2
+"Esteban Saveljich","Rayo Vallecano",11,19
+"Stefan Savić","Atlético Madrid",21,36
+"Valentino Scotta","Sevilla",0,0
+"Aleksandar Sedlar","Mallorca",3,6
+"Javier Serrano","Atlético Madrid",1,3
+"Nicolás Serrano","Athletic Club",5,2
+"Salva Sevilla","Mallorca",12,15
+"David Silva","Real Sociedad",17,6
+"Jonathan Silva","Getafe",8,2
+"Rui Silva","Real Betis",0,1
+"Giuliano Simeone","Atlético Madrid",0,0
+"Unai Simón","Athletic Club",0,1
+"Antonio Sivera","Alavés",0,0
+"Rubén Sobrino","Valencia",1,2
+"Rubén Sobrino","Cádiz",17,21
+"Alex Sola","Real Sociedad",1,2
+"Augusto Solari","Celta Vigo",12,6
+"Roberto Soldado","Levante",1,1
+"Carlos Soler","Valencia",20,12
+"Son","Levante",17,19
+"David Soria","Getafe",1,0
+"Alberto Soro","Granada",11,3
+"Hugo Sotelo","Celta Vigo",0,0
+"Damián Suárez","Getafe",48,32
+"Denis Suárez","Celta Vigo",28,16
+"Luis Suárez","Atlético Madrid",5,1
+"Mario Suárez","Rayo Vallecano",5,7
+"Suso","Sevilla",3,0
+"Mamadou Sylla","Alavés",2,1
+"Mamadou Sylla","Rayo Vallecano",1,3
+"Alexander Sørloth","Real Sociedad",9,3
+"Tachi","Alavés",3,0
+"Renato Tapia","Celta Vigo",33,30
+"Cristian Tello","Real Betis",11,8
+"Nahuel Tenaglia","Alavés",27,26
+"Marc Tenas","Alavés",1,0
+"Marc-André ter Stegen","Barcelona",0,2
+"David Timor","Getafe",2,1
+"Mircea Ţîrlea","Alavés",0,0
+"Raúl de Tomás","Espanyol",11,6
+"Raúl Torrente","Granada",22,11
+"Ferrán Torres","Barcelona",5,4
+"Óliver Torres","Sevilla",12,6
+"Pau Torres","Villarreal",19,19
+"Roberto Torres","Osasuna",4,8
+"Lucas Torró","Osasuna",44,50
+"Adama Traoré","Barcelona",2,3
+"Óscar Trejo","Rayo Vallecano",24,13
+"Manu Trigueros","Villarreal",26,15
+"Kieran Trippier","Atlético Madrid",12,11
+"Beñat Turrientes","Real Sociedad",0,2
+"Samuel Umtiti","Barcelona",2,0
+"Enes Ünal","Getafe",22,5
+"Myrto Uzuni","Granada",5,10
+"Álvaro Vadillo","Espanyol",2,0
+"Óscar Valentín","Rayo Vallecano",53,42
+"Germán Valera","Real Sociedad",2,0
+"Martin Valjent","Mallorca",20,32
+"Jesús Vallejo","Real Madrid",5,6
+"Manu Vallejo","Valencia",1,0
+"Manu Vallejo","Alavés",1,0
+"Federico Valverde","Real Madrid",17,22
+"José Luis García Vayá","Levante",27,37
+"Jesus Vazquez","Valencia",12,9
+"Kevin Vázquez","Celta Vigo",25,39
+"Lucas Vázquez","Real Madrid",27,19
+"Gabriel Veiga","Celta Vigo",4,4
+"Unai Vencedor Paris","Athletic Club",12,18
+"Gonzalo Verdú","Elche",9,14
+"Mikel Vesga","Athletic Club",16,19
+"Rúben Vezo","Levante",31,35
+"Aleix Vidal","Espanyol",25,26
+"Nacho Vidal","Osasuna",48,60
+"Dídac Vilà","Espanyol",5,3
+"Tonny Vilhena","Espanyol",6,8
+"Daniel Villahermosa","Espanyol",0,0
+"Asier Villalibre","Athletic Club",3,1
+"Gonzalo Villar","Getafe",3,1
+"Vitolo","Getafe",2,1
+"Daniel Vivian","Athletic Club",23,25
+"Šime Vrsaljko","Atlético Madrid",19,12
+"Nikola Vukčević","Levante",2,2
+"Daniel Wass","Atlético Madrid",0,0
+"Daniel Wass","Valencia",15,13
+"Iñaki Williams","Athletic Club",5,3
+"Nico Williams","Athletic Club",10,6
+"Okay Yokuşlu","Getafe",8,5
+"Okay Yokuşlu","Celta Vigo",1,2
+"Joseba Zaldúa","Real Sociedad",22,13
+"Oier Zarraga","Athletic Club",4,18
+"Luca Zidane","Rayo Vallecano",0,0
+"Igor Zubeldia","Real Sociedad",11,27
+"Martín Zubimendi","Real Sociedad",25,51

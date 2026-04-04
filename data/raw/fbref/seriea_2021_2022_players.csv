@@ -1,0 +1,435 @@
+player_season_id,player_id,player_name,club_id,club_name,season_id,season_label,primary_position,appearances,starts,minutes_played,goals,assists,shots,shots_on_target,key_passes,progressive_passes,progressive_carries,successful_dribbles,xg,xa,tackles,interceptions,clearances,aerial_duels_won,yellow_cards,red_cards,clean_sheets,team_goals_scored,team_goals_conceded,league_name,final_table_rank,team_points,team_wins,team_draws,team_losses
+tammy-abraham-roma-2021-2022,tammy-abraham,Tammy Abraham,roma,Roma,2021-2022,2021/22,FW,37,36,3084,17,4,95,39,0,0,0,0,0,0,0,0,0,0,9,0,0,59,43,Serie A,6,63,18,9,11
+francesco-acerbi-lazio-2021-2022,francesco-acerbi,Francesco Acerbi,lazio,Lazio,2021-2022,2021/22,DF,30,29,2536,4,0,15,7,0,0,0,0,0,0,0,0,0,0,2,1,0,77,58,Serie A,5,64,18,10,10
+felix-afena-gyan-roma-2021-2022,felix-afena-gyan,Felix Afena-Gyan,roma,Roma,2021-2022,2021/22,MF,17,6,668,2,0,17,7,0,0,0,0,0,0,0,0,0,0,5,1,0,59,43,Serie A,6,63,18,9,11
+kevin-agudelo-spezia-2021-2022,kevin-agudelo,Kevin Agudelo,spezia,Spezia,2021-2022,2021/22,MF,23,12,1237,3,1,21,11,0,0,0,0,0,0,0,0,0,0,2,1,0,41,71,Serie A,16,36,10,6,22
+ola-aina-torino-2021-2022,ola-aina,Ola Aina,torino,Torino,2021-2022,2021/22,MF,21,17,1437,0,0,10,4,0,0,0,0,0,0,0,0,0,0,4,0,0,46,41,Serie A,10,50,13,11,14
+luis-alberto-lazio-2021-2022,luis-alberto,Luis Alberto,lazio,Lazio,2021-2022,2021/22,MF,34,27,2353,5,9,47,16,0,0,0,0,0,0,0,0,0,0,5,0,0,77,58,Serie A,5,64,18,10,10
+giorgio-altare-cagliari-2021-2022,giorgio-altare,Giorgio Altare,cagliari,Cagliari,2021-2022,2021/22,DF,19,17,1466,1,0,18,6,0,0,0,0,0,0,0,0,0,0,5,0,0,34,68,Serie A,18,30,6,12,20
+kelvin-amian-spezia-2021-2022,kelvin-amian,Kelvin Amian,spezia,Spezia,2021-2022,2021/22,DF,32,31,2646,1,1,26,9,0,0,0,0,0,0,0,0,0,0,9,2,0,41,71,Serie A,16,36,10,6,22
+nadiem-amiri-genoa-2021-2022,nadiem-amiri,Nadiem Amiri,genoa,Genoa,2021-2022,2021/22,MF,13,9,683,0,1,16,6,0,0,0,0,0,0,0,0,0,0,0,0,0,27,60,Serie A,19,28,4,16,18
+ethan-ampadu-venezia-2021-2022,ethan-ampadu,Ethan Ampadu,venezia,Venezia,2021-2022,2021/22,DF,29,26,2282,0,3,7,1,0,0,0,0,0,0,0,0,0,0,13,2,0,34,69,Serie A,20,27,6,9,23
+sofyan-amrabat-fiorentina-2021-2022,sofyan-amrabat,Sofyan Amrabat,fiorentina,Fiorentina,2021-2022,2021/22,MF,23,8,944,1,0,4,3,0,0,0,0,0,0,0,0,0,0,6,0,0,59,51,Serie A,7,62,19,5,14
+felipe-anderson-lazio-2021-2022,felipe-anderson,Felipe Anderson,lazio,Lazio,2021-2022,2021/22,FW,38,33,2888,6,8,44,16,0,0,0,0,0,0,0,0,0,0,2,0,0,77,58,Serie A,5,64,18,10,10
+cristian-ansaldi-torino-2021-2022,cristian-ansaldi,Cristian Ansaldi,torino,Torino,2021-2022,2021/22,MF,19,5,691,0,3,7,1,0,0,0,0,0,0,0,0,0,0,2,0,0,46,41,Serie A,10,50,13,11,14
+janis-antiste-spezia-2021-2022,janis-antiste,Janis Antiste,spezia,Spezia,2021-2022,2021/22,MF,18,9,796,1,0,11,3,0,0,0,0,0,0,0,0,0,0,0,0,0,41,71,Serie A,16,36,10,6,22
+mattia-aramu-venezia-2021-2022,mattia-aramu,Mattia Aramu,venezia,Venezia,2021-2022,2021/22,MF,32,25,2100,7,5,59,19,0,0,0,0,0,0,0,0,0,0,6,0,0,34,69,Serie A,20,27,6,9,23
+marko-arnautovic-bologna-2021-2022,marko-arnautovic,Marko Arnautovic,bologna,Bologna,2021-2022,2021/22,FW,33,32,2694,14,1,91,34,0,0,0,0,0,0,0,0,0,0,6,0,0,44,55,Serie A,13,46,12,10,16
+tolgay-arslan-udinese-2021-2022,tolgay-arslan,Tolgay Arslan,udinese,Udinese,2021-2022,2021/22,MF,30,22,1658,1,0,23,9,0,0,0,0,0,0,0,0,0,0,9,0,0,61,58,Serie A,12,47,11,14,13
+kristoffer-askildsen-sampdoria-2021-2022,kristoffer-askildsen,Kristoffer Askildsen,sampdoria,Sampdoria,2021-2022,2021/22,MF,19,7,754,0,0,7,0,0,0,0,0,0,0,0,0,0,0,5,0,0,46,63,Serie A,15,36,10,6,22
+kristjan-asllani-empoli-2021-2022,kristjan-asllani,Kristjan Asllani,empoli,Empoli,2021-2022,2021/22,MF,23,14,1353,1,1,17,6,0,0,0,0,0,0,0,0,0,0,2,0,0,50,70,Serie A,14,41,10,11,17
+emil-audero-sampdoria-2021-2022,emil-audero,Emil Audero,sampdoria,Sampdoria,2021-2022,2021/22,GK,29,29,2560,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,46,63,Serie A,15,36,10,6,22
+tommaso-augello-sampdoria-2021-2022,tommaso-augello,Tommaso Augello,sampdoria,Sampdoria,2021-2022,2021/22,DF,36,25,2395,1,1,7,2,0,0,0,0,0,0,0,0,0,0,0,0,0,46,63,Serie A,15,36,10,6,22
+kaan-ayhan-sassuolo-2021-2022,kaan-ayhan,Kaan Ayhan,sassuolo,Sassuolo,2021-2022,2021/22,DF,23,14,1354,1,0,5,1,0,0,0,0,0,0,0,0,0,0,2,1,0,64,66,Serie A,11,50,13,11,14
+milan-badelj-genoa-2021-2022,milan-badelj,Milan Badelj,genoa,Genoa,2021-2022,2021/22,MF,34,34,2844,1,0,21,5,0,0,0,0,0,0,0,0,0,0,4,0,0,27,60,Serie A,19,28,4,16,18
+nedim-bajrami-empoli-2021-2022,nedim-bajrami,Nedim Bajrami,empoli,Empoli,2021-2022,2021/22,MF,35,23,2054,6,5,53,21,0,0,0,0,0,0,0,0,0,0,3,0,0,50,70,Serie A,14,41,10,11,17
+tiemoue-bakayoko-milan-2021-2022,tiemoue-bakayoko,Tiemoue Bakayoko,milan,Milan,2021-2022,2021/22,MF,14,5,501,0,0,4,0,0,0,0,0,0,0,0,0,0,0,3,0,0,69,31,Serie A,1,86,26,8,4
+keita-balde-cagliari-2021-2022,keita-balde,Keita Balde,cagliari,Cagliari,2021-2022,2021/22,FW,26,14,1229,3,1,27,11,0,0,0,0,0,0,0,0,0,0,2,0,0,34,68,Serie A,18,30,6,12,20
+filippo-bandinelli-empoli-2021-2022,filippo-bandinelli,Filippo Bandinelli,empoli,Empoli,2021-2022,2021/22,MF,35,24,1955,2,3,35,12,0,0,0,0,0,0,0,0,0,0,10,0,0,50,70,Serie A,14,41,10,11,17
+mattia-bani-genoa-2021-2022,mattia-bani,Mattia Bani,genoa,Genoa,2021-2022,2021/22,DF,17,13,1211,0,0,8,1,0,0,0,0,0,0,0,0,0,0,1,0,0,27,60,Serie A,19,28,4,16,18
+antonin-barak-hellas-verona-2021-2022,antonin-barak,Antonin Barak,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,29,27,2340,11,4,51,24,0,0,0,0,0,0,0,0,0,0,4,0,0,65,59,Serie A,9,53,14,11,13
+nicolo-barella-inter-2021-2022,nicolo-barella,Nicolo Barella,inter,Inter,2021-2022,2021/22,MF,36,36,2913,3,11,68,13,0,0,0,0,0,0,0,0,0,0,9,0,0,84,32,Serie A,2,84,25,9,4
+musa-barrow-bologna-2021-2022,musa-barrow,Musa Barrow,bologna,Bologna,2021-2022,2021/22,MF,34,25,2134,6,6,71,27,0,0,0,0,0,0,0,0,0,0,0,0,0,44,55,Serie A,13,46,12,10,16
+toma-basic-lazio-2021-2022,toma-basic,Toma Basic,lazio,Lazio,2021-2022,2021/22,MF,29,9,982,0,2,16,11,0,0,0,0,0,0,0,0,0,0,3,0,0,77,58,Serie A,5,64,18,10,10
+alessandro-bastoni-inter-2021-2022,alessandro-bastoni,Alessandro Bastoni,inter,Inter,2021-2022,2021/22,DF,31,29,2311,1,2,8,2,0,0,0,0,0,0,0,0,0,0,4,0,0,84,32,Serie A,2,84,25,9,4
+simone-bastoni-spezia-2021-2022,simone-bastoni,Simone Bastoni,spezia,Spezia,2021-2022,2021/22,DF,31,26,2288,3,3,28,6,0,0,0,0,0,0,0,0,0,0,5,1,0,41,71,Serie A,16,36,10,6,22
+rodrigo-becao-udinese-2021-2022,rodrigo-becao,Rodrigo Becao,udinese,Udinese,2021-2022,2021/22,DF,35,35,3130,2,1,19,5,0,0,0,0,0,0,0,0,0,0,10,0,0,61,58,Serie A,12,47,11,14,13
+vid-belec-salernitana-2021-2022,vid-belec,Vid Belec,salernitana,Salernitana,2021-2022,2021/22,GK,23,21,1938,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,33,78,Serie A,17,31,7,10,21
+raoul-bellanova-cagliari-2021-2022,raoul-bellanova,Raoul Bellanova,cagliari,Cagliari,2021-2022,2021/22,MF,31,27,2496,1,2,23,5,0,0,0,0,0,0,0,0,0,0,3,0,0,34,68,Serie A,18,30,6,12,20
+andrea-belotti-torino-2021-2022,andrea-belotti,Andrea Belotti,torino,Torino,2021-2022,2021/22,FW,22,16,1371,8,1,58,20,0,0,0,0,0,0,0,0,0,0,1,0,0,46,41,Serie A,10,50,13,11,14
+ismael-bennacer-milan-2021-2022,ismael-bennacer,Ismael Bennacer,milan,Milan,2021-2022,2021/22,MF,31,15,1525,2,1,16,6,0,0,0,0,0,0,0,0,0,0,7,0,0,69,31,Serie A,1,86,26,8,4
+rodrigo-bentancur-juventus-2021-2022,rodrigo-bentancur,Rodrigo Bentancur,juventus,Juventus,2021-2022,2021/22,MF,19,13,1155,0,1,8,1,0,0,0,0,0,0,0,0,0,0,1,0,0,57,37,Serie A,4,70,20,10,8
+domenico-berardi-sassuolo-2021-2022,domenico-berardi,Domenico Berardi,sassuolo,Sassuolo,2021-2022,2021/22,MF,33,33,2819,15,14,110,47,0,0,0,0,0,0,0,0,0,0,9,0,0,64,66,Serie A,11,50,13,11,14
+bartosz-bereszynski-sampdoria-2021-2022,bartosz-bereszynski,Bartosz Bereszynski,sampdoria,Sampdoria,2021-2022,2021/22,DF,35,35,2946,0,3,6,0,0,0,0,0,0,0,0,0,0,0,12,0,0,46,63,Serie A,15,36,10,6,22
+etrit-berisha-torino-2021-2022,etrit-berisha,Etrit Berisha,torino,Torino,2021-2022,2021/22,GK,10,10,900,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,46,41,Serie A,10,50,13,11,14
+federico-bernardeschi-juventus-2021-2022,federico-bernardeschi,Federico Bernardeschi,juventus,Juventus,2021-2022,2021/22,MF,28,16,1475,1,3,33,7,0,0,0,0,0,0,0,0,0,0,5,0,0,57,37,Serie A,4,70,20,10,8
+daniel-bessa-hellas-verona-2021-2022,daniel-bessa,Daniel Bessa,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,24,5,768,1,1,10,2,0,0,0,0,0,0,0,0,0,0,5,1,0,65,59,Serie A,9,53,14,11,13
+beto-udinese-2021-2022,beto,Beto,udinese,Udinese,2021-2022,2021/22,FW,28,24,2173,11,0,64,26,0,0,0,0,0,0,0,0,0,0,1,0,0,61,58,Serie A,12,47,11,14,13
+luis-binks-bologna-2021-2022,luis-binks,Luis Binks,bologna,Bologna,2021-2022,2021/22,DF,15,7,646,0,0,2,0,0,0,0,0,0,0,0,0,0,0,3,0,0,44,55,Serie A,13,46,12,10,16
+cristiano-biraghi-fiorentina-2021-2022,cristiano-biraghi,Cristiano Biraghi,fiorentina,Fiorentina,2021-2022,2021/22,DF,37,37,3153,4,1,38,18,0,0,0,0,0,0,0,0,0,0,5,1,0,59,51,Serie A,7,62,19,5,14
+davide-biraschi-genoa-2021-2022,davide-biraschi,Davide Biraschi,genoa,Genoa,2021-2022,2021/22,DF,14,11,930,0,0,3,0,0,0,0,0,0,0,0,0,0,0,4,0,0,27,60,Serie A,19,28,4,16,18
+jeremie-boga-sassuolo-2021-2022,jeremie-boga,Jeremie Boga,sassuolo,Sassuolo,2021-2022,2021/22,MF,12,8,670,0,2,15,5,0,0,0,0,0,0,0,0,0,0,0,0,0,64,66,Serie A,11,50,13,11,14
+jeremie-boga-atalanta-2021-2022,jeremie-boga,Jeremie Boga,atalanta,Atalanta,2021-2022,2021/22,MF,15,7,764,0,0,21,5,0,0,0,0,0,0,0,0,0,0,0,0,0,65,48,Serie A,8,59,16,11,11
+emil-bohinen-salernitana-2021-2022,emil-bohinen,Emil Bohinen,salernitana,Salernitana,2021-2022,2021/22,MF,11,8,699,0,1,4,3,0,0,0,0,0,0,0,0,0,0,5,0,0,33,78,Serie A,17,31,7,10,21
+giacomo-bonaventura-fiorentina-2021-2022,giacomo-bonaventura,Giacomo Bonaventura,fiorentina,Fiorentina,2021-2022,2021/22,MF,31,28,2266,4,4,46,15,0,0,0,0,0,0,0,0,0,0,8,1,0,59,51,Serie A,7,62,19,5,14
+federico-bonazzoli-salernitana-2021-2022,federico-bonazzoli,Federico Bonazzoli,salernitana,Salernitana,2021-2022,2021/22,MF,32,19,1866,10,0,58,24,0,0,0,0,0,0,0,0,0,0,6,0,0,33,78,Serie A,17,31,7,10,21
+kevin-bonifazi-bologna-2021-2022,kevin-bonifazi,Kevin Bonifazi,bologna,Bologna,2021-2022,2021/22,DF,22,14,1210,0,0,9,1,0,0,0,0,0,0,0,0,0,0,4,1,0,44,55,Serie A,13,46,12,10,16
+leonardo-bonucci-juventus-2021-2022,leonardo-bonucci,Leonardo Bonucci,juventus,Juventus,2021-2022,2021/22,DF,24,22,2005,5,0,17,6,0,0,0,0,0,0,0,0,0,0,1,0,0,57,37,Serie A,4,70,20,10,8
+josip-brekalo-torino-2021-2022,josip-brekalo,Josip Brekalo,torino,Torino,2021-2022,2021/22,MF,32,26,2286,7,2,44,17,0,0,0,0,0,0,0,0,0,0,1,0,0,46,41,Serie A,10,50,13,11,14
+gleison-bremer-torino-2021-2022,gleison-bremer,Gleison Bremer,torino,Torino,2021-2022,2021/22,DF,33,33,2890,3,1,27,12,0,0,0,0,0,0,0,0,0,0,7,0,0,46,41,Serie A,10,50,13,11,14
+marcelo-brozovic-inter-2021-2022,marcelo-brozovic,Marcelo Brozovic,inter,Inter,2021-2022,2021/22,MF,35,35,2937,2,1,32,13,0,0,0,0,0,0,0,0,0,0,7,0,0,84,32,Serie A,2,84,25,9,4
+alessandro-buongiorno-torino-2021-2022,alessandro-buongiorno,Alessandro Buongiorno,torino,Torino,2021-2022,2021/22,DF,23,12,1181,0,1,6,1,0,0,0,0,0,0,0,0,0,0,5,0,0,46,41,Serie A,10,50,13,11,14
+gianluca-busio-venezia-2021-2022,gianluca-busio,Gianluca Busio,venezia,Venezia,2021-2022,2021/22,MF,29,23,1950,1,1,14,5,0,0,0,0,0,0,0,0,0,0,8,0,0,34,69,Serie A,20,27,6,9,23
+arthur-cabral-fiorentina-2021-2022,arthur-cabral,Arthur Cabral,fiorentina,Fiorentina,2021-2022,2021/22,FW,14,8,749,2,2,23,9,0,0,0,0,0,0,0,0,0,0,1,0,0,59,51,Serie A,7,62,19,5,14
+liberato-cacace-empoli-2021-2022,liberato-cacace,Liberato Cacace,empoli,Empoli,2021-2022,2021/22,DF,10,5,466,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,50,70,Serie A,14,41,10,11,17
+martin-caceres-cagliari-2021-2022,martin-caceres,Martin Caceres,cagliari,Cagliari,2021-2022,2021/22,DF,14,9,832,1,1,7,1,0,0,0,0,0,0,0,0,0,0,3,1,0,34,68,Serie A,18,30,6,12,20
+davide-calabria-milan-2021-2022,davide-calabria,Davide Calabria,milan,Milan,2021-2022,2021/22,DF,26,24,2119,2,2,36,8,0,0,0,0,0,0,0,0,0,0,2,0,0,69,31,Serie A,1,86,26,8,4
+mattia-caldara-venezia-2021-2022,mattia-caldara,Mattia Caldara,venezia,Venezia,2021-2022,2021/22,DF,31,30,2704,1,0,16,7,0,0,0,0,0,0,0,0,0,0,9,0,0,34,69,Serie A,20,27,6,9,23
+hakan-calhanoglu-inter-2021-2022,hakan-calhanoglu,Hakan Calhanoglu,inter,Inter,2021-2022,2021/22,MF,34,33,2480,7,12,65,18,0,0,0,0,0,0,0,0,0,0,11,0,0,84,32,Serie A,2,84,25,9,4
+jose-callejon-fiorentina-2021-2022,jose-callejon,Jose Callejon,fiorentina,Fiorentina,2021-2022,2021/22,FW,30,16,1298,1,2,17,5,0,0,0,0,0,0,0,0,0,0,0,0,0,59,51,Serie A,7,62,19,5,14
+andrea-cambiaso-genoa-2021-2022,andrea-cambiaso,Andrea Cambiaso,genoa,Genoa,2021-2022,2021/22,DF,26,21,1790,1,4,14,6,0,0,0,0,0,0,0,0,0,0,5,1,0,27,60,Serie A,19,28,4,16,18
+antonio-candreva-sampdoria-2021-2022,antonio-candreva,Antonio Candreva,sampdoria,Sampdoria,2021-2022,2021/22,MF,36,36,3119,7,10,74,22,0,0,0,0,0,0,0,0,0,0,6,1,0,46,63,Serie A,15,36,10,6,22
+gianluca-caprari-hellas-verona-2021-2022,gianluca-caprari,Gianluca Caprari,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,35,33,2739,12,7,67,28,0,0,0,0,0,0,0,0,0,0,4,0,0,65,59,Serie A,9,53,14,11,13
+francesco-caputo-sampdoria-2021-2022,francesco-caputo,Francesco Caputo,sampdoria,Sampdoria,2021-2022,2021/22,FW,36,31,2790,11,3,54,29,0,0,0,0,0,0,0,0,0,0,0,0,0,46,63,Serie A,15,36,10,6,22
+andrea-carboni-cagliari-2021-2022,andrea-carboni,Andrea Carboni,cagliari,Cagliari,2021-2022,2021/22,DF,30,25,2215,0,0,10,1,0,0,0,0,0,0,0,0,0,0,6,0,0,34,68,Serie A,18,30,6,12,20
+nicolo-casale-hellas-verona-2021-2022,nicolo-casale,Nicolo Casale,hellas-verona,Hellas Verona,2021-2022,2021/22,DF,36,30,2586,0,1,10,0,0,0,0,0,0,0,0,0,0,0,10,0,0,65,59,Serie A,9,53,14,11,13
+gaetano-castrovilli-fiorentina-2021-2022,gaetano-castrovilli,Gaetano Castrovilli,fiorentina,Fiorentina,2021-2022,2021/22,MF,23,16,1391,1,1,15,2,0,0,0,0,0,0,0,0,0,0,4,0,0,59,51,Serie A,7,62,19,5,14
+danilo-cataldi-lazio-2021-2022,danilo-cataldi,Danilo Cataldi,lazio,Lazio,2021-2022,2021/22,MF,32,19,1707,1,2,12,4,0,0,0,0,0,0,0,0,0,0,8,0,0,77,58,Serie A,5,64,18,10,10
+pietro-ceccaroni-venezia-2021-2022,pietro-ceccaroni,Pietro Ceccaroni,venezia,Venezia,2021-2022,2021/22,DF,35,35,3122,2,1,19,7,0,0,0,0,0,0,0,0,0,0,7,1,0,34,69,Serie A,20,27,6,9,23
+federico-ceccherini-hellas-verona-2021-2022,federico-ceccherini,Federico Ceccherini,hellas-verona,Hellas Verona,2021-2022,2021/22,DF,34,29,2358,1,0,11,2,0,0,0,0,0,0,0,0,0,0,12,1,0,65,59,Serie A,9,53,14,11,13
+luca-ceppitelli-cagliari-2021-2022,luca-ceppitelli,Luca Ceppitelli,cagliari,Cagliari,2021-2022,2021/22,DF,24,16,1445,1,1,6,1,0,0,0,0,0,0,0,0,0,0,3,0,0,34,68,Serie A,18,30,6,12,20
+julian-chabot-sampdoria-2021-2022,julian-chabot,Julian Chabot,sampdoria,Sampdoria,2021-2022,2021/22,DF,11,4,490,0,0,3,1,0,0,0,0,0,0,0,0,0,0,5,0,0,46,63,Serie A,15,36,10,6,22
+giorgio-chiellini-juventus-2021-2022,giorgio-chiellini,Giorgio Chiellini,juventus,Juventus,2021-2022,2021/22,DF,21,16,1354,0,0,4,0,0,0,0,0,0,0,0,0,0,0,2,0,0,57,37,Serie A,4,70,20,10,8
+federico-chiesa-juventus-2021-2022,federico-chiesa,Federico Chiesa,juventus,Juventus,2021-2022,2021/22,MF,14,11,863,2,2,28,9,0,0,0,0,0,0,0,0,0,0,0,0,0,57,37,Serie A,4,70,20,10,8
+vlad-chirichis-sassuolo-2021-2022,vlad-chirichis,Vlad Chirichis,sassuolo,Sassuolo,2021-2022,2021/22,DF,29,27,2300,0,0,9,2,0,0,0,0,0,0,0,0,0,0,4,0,0,64,66,Serie A,11,50,13,11,14
+omar-colley-sampdoria-2021-2022,omar-colley,Omar Colley,sampdoria,Sampdoria,2021-2022,2021/22,DF,32,31,2745,0,0,11,1,0,0,0,0,0,0,0,0,0,0,6,1,0,46,63,Serie A,15,36,10,6,22
+andrea-consigli-sassuolo-2021-2022,andrea-consigli,Andrea Consigli,sassuolo,Sassuolo,2021-2022,2021/22,GK,37,37,3322,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,64,66,Serie A,11,50,13,11,14
+joaquin-correa-inter-2021-2022,joaquin-correa,Joaquin Correa,inter,Inter,2021-2022,2021/22,FW,26,12,1025,6,1,34,15,0,0,0,0,0,0,0,0,0,0,2,0,0,84,32,Serie A,2,84,25,9,4
+lassana-coulibaly-salernitana-2021-2022,lassana-coulibaly,Lassana Coulibaly,salernitana,Salernitana,2021-2022,2021/22,MF,31,29,2332,0,0,22,7,0,0,0,0,0,0,0,0,0,0,3,0,0,33,78,Serie A,17,31,7,10,21
+mamadou-coulibaly-salernitana-2021-2022,mamadou-coulibaly,Mamadou Coulibaly,salernitana,Salernitana,2021-2022,2021/22,MF,12,9,808,2,0,10,4,0,0,0,0,0,0,0,0,0,0,1,0,0,33,78,Serie A,17,31,7,10,21
+alessio-cragno-cagliari-2021-2022,alessio-cragno,Alessio Cragno,cagliari,Cagliari,2021-2022,2021/22,GK,35,35,3150,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,34,68,Serie A,18,30,6,12,20
+domenico-criscito-genoa-2021-2022,domenico-criscito,Domenico Criscito,genoa,Genoa,2021-2022,2021/22,DF,20,18,1618,6,1,24,7,0,0,0,0,0,0,0,0,0,0,4,0,0,27,60,Serie A,19,28,4,16,18
+bryan-cristante-roma-2021-2022,bryan-cristante,Bryan Cristante,roma,Roma,2021-2022,2021/22,MF,34,29,2678,2,0,40,5,0,0,0,0,0,0,0,0,0,0,9,0,0,59,43,Serie A,6,63,18,9,11
+domen-crnigoj-venezia-2021-2022,domen-crnigoj,Domen Crnigoj,venezia,Venezia,2021-2022,2021/22,MF,34,22,1881,3,1,31,12,0,0,0,0,0,0,0,0,0,0,3,0,0,34,69,Serie A,20,27,6,9,23
+juan-cuadrado-juventus-2021-2022,juan-cuadrado,Juan Cuadrado,juventus,Juventus,2021-2022,2021/22,DF,33,28,2487,4,3,36,14,0,0,0,0,0,0,0,0,0,0,9,0,0,57,37,Serie A,4,70,20,10,8
+mickael-cuisance-venezia-2021-2022,mickael-cuisance,Mickael Cuisance,venezia,Venezia,2021-2022,2021/22,MF,13,13,918,0,0,6,1,0,0,0,0,0,0,0,0,0,0,2,0,0,34,69,Serie A,20,27,6,9,23
+patrick-cutrone-empoli-2021-2022,patrick-cutrone,Patrick Cutrone,empoli,Empoli,2021-2022,2021/22,FW,28,15,1401,3,0,50,15,0,0,0,0,0,0,0,0,0,0,1,0,0,50,70,Serie A,14,41,10,11,17
+danilo-dambrosio-inter-2021-2022,danilo-dambrosio,Danilo D'Ambrosio,inter,Inter,2021-2022,2021/22,DF,20,9,1000,1,1,14,4,0,0,0,0,0,0,0,0,0,0,2,0,0,84,32,Serie A,2,84,25,9,4
+mikkel-damsgaard-sampdoria-2021-2022,mikkel-damsgaard,Mikkel Damsgaard,sampdoria,Sampdoria,2021-2022,2021/22,MF,11,6,578,0,0,12,3,0,0,0,0,0,0,0,0,0,0,1,0,0,46,63,Serie A,15,36,10,6,22
+danilo-juventus-2021-2022,danilo,Danilo,juventus,Juventus,2021-2022,2021/22,DF,22,22,1893,1,2,13,3,0,0,0,0,0,0,0,0,0,0,6,0,0,57,37,Serie A,4,70,20,10,8
+matteo-darmian-inter-2021-2022,matteo-darmian,Matteo Darmian,inter,Inter,2021-2022,2021/22,MF,25,18,1507,2,1,8,4,0,0,0,0,0,0,0,0,0,0,4,0,0,84,32,Serie A,2,84,25,9,4
+pawel-dawidowicz-hellas-verona-2021-2022,pawel-dawidowicz,Pawel Dawidowicz,hellas-verona,Hellas Verona,2021-2022,2021/22,DF,17,13,1198,0,0,6,0,0,0,0,0,0,0,0,0,0,0,3,0,0,65,59,Serie A,9,53,14,11,13
+mattia-de-sciglio-juventus-2021-2022,mattia-de-sciglio,Mattia De Sciglio,juventus,Juventus,2021-2022,2021/22,DF,20,13,1168,1,2,6,2,0,0,0,0,0,0,0,0,0,0,2,1,0,57,37,Serie A,4,70,20,10,8
+lorenzo-de-silvestri-bologna-2021-2022,lorenzo-de-silvestri,Lorenzo De Silvestri,bologna,Bologna,2021-2022,2021/22,DF,31,27,2294,3,2,16,7,0,0,0,0,0,0,0,0,0,0,7,0,0,44,55,Serie A,13,46,12,10,16
+gregoire-defrel-sassuolo-2021-2022,gregoire-defrel,Gregoire Defrel,sassuolo,Sassuolo,2021-2022,2021/22,MF,38,11,1362,2,2,27,10,0,0,0,0,0,0,0,0,0,0,3,0,0,64,66,Serie A,11,50,13,11,14
+alessandro-deiola-cagliari-2021-2022,alessandro-deiola,Alessandro Deiola,cagliari,Cagliari,2021-2022,2021/22,MF,33,28,2129,4,1,26,13,0,0,0,0,0,0,0,0,0,0,5,0,0,34,68,Serie A,18,30,6,12,20
+merih-demiral-atalanta-2021-2022,merih-demiral,Merih Demiral,atalanta,Atalanta,2021-2022,2021/22,DF,28,22,1917,1,2,24,6,0,0,0,0,0,0,0,0,0,0,8,0,0,65,48,Serie A,8,59,16,11,11
+diego-demme-napoli-2021-2022,diego-demme,Diego Demme,napoli,Napoli,2021-2022,2021/22,MF,19,7,692,1,0,2,1,0,0,0,0,0,0,0,0,0,0,4,0,0,74,31,Serie A,3,79,24,7,7
+fabio-depaoli-hellas-verona-2021-2022,fabio-depaoli,Fabio Depaoli,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,18,7,703,1,1,10,4,0,0,0,0,0,0,0,0,0,0,3,0,0,65,59,Serie A,9,53,14,11,13
+mattia-destro-genoa-2021-2022,mattia-destro,Mattia Destro,genoa,Genoa,2021-2022,2021/22,FW,27,21,1744,9,1,54,20,0,0,0,0,0,0,0,0,0,0,4,0,0,27,60,Serie A,19,28,4,16,18
+gerard-deulofeu-udinese-2021-2022,gerard-deulofeu,Gerard Deulofeu,udinese,Udinese,2021-2022,2021/22,MF,34,31,2616,13,5,78,35,0,0,0,0,0,0,0,0,0,0,9,0,0,61,58,Serie A,12,47,11,14,13
+federico-di-francesco-empoli-2021-2022,federico-di-francesco,Federico Di Francesco,empoli,Empoli,2021-2022,2021/22,MF,26,17,1367,5,0,26,8,0,0,0,0,0,0,0,0,0,0,2,0,0,50,70,Serie A,14,41,10,11,17
+giovanni-di-lorenzo-napoli-2021-2022,giovanni-di-lorenzo,Giovanni Di Lorenzo,napoli,Napoli,2021-2022,2021/22,DF,33,33,2869,1,4,20,4,0,0,0,0,0,0,0,0,0,0,3,0,0,74,31,Serie A,3,79,24,7,7
+francesco-di-tacchio-salernitana-2021-2022,francesco-di-tacchio,Francesco Di Tacchio,salernitana,Salernitana,2021-2022,2021/22,DF,18,14,1255,0,0,14,1,0,0,0,0,0,0,0,0,0,0,3,0,0,33,78,Serie A,17,31,7,10,21
+brahim-diaz-milan-2021-2022,brahim-diaz,Brahim Diaz,milan,Milan,2021-2022,2021/22,MF,31,25,1855,3,3,30,6,0,0,0,0,0,0,0,0,0,0,4,0,0,69,31,Serie A,1,86,26,8,4
+mitchell-dijks-bologna-2021-2022,mitchell-dijks,Mitchell Dijks,bologna,Bologna,2021-2022,2021/22,DF,16,7,694,0,2,4,0,0,0,0,0,0,0,0,0,0,0,2,0,0,44,55,Serie A,13,46,12,10,16
+federico-dimarco-inter-2021-2022,federico-dimarco,Federico Dimarco,inter,Inter,2021-2022,2021/22,DF,32,13,1430,2,3,39,18,0,0,0,0,0,0,0,0,0,0,1,0,0,84,32,Serie A,2,84,25,9,4
+koffi-djidji-torino-2021-2022,koffi-djidji,Koffi Djidji,torino,Torino,2021-2022,2021/22,DF,25,21,1735,0,0,10,3,0,0,0,0,0,0,0,0,0,0,6,1,0,46,41,Serie A,10,50,13,11,14
+berat-djimsiti-atalanta-2021-2022,berat-djimsiti,Berat Djimsiti,atalanta,Atalanta,2021-2022,2021/22,DF,31,25,2256,1,1,16,5,0,0,0,0,0,0,0,0,0,0,6,0,0,65,48,Serie A,8,59,16,11,11
+nicolas-dominguez-bologna-2021-2022,nicolas-dominguez,Nicolas Dominguez,bologna,Bologna,2021-2022,2021/22,MF,28,23,2015,0,3,21,3,0,0,0,0,0,0,0,0,0,0,8,0,0,44,55,Serie A,13,46,12,10,16
+bartlomiej-dragowski-fiorentina-2021-2022,bartlomiej-dragowski,Bartlomiej Dragowski,fiorentina,Fiorentina,2021-2022,2021/22,GK,7,7,556,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,59,51,Serie A,7,62,19,5,14
+radu-dragusin-salernitana-2021-2022,radu-dragusin,Radu Dragusin,salernitana,Salernitana,2021-2022,2021/22,DF,7,5,488,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,33,78,Serie A,17,31,7,10,21
+radu-dragusin-sampdoria-2021-2022,radu-dragusin,Radu Dragusin,sampdoria,Sampdoria,2021-2022,2021/22,DF,13,4,620,0,0,3,0,0,0,0,0,0,0,0,0,0,0,1,0,0,46,63,Serie A,15,36,10,6,22
+denzel-dumfries-inter-2021-2022,denzel-dumfries,Denzel Dumfries,inter,Inter,2021-2022,2021/22,MF,33,21,2028,5,4,37,18,0,0,0,0,0,0,0,0,0,0,3,0,0,84,32,Serie A,2,84,25,9,4
+alfred-duncan-fiorentina-2021-2022,alfred-duncan,Alfred Duncan,fiorentina,Fiorentina,2021-2022,2021/22,MF,33,21,1931,2,2,11,3,0,0,0,0,0,0,0,0,0,0,3,0,0,59,51,Serie A,7,62,19,5,14
+paulo-dybala-juventus-2021-2022,paulo-dybala,Paulo Dybala,juventus,Juventus,2021-2022,2021/22,MF,29,26,2061,10,5,99,37,0,0,0,0,0,0,0,0,0,0,3,0,0,57,37,Serie A,4,70,20,10,8
+edin-dzeko-inter-2021-2022,edin-dzeko,Edin Dzeko,inter,Inter,2021-2022,2021/22,FW,36,27,2469,13,6,87,37,0,0,0,0,0,0,0,0,0,0,2,0,0,84,32,Serie A,2,84,25,9,4
+tyronne-ebuehi-venezia-2021-2022,tyronne-ebuehi,Tyronne Ebuehi,venezia,Venezia,2021-2022,2021/22,DF,19,12,1138,0,0,7,1,0,0,0,0,0,0,0,0,0,0,1,1,0,34,69,Serie A,20,27,6,9,23
+ederson-salernitana-2021-2022,ederson,Ederson,salernitana,Salernitana,2021-2022,2021/22,MF,15,13,1147,2,1,21,9,0,0,0,0,0,0,0,0,0,0,5,0,0,33,78,Serie A,17,31,7,10,21
+albin-ekdal-sampdoria-2021-2022,albin-ekdal,Albin Ekdal,sampdoria,Sampdoria,2021-2022,2021/22,MF,26,19,1637,1,0,14,2,0,0,0,0,0,0,0,0,0,0,11,1,0,46,63,Serie A,15,36,10,6,22
+caleb-ekuban-genoa-2021-2022,caleb-ekuban,Caleb Ekuban,genoa,Genoa,2021-2022,2021/22,MF,30,18,1716,1,2,38,7,0,0,0,0,0,0,0,0,0,0,2,0,0,27,60,Serie A,19,28,4,16,18
+elif-elmas-napoli-2021-2022,elif-elmas,Elif Elmas,napoli,Napoli,2021-2022,2021/22,MF,37,12,1620,3,4,33,11,0,0,0,0,0,0,0,0,0,0,3,0,0,74,31,Serie A,3,79,24,7,7
+martin-erlic-spezia-2021-2022,martin-erlic,Martin Erlic,spezia,Spezia,2021-2022,2021/22,DF,30,30,2576,2,0,15,3,0,0,0,0,0,0,0,0,0,0,5,0,0,41,71,Serie A,16,36,10,6,22
+wladimiro-falcone-sampdoria-2021-2022,wladimiro-falcone,Wladimiro Falcone,sampdoria,Sampdoria,2021-2022,2021/22,GK,10,9,855,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,46,63,Serie A,15,36,10,6,22
+davide-faraoni-hellas-verona-2021-2022,davide-faraoni,Davide Faraoni,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,32,30,2572,4,5,30,9,0,0,0,0,0,0,0,0,0,0,8,1,0,65,59,Serie A,9,53,14,11,13
+mohamed-fares-genoa-2021-2022,mohamed-fares,Mohamed Fares,genoa,Genoa,2021-2022,2021/22,DF,9,6,587,2,1,13,3,0,0,0,0,0,0,0,0,0,0,2,0,0,27,60,Serie A,19,28,4,16,18
+federico-fazio-salernitana-2021-2022,federico-fazio,Federico Fazio,salernitana,Salernitana,2021-2022,2021/22,DF,16,16,1434,1,0,16,3,0,0,0,0,0,0,0,0,0,0,3,1,0,33,78,Serie A,17,31,7,10,21
+luiz-felipe-lazio-2021-2022,luiz-felipe,Luiz Felipe,lazio,Lazio,2021-2022,2021/22,DF,31,28,2491,0,0,5,2,0,0,0,0,0,0,0,0,0,0,9,1,0,77,58,Serie A,5,64,18,10,10
+alex-ferrari-sampdoria-2021-2022,alex-ferrari,Alex Ferrari,sampdoria,Sampdoria,2021-2022,2021/22,DF,23,20,1643,1,0,4,1,0,0,0,0,0,0,0,0,0,0,4,0,0,46,63,Serie A,15,36,10,6,22
+salvador-ferrer-spezia-2021-2022,salvador-ferrer,Salvador Ferrer,spezia,Spezia,2021-2022,2021/22,DF,27,14,1495,0,3,6,1,0,0,0,0,0,0,0,0,0,0,3,0,0,41,71,Serie A,16,36,10,6,22
+riccardo-fiamozzi-empoli-2021-2022,riccardo-fiamozzi,Riccardo Fiamozzi,empoli,Empoli,2021-2022,2021/22,DF,10,7,620,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,50,70,Serie A,14,41,10,11,17
+luca-fiordilino-venezia-2021-2022,luca-fiordilino,Luca Fiordilino,venezia,Venezia,2021-2022,2021/22,MF,15,5,661,0,0,3,1,0,0,0,0,0,0,0,0,0,0,2,0,0,34,69,Serie A,20,27,6,9,23
+alessandro-florenzi-milan-2021-2022,alessandro-florenzi,Alessandro Florenzi,milan,Milan,2021-2022,2021/22,DF,24,12,1152,2,0,22,6,0,0,0,0,0,0,0,0,0,0,2,0,0,69,31,Serie A,1,86,26,8,4
+davide-frattesi-sassuolo-2021-2022,davide-frattesi,Davide Frattesi,sassuolo,Sassuolo,2021-2022,2021/22,MF,36,35,2854,4,3,67,20,0,0,0,0,0,0,0,0,0,0,6,0,0,64,66,Serie A,11,50,13,11,14
+morten-frendrup-genoa-2021-2022,morten-frendrup,Morten Frendrup,genoa,Genoa,2021-2022,2021/22,DF,10,6,695,0,0,4,2,0,0,0,0,0,0,0,0,0,0,1,0,0,27,60,Serie A,19,28,4,16,18
+remo-freuler-atalanta-2021-2022,remo-freuler,Remo Freuler,atalanta,Atalanta,2021-2022,2021/22,MF,29,28,2369,1,3,20,6,0,0,0,0,0,0,0,0,0,0,10,0,0,65,48,Serie A,8,59,16,11,11
+matteo-gabbia-milan-2021-2022,matteo-gabbia,Matteo Gabbia,milan,Milan,2021-2022,2021/22,DF,8,6,537,0,0,1,0,0,0,0,0,0,0,0,0,0,0,3,0,0,69,31,Serie A,1,86,26,8,4
+manolo-gabbiadini-sampdoria-2021-2022,manolo-gabbiadini,Manolo Gabbiadini,sampdoria,Sampdoria,2021-2022,2021/22,MF,18,15,1140,6,2,44,20,0,0,0,0,0,0,0,0,0,0,3,0,0,46,63,Serie A,15,36,10,6,22
+roberto-gagliardini-inter-2021-2022,roberto-gagliardini,Roberto Gagliardini,inter,Inter,2021-2022,2021/22,MF,18,6,649,2,2,8,4,0,0,0,0,0,0,0,0,0,0,2,0,0,84,32,Serie A,2,84,25,9,4
+riccardo-gagliolo-salernitana-2021-2022,riccardo-gagliolo,Riccardo Gagliolo,salernitana,Salernitana,2021-2022,2021/22,DF,17,12,1138,0,1,8,1,0,0,0,0,0,0,0,0,0,0,2,0,0,33,78,Serie A,17,31,7,10,21
+pablo-galdames-millan-genoa-2021-2022,pablo-galdames-millan,Pablo Galdames Millan,genoa,Genoa,2021-2022,2021/22,MF,19,11,1028,0,0,12,3,0,0,0,0,0,0,0,0,0,0,2,0,0,27,60,Serie A,19,28,4,16,18
+paolo-ghiglione-genoa-2021-2022,paolo-ghiglione,Paolo Ghiglione,genoa,Genoa,2021-2022,2021/22,DF,13,6,603,0,1,8,4,0,0,0,0,0,0,0,0,0,0,3,0,0,27,60,Serie A,19,28,4,16,18
+olivier-giroud-milan-2021-2022,olivier-giroud,Olivier Giroud,milan,Milan,2021-2022,2021/22,FW,29,22,1892,11,3,63,24,0,0,0,0,0,0,0,0,0,0,4,0,0,69,31,Serie A,1,86,26,8,4
+diego-godin-cagliari-2021-2022,diego-godin,Diego Godin,cagliari,Cagliari,2021-2022,2021/22,DF,11,9,818,0,1,7,0,0,0,0,0,0,0,0,0,0,0,3,0,0,34,68,Serie A,18,30,6,12,20
+edoardo-goldaniga-cagliari-2021-2022,edoardo-goldaniga,Edoardo Goldaniga,cagliari,Cagliari,2021-2022,2021/22,DF,11,11,934,0,0,5,1,0,0,0,0,0,0,0,0,0,0,3,0,0,34,68,Serie A,18,30,6,12,20
+cedric-gondo-salernitana-2021-2022,cedric-gondo,Cedric Gondo,salernitana,Salernitana,2021-2022,2021/22,FW,14,10,699,1,0,19,8,0,0,0,0,0,0,0,0,0,0,1,0,0,33,78,Serie A,17,31,7,10,21
+nicolas-gonzalez-fiorentina-2021-2022,nicolas-gonzalez,Nicolas Gonzalez,fiorentina,Fiorentina,2021-2022,2021/22,FW,33,26,2357,7,6,72,22,0,0,0,0,0,0,0,0,0,0,4,1,0,59,51,Serie A,7,62,19,5,14
+robin-gosens-atalanta-2021-2022,robin-gosens,Robin Gosens,atalanta,Atalanta,2021-2022,2021/22,MF,6,5,460,1,0,14,4,0,0,0,0,0,0,0,0,0,0,2,0,0,65,48,Serie A,8,59,16,11,11
+alberto-grassi-cagliari-2021-2022,alberto-grassi,Alberto Grassi,cagliari,Cagliari,2021-2022,2021/22,MF,30,26,2174,0,1,24,2,0,0,0,0,0,0,0,0,0,0,6,1,0,34,68,Serie A,18,30,6,12,20
+koray-gunter-hellas-verona-2021-2022,koray-gunter,Koray Gunter,hellas-verona,Hellas Verona,2021-2022,2021/22,DF,30,29,2411,0,0,6,2,0,0,0,0,0,0,0,0,0,0,10,0,0,65,59,Serie A,9,53,14,11,13
+albert-gudmundsson-genoa-2021-2022,albert-gudmundsson,Albert Gudmundsson,genoa,Genoa,2021-2022,2021/22,MF,12,6,607,1,0,9,1,0,0,0,0,0,0,0,0,0,0,3,0,0,27,60,Serie A,19,28,4,16,18
+emmanuel-gyasi-spezia-2021-2022,emmanuel-gyasi,Emmanuel Gyasi,spezia,Spezia,2021-2022,2021/22,MF,36,35,3035,6,0,38,13,0,0,0,0,0,0,0,0,0,0,10,0,0,41,71,Serie A,16,36,10,6,22
+norbert-gyomber-salernitana-2021-2022,norbert-gyomber,Norbert Gyomber,salernitana,Salernitana,2021-2022,2021/22,DF,31,30,2563,0,0,9,2,0,0,0,0,0,0,0,0,0,0,9,0,0,33,78,Serie A,17,31,7,10,21
+nicolas-haas-empoli-2021-2022,nicolas-haas,Nicolas Haas,empoli,Empoli,2021-2022,2021/22,MF,16,11,1001,0,2,7,2,0,0,0,0,0,0,0,0,0,0,3,0,0,50,70,Serie A,14,41,10,11,17
+samir-handanovic-inter-2021-2022,samir-handanovic,Samir Handanovic,inter,Inter,2021-2022,2021/22,GK,37,37,3330,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,84,32,Serie A,2,84,25,9,4
+ridgeciano-haps-venezia-2021-2022,ridgeciano-haps,Ridgeciano Haps,venezia,Venezia,2021-2022,2021/22,DF,25,24,2056,1,1,12,2,0,0,0,0,0,0,0,0,0,0,6,0,0,34,69,Serie A,20,27,6,9,23
+abdou-harroui-sassuolo-2021-2022,abdou-harroui,Abdou Harroui,sassuolo,Sassuolo,2021-2022,2021/22,MF,22,3,452,0,0,13,2,0,0,0,0,0,0,0,0,0,0,2,0,0,64,66,Serie A,11,50,13,11,14
+hans-hateboer-atalanta-2021-2022,hans-hateboer,Hans Hateboer,atalanta,Atalanta,2021-2022,2021/22,DF,21,16,1386,0,0,17,3,0,0,0,0,0,0,0,0,0,0,2,0,0,65,48,Serie A,8,59,16,11,11
+silvan-hefti-genoa-2021-2022,silvan-hefti,Silvan Hefti,genoa,Genoa,2021-2022,2021/22,DF,16,14,1288,0,0,5,1,0,0,0,0,0,0,0,0,0,0,1,0,0,27,60,Serie A,19,28,4,16,18
+liam-henderson-empoli-2021-2022,liam-henderson,Liam Henderson,empoli,Empoli,2021-2022,2021/22,MF,38,23,2020,2,3,42,17,0,0,0,0,0,0,0,0,0,0,4,0,0,50,70,Serie A,14,41,10,11,17
+dalbert-henrique-cagliari-2021-2022,dalbert-henrique,Dalbert Henrique,cagliari,Cagliari,2021-2022,2021/22,MF,28,27,2081,0,2,10,2,0,0,0,0,0,0,0,0,0,0,9,0,0,34,68,Serie A,18,30,6,12,20
+matheus-henrique-sassuolo-2021-2022,matheus-henrique,Matheus Henrique,sassuolo,Sassuolo,2021-2022,2021/22,MF,25,10,1078,0,1,8,0,0,0,0,0,0,0,0,0,0,0,3,0,0,64,66,Serie A,11,50,13,11,14
+thomas-henry-venezia-2021-2022,thomas-henry,Thomas Henry,venezia,Venezia,2021-2022,2021/22,FW,33,23,2115,9,2,51,24,0,0,0,0,0,0,0,0,0,0,6,1,0,34,69,Serie A,20,27,6,9,23
+theo-hernandez-milan-2021-2022,theo-hernandez,Theo Hernandez,milan,Milan,2021-2022,2021/22,DF,32,30,2711,5,5,42,14,0,0,0,0,0,0,0,0,0,0,7,2,0,69,31,Serie A,1,86,26,8,4
+hernani-genoa-2021-2022,hernani,Hernani,genoa,Genoa,2021-2022,2021/22,MF,18,7,682,0,0,10,4,0,0,0,0,0,0,0,0,0,0,0,0,0,27,60,Serie A,19,28,4,16,18
+aaron-hickey-bologna-2021-2022,aaron-hickey,Aaron Hickey,bologna,Bologna,2021-2022,2021/22,DF,36,34,2820,5,1,21,13,0,0,0,0,0,0,0,0,0,0,7,0,0,44,55,Serie A,13,46,12,10,16
+martin-hongla-hellas-verona-2021-2022,martin-hongla,Martin Hongla,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,18,7,651,1,0,9,4,0,0,0,0,0,0,0,0,0,0,3,0,0,65,59,Serie A,9,53,14,11,13
+petko-hristov-spezia-2021-2022,petko-hristov,Petko Hristov,spezia,Spezia,2021-2022,2021/22,DF,17,13,1248,1,1,2,1,0,0,0,0,0,0,0,0,0,0,3,0,0,41,71,Serie A,16,36,10,6,22
+elseid-hysaj-lazio-2021-2022,elseid-hysaj,Elseid Hysaj,lazio,Lazio,2021-2022,2021/22,DF,29,24,2027,1,0,4,2,0,0,0,0,0,0,0,0,0,0,3,0,0,77,58,Serie A,5,64,18,10,10
+roger-ibanez-roma-2021-2022,roger-ibanez,Roger Ibanez,roma,Roma,2021-2022,2021/22,DF,34,32,2889,3,0,20,6,0,0,0,0,0,0,0,0,0,0,9,0,0,59,43,Serie A,6,63,18,9,11
+zlatan-ibrahimovic-milan-2021-2022,zlatan-ibrahimovic,Zlatan Ibrahimovic,milan,Milan,2021-2022,2021/22,FW,23,11,1016,8,2,51,20,0,0,0,0,0,0,0,0,0,0,2,0,0,69,31,Serie A,1,86,26,8,4
+igor-fiorentina-2021-2022,igor,Igor,fiorentina,Fiorentina,2021-2022,2021/22,DF,30,23,2242,0,0,7,1,0,0,0,0,0,0,0,0,0,0,3,0,0,59,51,Serie A,7,62,19,5,14
+jonathan-ikone-fiorentina-2021-2022,jonathan-ikone,Jonathan Ikone,fiorentina,Fiorentina,2021-2022,2021/22,FW,17,7,649,1,1,16,6,0,0,0,0,0,0,0,0,0,0,1,0,0,59,51,Serie A,7,62,19,5,14
+ivan-ilic-hellas-verona-2021-2022,ivan-ilic,Ivan Ilic,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,32,30,2526,1,3,22,5,0,0,0,0,0,0,0,0,0,0,5,1,0,65,59,Serie A,9,53,14,11,13
+josip-ilicic-atalanta-2021-2022,josip-ilicic,Josip Ilicic,atalanta,Atalanta,2021-2022,2021/22,MF,20,8,841,3,3,32,7,0,0,0,0,0,0,0,0,0,0,1,0,0,65,48,Serie A,8,59,16,11,11
+ciro-immobile-lazio-2021-2022,ciro-immobile,Ciro Immobile,lazio,Lazio,2021-2022,2021/22,FW,31,31,2711,27,2,118,59,0,0,0,0,0,0,0,0,0,0,4,0,0,77,58,Serie A,5,64,18,10,10
+lorenzo-insigne-napoli-2021-2022,lorenzo-insigne,Lorenzo Insigne,napoli,Napoli,2021-2022,2021/22,MF,32,28,2290,11,8,94,36,0,0,0,0,0,0,0,0,0,0,2,0,0,74,31,Serie A,3,79,24,7,7
+ardian-ismajli-empoli-2021-2022,ardian-ismajli,Ardian Ismajli,empoli,Empoli,2021-2022,2021/22,DF,20,13,1272,0,0,5,1,0,0,0,0,0,0,0,0,0,0,7,0,0,50,70,Serie A,14,41,10,11,17
+armando-izzo-torino-2021-2022,armando-izzo,Armando Izzo,torino,Torino,2021-2022,2021/22,DF,11,6,526,0,0,5,4,0,0,0,0,0,0,0,0,0,0,4,0,0,46,41,Serie A,10,50,13,11,14
+mato-jajalo-udinese-2021-2022,mato-jajalo,Mato Jajalo,udinese,Udinese,2021-2022,2021/22,MF,22,6,629,0,1,5,0,0,0,0,0,0,0,0,0,0,0,2,0,0,61,58,Serie A,12,47,11,14,13
+pawel-jaroszynski-salernitana-2021-2022,pawel-jaroszynski,Pawel Jaroszynski,salernitana,Salernitana,2021-2022,2021/22,DF,13,4,516,0,0,2,1,0,0,0,0,0,0,0,0,0,0,2,0,0,33,78,Serie A,17,31,7,10,21
+juan-jesus-napoli-2021-2022,juan-jesus,Juan Jesus,napoli,Napoli,2021-2022,2021/22,DF,21,14,1278,1,0,4,1,0,0,0,0,0,0,0,0,0,0,1,0,0,74,31,Serie A,3,79,24,7,7
+dennis-johnsen-venezia-2021-2022,dennis-johnsen,Dennis Johnsen,venezia,Venezia,2021-2022,2021/22,MF,26,17,1445,1,2,14,5,0,0,0,0,0,0,0,0,0,0,2,0,0,34,69,Serie A,20,27,6,9,23
+hamed-junior-traore-sassuolo-2021-2022,hamed-junior-traore,Hamed Junior Traore,sassuolo,Sassuolo,2021-2022,2021/22,MF,31,21,1775,7,2,51,22,0,0,0,0,0,0,0,0,0,0,3,0,0,64,66,Serie A,11,50,13,11,14
+yayah-kallon-genoa-2021-2022,yayah-kallon,Yayah Kallon,genoa,Genoa,2021-2022,2021/22,MF,15,5,636,0,1,11,1,0,0,0,0,0,0,0,0,0,0,3,0,0,27,60,Serie A,19,28,4,16,18
+pierre-kalulu-milan-2021-2022,pierre-kalulu,Pierre Kalulu,milan,Milan,2021-2022,2021/22,DF,28,21,1944,1,2,5,2,0,0,0,0,0,0,0,0,0,0,4,0,0,69,31,Serie A,1,86,26,8,4
+rick-karsdorp-roma-2021-2022,rick-karsdorp,Rick Karsdorp,roma,Roma,2021-2022,2021/22,DF,36,32,2883,0,2,2,1,0,0,0,0,0,0,0,0,0,0,9,1,0,59,43,Serie A,6,63,18,9,11
+grigoris-kastanos-salernitana-2021-2022,grigoris-kastanos,Grigoris Kastanos,salernitana,Salernitana,2021-2022,2021/22,MF,27,16,1348,1,1,28,8,0,0,0,0,0,0,0,0,0,0,4,1,0,33,78,Serie A,17,31,7,10,21
+moise-kean-juventus-2021-2022,moise-kean,Moise Kean,juventus,Juventus,2021-2022,2021/22,FW,32,12,1098,5,2,28,10,0,0,0,0,0,0,0,0,0,0,5,0,0,57,37,Serie A,4,70,20,10,8
+wajdi-kechrida-salernitana-2021-2022,wajdi-kechrida,Wajdi Kechrida,salernitana,Salernitana,2021-2022,2021/22,DF,17,10,952,0,1,6,1,0,0,0,0,0,0,0,0,0,0,0,0,0,33,78,Serie A,17,31,7,10,21
+franck-kessie-milan-2021-2022,franck-kessie,Franck Kessie,milan,Milan,2021-2022,2021/22,MF,31,25,2308,6,0,35,10,0,0,0,0,0,0,0,0,0,0,2,0,0,69,31,Serie A,1,86,26,8,4
+jakub-kiwior-spezia-2021-2022,jakub-kiwior,Jakub Kiwior,spezia,Spezia,2021-2022,2021/22,MF,22,21,1964,0,0,8,4,0,0,0,0,0,0,0,0,0,0,6,0,0,41,71,Serie A,16,36,10,6,22
+sofian-kiyine-venezia-2021-2022,sofian-kiyine,Sofian Kiyine,venezia,Venezia,2021-2022,2021/22,MF,26,14,1239,1,0,20,6,0,0,0,0,0,0,0,0,0,0,8,1,0,34,69,Serie A,20,27,6,9,23
+simon-kjaer-milan-2021-2022,simon-kjaer,Simon Kjaer,milan,Milan,2021-2022,2021/22,DF,11,10,802,0,0,5,1,0,0,0,0,0,0,0,0,0,0,2,0,0,69,31,Serie A,1,86,26,8,4
+teun-koopmeiners-atalanta-2021-2022,teun-koopmeiners,Teun Koopmeiners,atalanta,Atalanta,2021-2022,2021/22,MF,30,23,2126,4,1,28,9,0,0,0,0,0,0,0,0,0,0,4,0,0,65,48,Serie A,8,59,16,11,11
+kalidou-koulibaly-napoli-2021-2022,kalidou-koulibaly,Kalidou Koulibaly,napoli,Napoli,2021-2022,2021/22,DF,27,27,2405,3,1,10,7,0,0,0,0,0,0,0,0,0,0,5,1,0,74,31,Serie A,3,79,24,7,7
+viktor-kovalenko-spezia-2021-2022,viktor-kovalenko,Viktor Kovalenko,spezia,Spezia,2021-2022,2021/22,MF,26,16,1325,1,3,9,2,0,0,0,0,0,0,0,0,0,0,4,0,0,41,71,Serie A,16,36,10,6,22
+rade-krunic-milan-2021-2022,rade-krunic,Rade Krunic,milan,Milan,2021-2022,2021/22,MF,28,15,1416,0,1,10,2,0,0,0,0,0,0,0,0,0,0,2,0,0,69,31,Serie A,1,86,26,8,4
+dejan-kulusevski-juventus-2021-2022,dejan-kulusevski,Dejan Kulusevski,juventus,Juventus,2021-2022,2021/22,MF,20,5,772,1,3,18,6,0,0,0,0,0,0,0,0,0,0,1,0,0,57,37,Serie A,4,70,20,10,8
+marash-kumbulla-roma-2021-2022,marash-kumbulla,Marash Kumbulla,roma,Roma,2021-2022,2021/22,DF,17,13,1025,0,0,7,3,0,0,0,0,0,0,0,0,0,0,6,0,0,59,43,Serie A,6,63,18,9,11
+giorgos-kyriakopoulos-sassuolo-2021-2022,giorgos-kyriakopoulos,Giorgos Kyriakopoulos,sassuolo,Sassuolo,2021-2022,2021/22,DF,29,22,1975,0,5,30,10,0,0,0,0,0,0,0,0,0,0,6,1,0,64,66,Serie A,11,50,13,11,14
+andrea-la-mantia-empoli-2021-2022,andrea-la-mantia,Andrea La Mantia,empoli,Empoli,2021-2022,2021/22,FW,18,3,488,2,0,17,3,0,0,0,0,0,0,0,0,0,0,0,0,0,50,70,Serie A,14,41,10,11,17
+kevin-lasagna-hellas-verona-2021-2022,kevin-lasagna,Kevin Lasagna,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,28,11,1184,2,4,39,16,0,0,0,0,0,0,0,0,0,0,1,0,0,65,59,Serie A,9,53,14,11,13
+darko-lazovic-hellas-verona-2021-2022,darko-lazovic,Darko Lazovic,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,34,32,2766,1,7,47,10,0,0,0,0,0,0,0,0,0,0,2,0,0,65,59,Serie A,9,53,14,11,13
+manuel-lazzari-lazio-2021-2022,manuel-lazzari,Manuel Lazzari,lazio,Lazio,2021-2022,2021/22,DF,31,16,1665,3,3,12,6,0,0,0,0,0,0,0,0,0,0,3,0,0,77,58,Serie A,5,64,18,10,10
+rafael-leao-milan-2021-2022,rafael-leao,Rafael Leao,milan,Milan,2021-2022,2021/22,MF,34,31,2605,11,10,97,38,0,0,0,0,0,0,0,0,0,0,4,0,0,69,31,Serie A,1,86,26,8,4
+lucas-leiva-lazio-2021-2022,lucas-leiva,Lucas Leiva,lazio,Lazio,2021-2022,2021/22,MF,35,19,1697,0,0,3,0,0,0,0,0,0,0,0,0,0,0,9,0,0,77,58,Serie A,5,64,18,10,10
+luca-lezzerini-venezia-2021-2022,luca-lezzerini,Luca Lezzerini,venezia,Venezia,2021-2022,2021/22,GK,6,6,495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,34,69,Serie A,20,27,6,9,23
+matthijs-de-ligt-juventus-2021-2022,matthijs-de-ligt,Matthijs de Ligt,juventus,Juventus,2021-2022,2021/22,DF,31,29,2674,3,1,20,10,0,0,0,0,0,0,0,0,0,0,4,1,0,57,37,Serie A,4,70,20,10,8
+karol-linetty-torino-2021-2022,karol-linetty,Karol Linetty,torino,Torino,2021-2022,2021/22,MF,16,11,896,0,0,13,2,0,0,0,0,0,0,0,0,0,0,2,0,0,46,41,Serie A,10,50,13,11,14
+stanislav-lobotka-napoli-2021-2022,stanislav-lobotka,Stanislav Lobotka,napoli,Napoli,2021-2022,2021/22,MF,23,19,1686,1,0,2,1,0,0,0,0,0,0,0,0,0,0,2,0,0,74,31,Serie A,3,79,24,7,7
+manuel-locatelli-juventus-2021-2022,manuel-locatelli,Manuel Locatelli,juventus,Juventus,2021-2022,2021/22,MF,31,23,2160,3,3,21,3,0,0,0,0,0,0,0,0,0,0,6,0,0,57,37,Serie A,4,70,20,10,8
+maxime-lopez-sassuolo-2021-2022,maxime-lopez,Maxime Lopez,sassuolo,Sassuolo,2021-2022,2021/22,MF,35,33,2938,2,1,16,6,0,0,0,0,0,0,0,0,0,0,14,0,0,64,66,Serie A,11,50,13,11,14
+matteo-lovato-cagliari-2021-2022,matteo-lovato,Matteo Lovato,cagliari,Cagliari,2021-2022,2021/22,DF,16,14,1238,0,0,6,1,0,0,0,0,0,0,0,0,0,0,4,0,0,34,68,Serie A,18,30,6,12,20
+hirving-lozano-napoli-2021-2022,hirving-lozano,Hirving Lozano,napoli,Napoli,2021-2022,2021/22,MF,30,20,1613,5,5,50,20,0,0,0,0,0,0,0,0,0,0,3,0,0,74,31,Serie A,3,79,24,7,7
+jose-luis-palomino-atalanta-2021-2022,jose-luis-palomino,Jose Luis Palomino,atalanta,Atalanta,2021-2022,2021/22,DF,34,30,2672,1,0,14,3,0,0,0,0,0,0,0,0,0,0,9,0,0,65,48,Serie A,8,59,16,11,11
+sasa-lukic-torino-2021-2022,sasa-lukic,Sasa Lukic,torino,Torino,2021-2022,2021/22,MF,35,34,2982,5,4,32,10,0,0,0,0,0,0,0,0,0,0,10,0,0,46,41,Serie A,10,50,13,11,14
+sebastiano-luperto-empoli-2021-2022,sebastiano-luperto,Sebastiano Luperto,empoli,Empoli,2021-2022,2021/22,DF,24,22,1958,0,1,9,4,0,0,0,0,0,0,0,0,0,0,8,1,0,50,70,Serie A,14,41,10,11,17
+babis-lykogiannis-cagliari-2021-2022,babis-lykogiannis,Babis Lykogiannis,cagliari,Cagliari,2021-2022,2021/22,DF,28,21,1817,1,0,22,7,0,0,0,0,0,0,0,0,0,0,2,0,0,34,68,Serie A,18,30,6,12,20
+niki-maenpaa-venezia-2021-2022,niki-maenpaa,Niki Maenpaa,venezia,Venezia,2021-2022,2021/22,GK,17,16,1485,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,34,69,Serie A,20,27,6,9,23
+giulio-maggiore-spezia-2021-2022,giulio-maggiore,Giulio Maggiore,spezia,Spezia,2021-2022,2021/22,MF,35,33,2819,2,3,42,8,0,0,0,0,0,0,0,0,0,0,9,0,0,41,71,Serie A,16,36,10,6,22
+giangiacomo-magnani-hellas-verona-2021-2022,giangiacomo-magnani,Giangiacomo Magnani,hellas-verona,Hellas Verona,2021-2022,2021/22,DF,14,5,530,0,0,5,1,0,0,0,0,0,0,0,0,0,0,3,1,0,65,59,Serie A,9,53,14,11,13
+mike-maignan-milan-2021-2022,mike-maignan,Mike Maignan,milan,Milan,2021-2022,2021/22,GK,32,32,2880,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,69,31,Serie A,1,86,26,8,4
+ainsley-maitland-niles-roma-2021-2022,ainsley-maitland-niles,Ainsley Maitland-Niles,roma,Roma,2021-2022,2021/22,DF,8,7,487,0,0,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0,59,43,Serie A,6,63,18,9,11
+jean-victor-makengo-udinese-2021-2022,jean-victor-makengo,Jean-Victor Makengo,udinese,Udinese,2021-2022,2021/22,MF,33,26,2351,1,3,32,10,0,0,0,0,0,0,0,0,0,0,7,1,0,61,58,Serie A,12,47,11,14,13
+nikola-maksimovic-genoa-2021-2022,nikola-maksimovic,Nikola Maksimovic,genoa,Genoa,2021-2022,2021/22,DF,14,13,1115,0,0,3,0,0,0,0,0,0,0,0,0,0,0,2,0,0,27,60,Serie A,19,28,4,16,18
+youssef-maleh-fiorentina-2021-2022,youssef-maleh,Youssef Maleh,fiorentina,Fiorentina,2021-2022,2021/22,MF,28,11,1019,2,2,21,5,0,0,0,0,0,0,0,0,0,0,5,0,0,59,51,Serie A,7,62,19,5,14
+ruslan-malinovskyi-atalanta-2021-2022,ruslan-malinovskyi,Ruslan Malinovskyi,atalanta,Atalanta,2021-2022,2021/22,MF,30,19,1592,6,5,57,18,0,0,0,0,0,0,0,0,0,0,10,0,0,65,48,Serie A,8,59,16,11,11
+rey-manaj-spezia-2021-2022,rey-manaj,Rey Manaj,spezia,Spezia,2021-2022,2021/22,FW,30,19,1768,5,0,53,16,0,0,0,0,0,0,0,0,0,0,9,0,0,41,71,Serie A,16,36,10,6,22
+gianluca-mancini-roma-2021-2022,gianluca-mancini,Gianluca Mancini,roma,Roma,2021-2022,2021/22,DF,33,33,2878,0,0,24,6,0,0,0,0,0,0,0,0,0,0,16,1,0,59,43,Serie A,6,63,18,9,11
+rolando-mandragora-torino-2021-2022,rolando-mandragora,Rolando Mandragora,torino,Torino,2021-2022,2021/22,MF,21,16,1319,0,2,23,5,0,0,0,0,0,0,0,0,0,0,7,1,0,46,41,Serie A,10,50,13,11,14
+riccardo-marchizza-empoli-2021-2022,riccardo-marchizza,Riccardo Marchizza,empoli,Empoli,2021-2022,2021/22,DF,19,16,1346,0,1,8,1,0,0,0,0,0,0,0,0,0,0,4,0,0,50,70,Serie A,14,41,10,11,17
+gian-marco-ferrari-sassuolo-2021-2022,gian-marco-ferrari,Gian Marco Ferrari,sassuolo,Sassuolo,2021-2022,2021/22,DF,36,35,3124,1,0,25,10,0,0,0,0,0,0,0,0,0,0,6,1,0,64,66,Serie A,11,50,13,11,14
+pablo-mari-udinese-2021-2022,pablo-mari,Pablo Mari,udinese,Udinese,2021-2022,2021/22,DF,15,15,1341,2,0,10,5,0,0,0,0,0,0,0,0,0,0,2,1,0,61,58,Serie A,12,47,11,14,13
+razvan-marin-cagliari-2021-2022,razvan-marin,Razvan Marin,cagliari,Cagliari,2021-2022,2021/22,MF,36,31,2816,0,5,41,7,0,0,0,0,0,0,0,0,0,0,6,1,0,34,68,Serie A,18,30,6,12,20
+lautaro-martinez-inter-2021-2022,lautaro-martinez,Lautaro Martinez,inter,Inter,2021-2022,2021/22,FW,35,28,2282,21,3,118,53,0,0,0,0,0,0,0,0,0,0,6,0,0,84,32,Serie A,2,84,25,9,4
+lucas-martinez-quarta-fiorentina-2021-2022,lucas-martinez-quarta,Lucas Martinez Quarta,fiorentina,Fiorentina,2021-2022,2021/22,DF,20,16,1431,1,0,16,4,0,0,0,0,0,0,0,0,0,0,8,0,0,59,51,Serie A,7,62,19,5,14
+adam-marusic-lazio-2021-2022,adam-marusic,Adam Marusic,lazio,Lazio,2021-2022,2021/22,DF,33,30,2721,1,0,8,3,0,0,0,0,0,0,0,0,0,0,6,1,0,77,58,Serie A,5,64,18,10,10
+andrea-masiello-genoa-2021-2022,andrea-masiello,Andrea Masiello,genoa,Genoa,2021-2022,2021/22,DF,7,6,515,0,0,2,0,0,0,0,0,0,0,0,0,0,0,3,0,0,27,60,Serie A,19,28,4,16,18
+ales-mateju-venezia-2021-2022,ales-mateju,Ales Mateju,venezia,Venezia,2021-2022,2021/22,DF,9,9,727,0,1,2,2,0,0,0,0,0,0,0,0,0,0,3,0,0,34,69,Serie A,20,27,6,9,23
+pasquale-mazzocchi-salernitana-2021-2022,pasquale-mazzocchi,Pasquale Mazzocchi,salernitana,Salernitana,2021-2022,2021/22,DF,15,15,1269,0,2,5,2,0,0,0,0,0,0,0,0,0,0,2,0,0,33,78,Serie A,17,31,7,10,21
+pasquale-mazzocchi-venezia-2021-2022,pasquale-mazzocchi,Pasquale Mazzocchi,venezia,Venezia,2021-2022,2021/22,DF,18,15,1243,0,0,6,0,0,0,0,0,0,0,0,0,0,0,3,0,0,34,69,Serie A,20,27,6,9,23
+weston-mckennie-juventus-2021-2022,weston-mckennie,Weston McKennie,juventus,Juventus,2021-2022,2021/22,MF,21,15,1369,3,0,23,5,0,0,0,0,0,0,0,0,0,0,1,0,0,57,37,Serie A,4,70,20,10,8
+gary-medel-bologna-2021-2022,gary-medel,Gary Medel,bologna,Bologna,2021-2022,2021/22,DF,33,32,2823,0,1,2,0,0,0,0,0,0,0,0,0,0,0,10,1,0,44,55,Serie A,13,46,12,10,16
+filippo-melegoni-genoa-2021-2022,filippo-melegoni,Filippo Melegoni,genoa,Genoa,2021-2022,2021/22,MF,25,10,980,1,0,13,7,0,0,0,0,0,0,0,0,0,0,1,0,0,27,60,Serie A,19,28,4,16,18
+arthur-melo-juventus-2021-2022,arthur-melo,Arthur Melo,juventus,Juventus,2021-2022,2021/22,MF,20,11,962,0,0,2,0,0,0,0,0,0,0,0,0,0,0,3,0,0,57,37,Serie A,4,70,20,10,8
+alex-meret-napoli-2021-2022,alex-meret,Alex Meret,napoli,Napoli,2021-2022,2021/22,GK,7,7,619,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,74,31,Serie A,3,79,24,7,7
+dries-mertens-napoli-2021-2022,dries-mertens,Dries Mertens,napoli,Napoli,2021-2022,2021/22,MF,30,16,1384,11,1,45,20,0,0,0,0,0,0,0,0,0,0,2,0,0,74,31,Serie A,3,79,24,7,7
+junior-messias-milan-2021-2022,junior-messias,Junior Messias,milan,Milan,2021-2022,2021/22,MF,26,14,1428,5,2,44,17,0,0,0,0,0,0,0,0,0,0,2,0,0,69,31,Serie A,1,86,26,8,4
+nikola-milenkovic-fiorentina-2021-2022,nikola-milenkovic,Nikola Milenkovic,fiorentina,Fiorentina,2021-2022,2021/22,DF,34,34,2926,1,0,23,9,0,0,0,0,0,0,0,0,0,0,10,1,0,59,51,Serie A,7,62,19,5,14
+sergej-milinkovic-savic-lazio-2021-2022,sergej-milinkovic-savic,Sergej Milinkovic-Savic,lazio,Lazio,2021-2022,2021/22,MF,37,36,3100,11,10,75,31,0,0,0,0,0,0,0,0,0,0,6,1,0,77,58,Serie A,5,64,18,10,10
+vanja-milinkovic-savic-torino-2021-2022,vanja-milinkovic-savic,Vanja Milinkovic-Savic,torino,Torino,2021-2022,2021/22,GK,27,27,2430,0,0,1,0,0,0,0,0,0,0,0,0,0,0,3,0,0,46,41,Serie A,10,50,13,11,14
+aleksei-miranchuk-atalanta-2021-2022,aleksei-miranchuk,Aleksei Miranchuk,atalanta,Atalanta,2021-2022,2021/22,MF,19,7,772,2,5,15,4,0,0,0,0,0,0,0,0,0,0,0,0,0,65,48,Serie A,8,59,16,11,11
+henrikh-mkhitaryan-roma-2021-2022,henrikh-mkhitaryan,Henrikh Mkhitaryan,roma,Roma,2021-2022,2021/22,MF,31,29,2495,5,6,55,16,0,0,0,0,0,0,0,0,0,0,4,1,0,59,43,Serie A,6,63,18,9,11
+nahuel-molina-udinese-2021-2022,nahuel-molina,Nahuel Molina,udinese,Udinese,2021-2022,2021/22,MF,35,31,2638,7,2,44,16,0,0,0,0,0,0,0,0,0,0,7,1,0,61,58,Serie A,12,47,11,14,13
+cristian-molinaro-venezia-2021-2022,cristian-molinaro,Cristian Molinaro,venezia,Venezia,2021-2022,2021/22,DF,8,6,548,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34,69,Serie A,20,27,6,9,23
+lorenzo-montipo-hellas-verona-2021-2022,lorenzo-montipo,Lorenzo Montipo,hellas-verona,Hellas Verona,2021-2022,2021/22,GK,34,34,3060,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,65,59,Serie A,9,53,14,11,13
+alvaro-morata-juventus-2021-2022,alvaro-morata,Alvaro Morata,juventus,Juventus,2021-2022,2021/22,MF,35,26,2302,9,4,61,25,0,0,0,0,0,0,0,0,0,0,5,0,0,57,37,Serie A,4,70,20,10,8
+mert-muldur-sassuolo-2021-2022,mert-muldur,Mert Muldur,sassuolo,Sassuolo,2021-2022,2021/22,DF,31,24,2046,0,0,9,4,0,0,0,0,0,0,0,0,0,0,5,0,0,64,66,Serie A,11,50,13,11,14
+luis-muriel-atalanta-2021-2022,luis-muriel,Luis Muriel,atalanta,Atalanta,2021-2022,2021/22,MF,27,17,1539,9,8,57,18,0,0,0,0,0,0,0,0,0,0,1,0,0,65,48,Serie A,8,59,16,11,11
+nicola-murru-sampdoria-2021-2022,nicola-murru,Nicola Murru,sampdoria,Sampdoria,2021-2022,2021/22,DF,22,13,983,1,0,3,1,0,0,0,0,0,0,0,0,0,0,5,0,0,46,63,Serie A,15,36,10,6,22
+juan-musso-atalanta-2021-2022,juan-musso,Juan Musso,atalanta,Atalanta,2021-2022,2021/22,GK,33,33,2932,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,65,48,Serie A,8,59,16,11,11
+joakim-maehle-atalanta-2021-2022,joakim-maehle,Joakim Maehle,atalanta,Atalanta,2021-2022,2021/22,MF,26,15,1471,1,1,21,4,0,0,0,0,0,0,0,0,0,0,2,0,0,65,48,Serie A,8,59,16,11,11
+nahitan-nandez-cagliari-2021-2022,nahitan-nandez,Nahitan Nandez,cagliari,Cagliari,2021-2022,2021/22,MF,21,16,1523,0,2,20,2,0,0,0,0,0,0,0,0,0,0,4,0,0,34,68,Serie A,18,30,6,12,20
+dimitris-nikolaou-spezia-2021-2022,dimitris-nikolaou,Dimitris Nikolaou,spezia,Spezia,2021-2022,2021/22,DF,36,36,3240,0,0,3,0,0,0,0,0,0,0,0,0,0,0,7,0,0,41,71,Serie A,16,36,10,6,22
+bram-nuytinck-udinese-2021-2022,bram-nuytinck,Bram Nuytinck,udinese,Udinese,2021-2022,2021/22,DF,27,23,2033,1,0,10,3,0,0,0,0,0,0,0,0,0,0,2,0,0,61,58,Serie A,12,47,11,14,13
+simeon-nwankwo-salernitana-2021-2022,simeon-nwankwo,Simeon Nwankwo,salernitana,Salernitana,2021-2022,2021/22,FW,19,10,842,1,1,20,6,0,0,0,0,0,0,0,0,0,0,0,0,0,33,78,Serie A,17,31,7,10,21
+mbala-nzola-spezia-2021-2022,mbala-nzola,M'Bala Nzola,spezia,Spezia,2021-2022,2021/22,FW,21,10,1068,2,1,22,13,0,0,0,0,0,0,0,0,0,0,2,0,0,41,71,Serie A,16,36,10,6,22
+joel-obi-salernitana-2021-2022,joel-obi,Joel Obi,salernitana,Salernitana,2021-2022,2021/22,MF,21,12,1143,0,1,10,2,0,0,0,0,0,0,0,0,0,0,4,0,0,33,78,Serie A,17,31,7,10,21
+alvaro-odriozola-fiorentina-2021-2022,alvaro-odriozola,Alvaro Odriozola,fiorentina,Fiorentina,2021-2022,2021/22,DF,25,18,1733,1,2,4,2,0,0,0,0,0,0,0,0,0,0,4,1,0,59,51,Serie A,7,62,19,5,14
+david-okereke-venezia-2021-2022,david-okereke,David Okereke,venezia,Venezia,2021-2022,2021/22,MF,32,24,2053,7,0,40,20,0,0,0,0,0,0,0,0,0,0,5,1,0,34,69,Serie A,20,27,6,9,23
+sergio-oliveira-roma-2021-2022,sergio-oliveira,Sergio Oliveira,roma,Roma,2021-2022,2021/22,MF,14,13,892,2,0,12,6,0,0,0,0,0,0,0,0,0,0,5,0,0,59,43,Serie A,6,63,18,9,11
+riccardo-orsolini-bologna-2021-2022,riccardo-orsolini,Riccardo Orsolini,bologna,Bologna,2021-2022,2021/22,MF,29,21,1785,6,3,53,18,0,0,0,0,0,0,0,0,0,0,2,0,0,44,55,Serie A,13,46,12,10,16
+victor-osimhen-napoli-2021-2022,victor-osimhen,Victor Osimhen,napoli,Napoli,2021-2022,2021/22,FW,27,23,1983,14,2,91,30,0,0,0,0,0,0,0,0,0,0,5,1,0,74,31,Serie A,3,79,24,7,7
+david-ospina-napoli-2021-2022,david-ospina,David Ospina,napoli,Napoli,2021-2022,2021/22,GK,31,31,2790,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,74,31,Serie A,3,79,24,7,7
+goran-pandev-genoa-2021-2022,goran-pandev,Goran Pandev,genoa,Genoa,2021-2022,2021/22,FW,20,7,843,0,1,7,4,0,0,0,0,0,0,0,0,0,0,1,0,0,27,60,Serie A,19,28,4,16,18
+fabiano-parisi-empoli-2021-2022,fabiano-parisi,Fabiano Parisi,empoli,Empoli,2021-2022,2021/22,DF,25,16,1477,0,1,16,4,0,0,0,0,0,0,0,0,0,0,5,0,0,50,70,Serie A,14,41,10,11,17
+mario-pasalic-atalanta-2021-2022,mario-pasalic,Mario Pasalic,atalanta,Atalanta,2021-2022,2021/22,MF,37,24,2002,13,6,50,20,0,0,0,0,0,0,0,0,0,0,3,0,0,65,48,Serie A,8,59,16,11,11
+patric-lazio-2021-2022,patric,Patric,lazio,Lazio,2021-2022,2021/22,DF,24,19,1649,1,1,6,2,0,0,0,0,0,0,0,0,0,0,7,1,0,77,58,Serie A,5,64,18,10,10
+rui-patricio-roma-2021-2022,rui-patricio,Rui Patricio,roma,Roma,2021-2022,2021/22,GK,38,38,3420,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,59,43,Serie A,6,63,18,9,11
+leonardo-pavoletti-cagliari-2021-2022,leonardo-pavoletti,Leonardo Pavoletti,cagliari,Cagliari,2021-2022,2021/22,FW,33,14,1518,5,1,36,11,0,0,0,0,0,0,0,0,0,0,9,0,0,34,68,Serie A,18,30,6,12,20
+pedro-lazio-2021-2022,pedro,Pedro,lazio,Lazio,2021-2022,2021/22,FW,32,25,2033,9,4,36,20,0,0,0,0,0,0,0,0,0,0,5,0,0,77,58,Serie A,5,64,18,10,10
+joao-pedro-cagliari-2021-2022,joao-pedro,Joao Pedro,cagliari,Cagliari,2021-2022,2021/22,FW,37,37,3323,13,4,91,38,0,0,0,0,0,0,0,0,0,0,9,0,0,34,68,Serie A,18,30,6,12,20
+lorenzo-pellegrini-roma-2021-2022,lorenzo-pellegrini,Lorenzo Pellegrini,roma,Roma,2021-2022,2021/22,MF,28,27,2289,9,3,92,31,0,0,0,0,0,0,0,0,0,0,8,1,0,59,43,Serie A,6,63,18,9,11
+luca-pellegrini-juventus-2021-2022,luca-pellegrini,Luca Pellegrini,juventus,Juventus,2021-2022,2021/22,DF,18,15,1107,0,1,6,1,0,0,0,0,0,0,0,0,0,0,6,0,0,57,37,Serie A,4,70,20,10,8
+gaston-pereiro-cagliari-2021-2022,gaston-pereiro,Gaston Pereiro,cagliari,Cagliari,2021-2022,2021/22,MF,29,9,975,4,2,21,9,0,0,0,0,0,0,0,0,0,0,1,0,0,34,68,Serie A,18,30,6,12,20
+dor-peretz-venezia-2021-2022,dor-peretz,Dor Peretz,venezia,Venezia,2021-2022,2021/22,MF,18,4,585,0,1,5,0,0,0,0,0,0,0,0,0,0,0,2,0,0,34,69,Serie A,20,27,6,9,23
+roberto-pereyra-udinese-2021-2022,roberto-pereyra,Roberto Pereyra,udinese,Udinese,2021-2022,2021/22,MF,24,22,1794,3,5,30,8,0,0,0,0,0,0,0,0,0,0,10,1,0,61,58,Serie A,12,47,11,14,13
+carles-perez-roma-2021-2022,carles-perez,Carles Perez,roma,Roma,2021-2022,2021/22,MF,19,3,554,1,1,27,8,0,0,0,0,0,0,0,0,0,0,2,0,0,59,43,Serie A,6,63,18,9,11
+nehuen-perez-udinese-2021-2022,nehuen-perez,Nehuen Perez,udinese,Udinese,2021-2022,2021/22,DF,20,19,1692,0,1,10,1,0,0,0,0,0,0,0,0,0,0,6,0,0,61,58,Serie A,12,47,11,14,13
+ivan-perisic-inter-2021-2022,ivan-perisic,Ivan Perisic,inter,Inter,2021-2022,2021/22,MF,35,35,2821,8,6,44,18,0,0,0,0,0,0,0,0,0,0,4,0,0,84,32,Serie A,2,84,25,9,4
+matteo-pessina-atalanta-2021-2022,matteo-pessina,Matteo Pessina,atalanta,Atalanta,2021-2022,2021/22,MF,27,18,1438,1,1,28,10,0,0,0,0,0,0,0,0,0,0,0,0,0,65,48,Serie A,8,59,16,11,11
+andrea-petagna-napoli-2021-2022,andrea-petagna,Andrea Petagna,napoli,Napoli,2021-2022,2021/22,FW,24,4,586,3,1,13,6,0,0,0,0,0,0,0,0,0,0,1,0,0,74,31,Serie A,3,79,24,7,7
+giuseppe-pezzella-atalanta-2021-2022,giuseppe-pezzella,Giuseppe Pezzella,atalanta,Atalanta,2021-2022,2021/22,DF,21,10,1072,0,2,9,1,0,0,0,0,0,0,0,0,0,0,3,0,0,65,48,Serie A,8,59,16,11,11
+krzysztof-piatek-fiorentina-2021-2022,krzysztof-piatek,Krzysztof Piatek,fiorentina,Fiorentina,2021-2022,2021/22,FW,14,9,733,3,0,23,7,0,0,0,0,0,0,0,0,0,0,0,0,0,59,51,Serie A,7,62,19,5,14
+andrea-pinamonti-empoli-2021-2022,andrea-pinamonti,Andrea Pinamonti,empoli,Empoli,2021-2022,2021/22,FW,36,32,2869,13,2,90,28,0,0,0,0,0,0,0,0,0,0,4,0,0,50,70,Serie A,14,41,10,11,17
+marko-pjaca-torino-2021-2022,marko-pjaca,Marko Pjaca,torino,Torino,2021-2022,2021/22,MF,24,13,1149,3,0,21,11,0,0,0,0,0,0,0,0,0,0,0,0,0,46,41,Serie A,10,50,13,11,14
+tommaso-pobega-torino-2021-2022,tommaso-pobega,Tommaso Pobega,torino,Torino,2021-2022,2021/22,MF,33,24,2240,4,2,48,8,0,0,0,0,0,0,0,0,0,0,11,0,0,46,41,Serie A,10,50,13,11,14
+matteo-politano-napoli-2021-2022,matteo-politano,Matteo Politano,napoli,Napoli,2021-2022,2021/22,MF,33,20,1650,3,4,42,11,0,0,0,0,0,0,0,0,0,0,3,0,0,74,31,Serie A,3,79,24,7,7
+manolo-portanova-genoa-2021-2022,manolo-portanova,Manolo Portanova,genoa,Genoa,2021-2022,2021/22,MF,24,17,1322,1,0,29,12,0,0,0,0,0,0,0,0,0,0,4,0,0,27,60,Serie A,19,28,4,16,18
+dennis-praet-torino-2021-2022,dennis-praet,Dennis Praet,torino,Torino,2021-2022,2021/22,MF,23,17,1539,2,2,23,9,0,0,0,0,0,0,0,0,0,0,3,0,0,46,41,Serie A,10,50,13,11,14
+ivan-provedel-spezia-2021-2022,ivan-provedel,Ivan Provedel,spezia,Spezia,2021-2022,2021/22,GK,31,31,2761,0,0,1,1,0,0,0,0,0,0,0,0,0,0,2,0,0,41,71,Serie A,16,36,10,6,22
+ignacio-pussetto-udinese-2021-2022,ignacio-pussetto,Ignacio Pussetto,udinese,Udinese,2021-2022,2021/22,MF,28,11,1204,4,4,32,14,0,0,0,0,0,0,0,0,0,0,4,0,0,61,58,Serie A,12,47,11,14,13
+fabio-quagliarella-sampdoria-2021-2022,fabio-quagliarella,Fabio Quagliarella,sampdoria,Sampdoria,2021-2022,2021/22,FW,33,19,1664,4,2,58,12,0,0,0,0,0,0,0,0,0,0,2,0,0,46,63,Serie A,15,36,10,6,22
+adrien-rabiot-juventus-2021-2022,adrien-rabiot,Adrien Rabiot,juventus,Juventus,2021-2022,2021/22,MF,32,28,2285,0,2,26,7,0,0,0,0,0,0,0,0,0,0,5,0,0,57,37,Serie A,4,70,20,10,8
+ivan-radovanovic-salernitana-2021-2022,ivan-radovanovic,Ivan Radovanovic,salernitana,Salernitana,2021-2022,2021/22,DF,14,12,1053,1,1,18,5,0,0,0,0,0,0,0,0,0,0,4,0,0,33,78,Serie A,17,31,7,10,21
+stefan-radu-lazio-2021-2022,stefan-radu,Stefan Radu,lazio,Lazio,2021-2022,2021/22,DF,10,6,556,0,0,2,1,0,0,0,0,0,0,0,0,0,0,2,0,0,77,58,Serie A,5,64,18,10,10
+luca-ranieri-salernitana-2021-2022,luca-ranieri,Luca Ranieri,salernitana,Salernitana,2021-2022,2021/22,DF,27,25,2103,1,0,9,4,0,0,0,0,0,0,0,0,0,0,9,0,0,33,78,Serie A,17,31,7,10,21
+giacomo-raspadori-sassuolo-2021-2022,giacomo-raspadori,Giacomo Raspadori,sassuolo,Sassuolo,2021-2022,2021/22,MF,36,32,2740,10,4,71,25,0,0,0,0,0,0,0,0,0,0,9,1,0,64,66,Serie A,11,50,13,11,14
+ante-rebic-milan-2021-2022,ante-rebic,Ante Rebic,milan,Milan,2021-2022,2021/22,MF,24,6,891,2,2,31,6,0,0,0,0,0,0,0,0,0,0,2,0,0,69,31,Serie A,1,86,26,8,4
+arkadiusz-reca-spezia-2021-2022,arkadiusz-reca,Arkadiusz Reca,spezia,Spezia,2021-2022,2021/22,DF,25,22,1772,0,2,8,4,0,0,0,0,0,0,0,0,0,0,3,0,0,41,71,Serie A,16,36,10,6,22
+pepe-reina-lazio-2021-2022,pepe-reina,Pepe Reina,lazio,Lazio,2021-2022,2021/22,GK,15,15,1350,0,1,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,77,58,Serie A,5,64,18,10,10
+franck-ribery-salernitana-2021-2022,franck-ribery,Franck Ribery,salernitana,Salernitana,2021-2022,2021/22,MF,23,16,1421,0,2,12,3,0,0,0,0,0,0,0,0,0,0,3,1,0,33,78,Serie A,17,31,7,10,21
+samuele-ricci-empoli-2021-2022,samuele-ricci,Samuele Ricci,empoli,Empoli,2021-2022,2021/22,MF,21,17,1530,1,1,8,1,0,0,0,0,0,0,0,0,0,0,1,1,0,50,70,Serie A,14,41,10,11,17
+samuele-ricci-torino-2021-2022,samuele-ricci,Samuele Ricci,torino,Torino,2021-2022,2021/22,MF,12,9,722,0,0,4,1,0,0,0,0,0,0,0,0,0,0,1,0,0,46,41,Serie A,10,50,13,11,14
+tomas-rincon-sampdoria-2021-2022,tomas-rincon,Tomas Rincon,sampdoria,Sampdoria,2021-2022,2021/22,MF,17,13,1166,0,0,2,1,0,0,0,0,0,0,0,0,0,0,3,0,0,46,63,Serie A,15,36,10,6,22
+ricardo-rodriguez-torino-2021-2022,ricardo-rodriguez,Ricardo Rodriguez,torino,Torino,2021-2022,2021/22,DF,34,28,2473,0,1,9,0,0,0,0,0,0,0,0,0,0,0,3,0,0,46,41,Serie A,10,50,13,11,14
+rogerio-sassuolo-2021-2022,rogerio,Rogerio,sassuolo,Sassuolo,2021-2022,2021/22,DF,23,19,1729,0,1,14,4,0,0,0,0,0,0,0,0,0,0,5,0,0,64,66,Serie A,11,50,13,11,14
+alessio-romagnoli-milan-2021-2022,alessio-romagnoli,Alessio Romagnoli,milan,Milan,2021-2022,2021/22,DF,19,16,1409,1,0,12,5,0,0,0,0,0,0,0,0,0,0,4,1,0,69,31,Serie A,1,86,26,8,4
+simone-romagnoli-empoli-2021-2022,simone-romagnoli,Simone Romagnoli,empoli,Empoli,2021-2022,2021/22,DF,19,17,1497,2,0,5,2,0,0,0,0,0,0,0,0,0,0,3,0,0,50,70,Serie A,14,41,10,11,17
+sergio-romero-venezia-2021-2022,sergio-romero,Sergio Romero,venezia,Venezia,2021-2022,2021/22,GK,16,16,1440,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,34,69,Serie A,20,27,6,9,23
+marten-de-roon-atalanta-2021-2022,marten-de-roon,Marten de Roon,atalanta,Atalanta,2021-2022,2021/22,DF,30,28,2548,3,0,23,5,0,0,0,0,0,0,0,0,0,0,7,1,0,65,48,Serie A,8,59,16,11,11
+nicolo-rovella-genoa-2021-2022,nicolo-rovella,Nicolo Rovella,genoa,Genoa,2021-2022,2021/22,MF,21,16,1468,0,3,16,3,0,0,0,0,0,0,0,0,0,0,5,0,0,27,60,Serie A,19,28,4,16,18
+amir-rrahmani-napoli-2021-2022,amir-rrahmani,Amir Rrahmani,napoli,Napoli,2021-2022,2021/22,DF,33,33,2927,4,0,22,9,0,0,0,0,0,0,0,0,0,0,5,0,0,74,31,Serie A,3,79,24,7,7
+daniele-rugani-juventus-2021-2022,daniele-rugani,Daniele Rugani,juventus,Juventus,2021-2022,2021/22,DF,12,9,879,0,0,2,0,0,0,0,0,0,0,0,0,0,0,2,0,0,57,37,Serie A,4,70,20,10,8
+matteo-ruggeri-salernitana-2021-2022,matteo-ruggeri,Matteo Ruggeri,salernitana,Salernitana,2021-2022,2021/22,DF,14,8,676,0,0,3,0,0,0,0,0,0,0,0,0,0,0,1,0,0,33,78,Serie A,17,31,7,10,21
+mario-rui-napoli-2021-2022,mario-rui,Mario Rui,napoli,Napoli,2021-2022,2021/22,DF,34,34,2992,0,5,32,10,0,0,0,0,0,0,0,0,0,0,7,0,0,74,31,Serie A,3,79,24,7,7
+fabian-ruiz-pena-napoli-2021-2022,fabian-ruiz-pena,Fabian Ruiz Pena,napoli,Napoli,2021-2022,2021/22,MF,32,29,2384,7,4,39,13,0,0,0,0,0,0,0,0,0,0,2,0,0,74,31,Serie A,3,79,24,7,7
+abdelhamid-sabiri-sampdoria-2021-2022,abdelhamid-sabiri,Abdelhamid Sabiri,sampdoria,Sampdoria,2021-2022,2021/22,MF,14,9,893,3,2,17,9,0,0,0,0,0,0,0,0,0,0,3,0,0,46,63,Serie A,15,36,10,6,22
+alexis-saelemaekers-milan-2021-2022,alexis-saelemaekers,Alexis Saelemaekers,milan,Milan,2021-2022,2021/22,MF,36,22,1865,1,3,39,12,0,0,0,0,0,0,0,0,0,0,2,0,0,69,31,Serie A,1,86,26,8,4
+jacopo-sala-spezia-2021-2022,jacopo-sala,Jacopo Sala,spezia,Spezia,2021-2022,2021/22,MF,18,13,880,1,0,4,2,0,0,0,0,0,0,0,0,0,0,3,0,0,41,71,Serie A,16,36,10,6,22
+lazar-samardzic-udinese-2021-2022,lazar-samardzic,Lazar Samardzic,udinese,Udinese,2021-2022,2021/22,MF,22,1,490,2,2,17,6,0,0,0,0,0,0,0,0,0,0,0,0,0,61,58,Serie A,12,47,11,14,13
+antonio-sanabria-torino-2021-2022,antonio-sanabria,Antonio Sanabria,torino,Torino,2021-2022,2021/22,FW,29,22,1803,6,1,49,21,0,0,0,0,0,0,0,0,0,0,3,0,0,46,41,Serie A,10,50,13,11,14
+alexis-sanchez-inter-2021-2022,alexis-sanchez,Alexis Sanchez,inter,Inter,2021-2022,2021/22,FW,27,7,881,5,2,33,13,0,0,0,0,0,0,0,0,0,0,0,0,0,84,32,Serie A,2,84,25,9,4
+alex-sandro-juventus-2021-2022,alex-sandro,Alex Sandro,juventus,Juventus,2021-2022,2021/22,DF,28,17,1780,0,1,9,2,0,0,0,0,0,0,0,0,0,0,3,0,0,57,37,Serie A,4,70,20,10,8
+nicola-sansone-bologna-2021-2022,nicola-sansone,Nicola Sansone,bologna,Bologna,2021-2022,2021/22,MF,27,6,896,2,3,24,6,0,0,0,0,0,0,0,0,0,0,6,0,0,44,55,Serie A,13,46,12,10,16
+samir-santos-udinese-2021-2022,samir-santos,Samir Santos,udinese,Udinese,2021-2022,2021/22,DF,17,17,1421,0,0,7,3,0,0,0,0,0,0,0,0,0,0,5,0,0,61,58,Serie A,12,47,11,14,13
+riccardo-saponara-fiorentina-2021-2022,riccardo-saponara,Riccardo Saponara,fiorentina,Fiorentina,2021-2022,2021/22,FW,29,13,1284,3,3,37,14,0,0,0,0,0,0,0,0,0,0,1,0,0,59,51,Serie A,7,62,19,5,14
+giorgio-scalvini-atalanta-2021-2022,giorgio-scalvini,Giorgio Scalvini,atalanta,Atalanta,2021-2022,2021/22,DF,18,9,763,1,0,16,3,0,0,0,0,0,0,0,0,0,0,1,0,0,65,48,Serie A,8,59,16,11,11
+gianluca-scamacca-sassuolo-2021-2022,gianluca-scamacca,Gianluca Scamacca,sassuolo,Sassuolo,2021-2022,2021/22,FW,36,25,2146,16,0,79,37,0,0,0,0,0,0,0,0,0,0,7,0,0,64,66,Serie A,11,50,13,11,14
+andrea-schiavone-salernitana-2021-2022,andrea-schiavone,Andrea Schiavone,salernitana,Salernitana,2021-2022,2021/22,MF,14,5,571,1,0,2,1,0,0,0,0,0,0,0,0,0,0,1,0,0,33,78,Serie A,17,31,7,10,21
+jerdy-schouten-bologna-2021-2022,jerdy-schouten,Jerdy Schouten,bologna,Bologna,2021-2022,2021/22,MF,17,16,1392,1,1,6,1,0,0,0,0,0,0,0,0,0,0,4,1,0,44,55,Serie A,13,46,12,10,16
+stefano-sensi-sampdoria-2021-2022,stefano-sensi,Stefano Sensi,sampdoria,Sampdoria,2021-2022,2021/22,MF,11,10,754,1,0,10,4,0,0,0,0,0,0,0,0,0,0,1,0,0,46,63,Serie A,15,36,10,6,22
+luigi-sepe-salernitana-2021-2022,luigi-sepe,Luigi Sepe,salernitana,Salernitana,2021-2022,2021/22,GK,16,16,1392,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,33,78,Serie A,17,31,7,10,21
+stephan-el-shaarawy-roma-2021-2022,stephan-el-shaarawy,Stephan El Shaarawy,roma,Roma,2021-2022,2021/22,MF,27,8,1055,3,0,39,12,0,0,0,0,0,0,0,0,0,0,1,0,0,59,43,Serie A,6,63,18,9,11
+eldor-shomurodov-roma-2021-2022,eldor-shomurodov,Eldor Shomurodov,roma,Roma,2021-2022,2021/22,MF,28,5,784,3,4,31,12,0,0,0,0,0,0,0,0,0,0,2,0,0,59,43,Serie A,6,63,18,9,11
+adrien-silva-sampdoria-2021-2022,adrien-silva,Adrien Silva,sampdoria,Sampdoria,2021-2022,2021/22,MF,17,12,1083,0,1,8,2,0,0,0,0,0,0,0,0,0,0,3,1,0,46,63,Serie A,15,36,10,6,22
+marco-silvestri-udinese-2021-2022,marco-silvestri,Marco Silvestri,udinese,Udinese,2021-2022,2021/22,GK,35,35,3150,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,61,58,Serie A,12,47,11,14,13
+giovanni-simeone-hellas-verona-2021-2022,giovanni-simeone,Giovanni Simeone,hellas-verona,Hellas Verona,2021-2022,2021/22,FW,35,32,2653,17,5,70,32,0,0,0,0,0,0,0,0,0,0,8,0,0,65,59,Serie A,9,53,14,11,13
+wilfried-singo-torino-2021-2022,wilfried-singo,Wilfried Singo,torino,Torino,2021-2022,2021/22,MF,35,32,2607,3,4,41,7,0,0,0,0,0,0,0,0,0,0,5,1,0,46,41,Serie A,10,50,13,11,14
+salvatore-sirigu-genoa-2021-2022,salvatore-sirigu,Salvatore Sirigu,genoa,Genoa,2021-2022,2021/22,GK,37,37,3330,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27,60,Serie A,19,28,4,16,18
+leo-skiri-ostigard-genoa-2021-2022,leo-skiri-ostigard,Leo Skiri Ostigard,genoa,Genoa,2021-2022,2021/22,DF,15,13,1172,0,0,7,2,0,0,0,0,0,0,0,0,0,0,4,2,0,27,60,Serie A,19,28,4,16,18
+lukasz-skorupski-bologna-2021-2022,lukasz-skorupski,Lukasz Skorupski,bologna,Bologna,2021-2022,2021/22,GK,36,36,3240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,44,55,Serie A,13,46,12,10,16
+andreas-skov-olsen-bologna-2021-2022,andreas-skov-olsen,Andreas Skov Olsen,bologna,Bologna,2021-2022,2021/22,MF,18,6,747,0,2,7,2,0,0,0,0,0,0,0,0,0,0,0,0,0,44,55,Serie A,13,46,12,10,16
+milan-skriniar-inter-2021-2022,milan-skriniar,Milan Skriniar,inter,Inter,2021-2022,2021/22,DF,35,35,3150,3,0,25,7,0,0,0,0,0,0,0,0,0,0,3,0,0,84,32,Serie A,2,84,25,9,4
+chris-smalling-roma-2021-2022,chris-smalling,Chris Smalling,roma,Roma,2021-2022,2021/22,DF,27,23,2091,3,0,10,3,0,0,0,0,0,0,0,0,0,0,0,0,0,59,43,Serie A,6,63,18,9,11
+brandon-soppy-udinese-2021-2022,brandon-soppy,Brandon Soppy,udinese,Udinese,2021-2022,2021/22,MF,28,7,777,0,0,6,2,0,0,0,0,0,0,0,0,0,0,4,0,0,61,58,Serie A,12,47,11,14,13
+roberto-soriano-bologna-2021-2022,roberto-soriano,Roberto Soriano,bologna,Bologna,2021-2022,2021/22,MF,35,32,2622,0,4,23,9,0,0,0,0,0,0,0,0,0,0,6,2,0,44,55,Serie A,13,46,12,10,16
+riccardo-sottil-fiorentina-2021-2022,riccardo-sottil,Riccardo Sottil,fiorentina,Fiorentina,2021-2022,2021/22,FW,24,14,1239,3,2,22,10,0,0,0,0,0,0,0,0,0,0,4,1,0,59,51,Serie A,7,62,19,5,14
+adama-soumaoro-bologna-2021-2022,adama-soumaoro,Adama Soumaoro,bologna,Bologna,2021-2022,2021/22,DF,28,26,2266,0,0,8,2,0,0,0,0,0,0,0,0,0,0,6,2,0,44,55,Serie A,13,46,12,10,16
+marco-sportiello-atalanta-2021-2022,marco-sportiello,Marco Sportiello,atalanta,Atalanta,2021-2022,2021/22,GK,5,5,450,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,65,48,Serie A,8,59,16,11,11
+petar-stojanovic-empoli-2021-2022,petar-stojanovic,Petar Stojanovic,empoli,Empoli,2021-2022,2021/22,DF,33,32,2735,1,1,11,4,0,0,0,0,0,0,0,0,0,0,11,1,0,50,70,Serie A,14,41,10,11,17
+thomas-strakosha-lazio-2021-2022,thomas-strakosha,Thomas Strakosha,lazio,Lazio,2021-2022,2021/22,GK,23,23,2070,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,77,58,Serie A,5,64,18,10,10
+stefan-strandberg-salernitana-2021-2022,stefan-strandberg,Stefan Strandberg,salernitana,Salernitana,2021-2022,2021/22,DF,11,11,933,0,0,9,3,0,0,0,0,0,0,0,0,0,0,2,1,0,33,78,Serie A,17,31,7,10,21
+david-strelec-spezia-2021-2022,david-strelec,David Strelec,spezia,Spezia,2021-2022,2021/22,MF,10,7,502,1,0,4,3,0,0,0,0,0,0,0,0,0,0,0,0,0,41,71,Serie A,16,36,10,6,22
+kevin-strootman-cagliari-2021-2022,kevin-strootman,Kevin Strootman,cagliari,Cagliari,2021-2022,2021/22,MF,10,7,640,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4,0,0,34,68,Serie A,18,30,6,12,20
+jens-stryger-larsen-udinese-2021-2022,jens-stryger-larsen,Jens Stryger Larsen,udinese,Udinese,2021-2022,2021/22,DF,11,8,684,0,1,9,4,0,0,0,0,0,0,0,0,0,0,0,0,0,61,58,Serie A,12,47,11,14,13
+leo-stulac-empoli-2021-2022,leo-stulac,Leo Stulac,empoli,Empoli,2021-2022,2021/22,MF,23,8,833,2,2,9,3,0,0,0,0,0,0,0,0,0,0,1,0,0,50,70,Serie A,14,41,10,11,17
+stefano-sturaro-genoa-2021-2022,stefano-sturaro,Stefano Sturaro,genoa,Genoa,2021-2022,2021/22,MF,25,24,1766,0,0,9,0,0,0,0,0,0,0,0,0,0,0,12,0,0,27,60,Serie A,19,28,4,16,18
+isaac-success-udinese-2021-2022,isaac-success,Isaac Success,udinese,Udinese,2021-2022,2021/22,FW,22,11,911,2,6,25,13,0,0,0,0,0,0,0,0,0,0,1,1,0,61,58,Serie A,12,47,11,14,13
+bosko-sutalo-hellas-verona-2021-2022,bosko-sutalo,Bosko Sutalo,hellas-verona,Hellas Verona,2021-2022,2021/22,DF,24,6,920,0,0,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,65,59,Serie A,9,53,14,11,13
+mattias-svanberg-bologna-2021-2022,mattias-svanberg,Mattias Svanberg,bologna,Bologna,2021-2022,2021/22,MF,36,31,2564,3,3,39,13,0,0,0,0,0,0,0,0,0,0,7,0,0,44,55,Serie A,13,46,12,10,16
+michael-svoboda-venezia-2021-2022,michael-svoboda,Michael Svoboda,venezia,Venezia,2021-2022,2021/22,DF,18,13,1236,0,0,7,0,0,0,0,0,0,0,0,0,0,0,2,1,0,34,69,Serie A,20,27,6,9,23
+wojciech-szczesny-juventus-2021-2022,wojciech-szczesny,Wojciech Szczesny,juventus,Juventus,2021-2022,2021/22,GK,33,33,2970,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,57,37,Serie A,4,70,20,10,8
+adrien-tameze-hellas-verona-2021-2022,adrien-tameze,Adrien Tameze,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,38,26,2574,4,2,23,8,0,0,0,0,0,0,0,0,0,0,4,0,0,65,59,Serie A,9,53,14,11,13
+ciprian-tatarusanu-milan-2021-2022,ciprian-tatarusanu,Ciprian Tatarușanu,milan,Milan,2021-2022,2021/22,GK,6,6,540,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,69,31,Serie A,1,86,26,8,4
+pietro-terracciano-fiorentina-2021-2022,pietro-terracciano,Pietro Terracciano,fiorentina,Fiorentina,2021-2022,2021/22,GK,32,31,2862,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,59,51,Serie A,7,62,19,5,14
+tanner-tessmann-venezia-2021-2022,tanner-tessmann,Tanner Tessmann,venezia,Venezia,2021-2022,2021/22,MF,20,6,680,0,0,8,3,0,0,0,0,0,0,0,0,0,0,1,1,0,34,69,Serie A,20,27,6,9,23
+arthur-theate-bologna-2021-2022,arthur-theate,Arthur Theate,bologna,Bologna,2021-2022,2021/22,DF,31,28,2424,2,1,21,6,0,0,0,0,0,0,0,0,0,0,6,0,0,44,55,Serie A,13,46,12,10,16
+morten-thorsby-sampdoria-2021-2022,morten-thorsby,Morten Thorsby,sampdoria,Sampdoria,2021-2022,2021/22,MF,35,35,2943,3,1,26,8,0,0,0,0,0,0,0,0,0,0,10,0,0,46,63,Serie A,15,36,10,6,22
+jeremy-toljan-sassuolo-2021-2022,jeremy-toljan,Jeremy Toljan,sassuolo,Sassuolo,2021-2022,2021/22,DF,20,15,1399,0,1,3,2,0,0,0,0,0,0,0,0,0,0,2,0,0,64,66,Serie A,11,50,13,11,14
+rafael-toloi-atalanta-2021-2022,rafael-toloi,Rafael Toloi,atalanta,Atalanta,2021-2022,2021/22,DF,20,16,1438,1,1,12,2,0,0,0,0,0,0,0,0,0,0,6,0,0,65,48,Serie A,8,59,16,11,11
+fikayo-tomori-milan-2021-2022,fikayo-tomori,Fikayo Tomori,milan,Milan,2021-2022,2021/22,DF,31,30,2718,0,0,12,4,0,0,0,0,0,0,0,0,0,0,4,0,0,69,31,Serie A,1,86,26,8,4
+sandro-tonali-milan-2021-2022,sandro-tonali,Sandro Tonali,milan,Milan,2021-2022,2021/22,MF,36,31,2600,5,2,38,11,0,0,0,0,0,0,0,0,0,0,9,0,0,69,31,Serie A,1,86,26,8,4
+lorenzo-tonelli-empoli-2021-2022,lorenzo-tonelli,Lorenzo Tonelli,empoli,Empoli,2021-2022,2021/22,DF,14,8,870,0,0,7,3,0,0,0,0,0,0,0,0,0,0,4,0,0,50,70,Serie A,14,41,10,11,17
+lucas-torreira-fiorentina-2021-2022,lucas-torreira,Lucas Torreira,fiorentina,Fiorentina,2021-2022,2021/22,MF,31,26,2195,5,1,29,13,0,0,0,0,0,0,0,0,0,0,10,1,0,59,51,Serie A,7,62,19,5,14
+destiny-udogie-udinese-2021-2022,destiny-udogie,Destiny Udogie,udinese,Udinese,2021-2022,2021/22,DF,35,29,2477,5,3,27,12,0,0,0,0,0,0,0,0,0,0,4,0,0,61,58,Serie A,12,47,11,14,13
+antonio-vacca-venezia-2021-2022,antonio-vacca,Antonio Vacca,venezia,Venezia,2021-2022,2021/22,MF,21,15,1064,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5,0,0,34,69,Serie A,20,27,6,9,23
+zinho-vanheusden-genoa-2021-2022,zinho-vanheusden,Zinho Vanheusden,genoa,Genoa,2021-2022,2021/22,DF,14,11,989,0,0,6,2,0,0,0,0,0,0,0,0,0,0,3,0,0,27,60,Serie A,19,28,4,16,18
+johan-vasquez-genoa-2021-2022,johan-vasquez,Johan Vasquez,genoa,Genoa,2021-2022,2021/22,DF,28,27,2279,1,0,15,3,0,0,0,0,0,0,0,0,0,0,7,0,0,27,60,Serie A,19,28,4,16,18
+miguel-veloso-hellas-verona-2021-2022,miguel-veloso,Miguel Veloso,hellas-verona,Hellas Verona,2021-2022,2021/22,MF,22,17,1343,0,3,17,4,0,0,0,0,0,0,0,0,0,0,7,1,0,65,59,Serie A,9,53,14,11,13
+lorenzo-venuti-fiorentina-2021-2022,lorenzo-venuti,Lorenzo Venuti,fiorentina,Fiorentina,2021-2022,2021/22,DF,23,20,1571,0,0,7,1,0,0,0,0,0,0,0,0,0,0,4,0,0,59,51,Serie A,7,62,19,5,14
+daniele-verde-spezia-2021-2022,daniele-verde,Daniele Verde,spezia,Spezia,2021-2022,2021/22,MF,33,21,1957,8,6,53,24,0,0,0,0,0,0,0,0,0,0,2,0,0,41,71,Serie A,16,36,10,6,22
+simone-verdi-salernitana-2021-2022,simone-verdi,Simone Verdi,salernitana,Salernitana,2021-2022,2021/22,MF,15,11,829,5,0,36,15,0,0,0,0,0,0,0,0,0,0,3,0,0,33,78,Serie A,17,31,7,10,21
+jordan-veretout-roma-2021-2022,jordan-veretout,Jordan Veretout,roma,Roma,2021-2022,2021/22,MF,36,26,2319,4,8,29,11,0,0,0,0,0,0,0,0,0,0,6,0,0,59,43,Serie A,6,63,18,9,11
+freddie-veseli-salernitana-2021-2022,freddie-veseli,Freddie Veseli,salernitana,Salernitana,2021-2022,2021/22,DF,9,8,596,0,0,1,0,0,0,0,0,0,0,0,0,0,0,3,1,0,33,78,Serie A,17,31,7,10,21
+guglielmo-vicario-empoli-2021-2022,guglielmo-vicario,Guglielmo Vicario,empoli,Empoli,2021-2022,2021/22,GK,38,38,3420,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,50,70,Serie A,14,41,10,11,17
+arturo-vidal-inter-2021-2022,arturo-vidal,Arturo Vidal,inter,Inter,2021-2022,2021/22,MF,28,2,741,1,1,18,8,0,0,0,0,0,0,0,0,0,0,3,0,0,84,32,Serie A,2,84,25,9,4
+ronaldo-vieira-sampdoria-2021-2022,ronaldo-vieira,Ronaldo Vieira,sampdoria,Sampdoria,2021-2022,2021/22,MF,14,4,495,0,0,1,0,0,0,0,0,0,0,0,0,0,0,3,0,0,46,63,Serie A,15,36,10,6,22
+emanuel-vignato-bologna-2021-2022,emanuel-vignato,Emanuel Vignato,bologna,Bologna,2021-2022,2021/22,MF,24,3,594,0,1,5,1,0,0,0,0,0,0,0,0,0,0,2,0,0,44,55,Serie A,13,46,12,10,16
+matias-vina-roma-2021-2022,matias-vina,Matias Vina,roma,Roma,2021-2022,2021/22,DF,26,18,1565,0,1,12,3,0,0,0,0,0,0,0,0,0,0,2,0,0,59,43,Serie A,6,63,18,9,11
+mattia-viti-empoli-2021-2022,mattia-viti,Mattia Viti,empoli,Empoli,2021-2022,2021/22,DF,20,16,1491,0,0,4,0,0,0,0,0,0,0,0,0,0,0,3,1,0,50,70,Serie A,14,41,10,11,17
+dusan-vlahovic-juventus-2021-2022,dusan-vlahovic,Dusan Vlahovic,juventus,Juventus,2021-2022,2021/22,FW,15,12,1076,7,1,44,19,0,0,0,0,0,0,0,0,0,0,2,0,0,57,37,Serie A,4,70,20,10,8
+dusan-vlahovic-fiorentina-2021-2022,dusan-vlahovic,Dusan Vlahovic,fiorentina,Fiorentina,2021-2022,2021/22,FW,21,21,1857,17,2,75,34,0,0,0,0,0,0,0,0,0,0,2,0,0,59,51,Serie A,7,62,19,5,14
+mergim-vojvoda-torino-2021-2022,mergim-vojvoda,Mergim Vojvoda,torino,Torino,2021-2022,2021/22,MF,29,22,1976,0,3,18,6,0,0,0,0,0,0,0,0,0,0,3,0,0,46,41,Serie A,10,50,13,11,14
+stefan-de-vrij-inter-2021-2022,stefan-de-vrij,Stefan de Vrij,inter,Inter,2021-2022,2021/22,DF,30,28,2410,0,0,21,4,0,0,0,0,0,0,0,0,0,0,3,0,0,84,32,Serie A,2,84,25,9,4
+walace-udinese-2021-2022,walace,Walace,udinese,Udinese,2021-2022,2021/22,MF,36,33,2970,1,0,47,11,0,0,0,0,0,0,0,0,0,0,6,1,0,61,58,Serie A,12,47,11,14,13
+kelvin-yeboah-genoa-2021-2022,kelvin-yeboah,Kelvin Yeboah,genoa,Genoa,2021-2022,2021/22,MF,17,9,850,0,1,16,5,0,0,0,0,0,0,0,0,0,0,2,0,0,27,60,Serie A,19,28,4,16,18
+maya-yoshida-sampdoria-2021-2022,maya-yoshida,Maya Yoshida,sampdoria,Sampdoria,2021-2022,2021/22,DF,26,19,1823,2,3,9,4,0,0,0,0,0,0,0,0,0,0,2,0,0,46,63,Serie A,15,36,10,6,22
+mattia-zaccagni-lazio-2021-2022,mattia-zaccagni,Mattia Zaccagni,lazio,Lazio,2021-2022,2021/22,FW,29,21,1876,4,5,33,10,0,0,0,0,0,0,0,0,0,0,6,0,0,77,58,Serie A,5,64,18,10,10
+denis-zakaria-juventus-2021-2022,denis-zakaria,Denis Zakaria,juventus,Juventus,2021-2022,2021/22,MF,9,6,597,1,1,9,4,0,0,0,0,0,0,0,0,0,0,1,0,0,57,37,Serie A,4,70,20,10,8
+nicola-zalewski-roma-2021-2022,nicola-zalewski,Nicola Zalewski,roma,Roma,2021-2022,2021/22,MF,16,9,793,0,0,9,4,0,0,0,0,0,0,0,0,0,0,1,0,0,59,43,Serie A,6,63,18,9,11
+andre-frank-zambo-anguissa-napoli-2021-2022,andre-frank-zambo-anguissa,Andre-Frank Zambo Anguissa,napoli,Napoli,2021-2022,2021/22,MF,25,21,1926,0,1,20,3,0,0,0,0,0,0,0,0,0,0,5,0,0,74,31,Serie A,3,79,24,7,7
+nicolo-zaniolo-roma-2021-2022,nicolo-zaniolo,Nicolo Zaniolo,roma,Roma,2021-2022,2021/22,MF,28,23,1971,2,1,70,20,0,0,0,0,0,0,0,0,0,0,12,2,0,59,43,Serie A,6,63,18,9,11
+alessandro-zanoli-napoli-2021-2022,alessandro-zanoli,Alessandro Zanoli,napoli,Napoli,2021-2022,2021/22,DF,12,5,457,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,74,31,Serie A,3,79,24,7,7
+duvan-zapata-atalanta-2021-2022,duvan-zapata,Duvan Zapata,atalanta,Atalanta,2021-2022,2021/22,FW,24,20,1722,10,4,81,34,0,0,0,0,0,0,0,0,0,0,3,0,0,65,48,Serie A,8,59,16,11,11
+gabriele-zappa-cagliari-2021-2022,gabriele-zappa,Gabriele Zappa,cagliari,Cagliari,2021-2022,2021/22,DF,25,11,1144,0,0,6,2,0,0,0,0,0,0,0,0,0,0,4,1,0,34,68,Serie A,18,30,6,12,20
+davide-zappacosta-atalanta-2021-2022,davide-zappacosta,Davide Zappacosta,atalanta,Atalanta,2021-2022,2021/22,DF,34,29,2345,1,5,37,5,0,0,0,0,0,0,0,0,0,0,6,0,0,65,48,Serie A,8,59,16,11,11
+marvin-zeegelaar-udinese-2021-2022,marvin-zeegelaar,Marvin Zeegelaar,udinese,Udinese,2021-2022,2021/22,DF,14,6,643,0,0,3,0,0,0,0,0,0,0,0,0,0,0,2,0,0,61,58,Serie A,12,47,11,14,13
+piotr-zielinski-napoli-2021-2022,piotr-zielinski,Piotr Zielinski,napoli,Napoli,2021-2022,2021/22,MF,35,26,2086,6,5,43,15,0,0,0,0,0,0,0,0,0,0,1,0,0,74,31,Serie A,3,79,24,7,7
+david-zima-torino-2021-2022,david-zima,David Zima,torino,Torino,2021-2022,2021/22,DF,20,13,1314,0,0,5,3,0,0,0,0,0,0,0,0,0,0,3,0,0,46,41,Serie A,10,50,13,11,14
+jeroen-zoet-spezia-2021-2022,jeroen-zoet,Jeroen Zoet,spezia,Spezia,2021-2022,2021/22,GK,7,7,630,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,41,71,Serie A,16,36,10,6,22
+nadir-zortea-salernitana-2021-2022,nadir-zortea,Nadir Zortea,salernitana,Salernitana,2021-2022,2021/22,DF,29,13,1410,1,2,16,4,0,0,0,0,0,0,0,0,0,0,3,0,0,33,78,Serie A,17,31,7,10,21
+szymon-zurkowski-empoli-2021-2022,szymon-zurkowski,Szymon Zurkowski,empoli,Empoli,2021-2022,2021/22,MF,35,29,2307,6,2,47,17,0,0,0,0,0,0,0,0,0,0,5,0,0,50,70,Serie A,14,41,10,11,17
+milan-djuric-salernitana-2021-2022,milan-djuric,Milan Djuric,salernitana,Salernitana,2021-2022,2021/22,FW,33,23,2165,5,4,50,17,0,0,0,0,0,0,0,0,0,0,6,0,0,33,78,Serie A,17,31,7,10,21
+filip-djuricic-sassuolo-2021-2022,filip-djuricic,Filip Djuricic,sassuolo,Sassuolo,2021-2022,2021/22,MF,12,9,671,2,1,17,6,0,0,0,0,0,0,0,0,0,0,1,0,0,64,66,Serie A,11,50,13,11,14

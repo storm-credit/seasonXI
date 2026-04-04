@@ -1,0 +1,426 @@
+Luis Abram~Granada~DF~8~6~560~0~0~2~1~2~0~44~61~18~38~8~14~16
+Marcos Acuña~Sevilla~DF,MF~31~26~2260~1~3~16~5~10~0~53~30~4~70~18~16~4
+Martin Agirregabiria~Alavés~DF,MF~24~17~1616~0~1~4~0~4~0~31~65~20~31~8~7~23
+Joseph Aidoo~Celta Vigo~DF~32~30~2637~0~0~6~1~1~0~43~43~11~46~12~10~16
+Carlos Akapo~Cádiz~DF~25~21~1844~0~0~10~1~4~0~35~51~17~39~8~15~15
+Paul Akouokou~Real Betis~MF~8~6~516~0~0~2~0~2~1~62~40~5~65~19~8~11
+David Alaba~Real Madrid~DF~30~30~2642~2~3~21~7~2~0~80~31~1~86~26~8~4
+Tomás Alarcón~Cádiz~MF~23~16~1425~0~1~15~2~5~0~35~51~17~39~8~15~15
+Jordi Alba~Barcelona~DF~30~30~2644~2~10~31~6~11~0~68~38~2~73~21~10~7
+Raúl Albiol~Villarreal~DF~28~28~2465~0~0~5~1~8~0~63~37~7~59~16~11~11
+Paco Alcácer~Villarreal~FW~18~10~787~1~3~18~6~1~0~63~37~7~59~16~11~11
+Rubén Alcaraz~Cádiz~MF~14~12~1105~2~0~23~6~7~0~35~51~17~39~8~15~15
+Omar Alderete~Valencia~DF~29~28~2403~2~0~17~5~15~0~48~53~9~48~11~15~12
+Iván Alejo~Cádiz~MF~20~11~1065~2~2~12~4~7~0~35~51~17~39~8~15~15
+Carles Aleñá~Getafe~MF~33~30~2320~1~2~46~14~6~1~33~41~15~39~8~15~15
+Yeray Álvarez~Athletic Club~DF~22~21~1860~0~0~7~0~6~0~43~36~8~55~14~13~11
+Dani Alves~Barcelona~DF~14~13~1098~1~3~5~2~2~1~68~38~2~73~21~10~7
+Amath~Mallorca~MF,FW~19~9~884~0~1~10~3~5~0~36~63~16~39~10~9~19
+Marcos André~Valencia~FW,MF~29~8~973~1~3~30~8~3~0~48~53~9~48~11~15~12
+José Ángel~Osasuna~DF~23~12~1083~1~1~11~3~2~1~37~51~10~47~12~11~15
+Mauro Arambarri~Getafe~MF~31~31~2663~0~5~37~8~13~0~33~41~15~39~8~15~15
+Néstor Araujo~Celta Vigo~DF~34~29~2617~0~0~8~1~4~0~43~43~11~46~12~10~16
+Ronald Araújo~Barcelona~DF~30~25~2272~4~0~18~10~6~0~68~38~2~73~21~10~7
+Santiago Arzamendia~Cádiz~MF~14~5~469~1~0~7~1~2~0~35~51~17~39~8~15~15
+Sergio Asenjo~Villarreal~GK~6~6~540~0~0~0~0~1~0~63~37~7~59~16~11~11
+Marco Asensio~Real Madrid~FW,MF~31~19~1731~10~0~64~34~2~0~80~31~1~86~26~8~4
+Iago Aspas~Celta Vigo~FW~37~36~3087~18~5~90~41~9~0~43~43~11~46~12~10~16
+Pierre-Emerick Aubameyang~Barcelona~FW~17~13~1082~11~1~36~19~0~0~68~38~2~73~21~10~7
+Ludwig Augustinsson~Sevilla~DF,MF~19~9~793~0~1~4~2~3~0~53~30~4~70~18~16~4
+Serge Aurier~Villarreal~DF~19~10~1010~0~1~11~2~4~0~63~37~7~59~16~11~11
+Ezequiel Ávila~Osasuna~FW,MF~36~22~1870~6~1~63~16~9~1~37~51~10~47~12~11~15
+Iddrisu Baba~Mallorca~MF~26~23~1934~2~0~23~9~9~0~36~63~16~39~10~9~19
+Carlos Bacca~Granada~FW~17~4~513~0~1~9~2~3~0~44~61~18~38~8~14~16
+Édgar Badía~Elche~GK~24~24~2160~0~0~0~0~2~0~40~52~13~42~11~9~18
+Mikel Balenziaga~Athletic Club~DF~26~23~2027~0~0~7~2~2~0~43~36~8~55~14~13~11
+Iván Balliu~Rayo Vallecano~DF~35~35~3147~1~2~15~3~10~1~39~50~12~42~11~9~18
+Enis Bardhi~Levante~MF,FW~30~17~1701~3~3~43~10~3~0~51~76~19~35~8~11~19
+Keidi Bare~Espanyol~MF~25~18~1481~1~1~4~1~9~0~40~53~14~42~10~12~16
+Kike Barja~Osasuna~MF,FW~21~9~865~2~0~17~6~2~0~37~51~10~47~12~11~15
+Antonio Barragán~Elche~DF~16~12~1020~0~0~1~0~5~0~40~52~13~42~11~9~18
+Ander Barrenetxea~Real Sociedad~MF,FW~11~6~547~1~1~8~3~0~0~40~37~6~62~17~11~10
+Marc Bartra~Real Betis~DF~23~23~1993~1~0~15~3~5~0~62~40~5~65~19~8~11
+Rodrigo Battaglia~Mallorca~MF~26~12~1179~0~0~5~1~4~0~36~63~16~39~10~9~19
+Bebé~Rayo Vallecano~MF~29~6~867~1~2~50~8~2~0~39~50~12~42~11~9~18
+Héctor Bellerín~Real Betis~DF~23~22~1979~0~2~10~2~2~1~62~40~5~65~19~8~11
+Fran Beltrán~Celta Vigo~MF~37~31~2597~1~0~20~4~4~0~43~43~11~46~12~10~16
+Darío Benedetto~Elche~FW~14~6~590~2~1~18~7~1~0~40~52~13~42~11~9~18
+Karim Benzema~Real Madrid~FW~32~31~2593~27~12~128~59~0~0~80~31~1~86~26~8~4
+Yuri Berchiche~Athletic Club~DF~14~11~1015~1~2~8~3~3~0~43~36~8~55~14~13~11
+Álex Berenguer~Athletic Club~MF~34~24~2168~3~6~46~16~8~0~43~36~8~55~14~13~11
+Pedro Bigas~Elche~DF~19~19~1551~1~0~12~3~6~0~40~52~13~42~11~9~18
+Yassine Bounou~Sevilla~GK~31~31~2790~0~2~0~0~2~0~53~30~4~70~18~16~4
+Lucas Boyé~Elche~FW~24~22~1713~7~3~49~16~3~0~40~52~13~42~11~9~18
+Darko Brašanac~Osasuna~MF~35~27~2405~1~2~17~5~8~0~37~51~10~47~12~11~15
+Claudio Bravo~Real Betis~GK~17~17~1456~0~0~0~0~2~0~62~40~5~65~19~8~11
+Ante Budimir~Osasuna~FW~28~20~1738~8~2~45~22~3~0~37~51~10~47~12~11~15
+Sergio Busquets~Barcelona~MF~36~36~3198~2~0~14~4~12~0~68~38~2~73~21~10~7
+Leandro Cabrera~Espanyol~DF~37~37~3330~2~0~18~6~7~0~40~53~14~42~10~12~16
+Martín Cáceres~Levante~DF~10~9~663~0~0~0~0~2~0~51~76~19~35~8~11~19
+Cala~Cádiz~DF~14~10~947~0~0~5~0~8~1~35~51~17~39~8~15~15
+Fernando Calero~Espanyol~DF~16~13~1090~0~0~1~0~3~0~40~53~14~42~10~12~16
+Eduardo Camavinga~Real Madrid~MF~26~13~1236~2~1~12~5~8~0~80~31~1~86~26~8~4
+José Campaña~Levante~MF~20~16~1422~2~2~13~6~6~1~51~76~19~35~8~11~19
+Sergio Canales~Real Betis~MF~34~33~2791~5~8~54~25~6~0~62~40~5~65~19~8~11
+Álex Cantero~Levante~FW,MF~25~4~610~0~1~15~5~1~0~51~76~19~35~8~11~19
+Étienne Capoue~Villarreal~MF~30~26~2290~1~1~14~5~9~0~63~37~7~59~16~11~11
+Isaac Carcelen~Cádiz~DF,MF~25~17~1544~0~1~11~4~2~0~35~51~17~39~8~15~15
+Dani Cárdenas~Levante~GK~24~24~2160~0~0~0~0~3~0~51~76~19~35~8~11~19
+Diego Carlos~Sevilla~DF~34~34~2957~3~0~30~10~4~1~53~30~4~70~18~16~4
+Yannick Carrasco~Atlético Madrid~MF,FW~34~28~2583~6~6~50~12~5~0~65~43~3~71~21~8~9
+Guido Carrillo~Elche~FW~29~11~1168~2~0~23~10~3~0~40~52~13~42~11~9~18
+Dani Carvajal~Real Madrid~DF~24~17~1551~1~3~10~2~1~0~80~31~1~86~26~8~4
+William Carvalho~Real Betis~MF~33~20~1805~2~3~33~10~6~0~62~40~5~65~19~8~11
+Casemiro~Real Madrid~MF~32~31~2569~1~3~41~9~11~0~80~31~1~86~26~8~4
+Kiko Casilla~Elche~GK~14~14~1260~0~0~0~0~3~0~40~52~13~42~11~9~18
+Catena~Rayo Vallecano~DF~36~36~3240~2~2~23~6~8~0~39~50~12~42~11~9~18
+Franco Cervi~Celta Vigo~MF~33~21~1801~4~3~22~10~5~0~43~43~11~46~12~10~16
+Denis Cheryshev~Valencia~MF~17~5~563~0~1~10~5~1~0~48~53~9~48~11~15~12
+Samuel Chukwueze~Villarreal~MF~27~12~1333~3~3~32~7~4~0~63~37~7~59~16~11~11
+Víctor Chust~Cádiz~DF~25~20~1830~0~0~9~2~2~0~35~51~17~39~8~15~15
+Jasper Cillessen~Valencia~GK~17~17~1457~0~1~0~0~1~0~48~53~9~48~11~15~12
+Pathé Ciss~Rayo Vallecano~MF~31~11~1097~2~1~19~5~5~0~39~50~12~42~11~9~18
+Carlos Clerc~Levante~DF,MF~19~18~1514~0~0~2~0~6~0~51~76~19~35~8~11~19
+Álex Collado~Granada~MF,FW~17~13~1020~2~1~17~8~1~0~44~61~18~38~8~14~16
+Santi Comesaña~Rayo Vallecano~MF~35~32~2682~1~2~32~5~12~1~39~50~12~42~11~9~18
+Francis Coquelin~Villarreal~MF~20~8~830~2~1~5~2~3~0~63~37~7~59~16~11~11
+Jesús Corona~Sevilla~FW,MF~18~12~1157~2~4~12~3~2~0~53~30~4~70~18~16~4
+Ángel Correa~Atlético Madrid~FW,MF~36~21~1856~12~5~50~23~3~1~65~43~3~71~21~8~9
+Thierry Correia~Valencia~DF,MF~19~18~1414~0~1~3~1~5~0~48~53~9~48~11~15~12
+Hélder Costa~Valencia~MF~22~13~1118~0~1~9~2~3~0~48~53~9~48~11~15~12
+Jaume Costa~Mallorca~DF~25~21~1828~0~4~11~2~5~1~36~63~16~39~10~9~19
+Thibaut Courtois~Real Madrid~GK~36~36~3240~0~0~0~0~1~0~80~31~1~86~26~8~4
+Philippe Coutinho~Barcelona~FW,MF~12~5~503~2~0~24~7~1~0~68~38~2~73~21~10~7
+Juan Cruz Armada~Osasuna~DF~23~22~1934~0~0~3~0~4~0~37~51~10~47~12~11~15
+Jorge Cuenca~Getafe~DF~32~31~2683~1~0~16~7~6~2~33~41~15~39~8~15~15
+Matheus Cunha~Atlético Madrid~FW~29~8~1063~6~4~37~15~3~0~65~43~3~71~21~8~9
+Arnaut Danjuma~Villarreal~FW~23~17~1472~10~3~62~29~1~0~63~37~7~59~16~11~11
+Sergi Darder~Espanyol~MF~36~36~3125~3~9~44~17~4~0~40~53~14~42~10~12~16
+Rodrigo De Paul~Atlético Madrid~MF~36~24~2151~3~1~24~9~7~0~65~43~3~71~21~8~9
+Thomas Delaney~Sevilla~MF~26~15~1549~2~1~17~4~4~1~53~30~4~70~18~16~4
+Ousmane Dembélé~Barcelona~FW,MF~21~15~1409~1~13~47~8~3~0~68~38~2~73~21~10~7
+Sergiño Dest~Barcelona~DF,FW~21~17~1512~0~3~12~3~2~0~68~38~2~73~21~10~7
+Boulaye Dia~Villarreal~FW~25~13~1269~5~5~37~11~3~0~63~37~7~59~16~11~11
+Mouctar Diakhaby~Valencia~DF~29~21~1948~0~1~8~2~11~0~48~53~9~48~11~15~12
+Víctor Díaz~Granada~DF~22~18~1500~1~0~12~2~5~0~44~61~18~38~8~14~16
+Landry Dimata~Espanyol~FW~17~4~541~0~0~8~0~0~0~40~53~14~42~10~12~16
+Stole Dimitrievski~Rayo Vallecano~GK~31~30~2772~0~0~0~0~0~0~39~50~12~42~11~9~18
+Matías Dituro~Celta Vigo~GK~38~38~3420~0~0~1~0~1~0~43~43~11~46~12~10~16
+Djené~Getafe~DF~35~35~3115~0~1~4~1~11~1~33~41~15~39~8~15~15
+Marko Dmitrović~Sevilla~GK~6~6~540~0~0~0~0~0~0~53~30~4~70~18~16~4
+Domingos Duarte~Granada~DF~21~19~1687~1~0~6~1~7~1~44~61~18~38~8~14~16
+Óscar Duarte~Levante~DF~23~20~1773~2~0~19~5~5~0~51~76~19~35~8~11~19
+Rubén Duarte~Alavés~DF~34~31~2621~0~4~9~3~12~1~31~65~20~31~8~7~23
+Hugo Duro~Valencia~MF,FW~30~22~1834~7~1~31~15~3~1~48~53~9~48~11~15~12
+Aritz Elustondo~Real Sociedad~DF~30~22~2105~4~1~14~7~3~1~40~37~6~62~17~11~10
+Adri Embarba~Espanyol~MF,FW~32~24~1986~0~2~49~16~4~0~40~53~14~42~10~12~16
+Youssef En-Nesyri~Sevilla~FW~23~15~1277~5~1~37~14~1~0~53~30~4~70~18~16~4
+Gonzalo Escalante~Alavés~MF~17~15~1300~5~0~16~9~8~1~31~65~20~31~8~7~23
+Sergio Escudero~Granada~DF~27~15~1434~2~1~21~4~6~0~44~61~18~38~8~14~16
+Alfonso Espino~Cádiz~DF~37~37~3329~2~2~27~7~6~0~35~51~17~39~8~15~15
+Pervis Estupiñán~Villarreal~DF~28~17~1575~0~1~14~4~3~0~63~37~7~59~16~11~11
+Abde Ezzalzouli~Barcelona~FW~10~6~580~1~0~16~4~4~0~68~38~2~73~21~10~7
+Radamel Falcao~Rayo Vallecano~FW~22~8~838~6~0~34~15~1~0~39~50~12~42~11~9~18
+Fali~Cádiz~DF,MF~28~23~1803~0~2~14~0~6~0~35~51~17~39~8~15~15
+Nabil Fekir~Real Betis~MF~34~33~2794~6~8~84~32~7~1~62~40~5~65~19~8~11
+Felipe~Atlético Madrid~DF~26~15~1504~2~1~11~4~5~1~65~43~3~71~21~8~9
+João Félix~Atlético Madrid~FW~24~13~1263~8~4~39~15~3~1~65~43~3~71~21~8~9
+Aitor Fernández~Levante~GK~13~13~1166~0~0~0~0~1~1~51~76~19~35~8~11~19
+Álex Fernández~Cádiz~MF~32~22~2051~3~2~21~8~2~0~35~51~17~39~8~15~15
+Fernando~Sevilla~MF,DF~24~21~1850~1~1~6~1~6~0~53~30~4~70~18~16~4
+Fidel~Elche~MF~33~29~2261~5~6~18~8~9~0~40~52~13~42~11~9~18
+Dimitri Foulquier~Valencia~DF,MF~29~25~2342~0~1~16~5~11~0~48~53~9~48~11~15~12
+Juan Foyth~Villarreal~DF~25~22~1924~1~1~6~2~6~1~63~37~7~59~16~11~11
+Enric Franquesa~Levante~DF,MF~16~6~625~0~0~1~0~1~0~51~76~19~35~8~11~19
+Jorge de Frutos~Levante~MF,FW~25~20~1760~4~7~46~20~4~0~51~76~19~35~8~11~19
+Javi Galán~Celta Vigo~DF~37~37~3298~0~3~19~5~8~0~43~43~11~46~12~10~16
+Iñigo Ruiz de Galarreta~Mallorca~MF~22~17~1378~0~0~8~3~4~0~36~63~16~39~10~9~19
+Thiago Galhardo~Celta Vigo~FW~31~9~1148~2~2~29~15~5~0~43~43~11~46~12~10~16
+Álvaro García~Rayo Vallecano~MF~36~34~2998~7~4~68~24~6~0~39~50~12~42~11~9~18
+Dani García~Athletic Club~MF~32~27~2177~0~0~12~2~9~0~43~36~8~55~14~13~11
+David García~Osasuna~DF~35~35~3105~4~0~31~4~8~0~37~51~10~47~12~11~15
+Eric García~Barcelona~DF~26~23~2039~0~0~6~4~5~1~68~38~2~73~21~10~7
+Fran Garcia~Rayo Vallecano~DF~34~34~3025~1~0~25~8~4~0~39~50~12~42~11~9~18
+Manu García~Alavés~MF~24~10~1077~0~1~8~1~3~0~31~65~20~31~8~7~23
+Raúl García~Athletic Club~FW~35~24~1802~6~2~44~14~3~0~43~36~8~55~14~13~11
+Rubén García~Osasuna~MF,FW~37~30~2375~1~6~33~12~1~0~37~51~10~47~12~11~15
+Unai García~Osasuna~DF~18~15~1408~0~0~8~0~5~0~37~51~10~47~12~11~15
+Mario Gaspar~Villarreal~DF~12~7~623~0~0~4~1~1~0~63~37~7~59~16~11~11
+Gavi~Barcelona~MF,FW~34~28~2316~2~5~30~8~11~1~68~38~2~73~21~10~7
+Bryan Gil~Valencia~MF,FW~13~9~753~0~1~11~2~3~0~48~53~9~48~11~15~12
+Óscar Gil~Espanyol~DF~22~20~1688~0~2~6~1~7~0~40~53~14~42~10~12~16
+Dani Gómez~Levante~FW~28~11~1063~4~2~31~14~1~0~51~76~19~35~8~11~19
+Maxi Gómez~Valencia~FW~29~21~1956~5~1~43~14~7~1~48~53~9~48~11~15~12
+Moi Gómez~Villarreal~MF,FW~29~13~1286~2~2~13~5~2~0~63~37~7~59~16~11~11
+Papu Gómez~Sevilla~FW,MF~29~19~1784~5~1~34~12~4~0~53~30~4~70~18~16~4
+Sergi Gómez~Espanyol~DF~31~31~2720~1~2~8~3~1~1~40~53~14~42~10~12~16
+Maxime Gonalons~Granada~MF~25~20~1550~0~2~11~2~6~0~44~61~18~38~8~14~16
+Diego González~Elche~DF~28~19~1793~0~0~4~1~3~1~40~52~13~42~11~9~18
+Édgar González~Real Betis~DF~21~14~1464~1~1~5~1~6~0~62~40~5~65~19~8~11
+Nicolás González~Barcelona~MF~27~12~1114~2~1~17~4~6~0~68~38~2~73~21~10~7
+Andoni Gorosabel~Real Sociedad~DF~32~25~2289~0~4~11~1~4~0~40~37~6~62~17~11~10
+Antoine Griezmann~Atlético Madrid~FW,MF~26~21~1695~3~4~43~14~3~0~65~43~3~71~21~8~9
+Andrés Guardado~Real Betis~MF~28~17~1393~0~1~15~3~4~0~62~40~5~65~19~8~11
+Sergi Guardiola~Rayo Vallecano~FW~32~20~1710~8~2~51~18~3~0~39~50~12~42~11~9~18
+Nemanja Gudelj~Sevilla~DF,MF~21~9~1046~0~0~4~1~5~0~53~30~4~70~18~16~4
+Gonçalo Guedes~Valencia~FW,MF~36~30~2606~11~6~69~28~3~0~48~53~9~48~11~15~12
+Ander Guevara~Real Sociedad~MF~17~11~867~0~0~2~0~2~0~40~37~6~62~17~11~10
+Hugo Guillamón~Valencia~MF,DF~31~28~2361~1~0~7~2~11~2~48~53~9~48~11~15~12
+Gerard Gumbau~Elche~MF~31~20~1890~0~4~21~3~8~1~40~52~13~42~11~9~18
+Raúl Guti~Elche~MF~31~17~1627~0~0~18~5~4~1~40~52~13~42~11~9~18
+Munir El Haddadi~Sevilla~MF,FW~16~4~474~2~0~12~7~3~0~53~30~4~70~18~16~4
+Varazdat Haroyan~Cádiz~DF~17~16~1437~1~0~3~2~9~0~35~51~17~39~8~15~15
+Eden Hazard~Real Madrid~FW,MF~18~7~717~0~1~12~7~3~0~80~31~1~86~26~8~4
+Mario Hermoso~Atlético Madrid~DF~26~21~1865~2~1~17~4~6~1~65~43~3~71~21~8~9
+Aridane Hernández~Osasuna~DF~15~12~1159~0~0~2~0~1~0~37~51~10~47~12~11~15
+Luis Hernández~Cádiz~DF~16~15~1366~0~0~6~2~5~0~35~51~17~39~8~15~15
+Héctor Herrera~Atlético Madrid~MF~21~8~859~0~0~8~3~4~0~65~43~3~71~21~8~9
+Sergio Herrera~Osasuna~GK~36~36~3240~0~0~0~0~3~0~37~51~10~47~12~11~15
+Yangel Herrera~Espanyol~MF~23~19~1645~1~1~15~2~7~1~40~53~14~42~10~12~16
+Vicente Iborra~Villarreal~MF~20~12~1034~0~1~8~2~4~0~63~37~7~59~16~11~11
+Oussama Idrissi~Cádiz~MF~12~11~902~1~1~21~8~2~0~35~51~17~39~8~15~15
+Iglesias~Getafe~DF,MF~20~7~719~0~1~5~0~1~0~33~41~15~39~8~15~15
+Borja Iglesias~Real Betis~FW~33~18~1573~10~0~38~19~4~0~62~40~5~65~19~8~11
+Alexander Isak~Real Sociedad~FW~32~26~2140~6~2~73~35~6~0~40~37~6~62~17~11~10
+Jakub Jankto~Getafe~MF,DF~14~6~587~0~2~6~0~1~1~33~41~15~39~8~15~15
+Adnan Januzaj~Real Sociedad~MF,FW~33~17~1625~3~0~42~15~5~0~40~37~6~62~17~11~10
+Jason~Alavés~MF~14~10~678~0~1~9~2~1~0~31~65~20~31~8~7~23
+Luis Javier Suárez~Granada~FW~37~34~2844~8~4~86~25~6~0~44~61~18~38~8~14~16
+Joaquín~Real Betis~MF~21~2~471~0~1~10~3~0~0~62~40~5~65~19~8~11
+Frenkie de Jong~Barcelona~MF~32~30~2476~3~3~17~8~7~1~68~38~2~73~21~10~7
+Luuk de Jong~Barcelona~FW,MF~21~6~654~6~0~24~10~1~0~68~38~2~73~21~10~7
+Joan Jordán~Sevilla~MF~36~31~2514~0~1~16~1~9~0~53~30~4~70~18~16~4
+Josan~Elche~MF,DF~31~10~1211~2~3~12~5~2~0~40~52~13~42~11~9~18
+Willian José~Real Betis~FW~32~19~1604~9~4~35~12~2~0~62~40~5~65~19~8~11
+Joselu~Alavés~FW~37~35~3122~14~4~97~41~0~0~31~65~20~31~8~7~23
+Juanmi~Real Betis~MF~33~26~2131~16~4~54~30~5~0~62~40~5~65~19~8~11
+Vinicius Júnior~Real Madrid~FW,MF~35~30~2690~17~10~80~43~6~0~80~31~1~86~26~8~4
+Jens Jønsson~Cádiz~MF~22~17~1303~0~1~6~0~3~0~35~51~17~39~8~15~15
+Lee Kang-in~Mallorca~MF~30~15~1411~1~2~36~15~4~1~36~63~16~39~10~9~19
+Kiké~Osasuna~FW~33~18~1862~5~1~53~20~2~0~37~51~10~47~12~11~15
+Koke~Atlético Madrid~MF~31~29~2508~1~2~12~6~6~0~65~43~3~71~21~8~9
+Geoffrey Kondogbia~Atlético Madrid~MF,DF~28~21~1882~1~2~15~1~13~2~65~43~3~71~21~8~9
+Jules Koundé~Sevilla~DF~32~31~2736~2~1~13~3~2~2~53~30~4~70~18~16~4
+Toni Kroos~Real Madrid~MF~28~25~2103~1~3~46~12~4~0~80~31~1~86~26~8~4
+Takefusa Kubo~Mallorca~MF,FW~28~17~1605~1~0~48~8~4~0~36~63~16~39~10~9~19
+Víctor Laguardia~Alavés~DF~34~34~3042~3~2~14~5~9~0~31~65~20~31~8~7~23
+Érik Lamela~Sevilla~FW,MF~20~10~1015~5~2~21~12~5~0~53~30~4~70~18~16~4
+Toni Lato~Valencia~DF~11~7~590~0~1~0~0~5~0~48~53~9~48~11~15~12
+Robin Le Normand~Real Sociedad~DF~37~37~3330~1~1~18~5~6~0~40~37~6~62~17~11~10
+Jeremías Ledesma~Cádiz~GK~38~38~3420~0~0~1~1~4~0~35~51~17~39~8~15~15
+Wu Lei~Espanyol~MF,FW~23~4~474~1~0~7~5~0~0~40~53~14~42~10~12~16
+Florian Lejeune~Alavés~DF~30~30~2699~0~0~22~2~9~1~31~65~20~31~8~7~23
+Iñigo Lekue~Athletic Club~DF~25~22~1925~0~2~7~1~3~0~43~36~8~55~14~13~11
+Thomas Lemar~Atlético Madrid~MF~24~17~1440~4~5~29~8~2~0~65~43~3~71~21~8~9
+Clément Lenglet~Barcelona~DF~21~7~826~0~1~2~1~4~0~68~38~2~73~21~10~7
+Marcos Llorente~Atlético Madrid~MF,DF~29~29~2447~0~2~16~2~5~0~65~43~3~71~21~8~9
+Giovani Lo Celso~Villarreal~FW,MF~16~11~994~1~1~18~6~3~0~63~37~7~59~16~11~11
+Renan Lodi~Atlético Madrid~DF,MF~29~13~1181~2~2~10~4~4~0~65~43~3~71~21~8~9
+David López~Espanyol~MF,DF~18~8~743~0~0~5~4~1~0~40~53~14~42~10~12~16
+Diego López~Espanyol~GK~36~36~3177~0~0~0~0~4~0~40~53~14~42~10~12~16
+Javi López~Alavés~DF~9~4~462~0~0~0~0~2~0~31~65~20~31~8~7~23
+Unai López~Rayo Vallecano~MF~27~13~1160~0~0~19~7~5~0~39~50~12~42~11~9~18
+Mamadou Loum~Alavés~MF~32~26~2312~2~0~33~8~10~0~31~65~20~31~8~7~23
+Anthony Lozano~Cádiz~FW,MF~31~21~1672~7~2~49~20~8~0~35~51~17~39~8~15~15
+Florentino Luís~Getafe~MF~22~9~992~0~1~3~1~2~0~33~41~15~39~8~15~15
+José Luis Gayà~Valencia~DF~24~22~1871~2~4~18~9~8~2~48~53~9~48~11~15~12
+José Luis Morales~Levante~FW,MF~35~31~2719~13~7~81~36~7~0~51~76~19~35~8~11~19
+Darwin Machís~Granada~MF,FW~25~16~1376~4~2~37~17~2~0~44~61~18~38~8~14~16
+Pablo Maffeo~Mallorca~DF~35~35~2945~1~4~29~7~10~0~36~63~16~39~10~9~19
+Nemanja Maksimović~Getafe~MF~35~34~2936~1~2~31~5~5~0~33~41~15~39~8~15~15
+Hugo Mallo~Celta Vigo~DF~21~21~1826~1~1~17~2~5~2~43~43~11~46~12~10~16
+Mickael Malsa~Levante~MF~26~11~1143~1~2~13~2~7~0~51~76~19~35~8~11~19
+Giorgi Mamardashvili~Valencia~GK~18~18~1620~0~0~0~0~2~0~48~53~9~48~11~15~12
+Reinildo Mandava~Atlético Madrid~DF~17~15~1298~0~0~2~0~5~0~65~43~3~71~21~8~9
+Aïssa Mandi~Villarreal~DF~17~14~1375~1~0~10~3~3~0~63~37~7~59~16~11~11
+Nikola Maraš~Rayo Vallecano~DF~16~11~1044~0~0~1~0~4~0~39~50~12~42~11~9~18
+Marcelo~Real Madrid~DF~12~5~525~0~2~8~3~0~0~80~31~1~86~26~8~4
+Iván Marcone~Elche~MF~20~10~809~0~0~2~0~5~0~40~52~13~42~11~9~18
+Óscar de Marcos~Athletic Club~DF~22~19~1679~1~2~3~3~5~0~43~36~8~55~14~13~11
+José María Giménez~Atlético Madrid~DF~24~24~2042~1~1~20~7~7~0~65~43~3~71~21~8~9
+Roger Martí~Levante~FW~29~25~2115~7~3~49~20~8~0~51~76~19~35~8~11~19
+Anthony Martial~Sevilla~FW,MF~9~7~490~0~1~7~3~1~0~53~30~4~70~18~16~4
+Iñigo Martínez~Athletic Club~DF~27~26~2341~3~0~27~9~9~2~43~36~8~55~14~13~11
+Javi Martínez~Osasuna~MF~26~9~879~1~1~10~2~1~0~37~51~10~47~12~11~15
+Pablo Martínez~Levante~MF~13~7~656~0~1~11~1~2~0~51~76~19~35~8~11~19
+Omar Mascarell~Elche~MF~32~30~2493~0~0~12~1~6~0~40~52~13~42~11~9~18
+Jaime Mata~Getafe~FW~22~4~672~1~0~10~3~7~0~33~41~15~39~8~15~15
+Luís Maximiano~Granada~GK~35~35~3136~0~0~0~0~2~0~44~61~18~38~8~14~16
+Borja Mayoral~Getafe~FW~18~11~1044~6~1~17~7~3~0~33~41~15~39~8~15~15
+Óscar Melendo~Espanyol~MF~21~14~990~0~0~8~0~0~0~40~53~14~42~10~12~16
+Gonzalo Melero~Levante~MF~29~20~1692~7~2~22~11~5~0~51~76~19~35~8~11~19
+Memphis~Barcelona~FW~28~20~1851~12~2~61~34~3~0~68~38~2~73~21~10~7
+Brais Méndez~Celta Vigo~MF~37~36~3021~4~5~56~17~8~0~43~43~11~46~12~10~16
+Édgar Méndez~Alavés~MF,FW~32~17~1614~1~1~25~8~6~0~31~65~20~31~8~7~23
+Ferland Mendy~Real Madrid~DF~22~20~1734~2~1~12~5~4~0~80~31~1~86~26~8~4
+Mikel Merino~Real Sociedad~MF~34~33~2890~3~2~45~15~8~0~40~37~6~62~17~11~10
+Matt Miazga~Alavés~DF~11~9~833~0~0~7~3~2~0~31~65~20~31~8~7~23
+Miguel~Alavés~FW,MF~22~10~829~1~1~22~4~2~0~31~65~20~31~8~7~23
+Éder Militão~Real Madrid~DF~34~34~3031~1~2~33~8~5~0~80~31~1~86~26~8~4
+Luis Milla~Granada~MF~34~33~2773~3~3~22~6~4~0~44~61~18~38~8~14~16
+Pere Milla~Elche~FW,MF~32~17~1644~8~3~29~14~4~0~40~52~13~42~11~9~18
+Santi Mina~Celta Vigo~FW~33~30~2367~7~3~59~23~4~0~43~43~11~46~12~10~16
+Óscar Mingueza~Barcelona~DF~19~9~894~0~1~2~1~2~0~68~38~2~73~21~10~7
+Rafa Mir~Sevilla~FW~34~18~1808~10~0~61~24~6~0~53~30~4~70~18~16~4
+Jorge Miramón~Levante~DF,MF~29~22~1977~1~0~7~2~5~0~51~76~19~35~8~11~19
+Juan Miranda~Real Betis~DF~13~9~783~0~2~6~2~3~0~62~40~5~65~19~8~11
+Stefan Mitrović~Getafe~DF~32~31~2667~1~0~4~2~8~1~33~41~15~39~8~15~15
+Luka Modrić~Real Madrid~MF~28~25~2032~2~8~27~11~4~0~80~31~1~86~26~8~4
+Johan Mojica~Elche~DF,MF~33~32~2855~2~5~16~3~4~1~40~52~13~42~11~9~18
+Jorge Molina~Granada~FW~35~19~1966~10~5~46~22~2~0~44~61~18~38~8~14~16
+Jon Moncayola~Osasuna~MF~36~33~2915~2~3~41~12~2~0~37~51~10~47~12~11~15
+Monchu~Granada~MF~14~7~668~0~0~8~1~3~1~44~61~18~38~8~14~16
+Gonzalo Montiel~Sevilla~DF~18~15~1066~1~2~5~1~7~0~53~30~4~70~18~16~4
+Ángel Montoro~Granada~MF~24~13~1331~1~1~21~5~5~0~44~61~18~38~8~14~16
+Martín Montoya~Real Betis~DF~6~6~518~0~1~5~2~2~0~62~40~5~65~19~8~11
+Alberto Moreno~Villarreal~MF,DF~24~13~1223~3~2~22~10~3~0~63~37~7~59~16~11~11
+Álex Moreno~Real Betis~DF~30~28~2404~5~3~27~8~3~1~62~40~5~65~19~8~11
+Gerard Moreno~Villarreal~FW~17~14~1191~9~3~38~17~2~0~63~37~7~59~16~11~11
+Tete Morente~Elche~MF~32~18~1632~3~3~28~8~4~0~40~52~13~42~11~9~18
+Ilaix Moriba~Valencia~MF~14~9~818~0~0~14~5~9~1~48~53~9~48~11~15~12
+Manu Morlanes~Espanyol~MF~27~11~1144~2~0~8~2~6~1~40~53~14~42~10~12~16
+Loren Morón~Espanyol~FW,MF~21~4~563~1~0~10~2~0~0~40~53~14~42~10~12~16
+Toni Moya~Alavés~MF~28~17~1386~0~1~12~2~2~0~31~65~20~31~8~7~23
+Iker Muniain~Athletic Club~MF~35~34~2785~4~10~41~21~3~0~43~36~8~55~14~13~11
+Aihen Muñoz~Real Sociedad~DF~20~15~1342~0~0~7~0~4~1~40~37~6~62~17~11~10
+Jeison Murillo~Celta Vigo~DF~19~12~1117~0~0~6~1~5~1~43~43~11~46~12~10~16
+Vedat Muriqi~Mallorca~FW~16~16~1438~5~3~50~17~6~0~36~63~16~39~10~9~19
+Yunus Musah~Valencia~MF,FW~29~13~1259~1~0~7~2~5~0~48~53~9~48~11~15~12
+Shkodran Mustafi~Levante~DF~11~8~658~1~0~4~2~1~0~51~76~19~35~8~11~19
+Nacho~Real Madrid~DF~28~17~1555~3~0~10~4~7~0~80~31~1~86~26~8~4
+Ximo Navarro~Alavés~DF~18~16~1347~0~0~10~3~4~1~31~65~20~31~8~7~23
+Jesús Navas~Sevilla~DF~25~19~1786~0~3~10~1~4~0~53~30~4~70~18~16~4
+Álvaro Negredo~Cádiz~FW~34~24~2157~7~2~68~29~3~0~35~51~17~39~8~15~15
+Carlos Neva~Granada~DF~26~24~2108~0~0~6~1~1~0~44~61~18~38~8~14~16
+Fernando Niño~Mallorca~FW~23~9~884~2~0~23~13~2~0~36~63~16~39~10~9~19
+Nolito~Celta Vigo~MF~32~15~1384~2~0~20~9~2~0~43~43~11~46~12~10~16
+Randy Nteka~Rayo Vallecano~MF,FW~34~16~1462~3~0~29~8~2~0~39~50~12~42~11~9~18
+Unai Núñez~Athletic Club~DF~9~7~622~0~0~6~1~2~0~43~36~8~55~14~13~11
+Jan Oblak~Atlético Madrid~GK~38~38~3420~0~0~1~0~2~0~65~43~3~71~21~8~9
+Lucas Ocampos~Sevilla~FW,MF~30~23~2125~6~4~51~17~7~0~53~30~4~70~18~16~4
+Brian Oliván~Mallorca~DF~28~24~2189~1~0~20~8~7~0~36~63~16~39~10~9~19
+Mathías Olivera~Getafe~DF,MF~32~32~2803~1~3~24~7~10~0~33~41~15~39~8~15~15
+Mikel Oyarzabal~Real Sociedad~MF,FW~22~19~1671~9~3~42~18~0~1~40~37~6~62~17~11~10
+Fernando Pacheco~Alavés~GK~34~34~3053~0~0~0~0~1~0~31~65~20~31~8~7~23
+Helibelton Palacios~Elche~DF~26~22~1931~0~0~1~0~6~0~40~52~13~42~11~9~18
+Isaac Palazón Camacho~Rayo Vallecano~MF~34~27~2288~2~4~58~13~7~0~39~50~12~42~11~9~18
+Daniel Parejo~Villarreal~MF~33~32~2704~2~10~16~6~3~0~63~37~7~59~16~11~11
+Javier Pastore~Elche~MF~13~6~525~0~0~8~2~2~1~40~52~13~42~11~9~18
+Gabriel Paulista~Valencia~DF~19~19~1592~2~1~6~3~2~0~48~53~9~48~11~15~12
+Alfonso Pedraza~Villarreal~DF~28~19~1701~4~4~22~8~2~0~63~37~7~59~16~11~11
+Pedri~Barcelona~MF~12~10~885~3~1~12~6~0~0~68~38~2~73~21~10~7
+Adrià Pedrosa~Espanyol~DF~31~31~2720~1~1~25~7~8~0~40~53~14~42~10~12~16
+Facundo Pellistri~Alavés~MF,FW~21~6~672~0~0~7~2~0~0~31~65~20~31~8~7~23
+Alberto Perea~Cádiz~MF~18~8~777~0~1~17~4~2~0~35~51~17~39~8~15~15
+Kike Pérez~Elche~MF,FW~12~5~519~2~0~10~5~1~0~40~52~13~42~11~9~18
+Lucas Pérez~Elche~FW~18~16~1266~2~1~14~5~0~0~40~52~13~42~11~9~18
+Lucas Pérez~Cádiz~FW~15~11~1060~3~2~15~5~1~0~35~51~17~39~8~15~15
+Njegoš Petrović~Granada~MF~15~10~918~0~1~9~2~5~0~44~61~18~38~8~14~16
+Germán Pezzella~Real Betis~DF~23~22~1988~1~0~19~6~5~1~62~40~5~65~19~8~11
+Tomás Pina Isla~Alavés~MF~29~16~1444~0~0~6~1~4~0~31~65~20~31~8~7~23
+Yeremi Pino~Villarreal~MF,FW~31~21~1678~6~4~27~15~2~0~63~37~7~59~16~11~11
+Gerard Piqué~Barcelona~DF~27~25~2092~1~0~19~3~10~1~68~38~2~73~21~10~7
+Ezequiel Ponce~Elche~FW~13~5~667~1~0~15~5~1~1~40~52~13~42~11~9~18
+Pere Pons~Alavés~MF~27~17~1366~1~0~15~4~2~0~31~65~20~31~8~7~23
+Portu~Real Sociedad~MF,FW~37~17~1590~1~2~25~10~5~0~40~37~6~62~17~11~10
+Sergio Postigo~Levante~DF~13~10~848~0~0~2~0~3~0~51~76~19~35~8~11~19
+Abdón Prats~Mallorca~FW~23~6~641~3~0~18~6~3~0~36~63~16~39~10~9~19
+Javi Puado~Espanyol~MF,FW~30~26~2245~4~1~40~12~5~0~40~53~14~42~10~12~16
+Marc Pubill~Levante~DF,MF~11~5~512~0~1~6~1~1~0~51~76~19~35~8~11~19
+Antonio Puertas~Granada~MF,FW~33~25~2261~6~1~33~15~4~0~44~61~18~38~8~14~16
+Riqui Puig~Barcelona~MF~15~2~487~1~0~9~3~0~0~68~38~2~73~21~10~7
+Quini~Granada~DF~32~27~2304~0~1~17~2~11~0~44~61~18~38~8~14~16
+Uroš Račić~Valencia~MF~28~13~1206~0~0~16~1~3~1~48~53~9~48~11~15~12
+Nemanja Radoja~Levante~MF~19~17~1214~0~0~5~1~3~0~51~76~19~35~8~11~19
+Rafinha~Real Sociedad~MF,FW~17~13~1050~1~0~14~2~3~0~40~37~6~62~17~11~10
+Antonio Raillo~Mallorca~DF~17~17~1530~2~0~9~4~8~0~36~63~16~39~10~9~19
+Ivan Rakitić~Sevilla~MF~35~26~2182~4~6~31~12~5~0~53~30~4~70~18~16~4
+Sandro Ramírez~Getafe~FW~29~19~1462~3~0~50~14~7~0~33~41~15~39~8~15~15
+Manolo Reina~Mallorca~GK~21~21~1890~0~0~0~0~5~1~36~63~16~39~10~9~19
+Karim Rekik~Sevilla~DF~18~11~1098~0~2~4~0~2~0~53~30~4~70~18~16~4
+Álex Remiro~Real Sociedad~GK~35~35~3150~0~0~0~0~1~0~40~37~6~62~17~11~10
+Nico Ribaudo~Espanyol~MF,FW~31~7~1116~2~0~20~4~5~1~40~53~14~42~10~12~16
+Diego Rico~Real Sociedad~DF~21~19~1644~0~0~10~1~4~0~40~37~6~62~17~11~10
+Sergio Rico~Mallorca~GK~14~14~1260~0~0~0~0~0~0~36~63~16~39~10~9~19
+Luis Rioja~Alavés~MF,FW~37~36~3111~1~3~44~16~3~0~31~65~20~31~8~7~23
+Rober~Levante~DF~27~21~2010~1~0~8~2~5~1~51~76~19~35~8~11~19
+Rubén Rochina~Granada~MF,FW~15~8~743~1~3~15~5~3~0~44~61~18~38~8~14~16
+Enzo Roco~Elche~DF~30~29~2552~1~0~11~3~10~0~40~52~13~42~11~9~18
+Rodri~Real Betis~MF~21~10~881~1~2~15~7~1~0~62~40~5~65~19~8~11
+Ángel Rodríguez~Mallorca~FW,MF~29~19~1544~3~2~28~11~4~0~36~63~16~39~10~9~19
+Óscar Rodríguez Arnaiz~Getafe~MF,FW~18~9~943~0~1~25~8~2~0~33~41~15~39~8~15~15
+Dani Rodríguez~Mallorca~MF~36~33~2832~3~3~42~10~7~0~36~63~16~39~10~9~19
+Guido Rodríguez~Real Betis~MF~32~29~2529~1~2~21~8~9~1~62~40~5~65~19~8~11
+Rodrygo~Real Madrid~FW~33~17~1523~4~4~34~15~4~0~80~31~1~86~26~8~4
+Aitor Ruibal~Real Betis~MF,DF~19~9~856~0~0~20~3~6~0~62~40~5~65~19~8~11
+Víctor Ruiz~Real Betis~DF~18~17~1424~0~0~7~1~2~0~62~40~5~65~19~8~11
+Gerónimo Rulli~Villarreal~GK~32~32~2880~0~0~0~0~2~0~63~37~7~59~16~11~11
+Franco Russo~Mallorca~DF~19~17~1464~1~0~6~2~7~2~36~63~16~39~10~9~19
+Youssouf Sabaly~Real Betis~DF~10~9~788~0~1~4~1~1~0~62~40~5~65~19~8~11
+Salvi~Cádiz~MF~23~17~1395~2~1~20~8~3~1~35~51~17~39~8~15~15
+Fede San Emeterio~Cádiz~MF~12~10~830~0~0~0~0~3~0~35~51~17~39~8~15~15
+Oihan Sancet~Athletic Club~FW~27~16~1422~6~4~30~14~2~0~43~36~8~55~14~13~11
+Antonio Sánchez~Mallorca~MF~29~19~1616~1~0~18~4~3~1~36~63~16~39~10~9~19
+Germán Sánchez~Granada~DF~32~25~2299~2~1~13~4~11~1~44~61~18~38~8~14~16
+Manu Sánchez~Osasuna~DF~33~25~2257~1~3~6~1~6~0~37~51~10~47~12~11~15
+Oier Sanjurjo~Osasuna~MF~25~8~758~1~0~10~1~3~0~37~51~10~47~12~11~15
+Esteban Saveljich~Rayo Vallecano~DF~21~21~1700~0~0~9~3~4~0~39~50~12~42~11~9~18
+Stefan Savić~Atlético Madrid~DF~28~28~2440~0~0~15~5~12~0~65~43~3~71~21~8~9
+Salva Sevilla~Mallorca~MF~28~17~1507~5~3~26~8~2~0~36~63~16~39~10~9~19
+David Silva~Real Sociedad~MF,FW~25~22~1720~2~4~21~6~4~1~40~37~6~62~17~11~10
+Rui Silva~Real Betis~GK~22~21~1964~0~0~0~0~2~0~62~40~5~65~19~8~11
+Unai Simón~Athletic Club~GK~34~34~3060~0~0~0~0~3~0~43~36~8~55~14~13~11
+Rubén Sobrino~Cádiz~FW,MF~33~19~1861~4~1~33~10~4~0~35~51~17~39~8~15~15
+Augusto Solari~Celta Vigo~MF~26~4~714~0~0~7~1~5~0~43~43~11~46~12~10~16
+Roberto Soldado~Levante~FW~18~7~664~3~2~17~8~7~2~51~76~19~35~8~11~19
+Carlos Soler~Valencia~MF~32~28~2474~11~5~41~21~4~0~48~53~9~48~11~15~12
+Son~Levante~DF,MF~26~22~1971~1~0~14~7~5~1~51~76~19~35~8~11~19
+David Soria~Getafe~GK~38~38~3414~0~0~0~0~4~0~33~41~15~39~8~15~15
+Alberto Soro~Granada~MF,FW~16~7~578~0~0~7~4~0~0~44~61~18~38~8~14~16
+Damián Suárez~Getafe~DF,MF~35~31~2711~0~3~14~4~13~0~33~41~15~39~8~15~15
+Denis Suárez~Celta Vigo~MF~38~33~2819~4~6~22~8~4~0~43~43~11~46~12~10~16
+Luis Suárez~Atlético Madrid~FW~35~20~1835~11~2~54~26~7~0~65~43~3~71~21~8~9
+Mario Suárez~Rayo Vallecano~DF~14~8~712~0~0~9~3~2~0~39~50~12~42~11~9~18
+Alexander Sørloth~Real Sociedad~FW~33~20~1763~4~0~35~13~2~0~40~37~6~62~17~11~10
+Renato Tapia~Celta Vigo~MF~29~13~1412~0~0~12~3~10~0~43~43~11~46~12~10~16
+Cristian Tello~Real Betis~MF~23~5~819~2~2~29~9~2~0~62~40~5~65~19~8~11
+Nahuel Tenaglia~Alavés~DF~14~12~1073~0~0~6~1~2~0~31~65~20~31~8~7~23
+Marc-André ter Stegen~Barcelona~GK~35~35~3150~0~0~0~0~3~0~68~38~2~73~21~10~7
+Raúl de Tomás~Espanyol~FW~34~33~2914~17~3~106~45~7~2~40~53~14~42~10~12~16
+Raúl Torrente~Granada~DF~18~15~1282~0~0~4~0~5~0~44~61~18~38~8~14~16
+Ferrán Torres~Barcelona~FW~18~17~1412~4~4~52~19~1~0~68~38~2~73~21~10~7
+Óliver Torres~Sevilla~MF,FW~26~11~1008~2~3~14~5~2~0~53~30~4~70~18~16~4
+Pau Torres~Villarreal~DF~33~33~2855~5~1~24~9~5~0~63~37~7~59~16~11~11
+Roberto Torres~Osasuna~MF,FW~28~6~809~2~2~15~5~3~0~37~51~10~47~12~11~15
+Lucas Torró~Osasuna~MF~33~32~2725~1~0~34~9~10~0~37~51~10~47~12~11~15
+Óscar Trejo~Rayo Vallecano~MF~32~24~2007~3~9~23~9~13~0~39~50~12~42~11~9~18
+Manu Trigueros~Villarreal~MF,FW~35~27~2178~6~4~41~18~3~0~63~37~7~59~16~11~11
+Kieran Trippier~Atlético Madrid~MF,DF~15~12~976~0~0~2~0~1~0~65~43~3~71~21~8~9
+Enes Ünal~Getafe~FW~37~33~2798~16~1~86~28~8~0~33~41~15~39~8~15~15
+Myrto Uzuni~Granada~MF,FW~15~9~856~1~1~11~2~4~0~44~61~18~38~8~14~16
+Óscar Valentín~Rayo Vallecano~MF~35~29~2569~0~0~11~2~8~0~39~50~12~42~11~9~18
+Martin Valjent~Mallorca~DF~36~36~3181~0~0~10~1~4~0~36~63~16~39~10~9~19
+Federico Valverde~Real Madrid~MF~31~19~1833~0~1~34~9~2~0~80~31~1~86~26~8~4
+José Luis García Vayá~Levante~MF~29~23~2012~0~0~14~2~9~0~51~76~19~35~8~11~19
+Jesus Vazquez~Valencia~MF,DF~15~8~813~0~0~4~1~0~0~48~53~9~48~11~15~12
+Kevin Vázquez~Celta Vigo~DF~17~16~1334~0~1~3~1~3~0~43~43~11~46~12~10~16
+Lucas Vázquez~Real Madrid~DF~29~20~1833~3~0~18~5~3~0~80~31~1~86~26~8~4
+Unai Vencedor Paris~Athletic Club~MF~34~29~2383~0~0~20~2~4~0~43~36~8~55~14~13~11
+Gonzalo Verdú~Elche~DF~19~16~1397~0~0~3~0~11~0~40~52~13~42~11~9~18
+Mikel Vesga~Athletic Club~MF~32~17~1358~2~0~14~4~7~2~43~36~8~55~14~13~11
+Rúben Vezo~Levante~DF~32~27~2420~0~0~18~4~4~0~51~76~19~35~8~11~19
+Aleix Vidal~Espanyol~DF,MF~31~21~1901~2~0~6~3~10~0~40~53~14~42~10~12~16
+Nacho Vidal~Osasuna~DF~35~33~2902~0~1~20~1~9~0~37~51~10~47~12~11~15
+Tonny Vilhena~Espanyol~MF,FW~17~13~928~1~1~15~3~4~0~40~53~14~42~10~12~16
+Asier Villalibre~Athletic Club~FW~19~3~548~2~0~19~6~0~0~43~36~8~55~14~13~11
+Daniel Vivian~Athletic Club~DF~24~22~1986~2~1~17~8~2~0~43~36~8~55~14~13~11
+Šime Vrsaljko~Atlético Madrid~DF,MF~21~10~914~1~2~4~1~4~0~65~43~3~71~21~8~9
+Daniel Wass~Valencia~MF~19~19~1582~1~1~28~8~6~0~48~53~9~48~11~15~12
+Iñaki Williams~Athletic Club~FW~38~32~2777~8~5~95~37~4~0~43~36~8~55~14~13~11
+Nico Williams~Athletic Club~MF~34~11~1337~0~0~33~10~4~0~43~36~8~55~14~13~11
+Okay Yokuşlu~Getafe~DF,MF~11~5~465~0~0~4~1~1~0~33~41~15~39~8~15~15
+Joseba Zaldúa~Real Sociedad~DF,MF~24~14~1172~0~0~6~3~6~0~40~37~6~62~17~11~10
+Oier Zarraga~Athletic Club~MF~31~8~1166~1~0~18~4~5~0~43~36~8~55~14~13~11
+Luca Zidane~Rayo Vallecano~GK~8~8~645~0~0~0~0~0~1~39~50~12~42~11~9~18
+Igor Zubeldia~Real Sociedad~DF~26~19~1648~0~1~9~2~7~0~40~37~6~62~17~11~10
+Martín Zubimendi~Real Sociedad~MF~36~26~2591~2~1~20~9~4~0~40~37~6~62~17~11~10

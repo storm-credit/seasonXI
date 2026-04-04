@@ -1,0 +1,418 @@
+player_season_id,player_id,player_name,club_id,club_name,season_id,season_label,primary_position,appearances,starts,minutes_played,goals,assists,shots,shots_on_target,key_passes,progressive_passes,progressive_carries,successful_dribbles,xg,xa,tackles,interceptions,clearances,aerial_duels_won,yellow_cards,red_cards,clean_sheets,team_goals_scored,team_goals_conceded,league_name,final_table_rank,team_points,team_wins,team_draws,team_losses
+yunis-abdelhamid-reims-2021-2022,yunis-abdelhamid,Yunis Abdelhamid,reims,Reims,2021-2022,2021/22,DF,34,34,2983,2,0,18,6,0,0,0,0,0,0,0,0,0,0,5,1,0,43,44,Ligue 1,12,46,11,13,14
+salis-abdul-samed-clermont-foot-2021-2022,salis-abdul-samed,Salis Abdul Samed,clermont-foot,Clermont Foot,2021-2022,2021/22,MF,31,29,2462,1,0,18,5,0,0,0,0,0,0,0,0,0,0,12,3,0,38,69,Ligue 1,17,36,9,9,20
+laurent-abergel-lorient-2021-2022,laurent-abergel,Laurent Abergel,lorient,Lorient,2021-2022,2021/22,MF,34,34,2956,0,2,30,7,0,0,0,0,0,0,0,0,0,0,9,0,0,35,63,Ligue 1,16,36,8,12,18
+yacine-adli-bordeaux-2021-2022,yacine-adli,Yacine Adli,bordeaux,Bordeaux,2021-2022,2021/22,MF,36,25,2260,1,7,32,15,0,0,0,0,0,0,0,0,0,0,5,0,0,52,91,Ligue 1,20,31,6,13,19
+lucien-agoume-brest-2021-2022,lucien-agoume,Lucien Agoume,brest,Brest,2021-2022,2021/22,MF,27,21,1868,0,0,15,1,0,0,0,0,0,0,0,0,0,0,6,0,0,49,57,Ligue 1,11,48,13,9,16
+nayef-aguerd-rennes-2021-2022,nayef-aguerd,Nayef Aguerd,rennes,Rennes,2021-2022,2021/22,DF,31,31,2735,2,2,25,7,0,0,0,0,0,0,0,0,0,0,3,1,0,82,40,Ligue 1,4,66,20,6,12
+ruben-aguilar-monaco-2021-2022,ruben-aguilar,Ruben Aguilar,monaco,Monaco,2021-2022,2021/22,DF,28,22,2140,0,2,10,2,0,0,0,0,0,0,0,0,0,0,4,0,0,65,40,Ligue 1,3,69,20,9,9
+anel-ahmedhodzic-bordeaux-2021-2022,anel-ahmedhodzic,Anel Ahmedhodžić,bordeaux,Bordeaux,2021-2022,2021/22,DF,15,15,1350,0,1,8,4,0,0,0,0,0,0,0,0,0,0,6,0,0,52,91,Ligue 1,20,31,6,13,19
+jean-eudes-aholou-strasbourg-2021-2022,jean-eudes-aholou,Jean-Eudes Aholou,strasbourg,Strasbourg,2021-2022,2021/22,MF,25,11,1004,1,1,17,2,0,0,0,0,0,0,0,0,0,0,2,0,0,60,43,Ligue 1,6,63,17,12,9
+ludovic-ajorque-strasbourg-2021-2022,ludovic-ajorque,Ludovic Ajorque,strasbourg,Strasbourg,2021-2022,2021/22,FW,36,31,2738,12,8,60,28,0,0,0,0,0,0,0,0,0,0,5,1,0,60,43,Ligue 1,6,63,17,12,9
+dogan-alemdar-rennes-2021-2022,dogan-alemdar,Doğan Alemdar,rennes,Rennes,2021-2022,2021/22,GK,12,12,1080,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,82,40,Ligue 1,4,66,20,6,12
+mohamed-ali-cho-angers-2021-2022,mohamed-ali-cho,Mohamed Ali Cho,angers,Angers,2021-2022,2021/22,FW,32,21,1837,4,1,42,16,0,0,0,0,0,0,0,0,0,0,6,2,0,44,55,Ligue 1,14,41,10,11,17
+jim-allevinah-clermont-foot-2021-2022,jim-allevinah,Jim Allevinah,clermont-foot,Clermont Foot,2021-2022,2021/22,MF,30,13,1488,1,2,43,15,0,0,0,0,0,0,0,0,0,0,1,0,0,38,69,Ligue 1,17,36,9,9,20
+ibrahim-amadou-metz-2021-2022,ibrahim-amadou,Ibrahim Amadou,metz,Metz,2021-2022,2021/22,DF,10,10,812,1,0,3,2,0,0,0,0,0,0,0,0,0,0,4,0,0,35,69,Ligue 1,19,31,6,13,19
+benjamin-andre-lille-2021-2022,benjamin-andre,Benjamin André,lille,Lille,2021-2022,2021/22,MF,33,33,2752,2,1,16,5,0,0,0,0,0,0,0,0,0,0,12,1,0,48,48,Ligue 1,10,55,14,13,11
+houssem-aouar-lyon-2021-2022,houssem-aouar,Houssem Aouar,lyon,Lyon,2021-2022,2021/22,MF,36,29,2504,6,4,76,24,0,0,0,0,0,0,0,0,0,0,1,0,0,66,51,Ligue 1,8,61,17,11,10
+adil-aouchiche-saint-etienne-2021-2022,adil-aouchiche,Adil Aouchiche,saint-etienne,Saint-Étienne,2021-2022,2021/22,MF,35,11,1081,0,4,21,10,0,0,0,0,0,0,0,0,0,0,2,0,0,42,77,Ligue 1,18,32,7,11,20
+dennis-appiah-nantes-2021-2022,dennis-appiah,Dennis Appiah,nantes,Nantes,2021-2022,2021/22,DF,32,22,2099,0,0,2,0,0,0,0,0,0,0,0,0,0,0,4,0,0,55,48,Ligue 1,9,55,15,10,13
+lorenz-assignon-rennes-2021-2022,lorenz-assignon,Lorenz Assignon,rennes,Rennes,2021-2022,2021/22,DF,20,5,616,0,2,6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,82,40,Ligue 1,4,66,20,6,12
+youcef-atal-nice-2021-2022,youcef-atal,Youcef Atal,nice,Nice,2021-2022,2021/22,DF,17,13,1140,2,1,13,5,0,0,0,0,0,0,0,0,0,0,4,0,0,52,36,Ligue 1,5,66,20,7,11
+loic-bade-rennes-2021-2022,loic-bade,Loïc Bade,rennes,Rennes,2021-2022,2021/22,DF,14,11,985,0,1,7,0,0,0,0,0,0,0,0,0,0,0,3,1,0,82,40,Ligue 1,4,66,20,6,12
+benoit-badiashile-monaco-2021-2022,benoit-badiashile,Benoît Badiashile,monaco,Monaco,2021-2022,2021/22,DF,24,21,1838,1,0,14,4,0,0,0,0,0,0,0,0,0,0,4,0,0,65,40,Ligue 1,3,69,20,9,9
+stephane-bahoken-angers-2021-2022,stephane-bahoken,Stéphane Bahoken,angers,Angers,2021-2022,2021/22,FW,29,12,1099,3,1,23,13,0,0,0,0,0,0,0,0,0,0,0,0,0,44,55,Ligue 1,14,41,10,11,17
+stefan-bajic-saint-etienne-2021-2022,stefan-bajic,Stefan Bajic,saint-etienne,Saint-Étienne,2021-2022,2021/22,GK,7,4,510,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,42,77,Ligue 1,18,32,7,11,20
+leonardo-balerdi-marseille-2021-2022,leonardo-balerdi,Leonardo Balerdi,marseille,Marseille,2021-2022,2021/22,DF,17,10,950,0,0,2,0,0,0,0,0,0,0,0,0,0,0,4,1,0,63,38,Ligue 1,2,71,21,8,9
+abdoulaye-bamba-angers-2021-2022,abdoulaye-bamba,Abdoulaye Bamba,angers,Angers,2021-2022,2021/22,DF,10,4,458,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,44,55,Ligue 1,14,41,10,11,17
+jonathan-bamba-lille-2021-2022,jonathan-bamba,Jonathan Bamba,lille,Lille,2021-2022,2021/22,MF,31,28,2428,1,2,51,12,0,0,0,0,0,0,0,0,0,0,3,0,0,48,48,Ligue 1,10,55,14,13,11
+melvin-bard-nice-2021-2022,melvin-bard,Melvin Bard,nice,Nice,2021-2022,2021/22,DF,33,30,2589,2,2,5,2,0,0,0,0,0,0,0,0,0,0,3,0,0,52,36,Ligue 1,5,66,20,7,11
+youcef-belaili-brest-2021-2022,youcef-belaili,Youcef Belaïli,brest,Brest,2021-2022,2021/22,MF,13,11,825,3,2,17,8,0,0,0,0,0,0,0,0,0,0,2,0,0,49,57,Ligue 1,11,48,13,9,16
+haris-belkebla-brest-2021-2022,haris-belkebla,Haris Belkebla,brest,Brest,2021-2022,2021/22,MF,31,26,2310,0,0,5,1,0,0,0,0,0,0,0,0,0,0,2,0,0,49,57,Ligue 1,11,48,13,9,16
+jean-ricner-bellegarde-strasbourg-2021-2022,jean-ricner-bellegarde,Jean-Ricner Bellegarde,strasbourg,Strasbourg,2021-2022,2021/22,MF,36,26,2332,2,3,31,7,0,0,0,0,0,0,0,0,0,0,5,0,0,60,43,Ligue 1,6,63,17,12,9
+wissam-ben-yedder-monaco-2021-2022,wissam-ben-yedder,Wissam Ben Yedder,monaco,Monaco,2021-2022,2021/22,FW,37,29,2529,25,5,72,44,0,0,0,0,0,0,0,0,0,0,3,0,0,65,40,Ligue 1,3,69,20,9,9
+walter-benitez-nice-2021-2022,walter-benitez,Walter Benítez,nice,Nice,2021-2022,2021/22,GK,37,37,3330,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,52,36,Ligue 1,5,66,20,7,11
+nabil-bentaleb-angers-2021-2022,nabil-bentaleb,Nabil Bentaleb,angers,Angers,2021-2022,2021/22,MF,18,18,1515,1,0,16,8,0,0,0,0,0,0,0,0,0,0,4,0,0,44,55,Ligue 1,14,41,10,11,17
+mitchell-van-bergen-reims-2021-2022,mitchell-van-bergen,Mitchell van Bergen,reims,Reims,2021-2022,2021/22,MF,20,11,983,0,0,12,6,0,0,0,0,0,0,0,0,0,0,1,0,0,43,44,Ligue 1,12,46,11,13,14
+valon-berisha-reims-2021-2022,valon-berisha,Valon Berisha,reims,Reims,2021-2022,2021/22,MF,13,5,455,0,1,4,0,0,0,0,0,0,0,0,0,0,0,2,1,0,43,44,Ligue 1,12,46,11,13,14
+paul-bernardoni-angers-2021-2022,paul-bernardoni,Paul Bernardoni,angers,Angers,2021-2022,2021/22,GK,13,13,1170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,44,55,Ligue 1,14,41,10,11,17
+paul-bernardoni-saint-etienne-2021-2022,paul-bernardoni,Paul Bernardoni,saint-etienne,Saint-Étienne,2021-2022,2021/22,GK,19,19,1710,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,42,77,Ligue 1,18,32,7,11,20
+juan-bernat-paris-saint-germain-2021-2022,juan-bernat,Juan Bernat,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,DF,15,12,958,0,0,1,1,0,0,0,0,0,0,0,0,0,0,2,0,0,90,36,Ligue 1,1,86,26,8,4
+dimitry-bertaud-montpellier-2021-2022,dimitry-bertaud,Dimitry Bertaud,montpellier,Montpellier,2021-2022,2021/22,GK,11,9,833,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49,61,Ligue 1,13,43,12,7,19
+jason-berthomier-clermont-foot-2021-2022,jason-berthomier,Jason Berthomier,clermont-foot,Clermont Foot,2021-2022,2021/22,MF,29,22,1732,1,5,23,5,0,0,0,0,0,0,0,0,0,0,0,0,0,38,69,Ligue 1,17,36,9,9,20
+giulian-biancone-troyes-2021-2022,giulian-biancone,Giulian Biancone,troyes,Troyes,2021-2022,2021/22,DF,33,26,2292,1,2,30,9,0,0,0,0,0,0,0,0,0,0,10,0,0,37,53,Ligue 1,15,38,9,11,18
+el-bilal-toure-reims-2021-2022,el-bilal-toure,El Bilal Touré,reims,Reims,2021-2022,2021/22,MF,21,15,1194,2,4,32,11,0,0,0,0,0,0,0,0,0,0,2,0,0,43,44,Ligue 1,12,46,11,13,14
+jean-claude-billong-clermont-foot-2021-2022,jean-claude-billong,Jean-Claude Billong,clermont-foot,Clermont Foot,2021-2022,2021/22,DF,15,10,980,0,0,5,1,0,0,0,0,0,0,0,0,0,0,2,0,0,38,69,Ligue 1,17,36,9,9,20
+marco-bizot-brest-2021-2022,marco-bizot,Marco Bizot,brest,Brest,2021-2022,2021/22,GK,38,38,3420,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,49,57,Ligue 1,11,48,13,9,16
+ludovic-blas-nantes-2021-2022,ludovic-blas,Ludovic Blas,nantes,Nantes,2021-2022,2021/22,MF,35,35,2961,10,5,90,37,0,0,0,0,0,0,0,0,0,0,10,0,0,55,48,Ligue 1,9,55,15,10,13
+myron-boadu-monaco-2021-2022,myron-boadu,Myron Boadu,monaco,Monaco,2021-2022,2021/22,FW,31,7,960,4,1,21,8,0,0,0,0,0,0,0,0,0,0,0,0,0,65,40,Ligue 1,3,69,20,9,9
+jerome-boateng-lyon-2021-2022,jerome-boateng,Jérôme Boateng,lyon,Lyon,2021-2022,2021/22,DF,24,19,1622,0,1,5,3,0,0,0,0,0,0,0,0,0,0,6,0,0,66,51,Ligue 1,8,61,17,11,10
+quentin-boisgard-lorient-2021-2022,quentin-boisgard,Quentin Boisgard,lorient,Lorient,2021-2022,2021/22,MF,25,9,958,1,1,16,8,0,0,0,0,0,0,0,0,0,0,3,0,0,35,63,Ligue 1,16,36,8,12,18
+sven-botman-lille-2021-2022,sven-botman,Sven Botman,lille,Lille,2021-2022,2021/22,DF,25,25,2250,3,1,15,5,0,0,0,0,0,0,0,0,0,0,4,0,0,48,48,Ligue 1,10,55,14,13,11
+denis-bouanga-saint-etienne-2021-2022,denis-bouanga,Denis Bouanga,saint-etienne,Saint-Étienne,2021-2022,2021/22,MF,34,28,2436,9,6,81,30,0,0,0,0,0,0,0,0,0,0,4,1,0,42,77,Ligue 1,18,32,7,11,20
+hicham-boudaoui-nice-2021-2022,hicham-boudaoui,Hicham Boudaoui,nice,Nice,2021-2022,2021/22,MF,29,21,1621,3,2,15,5,0,0,0,0,0,0,0,0,0,0,7,0,0,52,36,Ligue 1,5,66,20,7,11
+ryad-boudebouz-saint-etienne-2021-2022,ryad-boudebouz,Ryad Boudebouz,saint-etienne,Saint-Étienne,2021-2022,2021/22,MF,30,27,2252,3,4,28,10,0,0,0,0,0,0,0,0,0,0,2,0,0,42,77,Ligue 1,18,32,7,11,20
+sofiane-boufal-angers-2021-2022,sofiane-boufal,Sofiane Boufal,angers,Angers,2021-2022,2021/22,MF,29,28,2330,8,4,63,27,0,0,0,0,0,0,0,0,0,0,6,0,0,44,55,Ligue 1,14,41,10,11,17
+farid-boulaya-metz-2021-2022,farid-boulaya,Farid Boulaya,metz,Metz,2021-2022,2021/22,MF,24,18,1526,4,2,19,6,0,0,0,0,0,0,0,0,0,0,1,1,0,35,69,Ligue 1,19,31,6,13,19
+benjamin-bourigeaud-rennes-2021-2022,benjamin-bourigeaud,Benjamin Bourigeaud,rennes,Rennes,2021-2022,2021/22,MF,38,38,3193,11,12,51,21,0,0,0,0,0,0,0,0,0,0,2,0,0,82,40,Ligue 1,4,66,20,6,12
+lilian-brassier-brest-2021-2022,lilian-brassier,Lilian Brassier,brest,Brest,2021-2022,2021/22,DF,31,23,2263,1,0,11,2,0,0,0,0,0,0,0,0,0,0,4,0,0,49,57,Ligue 1,11,48,13,9,16
+dylan-bronn-metz-2021-2022,dylan-bronn,Dylan Bronn,metz,Metz,2021-2022,2021/22,DF,30,28,2545,1,2,15,8,0,0,0,0,0,0,0,0,0,0,10,1,0,35,69,Ligue 1,19,31,6,13,19
+osman-bukari-nantes-2021-2022,osman-bukari,Osman Bukari,nantes,Nantes,2021-2022,2021/22,MF,24,10,1012,2,4,20,9,0,0,0,0,0,0,0,0,0,0,1,0,0,55,48,Ligue 1,9,55,15,10,13
+maxime-busi-reims-2021-2022,maxime-busi,Maxime Busi,reims,Reims,2021-2022,2021/22,DF,18,13,1296,1,0,7,2,0,0,0,0,0,0,0,0,0,0,3,0,0,43,44,Ligue 1,12,46,11,13,14
+jimmy-cabot-angers-2021-2022,jimmy-cabot,Jimmy Cabot,angers,Angers,2021-2022,2021/22,MF,24,24,2008,0,5,11,3,0,0,0,0,0,0,0,0,0,0,4,0,0,44,55,Ligue 1,14,41,10,11,17
+anthony-caci-strasbourg-2021-2022,anthony-caci,Anthony Caci,strasbourg,Strasbourg,2021-2022,2021/22,DF,37,26,2395,1,3,15,4,0,0,0,0,0,0,0,0,0,0,4,0,0,60,43,Ligue 1,6,63,17,12,9
+yannick-cahuzac-lens-2021-2022,yannick-cahuzac,Yannick Cahuzac,lens,Lens,2021-2022,2021/22,MF,17,6,618,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,62,48,Ligue 1,7,62,17,11,10
+marc-aurele-caillard-metz-2021-2022,marc-aurele-caillard,Marc-Aurèle Caillard,metz,Metz,2021-2022,2021/22,GK,19,17,1542,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,35,69,Ligue 1,19,31,6,13,19
+duje-caleta-car-marseille-2021-2022,duje-caleta-car,Duje Ćaleta-Car,marseille,Marseille,2021-2022,2021/22,DF,26,24,2057,2,0,12,4,0,0,0,0,0,0,0,0,0,0,6,0,0,63,38,Ligue 1,2,71,21,8,9
+mahdi-camara-saint-etienne-2021-2022,mahdi-camara,Mahdi Camara,saint-etienne,Saint-Étienne,2021-2022,2021/22,DF,35,34,3073,3,0,28,16,0,0,0,0,0,0,0,0,0,0,8,0,0,42,77,Ligue 1,18,32,7,11,20
+fali-cande-metz-2021-2022,fali-cande,Fali Candé,metz,Metz,2021-2022,2021/22,DF,11,11,973,0,2,6,2,0,0,0,0,0,0,0,0,0,0,2,0,0,35,69,Ligue 1,19,31,6,13,19
+pierrick-capelle-angers-2021-2022,pierrick-capelle,Pierrick Capelle,angers,Angers,2021-2022,2021/22,MF,30,12,1193,0,1,17,1,0,0,0,0,0,0,0,0,0,0,1,0,0,44,55,Ligue 1,14,41,10,11,17
+maxence-caqueret-lyon-2021-2022,maxence-caqueret,Maxence Caqueret,lyon,Lyon,2021-2022,2021/22,MF,31,26,2335,0,0,15,2,0,0,0,0,0,0,0,0,0,0,5,0,0,66,51,Ligue 1,8,61,17,11,10
+irvin-cardona-brest-2021-2022,irvin-cardona,Irvin Cardona,brest,Brest,2021-2022,2021/22,MF,32,13,1334,4,2,26,12,0,0,0,0,0,0,0,0,0,0,2,0,0,49,57,Ligue 1,11,48,13,9,16
+igor-carioca-lorient-2021-2022,igor-carioca,Igor Carioca,lorient,Lorient,2021-2022,2021/22,DF,28,17,1578,0,0,14,6,0,0,0,0,0,0,0,0,0,0,3,0,0,35,63,Ligue 1,16,36,8,12,18
+moreto-cassama-reims-2021-2022,moreto-cassama,Moreto Cassamã,reims,Reims,2021-2022,2021/22,MF,17,11,801,2,0,11,7,0,0,0,0,0,0,0,0,0,0,1,0,0,43,44,Ligue 1,12,46,11,13,14
+jean-charles-castelletto-nantes-2021-2022,jean-charles-castelletto,Jean-Charles Castelletto,nantes,Nantes,2021-2022,2021/22,DF,28,28,2510,1,0,16,5,0,0,0,0,0,0,0,0,0,0,8,0,0,55,48,Ligue 1,9,55,15,10,13
+zeki-celik-lille-2021-2022,zeki-celik,Zeki Çelik,lille,Lille,2021-2022,2021/22,DF,32,30,2696,2,3,22,3,0,0,0,0,0,0,0,0,0,0,10,0,0,48,48,Ligue 1,10,55,14,13,11
+fabien-centonze-metz-2021-2022,fabien-centonze,Fabien Centonze,metz,Metz,2021-2022,2021/22,DF,19,18,1586,4,1,15,7,0,0,0,0,0,0,0,0,0,0,3,0,0,35,69,Ligue 1,19,31,6,13,19
+dylan-chambost-troyes-2021-2022,dylan-chambost,Dylan Chambost,troyes,Troyes,2021-2022,2021/22,MF,19,9,753,0,1,10,1,0,0,0,0,0,0,0,0,0,0,0,0,0,37,53,Ligue 1,15,38,9,11,18
+brendan-chardonnet-brest-2021-2022,brendan-chardonnet,Brendan Chardonnet,brest,Brest,2021-2022,2021/22,DF,32,31,2686,3,0,13,7,0,0,0,0,0,0,0,0,0,0,6,1,0,49,57,Ligue 1,11,48,13,9,16
+xavier-chavalerin-troyes-2021-2022,xavier-chavalerin,Xavier Chavalerin,troyes,Troyes,2021-2022,2021/22,MF,34,31,2717,5,2,29,10,0,0,0,0,0,0,0,0,0,0,4,0,0,37,53,Ligue 1,15,38,9,11,18
+pedro-chirivella-nantes-2021-2022,pedro-chirivella,Pedro Chirivella,nantes,Nantes,2021-2022,2021/22,MF,31,31,2637,3,1,21,6,0,0,0,0,0,0,0,0,0,0,6,0,0,55,48,Ligue 1,9,55,15,10,13
+joris-chotard-montpellier-2021-2022,joris-chotard,Joris Chotard,montpellier,Montpellier,2021-2022,2021/22,MF,36,33,2935,1,1,18,3,0,0,0,0,0,0,0,0,0,0,5,0,0,49,61,Ligue 1,13,43,12,7,19
+jonathan-clauss-lens-2021-2022,jonathan-clauss,Jonathan Clauss,lens,Lens,2021-2022,2021/22,MF,37,35,3046,5,11,40,17,0,0,0,0,0,0,0,0,0,0,3,0,0,62,48,Ligue 1,7,62,17,11,10
+marcus-coco-nantes-2021-2022,marcus-coco,Marcus Coco,nantes,Nantes,2021-2022,2021/22,MF,24,9,930,1,1,12,3,0,0,0,0,0,0,0,0,0,0,3,1,0,55,48,Ligue 1,9,55,15,10,13
+abdu-conte-troyes-2021-2022,abdu-conte,Abdu Conté,troyes,Troyes,2021-2022,2021/22,DF,17,17,1347,0,1,5,1,0,0,0,0,0,0,0,0,0,0,2,0,0,37,53,Ligue 1,15,38,9,11,18
+sebastien-corchia-nantes-2021-2022,sebastien-corchia,Sébastien Corchia,nantes,Nantes,2021-2022,2021/22,DF,28,13,1324,0,3,11,3,0,0,0,0,0,0,0,0,0,0,0,1,0,55,48,Ligue 1,9,55,15,10,13
+david-costa-lens-2021-2022,david-costa,David Costa,lens,Lens,2021-2022,2021/22,MF,33,16,1464,3,5,25,8,0,0,0,0,0,0,0,0,0,0,2,0,0,62,48,Ligue 1,7,62,17,11,10
+benoit-costil-bordeaux-2021-2022,benoit-costil,Benoît Costil,bordeaux,Bordeaux,2021-2022,2021/22,GK,25,25,2250,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,52,91,Ligue 1,20,31,6,13,19
+kalifa-coulibaly-nantes-2021-2022,kalifa-coulibaly,Kalifa Coulibaly,nantes,Nantes,2021-2022,2021/22,FW,21,9,850,5,0,25,10,0,0,0,0,0,0,0,0,0,0,1,0,0,55,48,Ligue 1,9,55,15,10,13
+nicolas-cozza-montpellier-2021-2022,nicolas-cozza,Nicolas Cozza,montpellier,Montpellier,2021-2022,2021/22,DF,34,32,2770,2,2,7,3,0,0,0,0,0,0,0,0,0,0,2,1,0,49,61,Ligue 1,13,43,12,7,19
+wylan-cyprien-nantes-2021-2022,wylan-cyprien,Wylan Cyprien,nantes,Nantes,2021-2022,2021/22,MF,24,17,1490,2,3,20,8,0,0,0,0,0,0,0,0,0,0,3,0,0,55,48,Ligue 1,9,55,15,10,13
+lucas-da-cunha-clermont-foot-2021-2022,lucas-da-cunha,Lucas Da Cunha,clermont-foot,Clermont Foot,2021-2022,2021/22,MF,15,11,836,2,0,18,6,0,0,0,0,0,0,0,0,0,0,0,0,0,38,69,Ligue 1,17,36,9,9,20
+damien-da-silva-lyon-2021-2022,damien-da-silva,Damien Da Silva,lyon,Lyon,2021-2022,2021/22,DF,17,13,1126,0,0,11,1,0,0,0,0,0,0,0,0,0,0,5,1,0,66,51,Ligue 1,8,61,17,11,10
+flavius-daniliuc-nice-2021-2022,flavius-daniliuc,Flavius Daniliuc,nice,Nice,2021-2022,2021/22,DF,24,14,1293,0,0,4,0,0,0,0,0,0,0,0,0,0,0,4,0,0,52,36,Ligue 1,5,66,20,7,11
+kevin-danso-lens-2021-2022,kevin-danso,Kevin Danso,lens,Lens,2021-2022,2021/22,DF,33,32,2790,2,2,13,4,0,0,0,0,0,0,0,0,0,0,9,2,0,62,48,Ligue 1,7,62,17,11,10
+dante-nice-2021-2022,dante,Dante,nice,Nice,2021-2022,2021/22,DF,34,33,2870,0,0,13,3,0,0,0,0,0,0,0,0,0,0,7,3,0,52,36,Ligue 1,5,66,20,7,11
+jonathan-david-lille-2021-2022,jonathan-david,Jonathan David,lille,Lille,2021-2022,2021/22,FW,38,32,2804,15,0,70,33,0,0,0,0,0,0,0,0,0,0,3,0,0,48,48,Ligue 1,10,55,14,13,11
+konrad-de-la-fuente-marseille-2021-2022,konrad-de-la-fuente,Konrad De La Fuente,marseille,Marseille,2021-2022,2021/22,MF,16,9,785,0,2,15,4,0,0,0,0,0,0,0,0,0,0,1,0,0,63,38,Ligue 1,2,71,21,8,9
+romain-del-castillo-brest-2021-2022,romain-del-castillo,Romain Del Castillo,brest,Brest,2021-2022,2021/22,MF,19,13,975,0,6,12,3,0,0,0,0,0,0,0,0,0,0,1,1,0,49,57,Ligue 1,11,48,13,9,16
+thomas-delaine-metz-2021-2022,thomas-delaine,Thomas Delaine,metz,Metz,2021-2022,2021/22,DF,29,26,2316,1,2,18,5,0,0,0,0,0,0,0,0,0,0,4,0,0,35,69,Ligue 1,19,31,6,13,19
+andy-delort-nice-2021-2022,andy-delort,Andy Delort,nice,Nice,2021-2022,2021/22,FW,32,26,2448,16,2,100,42,0,0,0,0,0,0,0,0,0,0,3,0,0,52,36,Ligue 1,5,66,20,7,11
+moussa-dembele-lyon-2021-2022,moussa-dembele,Moussa Dembélé,lyon,Lyon,2021-2022,2021/22,FW,30,25,2207,21,4,87,45,0,0,0,0,0,0,0,0,0,0,6,0,0,66,51,Ligue 1,8,61,17,11,10
+jason-denayer-lyon-2021-2022,jason-denayer,Jason Denayer,lyon,Lyon,2021-2022,2021/22,DF,15,12,1002,3,0,6,4,0,0,0,0,0,0,0,0,0,0,2,0,0,66,51,Ligue 1,8,61,17,11,10
+arthur-desmas-clermont-foot-2021-2022,arthur-desmas,Arthur Desmas,clermont-foot,Clermont Foot,2021-2022,2021/22,GK,15,15,1304,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,69,Ligue 1,17,36,9,9,20
+angel-di-maria-paris-saint-germain-2021-2022,angel-di-maria,Ángel Di María,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,MF,26,19,1645,5,7,51,22,0,0,0,0,0,0,0,0,0,0,2,0,0,90,36,Ligue 1,1,86,26,8,4
+abdou-diallo-paris-saint-germain-2021-2022,abdou-diallo,Abdou Diallo,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,DF,12,10,877,0,1,2,1,0,0,0,0,0,0,0,0,0,0,1,0,0,90,36,Ligue 1,1,86,26,8,4
+habib-diallo-strasbourg-2021-2022,habib-diallo,Habib Diallo,strasbourg,Strasbourg,2021-2022,2021/22,FW,31,16,1541,11,1,53,23,0,0,0,0,0,0,0,0,0,0,2,0,0,60,43,Ligue 1,6,63,17,12,9
+stephane-diarra-lorient-2021-2022,stephane-diarra,Stéphane Diarra,lorient,Lorient,2021-2022,2021/22,MF,15,5,525,0,0,13,5,0,0,0,0,0,0,0,0,0,0,2,0,0,35,63,Ligue 1,16,36,8,12,18
+bamba-dieng-marseille-2021-2022,bamba-dieng,Bamba Dieng,marseille,Marseille,2021-2022,2021/22,MF,25,11,975,7,1,34,18,0,0,0,0,0,0,0,0,0,0,0,1,0,63,38,Ligue 1,2,71,21,8,9
+javairo-dilrosun-bordeaux-2021-2022,javairo-dilrosun,Javairô Dilrosun,bordeaux,Bordeaux,2021-2022,2021/22,MF,32,19,1732,2,6,41,10,0,0,0,0,0,0,0,0,0,0,3,0,0,52,91,Ligue 1,20,31,6,13,19
+tristan-dingome-troyes-2021-2022,tristan-dingome,Tristan Dingomé,troyes,Troyes,2021-2022,2021/22,MF,25,12,1077,2,4,20,4,0,0,0,0,0,0,0,0,0,0,3,0,0,37,53,Ligue 1,15,38,9,11,18
+sinaly-diomande-lyon-2021-2022,sinaly-diomande,Sinaly Diomande,lyon,Lyon,2021-2022,2021/22,DF,11,5,579,0,0,3,0,0,0,0,0,0,0,0,0,0,0,2,0,0,66,51,Ligue 1,8,61,17,11,10
+sofiane-diop-monaco-2021-2022,sofiane-diop,Sofiane Diop,monaco,Monaco,2021-2022,2021/22,MF,30,24,1948,6,4,37,13,0,0,0,0,0,0,0,0,0,0,6,0,0,65,40,Ligue 1,3,69,20,9,9
+axel-disasi-monaco-2021-2022,axel-disasi,Axel Disasi,monaco,Monaco,2021-2022,2021/22,DF,32,30,2721,1,0,20,3,0,0,0,0,0,0,0,0,0,0,5,0,0,65,40,Ligue 1,3,69,20,9,9
+tiago-djalo-lille-2021-2022,tiago-djalo,Tiago Djaló,lille,Lille,2021-2022,2021/22,DF,28,26,2329,1,1,12,5,0,0,0,0,0,0,0,0,0,0,4,0,0,48,48,Ligue 1,10,55,14,13,11
+alexander-djiku-strasbourg-2021-2022,alexander-djiku,Alexander Djiku,strasbourg,Strasbourg,2021-2022,2021/22,DF,31,30,2694,1,0,15,7,0,0,0,0,0,0,0,0,0,0,10,1,0,60,43,Ligue 1,6,63,17,12,9
+ouparine-djoco-clermont-foot-2021-2022,ouparine-djoco,Ouparine Djoco,clermont-foot,Clermont Foot,2021-2022,2021/22,GK,24,23,2116,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,38,69,Ligue 1,17,36,9,9,20
+jeremy-doku-rennes-2021-2022,jeremy-doku,Jeremy Doku,rennes,Rennes,2021-2022,2021/22,MF,14,4,469,1,2,5,2,0,0,0,0,0,0,0,0,0,0,2,0,0,82,40,Ligue 1,4,66,20,6,12
+kasper-dolberg-nice-2021-2022,kasper-dolberg,Kasper Dolberg,nice,Nice,2021-2022,2021/22,FW,26,19,1492,6,2,40,16,0,0,0,0,0,0,0,0,0,0,0,0,0,52,36,Ligue 1,5,66,20,7,11
+gianluigi-donnarumma-paris-saint-germain-2021-2022,gianluigi-donnarumma,Gianluigi Donnarumma,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,GK,17,17,1530,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,90,36,Ligue 1,1,86,26,8,4
+jodel-dossou-clermont-foot-2021-2022,jodel-dossou,Jodel Dossou,clermont-foot,Clermont Foot,2021-2022,2021/22,MF,35,23,2008,3,1,52,17,0,0,0,0,0,0,0,0,0,0,4,0,0,38,69,Ligue 1,17,36,9,9,20
+cheick-doucoure-lens-2021-2022,cheick-doucoure,Cheick Doucouré,lens,Lens,2021-2022,2021/22,MF,34,33,2946,1,4,31,11,0,0,0,0,0,0,0,0,0,0,7,1,0,62,48,Ligue 1,7,62,17,11,10
+souleyman-doumbia-angers-2021-2022,souleyman-doumbia,Souleyman Doumbia,angers,Angers,2021-2022,2021/22,DF,27,27,2219,0,1,15,3,0,0,0,0,0,0,0,0,0,0,10,1,0,44,55,Ligue 1,14,41,10,11,17
+julian-draxler-paris-saint-germain-2021-2022,julian-draxler,Julian Draxler,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,MF,18,5,548,2,1,9,3,0,0,0,0,0,0,0,0,0,0,0,0,0,90,36,Ligue 1,1,86,26,8,4
+matthieu-dreyer-lorient-2021-2022,matthieu-dreyer,Matthieu Dreyer,lorient,Lorient,2021-2022,2021/22,GK,16,16,1440,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,35,63,Ligue 1,16,36,8,12,18
+leo-dubois-lyon-2021-2022,leo-dubois,Leo Dubois,lyon,Lyon,2021-2022,2021/22,DF,23,20,1742,0,0,10,1,0,0,0,0,0,0,0,0,0,0,5,0,0,66,51,Ligue 1,8,61,17,11,10
+jean-kevin-duverne-brest-2021-2022,jean-kevin-duverne,Jean-Kevin Duverne,brest,Brest,2021-2022,2021/22,DF,37,33,3007,1,3,12,3,0,0,0,0,0,0,0,0,0,0,1,0,0,49,57,Ligue 1,11,48,13,9,16
+enzo-ebosse-angers-2021-2022,enzo-ebosse,Enzo Ebosse,angers,Angers,2021-2022,2021/22,DF,27,21,1890,0,0,3,0,0,0,0,0,0,0,0,0,0,0,1,0,0,44,55,Ligue 1,14,41,10,11,17
+hugo-ekitike-reims-2021-2022,hugo-ekitike,Hugo Ekitike,reims,Reims,2021-2022,2021/22,FW,24,15,1273,10,3,31,18,0,0,0,0,0,0,0,0,0,0,1,1,0,43,44,Ligue 1,12,46,11,13,14
+alberth-elis-bordeaux-2021-2022,alberth-elis,Alberth Elis,bordeaux,Bordeaux,2021-2022,2021/22,MF,20,16,1409,9,1,31,12,0,0,0,0,0,0,0,0,0,0,2,0,0,52,91,Ligue 1,20,31,6,13,19
+maxime-esteve-montpellier-2021-2022,maxime-esteve,Maxime Estève,montpellier,Montpellier,2021-2022,2021/22,DF,24,20,1857,0,0,5,1,0,0,0,0,0,0,0,0,0,0,2,0,0,49,61,Ligue 1,13,43,12,7,19
+fabio-nantes-2021-2022,fabio,Fábio,nantes,Nantes,2021-2022,2021/22,DF,27,21,1667,0,2,11,1,0,0,0,0,0,0,0,0,0,0,8,1,0,55,48,Ligue 1,9,55,15,10,13
+wout-faes-reims-2021-2022,wout-faes,Wout Faes,reims,Reims,2021-2022,2021/22,DF,37,37,3330,4,0,22,9,0,0,0,0,0,0,0,0,0,0,2,0,0,43,44,Ligue 1,12,46,11,13,14
+romain-faivre-brest-2021-2022,romain-faivre,Romain Faivre,brest,Brest,2021-2022,2021/22,MF,21,20,1795,7,5,38,18,0,0,0,0,0,0,0,0,0,0,1,0,0,49,57,Ligue 1,11,48,13,9,16
+romain-faivre-lyon-2021-2022,romain-faivre,Romain Faivre,lyon,Lyon,2021-2022,2021/22,MF,14,9,889,3,0,20,6,0,0,0,0,0,0,0,0,0,0,0,0,0,66,51,Ligue 1,8,61,17,11,10
+wuilker-farinez-lens-2021-2022,wuilker-farinez,Wuilker Faríñez,lens,Lens,2021-2022,2021/22,GK,13,11,1105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,62,48,Ligue 1,7,62,17,11,10
+julien-faussurier-brest-2021-2022,julien-faussurier,Julien Faussurier,brest,Brest,2021-2022,2021/22,DF,16,4,489,0,1,4,2,0,0,0,0,0,0,0,0,0,0,1,0,0,49,57,Ligue 1,11,48,13,9,16
+jordan-ferri-montpellier-2021-2022,jordan-ferri,Jordan Ferri,montpellier,Montpellier,2021-2022,2021/22,MF,34,33,2911,0,2,14,2,0,0,0,0,0,0,0,0,0,0,13,1,0,49,61,Ligue 1,13,43,12,7,19
+karol-fila-strasbourg-2021-2022,karol-fila,Karol Fila,strasbourg,Strasbourg,2021-2022,2021/22,DF,16,7,560,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,60,43,Ligue 1,6,63,17,12,9
+alexis-flips-reims-2021-2022,alexis-flips,Alexis Flips,reims,Reims,2021-2022,2021/22,MF,25,13,1056,2,4,19,10,0,0,0,0,0,0,0,0,0,0,2,0,0,43,44,Ligue 1,12,46,11,13,14
+seko-fofana-lens-2021-2022,seko-fofana,Seko Fofana,lens,Lens,2021-2022,2021/22,MF,38,38,3357,8,1,97,32,0,0,0,0,0,0,0,0,0,0,2,0,0,62,48,Ligue 1,7,62,17,11,10
+youssouf-fofana-monaco-2021-2022,youssouf-fofana,Youssouf Fofana,monaco,Monaco,2021-2022,2021/22,MF,33,23,2190,0,4,30,6,0,0,0,0,0,0,0,0,0,0,4,0,0,65,40,Ligue 1,3,69,20,9,9
+thomas-foket-reims-2021-2022,thomas-foket,Thomas Foket,reims,Reims,2021-2022,2021/22,DF,29,26,2235,1,0,8,3,0,0,0,0,0,0,0,0,0,0,5,0,0,43,44,Ligue 1,12,46,11,13,14
+jose-fonte-lille-2021-2022,jose-fonte,José Fonte,lille,Lille,2021-2022,2021/22,DF,38,38,3420,0,2,23,6,0,0,0,0,0,0,0,0,0,0,4,0,0,48,48,Ligue 1,10,55,14,13,11
+przemyslaw-frankowski-lens-2021-2022,przemyslaw-frankowski,Przemysław Frankowski,lens,Lens,2021-2022,2021/22,MF,37,28,2448,6,5,33,14,0,0,0,0,0,0,0,0,0,0,5,0,0,62,48,Ligue 1,7,62,17,11,10
+fransergio-bordeaux-2021-2022,fransergio,Fransérgio,bordeaux,Bordeaux,2021-2022,2021/22,MF,26,14,1258,0,1,14,2,0,0,0,0,0,0,0,0,0,0,7,0,0,52,91,Ligue 1,20,31,6,13,19
+angelo-fulgini-angers-2021-2022,angelo-fulgini,Angelo Fulgini,angers,Angers,2021-2022,2021/22,MF,36,35,2929,5,4,58,17,0,0,0,0,0,0,0,0,0,0,6,0,0,44,55,Ligue 1,14,41,10,11,17
+gauthier-gallon-troyes-2021-2022,gauthier-gallon,Gauthier Gallon,troyes,Troyes,2021-2022,2021/22,GK,31,31,2790,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,37,53,Ligue 1,15,38,9,11,18
+kevin-gameiro-strasbourg-2021-2022,kevin-gameiro,Kévin Gameiro,strasbourg,Strasbourg,2021-2022,2021/22,FW,35,28,2385,11,3,69,29,0,0,0,0,0,0,0,0,0,0,0,0,0,60,43,Ligue 1,6,63,17,12,9
+idrissa-gana-gueye-paris-saint-germain-2021-2022,idrissa-gana-gueye,Idrissa Gana Gueye,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,MF,26,18,1641,3,1,24,7,0,0,0,0,0,0,0,0,0,0,4,0,0,90,36,Ligue 1,1,86,26,8,4
+ignatius-ganago-lens-2021-2022,ignatius-ganago,Ignatius Ganago,lens,Lens,2021-2022,2021/22,FW,28,11,1024,5,1,30,11,0,0,0,0,0,0,0,0,0,0,2,0,0,62,48,Ligue 1,7,62,17,11,10
+johan-gastien-clermont-foot-2021-2022,johan-gastien,Johan Gastien,clermont-foot,Clermont Foot,2021-2022,2021/22,MF,32,32,2746,0,1,24,7,0,0,0,0,0,0,0,0,0,0,8,2,0,38,69,Ligue 1,17,36,9,9,20
+valere-germain-montpellier-2021-2022,valere-germain,Valère Germain,montpellier,Montpellier,2021-2022,2021/22,FW,34,22,1970,4,3,31,16,0,0,0,0,0,0,0,0,0,0,3,0,0,49,61,Ligue 1,13,43,12,7,19
+gerson-marseille-2021-2022,gerson,Gerson,marseille,Marseille,2021-2022,2021/22,MF,35,29,2544,9,4,45,18,0,0,0,0,0,0,0,0,0,0,3,0,0,63,38,Ligue 1,2,71,21,8,9
+willem-geubbels-nantes-2021-2022,willem-geubbels,Willem Geubbels,nantes,Nantes,2021-2022,2021/22,MF,22,4,544,2,1,12,3,0,0,0,0,0,0,0,0,0,0,1,0,0,55,48,Ligue 1,9,55,15,10,13
+nicholas-gioacchini-montpellier-2021-2022,nicholas-gioacchini,Nicholas Gioacchini,montpellier,Montpellier,2021-2022,2021/22,MF,28,3,497,0,2,11,2,0,0,0,0,0,0,0,0,0,0,0,0,0,49,61,Ligue 1,13,43,12,7,19
+jimmy-giraudon-troyes-2021-2022,jimmy-giraudon,Jimmy Giraudon,troyes,Troyes,2021-2022,2021/22,DF,19,18,1619,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,0,37,53,Ligue 1,15,38,9,11,18
+andrei-girotto-nantes-2021-2022,andrei-girotto,Andrei Girotto,nantes,Nantes,2021-2022,2021/22,DF,36,36,3146,6,1,45,10,0,0,0,0,0,0,0,0,0,0,8,0,0,55,48,Ligue 1,9,55,15,10,13
+aleksandr-golovin-monaco-2021-2022,aleksandr-golovin,Aleksandr Golovin,monaco,Monaco,2021-2022,2021/22,MF,27,17,1502,3,4,23,8,0,0,0,0,0,0,0,0,0,0,4,1,0,65,40,Ligue 1,3,69,20,9,9
+angel-gomes-lille-2021-2022,angel-gomes,Angel Gomes,lille,Lille,2021-2022,2021/22,MF,24,12,954,1,1,14,2,0,0,0,0,0,0,0,0,0,0,3,0,0,48,48,Ligue 1,10,55,14,13,11
+alfred-gomis-rennes-2021-2022,alfred-gomis,Alfred Gomis,rennes,Rennes,2021-2022,2021/22,GK,25,25,2250,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,82,40,Ligue 1,4,66,20,6,12
+alvaro-gonzalez-marseille-2021-2022,alvaro-gonzalez,Álvaro González,marseille,Marseille,2021-2022,2021/22,DF,6,5,451,0,0,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,63,38,Ligue 1,2,71,21,8,9
+amine-gouiri-nice-2021-2022,amine-gouiri,Amine Gouiri,nice,Nice,2021-2022,2021/22,MF,38,32,2754,10,9,75,35,0,0,0,0,0,0,0,0,0,0,3,0,0,52,36,Ligue 1,5,66,20,7,11
+lucas-gourna-douath-saint-etienne-2021-2022,lucas-gourna-douath,Lucas Gourna-Douath,saint-etienne,Saint-Étienne,2021-2022,2021/22,MF,31,20,1804,1,0,11,1,0,0,0,0,0,0,0,0,0,0,7,0,0,42,77,Ligue 1,18,32,7,11,20
+jonathan-gradit-lens-2021-2022,jonathan-gradit,Jonathan Gradit,lens,Lens,2021-2022,2021/22,DF,35,35,3067,0,0,5,0,0,0,0,0,0,0,0,0,0,0,7,0,0,62,48,Ligue 1,7,62,17,11,10
+andrew-gravillon-reims-2021-2022,andrew-gravillon,Andrew Gravillon,reims,Reims,2021-2022,2021/22,DF,26,24,2135,0,0,16,4,0,0,0,0,0,0,0,0,0,0,9,2,0,43,44,Ligue 1,12,46,11,13,14
+adrian-grbic-lorient-2021-2022,adrian-grbic,Adrian Grbić,lorient,Lorient,2021-2022,2021/22,FW,16,4,518,1,0,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,35,63,Ligue 1,16,36,8,12,18
+ivo-grbic-lille-2021-2022,ivo-grbic,Ivo Grbić,lille,Lille,2021-2022,2021/22,GK,21,21,1890,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,48,48,Ligue 1,10,55,14,13,11
+etienne-green-saint-etienne-2021-2022,etienne-green,Etienne Green,saint-etienne,Saint-Étienne,2021-2022,2021/22,GK,15,15,1197,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,42,77,Ligue 1,18,32,7,11,20
+gabriel-gudmundsson-lille-2021-2022,gabriel-gudmundsson,Gabriel Gudmundsson,lille,Lille,2021-2022,2021/22,DF,30,15,1344,1,0,19,6,0,0,0,0,0,0,0,0,0,0,3,0,0,48,48,Ligue 1,10,55,14,13,11
+matteo-guendouzi-marseille-2021-2022,matteo-guendouzi,Mattéo Guendouzi,marseille,Marseille,2021-2022,2021/22,MF,38,35,3152,4,6,47,18,0,0,0,0,0,0,0,0,0,0,6,0,0,63,38,Ligue 1,2,71,21,8,9
+lamine-gueye-metz-2021-2022,lamine-gueye,Lamine Gueye,metz,Metz,2021-2022,2021/22,MF,14,7,555,0,3,13,7,0,0,0,0,0,0,0,0,0,0,0,0,0,35,69,Ligue 1,19,31,6,13,19
+pape-gueye-marseille-2021-2022,pape-gueye,Pape Gueye,marseille,Marseille,2021-2022,2021/22,DF,28,17,1528,0,1,31,4,0,0,0,0,0,0,0,0,0,0,7,0,0,63,38,Ligue 1,2,71,21,8,9
+josuha-guilavogui-bordeaux-2021-2022,josuha-guilavogui,Josuha Guilavogui,bordeaux,Bordeaux,2021-2022,2021/22,DF,15,15,1331,1,1,9,3,0,0,0,0,0,0,0,0,0,0,4,0,0,52,91,Ligue 1,20,31,6,13,19
+frederic-guilbert-strasbourg-2021-2022,frederic-guilbert,Frederic Guilbert,strasbourg,Strasbourg,2021-2022,2021/22,DF,33,28,2516,0,4,24,5,0,0,0,0,0,0,0,0,0,0,4,0,0,60,43,Ligue 1,6,63,17,12,9
+bruno-guimaraes-lyon-2021-2022,bruno-guimaraes,Bruno Guimarães,lyon,Lyon,2021-2022,2021/22,MF,20,19,1634,0,3,11,2,0,0,0,0,0,0,0,0,0,0,2,0,0,66,51,Ligue 1,8,61,17,11,10
+serhou-guirassy-rennes-2021-2022,serhou-guirassy,Serhou Guirassy,rennes,Rennes,2021-2022,2021/22,FW,37,7,1016,9,0,46,17,0,0,0,0,0,0,0,0,0,0,1,0,0,82,40,Ligue 1,4,66,20,6,12
+malo-gusto-lyon-2021-2022,malo-gusto,Malo Gusto,lyon,Lyon,2021-2022,2021/22,DF,30,21,1884,0,4,11,0,0,0,0,0,0,0,0,0,0,0,3,0,0,66,51,Ligue 1,8,61,17,11,10
+massadio-haidara-lens-2021-2022,massadio-haidara,Massadio Haïdara,lens,Lens,2021-2022,2021/22,DF,20,12,1076,1,1,5,2,0,0,0,0,0,0,0,0,0,0,5,1,0,62,48,Ligue 1,7,62,17,11,10
+oualid-el-hajjam-troyes-2021-2022,oualid-el-hajjam,Oualid El Hajjam,troyes,Troyes,2021-2022,2021/22,DF,19,12,1072,1,1,11,3,0,0,0,0,0,0,0,0,0,0,2,0,0,37,53,Ligue 1,15,38,9,11,18
+achraf-hakimi-paris-saint-germain-2021-2022,achraf-hakimi,Achraf Hakimi,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,DF,32,28,2479,4,6,20,10,0,0,0,0,0,0,0,0,0,0,3,1,0,90,36,Ligue 1,1,86,26,8,4
+pierre-yves-hamel-clermont-foot-2021-2022,pierre-yves-hamel,Pierre-Yves Hamel,clermont-foot,Clermont Foot,2021-2022,2021/22,FW,17,6,523,0,0,13,4,0,0,0,0,0,0,0,0,0,0,2,0,0,38,69,Ligue 1,17,36,9,9,20
+romain-hamouma-saint-etienne-2021-2022,romain-hamouma,Romain Hamouma,saint-etienne,Saint-Étienne,2021-2022,2021/22,MF,22,7,886,2,1,23,7,0,0,0,0,0,0,0,0,0,0,2,0,0,42,77,Ligue 1,18,32,7,11,20
+amine-harit-marseille-2021-2022,amine-harit,Amine Harit,marseille,Marseille,2021-2022,2021/22,MF,23,12,1165,4,4,14,6,0,0,0,0,0,0,0,0,0,0,1,0,0,63,38,Ligue 1,2,71,21,8,9
+henrique-lyon-2021-2022,henrique,Henrique,lyon,Lyon,2021-2022,2021/22,DF,18,12,1105,0,1,5,0,0,0,0,0,0,0,0,0,0,0,3,0,0,66,51,Ligue 1,8,61,17,11,10
+luis-henrique-marseille-2021-2022,luis-henrique,Luis Henrique,marseille,Marseille,2021-2022,2021/22,MF,20,7,699,0,1,6,2,0,0,0,0,0,0,0,0,0,0,0,0,0,63,38,Ligue 1,2,71,21,8,9
+christophe-herelle-brest-2021-2022,christophe-herelle,Christophe Hérelle,brest,Brest,2021-2022,2021/22,DF,23,23,1932,0,0,6,2,0,0,0,0,0,0,0,0,0,0,6,0,0,49,57,Ligue 1,11,48,13,9,16
+ander-herrera-paris-saint-germain-2021-2022,ander-herrera,Ander Herrera,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,MF,19,12,1091,3,2,14,3,0,0,0,0,0,0,0,0,0,0,2,0,0,90,36,Ligue 1,1,86,26,8,4
+franck-honorat-brest-2021-2022,franck-honorat,Franck Honorat,brest,Brest,2021-2022,2021/22,MF,34,34,2899,11,4,59,30,0,0,0,0,0,0,0,0,0,0,3,0,0,49,57,Ligue 1,11,48,13,9,16
+cedric-hountondji-clermont-foot-2021-2022,cedric-hountondji,Cédric Hountondji,clermont-foot,Clermont Foot,2021-2022,2021/22,DF,23,23,2034,1,0,8,3,0,0,0,0,0,0,0,0,0,0,2,0,0,38,69,Ligue 1,17,36,9,9,20
+mauro-icardi-paris-saint-germain-2021-2022,mauro-icardi,Mauro Icardi,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,FW,24,10,1027,4,0,28,10,0,0,0,0,0,0,0,0,0,0,1,0,0,90,36,Ligue 1,1,86,26,8,4
+jonathan-iglesias-clermont-foot-2021-2022,jonathan-iglesias,Jonathan Iglesias,clermont-foot,Clermont Foot,2021-2022,2021/22,MF,15,5,579,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,69,Ligue 1,17,36,9,9,20
+danylo-ihnatenko-bordeaux-2021-2022,danylo-ihnatenko,Danylo Ihnatenko,bordeaux,Bordeaux,2021-2022,2021/22,MF,11,7,692,0,3,12,1,0,0,0,0,0,0,0,0,0,0,3,1,0,52,91,Ligue 1,20,31,6,13,19
+jonathan-ikone-lille-2021-2022,jonathan-ikone,Jonathan Ikone,lille,Lille,2021-2022,2021/22,MF,18,13,1062,1,0,22,8,0,0,0,0,0,0,0,0,0,0,1,0,0,48,48,Ligue 1,10,55,14,13,11
+bonke-innocent-lorient-2021-2022,bonke-innocent,Bonke Innocent,lorient,Lorient,2021-2022,2021/22,MF,12,11,874,0,0,3,1,0,0,0,0,0,0,0,0,0,0,4,0,0,35,63,Ligue 1,16,36,8,12,18
+ismail-jakobs-monaco-2021-2022,ismail-jakobs,Ismail Jakobs,monaco,Monaco,2021-2022,2021/22,DF,28,10,1203,0,1,5,1,0,0,0,0,0,0,0,0,0,0,1,0,0,65,40,Ligue 1,3,69,20,9,9
+abdel-jalil-medioub-bordeaux-2021-2022,abdel-jalil-medioub,Abdel Jalil Medioub,bordeaux,Bordeaux,2021-2022,2021/22,DF,10,6,622,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,52,91,Ligue 1,20,31,6,13,19
+leo-jardim-lille-2021-2022,leo-jardim,Léo Jardim,lille,Lille,2021-2022,2021/22,GK,17,17,1530,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,48,48,Ligue 1,10,55,14,13,11
+jemerson-metz-2021-2022,jemerson,Jemerson,metz,Metz,2021-2022,2021/22,DF,15,15,1202,0,0,4,3,0,0,0,0,0,0,0,0,0,0,3,2,0,35,69,Ligue 1,19,31,6,13,19
+moritz-jenz-lorient-2021-2022,moritz-jenz,Moritz Jenz,lorient,Lorient,2021-2022,2021/22,DF,17,16,1381,1,0,9,1,0,0,0,0,0,0,0,0,0,0,5,1,0,35,63,Ligue 1,16,36,8,12,18
+issa-kabore-troyes-2021-2022,issa-kabore,Issa Kaboré,troyes,Troyes,2021-2022,2021/22,DF,31,26,2254,0,1,7,2,0,0,0,0,0,0,0,0,0,0,8,2,0,37,53,Ligue 1,15,38,9,11,18
+tino-kadewere-lyon-2021-2022,tino-kadewere,Tino Kadewere,lyon,Lyon,2021-2022,2021/22,MF,15,3,506,1,0,18,7,0,0,0,0,0,0,0,0,0,0,0,1,0,66,51,Ligue 1,8,61,17,11,10
+gael-kakuta-lens-2021-2022,gael-kakuta,Gaël Kakuta,lens,Lens,2021-2022,2021/22,MF,29,20,1673,3,2,41,15,0,0,0,0,0,0,0,0,0,0,1,0,0,62,48,Ligue 1,7,62,17,11,10
+arnaud-kalimuendo-lens-2021-2022,arnaud-kalimuendo,Arnaud Kalimuendo,lens,Lens,2021-2022,2021/22,FW,32,27,2148,12,0,61,31,0,0,0,0,0,0,0,0,0,0,1,1,0,62,48,Ligue 1,7,62,17,11,10
+boubacar-kamara-marseille-2021-2022,boubacar-kamara,Boubacar Kamara,marseille,Marseille,2021-2022,2021/22,DF,34,31,2778,1,0,21,3,0,0,0,0,0,0,0,0,0,0,5,0,0,63,38,Ligue 1,2,71,21,8,9
+hassane-kamara-nice-2021-2022,hassane-kamara,Hassane Kamara,nice,Nice,2021-2022,2021/22,DF,11,7,544,0,0,12,0,0,0,0,0,0,0,0,0,0,0,2,0,0,52,36,Ligue 1,5,66,20,7,11
+jean-armel-kana-biyik-metz-2021-2022,jean-armel-kana-biyik,Jean-Armel Kana-Biyik,metz,Metz,2021-2022,2021/22,DF,10,8,664,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,35,69,Ligue 1,19,31,6,13,19
+ilan-kebbal-reims-2021-2022,ilan-kebbal,Ilan Kebbal,reims,Reims,2021-2022,2021/22,MF,31,21,1772,1,4,27,6,0,0,0,0,0,0,0,0,0,0,1,0,0,43,44,Ligue 1,12,46,11,13,14
+thilo-kehrer-paris-saint-germain-2021-2022,thilo-kehrer,Thilo Kehrer,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,DF,27,16,1513,2,0,9,4,0,0,0,0,0,0,0,0,0,0,0,0,0,90,36,Ligue 1,1,86,26,8,4
+saif-eddine-khaoui-clermont-foot-2021-2022,saif-eddine-khaoui,Saîf-Eddine Khaoui,clermont-foot,Clermont Foot,2021-2022,2021/22,MF,23,9,927,1,0,20,7,0,0,0,0,0,0,0,0,0,0,1,0,0,38,69,Ligue 1,17,36,9,9,20
+wahbi-khazri-saint-etienne-2021-2022,wahbi-khazri,Wahbi Khazri,saint-etienne,Saint-Étienne,2021-2022,2021/22,MF,30,26,2225,10,0,72,22,0,0,0,0,0,0,0,0,0,0,6,0,0,42,77,Ligue 1,18,32,7,11,20
+presnel-kimpembe-paris-saint-germain-2021-2022,presnel-kimpembe,Presnel Kimpembe,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,DF,30,29,2576,1,0,7,1,0,0,0,0,0,0,0,0,0,0,6,0,0,90,36,Ligue 1,1,86,26,8,4
+justin-kluivert-nice-2021-2022,justin-kluivert,Justin Kluivert,nice,Nice,2021-2022,2021/22,MF,27,24,1868,4,5,30,10,0,0,0,0,0,0,0,0,0,0,6,1,0,52,36,Ligue 1,5,66,20,7,11
+randal-kolo-muani-nantes-2021-2022,randal-kolo-muani,Randal Kolo Muani,nantes,Nantes,2021-2022,2021/22,MF,36,34,2948,12,4,56,27,0,0,0,0,0,0,0,0,0,0,2,0,0,55,48,Ligue 1,9,55,15,10,13
+timothee-kolodziejczak-saint-etienne-2021-2022,timothee-kolodziejczak,Timothée Kolodziejczak,saint-etienne,Saint-Étienne,2021-2022,2021/22,DF,30,30,2565,2,3,15,6,0,0,0,0,0,0,0,0,0,0,4,1,0,42,77,Ligue 1,18,32,7,11,20
+ghislain-konan-reims-2021-2022,ghislain-konan,Ghislain Konan,reims,Reims,2021-2022,2021/22,DF,28,28,2418,1,3,19,5,0,0,0,0,0,0,0,0,0,0,1,0,0,43,44,Ligue 1,12,46,11,13,14
+ibrahima-kone-lorient-2021-2022,ibrahima-kone,Ibrahima Koné,lorient,Lorient,2021-2022,2021/22,FW,16,6,732,5,1,14,8,0,0,0,0,0,0,0,0,0,0,2,0,0,35,63,Ligue 1,16,36,8,12,18
+youssouf-kone-troyes-2021-2022,youssouf-kone,Youssouf Koné,troyes,Troyes,2021-2022,2021/22,DF,21,11,980,0,1,9,3,0,0,0,0,0,0,0,0,0,0,2,1,0,37,53,Ligue 1,15,38,9,11,18
+laurent-koscielny-bordeaux-2021-2022,laurent-koscielny,Laurent Koscielny,bordeaux,Bordeaux,2021-2022,2021/22,DF,11,11,933,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,52,91,Ligue 1,20,31,6,13,19
+rominigue-kouame-troyes-2021-2022,rominigue-kouame,Rominigue Kouamé,troyes,Troyes,2021-2022,2021/22,MF,34,34,2968,1,2,37,11,0,0,0,0,0,0,0,0,0,0,5,0,0,37,53,Ligue 1,15,38,9,11,18
+boubakar-kouyate-metz-2021-2022,boubakar-kouyate,Boubakar Kouyaté,metz,Metz,2021-2022,2021/22,DF,30,30,2665,1,0,22,6,0,0,0,0,0,0,0,0,0,0,8,1,0,35,69,Ligue 1,19,31,6,13,19
+jean-philippe-krasso-saint-etienne-2021-2022,jean-philippe-krasso,Jean-Philippe Krasso,saint-etienne,Saint-Étienne,2021-2022,2021/22,FW,16,5,453,1,1,12,2,0,0,0,0,0,0,0,0,0,0,0,0,0,42,77,Ligue 1,18,32,7,11,20
+enock-kwateng-bordeaux-2021-2022,enock-kwateng,Enock Kwateng,bordeaux,Bordeaux,2021-2022,2021/22,DF,29,22,2002,1,0,7,3,0,0,0,0,0,0,0,0,0,0,6,1,0,52,91,Ligue 1,20,31,6,13,19
+gaetan-laborde-rennes-2021-2022,gaetan-laborde,Gaëtan Laborde,rennes,Rennes,2021-2022,2021/22,FW,34,32,2729,12,8,88,37,0,0,0,0,0,0,0,0,0,0,1,0,0,82,40,Ligue 1,4,66,20,6,12
+tom-lacoux-bordeaux-2021-2022,tom-lacoux,Tom Lacoux,bordeaux,Bordeaux,2021-2022,2021/22,MF,13,11,907,0,0,2,0,0,0,0,0,0,0,0,0,0,0,5,0,0,52,91,Ligue 1,20,31,6,13,19
+alban-lafont-nantes-2021-2022,alban-lafont,Alban Lafont,nantes,Nantes,2021-2022,2021/22,GK,38,38,3420,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,55,48,Ligue 1,9,55,15,10,13
+mohamed-lamine-bayo-clermont-foot-2021-2022,mohamed-lamine-bayo,Mohamed Lamine Bayo,clermont-foot,Clermont Foot,2021-2022,2021/22,FW,32,27,2413,14,5,66,29,0,0,0,0,0,0,0,0,0,0,1,0,0,38,69,Ligue 1,17,36,9,9,20
+didier-lamkel-ze-metz-2021-2022,didier-lamkel-ze,Didier Lamkel Zé,metz,Metz,2021-2022,2021/22,FW,9,8,605,3,0,14,7,0,0,0,0,0,0,0,0,0,0,2,0,0,35,69,Ligue 1,19,31,6,13,19
+julien-laporte-lorient-2021-2022,julien-laporte,Julien Laporte,lorient,Lorient,2021-2022,2021/22,DF,33,33,2891,2,0,17,3,0,0,0,0,0,0,0,0,0,0,7,0,0,35,63,Ligue 1,16,36,8,12,18
+paul-lasne-brest-2021-2022,paul-lasne,Paul Lasne,brest,Brest,2021-2022,2021/22,MF,15,9,847,0,1,7,1,0,0,0,0,0,0,0,0,0,0,1,0,0,49,57,Ligue 1,11,48,13,9,16
+armand-lauriente-lorient-2021-2022,armand-lauriente,Armand Lauriente,lorient,Lorient,2021-2022,2021/22,MF,35,28,2477,6,2,86,37,0,0,0,0,0,0,0,0,0,0,5,0,0,35,63,Ligue 1,16,36,8,12,18
+jeremy-le-douaron-brest-2021-2022,jeremy-le-douaron,Jérémy Le Douaron,brest,Brest,2021-2022,2021/22,MF,32,16,1446,5,3,34,16,0,0,0,0,0,0,0,0,0,0,0,0,0,49,57,Ligue 1,11,48,13,9,16
+enzo-le-fee-lorient-2021-2022,enzo-le-fee,Enzo Le Fée,lorient,Lorient,2021-2022,2021/22,MF,36,25,2194,2,3,34,9,0,0,0,0,0,0,0,0,0,0,2,0,0,35,63,Ligue 1,16,36,8,12,18
+vincent-le-goff-lorient-2021-2022,vincent-le-goff,Vincent Le Goff,lorient,Lorient,2021-2022,2021/22,DF,34,34,3060,1,1,26,4,0,0,0,0,0,0,0,0,0,0,1,0,0,35,63,Ligue 1,16,36,8,12,18
+maxime-le-marchand-strasbourg-2021-2022,maxime-le-marchand,Maxime Le Marchand,strasbourg,Strasbourg,2021-2022,2021/22,DF,12,9,860,1,1,3,2,0,0,0,0,0,0,0,0,0,0,4,0,0,60,43,Ligue 1,6,63,17,12,9
+jean-louis-leca-lens-2021-2022,jean-louis-leca,Jean-Louis Leca,lens,Lens,2021-2022,2021/22,GK,27,27,2313,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,0,62,48,Ligue 1,7,62,17,11,10
+mario-lemina-nice-2021-2022,mario-lemina,Mario Lemina,nice,Nice,2021-2022,2021/22,MF,32,24,1967,2,0,16,4,0,0,0,0,0,0,0,0,0,0,7,1,0,52,36,Ligue 1,5,66,20,7,11
+fabien-lemoine-lorient-2021-2022,fabien-lemoine,Fabien Lemoine,lorient,Lorient,2021-2022,2021/22,MF,21,13,1117,0,1,4,0,0,0,0,0,0,0,0,0,0,0,5,0,0,35,63,Ligue 1,16,36,8,12,18
+leo-leroy-montpellier-2021-2022,leo-leroy,Léo Leroy,montpellier,Montpellier,2021-2022,2021/22,MF,24,7,626,0,0,8,3,0,0,0,0,0,0,0,0,0,0,3,0,0,49,61,Ligue 1,13,43,12,7,19
+dimitri-lienard-strasbourg-2021-2022,dimitri-lienard,Dimitri Liénard,strasbourg,Strasbourg,2021-2022,2021/22,DF,33,23,2044,2,3,22,3,0,0,0,0,0,0,0,0,0,0,8,0,0,60,43,Ligue 1,6,63,17,12,9
+pol-lirola-marseille-2021-2022,pol-lirola,Pol Lirola,marseille,Marseille,2021-2022,2021/22,DF,34,19,1770,1,2,13,2,0,0,0,0,0,0,0,0,0,0,1,0,0,63,38,Ligue 1,2,71,21,8,9
+bradley-locko-reims-2021-2022,bradley-locko,Bradley Locko,reims,Reims,2021-2022,2021/22,DF,24,11,1011,1,1,6,1,0,0,0,0,0,0,0,0,0,0,4,0,0,43,44,Ligue 1,12,46,11,13,14
+anthony-lopes-lyon-2021-2022,anthony-lopes,Anthony Lopes,lyon,Lyon,2021-2022,2021/22,GK,34,34,2982,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,66,51,Ligue 1,8,61,17,11,10
+pau-lopez-marseille-2021-2022,pau-lopez,Pau López,marseille,Marseille,2021-2022,2021/22,GK,29,29,2610,0,1,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,63,38,Ligue 1,2,71,21,8,9
+dion-lopy-reims-2021-2022,dion-lopy,Dion Lopy,reims,Reims,2021-2022,2021/22,MF,26,19,1642,0,0,16,2,0,0,0,0,0,0,0,0,0,0,4,0,0,43,44,Ligue 1,12,46,11,13,14
+jordan-lotomba-nice-2021-2022,jordan-lotomba,Jordan Lotomba,nice,Nice,2021-2022,2021/22,DF,30,19,1782,0,0,9,2,0,0,0,0,0,0,0,0,0,0,4,0,0,52,36,Ligue 1,5,66,20,7,11
+jean-lucas-monaco-2021-2022,jean-lucas,Jean Lucas,monaco,Monaco,2021-2022,2021/22,MF,28,18,1445,1,1,26,9,0,0,0,0,0,0,0,0,0,0,3,1,0,65,40,Ligue 1,3,69,20,9,9
+castello-lukeba-lyon-2021-2022,castello-lukeba,Castello Lukeba,lyon,Lyon,2021-2022,2021/22,DF,24,24,2095,2,0,6,3,0,0,0,0,0,0,0,0,0,0,1,0,0,66,51,Ligue 1,8,61,17,11,10
+deiver-machado-lens-2021-2022,deiver-machado,Deiver Machado,lens,Lens,2021-2022,2021/22,MF,22,5,523,0,1,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,62,48,Ligue 1,7,62,17,11,10
+yvann-macon-saint-etienne-2021-2022,yvann-macon,Yvann Macon,saint-etienne,Saint-Étienne,2021-2022,2021/22,DF,22,19,1529,0,0,15,4,0,0,0,0,0,0,0,0,0,0,7,0,0,42,77,Ligue 1,18,32,7,11,20
+louis-mafouta-metz-2021-2022,louis-mafouta,Louis Mafouta,metz,Metz,2021-2022,2021/22,FW,15,5,525,2,0,9,7,0,0,0,0,0,0,0,0,0,0,0,0,0,35,69,Ligue 1,19,31,6,13,19
+hugo-magnetti-brest-2021-2022,hugo-magnetti,Hugo Magnetti,brest,Brest,2021-2022,2021/22,MF,28,16,1463,0,1,17,2,0,0,0,0,0,0,0,0,0,0,4,0,0,49,57,Ligue 1,11,48,13,9,16
+yohann-magnin-clermont-foot-2021-2022,yohann-magnin,Yohann Magnin,clermont-foot,Clermont Foot,2021-2022,2021/22,DF,24,19,1717,1,0,19,3,0,0,0,0,0,0,0,0,0,0,2,0,0,38,69,Ligue 1,17,36,9,9,20
+habib-maiga-metz-2021-2022,habib-maiga,Habib Maïga,metz,Metz,2021-2022,2021/22,MF,17,16,1267,2,0,11,5,0,0,0,0,0,0,0,0,0,0,6,0,0,35,69,Ligue 1,19,31,6,13,19
+lovro-majer-rennes-2021-2022,lovro-majer,Lovro Majer,rennes,Rennes,2021-2022,2021/22,MF,29,21,1832,6,8,45,18,0,0,0,0,0,0,0,0,0,0,1,0,0,82,40,Ligue 1,4,66,20,6,12
+vincent-manceau-angers-2021-2022,vincent-manceau,Vincent Manceau,angers,Angers,2021-2022,2021/22,DF,28,25,2361,0,0,3,0,0,0,0,0,0,0,0,0,0,0,2,1,0,44,55,Ligue 1,14,41,10,11,17
+steve-mandanda-marseille-2021-2022,steve-mandanda,Steve Mandanda,marseille,Marseille,2021-2022,2021/22,GK,9,9,810,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,63,38,Ligue 1,2,71,21,8,9
+reinildo-mandava-lille-2021-2022,reinildo-mandava,Reinildo Mandava,lille,Lille,2021-2022,2021/22,DF,18,18,1524,1,0,6,3,0,0,0,0,0,0,0,0,0,0,7,0,0,48,48,Ligue 1,10,55,14,13,11
+anthony-mandrea-angers-2021-2022,anthony-mandrea,Anthony Mandrea,angers,Angers,2021-2022,2021/22,GK,10,10,900,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,44,55,Ligue 1,14,41,10,11,17
+eliaquim-mangala-saint-etienne-2021-2022,eliaquim-mangala,Eliaquim Mangala,saint-etienne,Saint-Étienne,2021-2022,2021/22,DF,14,14,1179,1,0,3,1,0,0,0,0,0,0,0,0,0,0,9,0,0,42,77,Ligue 1,18,32,7,11,20
+thomas-mangani-angers-2021-2022,thomas-mangani,Thomas Mangani,angers,Angers,2021-2022,2021/22,MF,33,25,2193,7,2,17,9,0,0,0,0,0,0,0,0,0,0,6,0,0,44,55,Ligue 1,14,41,10,11,17
+ricardo-mangas-bordeaux-2021-2022,ricardo-mangas,Ricardo Mangas,bordeaux,Bordeaux,2021-2022,2021/22,DF,29,27,2353,3,1,17,5,0,0,0,0,0,0,0,0,0,0,2,0,0,52,91,Ligue 1,20,31,6,13,19
+sekou-mara-bordeaux-2021-2022,sekou-mara,Sekou Mara,bordeaux,Bordeaux,2021-2022,2021/22,FW,26,8,905,6,0,39,18,0,0,0,0,0,0,0,0,0,0,2,0,0,52,91,Ligue 1,20,31,6,13,19
+marcelo-bordeaux-2021-2022,marcelo,Marcelo,bordeaux,Bordeaux,2021-2022,2021/22,DF,11,11,898,0,0,3,0,0,0,0,0,0,0,0,0,0,0,4,0,0,52,91,Ligue 1,20,31,6,13,19
+guillermo-maripan-monaco-2021-2022,guillermo-maripan,Guillermo Maripán,monaco,Monaco,2021-2022,2021/22,DF,26,21,1832,0,0,7,2,0,0,0,0,0,0,0,0,0,0,5,0,0,65,40,Ligue 1,3,69,20,9,9
+marquinhos-paris-saint-germain-2021-2022,marquinhos,Marquinhos,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,DF,32,32,2861,5,0,21,8,0,0,0,0,0,0,0,0,0,0,5,0,0,90,36,Ligue 1,1,86,26,8,4
+jonas-martin-rennes-2021-2022,jonas-martin,Jonas Martin,rennes,Rennes,2021-2022,2021/22,MF,29,24,2105,1,1,21,4,0,0,0,0,0,0,0,0,0,0,8,0,0,82,40,Ligue 1,4,66,20,6,12
+gelson-martins-monaco-2021-2022,gelson-martins,Gelson Martins,monaco,Monaco,2021-2022,2021/22,MF,32,24,1905,4,3,30,11,0,0,0,0,0,0,0,0,0,0,4,0,0,65,40,Ligue 1,3,69,20,9,9
+pape-matar-sarr-metz-2021-2022,pape-matar-sarr,Pape Matar Sarr,metz,Metz,2021-2022,2021/22,MF,33,22,2129,1,3,31,8,0,0,0,0,0,0,0,0,0,0,7,0,0,35,69,Ligue 1,19,31,6,13,19
+eliot-matazo-monaco-2021-2022,eliot-matazo,Eliot Matazo,monaco,Monaco,2021-2022,2021/22,MF,18,8,790,0,0,4,1,0,0,0,0,0,0,0,0,0,0,1,0,0,65,40,Ligue 1,3,69,20,9,9
+azor-matusiwa-reims-2021-2022,azor-matusiwa,Azor Matusiwa,reims,Reims,2021-2022,2021/22,MF,29,29,2463,1,1,11,6,0,0,0,0,0,0,0,0,0,0,8,1,0,43,44,Ligue 1,12,46,11,13,14
+stephy-mavididi-montpellier-2021-2022,stephy-mavididi,Stephy Mavididi,montpellier,Montpellier,2021-2022,2021/22,MF,30,27,2299,8,3,59,24,0,0,0,0,0,0,0,0,0,0,4,0,0,49,61,Ligue 1,13,43,12,7,19
+kylian-mbappe-paris-saint-germain-2021-2022,kylian-mbappe,Kylian Mbappé,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,FW,35,34,3023,28,17,147,68,0,0,0,0,0,0,0,0,0,0,10,0,0,90,36,Ligue 1,1,86,26,8,4
+amadou-mbengue-metz-2021-2022,amadou-mbengue,Amadou Mbengue,metz,Metz,2021-2022,2021/22,DF,12,5,610,0,0,3,0,0,0,0,0,0,0,0,0,0,0,4,0,0,35,69,Ligue 1,19,31,6,13,19
+hiangaa-mbock-brest-2021-2022,hiangaa-mbock,Hianga'a Mbock,brest,Brest,2021-2022,2021/22,MF,14,9,799,0,0,9,0,0,0,0,0,0,0,0,0,0,0,3,0,0,49,57,Ligue 1,11,48,13,9,16
+nathanael-mbuku-reims-2021-2022,nathanael-mbuku,Nathanael Mbuku,reims,Reims,2021-2022,2021/22,MF,31,18,1418,2,1,33,13,0,0,0,0,0,0,0,0,0,0,1,0,0,43,44,Ligue 1,12,46,11,13,14
+facundo-medina-lens-2021-2022,facundo-medina,Facundo Medina,lens,Lens,2021-2022,2021/22,DF,31,30,2593,1,0,9,2,0,0,0,0,0,0,0,0,0,0,11,0,0,62,48,Ligue 1,7,62,17,11,10
+birger-meling-rennes-2021-2022,birger-meling,Birger Meling,rennes,Rennes,2021-2022,2021/22,DF,31,20,1829,0,4,3,1,0,0,0,0,0,0,0,0,0,0,3,0,0,82,40,Ligue 1,4,66,20,6,12
+houboulang-mendes-lorient-2021-2022,houboulang-mendes,Houboulang Mendes,lorient,Lorient,2021-2022,2021/22,DF,36,36,3220,0,1,21,5,0,0,0,0,0,0,0,0,0,0,5,1,0,35,63,Ligue 1,16,36,8,12,18
+nuno-mendes-paris-saint-germain-2021-2022,nuno-mendes,Nuno Mendes,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,DF,27,18,1658,0,1,7,1,0,0,0,0,0,0,0,0,0,0,3,0,0,90,36,Ligue 1,1,86,26,8,4
+thiago-mendes-lyon-2021-2022,thiago-mendes,Thiago Mendes,lyon,Lyon,2021-2022,2021/22,DF,29,21,1863,1,1,16,5,0,0,0,0,0,0,0,0,0,0,3,1,0,66,51,Ligue 1,8,61,17,11,10
+arial-mendy-clermont-foot-2021-2022,arial-mendy,Arial Mendy,clermont-foot,Clermont Foot,2021-2022,2021/22,DF,18,9,792,0,0,10,3,0,0,0,0,0,0,0,0,0,0,1,0,0,38,69,Ligue 1,17,36,9,9,20
+batista-mendy-angers-2021-2022,batista-mendy,Batista Mendy,angers,Angers,2021-2022,2021/22,DF,34,27,2413,1,1,14,6,0,0,0,0,0,0,0,0,0,0,5,0,0,44,55,Ligue 1,14,41,10,11,17
+gideon-mensah-bordeaux-2021-2022,gideon-mensah,Gideon Mensah,bordeaux,Bordeaux,2021-2022,2021/22,DF,23,13,1208,0,2,2,0,0,0,0,0,0,0,0,0,0,0,1,1,0,52,91,Ligue 1,20,31,6,13,19
+quentin-merlin-nantes-2021-2022,quentin-merlin,Quentin Merlin,nantes,Nantes,2021-2022,2021/22,DF,28,21,1926,2,3,11,4,0,0,0,0,0,0,0,0,0,0,0,0,0,55,48,Ligue 1,9,55,15,10,13
+lionel-messi-paris-saint-germain-2021-2022,lionel-messi,Lionel Messi,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,MF,26,24,2153,6,14,89,29,0,0,0,0,0,0,0,0,0,0,0,0,0,90,36,Ligue 1,1,86,26,8,4
+mexer-bordeaux-2021-2022,mexer,Mexer,bordeaux,Bordeaux,2021-2022,2021/22,DF,16,14,1227,1,0,5,1,0,0,0,0,0,0,0,0,0,0,2,0,0,52,91,Ligue 1,20,31,6,13,19
+william-mikelbrencis-metz-2021-2022,william-mikelbrencis,William Mikelbrencis,metz,Metz,2021-2022,2021/22,DF,9,8,610,0,1,5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,35,69,Ligue 1,19,31,6,13,19
+arkadiusz-milik-marseille-2021-2022,arkadiusz-milik,Arkadiusz Milik,marseille,Marseille,2021-2022,2021/22,MF,23,15,1416,7,2,52,19,0,0,0,0,0,0,0,0,0,0,1,0,0,63,38,Ligue 1,2,71,21,8,9
+terem-moffi-lorient-2021-2022,terem-moffi,Terem Moffi,lorient,Lorient,2021-2022,2021/22,FW,37,34,2711,8,4,60,23,0,0,0,0,0,0,0,0,0,0,1,0,0,35,63,Ligue 1,16,36,8,12,18
+florent-mollet-montpellier-2021-2022,florent-mollet,Florent Mollet,montpellier,Montpellier,2021-2022,2021/22,MF,35,32,2630,6,2,55,18,0,0,0,0,0,0,0,0,0,0,6,0,0,49,61,Ligue 1,13,43,12,7,19
+thomas-monconduit-lorient-2021-2022,thomas-monconduit,Thomas Monconduit,lorient,Lorient,2021-2022,2021/22,MF,34,26,2248,3,2,36,12,0,0,0,0,0,0,0,0,0,0,5,0,0,35,63,Ligue 1,16,36,8,12,18
+jeremy-morel-lorient-2021-2022,jeremy-morel,Jérémy Morel,lorient,Lorient,2021-2022,2021/22,DF,9,6,604,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,35,63,Ligue 1,16,36,8,12,18
+lebo-mothiba-troyes-2021-2022,lebo-mothiba,Lebo Mothiba,troyes,Troyes,2021-2022,2021/22,MF,13,5,522,2,0,6,3,0,0,0,0,0,0,0,0,0,0,1,0,0,37,53,Ligue 1,15,38,9,11,18
+harold-moukoudi-saint-etienne-2021-2022,harold-moukoudi,Harold Moukoudi,saint-etienne,Saint-Étienne,2021-2022,2021/22,DF,24,17,1661,0,0,7,2,0,0,0,0,0,0,0,0,0,0,3,0,0,42,77,Ligue 1,18,32,7,11,20
+jessy-moulin-troyes-2021-2022,jessy-moulin,Jessy Moulin,troyes,Troyes,2021-2022,2021/22,GK,7,7,630,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,0,37,53,Ligue 1,15,38,9,11,18
+steve-mounie-brest-2021-2022,steve-mounie,Steve Mounié,brest,Brest,2021-2022,2021/22,FW,35,25,2312,9,2,75,25,0,0,0,0,0,0,0,0,0,0,2,0,0,49,57,Ligue 1,11,48,13,9,16
+samuel-moutoussamy-nantes-2021-2022,samuel-moutoussamy,Samuel Moutoussamy,nantes,Nantes,2021-2022,2021/22,MF,30,16,1509,0,1,14,7,0,0,0,0,0,0,0,0,0,0,5,0,0,55,48,Ligue 1,9,55,15,10,13
+marshall-munetsi-reims-2021-2022,marshall-munetsi,Marshall Munetsi,reims,Reims,2021-2022,2021/22,DF,24,20,1885,5,1,31,14,0,0,0,0,0,0,0,0,0,0,7,0,0,43,44,Ligue 1,12,46,11,13,14
+kevin-ndoram-metz-2021-2022,kevin-ndoram,Kévin N'Doram,metz,Metz,2021-2022,2021/22,MF,19,16,1235,0,0,7,1,0,0,0,0,0,0,0,0,0,0,5,0,0,35,69,Ligue 1,19,31,6,13,19
+vital-nsimba-clermont-foot-2021-2022,vital-nsimba,Vital N'Simba,clermont-foot,Clermont Foot,2021-2022,2021/22,DF,34,31,2789,1,3,19,5,0,0,0,0,0,0,0,0,0,0,4,0,0,38,69,Ligue 1,17,36,9,9,20
+mickael-nade-saint-etienne-2021-2022,mickael-nade,Mickael Nade,saint-etienne,Saint-Étienne,2021-2022,2021/22,DF,30,29,2563,1,0,7,1,0,0,0,0,0,0,0,0,0,0,4,0,0,42,77,Ligue 1,18,32,7,11,20
+paul-nardi-lorient-2021-2022,paul-nardi,Paul Nardi,lorient,Lorient,2021-2022,2021/22,GK,22,22,1980,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,35,63,Ligue 1,16,36,8,12,18
+keylor-navas-paris-saint-germain-2021-2022,keylor-navas,Keylor Navas,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,GK,21,21,1856,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,90,36,Ligue 1,1,86,26,8,4
+papa-ndiaga-yade-metz-2021-2022,papa-ndiaga-yade,Papa Ndiaga Yade,metz,Metz,2021-2022,2021/22,MF,18,5,696,0,1,8,0,0,0,0,0,0,0,0,0,0,0,3,0,0,35,69,Ligue 1,19,31,6,13,19
+tanguy-ndombele-lyon-2021-2022,tanguy-ndombele,Tanguy Ndombele,lyon,Lyon,2021-2022,2021/22,MF,11,7,701,0,2,5,0,0,0,0,0,0,0,0,0,0,0,3,0,0,66,51,Ligue 1,8,61,17,11,10
+neymar-paris-saint-germain-2021-2022,neymar,Neymar,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,MF,22,22,1851,13,6,54,30,0,0,0,0,0,0,0,0,0,0,10,0,0,90,36,Ligue 1,1,86,26,8,4
+yvan-neyou-saint-etienne-2021-2022,yvan-neyou,Yvan Neyou,saint-etienne,Saint-Étienne,2021-2022,2021/22,MF,16,12,936,0,0,6,2,0,0,0,0,0,0,0,0,0,0,4,1,0,42,77,Ligue 1,18,32,7,11,20
+opa-nguette-metz-2021-2022,opa-nguette,Opa Nguette,metz,Metz,2021-2022,2021/22,MF,26,10,1048,2,2,23,7,0,0,0,0,0,0,0,0,0,0,1,0,0,35,69,Ligue 1,19,31,6,13,19
+sikou-niakate-metz-2021-2022,sikou-niakate,Sikou Niakaté,metz,Metz,2021-2022,2021/22,DF,12,8,661,0,0,4,0,0,0,0,0,0,0,0,0,0,0,2,0,0,35,69,Ligue 1,19,31,6,13,19
+ibrahima-niane-metz-2021-2022,ibrahima-niane,Ibrahima Niane,metz,Metz,2021-2022,2021/22,FW,26,20,1582,3,1,43,10,0,0,0,0,0,0,0,0,0,0,2,1,0,35,69,Ligue 1,19,31,6,13,19
+mbaye-niang-bordeaux-2021-2022,mbaye-niang,M'Baye Niang,bordeaux,Bordeaux,2021-2022,2021/22,FW,22,7,777,3,1,26,11,0,0,0,0,0,0,0,0,0,0,3,0,0,52,91,Ligue 1,20,31,6,13,19
+arnaud-nordin-saint-etienne-2021-2022,arnaud-nordin,Arnaud Nordin,saint-etienne,Saint-Étienne,2021-2022,2021/22,MF,36,20,1874,4,4,44,19,0,0,0,0,0,0,0,0,0,0,4,0,0,42,77,Ligue 1,18,32,7,11,20
+alexander-nubel-monaco-2021-2022,alexander-nubel,Alexander Nübel,monaco,Monaco,2021-2022,2021/22,GK,38,38,3420,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,65,40,Ligue 1,3,69,20,9,9
+gerzino-nyamsi-strasbourg-2021-2022,gerzino-nyamsi,Gerzino Nyamsi,strasbourg,Strasbourg,2021-2022,2021/22,DF,34,33,2984,0,2,27,6,0,0,0,0,0,0,0,0,0,0,4,0,0,60,43,Ligue 1,6,63,17,12,9
+florent-ogier-clermont-foot-2021-2022,florent-ogier,Florent Ogier,clermont-foot,Clermont Foot,2021-2022,2021/22,DF,30,29,2429,1,0,7,3,0,0,0,0,0,0,0,0,0,0,6,0,0,38,69,Ligue 1,17,36,9,9,20
+warmed-omari-rennes-2021-2022,warmed-omari,Warmed Omari,rennes,Rennes,2021-2022,2021/22,DF,34,31,2796,0,0,5,1,0,0,0,0,0,0,0,0,0,0,6,0,0,82,40,Ligue 1,4,66,20,6,12
+jonas-omlin-montpellier-2021-2022,jonas-omlin,Jonas Omlin,montpellier,Montpellier,2021-2022,2021/22,GK,29,29,2587,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,49,61,Ligue 1,13,43,12,7,19
+amadou-onana-lille-2021-2022,amadou-onana,Amadou Onana,lille,Lille,2021-2022,2021/22,MF,32,11,1359,1,0,15,6,0,0,0,0,0,0,0,0,0,0,2,1,0,48,48,Ligue 1,10,55,14,13,11
+jean-onana-bordeaux-2021-2022,jean-onana,Jean Onana,bordeaux,Bordeaux,2021-2022,2021/22,MF,23,23,1832,3,2,21,4,0,0,0,0,0,0,0,0,0,0,3,1,0,52,91,Ligue 1,20,31,6,13,19
+otavio-bordeaux-2021-2022,otavio,Otávio,bordeaux,Bordeaux,2021-2022,2021/22,MF,16,13,1147,0,0,12,3,0,0,0,0,0,0,0,0,0,0,3,0,0,52,91,Ligue 1,20,31,6,13,19
+dango-ouattara-lorient-2021-2022,dango-ouattara,Dango Ouattara,lorient,Lorient,2021-2022,2021/22,MF,25,7,812,1,2,23,7,0,0,0,0,0,0,0,0,0,0,4,0,0,35,63,Ligue 1,16,36,8,12,18
+remi-oudin-bordeaux-2021-2022,remi-oudin,Remi Oudin,bordeaux,Bordeaux,2021-2022,2021/22,MF,33,20,1737,4,5,57,16,0,0,0,0,0,0,0,0,0,0,6,0,0,52,91,Ligue 1,20,31,6,13,19
+alexandre-oukidja-metz-2021-2022,alexandre-oukidja,Alexandre Oukidja,metz,Metz,2021-2022,2021/22,GK,21,21,1875,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0,35,69,Ligue 1,19,31,6,13,19
+azzedine-ounahi-angers-2021-2022,azzedine-ounahi,Azzedine Ounahi,angers,Angers,2021-2022,2021/22,MF,32,16,1633,2,1,26,4,0,0,0,0,0,0,0,0,0,0,2,0,0,44,55,Ligue 1,14,41,10,11,17
+ambroise-oyongo-montpellier-2021-2022,ambroise-oyongo,Ambroise Oyongo,montpellier,Montpellier,2021-2022,2021/22,DF,11,7,659,1,0,5,3,0,0,0,0,0,0,0,0,0,0,5,0,0,49,61,Ligue 1,13,43,12,7,19
+vincent-pajot-metz-2021-2022,vincent-pajot,Vincent Pajot,metz,Metz,2021-2022,2021/22,MF,30,27,2311,1,0,14,3,0,0,0,0,0,0,0,0,0,0,6,1,0,35,69,Ligue 1,19,31,6,13,19
+nicolas-pallois-nantes-2021-2022,nicolas-pallois,Nicolas Pallois,nantes,Nantes,2021-2022,2021/22,DF,30,29,2447,1,0,8,3,0,0,0,0,0,0,0,0,0,0,8,1,0,55,48,Ligue 1,9,55,15,10,13
+erik-palmer-brown-troyes-2021-2022,erik-palmer-brown,Erik Palmer-Brown,troyes,Troyes,2021-2022,2021/22,DF,21,19,1734,0,0,4,0,0,0,0,0,0,0,0,0,0,0,2,0,0,37,53,Ligue 1,15,38,9,11,18
+emerson-palmieri-lyon-2021-2022,emerson-palmieri,Emerson Palmieri,lyon,Lyon,2021-2022,2021/22,DF,29,26,2264,1,2,16,5,0,0,0,0,0,0,0,0,0,0,3,1,0,66,51,Ligue 1,8,61,17,11,10
+lucas-paqueta-lyon-2021-2022,lucas-paqueta,Lucas Paquetá,lyon,Lyon,2021-2022,2021/22,MF,35,32,2699,9,6,87,34,0,0,0,0,0,0,0,0,0,0,3,0,0,66,51,Ligue 1,8,61,17,11,10
+leandro-paredes-paris-saint-germain-2021-2022,leandro-paredes,Leandro Paredes,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,MF,15,10,838,1,2,8,2,0,0,0,0,0,0,0,0,0,0,3,0,0,90,36,Ligue 1,1,86,26,8,4
+strahinja-pavlovic-monaco-2021-2022,strahinja-pavlovic,Strahinja Pavlović,monaco,Monaco,2021-2022,2021/22,DF,7,5,451,0,0,5,1,0,0,0,0,0,0,0,0,0,0,4,1,0,65,40,Ligue 1,3,69,20,9,9
+dimitri-payet-marseille-2021-2022,dimitri-payet,Dimitri Payet,marseille,Marseille,2021-2022,2021/22,MF,31,28,2592,12,10,64,22,0,0,0,0,0,0,0,0,0,0,3,0,0,63,38,Ligue 1,2,71,21,8,9
+timothee-pembele-bordeaux-2021-2022,timothee-pembele,Timothee Pembele,bordeaux,Bordeaux,2021-2022,2021/22,DF,26,17,1414,1,1,18,5,0,0,0,0,0,0,0,0,0,0,3,0,0,52,91,Ligue 1,20,31,6,13,19
+danilo-pereira-paris-saint-germain-2021-2022,danilo-pereira,Danilo Pereira,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,MF,27,22,2038,5,0,19,9,0,0,0,0,0,0,0,0,0,0,2,0,0,90,36,Ligue 1,1,86,26,8,4
+mathias-pereira-lage-angers-2021-2022,mathias-pereira-lage,Mathias Pereira Lage,angers,Angers,2021-2022,2021/22,DF,24,11,1040,4,2,19,6,0,0,0,0,0,0,0,0,0,0,0,0,0,44,55,Ligue 1,14,41,10,11,17
+luan-peres-petroni-marseille-2021-2022,luan-peres-petroni,Luan Peres Petroni,marseille,Marseille,2021-2022,2021/22,DF,34,29,2679,0,2,3,0,0,0,0,0,0,0,0,0,0,0,6,0,0,63,38,Ligue 1,2,71,21,8,9
+lucas-perrin-strasbourg-2021-2022,lucas-perrin,Lucas Perrin,strasbourg,Strasbourg,2021-2022,2021/22,DF,31,29,2502,1,1,9,3,0,0,0,0,0,0,0,0,0,0,5,0,0,60,43,Ligue 1,6,63,17,12,9
+danijel-petkovic-angers-2021-2022,danijel-petkovic,Danijel Petković,angers,Angers,2021-2022,2021/22,GK,15,15,1350,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,44,55,Ligue 1,14,41,10,11,17
+leo-petrot-lorient-2021-2022,leo-petrot,Léo Pétrot,lorient,Lorient,2021-2022,2021/22,DF,22,21,1815,1,0,5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,35,63,Ligue 1,16,36,8,12,18
+ronael-pierre-gabriel-brest-2021-2022,ronael-pierre-gabriel,Ronaël Pierre-Gabriel,brest,Brest,2021-2022,2021/22,DF,30,29,2548,0,1,5,2,0,0,0,0,0,0,0,0,0,0,6,0,0,49,57,Ligue 1,11,48,13,9,16
+gaetan-poussin-bordeaux-2021-2022,gaetan-poussin,Gaëtan Poussin,bordeaux,Bordeaux,2021-2022,2021/22,GK,13,13,1170,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,52,91,Ligue 1,20,31,6,13,19
+sanjin-prcic-strasbourg-2021-2022,sanjin-prcic,Sanjin Prcić,strasbourg,Strasbourg,2021-2022,2021/22,MF,32,27,2186,1,0,46,11,0,0,0,0,0,0,0,0,0,0,4,0,0,60,43,Ligue 1,6,63,17,12,9
+nicolas-de-preville-metz-2021-2022,nicolas-de-preville,Nicolas de Préville,metz,Metz,2021-2022,2021/22,MF,27,24,1969,5,2,41,10,0,0,0,0,0,0,0,0,0,0,5,0,0,35,69,Ligue 1,19,31,6,13,19
+predrag-rajkovic-reims-2021-2022,predrag-rajkovic,Predrag Rajković,reims,Reims,2021-2022,2021/22,GK,38,38,3420,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,43,44,Ligue 1,12,46,11,13,14
+adil-rami-troyes-2021-2022,adil-rami,Adil Rami,troyes,Troyes,2021-2022,2021/22,DF,17,14,1171,3,0,5,3,0,0,0,0,0,0,0,0,0,0,1,0,0,37,53,Ligue 1,15,38,9,11,18
+sergio-ramos-paris-saint-germain-2021-2022,sergio-ramos,Sergio Ramos,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,DF,12,8,801,2,0,12,4,0,0,0,0,0,0,0,0,0,0,3,1,0,90,36,Ligue 1,1,86,26,8,4
+elba-rashani-clermont-foot-2021-2022,elba-rashani,Elba Rashani,clermont-foot,Clermont Foot,2021-2022,2021/22,MF,29,22,1759,8,3,30,12,0,0,0,0,0,0,0,0,0,0,3,0,0,38,69,Ligue 1,17,36,9,9,20
+renaud-ripart-troyes-2021-2022,renaud-ripart,Renaud Ripart,troyes,Troyes,2021-2022,2021/22,MF,28,22,1893,2,2,42,14,0,0,0,0,0,0,0,0,0,0,2,0,0,37,53,Ligue 1,15,38,9,11,18
+mihailo-ristic-montpellier-2021-2022,mihailo-ristic,Mihailo Ristić,montpellier,Montpellier,2021-2022,2021/22,DF,29,19,1803,1,3,18,5,0,0,0,0,0,0,0,0,0,0,3,1,0,49,61,Ligue 1,13,43,12,7,19
+stian-rode-gregersen-bordeaux-2021-2022,stian-rode-gregersen,Stian Rode Gregersen,bordeaux,Bordeaux,2021-2022,2021/22,DF,24,22,1953,1,1,6,1,0,0,0,0,0,0,0,0,0,0,7,0,0,52,91,Ligue 1,20,31,6,13,19
+gerson-rodrigues-troyes-2021-2022,gerson-rodrigues,Gerson Rodrigues,troyes,Troyes,2021-2022,2021/22,MF,12,9,848,1,1,23,7,0,0,0,0,0,0,0,0,0,0,6,0,0,37,53,Ligue 1,15,38,9,11,18
+valentin-rongier-marseille-2021-2022,valentin-rongier,Valentin Rongier,marseille,Marseille,2021-2022,2021/22,DF,32,25,2194,0,1,27,8,0,0,0,0,0,0,0,0,0,0,3,0,0,63,38,Ligue 1,2,71,21,8,9
+pablo-rosario-nice-2021-2022,pablo-rosario,Pablo Rosario,nice,Nice,2021-2022,2021/22,MF,36,31,2729,0,2,19,3,0,0,0,0,0,0,0,0,0,0,7,0,0,52,36,Ligue 1,5,66,20,7,11
+roli-pereira-de-sa-nantes-2021-2022,roli-pereira-de-sa,Roli Pereira de Sa,nantes,Nantes,2021-2022,2021/22,MF,17,5,573,0,0,5,1,0,0,0,0,0,0,0,0,0,0,1,0,0,55,48,Ligue 1,9,55,15,10,13
+falaye-sacko-saint-etienne-2021-2022,falaye-sacko,Falaye Sacko,saint-etienne,Saint-Étienne,2021-2022,2021/22,DF,9,8,667,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,42,77,Ligue 1,18,32,7,11,20
+wesley-said-lens-2021-2022,wesley-said,Wesley Saïd,lens,Lens,2021-2022,2021/22,MF,21,7,654,5,0,25,11,0,0,0,0,0,0,0,0,0,0,2,0,0,62,48,Ligue 1,7,62,17,11,10
+mamadou-sakho-montpellier-2021-2022,mamadou-sakho,Mamadou Sakho,montpellier,Montpellier,2021-2022,2021/22,DF,29,29,2575,0,0,1,0,0,0,0,0,0,0,0,0,0,0,3,0,0,49,61,Ligue 1,13,43,12,7,19
+william-saliba-marseille-2021-2022,william-saliba,William Saliba,marseille,Marseille,2021-2022,2021/22,DF,36,36,3240,0,0,16,2,0,0,0,0,0,0,0,0,0,0,5,0,0,63,38,Ligue 1,2,71,21,8,9
+yoann-salmier-troyes-2021-2022,yoann-salmier,Yoann Salmier,troyes,Troyes,2021-2022,2021/22,DF,31,30,2668,0,1,9,1,0,0,0,0,0,0,0,0,0,0,5,0,0,37,53,Ligue 1,15,38,9,11,18
+mama-samba-balde-troyes-2021-2022,mama-samba-balde,Mama Samba Baldé,troyes,Troyes,2021-2022,2021/22,MF,30,20,1717,3,2,48,18,0,0,0,0,0,0,0,0,0,0,1,1,0,37,53,Ligue 1,15,38,9,11,18
+junior-sambia-montpellier-2021-2022,junior-sambia,Junior Sambia,montpellier,Montpellier,2021-2022,2021/22,DF,30,16,1533,1,0,21,6,0,0,0,0,0,0,0,0,0,0,5,1,0,49,61,Ligue 1,13,43,12,7,19
+renato-sanches-lille-2021-2022,renato-sanches,Renato Sanches,lille,Lille,2021-2022,2021/22,MF,25,20,1651,2,5,22,4,0,0,0,0,0,0,0,0,0,0,8,1,0,48,48,Ligue 1,10,55,14,13,11
+baptiste-santamaria-rennes-2021-2022,baptiste-santamaria,Baptiste Santamaria,rennes,Rennes,2021-2022,2021/22,DF,34,28,2518,2,1,34,7,0,0,0,0,0,0,0,0,0,0,7,0,0,82,40,Ligue 1,4,66,20,6,12
+martin-satriano-brest-2021-2022,martin-satriano,Martin Satriano,brest,Brest,2021-2022,2021/22,FW,15,11,932,4,0,24,9,0,0,0,0,0,0,0,0,0,0,5,0,0,49,57,Ligue 1,11,48,13,9,16
+teji-savanier-montpellier-2021-2022,teji-savanier,Téji Savanier,montpellier,Montpellier,2021-2022,2021/22,MF,29,28,2414,8,7,81,39,0,0,0,0,0,0,0,0,0,0,9,2,0,49,61,Ligue 1,13,43,12,7,19
+morgan-schneiderlin-nice-2021-2022,morgan-schneiderlin,Morgan Schneiderlin,nice,Nice,2021-2022,2021/22,MF,20,5,649,0,1,2,0,0,0,0,0,0,0,0,0,0,0,1,1,0,52,36,Ligue 1,5,66,20,7,11
+alidu-seidu-clermont-foot-2021-2022,alidu-seidu,Alidu Seidu,clermont-foot,Clermont Foot,2021-2022,2021/22,DF,21,16,1410,0,0,9,1,0,0,0,0,0,0,0,0,0,0,7,2,0,38,69,Ligue 1,17,36,9,9,20
+matz-sels-strasbourg-2021-2022,matz-sels,Matz Sels,strasbourg,Strasbourg,2021-2022,2021/22,GK,37,37,3330,0,0,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,60,43,Ligue 1,6,63,17,12,9
+xherdan-shaqiri-lyon-2021-2022,xherdan-shaqiri,Xherdan Shaqiri,lyon,Lyon,2021-2022,2021/22,MF,11,9,679,2,3,13,5,0,0,0,0,0,0,0,0,0,0,0,0,0,66,51,Ligue 1,8,61,17,11,10
+djibril-sidibe-monaco-2021-2022,djibril-sidibe,Djibril Sidibé,monaco,Monaco,2021-2022,2021/22,DF,17,12,949,0,0,4,1,0,0,0,0,0,0,0,0,0,0,6,0,0,65,40,Ligue 1,3,69,20,9,9
+caio-henrique-oliveira-silva-monaco-2021-2022,caio-henrique-oliveira-silva,Caio Henrique Oliveira Silva,monaco,Monaco,2021-2022,2021/22,DF,34,31,2662,2,8,18,6,0,0,0,0,0,0,0,0,0,0,5,0,0,65,40,Ligue 1,3,69,20,9,9
+gabriel-silva-saint-etienne-2021-2022,gabriel-silva,Gabriel Silva,saint-etienne,Saint-Étienne,2021-2022,2021/22,DF,13,9,713,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,42,77,Ligue 1,18,32,7,11,20
+moses-simon-nantes-2021-2022,moses-simon,Moses Simon,nantes,Nantes,2021-2022,2021/22,MF,30,29,2332,6,8,42,19,0,0,0,0,0,0,0,0,0,0,3,0,0,55,48,Ligue 1,9,55,15,10,13
+ibrahima-sissoko-strasbourg-2021-2022,ibrahima-sissoko,Ibrahima Sissoko,strasbourg,Strasbourg,2021-2022,2021/22,DF,35,26,2303,2,5,25,6,0,0,0,0,0,0,0,0,0,0,6,0,0,60,43,Ligue 1,6,63,17,12,9
+islam-slimani-lyon-2021-2022,islam-slimani,Islam Slimani,lyon,Lyon,2021-2022,2021/22,FW,12,6,573,1,1,12,4,0,0,0,0,0,0,0,0,0,0,3,0,0,66,51,Ligue 1,8,61,17,11,10
+florian-sotoca-lens-2021-2022,florian-sotoca,Florian Sotoca,lens,Lens,2021-2022,2021/22,MF,35,28,2480,6,4,71,26,0,0,0,0,0,0,0,0,0,0,7,0,0,62,48,Ligue 1,7,62,17,11,10
+arnaud-souquet-montpellier-2021-2022,arnaud-souquet,Arnaud Souquet,montpellier,Montpellier,2021-2022,2021/22,DF,34,27,2334,1,3,17,5,0,0,0,0,0,0,0,0,0,0,4,0,0,49,61,Ligue 1,13,43,12,7,19
+saidou-sow-saint-etienne-2021-2022,saidou-sow,Saidou Sow,saint-etienne,Saint-Étienne,2021-2022,2021/22,DF,13,11,989,2,1,3,2,0,0,0,0,0,0,0,0,0,0,2,0,0,42,77,Ligue 1,18,32,7,11,20
+calvin-stengs-nice-2021-2022,calvin-stengs,Calvin Stengs,nice,Nice,2021-2022,2021/22,MF,24,11,1073,1,1,21,5,0,0,0,0,0,0,0,0,0,0,1,0,0,52,36,Ligue 1,5,66,20,7,11
+kamaldeen-sulemana-rennes-2021-2022,kamaldeen-sulemana,Kamaldeen Sulemana,rennes,Rennes,2021-2022,2021/22,MF,20,11,1015,4,2,26,8,0,0,0,0,0,0,0,0,0,0,3,0,0,82,40,Ligue 1,4,66,20,6,12
+flavien-tait-rennes-2021-2022,flavien-tait,Flavien Tait,rennes,Rennes,2021-2022,2021/22,MF,28,24,2125,5,3,40,11,0,0,0,0,0,0,0,0,0,0,3,0,0,82,40,Ligue 1,4,66,20,6,12
+florian-tardieu-troyes-2021-2022,florian-tardieu,Florian Tardieu,troyes,Troyes,2021-2022,2021/22,MF,30,29,2632,4,2,24,9,0,0,0,0,0,0,0,0,0,0,6,0,0,37,53,Ligue 1,15,38,9,11,18
+aurelien-tchouameni-monaco-2021-2022,aurelien-tchouameni,Aurélien Tchouaméni,monaco,Monaco,2021-2022,2021/22,MF,35,33,2929,3,2,56,11,0,0,0,0,0,0,0,0,0,0,11,1,0,65,40,Ligue 1,3,69,20,9,9
+martin-terrier-rennes-2021-2022,martin-terrier,Martin Terrier,rennes,Rennes,2021-2022,2021/22,MF,37,37,2779,21,3,88,47,0,0,0,0,0,0,0,0,0,0,1,0,0,82,40,Ligue 1,4,66,20,6,12
+tete-lyon-2021-2022,tete,Tetê,lyon,Lyon,2021-2022,2021/22,MF,9,7,583,2,5,17,7,0,0,0,0,0,0,0,0,0,0,1,0,0,66,51,Ligue 1,8,61,17,11,10
+sada-thioub-saint-etienne-2021-2022,sada-thioub,Sada Thioub,saint-etienne,Saint-Étienne,2021-2022,2021/22,MF,17,11,950,0,1,5,0,0,0,0,0,0,0,0,0,0,0,2,0,0,42,77,Ligue 1,18,32,7,11,20
+romain-thomas-angers-2021-2022,romain-thomas,Romain Thomas,angers,Angers,2021-2022,2021/22,DF,30,29,2563,2,0,14,5,0,0,0,0,0,0,0,0,0,0,9,0,0,44,55,Ligue 1,14,41,10,11,17
+adrien-thomasson-strasbourg-2021-2022,adrien-thomasson,Adrien Thomasson,strasbourg,Strasbourg,2021-2022,2021/22,MF,31,27,2389,8,4,48,19,0,0,0,0,0,0,0,0,0,0,2,1,0,60,43,Ligue 1,6,63,17,12,9
+matheus-thuler-montpellier-2021-2022,matheus-thuler,Matheus Thuler,montpellier,Montpellier,2021-2022,2021/22,DF,16,10,855,0,0,1,0,0,0,0,0,0,0,0,0,0,0,3,1,0,49,61,Ligue 1,13,43,12,7,19
+khephren-thuram-nice-2021-2022,khephren-thuram,Khéphren Thuram,nice,Nice,2021-2022,2021/22,MF,36,20,1901,4,2,22,6,0,0,0,0,0,0,0,0,0,0,4,0,0,52,36,Ligue 1,5,66,20,7,11
+jean-clair-todibo-nice-2021-2022,jean-clair-todibo,Jean-Clair Todibo,nice,Nice,2021-2022,2021/22,DF,36,35,3115,1,0,18,5,0,0,0,0,0,0,0,0,0,0,6,0,0,52,36,Ligue 1,5,66,20,7,11
+karl-toko-ekambi-lyon-2021-2022,karl-toko-ekambi,Karl Toko Ekambi,lyon,Lyon,2021-2022,2021/22,MF,30,26,2296,12,5,76,38,0,0,0,0,0,0,0,0,0,0,3,0,0,66,51,Ligue 1,8,61,17,11,10
+yoann-touzghar-troyes-2021-2022,yoann-touzghar,Yoann Touzghar,troyes,Troyes,2021-2022,2021/22,FW,28,16,1457,4,0,28,12,0,0,0,0,0,0,0,0,0,0,0,0,0,37,53,Ligue 1,15,38,9,11,18
+boubacar-traore-metz-2021-2022,boubacar-traore,Boubacar Traoré,metz,Metz,2021-2022,2021/22,MF,27,17,1726,1,1,22,5,0,0,0,0,0,0,0,0,0,0,9,1,0,35,69,Ligue 1,19,31,6,13,19
+charles-traore-nantes-2021-2022,charles-traore,Charles Traore,nantes,Nantes,2021-2022,2021/22,DF,16,7,718,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,55,48,Ligue 1,9,55,15,10,13
+hamari-traore-rennes-2021-2022,hamari-traore,Hamari Traoré,rennes,Rennes,2021-2022,2021/22,DF,33,33,2890,3,10,31,9,0,0,0,0,0,0,0,0,0,0,4,0,0,82,40,Ligue 1,4,66,20,6,12
+ismael-traore-angers-2021-2022,ismael-traore,Ismaël Traoré,angers,Angers,2021-2022,2021/22,DF,37,36,3215,4,1,25,10,0,0,0,0,0,0,0,0,0,0,1,0,0,44,55,Ligue 1,14,41,10,11,17
+miguel-trauco-saint-etienne-2021-2022,miguel-trauco,Miguel Trauco,saint-etienne,Saint-Étienne,2021-2022,2021/22,DF,17,12,1112,1,0,11,3,0,0,0,0,0,0,0,0,0,0,3,0,0,42,77,Ligue 1,18,32,7,11,20
+adrien-truffert-rennes-2021-2022,adrien-truffert,Adrien Truffert,rennes,Rennes,2021-2022,2021/22,DF,30,18,1639,3,2,19,6,0,0,0,0,0,0,0,0,0,0,4,0,0,82,40,Ligue 1,4,66,20,6,12
+matthieu-udol-metz-2021-2022,matthieu-udol,Matthieu Udol,metz,Metz,2021-2022,2021/22,DF,12,11,1007,1,0,5,2,0,0,0,0,0,0,0,0,0,0,0,0,0,35,69,Ligue 1,19,31,6,13,19
+ike-ugbo-troyes-2021-2022,ike-ugbo,Ike Ugbo,troyes,Troyes,2021-2022,2021/22,FW,14,11,814,5,0,16,7,0,0,0,0,0,0,0,0,0,0,0,0,0,37,53,Ligue 1,15,38,9,11,18
+hwang-ui-jo-bordeaux-2021-2022,hwang-ui-jo,Hwang Ui-jo,bordeaux,Bordeaux,2021-2022,2021/22,FW,32,29,2508,11,2,55,22,0,0,0,0,0,0,0,0,0,0,3,0,0,52,91,Ligue 1,20,31,6,13,19
+cengiz-under-marseille-2021-2022,cengiz-under,Cengiz Ünder,marseille,Marseille,2021-2022,2021/22,MF,32,25,2200,10,2,58,20,0,0,0,0,0,0,0,0,0,0,2,1,0,63,38,Ligue 1,2,71,21,8,9
+jere-uronen-brest-2021-2022,jere-uronen,Jere Uronen,brest,Brest,2021-2022,2021/22,DF,15,10,878,0,0,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,49,57,Ligue 1,11,48,13,9,16
+vanderson-monaco-2021-2022,vanderson,Vanderson,monaco,Monaco,2021-2022,2021/22,DF,17,12,1120,2,1,14,6,0,0,0,0,0,0,0,0,0,0,3,0,0,65,40,Ligue 1,3,69,20,9,9
+marco-verratti-paris-saint-germain-2021-2022,marco-verratti,Marco Verratti,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,MF,24,23,1937,2,2,7,1,0,0,0,0,0,0,0,0,0,0,12,0,0,90,36,Ligue 1,1,86,26,8,4
+kevin-volland-monaco-2021-2022,kevin-volland,Kevin Volland,monaco,Monaco,2021-2022,2021/22,MF,34,29,2436,9,9,50,25,0,0,0,0,0,0,0,0,0,0,10,0,0,65,40,Ligue 1,3,69,20,9,9
+elye-wahi-montpellier-2021-2022,elye-wahi,Elye Wahi,montpellier,Montpellier,2021-2022,2021/22,MF,33,21,1786,10,1,43,21,0,0,0,0,0,0,0,0,0,0,2,0,0,49,61,Ligue 1,13,43,12,7,19
+timothy-weah-lille-2021-2022,timothy-weah,Timothy Weah,lille,Lille,2021-2022,2021/22,MF,29,17,1616,3,4,33,8,0,0,0,0,0,0,0,0,0,0,2,1,0,48,48,Ligue 1,10,55,14,13,11
+georginio-wijnaldum-paris-saint-germain-2021-2022,georginio-wijnaldum,Georginio Wijnaldum,paris-saint-germain,Paris Saint-Germain,2021-2022,2021/22,MF,31,18,1653,1,3,22,2,0,0,0,0,0,0,0,0,0,0,2,0,0,90,36,Ligue 1,1,86,26,8,4
+christopher-wooh-lens-2021-2022,christopher-wooh,Christopher Wooh,lens,Lens,2021-2022,2021/22,DF,14,11,1050,0,1,8,3,0,0,0,0,0,0,0,0,0,0,2,0,0,62,48,Ligue 1,7,62,17,11,10
+xeka-lille-2021-2022,xeka,Xeka,lille,Lille,2021-2022,2021/22,MF,23,19,1619,3,0,22,5,0,0,0,0,0,0,0,0,0,0,10,0,0,48,48,Ligue 1,10,55,14,13,11
+yusuf-yazici-lille-2021-2022,yusuf-yazici,Yusuf Yazıcı,lille,Lille,2021-2022,2021/22,MF,15,5,509,1,1,10,6,0,0,0,0,0,0,0,0,0,0,3,0,0,48,48,Ligue 1,10,55,14,13,11
+burak-yilmaz-lille-2021-2022,burak-yilmaz,Burak Yılmaz,lille,Lille,2021-2022,2021/22,FW,31,25,2211,4,3,71,28,0,0,0,0,0,0,0,0,0,0,9,1,0,48,48,Ligue 1,10,55,14,13,11
+zaydou-youssouf-saint-etienne-2021-2022,zaydou-youssouf,Zaydou Youssouf,saint-etienne,Saint-Étienne,2021-2022,2021/22,MF,30,18,1553,1,0,20,6,0,0,0,0,0,0,0,0,0,0,3,1,0,42,77,Ligue 1,18,32,7,11,20
+akim-zedadka-clermont-foot-2021-2022,akim-zedadka,Akim Zedadka,clermont-foot,Clermont Foot,2021-2022,2021/22,DF,38,37,3337,0,3,31,6,0,0,0,0,0,0,0,0,0,0,5,0,0,38,69,Ligue 1,17,36,9,9,20
+edon-zhegrova-lille-2021-2022,edon-zhegrova,Edon Zhegrova,lille,Lille,2021-2022,2021/22,MF,13,5,481,2,1,15,7,0,0,0,0,0,0,0,0,0,0,2,1,0,48,48,Ligue 1,10,55,14,13,11
