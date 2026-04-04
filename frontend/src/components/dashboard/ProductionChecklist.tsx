@@ -7,7 +7,6 @@ export interface ChecklistState {
   hookImage: boolean;
   cardImage: boolean;
   sunoMusic: boolean;
-  jsonExport: boolean;
   rendered: boolean;
   reviewed: boolean;
   uploaded: boolean;
@@ -25,7 +24,6 @@ const ITEMS: { key: ActionKey; label: string; icon: typeof Image; actionLabel: s
   { key: "hookImage", label: "Hook Image", icon: Image, actionLabel: "Upload" },
   { key: "cardImage", label: "Card Image", icon: Image, actionLabel: "Upload" },
   { key: "sunoMusic", label: "Suno Music", icon: Music, actionLabel: "Upload" },
-  { key: "jsonExport", label: "JSON Export", icon: FileJson, actionLabel: "Export" },
   { key: "rendered", label: "Render MP4", icon: Film, actionLabel: "Render" },
   { key: "reviewed", label: "Final Review", icon: Eye, actionLabel: "Play" },
   { key: "uploaded", label: "Upload YouTube", icon: UploadIcon, actionLabel: "Upload" },

@@ -32,10 +32,13 @@ export interface StoryCardData {
   // Subtitles
   subtitles?: SubtitleCue[];
   // Additional story text fields
+  hookStat?: string;        // e.g. "44 GOALS" — shown first in hook (big number)
   hookLine?: string;        // e.g. "THE SEASON THAT BROKE REALITY"
   storyText?: string;       // short paragraph for STORY scene
   highlights?: Array<{ number: string; label: string; delay?: number }>;
   verdictText?: string;     // e.g. "A GENERATIONAL PEAK"
+  ctaText?: string;         // e.g. "DO YOU AGREE? DROP YOUR RATING ⬇"
+  nextTeaser?: string;      // e.g. "NEXT: SALAH 2021-22"
 }
 
 // 60-second timeline (1800 frames @ 30fps)

@@ -552,10 +552,48 @@ def upload_youtube(player_id: str, season: str, privacy: str = "unlisted"):
 
 @app.get("/api/youtube-metadata/{player_id}/{season}")
 def youtube_metadata(player_id: str, season: str):
-    """Preview YouTube upload metadata."""
+    """Preview YouTube upload metadata, enriched with SeasonXI metadata helpers."""
     from seasonxi.content.youtube_upload import build_upload_metadata
+    from seasonxi.content.youtube_metadata import (
+        generate_description,
+        generate_tags,
+        generate_title,
+    )
+
+    # Load season data for enrichment
+    results = search_players(f"{player_id} {season}")
+    season_data = results[0] if results else {}
+
+    player_name = season_data.get("display_name") or player_id.upper()
+    season_label = season_data.get("season_label") or season
+    tier = season_data.get("tier") or ""
+    club = season_data.get("club") or ""
+    goals = season_data.get("goals") or 0
+    assists = season_data.get("assists") or 0
+
+    # Build enriched metadata using youtube_metadata helpers
+    title = generate_title(player_name, season_label, tier) if tier else None
+    description = generate_description(player_name, season_label, goals, assists, tier) if tier else None
+    tags = generate_tags(player_name, club, season_label)
+
+    # Also include the full upload-ready structure from youtube_upload
     metadata = build_upload_metadata(player_id=player_id, season=season)
-    return metadata
+
+    # Inject enriched fields
+    if title:
+        metadata["snippet"]["title"] = title
+    if description:
+        metadata["snippet"]["description"] = description
+    metadata["snippet"]["tags"] = tags
+
+    return {
+        **metadata,
+        "preview": {
+            "title": metadata["snippet"]["title"],
+            "description": metadata["snippet"]["description"],
+            "tags": tags,
+        },
+    }
 
 
 # ─── API: Prompts List ────────────────────────────────────────

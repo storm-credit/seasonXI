@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { SCHEDULE } from "@/lib/constants";
-import { loadSeason, exportJSON, checkAssets } from "@/lib/api";
+import { loadSeason, checkAssets } from "@/lib/api";
 import type { Season } from "@/lib/types";
 import ProductionChecklist, { type ChecklistState } from "@/components/dashboard/ProductionChecklist";
 
@@ -20,7 +20,7 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(false);
   const [checklist, setChecklist] = useState<ChecklistState>({
     hookImage: false, cardImage: false, sunoMusic: false,
-    jsonExport: false, rendered: false, reviewed: false, uploaded: false,
+    rendered: false, reviewed: false, uploaded: false,
   });
 
   const autoCheck = (key: keyof ChecklistState) => {
@@ -36,7 +36,7 @@ export default function DashboardPage() {
     setLoading(true);
     const fresh: ChecklistState = {
       hookImage: false, cardImage: false, sunoMusic: false,
-      jsonExport: false, rendered: false, reviewed: false, uploaded: false,
+      rendered: false, reviewed: false, uploaded: false,
     };
     setChecklist(fresh);
     try {
@@ -69,25 +69,18 @@ export default function DashboardPage() {
     setLoading(false);
   }, [currentDayPlayers]);
 
-  const handleExportJSON = useCallback(async () => {
-    if (!selectedSeason) return;
-    try { await exportJSON(selectedSeason.player_id, selectedSeason.season); autoCheck("jsonExport"); }
-    catch { /* fail */ }
-  }, [selectedSeason]);
-
   const handleChecklistAction = useCallback((key: keyof ChecklistState) => {
     switch (key) {
       case "hookImage": case "cardImage":
         document.getElementById("image-upload")?.scrollIntoView({ behavior: "smooth" }); break;
       case "sunoMusic":
         document.getElementById("music-panel")?.scrollIntoView({ behavior: "smooth" }); break;
-      case "jsonExport": handleExportJSON(); break;
       case "rendered": case "reviewed":
         document.getElementById("video-preview")?.scrollIntoView({ behavior: "smooth" }); break;
       case "uploaded":
         document.getElementById("youtube-panel")?.scrollIntoView({ behavior: "smooth" }); break;
     }
-  }, [handleExportJSON]);
+  }, []);
 
   return (
     <div className="flex h-screen overflow-hidden">

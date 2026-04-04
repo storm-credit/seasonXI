@@ -5,6 +5,8 @@ interface StoryOutroProps {
   playerName: string;
   season: string;
   tier: string;
+  ctaText?: string;
+  nextTeaser?: string;
 }
 
 /**
@@ -13,14 +15,19 @@ interface StoryOutroProps {
  * Sequence:
  *  0-20f  : SeasonXI logo fades + scales in
  *  20-60f : Tagline appears
+ *  40-60f : CTA text (comment engagement)
  *  90-150f: Full fade to black
+ *  100-150f: Next player teaser appears at bottom
  */
 export const StoryOutro: React.FC<StoryOutroProps> = ({
   playerName,
   season,
   tier,
+  ctaText,
+  nextTeaser,
 }) => {
   const frame = useCurrentFrame();
+  const CTA_DEFAULT = "DO YOU AGREE? DROP YOUR RATING ⬇";
 
   // Logo
   const logoOpacity = interpolate(frame, [0, 20], [0, 1], {
@@ -37,6 +44,19 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
 
   // Player credit line
   const creditOpacity = interpolate(frame, [40, 55], [0, 0.7], {
+    extrapolateRight: 'clamp',
+  });
+
+  // CTA text — comment engagement
+  const ctaOpacity = interpolate(frame, [42, 58], [0, 0.5], {
+    extrapolateRight: 'clamp',
+  });
+  const ctaY = interpolate(frame, [42, 58], [12, 0], {
+    extrapolateRight: 'clamp',
+  });
+
+  // Next teaser — appears near the end (frame 100-115), bottom of screen
+  const teaserOpacity = interpolate(frame, [100, 115], [0, 1], {
     extrapolateRight: 'clamp',
   });
 
@@ -171,6 +191,57 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
           {tier.toUpperCase()} SEASON
         </div>
       </div>
+
+      {/* CTA — comment engagement */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '68%',
+          width: '100%',
+          textAlign: 'center',
+          opacity: ctaOpacity,
+          transform: `translateY(${ctaY}px)`,
+        }}
+      >
+        <div
+          style={{
+            fontFamily: '"Inter","Montserrat",sans-serif',
+            fontWeight: 500,
+            fontSize: 18,
+            color: `${COLORS.white}80`,
+            letterSpacing: 3,
+            textTransform: 'uppercase',
+          }}
+        >
+          {ctaText ?? CTA_DEFAULT}
+        </div>
+      </div>
+
+      {/* Next player teaser — bottom, appears at frame 100 */}
+      {nextTeaser && (
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '6%',
+            width: '100%',
+            textAlign: 'center',
+            opacity: teaserOpacity,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: '"Bebas Neue","Inter",sans-serif',
+              fontWeight: 700,
+              fontSize: 14,
+              color: accentColor,
+              letterSpacing: 4,
+              textTransform: 'uppercase',
+            }}
+          >
+            {nextTeaser}
+          </div>
+        </div>
+      )}
 
       {/* Corner marks */}
       {[

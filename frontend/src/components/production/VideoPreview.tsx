@@ -147,6 +147,10 @@ export default function VideoPreview({
                   className="w-full py-1 rounded-lg bg-red-600 text-white font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:bg-red-500 transition-all">
                   <Upload size={10} /> YOUTUBE
                 </button>
+                <button onClick={startRender} disabled={rendering}
+                  className="w-full py-1 rounded-lg bg-sxi-white/5 text-sxi-white/50 border border-sxi-gold/20 font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:bg-sxi-gold/10 hover:text-sxi-gold transition-all">
+                  <Film size={10} /> RE-RENDER
+                </button>
               </div>
             )}
           </div>

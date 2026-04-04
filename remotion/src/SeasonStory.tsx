@@ -71,12 +71,23 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   // Fade in from black
   const fadeIn = interpolate(frame, [0, 18], [0, 1], { extrapolateRight: 'clamp' });
 
-  // Hook text
+  // hookStat big number — visible from frame 0 for thumbnail, scale in quickly
+  const statScale = interpolate(frame, [0, 12], [0.85, 1.0], { extrapolateRight: 'clamp' });
+  const statOpacity = interpolate(frame, [0, 8], [0.85, 1.0], { extrapolateRight: 'clamp' });
+
+  // hookLine question — fades in at frame 20
+  const questionOpacity = interpolate(frame, [20, 40], [0, 1], { extrapolateRight: 'clamp' });
+  const questionY = interpolate(frame, [20, 40], [20, 0], { extrapolateRight: 'clamp' });
+
+  // Hook text (original hookLine position, now used for fallback)
   const textOpacity = interpolate(frame, [30, 50], [0, 1], { extrapolateRight: 'clamp' });
   const textY = interpolate(frame, [30, 50], [30, 0], { extrapolateRight: 'clamp' });
 
-  // Player name badge top
-  const badgeOpacity = interpolate(frame, [45, 65], [0, 1], { extrapolateRight: 'clamp' });
+  // Player name badge top — appears at frame 50
+  const badgeOpacity = interpolate(frame, [50, 70], [0, 1], { extrapolateRight: 'clamp' });
+
+  // OVR badge (top-right) — visible from frame 0 for thumbnail
+  const ovrOpacity = interpolate(frame, [0, 10], [0.8, 1.0], { extrapolateRight: 'clamp' });
 
   // Vignette
   const vigOpacity = interpolate(frame, [0, 30], [1, 0.5], { extrapolateRight: 'clamp' });
@@ -119,7 +130,110 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         }}
       />
 
-      {/* Top info badge */}
+      {/* OVR badge — top-right, visible from frame 0 for thumbnail */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '6%',
+          right: '6%',
+          opacity: ovrOpacity,
+          zIndex: 20,
+        }}
+      >
+        <div
+          style={{
+            background: 'rgba(10,14,26,0.75)',
+            border: `1px solid ${COLORS.gold}50`,
+            borderRadius: 6,
+            padding: '6px 14px',
+            textAlign: 'center',
+          }}
+        >
+          <div
+            style={{
+              fontFamily: '"Bebas Neue","Inter",sans-serif',
+              fontWeight: 900,
+              fontSize: 36,
+              color: COLORS.gold,
+              letterSpacing: 2,
+              lineHeight: 1,
+            }}
+          >
+            {data.ovr}
+          </div>
+          <div
+            style={{
+              fontFamily: '"Inter","Montserrat",sans-serif',
+              fontWeight: 600,
+              fontSize: 10,
+              color: `${COLORS.white}88`,
+              letterSpacing: 3,
+              textTransform: 'uppercase',
+            }}
+          >
+            OVR
+          </div>
+        </div>
+      </div>
+
+      {/* hookStat big number — center, visible from frame 0, scale in */}
+      {data.hookStat && (
+        <div
+          style={{
+            position: 'absolute',
+            top: '28%',
+            width: '100%',
+            textAlign: 'center',
+            opacity: statOpacity,
+            transform: `scale(${statScale})`,
+            zIndex: 15,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: '"Bebas Neue","Inter",sans-serif',
+              fontWeight: 900,
+              fontSize: 128,
+              color: COLORS.gold,
+              letterSpacing: 6,
+              lineHeight: 1,
+              textShadow: `0 0 80px ${COLORS.gold}60, 0 4px 40px rgba(0,0,0,0.9)`,
+            }}
+          >
+            {data.hookStat}
+          </div>
+        </div>
+      )}
+
+      {/* hookLine question — fades in at frame 20, below hookStat */}
+      <div
+        style={{
+          position: 'absolute',
+          top: data.hookStat ? '55%' : '44%',
+          width: '100%',
+          textAlign: 'center',
+          padding: '0 50px',
+          opacity: questionOpacity,
+          transform: `translateY(${questionY}px)`,
+          zIndex: 15,
+        }}
+      >
+        <div
+          style={{
+            fontFamily: '"Bebas Neue","Inter",sans-serif',
+            fontWeight: 700,
+            fontSize: 60,
+            color: COLORS.white,
+            letterSpacing: 4,
+            lineHeight: 1.2,
+            textShadow: '0 4px 40px rgba(0,0,0,0.9)',
+          }}
+        >
+          {hookLine}
+        </div>
+      </div>
+
+      {/* Top info badge — player name, appears at frame 50 */}
       <div
         style={{
           position: 'absolute',
@@ -127,6 +241,7 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
           width: '100%',
           textAlign: 'center',
           opacity: badgeOpacity,
+          paddingRight: 120, // avoid overlap with OVR badge
         }}
       >
         <div
@@ -175,33 +290,6 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
           >
             {data.club}
           </span>
-        </div>
-      </div>
-
-      {/* Main hook line */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '20%',
-          width: '100%',
-          textAlign: 'center',
-          padding: '0 50px',
-          opacity: textOpacity,
-          transform: `translateY(${textY}px)`,
-        }}
-      >
-        <div
-          style={{
-            fontFamily: '"Bebas Neue","Inter",sans-serif',
-            fontWeight: 900,
-            fontSize: 68,
-            color: COLORS.white,
-            letterSpacing: 5,
-            lineHeight: 1.15,
-            textShadow: '0 4px 40px rgba(0,0,0,0.9)',
-          }}
-        >
-          {hookLine}
         </div>
       </div>
 
@@ -1052,6 +1140,8 @@ export const SeasonStory: React.FC<{ data: StoryCardData }> = ({ data }) => {
           playerName={data.player_name}
           season={data.season}
           tier={data.tier}
+          ctaText={data.ctaText}
+          nextTeaser={data.nextTeaser}
         />
       </Sequence>
 
