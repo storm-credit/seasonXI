@@ -273,12 +273,12 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
         + 0.25 * _safe_get(row, "prog_passes_pct_role")
     )
     def_raw = (
-        0.15 * _safe_get(row, "tackles_pct_role")       # low tackles = good positioning
-        + 0.35 * _safe_get(row, "interceptions_pct_role") # real data, most important
-        + 0.15 * _safe_get(row, "clearances_pct_role")
+        0.10 * _safe_get(row, "tackles_pct_role")       # low tackles = good positioning
+        + 0.25 * _safe_get(row, "interceptions_pct_role") # real data
+        + 0.25 * _safe_get(row, "clearances_pct_role")   # Sofascore real data!
         + 0.10 * _safe_get(row, "aerials_pct_role")
         + 0.10 * _safe_get(row, "pressures_pct_role")
-        + 0.15 * _safe_get(row, "clean_sheets_pct_role")  # team defense quality
+        + 0.20 * _safe_get(row, "clean_sheets_pct_role")  # team defense quality
     )
     pace_raw = (
         0.35 * _safe_get(row, "prog_carries_pct_role")
@@ -295,16 +295,16 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
         + 0.30 * _safe_get(row, "clean_sheets_pct_role")
     )
     stamina_raw = (
-        0.30 * _safe_get(row, "pressures_pct_role")
-        + 0.30 * _safe_get(row, "minutes_share")
-        + 0.20 * _safe_get(row, "ball_recoveries_pct_role")
-        + 0.20 * _safe_get(row, "aerial_duel_success_pct_role")
+        0.25 * _safe_get(row, "minutes_share")
+        + 0.25 * _safe_get(row, "clean_sheets_pct_role")   # endurance = staying clean
+        + 0.25 * _safe_get(row, "clearances_pct_role")     # active defending
+        + 0.25 * _safe_get(row, "aerial_duel_success_pct_role")
     )
     mental_raw = (
         0.30 * _safe_get(row, "pass_completion_pct_role")
+        + 0.25 * _safe_get(row, "clean_sheets_pct_role")   # clean sheets = good decisions
         + 0.25 * _safe_get(row, "aerial_duel_success_pct_role")
-        + 0.15 * _safe_get(row, "team_success_pct", 0.5)
-        + 0.30 * _safe_get(row, "clean_sheets_pct_role")
+        + 0.20 * _safe_get(row, "team_success_pct", 0.5)
     )
 
     att = _scale(att_raw, confidence, base=30, rng=35)  # compressed for DF
