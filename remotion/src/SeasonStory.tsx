@@ -1073,10 +1073,10 @@ export const SeasonStory: React.FC<{ data: StoryCardData }> = ({ data }) => {
     frame,
     [
       T.hook.start, T.hook.end,
-      T.cardReveal.start, T.cardReveal.end,
-      T.stats.start,
+      T.cardReveal.start, T.cardReveal.end + 1,
+      T.outro.end,
     ],
-    [0.4, 0.3, 0.8, 0.3, 0.3],
+    [0.4, 0.3, 0.8, 0.3, 0.2],
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
 
