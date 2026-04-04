@@ -47,16 +47,15 @@ export const CHECKLIST_ITEMS = [
 
 function generateSchedule(): ScheduleDay[] {
   const players = [
-    { player_id: "messi_2012", player_name: "Lionel Messi", season: "2011-12", club: "Barcelona", tier: "MYTHIC" as TierName },
-    { player_id: "ronaldo_2014", player_name: "Cristiano Ronaldo", season: "2013-14", club: "Real Madrid", tier: "MYTHIC" as TierName },
-    { player_id: "suarez_2014", player_name: "Luis Suarez", season: "2013-14", club: "Liverpool", tier: "LEGENDARY" as TierName },
+    { player_id: "benz_2022", player_name: "Karim Benzema", season: "2021-22", club: "Real Madrid", tier: "LEGENDARY" as TierName },
+    { player_id: "salah_2022", player_name: "Mohamed Salah", season: "2021-22", club: "Liverpool", tier: "LEGENDARY" as TierName },
+    { player_id: "lewandowski_2022", player_name: "Robert Lewandowski", season: "2021-22", club: "Bayern Munich", tier: "ELITE" as TierName },
     { player_id: "neymar_2015", player_name: "Neymar", season: "2014-15", club: "Barcelona", tier: "LEGENDARY" as TierName },
     { player_id: "ribery_2013", player_name: "Franck Ribery", season: "2012-13", club: "Bayern Munich", tier: "ELITE" as TierName },
     { player_id: "hazard_2019", player_name: "Eden Hazard", season: "2018-19", club: "Chelsea", tier: "ELITE" as TierName },
     { player_id: "salah_2018", player_name: "Mohamed Salah", season: "2017-18", club: "Liverpool", tier: "LEGENDARY" as TierName },
     { player_id: "lewandowski_2021", player_name: "Robert Lewandowski", season: "2020-21", club: "Bayern Munich", tier: "MYTHIC" as TierName },
     { player_id: "kdb_2020", player_name: "Kevin De Bruyne", season: "2019-20", club: "Man City", tier: "LEGENDARY" as TierName },
-    { player_id: "benz_2022", player_name: "Karim Benzema", season: "2021-22", club: "Real Madrid", tier: "MYTHIC" as TierName },
     { player_id: "mbappe_2023", player_name: "Kylian Mbappe", season: "2022-23", club: "PSG", tier: "LEGENDARY" as TierName },
     { player_id: "haaland_2023", player_name: "Erling Haaland", season: "2022-23", club: "Man City", tier: "ELITE" as TierName },
     { player_id: "aguero_2012", player_name: "Sergio Aguero", season: "2011-12", club: "Man City", tier: "LEGENDARY" as TierName },
