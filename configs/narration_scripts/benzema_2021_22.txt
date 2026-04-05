@@ -1,9 +1,10 @@
-# Benzema 2021-22 | Real Madrid | Legendary | ATT 98
-# Duration target: ~48 seconds narration + 7 seconds silence (card reveal) + 5 seconds outro
+# Benzema 2021-22 | Real Madrid | Legendary | OVR 91.2
+# Voice: Josh (ElevenLabs) | Duration target: ~48s narration + 7s card reveal + 5s outro
+# Fact-checked by script expert
 
 [HOOK] 0:00-0:05
 They said he was nothing without Ronaldo.
-This is the season he proved them all wrong.
+One season. He erased that sentence forever.
 
 [STORY] 0:05-0:15
 2021-22. Benzema was 34.
@@ -13,14 +14,14 @@ he started the greatest season of his career.
 
 [HIGHLIGHTS] 0:15-0:25
 But the Champions League made him immortal.
-PSG, down on aggregate, 87th minute. Hat trick.
-Chelsea, extra time. Hat trick.
-Man City, when nobody believed. Hat trick.
-Three knockout rounds. Three hat tricks.
+PSG. Hat trick. From 2-0 down on aggregate.
+Chelsea. Three goals across two legs. One man.
+Man City. They said it was over. He scored anyway.
+Three knockout rounds. Unstoppable every single time.
 
 [EMOTION] 0:25-0:30
-Four years in Ronaldo's shadow.
-And then, at 34, he took the crown.
+Four years waiting.
+One season. Everything.
 
 [CARD REVEAL] 0:30-0:37
 (SILENCE — music drop, card flip, stats appear)
@@ -28,7 +29,6 @@ And then, at 34, he took the crown.
 [VERDICT] 0:37-0:50
 La Liga. Champions League. Ballon d'Or.
 He took everything at 34.
-The greatest late bloomer in football history.
 Some players peak at 25.
 This man peaked at 34.
 
