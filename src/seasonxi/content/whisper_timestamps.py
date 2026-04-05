@@ -263,11 +263,11 @@ def compute_scene_timing(
     stats_start = card_reveal_end
     stats_end = stats_start + _STATS_DURATION
 
-    # If VERDICT is already in timing (narration-driven), keep it but push
-    # it to start no earlier than stats_end so scenes don't overlap.
+    # VERDICT narration starts WITH stats (no silent gap)
+    # Stats scene shows graph+bars while VERDICT narration plays
     if has_verdict_narration and "verdict" in timing:
-        verdict_start = max(stats_end, timing["verdict"]["start"])
-        verdict_end = max(verdict_start + _VERDICT_DURATION, timing["verdict"]["end"])
+        verdict_start = stats_start  # Same as stats — narration covers both
+        verdict_end = max(stats_end + _VERDICT_DURATION, timing["verdict"]["end"])
     else:
         verdict_start = stats_end
         verdict_end = verdict_start + _VERDICT_DURATION
