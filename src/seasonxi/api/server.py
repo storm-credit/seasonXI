@@ -314,7 +314,7 @@ def render_video(player_id: str, season: str):
             "narrationSrc": f"{player_folder}/narration.mp3",
             "bgmSrc": f"{player_folder}/bgm.mp3",
             "hookStat": _build_hook_stat(position_val, goals, assists, def_v),
-            "hookLine": f"{display} · {season}",
+            "hookLine": f"{season}. {display.upper()} WAS {34 if player_id == 'benzema' else ''}.\nTHE SEASON THAT CHANGED EVERYTHING." if player_id == "benzema" else f"{display} · {season}",
             "verdictText": f"{tier} Season",
             "storyText": narration_script[:200] if narration_script else "",
             "highlights": _build_highlights(position_val, goals, assists, def_v, pace),
@@ -535,12 +535,15 @@ def _build_story_points(player_id: str, goals: int, assists: int, tier: str) -> 
     if player_id == "benzema":
         return {
             "highlights": [
-                "PSG — HAT TRICK",
-                f"CHELSEA — 3 GOALS",
-                "MAN CITY — WINNER",
+                "PSG R16 — DOWN 2-0. HAT TRICK IN 17 MINUTES.",
+                "CHELSEA QF — HAT TRICK IN THE FIRST HALF.",
+                "MAN CITY SF — 90+1 EQUALIZER. EXTRA TIME. THROUGH.",
             ],
-            "emotion": "4 YEARS IN THE SHADOW",
-            "verdict": ["LA LIGA", "CHAMPIONS LEAGUE", "BALLON D'OR"],
+            "emotion": "4 YEARS IN RONALDO'S SHADOW\nONE SEASON TO ERASE IT ALL",
+            "verdict": ["🏆 LA LIGA CHAMPION", "🏆 CHAMPIONS LEAGUE WINNER", "🏆 BALLON D'OR"],
+            "cardReveal": "27 GOALS · 12 ASSISTS\nLA LIGA TOP SCORER",
+            "story": "THE SEASON THAT SILENCED EVERYONE",
+            "verdictLine": "THE GREATEST LATE BLOOMER IN FOOTBALL HISTORY",
         }
     # Generic fallback
     verdict_trophies = []
