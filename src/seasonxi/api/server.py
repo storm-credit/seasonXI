@@ -648,6 +648,55 @@ And the numbers say everything.
 Season Eleven."""
 
 
+def _fact_check_script(script: str, player_name: str, club: str, season: str, goals: int, assists: int) -> str:
+    """Gemini로 나레이션 스크립트 팩트 체크. 오류 발견 시 수정된 스크립트 반환."""
+    try:
+        from google import genai
+
+        backend = os.getenv("GEMINI_BACKEND", "ai_studio").lower().strip()
+        if backend == "vertex_ai":
+            sa_key = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "")
+            if sa_key and not os.path.isabs(sa_key):
+                resolved = PROJECT_ROOT / sa_key
+                if resolved.exists():
+                    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str(resolved)
+            project = os.getenv("VERTEX_PROJECT", "")
+            location = os.getenv("VERTEX_LOCATION", "us-central1")
+            client = genai.Client(vertexai=True, project=project, location=location)
+        else:
+            api_key = os.getenv("GEMINI_API_KEY", "")
+            client = genai.Client(api_key=api_key)
+
+        prompt = f"""You are a football fact checker. Check this narration script for factual errors.
+
+KNOWN FACTS:
+- Player: {player_name}, Club: {club}, Season: {season}
+- Goals: {goals}, Assists: {assists}
+
+SCRIPT:
+{script}
+
+RULES:
+- Check match results, goal counts, hat tricks, trophies, dates
+- If you find errors, rewrite the script with corrections
+- If no errors, return the original script unchanged
+- Output ONLY the script text, nothing else
+- Keep the same length and tone"""
+
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+        )
+        checked = (response.text or "").strip()
+        if len(checked) > 50:
+            print(f"  [Fact Check] Script verified/corrected by Gemini")
+            return checked
+    except Exception as e:
+        print(f"  [Fact Check] Skipped ({e})")
+
+    return script  # Return original if fact check fails
+
+
 async def _generate_tts(script: str, output_path: "Path") -> None:
     """Run Edge TTS and save MP3 to output_path."""
     import edge_tts  # type: ignore
@@ -687,22 +736,41 @@ def generate_narration(player_id: str, season: str):
     goals = int(float(data.get("goals", 0) or 0))
     assists = int(float(data.get("assists", 0) or 0))
 
-    # 2. Build script (with stats for Gemini)
-    script = _build_narration_script(
-        player_name=player_name,
-        club=club,
-        season=season,
-        goals=goals,
-        assists=assists,
-        tier=tier,
-        position=position,
-        att=int(float(data.get("att", 0) or 0)),
-        def_v=int(float(data.get("def", 0) or 0)),
-        pace=int(float(data.get("pace", 0) or 0)),
-        aura=int(float(data.get("aura", 0) or 0)),
-        stamina=int(float(data.get("stamina", 0) or 0)),
-        mental=int(float(data.get("mental", 0) or 0)),
-    )
+    # 2. Build script — file first, then Gemini, then template
+    s_clean = season.replace("-", "_")
+    script_file = PROJECT_ROOT / "configs" / "narration_scripts" / f"{player_id}_{s_clean}.txt"
+
+    if script_file.exists():
+        # Use prepared & fact-checked script file
+        raw = script_file.read_text(encoding="utf-8")
+        # Extract narration text (skip comments and section headers)
+        lines = []
+        for line in raw.split("\n"):
+            line = line.strip()
+            if not line or line.startswith("#") or line.startswith("[") or line.startswith("("):
+                continue
+            lines.append(line)
+        script = " ".join(lines)
+        print(f"  [Narration] Using prepared script: {script_file.name}")
+    else:
+        # Generate with Gemini + fact check
+        script = _build_narration_script(
+            player_name=player_name,
+            club=club,
+            season=season,
+            goals=goals,
+            assists=assists,
+            tier=tier,
+            position=position,
+            att=int(float(data.get("att", 0) or 0)),
+            def_v=int(float(data.get("def", 0) or 0)),
+            pace=int(float(data.get("pace", 0) or 0)),
+            aura=int(float(data.get("aura", 0) or 0)),
+            stamina=int(float(data.get("stamina", 0) or 0)),
+            mental=int(float(data.get("mental", 0) or 0)),
+        )
+        # Fact check with Gemini
+        script = _fact_check_script(script, player_name, club, season, goals, assists)
 
     # 3. Determine output path
     player_folder = REMOTION_DIR / "public" / f"{player_id}_{season}"

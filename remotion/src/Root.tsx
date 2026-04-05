@@ -82,35 +82,32 @@ const DEFAULT_STORY_DATA: StoryCardData = {
   verdictText: "The Season That Rewrote History",
   subtitles: [
     // HOOK (0-150)
-    { startFrame: 10,  endFrame: 75,  text: "They said he was nothing without Ronaldo.", highlight: "nothing without Ronaldo" },
-    { startFrame: 80,  endFrame: 145, text: "This is the season he proved them all wrong.", highlight: "proved them all wrong" },
+    { startFrame: 10,  endFrame: 80,  text: "They said he was nothing without Ronaldo.", highlight: "nothing without Ronaldo" },
+    { startFrame: 85,  endFrame: 145, text: "One season. He erased that sentence forever.", highlight: "erased" },
 
     // STORY (150-450)
     { startFrame: 155, endFrame: 230, text: "2021-22. Benzema was 34.", highlight: "34" },
-    { startFrame: 240, endFrame: 340, text: "At an age where most strikers fade, he started the greatest season of his career.", highlight: "greatest season" },
-    { startFrame: 350, endFrame: 440, text: "27 goals, 12 assists in La Liga.", highlight: "27 goals" },
+    { startFrame: 240, endFrame: 350, text: "At an age where most strikers fade, he started the greatest season of his career.", highlight: "greatest season" },
+    { startFrame: 360, endFrame: 440, text: "27 goals, 12 assists in La Liga.", highlight: "27 goals" },
 
     // HIGHLIGHTS (450-750)
-    { startFrame: 455, endFrame: 540, text: "The Champions League made him immortal.", highlight: "immortal" },
-    { startFrame: 545, endFrame: 610, text: "PSG, 87th minute. Hat trick.", highlight: "Hat trick" },
-    { startFrame: 615, endFrame: 670, text: "Chelsea, extra time. Hat trick.", highlight: "Hat trick" },
-    { startFrame: 675, endFrame: 740, text: "Man City, when nobody believed. Hat trick.", highlight: "Hat trick" },
+    { startFrame: 455, endFrame: 530, text: "The Champions League made him immortal.", highlight: "immortal" },
+    { startFrame: 535, endFrame: 600, text: "PSG. Hat trick. From 2-0 down.", highlight: "Hat trick" },
+    { startFrame: 605, endFrame: 670, text: "Chelsea. Three goals across two legs. One man.", highlight: "Three goals" },
+    { startFrame: 675, endFrame: 740, text: "Man City. They said it was over. He scored anyway.", highlight: "scored anyway" },
 
     // EMOTION (750-900)
-    { startFrame: 755, endFrame: 820, text: "Four years in Ronaldo's shadow.", highlight: "Ronaldo's shadow" },
-    { startFrame: 825, endFrame: 895, text: "And then, at 34, he took the crown.", highlight: "took the crown" },
+    { startFrame: 755, endFrame: 820, text: "Four years waiting.", highlight: "Four years" },
+    { startFrame: 825, endFrame: 895, text: "One season. Everything.", highlight: "Everything" },
 
-    // CARD REVEAL (900-1050) — NO SUBTITLES (silence moment)
+    // CARD REVEAL (900-1050) — NO SUBTITLES
 
-    // VERDICT (1050-1350) — after stats
-    { startFrame: 1100, endFrame: 1170, text: "La Liga. Champions League. Ballon d'Or.", highlight: "Ballon d'Or" },
-    { startFrame: 1180, endFrame: 1250, text: "He took everything at 34.", highlight: "everything" },
-    { startFrame: 1260, endFrame: 1350, text: "The greatest late bloomer in football history.", highlight: "greatest late bloomer" },
-
-    // VERDICT continued (1350-1650)
-    { startFrame: 1360, endFrame: 1430, text: "Some players peak at 25.", highlight: "25" },
-    { startFrame: 1440, endFrame: 1520, text: "This man peaked at 34.", highlight: "34" },
-    { startFrame: 1530, endFrame: 1620, text: "Legendary. No debate.", highlight: "Legendary" },
+    // VERDICT (1050-1650)
+    { startFrame: 1070, endFrame: 1150, text: "La Liga. Champions League. Ballon d'Or.", highlight: "Ballon d'Or" },
+    { startFrame: 1160, endFrame: 1240, text: "He took everything at 34.", highlight: "everything" },
+    { startFrame: 1250, endFrame: 1350, text: "Some players peak at 25.", highlight: "25" },
+    { startFrame: 1360, endFrame: 1460, text: "This man peaked at 34.", highlight: "34" },
+    { startFrame: 1470, endFrame: 1580, text: "Legendary. No debate.", highlight: "Legendary" },
   ],
 };
 

@@ -329,249 +329,38 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
 
 const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
   const T = STORY_TIMING;
   const duration = T.story.end - T.story.start; // 300
 
   const fadeIn = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
   const fadeOut = interpolate(frame, [duration - 10, duration], [1, 0], { extrapolateRight: 'clamp' });
 
-  const titleOpacity = interpolate(frame, [15, 35], [0, 1], { extrapolateRight: 'clamp' });
-  const titleY = interpolate(frame, [15, 35], [20, 0], { extrapolateRight: 'clamp' });
-
-  const storyOpacity = interpolate(frame, [40, 65], [0, 1], { extrapolateRight: 'clamp' });
-  const storyY = interpolate(frame, [40, 65], [15, 0], { extrapolateRight: 'clamp' });
-
-  const metaOpacity = interpolate(frame, [70, 90], [0, 1], { extrapolateRight: 'clamp' });
-
-  // ── Phase timing ────────────────────────────────────────────────────────────
-  const inStatPhase = frame >= 100 && frame <= 200;
-  const inMetaPhase = frame > 200;
-
-  // Image brightness: normal → dim at phase 2 → normal at phase 3
-  const imageBrightness = (() => {
-    if (frame < 100) return 0.85;
-    if (frame <= 120) return interpolate(frame, [100, 120], [0.85, 0.3], { extrapolateRight: 'clamp' });
-    if (frame <= 200) return 0.3;
-    return interpolate(frame, [200, 220], [0.3, 0.85], { extrapolateRight: 'clamp' });
-  })();
-
-  // Big stat number spring pop (phase 2)
-  const statScale = spring({
-    frame: frame - 100,
-    fps,
-    config: { damping: 10, stiffness: 180 },
-  });
-  const statOpacity = interpolate(frame, [100, 118, 185, 200], [0, 1, 1, 0], {
-    extrapolateRight: 'clamp',
-  });
-
-  // Meta pills fade in at phase 3
-  const metaPhaseOpacity = interpolate(frame, [205, 225], [0, 1], { extrapolateRight: 'clamp' });
-
   return (
     <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: Math.min(fadeIn, fadeOut) }}>
-      {/* Ken Burns — same hook image continues, slightly slower zoom */}
-      {/* Image — top 45% of screen */}
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '45%', overflow: 'hidden' }}>
-        <KenBurns
-          src={data.hookImage}
-          durationInFrames={duration}
-          scaleFrom={1.08}
-          scaleTo={1.18}
-          panX={25}
-          brightness={imageBrightness}
-          contrast={1.1}
-          objectPosition="center 30%"
-        />
-        {/* Fade to black at bottom of image */}
-        <div style={{
-          position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%',
-          background: 'linear-gradient(transparent, #0a0e1a)',
-        }} />
-      </div>
+      {/* KenBurns fullscreen */}
+      <KenBurns
+        src={data.hookImage}
+        durationInFrames={duration}
+        scaleFrom={1.08}
+        scaleTo={1.18}
+        panX={25}
+        brightness={0.85}
+        contrast={1.1}
+        objectPosition="center 30%"
+      />
 
-      {/* ── Phase 2: Big stat popup ── */}
-      {inStatPhase && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '8%',
-            width: '100%',
-            textAlign: 'center',
-            opacity: statOpacity,
-            transform: `scale(${statScale})`,
-            transformOrigin: 'center top',
-            zIndex: 30,
-          }}
-        >
-          <div
-            style={{
-              fontFamily: '"Bebas Neue","Inter",sans-serif',
-              fontWeight: 900,
-              fontSize: 160,
-              color: COLORS.gold,
-              lineHeight: 1,
-              textShadow: `0 0 80px ${COLORS.gold}80, 0 0 160px ${COLORS.gold}30`,
-            }}
-          >
-            {data.goals}
-          </div>
-          <div
-            style={{
-              fontFamily: '"Inter","Montserrat",sans-serif',
-              fontWeight: 700,
-              fontSize: 40,
-              color: COLORS.white,
-              letterSpacing: 8,
-              textTransform: 'uppercase',
-              marginTop: -8,
-            }}
-          >
-            GOALS
-          </div>
-          {/* Assists alongside */}
-          <div
-            style={{
-              marginTop: 20,
-              display: 'inline-flex',
-              alignItems: 'baseline',
-              gap: 12,
-              opacity: interpolate(frame, [120, 140], [0, 1], { extrapolateRight: 'clamp' }),
-            }}
-          >
-            <span
-              style={{
-                fontFamily: '"Bebas Neue","Inter",sans-serif',
-                fontWeight: 900,
-                fontSize: 72,
-                color: `${COLORS.white}CC`,
-              }}
-            >
-              {data.assists}
-            </span>
-            <span
-              style={{
-                fontFamily: '"Inter","Montserrat",sans-serif',
-                fontWeight: 600,
-                fontSize: 24,
-                color: `${COLORS.white}66`,
-                letterSpacing: 5,
-              }}
-            >
-              ASSISTS
-            </span>
-          </div>
-        </div>
-      )}
-
-      {/* Content area — middle zone, below image */}
+      {/* Bottom gradient for subtitle readability */}
       <div
         style={{
           position: 'absolute',
-          top: '50%',
+          bottom: 0,
           left: 0,
           right: 0,
-          padding: '0 60px',
+          height: '40%',
+          background: 'linear-gradient(transparent, rgba(10,14,26,0.95))',
         }}
-      >
-        {/* Gold accent line */}
-        <div
-          style={{
-            width: interpolate(frame, [20, 50], [0, 80], { extrapolateRight: 'clamp' }),
-            height: 2,
-            background: COLORS.gold,
-            marginBottom: 20,
-            opacity: titleOpacity,
-          }}
-        />
+      />
 
-        {/* Section label */}
-        <div
-          style={{
-            fontFamily: '"Inter","Montserrat",sans-serif',
-            fontWeight: 600,
-            fontSize: 18,
-            color: `${COLORS.gold}88`,
-            letterSpacing: 5,
-            textTransform: 'uppercase',
-            marginBottom: 14,
-            opacity: titleOpacity,
-          }}
-        >
-          The Story
-        </div>
-
-        {/* Player + Season headline */}
-        <div
-          style={{
-            fontFamily: '"Bebas Neue","Inter",sans-serif',
-            fontWeight: 900,
-            fontSize: 72,
-            color: COLORS.white,
-            letterSpacing: 4,
-            lineHeight: 1,
-            marginBottom: 20,
-            opacity: titleOpacity,
-            transform: `translateY(${titleY}px)`,
-          }}
-        >
-          {data.player_name.toUpperCase()}
-          <br />
-          <span style={{ color: COLORS.gold, fontSize: 52 }}>{data.season}</span>
-        </div>
-
-        {/* Story text — phase 1 only (hides during stat popup, returns at phase 3) */}
-        {data.storyText && !inStatPhase && (
-          <div
-            style={{
-              fontFamily: '"Inter","Montserrat",sans-serif',
-              fontWeight: 400,
-              fontSize: 28,
-              color: `${COLORS.white}AA`,
-              lineHeight: 1.5,
-              marginBottom: 16,
-              opacity: inMetaPhase
-                ? interpolate(frame, [205, 225], [0, 1], { extrapolateRight: 'clamp' })
-                : storyOpacity,
-              transform: `translateY(${storyY}px)`,
-            }}
-          >
-            {data.storyText}
-          </div>
-        )}
-
-        {/* Meta pills: Club · Position — phase 1 + phase 3 */}
-        {!inStatPhase && (
-          <div
-            style={{
-              display: 'flex',
-              gap: 12,
-              opacity: inMetaPhase ? metaPhaseOpacity : metaOpacity,
-            }}
-          >
-            {[data.club, data.position, data.tier].map((label, i) => (
-              <div
-                key={i}
-                style={{
-                  fontFamily: '"Inter","Montserrat",sans-serif',
-                  fontWeight: 700,
-                  fontSize: 20,
-                  color: i === 2 ? COLORS.gold : `${COLORS.white}88`,
-                  background: i === 2 ? `${COLORS.gold}15` : 'rgba(255,255,255,0.06)',
-                  border: `1px solid ${i === 2 ? COLORS.gold + '40' : 'rgba(255,255,255,0.1)'}`,
-                  borderRadius: 6,
-                  padding: '8px 20px',
-                  letterSpacing: 2,
-                  textTransform: 'uppercase',
-                }}
-              >
-                {label}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
     </AbsoluteFill>
   );
 };
@@ -601,6 +390,27 @@ const HighlightsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         opacity: Math.min(fadeIn, fadeOut),
       }}
     >
+      {/* Hook image — very dark background */}
+      <KenBurns
+        src={data.hookImage}
+        durationInFrames={duration}
+        scaleFrom={1.0}
+        scaleTo={1.08}
+        panX={0}
+        brightness={0.2}
+        contrast={1.0}
+        objectPosition="center center"
+      />
+
+      {/* Dark overlay to keep numbers readable */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(10,14,26,0.55)',
+        }}
+      />
+
       {/* Subtle grid background */}
       <div
         style={{
