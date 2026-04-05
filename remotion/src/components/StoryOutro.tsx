@@ -123,7 +123,7 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
           style={{
             fontFamily: '"Bebas Neue", "Inter", sans-serif',
             fontWeight: 900,
-            fontSize: 96,
+            fontSize: 120,
             color: accentColor,
             letterSpacing: 16,
             textShadow: `0 0 60px ${accentColor}50`,
@@ -148,8 +148,8 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
           style={{
             fontFamily: '"Inter", "Montserrat", sans-serif',
             fontWeight: 500,
-            fontSize: 24,
-            color: `${COLORS.white}55`,
+            fontSize: 32,
+            color: `${COLORS.white}66`,
             letterSpacing: 5,
             textTransform: 'uppercase',
           }}
@@ -172,9 +172,9 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
           style={{
             fontFamily: '"Inter", "Montserrat", sans-serif',
             fontWeight: 600,
-            fontSize: 22,
-            color: `${COLORS.white}55`,
-            letterSpacing: 3,
+            fontSize: 30,
+            color: `${COLORS.white}66`,
+            letterSpacing: 4,
           }}
         >
           {playerName.toUpperCase()} · {season}
@@ -182,8 +182,8 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
         <div
           style={{
             fontFamily: '"Bebas Neue", "Inter", sans-serif',
-            fontSize: 18,
-            color: `${accentColor}55`,
+            fontSize: 24,
+            color: `${accentColor}66`,
             letterSpacing: 4,
             marginTop: 6,
           }}
@@ -207,8 +207,8 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
           style={{
             fontFamily: '"Inter","Montserrat",sans-serif',
             fontWeight: 600,
-            fontSize: 28,
-            color: `${COLORS.white}88`,
+            fontSize: 36,
+            color: `${COLORS.white}AA`,
             letterSpacing: 3,
             textTransform: 'uppercase',
           }}
@@ -232,9 +232,9 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
             style={{
               fontFamily: '"Bebas Neue","Inter",sans-serif',
               fontWeight: 700,
-              fontSize: 22,
+              fontSize: 30,
               color: accentColor,
-              letterSpacing: 4,
+              letterSpacing: 5,
               textTransform: 'uppercase',
             }}
           >
