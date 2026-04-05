@@ -245,13 +245,20 @@ def render_video(player_id: str, season: str):
         goals = int(float(card_data.get("goals", 0) or 0))
         assists = int(float(card_data.get("assists", 0) or 0))
 
-    # 3. Auto-generate narration MP3 if missing
+    # 3. Build narration script + auto-generate MP3 if missing
+    position_val = card_data.get("position", "FW") if card_data else "FW"
+    narration_script = _build_narration_script(
+        player_name=display, club=club, season=season,
+        goals=goals, assists=assists, tier=tier, position=position_val,
+        att=att, def_v=def_v, pace=pace, aura=aura, stamina=stamina, mental=mental,
+    )
+
     narration_path = REMOTION_DIR / "public" / f"{player_id}_{season}" / "narration.mp3"
     if not narration_path.exists():
         try:
             generate_narration(player_id, season)
         except Exception:
-            pass  # Non-fatal — render can proceed without narration
+            pass
 
     # 4. Check for images & audio in player folder
     player_folder = f"{player_id}_{season}"
@@ -276,14 +283,12 @@ def render_video(player_id: str, season: str):
             "closeupImage": f"{player_folder}/{player_id}_{s}_closeup_v1.png",
             "narrationSrc": f"{player_folder}/narration.mp3",
             "bgmSrc": f"{player_folder}/bgm.mp3",
-            "hookStat": f"{goals} GOALS",
+            "hookStat": _build_hook_stat(position_val, goals, assists, def_v),
             "hookLine": f"{display} · {season}",
             "verdictText": f"{tier} Season",
-            "highlights": [
-                {"number": str(goals), "label": "Goals", "delay": 0},
-                {"number": str(assists), "label": "Assists", "delay": 35},
-            ],
-            "subtitles": [],
+            "storyText": narration_script[:200] if narration_script else "",
+            "highlights": _build_highlights(position_val, goals, assists, def_v, pace),
+            "subtitles": _build_subtitles(narration_script),
         }
     }
 
@@ -457,6 +462,93 @@ def generate_image_api(player_id: str, season: str, scene: str = "HOOK", count: 
         }
     except Exception as e:
         raise HTTPException(500, str(e))
+
+
+# ─── Render helpers ────────────────────────────────────────────
+
+def _build_hook_stat(position: str, goals: int, assists: int, def_v: int) -> str:
+    """Position-aware hook stat for first frame."""
+    if position in ("DF", "CB", "LB", "RB"):
+        return f"DEF {def_v}" if def_v > 0 else "WALL"
+    elif position == "GK":
+        return "KEEPER"
+    elif position in ("MF", "CM", "CAM", "CDM"):
+        if goals >= 10:
+            return f"{goals} GOALS"
+        return f"{goals + assists} G+A"
+    else:  # FW
+        return f"{goals} GOALS"
+
+
+def _build_highlights(position: str, goals: int, assists: int, def_v: int, pace: int) -> list:
+    """Position-aware highlight stats."""
+    if position in ("DF", "CB", "LB", "RB"):
+        return [
+            {"number": str(def_v), "label": "DEF Rating", "delay": 0},
+            {"number": str(goals + assists), "label": "G+A", "delay": 35},
+        ]
+    elif position == "GK":
+        return [
+            {"number": str(def_v), "label": "DEF Rating", "delay": 0},
+        ]
+    else:
+        highlights = [{"number": str(goals), "label": "Goals", "delay": 0}]
+        if assists > 0:
+            highlights.append({"number": str(assists), "label": "Assists", "delay": 35})
+        return highlights
+
+
+def _build_subtitles(script: str) -> list:
+    """Auto-generate subtitle cues from narration script."""
+    if not script:
+        return []
+
+    import re
+    # Split into sentences
+    sentences = re.split(r'(?<=[.!?])\s+', script.strip())
+    sentences = [s.strip() for s in sentences if s.strip() and len(s.strip()) > 3]
+
+    if not sentences:
+        return []
+
+    # Distribute across 60 seconds (1800 frames), skip card reveal (900-1050)
+    cues = []
+    total_chars = sum(len(s) for s in sentences)
+    current_frame = 10  # Start after first 10 frames
+
+    for sentence in sentences:
+        # Duration proportional to sentence length (~30fps reading speed)
+        char_ratio = len(sentence) / max(total_chars, 1)
+        duration = max(45, int(char_ratio * 1500))  # Min 1.5 sec, proportional to length
+
+        # Skip card reveal zone (900-1050)
+        if current_frame >= 880 and current_frame < 1060:
+            current_frame = 1070
+
+        end_frame = min(current_frame + duration, 1750)
+
+        # Find a highlight word (first capitalized word, number, or key word)
+        highlight = None
+        words = sentence.split()
+        for w in words:
+            clean = w.strip('.,!?;:')
+            if clean.isdigit() and int(clean) > 1:
+                highlight = clean
+                break
+            if clean[0:1].isupper() and len(clean) > 3 and clean not in ("This", "That", "When", "Some", "They", "And", "But", "The", "His", "Her"):
+                highlight = clean
+                break
+
+        cues.append({
+            "startFrame": current_frame,
+            "endFrame": end_frame,
+            "text": sentence,
+            "highlight": highlight,
+        })
+
+        current_frame = end_frame + 8  # 8 frame gap between cues
+
+    return cues
 
 
 # ─── Narration: Gemini-powered script builder ─────────────────
