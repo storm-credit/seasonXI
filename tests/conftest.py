@@ -19,6 +19,8 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
+from seasonxi.constants import score_to_tier
+
 
 # ── helpers ────────────────────────────────────────────────────────────────
 
@@ -168,7 +170,18 @@ def sample_gk_row() -> pd.Series:
 
 @pytest.fixture
 def all_cards() -> list[dict]:
-    """Load all rated player cards from outputs/cards/_all_cards_v2_merged.json."""
+    """Load all rated player cards from outputs/cards/_all_cards_v2_merged.json.
+
+    Tier labels are re-derived from the current TIER_THRESHOLDS so that
+    archetype tests always reflect the active v3 constants, not the stale
+    string that was baked into the JSON at export time.
+    """
     cards_path = Path(__file__).parent.parent / "outputs" / "cards" / "_all_cards_v2_merged.json"
     with cards_path.open(encoding="utf-8") as f:
-        return json.load(f)
+        cards = json.load(f)
+    for card in cards:
+        try:
+            card["tier"] = score_to_tier(float(card["overall"])).value
+        except (KeyError, TypeError, ValueError):
+            pass
+    return cards

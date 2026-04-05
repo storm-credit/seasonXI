@@ -1,15 +1,15 @@
 """Archetype validation tests using actual v2 card data.
 
 These tests verify that known elite players land in the correct tier
-according to the current v2 engine output.  When v3 is released, update
-the expected OVR floor values and tier assertions accordingly.
+according to the current v3 engine output.  Tier labels in the fixture
+are re-derived live from TIER_THRESHOLDS (v3: Mythic=95, Legendary=90, Elite=84).
 
-v2 reference scores (from _all_cards_v2_merged.json):
-    Salah       90.3  Legendary
-    Benzema     90.6  Legendary
-    Alisson     93.1  Legendary   (GK ceiling is ~93 — NOT Mythic)
-    VVD         84.2  Elite       (v3 target: 90+ Legendary)
-    De Bruyne   83.2  Gold
+v3 reference scores (from _all_cards_v2_merged.json + v3 thresholds):
+    Salah       91.0  Legendary
+    Benzema     91.2  Legendary
+    Alisson     94.1  Legendary   (GK OVR < 95, stays below Mythic)
+    VVD         86.0  Elite
+    De Bruyne   90.8  Legendary
 """
 
 import pytest
@@ -71,11 +71,11 @@ def test_vvd_should_be_elite_or_higher(all_cards):
 
 
 def test_alisson_should_not_be_mythic(all_cards):
-    """Alisson's GK ceiling in v2 is ~93 Legendary — NOT Mythic.
+    """Alisson's GK ceiling is below 95 — NOT Mythic under v3 thresholds.
 
     GK formula caps the att stat at ~30 (base=30, rng=20 with att_raw=0),
     which structurally prevents any GK from reaching 95+ Mythic.
-    Current value: 93.1 Legendary.
+    Current value: 94.1 Legendary (v3: Mythic threshold = 95).
     """
     card = _find(all_cards, "Alisson")
     assert card is not None, "Alisson not found in cards"

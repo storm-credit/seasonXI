@@ -27,13 +27,14 @@ class Tier(str, Enum):
     BRONZE = "Bronze"
 
 
-# Tier thresholds (overall score >= threshold)
+# Tier thresholds (overall score >= threshold) — v3 calibration
+# Mythic=95+, Legendary=90+, Elite=84+  (tightened from v2: 92/87/82)
 TIER_THRESHOLDS: list[tuple[int, Tier]] = [
-    (92, Tier.MYTHIC),
-    (87, Tier.LEGENDARY),
-    (82, Tier.ELITE),
-    (74, Tier.GOLD),
-    (65, Tier.SILVER),
+    (95, Tier.MYTHIC),
+    (90, Tier.LEGENDARY),
+    (84, Tier.ELITE),
+    (76, Tier.GOLD),
+    (68, Tier.SILVER),
     (0, Tier.BRONZE),
 ]
 
