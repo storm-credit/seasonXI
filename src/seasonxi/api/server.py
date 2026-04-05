@@ -309,6 +309,8 @@ def render_video(player_id: str, season: str):
             "hookImage": f"{player_folder}/{player_id}_{s}_hook_v1.png",
             "cardImage": f"{player_folder}/{player_id}_{s}_card_v1.png",
             "closeupImage": f"{player_folder}/{player_id}_{s}_closeup_v1.png",
+            "highlightImage": f"{player_folder}/{player_id}_{s}_highlight_v1.png",
+            "verdictImage": f"{player_folder}/{player_id}_{s}_verdict_v1.png",
             "narrationSrc": f"{player_folder}/narration.mp3",
             "bgmSrc": f"{player_folder}/bgm.mp3",
             "hookStat": _build_hook_stat(position_val, goals, assists, def_v),

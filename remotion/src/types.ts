@@ -38,6 +38,8 @@ export interface StoryCardData {
   hookImage: string;
   cardImage: string;
   closeupImage: string;
+  highlightImage?: string;  // highlights 씬 배경 (없으면 hookImage 사용)
+  verdictImage?: string;    // verdict 씬 배경 (없으면 closeupImage 사용)
   // Audio
   narrationSrc?: string;
   bgmSrc?: string;

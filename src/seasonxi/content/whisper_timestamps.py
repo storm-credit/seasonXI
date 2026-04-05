@@ -105,9 +105,9 @@ def words_to_subtitle_cues(
 
 
 # ─── Scene timing constants ───────────────────────────────────────────────────
-_SCENE_MARKERS = ["HOOK", "STORY", "HIGHLIGHTS", "EMOTION"]
-_STATS_DURATION = 180   # 6s
-_VERDICT_DURATION = 180  # 6s
+_SCENE_MARKERS = ["HOOK", "STORY", "HIGHLIGHTS", "EMOTION", "VERDICT"]
+_STATS_DURATION = 150   # 5s
+_VERDICT_DURATION = 120  # 4s
 
 
 def _normalise_word(w: str) -> str:
@@ -157,8 +157,8 @@ def compute_scene_timing(
     words: list[dict],
     script: str,
     fps: int = 30,
-    card_reveal_duration: int = 210,  # 7s
-    outro_duration: int = 150,        # 5s
+    card_reveal_duration: int = 150,  # 5s (줄임: 7s→5s)
+    outro_duration: int = 90,         # 3s (줄임: 5s→3s)
 ) -> dict:
     """Whisper 단어 타임스탬프 + 스크립트 씬 마커로 동적 씬 타이밍 계산.
 
@@ -190,8 +190,11 @@ def compute_scene_timing(
     narration_end_frame = int(words[-1]["end"] * fps) if words else 0
 
     # ── 3. Build timing ─────────────────────────────────────────────────────
-    # Scenes that are covered by narration: hook, story, highlights, emotion
-    narration_scene_keys = ["hook", "story", "highlights", "emotion"]
+    # Narration scenes: hook, story, highlights, emotion (always)
+    # VERDICT is added if its marker was found in the narration
+    base_narration_keys = ["hook", "story", "highlights", "emotion"]
+    has_verdict_narration = "verdict" in marker_frames
+    narration_scene_keys = base_narration_keys + (["verdict"] if has_verdict_narration else [])
 
     if len(marker_frames) >= 2:
         # Marker-based: use detected start times, infer ends from next scene start
@@ -232,11 +235,11 @@ def compute_scene_timing(
                     timing[key]["end"] = narration_end_frame
 
     else:
-        # ── Fallback: divide narration evenly into 4 scenes ─────────────────
+        # ── Fallback: divide narration evenly across base 4 scenes only ──────
         total_narration = narration_end_frame
         slice_size = total_narration // 4
         timing = {}
-        for i, key in enumerate(narration_scene_keys):
+        for i, key in enumerate(base_narration_keys):
             timing[key] = {
                 "start": i * slice_size,
                 "end": (i + 1) * slice_size if i < 3 else total_narration,
@@ -246,17 +249,30 @@ def compute_scene_timing(
     if "hook" in timing:
         timing["hook"]["start"] = 0
 
-    # ── 4. Post-narration scenes (silence) ───────────────────────────────────
-    card_reveal_start = narration_end_frame
+    # ── 4. Post-narration scenes ─────────────────────────────────────────────
+    # Card reveal goes after EMOTION (not after VERDICT) when VERDICT is in narration.
+    # This lets VERDICT narration play on top of the stats/verdict visual scenes
+    # without a silent gap — card reveal is the only true silence.
+    if has_verdict_narration and "emotion" in timing:
+        card_reveal_start = timing["emotion"]["end"]
+    else:
+        card_reveal_start = narration_end_frame
+
     card_reveal_end = card_reveal_start + card_reveal_duration
 
     stats_start = card_reveal_end
     stats_end = stats_start + _STATS_DURATION
 
-    verdict_start = stats_end
-    verdict_end = verdict_start + _VERDICT_DURATION
+    # If VERDICT is already in timing (narration-driven), keep it but push
+    # it to start no earlier than stats_end so scenes don't overlap.
+    if has_verdict_narration and "verdict" in timing:
+        verdict_start = max(stats_end, timing["verdict"]["start"])
+        verdict_end = max(verdict_start + _VERDICT_DURATION, timing["verdict"]["end"])
+    else:
+        verdict_start = stats_end
+        verdict_end = verdict_start + _VERDICT_DURATION
 
-    outro_start = verdict_end
+    outro_start = max(verdict_end, narration_end_frame)
     outro_end = outro_start + outro_duration
 
     timing["cardReveal"] = {"start": card_reveal_start, "end": card_reveal_end}

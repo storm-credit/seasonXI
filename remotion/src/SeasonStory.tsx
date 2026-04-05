@@ -335,11 +335,16 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const fadeIn = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
   const fadeOut = interpolate(frame, [duration - 10, duration], [1, 0], { extrapolateRight: 'clamp' });
 
+  // Title overlay: name + season — fade in at frame 20
+  const titleOpacity = interpolate(frame, [20, 45], [0, 1], { extrapolateRight: 'clamp' });
+  // Meta overlay: club + position + tier — fade in slightly later
+  const metaOpacity = interpolate(frame, [50, 75], [0, 1], { extrapolateRight: 'clamp' });
+
   return (
     <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: fadeIn }}>
-      {/* KenBurns fullscreen */}
+      {/* KenBurns on cardImage — different from hookImage for visual variety */}
       <KenBurns
-        src={data.hookImage}
+        src={data.cardImage}
         durationInFrames={duration}
         scaleFrom={1.08}
         scaleTo={1.18}
@@ -347,6 +352,18 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         brightness={0.85}
         contrast={1.1}
         objectPosition="center 30%"
+      />
+
+      {/* Top gradient for name readability */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '35%',
+          background: 'linear-gradient(rgba(10,14,26,0.82), transparent)',
+        }}
       />
 
       {/* Bottom gradient for subtitle readability */}
@@ -361,6 +378,103 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         }}
       />
 
+      {/* 상단: 이름 + 시즌 */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '8%',
+          width: '100%',
+          textAlign: 'center',
+          opacity: titleOpacity,
+          zIndex: 15,
+        }}
+      >
+        <div
+          style={{
+            fontFamily: '"Bebas Neue",sans-serif',
+            fontSize: 56,
+            color: COLORS.white,
+            letterSpacing: 4,
+            lineHeight: 1,
+            textShadow: '0 2px 20px rgba(0,0,0,0.9)',
+          }}
+        >
+          {data.player_name.toUpperCase()}
+        </div>
+        <div
+          style={{
+            fontFamily: '"Bebas Neue",sans-serif',
+            fontSize: 40,
+            color: COLORS.gold,
+            letterSpacing: 4,
+            lineHeight: 1.2,
+            textShadow: `0 0 30px ${COLORS.gold}50, 0 2px 12px rgba(0,0,0,0.8)`,
+          }}
+        >
+          {data.season}
+        </div>
+      </div>
+
+      {/* 하단: 클럽 + 포지션 + 티어 */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '18%',
+          width: '100%',
+          textAlign: 'center',
+          opacity: metaOpacity,
+          zIndex: 15,
+        }}
+      >
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 10,
+            background: 'rgba(10,14,26,0.65)',
+            border: `1px solid ${COLORS.gold}30`,
+            borderRadius: 6,
+            padding: '6px 20px',
+          }}
+        >
+          <span
+            style={{
+              fontFamily: '"Inter","Montserrat",sans-serif',
+              fontWeight: 600,
+              fontSize: 22,
+              color: COLORS.white,
+              letterSpacing: 2,
+            }}
+          >
+            {data.club}
+          </span>
+          <span style={{ color: `${COLORS.gold}55`, fontSize: 18 }}>·</span>
+          <span
+            style={{
+              fontFamily: '"Inter","Montserrat",sans-serif',
+              fontWeight: 500,
+              fontSize: 18,
+              color: `${COLORS.white}88`,
+              letterSpacing: 2,
+            }}
+          >
+            {data.position}
+          </span>
+          <span style={{ color: `${COLORS.gold}55`, fontSize: 18 }}>·</span>
+          <span
+            style={{
+              fontFamily: '"Inter","Montserrat",sans-serif',
+              fontWeight: 700,
+              fontSize: 18,
+              color: COLORS.gold,
+              letterSpacing: 3,
+              textTransform: 'uppercase',
+            }}
+          >
+            {data.tier.toUpperCase()}
+          </span>
+        </div>
+      </div>
     </AbsoluteFill>
   );
 };
@@ -390,9 +504,9 @@ const HighlightsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         opacity: fadeIn,
       }}
     >
-      {/* Hook image — very dark background */}
+      {/* Highlight image (falls back to hookImage) — very dark background */}
       <KenBurns
-        src={data.hookImage}
+        src={data.highlightImage ?? data.hookImage}
         durationInFrames={duration}
         scaleFrom={1.0}
         scaleTo={1.08}
@@ -923,9 +1037,9 @@ const VerdictScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         opacity: fadeIn,
       }}
     >
-      {/* Ken Burns on closeup image */}
+      {/* Ken Burns on verdictImage (falls back to closeupImage) */}
       <KenBurns
-        src={data.closeupImage}
+        src={data.verdictImage ?? data.closeupImage}
         durationInFrames={duration}
         scaleFrom={1.0}
         scaleTo={1.1}
@@ -1036,15 +1150,24 @@ export const SeasonStory: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const T = data.sceneTiming ?? STORY_TIMING;
   const subs = data.subtitles ?? [];
 
-  // Determine BGM volume: quiet during narration scenes, louder during card reveal silence
+  // BGM volume: quiet during narration, loud during card reveal + stats/verdict silence
   const frame = useCurrentFrame();
-  // Safe BGM volume — ensure strictly increasing inputRange
-  const rawBgm = [T.hook.start, T.hook.end, T.cardReveal.start, T.cardReveal.end + 1, T.outro.end];
+  // Build a safe strictly-increasing frame array for interpolate
+  const rawBgm = [
+    T.hook.start,
+    T.hook.end,
+    T.cardReveal.start,
+    T.cardReveal.end + 1,
+    T.stats.start + 1,
+    T.verdict.start + 1,
+    T.outro.end,
+  ];
   const safeBgm: number[] = [Math.max(0, rawBgm[0])];
   for (let i = 1; i < rawBgm.length; i++) {
     safeBgm.push(Math.max(safeBgm[i - 1] + 1, rawBgm[i]));
   }
-  const bgmVolume = interpolate(frame, safeBgm, [0.4, 0.3, 0.8, 0.3, 0.2], {
+  // Narration scenes: 0.3-0.4 | Card reveal: 0.8 | Stats/Verdict: 0.6 | Outro: 0.4
+  const bgmVolume = interpolate(frame, safeBgm, [0.4, 0.3, 0.8, 0.6, 0.6, 0.55, 0.4], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
