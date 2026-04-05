@@ -583,6 +583,29 @@ const HighlightsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
       {/* Stats typography */}
       <TextTypography stats={highlights} />
 
+      {/* Story points: match highlights list */}
+      {data.storyPoints?.highlights && (
+        <div style={{ position: 'absolute', bottom: '25%', width: '100%', textAlign: 'center' }}>
+          {data.storyPoints.highlights.map((item, i) => {
+            const itemOpacity = interpolate(frame, [120 + i * 30, 135 + i * 30], [0, 1], { extrapolateRight: 'clamp' });
+            const itemY = interpolate(frame, [120 + i * 30, 135 + i * 30], [15, 0], { extrapolateRight: 'clamp' });
+            return (
+              <div key={i} style={{
+                opacity: itemOpacity,
+                transform: `translateY(${itemY}px)`,
+                fontFamily: '"Inter",sans-serif',
+                fontSize: 24,
+                color: COLORS.white,
+                letterSpacing: 3,
+                marginBottom: 8,
+              }}>
+                <span style={{ color: COLORS.gold }}>★</span> {item}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
       {/* Player name watermark */}
       <div
         style={{
@@ -671,6 +694,25 @@ const EmotionScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
           }}
         />
       ))}
+
+      {/* Story points: emotion text */}
+      {data.storyPoints?.emotion && (
+        <div style={{
+          position: 'absolute', top: '35%', width: '100%', textAlign: 'center',
+          opacity: interpolate(frame, [30, 50], [0, 1], { extrapolateRight: 'clamp' }),
+          zIndex: 15,
+        }}>
+          <div style={{
+            fontFamily: '"Bebas Neue",sans-serif',
+            fontSize: 48,
+            color: COLORS.gold,
+            letterSpacing: 6,
+            textShadow: '0 4px 20px rgba(0,0,0,0.8)',
+          }}>
+            {data.storyPoints.emotion}
+          </div>
+        </div>
+      )}
 
       {/* Central text */}
       <div
@@ -1073,6 +1115,27 @@ const VerdictScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
       >
         <TierBadge tier={data.tier} ovr={data.ovr} delay={badgeDelay} />
       </div>
+
+      {/* Story points: trophy list */}
+      {data.storyPoints?.verdict && (
+        <div style={{ position: 'absolute', top: '55%', width: '100%', textAlign: 'center', zIndex: 20 }}>
+          {data.storyPoints.verdict.map((trophy, i) => {
+            const tOpacity = interpolate(frame, [40 + i * 20, 55 + i * 20], [0, 1], { extrapolateRight: 'clamp' });
+            return (
+              <div key={i} style={{
+                opacity: tOpacity,
+                fontFamily: '"Inter",sans-serif',
+                fontSize: 28,
+                color: COLORS.white,
+                letterSpacing: 4,
+                marginBottom: 10,
+              }}>
+                🏆 {trophy}
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       {/* Verdict text */}
       <div

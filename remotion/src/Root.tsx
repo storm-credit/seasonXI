@@ -82,6 +82,11 @@ const DEFAULT_STORY_DATA: StoryCardData = {
     { number: "15", label: "UCL Goals", delay: 70 },
   ],
   verdictText: "The Season That Rewrote History",
+  storyPoints: {
+    highlights: ["PSG — HAT TRICK", "CHELSEA — 3 GOALS", "MAN CITY — WINNER"],
+    emotion: "4 YEARS IN THE SHADOW",
+    verdict: ["LA LIGA", "CHAMPIONS LEAGUE", "BALLON D'OR"],
+  },
   subtitles: [
     // HOOK (0-150)
     { startFrame: 10,  endFrame: 80,  text: "They said he was nothing without Ronaldo.", highlight: "nothing without Ronaldo" },

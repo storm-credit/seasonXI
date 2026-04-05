@@ -55,6 +55,12 @@ export interface StoryCardData {
   verdictText?: string;     // e.g. "A GENERATIONAL PEAK"
   ctaText?: string;         // e.g. "DO YOU AGREE? DROP YOUR RATING ⬇"
   nextTeaser?: string;      // e.g. "NEXT: SALAH 2021-22"
+  // Scene story points
+  storyPoints?: {
+    highlights?: string[];  // ["PSG HAT TRICK", "CHELSEA 3 GOALS", "MAN CITY WINNER"]
+    emotion?: string;       // "4 YEARS IN RONALDO'S SHADOW"
+    verdict?: string[];     // ["LA LIGA", "CHAMPIONS LEAGUE", "BALLON D'OR"]
+  };
 }
 
 // 60-second timeline (1800 frames @ 30fps)

@@ -318,6 +318,7 @@ def render_video(player_id: str, season: str):
             "verdictText": f"{tier} Season",
             "storyText": narration_script[:200] if narration_script else "",
             "highlights": _build_highlights(position_val, goals, assists, def_v, pace),
+            "storyPoints": _build_story_points(player_id, goals, assists, tier),
             "subtitles": subtitles,
             **({"sceneTiming": scene_timing} if scene_timing is not None else {}),
         }
@@ -527,6 +528,34 @@ def _build_highlights(position: str, goals: int, assists: int, def_v: int, pace:
         if assists > 0:
             highlights.append({"number": str(assists), "label": "Assists", "delay": 35})
         return highlights
+
+
+def _build_story_points(player_id: str, goals: int, assists: int, tier: str) -> dict:
+    """Build storyPoints for a player. Benzema has hardcoded UCL highlights; others get generic."""
+    if player_id == "benzema":
+        return {
+            "highlights": [
+                "PSG — HAT TRICK",
+                f"CHELSEA — 3 GOALS",
+                "MAN CITY — WINNER",
+            ],
+            "emotion": "4 YEARS IN THE SHADOW",
+            "verdict": ["LA LIGA", "CHAMPIONS LEAGUE", "BALLON D'OR"],
+        }
+    # Generic fallback
+    verdict_trophies = []
+    if tier in ("LEGENDARY", "MYTHIC"):
+        verdict_trophies = ["LEAGUE TITLE", "GOLDEN BOOT"]
+    elif tier == "ELITE":
+        verdict_trophies = ["TOP SCORER"]
+    return {
+        "highlights": [
+            f"{goals} GOALS",
+            f"{assists} ASSISTS",
+        ],
+        "emotion": f"A {tier.upper()} SEASON",
+        "verdict": verdict_trophies if verdict_trophies else [f"{goals}G · {assists}A"],
+    }
 
 
 def _build_subtitles(script: str) -> list:
