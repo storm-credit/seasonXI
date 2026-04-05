@@ -1,9 +1,9 @@
 # Overall score thresholds for tier assignment.
 # Tier label is the highest threshold the score meets or exceeds.
 
-Mythic: 95
-Legendary: 90
-Elite: 84
-Gold: 76
-Silver: 68
+Mythic: 93
+Legendary: 88
+Elite: 82
+Gold: 74
+Silver: 65
 Bronze: 0

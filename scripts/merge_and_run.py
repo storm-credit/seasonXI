@@ -146,49 +146,73 @@ print(f"  After {MIN_MINUTES}min filter: {len(filtered)}")
 
 # Position classification
 def classify_pos(row):
-    """Smart position classification.
+    """Multi-factor position classifier v3.
 
-    Handles: MF who are really FW (Salah), DF,MF hybrids (Trent),
-    season-specific position changes, multi-position strings.
+    Based on PlayeRank (2019) principle: use multiple indicators
+    rather than single threshold for role assignment.
+
+    Key changes from v2:
+    - FW threshold lowered: goals >= 10 (was 15) OR xg >= 8 (was 12)
+    - Multi-factor fw_score replaces single threshold for MF reclassification
+    - LW/RW in position string -> always FW
+    - shots_p90, dribbles_p90 add supporting evidence
     """
     pos = row.get("primary_position", "")
     if pd.isna(pos): pos = ""
-    pos = str(pos).upper().replace(",", "")
+    pos = str(pos).upper().replace(",", "").replace("-", "").replace("/", "")
 
     goals = row.get("goals", 0) or 0
     xg = row.get("xg", 0) or 0
     assists = row.get("assists", 0) or 0
     minutes = row.get("minutes_played", 0) or 1
+    goals_p90 = goals / (minutes / 90) if minutes > 0 else 0
 
-    if "GK" in pos: return "GK"
+    # shots_p90 and dribbles_p90 may not exist yet (computed later) — use raw counts
+    shots = row.get("shots", 0) or 0
+    shots_p90 = shots / (minutes / 90) if minutes > 0 else 0
+    dribbles = row.get("successful_dribbles", 0) or 0
+    dribbles_p90 = dribbles / (minutes / 90) if minutes > 0 else 0
 
-    # Explicit FW
-    if pos.startswith("FW"): return "FW"
+    if "GK" in pos:
+        return "GK"
 
-    # MFFW or FWMF — check if more attacker or midfielder
-    if "FW" in pos and "MF" in pos:
-        goals_p90 = goals / (minutes / 90) if minutes > 0 else 0
-        return "FW" if goals_p90 > 0.25 or goals >= 8 else "MF"
+    # Any position containing FW -> FW (trust FBref primary position)
+    if "FW" in pos:
+        return "FW"
 
-    if "FW" in pos: return "FW"
+    # Pure DF positions
+    if pos in ("DF", "CB", "LB", "RB", "WB"):
+        return "DF"
 
-    # Pure MF — but check if actually an attacker
-    if pos == "MF" or pos.startswith("MF"):
-        goals_p90 = goals / (minutes / 90) if minutes > 0 else 0
-        # High scorers are FW (Salah as MF with 29 goals)
-        if goals >= 15 or (goals >= 10 and xg >= 10):
-            return "FW"
-        # High xG suggests forward role
-        if xg >= 12:
+    # DF-MF hybrids (attacking fullbacks/wingbacks)
+    if "DF" in pos and "MF" in pos:
+        if assists >= 5 or goals >= 3 or goals_p90 >= 0.15:
+            return "MF"
+        return "DF"
+
+    if pos.startswith("DF") or ("DF" in pos and "MF" not in pos):
+        return "DF"
+
+    # MF -> FW reclassification (the key fix)
+    # Covers: MF, MFFW (already caught above), LW, RW embedded in pos string
+    if pos.startswith("MF") or pos in ("AM", "CM", "CAM", "CDM", "LM", "RM"):
+        # Multi-factor FW score
+        fw_score = 0
+        if goals >= 10:      fw_score += 2
+        if goals >= 15:      fw_score += 1
+        if xg >= 8:          fw_score += 2
+        if xg >= 12:         fw_score += 1
+        if goals_p90 >= 0.3: fw_score += 2
+        if goals_p90 >= 0.5: fw_score += 1
+        if shots_p90 >= 2.0: fw_score += 1
+        if dribbles_p90 >= 1.5: fw_score += 1
+
+        # Threshold: 3+ points -> FW
+        if fw_score >= 3:
             return "FW"
         return "MF"
 
-    # DFMF or MFDF
-    if "DF" in pos and "MF" in pos:
-        return "MF" if assists >= 5 or goals >= 3 else "DF"
-
-    if "DF" in pos: return "DF"
-
+    # Fallback
     return "MF"
 
 filtered["role_bucket"] = filtered.apply(classify_pos, axis=1)
@@ -217,42 +241,66 @@ filtered["minutes_share"] = filtered["minutes_played"] / (
 )
 
 # Percentile within role
-pct_map = [
+# Split into FBref-only stats (rank() applied) vs Sofascore stats (override after, no re-rank)
+FBREF_PCT_MAP = [
     ("goals_p90","goals_pct_role"), ("xg_p90","xg_pct_role"),
     ("shots_p90","shots_pct_role"), ("goals_minus_xg_p90","goals_minus_xg_pct_role"),
     ("assists_p90","assists_pct_role"), ("xa_p90","xa_pct_role"),
     ("key_passes_p90","key_passes_pct_role"),
     ("tackles_p90","tackles_pct_role"), ("interceptions_p90","interceptions_pct_role"),
-    ("clearances_p90","clearances_pct_role"), ("aerial_duels_won_p90","aerials_pct_role"),
-    ("clean_sheets_p90","clean_sheets_pct_role"),
+    ("aerial_duels_won_p90","aerials_pct_role"),
+]
+# Sofascore-sourced: ranked separately, then overridden — NOT re-ranked in FBREF loop
+SOFASCORE_PCT_MAP = [
+    ("clearances_p90","clearances_pct_role"),
     ("successful_dribbles_p90","dribbles_pct_role"),
     ("duels_won_p90","aerial_duel_success_pct_role"),
+    ("clean_sheets_p90","clean_sheets_pct_role"),
 ]
 
 # Pass completion (not per90 — it's already a rate)
 if "pass_completion_pct" in filtered.columns:
     filtered["pass_completion_pct_role"] = filtered.groupby("role_bucket")["pass_completion_pct"].rank(pct=True).fillna(0.5)
 
-# Override proxy percentiles with Sofascore-derived ones where data exists
-# clearances, dribbles, duels are from Sofascore — use them directly
-for stat, pct_col in [("clearances_p90", "clearances_pct_role"),
-                       ("successful_dribbles_p90", "dribbles_pct_role"),
-                       ("duels_won_p90", "aerial_duel_success_pct_role"),
-                       ("clean_sheets_p90", "clean_sheets_pct_role")]:
-    if stat in filtered.columns:
-        real_pct = filtered.groupby("role_bucket")[stat].rank(pct=True)
-        # Only override where we have real data (not 0)
-        has_data = filtered[stat] > 0
-        filtered.loc[has_data, pct_col] = real_pct[has_data]
-
-print(f"  Sofascore percentile overrides applied")
-for src, dst in pct_map:
+# FBref stats: rank within role
+for src, dst in FBREF_PCT_MAP:
     if src in filtered.columns:
         filtered[dst] = filtered.groupby("role_bucket")[src].rank(pct=True).fillna(0.5)
     else:
         filtered[dst] = 0.5
 
+# BUG 2 fix: DF/GK-only stats — FW/MF get 0.0 (these stats are meaningless for attackers)
+DF_GK_ONLY = {"clearances_pct_role", "aerials_pct_role", "clean_sheets_pct_role"}
+df_gk_mask = filtered["role_bucket"].isin(["DF", "GK"])
+
+# Sofascore override: rank within role, then apply only where real data exists
+# This runs AFTER FBref loop and is NOT overwritten again — bug 1 fix
+for stat, pct_col in SOFASCORE_PCT_MAP:
+    if stat in filtered.columns:
+        real_pct = filtered.groupby("role_bucket")[stat].rank(pct=True)
+        has_data = filtered[stat] > 0
+        if pct_col in DF_GK_ONLY:
+            # BUG 2 fix: zero out FW/MF first, then apply real data only for DF/GK
+            filtered[pct_col] = 0.0
+            override_mask = has_data & df_gk_mask
+            filtered.loc[override_mask, pct_col] = real_pct[override_mask]
+        else:
+            filtered[pct_col] = 0.5  # default for rows without data
+            filtered.loc[has_data, pct_col] = real_pct[has_data]
+    else:
+        if pct_col in DF_GK_ONLY:
+            filtered[pct_col] = 0.0
+        else:
+            filtered[pct_col] = 0.5
+
+# BUG 2 fix: aerials_pct_role (from FBref) also 0.0 for FW/MF
+if "aerials_pct_role" in filtered.columns:
+    filtered.loc[~df_gk_mask, "aerials_pct_role"] = 0.0
+
+print(f"  Sofascore percentile overrides applied")
+
 # Proxy missing features — smarter estimation from available data
+# BUG 3 fix: use per-row has_data mask instead of checking if entire column is 0.5
 # For DF: interceptions correlates with clearances/aerials
 # For FW: key_passes correlates with progressive actions
 # For MF: tackles correlates with pressures
@@ -262,45 +310,55 @@ for col in ["prog_passes_pct_role","prog_carries_pct_role","dribbles_pct_role",
             "gk_saves_pct_role","gk_psxg_diff_pct_role","gk_crosses_stopped_pct_role",
             "gk_pass_completion_pct_role","gk_launch_pct_role",
             "clearances_pct_role","aerials_pct_role"]:
-    if col not in filtered.columns or filtered[col].isna().all() or (filtered[col] == 0.5).all():
+    # BUG 3 fix: identify rows that are missing real data (NaN or never set / still at default)
+    if col not in filtered.columns:
+        filtered[col] = float("nan")
+    # Per-row proxy mask: rows where value is NaN or 0.5 (default placeholder)
+    needs_proxy = filtered[col].isna() | (filtered[col] == 0.5)
+    if needs_proxy.any():
         if "prog" in col and "key_passes_pct_role" in filtered.columns:
-            filtered[col] = filtered["key_passes_pct_role"]
+            filtered.loc[needs_proxy, col] = filtered.loc[needs_proxy, "key_passes_pct_role"]
         elif "dribble" in col:
             # FW: goals proxy, DF: low, MF: assists proxy
-            filtered[col] = filtered.apply(
-                lambda r: r.get("goals_pct_role",0.5) * 0.7 + r.get("assists_pct_role",0.5) * 0.3
-                if r["role_bucket"] == "FW"
-                else r.get("assists_pct_role",0.5) * 0.5 + r.get("tackles_pct_role",0.5) * 0.5
-                if r["role_bucket"] == "MF"
-                else 0.3, axis=1)
+            def _dribble_proxy(r):
+                if r["role_bucket"] == "FW":
+                    return r.get("goals_pct_role", 0.5) * 0.7 + r.get("assists_pct_role", 0.5) * 0.3
+                elif r["role_bucket"] == "MF":
+                    return r.get("assists_pct_role", 0.5) * 0.5 + r.get("tackles_pct_role", 0.5) * 0.5
+                return 0.3
+            filtered.loc[needs_proxy, col] = filtered[needs_proxy].apply(_dribble_proxy, axis=1)
         elif "press" in col and "tackles_pct_role" in filtered.columns:
-            filtered[col] = filtered["tackles_pct_role"] * 0.8 + filtered.get("interceptions_pct_role", pd.Series(0.5, index=filtered.index)) * 0.2
+            icp = filtered.get("interceptions_pct_role", pd.Series(0.5, index=filtered.index))
+            filtered.loc[needs_proxy, col] = (
+                filtered.loc[needs_proxy, "tackles_pct_role"] * 0.8
+                + icp[needs_proxy] * 0.2
+            )
         elif "pass_comp" in col:
-            # DF: high if interceptions high (reads game well)
-            # MF/FW: assists proxy
-            filtered[col] = filtered.apply(
-                lambda r: r.get("interceptions_pct_role",0.5) * 0.6 + 0.3
-                if r["role_bucket"] == "DF"
-                else r.get("assists_pct_role",0.5) * 0.7 + r.get("key_passes_pct_role",0.5) * 0.3, axis=1).clip(0,1)
+            def _pass_comp_proxy(r):
+                if r["role_bucket"] == "DF":
+                    return min(1.0, r.get("interceptions_pct_role", 0.5) * 0.6 + 0.3)
+                return min(1.0, r.get("assists_pct_role", 0.5) * 0.7 + r.get("key_passes_pct_role", 0.5) * 0.3)
+            filtered.loc[needs_proxy, col] = filtered[needs_proxy].apply(_pass_comp_proxy, axis=1)
         elif "ball_rec" in col:
-            filtered[col] = (filtered.get("interceptions_pct_role", pd.Series(0.5, index=filtered.index)) * 0.6
-                           + filtered.get("tackles_pct_role", pd.Series(0.5, index=filtered.index)) * 0.4)
+            icp = filtered.get("interceptions_pct_role", pd.Series(0.5, index=filtered.index))
+            tck = filtered.get("tackles_pct_role", pd.Series(0.5, index=filtered.index))
+            filtered.loc[needs_proxy, col] = icp[needs_proxy] * 0.6 + tck[needs_proxy] * 0.4
         elif "aerial" in col and "clearances" not in col:
-            # DF: interceptions proxy (good defenders win aerials)
-            filtered[col] = filtered.apply(
-                lambda r: r.get("interceptions_pct_role",0.5) * 0.7 + r.get("tackles_pct_role",0.5) * 0.3
-                if r["role_bucket"] == "DF"
-                else r.get("goals_pct_role",0.5) * 0.3 + 0.3, axis=1).clip(0,1)
+            def _aerial_proxy(r):
+                if r["role_bucket"] == "DF":
+                    return min(1.0, r.get("interceptions_pct_role", 0.5) * 0.7 + r.get("tackles_pct_role", 0.5) * 0.3)
+                return min(1.0, r.get("goals_pct_role", 0.5) * 0.3 + 0.3)
+            filtered.loc[needs_proxy, col] = filtered[needs_proxy].apply(_aerial_proxy, axis=1)
         elif "clearances" in col:
-            # DF: strongly correlated with interceptions
-            filtered[col] = filtered.apply(
-                lambda r: r.get("interceptions_pct_role",0.5) * 0.8 + r.get("tackles_pct_role",0.5) * 0.2
-                if r["role_bucket"] in ["DF","GK"]
-                else 0.3, axis=1)
+            def _clearances_proxy(r):
+                if r["role_bucket"] in ["DF", "GK"]:
+                    return r.get("interceptions_pct_role", 0.5) * 0.8 + r.get("tackles_pct_role", 0.5) * 0.2
+                return 0.3
+            filtered.loc[needs_proxy, col] = filtered[needs_proxy].apply(_clearances_proxy, axis=1)
         elif "gk" in col and "clean_sheets_pct_role" in filtered.columns:
-            filtered[col] = filtered["clean_sheets_pct_role"]
+            filtered.loc[needs_proxy, col] = filtered.loc[needs_proxy, "clean_sheets_pct_role"]
         else:
-            filtered[col] = 0.5
+            filtered.loc[needs_proxy, col] = 0.5
 
 print(f"  Features: {len([c for c in filtered.columns if c.endswith('_pct_role')])} percentiles")
 

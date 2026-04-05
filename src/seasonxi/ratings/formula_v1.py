@@ -7,7 +7,7 @@ New 6-stat system: ATT / DEF / PACE / AURA / STAMINA / MENTAL
 
 Score formula: score = 50 + 49 * stretch(raw) * confidence
 - raw is a weighted sum of percentile inputs (0.0-1.0)
-- stretch: sigmoid(k=4.0) to spread middle-heavy distributions
+- stretch: sigmoid(k=4.5) to spread middle-heavy distributions
 - confidence = min(1.0, (minutes/1800)^0.7)
 
 Stats:
@@ -76,7 +76,7 @@ def _adaptive_overall(raws: dict[str, float], base_weights: dict[str, float], bo
     return sum(raws.get(k, 0) * w for k, w in adjusted.items())
 
 
-def _stretch(x: float, k: float = 5.0) -> float:
+def _stretch(x: float, k: float = 4.5) -> float:
     """Sigmoid stretch to spread out middle-heavy distributions."""
     sig = lambda v: 1.0 / (1.0 + math.exp(-k * (v - 0.5)))
     raw = sig(x)
@@ -140,10 +140,9 @@ def rate_forward(row: pd.Series, confidence: float) -> dict:
         + 0.20 * _safe_get(row, "team_goal_contribution")
     )
     mental_raw = (
-        0.30 * _safe_get(row, "pass_completion_pct_role")
-        + 0.25 * _safe_get(row, "aerial_duel_success_pct_role")
-        + 0.15 * _safe_get(row, "team_success_pct", 0.5)
-        + 0.30 * _safe_get(row, "minutes_share")
+        0.40 * _safe_get(row, "pass_completion_pct_role")
+        + 0.30 * _safe_get(row, "aerial_duel_success_pct_role")
+        + 0.30 * _safe_get(row, "pressure_success_pct_role")
     )
 
     att = _scale(att_raw, confidence)
@@ -159,20 +158,10 @@ def rate_forward(row: pd.Series, confidence: float) -> dict:
     base_w = {"att": 0.30, "def": 0.10, "pace": 0.15,
               "aura": 0.15, "stamina": 0.10, "mental": 0.20}
 
-    # OVR = weighted average of SCALED stats (not raw)
-    # This ensures OVR is consistent with visible stats
+    # OVR = weighted average of SCALED stats via _adaptive_overall()
     scores = {"att": att, "def": defense, "pace": pace,
               "aura": aura, "stamina": stamina, "mental": mental}
-    adjusted_w = base_w.copy()
-    # Adaptive: boost top 2 stats slightly
-    sorted_stats = sorted(raws.items(), key=lambda x: x[1], reverse=True)
-    top2 = {sorted_stats[0][0], sorted_stats[1][0]}
-    bot2 = {sorted_stats[-1][0], sorted_stats[-2][0]}
-    for k in adjusted_w:
-        if k in top2: adjusted_w[k] += 0.03
-        elif k in bot2: adjusted_w[k] = max(0, adjusted_w[k] - 0.03)
-    total_w = sum(adjusted_w.values())
-    overall = sum(scores[k] * (adjusted_w[k] / total_w) for k in scores)
+    overall = _adaptive_overall(scores, base_w)
 
     return {
         "att": att, "def": defense, "pace": pace,
@@ -224,9 +213,8 @@ def rate_midfielder(row: pd.Series, confidence: float) -> dict:
         + 0.20 * _safe_get(row, "tackles_pct_role")
     )
     mental_raw = (
-        0.30 * _safe_get(row, "pass_completion_pct_role")
-        + 0.15 * _safe_get(row, "team_success_pct", 0.5)
-        + 0.25 * _safe_get(row, "aerial_duel_success_pct_role")
+        0.40 * _safe_get(row, "pass_completion_pct_role")
+        + 0.30 * _safe_get(row, "aerial_duel_success_pct_role")
         + 0.30 * _safe_get(row, "pressure_success_pct_role")
     )
 
@@ -242,15 +230,11 @@ def rate_midfielder(row: pd.Series, confidence: float) -> dict:
             "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
     base_w = {"att": 0.15, "def": 0.20, "pace": 0.10,
               "aura": 0.15, "stamina": 0.20, "mental": 0.20}
+
+    # OVR = weighted average of SCALED stats via _adaptive_overall()
     scores = {"att": att, "def": defense, "pace": pace,
               "aura": aura, "stamina": stamina, "mental": mental}
-    adjusted_w = base_w.copy()
-    sorted_stats = sorted(raws.items(), key=lambda x: x[1], reverse=True)
-    for k in adjusted_w:
-        if k in {sorted_stats[0][0], sorted_stats[1][0]}: adjusted_w[k] += 0.03
-        elif k in {sorted_stats[-1][0], sorted_stats[-2][0]}: adjusted_w[k] = max(0, adjusted_w[k] - 0.03)
-    total_w = sum(adjusted_w.values())
-    overall = sum(scores[k] * (adjusted_w[k] / total_w) for k in scores)
+    overall = _adaptive_overall(scores, base_w)
 
     return {
         "att": att, "def": defense, "pace": pace,
@@ -273,12 +257,11 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
         + 0.25 * _safe_get(row, "prog_passes_pct_role")
     )
     def_raw = (
-        0.10 * _safe_get(row, "tackles_pct_role")       # low tackles = good positioning
-        + 0.25 * _safe_get(row, "interceptions_pct_role") # real data
-        + 0.25 * _safe_get(row, "clearances_pct_role")   # Sofascore real data!
-        + 0.10 * _safe_get(row, "aerials_pct_role")
-        + 0.10 * _safe_get(row, "pressures_pct_role")
-        + 0.20 * _safe_get(row, "clean_sheets_pct_role")  # team defense quality
+        0.35 * _safe_get(row, "interceptions_pct_role")          # most independent defensive metric
+        + 0.25 * _safe_get(row, "clearances_pct_role")           # direct defensive action
+        + 0.20 * _safe_get(row, "aerial_duel_success_pct_role")  # aerial duels (success rate)
+        + 0.10 * _safe_get(row, "pressure_success_pct_role")     # pressing efficiency
+        + 0.10 * _safe_get(row, "clean_sheets_pct_role")         # team defensive contribution
     )
     pace_raw = (
         0.35 * _safe_get(row, "prog_carries_pct_role")
@@ -301,10 +284,9 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
         + 0.25 * _safe_get(row, "aerial_duel_success_pct_role")
     )
     mental_raw = (
-        0.30 * _safe_get(row, "pass_completion_pct_role")
-        + 0.25 * _safe_get(row, "clean_sheets_pct_role")   # clean sheets = good decisions
-        + 0.25 * _safe_get(row, "aerial_duel_success_pct_role")
-        + 0.20 * _safe_get(row, "team_success_pct", 0.5)
+        0.40 * _safe_get(row, "pass_completion_pct_role")
+        + 0.30 * _safe_get(row, "aerial_duel_success_pct_role")
+        + 0.30 * _safe_get(row, "pressure_success_pct_role")
     )
 
     att = _scale(att_raw, confidence, base=30, rng=35)  # compressed for DF
@@ -319,15 +301,11 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
             "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
     base_w = {"att": 0.05, "def": 0.35, "pace": 0.10,
               "aura": 0.15, "stamina": 0.15, "mental": 0.20}
+
+    # OVR = weighted average of SCALED stats via _adaptive_overall()
     scores = {"att": att, "def": defense, "pace": pace,
               "aura": aura, "stamina": stamina, "mental": mental}
-    adjusted_w = base_w.copy()
-    sorted_stats = sorted(raws.items(), key=lambda x: x[1], reverse=True)
-    for k in adjusted_w:
-        if k in {sorted_stats[0][0], sorted_stats[1][0]}: adjusted_w[k] += 0.03
-        elif k in {sorted_stats[-1][0], sorted_stats[-2][0]}: adjusted_w[k] = max(0, adjusted_w[k] - 0.03)
-    total_w = sum(adjusted_w.values())
-    overall = sum(scores[k] * (adjusted_w[k] / total_w) for k in scores)
+    overall = _adaptive_overall(scores, base_w)
 
     return {
         "att": att, "def": defense, "pace": pace,
@@ -342,15 +320,21 @@ def rate_defender(row: pd.Series, confidence: float) -> dict:
 # ═══════════════════════════════════════════════════════════════
 
 def rate_goalkeeper(row: pd.Series, confidence: float) -> dict:
-    """GK: DEF/MENTAL dominant, ATT fixed 30, PACE minimal."""
+    """GK: DEF/MENTAL dominant, ATT fixed 30, PACE minimal.
+
+    clean_sheets_pct_role appears ONLY in DEF (0.15) to prevent 4-way inflation.
+    AURA uses saves + minutes_share + role_dominance.
+    STAMINA uses minutes consistency only.
+    MENTAL uses pass_completion + aerial_duel + pressure_success (no team_success_pct).
+    """
     att_raw = 0.0  # GK has no attacking contribution
 
     def_raw = (
-        0.30 * _safe_get(row, "gk_psxg_diff_pct_role")
-        + 0.25 * _safe_get(row, "gk_saves_pct_role")
-        + 0.20 * _safe_get(row, "clean_sheets_pct_role")
-        + 0.15 * _safe_get(row, "gk_crosses_stopped_pct_role")
-        + 0.10 * _safe_get(row, "aerials_pct_role")
+        0.35 * _safe_get(row, "gk_saves_pct_role")              # saves ability (primary)
+        + 0.25 * _safe_get(row, "interceptions_pct_role")       # sweeping
+        + 0.15 * _safe_get(row, "aerials_pct_role")             # aerial command
+        + 0.15 * _safe_get(row, "clean_sheets_pct_role")        # clean sheets — here only!
+        + 0.10 * _safe_get(row, "pressures_pct_role")           # area dominance
     )
     pace_raw = (
         0.40 * _safe_get(row, "prog_passes_pct_role")
@@ -358,20 +342,22 @@ def rate_goalkeeper(row: pd.Series, confidence: float) -> dict:
         + 0.30 * _safe_get(row, "gk_launch_pct_role")
     )
     aura_raw = (
-        0.35 * _safe_get(row, "clean_sheets_pct_role")
-        + 0.35 * _safe_get(row, "minutes_share")
-        + 0.30 * _safe_get(row, "gk_saves_pct_role")
+        0.50 * _safe_get(row, "minutes_share")                  # trust from club (starter share)
+        + 0.30 * _safe_get(row, "gk_saves_pct_role")           # role dominance via saves
+        + 0.20 * (
+            (_safe_get(row, "gk_saves_pct_role")
+             + _safe_get(row, "interceptions_pct_role")
+             + _safe_get(row, "aerials_pct_role")) / 3.0
+        )  # positional dominance within GK group
     )
     stamina_raw = (
-        0.40 * _safe_get(row, "minutes_share")
-        + 0.30 * _safe_get(row, "clean_sheets_pct_role")
-        + 0.30 * _safe_get(row, "gk_crosses_stopped_pct_role")
+        0.60 * _safe_get(row, "minutes_share")                  # appearance consistency
+        + 0.40 * _safe_get(row, "appearances_ratio", _safe_get(row, "minutes_share"))  # appearance ratio fallback
     )
     mental_raw = (
-        0.30 * _safe_get(row, "gk_psxg_diff_pct_role")
-        + 0.15 * _safe_get(row, "team_success_pct", 0.5)
-        + 0.25 * _safe_get(row, "clean_sheets_pct_role")
-        + 0.30 * _safe_get(row, "gk_pass_completion_pct_role", 0.5)
+        0.50 * _safe_get(row, "pass_completion_pct_role")       # build-up decision making
+        + 0.30 * _safe_get(row, "aerial_duel_success_pct_role") # aerial duel judgement
+        + 0.20 * _safe_get(row, "pressure_success_pct_role")    # decision under pressure
     )
 
     att = _scale(att_raw, confidence, base=30, rng=20)  # fixed ~30
@@ -381,21 +367,17 @@ def rate_goalkeeper(row: pd.Series, confidence: float) -> dict:
     stamina = _scale(stamina_raw, confidence)
     mental = _scale(mental_raw, confidence)
 
-    # GK base: ATT 10% DEF 35% PACE 5% AURA 10% STA 10% MEN 30%
-    # ATT 10% — the fixed 30 pulls OVR down significantly (GK ceiling ~92)
+    # GK base: ATT 5% DEF 40% PACE 5% AURA 10% STA 10% MEN 30%
+    # (v3: ATT 0.10→0.05, DEF 0.35→0.40 — boost DEF weight, reduce ATT penalty)
     raws = {"att": att_raw, "def": def_raw, "pace": pace_raw,
             "aura": aura_raw, "stamina": stamina_raw, "mental": mental_raw}
-    base_w = {"att": 0.10, "def": 0.35, "pace": 0.05,
+    base_w = {"att": 0.05, "def": 0.40, "pace": 0.05,
               "aura": 0.10, "stamina": 0.10, "mental": 0.30}
+
+    # OVR = weighted average of SCALED stats via _adaptive_overall()
     scores = {"att": att, "def": defense, "pace": pace,
               "aura": aura, "stamina": stamina, "mental": mental}
-    adjusted_w = base_w.copy()
-    sorted_stats = sorted(raws.items(), key=lambda x: x[1], reverse=True)
-    for k in adjusted_w:
-        if k in {sorted_stats[0][0], sorted_stats[1][0]}: adjusted_w[k] += 0.03
-        elif k in {sorted_stats[-1][0], sorted_stats[-2][0]}: adjusted_w[k] = max(0, adjusted_w[k] - 0.03)
-    total_w = sum(adjusted_w.values())
-    overall = sum(scores[k] * (adjusted_w[k] / total_w) for k in scores)
+    overall = _adaptive_overall(scores, base_w)
 
     return {
         "att": att, "def": defense, "pace": pace,
@@ -468,7 +450,7 @@ def compute_ratings(features_df: pd.DataFrame) -> pd.DataFrame:
             "confidence_score": confidence,
             "tier_label": tier.value,
             "explanation_json": json.dumps(explanation, ensure_ascii=False),
-            "formula_version": "v2",
+            "formula_version": "v3",
             "generated_at": datetime.now().isoformat(),
         })
 
