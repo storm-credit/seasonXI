@@ -8,6 +8,8 @@ export interface ChecklistState {
   hookImage: boolean;
   cardImage: boolean;
   closeupImage: boolean;
+  highlightImage: boolean;
+  verdictImage: boolean;
   sunoMusic: boolean;
   rendered: boolean;
   reviewed: boolean;
@@ -23,13 +25,15 @@ interface ProductionChecklistProps {
 }
 
 const ITEMS: { key: ActionKey; label: string; icon: typeof Image; actionLabel: string }[] = [
-  { key: "hookImage",    label: "Hook Image",      icon: Image,       actionLabel: "GENERATE" },
-  { key: "cardImage",    label: "Card Image",       icon: Image,       actionLabel: "GENERATE" },
-  { key: "closeupImage", label: "Closeup Image",    icon: Image,       actionLabel: "GENERATE" },
-  { key: "sunoMusic",    label: "Suno Music",       icon: Music,       actionLabel: "Upload" },
-  { key: "rendered",     label: "Render MP4",       icon: Film,        actionLabel: "Render" },
-  { key: "reviewed",     label: "Final Review",     icon: Eye,         actionLabel: "Play" },
-  { key: "uploaded",     label: "Upload YouTube",   icon: UploadIcon,  actionLabel: "Upload" },
+  { key: "hookImage",      label: "Hook Image",      icon: Image,       actionLabel: "GENERATE" },
+  { key: "cardImage",      label: "Card Image",      icon: Image,       actionLabel: "GENERATE" },
+  { key: "closeupImage",   label: "Closeup Image",   icon: Image,       actionLabel: "GENERATE" },
+  { key: "highlightImage", label: "Highlight Image", icon: Image,       actionLabel: "GENERATE" },
+  { key: "verdictImage",   label: "Verdict Image",   icon: Image,       actionLabel: "GENERATE" },
+  { key: "sunoMusic",      label: "Suno Music",      icon: Music,       actionLabel: "Upload" },
+  { key: "rendered",       label: "Render MP4",      icon: Film,        actionLabel: "Render" },
+  { key: "reviewed",       label: "Final Review",    icon: Eye,         actionLabel: "Play" },
+  { key: "uploaded",       label: "Upload YouTube",  icon: UploadIcon,  actionLabel: "Upload" },
 ];
 
 export default function ProductionChecklist({ state, onChange, onAction }: ProductionChecklistProps) {

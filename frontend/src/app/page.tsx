@@ -18,6 +18,8 @@ const EMPTY_CHECKLIST: ChecklistState = {
   hookImage: false,
   cardImage: false,
   closeupImage: false,
+  highlightImage: false,
+  verdictImage: false,
   sunoMusic: false,
   rendered: false,
   reviewed: false,
@@ -45,10 +47,12 @@ export default function DashboardPage() {
     setChecklist(fresh);
     try {
       const assets = await checkAssets(playerId, season);
-      if (assets.hook?.exists)    fresh.hookImage    = true;
-      if (assets.card?.exists)    fresh.cardImage    = true;
-      if (assets.closeup?.exists) fresh.closeupImage = true;
-      if (assets.bgm?.exists)     fresh.sunoMusic    = true;
+      if (assets.hook?.exists)      fresh.hookImage      = true;
+      if (assets.card?.exists)      fresh.cardImage      = true;
+      if (assets.closeup?.exists)   fresh.closeupImage   = true;
+      if (assets.highlight?.exists) fresh.highlightImage = true;
+      if (assets.verdict?.exists)   fresh.verdictImage   = true;
+      if (assets.bgm?.exists)       fresh.sunoMusic      = true;
       setChecklist({ ...fresh });
     } catch { /* skip */ }
     try {
@@ -99,6 +103,20 @@ export default function DashboardPage() {
         try {
           await fetch(`${API}/api/generate-image/${pid}/${s}?scene=closeup`, { method: "POST" });
           autoCheck("closeupImage");
+        } catch { /* fail */ }
+        break;
+
+      case "highlightImage":
+        try {
+          await fetch(`${API}/api/generate-image/${pid}/${s}?scene=highlight`, { method: "POST" });
+          autoCheck("highlightImage");
+        } catch { /* fail */ }
+        break;
+
+      case "verdictImage":
+        try {
+          await fetch(`${API}/api/generate-image/${pid}/${s}?scene=verdict`, { method: "POST" });
+          autoCheck("verdictImage");
         } catch { /* fail */ }
         break;
 
@@ -167,9 +185,11 @@ export default function DashboardPage() {
           <div className="grid grid-cols-12 gap-3 min-h-0" style={{ flex: "1 1 0%" }}>
             <div className="col-span-3 min-h-0 overflow-hidden" id="image-upload">
               <ImageUpload season={selectedSeason} onSaved={(type) => {
-                if (type === "hook")    autoCheck("hookImage");
-                else if (type === "card")    autoCheck("cardImage");
-                else if (type === "closeup") autoCheck("closeupImage");
+                if (type === "hook")           autoCheck("hookImage");
+                else if (type === "card")      autoCheck("cardImage");
+                else if (type === "closeup")   autoCheck("closeupImage");
+                else if (type === "highlight") autoCheck("highlightImage");
+                else if (type === "verdict")   autoCheck("verdictImage");
               }} />
             </div>
             <div className="col-span-3 overflow-hidden" id="music-panel">

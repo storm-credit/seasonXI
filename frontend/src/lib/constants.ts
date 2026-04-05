@@ -135,6 +135,8 @@ export const NB_SCENES: Record<string, string> = {
   HOOK: 'FULL BODY running with ball, dramatic dark stadium, heavy rain, explosive gold aura behind player, low angle shot looking up, player at bottom 40% of frame, empty dark space on top for text, cinematic action pose, maximum drama and intensity',
   CARD: 'UPPER BODY 3/4 portrait, calm confident standing pose, clean minimal stadium background, soft even lighting, player perfectly centered, bright clear image, designed to fit inside a card frame, stable and iconic, less dramatic than hook',
   CLOSEUP: 'EXTREME CLOSEUP face and chest only, intense eyes looking at camera, sweat on skin, dramatic side lighting from left, very dark blurred background, emotional cinematic portrait, gold rim light on face edge, intimate and powerful',
+  HIGHLIGHT: 'DYNAMIC ACTION celebrating pose, dramatic night stadium, rain, golden confetti, explosive energy burst, Champions League atmosphere, goal celebration',
+  VERDICT: 'UPPER BODY portrait looking up, golden trophy light from below, dark dramatic sky, gold particles, Ballon d Or ceremony atmosphere, regal legendary iconic',
 };
 
 export function buildNanobananaPrompt(playerBlock: string, mood: string, scene: string): string {

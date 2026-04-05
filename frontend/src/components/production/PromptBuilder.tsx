@@ -6,7 +6,7 @@ import type { Season } from "@/lib/types";
 import { buildNanobananaPrompt } from "@/lib/constants";
 import GlassPanel from "@/components/shared/GlassPanel";
 
-type TabType = "hook" | "card" | "closeup" | "suno";
+type TabType = "hook" | "card" | "closeup" | "highlight" | "verdict" | "suno";
 
 interface PromptBuilderProps {
   season: Season | null;
@@ -65,7 +65,7 @@ export default function PromptBuilder({ season }: PromptBuilderProps) {
       if (tab === "suno") return buildSunoPrompt(season);
       const block = season.player_block || season.display_name || "MESSI";
       const mood = season.season_mood || "PEAK_MONSTER";
-      const sceneMap = { hook: "HOOK", card: "CARD", closeup: "CLOSEUP" } as const;
+      const sceneMap = { hook: "HOOK", card: "CARD", closeup: "CLOSEUP", highlight: "HIGHLIGHT", verdict: "VERDICT" } as const;
       return buildNanobananaPrompt(block, mood, sceneMap[tab as keyof typeof sceneMap] || "HOOK");
     },
     [season]
@@ -145,6 +145,26 @@ export default function PromptBuilder({ season }: PromptBuilderProps) {
           <User size={10} /> CLOSEUP
         </button>
         <button
+          onClick={() => setActiveTab("highlight")}
+          className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
+            activeTab === "highlight"
+              ? "bg-green-500 text-white"
+              : "bg-sxi-white/5 text-sxi-white/50 hover:text-sxi-white"
+          }`}
+        >
+          HIGHLIGHT
+        </button>
+        <button
+          onClick={() => setActiveTab("verdict")}
+          className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
+            activeTab === "verdict"
+              ? "bg-purple-500 text-white"
+              : "bg-sxi-white/5 text-sxi-white/50 hover:text-sxi-white"
+          }`}
+        >
+          VERDICT
+        </button>
+        <button
           onClick={() => setActiveTab("suno")}
           className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all flex items-center gap-1 ${
             activeTab === "suno"
@@ -167,11 +187,13 @@ export default function PromptBuilder({ season }: PromptBuilderProps) {
         className={`w-full py-2.5 rounded-lg font-display text-sm tracking-wider transition-all flex items-center justify-center gap-2 ${
           copied === activeTab
             ? "bg-green-500/20 text-green-400 border border-green-500/30"
-            : activeTab === "suno"
+            : activeTab === "suno" || activeTab === "verdict"
               ? "bg-purple-500 text-white hover:brightness-110"
               : activeTab === "closeup"
                 ? "bg-rose-500 text-white hover:brightness-110"
-                : "bg-sxi-gold text-sxi-black hover:brightness-110"
+                : activeTab === "highlight"
+                  ? "bg-green-500 text-white hover:brightness-110"
+                  : "bg-sxi-gold text-sxi-black hover:brightness-110"
         }`}
       >
         {copied === activeTab ? (

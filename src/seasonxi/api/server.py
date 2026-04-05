@@ -877,7 +877,7 @@ def check_assets(player_id: str, season: str):
     # Player folder: e.g., benzema_2021-22/
     player_folder = pub / f"{player_id}_{season}"
 
-    for asset_type in ["hook", "card", "closeup", "main", "bgm"]:
+    for asset_type in ["hook", "card", "closeup", "highlight", "verdict", "main", "bgm"]:
         found = False
         for ext in ["png", "jpg", "mp3", "wav", "m4a"]:
             # Pattern 1: In player subfolder (new structure)
