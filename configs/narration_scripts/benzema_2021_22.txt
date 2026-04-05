@@ -1,38 +1,33 @@
-# Benzema 2021-22 | Real Madrid | Legendary | OVR 91.2
-# Voice: Josh (ElevenLabs) | Duration target: ~48s narration + 7s card reveal + 5s outro
-# Fact-checked by script expert
+# Benzema 2021-22 | Real Madrid | Legendary | OVR 91
+# Voice: Josh (ElevenLabs) | Duration: ~65s
+# Fact-checked + VERDICT section included
 
-[HOOK] 0:00-0:05
-They said he was nothing without Ronaldo.
+[HOOK] They said he was nothing without Ronaldo.
 One season. He erased that sentence forever.
 
-[STORY] 0:05-0:15
-2021-22. Benzema was 34.
-At an age where most strikers fade,
-he started the greatest season of his career.
+[STORY] 2021-22. Benzema was 34.
+At an age where most strikers fade, he started the greatest season of his career.
 27 goals, 12 assists in La Liga.
 
-[HIGHLIGHTS] 0:15-0:25
-But the Champions League made him immortal.
+[HIGHLIGHTS] But the Champions League made him immortal.
 PSG. Hat trick. From 2-0 down on aggregate.
 Chelsea. Three goals across two legs. One man.
 Man City. They said it was over. He scored anyway.
 Three knockout rounds. Unstoppable every single time.
 
-[EMOTION] 0:25-0:30
-Four years waiting.
+[EMOTION] Four years waiting.
 One season. Everything.
 
-[CARD REVEAL] 0:30-0:37
-(SILENCE — music drop, card flip, stats appear)
+(CARD REVEAL — 5 seconds silence)
 
-[VERDICT] 0:37-0:50
+[VERDICT] Attack 97. The highest in La Liga.
+Aura 89. The team revolved around him.
+Mental 83. He never cracked under pressure.
+
 La Liga. Champions League. Ballon d'Or.
 He took everything at 34.
+The greatest late bloomer in football history.
 Some players peak at 25.
 This man peaked at 34.
 
 Legendary. No debate.
-
-[OUTRO] 0:50-0:55
-(SILENCE — SeasonXI logo)
