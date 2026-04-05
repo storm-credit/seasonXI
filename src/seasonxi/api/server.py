@@ -268,7 +268,20 @@ def render_video(player_id: str, season: str):
         except Exception:
             pass
 
-    # 4. Check for images & audio in player folder
+    # 4. Build Whisper subtitles from narration MP3
+    subtitles = []
+    narration_file = REMOTION_DIR / "public" / f"{player_id}_{season}" / "narration.mp3"
+    if narration_file.exists():
+        try:
+            from seasonxi.content.whisper_timestamps import extract_word_timestamps, words_to_subtitle_cues
+            whisper_words = extract_word_timestamps(narration_file)
+            subtitles = words_to_subtitle_cues(whisper_words)
+            print(f"  [Whisper] {len(whisper_words)} words → {len(subtitles)} subtitle cues")
+        except Exception as whisper_err:
+            print(f"  [Whisper] Skipped ({whisper_err})")
+            subtitles = _build_subtitles(narration_script)
+
+    # 5. Check for images & audio in player folder
     player_folder = f"{player_id}_{season}"
     props = {
         "data": {
@@ -296,7 +309,7 @@ def render_video(player_id: str, season: str):
             "verdictText": f"{tier} Season",
             "storyText": narration_script[:200] if narration_script else "",
             "highlights": _build_highlights(position_val, goals, assists, def_v, pace),
-            "subtitles": _build_subtitles(narration_script),
+            "subtitles": subtitles,
         }
     }
 
@@ -793,6 +806,16 @@ def generate_narration(player_id: str, season: str):
     except Exception as e:
         raise HTTPException(500, f"TTS generation failed: {e}")
 
+    # 5. Whisper 타임스탬프 추출 → subtitle cues
+    subtitles = []
+    try:
+        from seasonxi.content.whisper_timestamps import extract_word_timestamps, words_to_subtitle_cues
+        words = extract_word_timestamps(output_path, language="en")
+        subtitles = words_to_subtitle_cues(words)
+        print(f"  [Whisper] {len(words)} words → {len(subtitles)} subtitle cues")
+    except Exception as e:
+        print(f"  [Whisper] Skipped ({e})")
+
     return {
         "status": "done",
         "player_id": player_id,
@@ -801,6 +824,7 @@ def generate_narration(player_id: str, season: str):
         "output": str(output_path),
         "size": output_path.stat().st_size if output_path.exists() else 0,
         "tts_engine": tts_engine,
+        "subtitles": subtitles,
     }
 
 
