@@ -62,7 +62,7 @@ export default function DashboardPage() {
         display_name: player.player_name.split(" ").pop()?.toUpperCase() || player.player_name,
         player_name: player.player_name, season: player.season, season_label: player.season,
         club: player.club, position: "FW",
-        ovr: player.tier === "MYTHIC" ? 96 : player.tier === "LEGENDARY" ? 92 : 88,
+        ovr: 0, // Will be computed from stats
         tier: player.tier, hook: "",
         stats: { att: 90, def: 45, pace: 85, aura: 90, stamina: 80, mental: 88 },
         goals: 0, assists: 0, commentary: "", achievement: "",

@@ -230,12 +230,20 @@ def render_video(player_id: str, season: str):
         club = card_data.get("club", "")
         tier = card_data.get("tier", "ELITE")
         ovr_val = card_data.get("ovr")
-        if ovr_val:
+        if ovr_val and str(ovr_val).strip():
             ovr = int(float(ovr_val))
         else:
-            # Compute from stats average
-            stats = [float(card_data.get(k, 0) or 0) for k in ["att", "def", "pace", "aura", "stamina", "mental"]]
-            ovr = int(sum(stats) / len(stats)) if stats else 85
+            # Adaptive Overall: top 2 stats +3%, bottom 2 stats -3%
+            stat_vals = sorted([
+                float(card_data.get(k, 0) or 0)
+                for k in ["att", "def", "pace", "aura", "stamina", "mental"]
+            ], reverse=True)
+            if len(stat_vals) == 6:
+                weights = [1.03, 1.03, 1.0, 1.0, 0.97, 0.97]
+                weighted = sum(s * w for s, w in zip(stat_vals, weights))
+                ovr = int(weighted / sum(weights))
+            else:
+                ovr = int(sum(stat_vals) / max(len(stat_vals), 1))
         att = int(float(card_data.get("att", 80) or 80))
         def_v = int(float(card_data.get("def", 40) or 40))
         pace = int(float(card_data.get("pace", 80) or 80))
