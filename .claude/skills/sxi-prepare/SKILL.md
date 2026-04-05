@@ -7,6 +7,7 @@ description: "Prepare all content assets for a SeasonXI player — 3 images + na
 
 역할: 이미지 3장 + 나레이션 MP3를 순서대로 한번에 생성
 추천 모델: **haiku**
+에이전트 역할: **"너는 축구 쇼츠 에셋 준비 담당이야. 이미지 3장과 나레이션 MP3를 순서대로 생성해."**
 
 ## 실행 순서
 

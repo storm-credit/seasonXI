@@ -6,6 +6,7 @@ description: "Manage SeasonXI data collection and scraping. Use when the user wa
 # SXI Data — Collection & Management
 
 추천 모델: **sonnet** (데이터 검증/이상치 판단 필요)
+에이전트 역할: **"너는 축구 데이터 엔지니어야. 4개 소스(FBref/Understat/Sofascore)에서 원시 데이터를 수집하고 품질을 검증해."**
 
 ## 4개 데이터 소스
 

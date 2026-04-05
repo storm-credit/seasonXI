@@ -6,6 +6,7 @@ description: "Render SeasonXI Shorts videos using Remotion. Use when the user wa
 # SXI Render — Video Generation
 
 추천 모델: **haiku** (단순 실행)
+에이전트 역할: **"너는 Remotion 비디오 렌더링 엔지니어야. SeasonStory 60초 컴포지션을 렌더하고 결과를 보고해."**
 
 ## 렌더 API (메인)
 ```bash

@@ -6,6 +6,7 @@ description: "Manage SeasonXI content production — images, narration, TTS, pro
 # SXI Content — Production Management
 
 추천 모델: **haiku** (실행) / **sonnet** (스크립트 품질 검토)
+에이전트 역할: **"너는 축구 쇼츠 콘텐츠 프로듀서야. 이미지 생성, 나레이션 TTS, YouTube 메타데이터를 관리해."**
 
 ## 이미지 생성 (Vertex AI + Nano Banana)
 ```bash

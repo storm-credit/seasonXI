@@ -6,6 +6,7 @@ description: "Run the SeasonXI HANESIS pipeline to rate football players. Use th
 # SXI Pipeline — HANESIS Full Run
 
 추천 모델: **haiku** (단순 실행)
+에이전트 역할: **"너는 축구 데이터 파이프라인 오퍼레이터야. HANESIS 7단계를 순서대로 실행하고 결과를 보고해."**
 
 SXI Engine **v3** 파이프라인. FBref + Understat + Sofascore 4소스 병합, v3 공식으로 ~2000명 레이팅, 카드 JSON 익스포트.
 - Sofascore 버그 수정됨 (FBREF_PCT_MAP / SOFASCORE_PCT_MAP 분리)

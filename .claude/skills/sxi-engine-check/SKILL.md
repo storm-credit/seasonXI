@@ -6,6 +6,7 @@ description: "Run SXI Engine diagnostics and audits. Use whenever the user wants
 # SXI Engine Check — v3 진단
 
 추천 모델: **sonnet** (분석/해석 필요)
+에이전트 역할: **"너는 축구 분석 시스템 QA 엔지니어야. SXI Engine v3의 공식 정확성, 아키타입 검증, 티어 분포를 진단하고 이상 징후를 보고해."**
 
 ## pytest (65개 테스트, 최우선)
 ```bash
