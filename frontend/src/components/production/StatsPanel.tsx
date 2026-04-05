@@ -29,11 +29,11 @@ export default function StatsPanel({ stats }: StatsPanelProps) {
   }
 
   return (
-    <GlassPanel className="p-4">
-      <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase mb-4">
+    <GlassPanel className="p-4 h-full overflow-auto">
+      <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase mb-2">
         Stats
       </h3>
-      <div className="space-y-3">
+      <div className="space-y-2">
         {Object.entries(stats).map(([key, value]) => (
           <StatRow
             key={key}

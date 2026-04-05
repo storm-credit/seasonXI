@@ -69,18 +69,36 @@ export default function DashboardPage() {
     setLoading(false);
   }, [currentDayPlayers]);
 
-  const handleChecklistAction = useCallback((key: keyof ChecklistState) => {
+  const handleChecklistAction = useCallback(async (key: keyof ChecklistState) => {
+    if (!selectedSeason) return;
+    const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8800";
     switch (key) {
       case "hookImage": case "cardImage":
         document.getElementById("image-upload")?.scrollIntoView({ behavior: "smooth" }); break;
       case "sunoMusic":
         document.getElementById("music-panel")?.scrollIntoView({ behavior: "smooth" }); break;
-      case "rendered": case "reviewed":
-        document.getElementById("video-preview")?.scrollIntoView({ behavior: "smooth" }); break;
+      case "rendered":
+        // Trigger render directly
+        try {
+          await fetch(`${API}/api/render/${selectedSeason.player_id}/${selectedSeason.season}`, { method: "POST" });
+          autoCheck("rendered");
+        } catch { /* fail */ }
+        break;
+      case "reviewed":
+        // Scroll to video and play
+        document.getElementById("video-preview")?.scrollIntoView({ behavior: "smooth" });
+        const vid = document.querySelector("#video-preview video") as HTMLVideoElement;
+        vid?.play();
+        break;
       case "uploaded":
-        document.getElementById("youtube-panel")?.scrollIntoView({ behavior: "smooth" }); break;
+        // Trigger YouTube upload
+        try {
+          await fetch(`${API}/api/upload-youtube/${selectedSeason.player_id}/${selectedSeason.season}`, { method: "POST" });
+          autoCheck("uploaded");
+        } catch { /* fail */ }
+        break;
     }
-  }, []);
+  }, [selectedSeason]);
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -97,8 +115,8 @@ export default function DashboardPage() {
       <main className="flex-1 flex flex-col overflow-hidden">
 
         <div className="flex-1 flex flex-col p-4 gap-3 overflow-hidden">
-          {/* Row 1: Card + Stats + Prompt — fixed height */}
-          <div className="grid grid-cols-12 gap-3" style={{ height: "calc(50% - 6px)" }}>
+          {/* Row 1: Card + Stats + Prompt — compact */}
+          <div className="grid grid-cols-12 gap-3" style={{ height: "calc(40% - 6px)" }}>
             <div className="col-span-3 overflow-hidden">
               <PlayerCard season={selectedSeason} />
             </div>
@@ -111,7 +129,7 @@ export default function DashboardPage() {
           </div>
 
           {/* Row 2: Image → Music → Video → Checklist — fixed height */}
-          <div className="grid grid-cols-12 gap-3" style={{ height: "calc(50% - 6px)" }}>
+          <div className="grid grid-cols-12 gap-3" style={{ height: "calc(60% - 6px)" }}>
             <div className="col-span-3 overflow-hidden" id="image-upload">
               <ImageUpload season={selectedSeason} onSaved={(type) => {
                 if (type === "hook") autoCheck("hookImage");

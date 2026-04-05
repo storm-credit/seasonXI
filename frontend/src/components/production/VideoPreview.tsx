@@ -128,14 +128,13 @@ export default function VideoPreview({
         {videoUrl ? (
           /* Video player — inline, fills panel */
           <div className="w-full flex flex-col gap-2 flex-1">
-            <div className="flex-1 flex items-center justify-center bg-black rounded-lg overflow-hidden border border-sxi-gold/20">
+            <div className="flex-1 flex items-center justify-center bg-black rounded-lg overflow-hidden border border-sxi-gold/20 min-h-0">
               <video
                 src={videoUrl}
                 controls
-                autoPlay
                 loop
-                className="w-full h-full rounded-lg"
-                style={{ maxHeight: "100%", objectFit: "contain" }}
+                className="rounded-lg"
+                style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
               />
             </div>
             {videoFilename && (
