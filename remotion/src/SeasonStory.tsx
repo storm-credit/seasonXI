@@ -1038,16 +1038,15 @@ export const SeasonStory: React.FC<{ data: StoryCardData }> = ({ data }) => {
 
   // Determine BGM volume: quiet during narration scenes, louder during card reveal silence
   const frame = useCurrentFrame();
-  const bgmVolume = interpolate(
-    frame,
-    [
-      T.hook.start, T.hook.end,
-      T.cardReveal.start, T.cardReveal.end + 1,
-      T.outro.end,
-    ],
-    [0.4, 0.3, 0.8, 0.3, 0.2],
-    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
-  );
+  // Safe BGM volume — ensure strictly increasing inputRange
+  const rawBgm = [T.hook.start, T.hook.end, T.cardReveal.start, T.cardReveal.end + 1, T.outro.end];
+  const safeBgm: number[] = [Math.max(0, rawBgm[0])];
+  for (let i = 1; i < rawBgm.length; i++) {
+    safeBgm.push(Math.max(safeBgm[i - 1] + 1, rawBgm[i]));
+  }
+  const bgmVolume = interpolate(frame, safeBgm, [0.4, 0.3, 0.8, 0.3, 0.2], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#0a0e1a' }}>
