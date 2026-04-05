@@ -231,7 +231,9 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
             textShadow: '0 4px 40px rgba(0,0,0,0.9)',
           }}
         >
-          {hookLine}
+          {hookLine.split('\n').map((line, i) => (
+            <div key={i}>{line}</div>
+          ))}
         </div>
       </div>
 

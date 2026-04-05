@@ -73,7 +73,7 @@ const DEFAULT_STORY_DATA: StoryCardData = {
   narrationSrc: "benzema_2021-22/narration.mp3",
   bgmSrc: "benzema_2021-22/bgm.mp3",
   hookStat: "44 GOALS",
-  hookLine: "THE KING RECLAIMS HIS THRONE",
+  hookLine: "2021-22. BENZEMA WAS 34.\nTHE SEASON THAT SILENCED EVERYONE.",
   nextTeaser: "NEXT: SALAH 2021-22",
   storyText: "At 34, when every pundit had written him off, Karim Benzema delivered the greatest season of his career — and arguably the greatest individual campaign in Champions League history.",
   highlights: [
