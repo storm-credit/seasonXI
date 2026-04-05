@@ -20,14 +20,15 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
   const { att, def: defense, pace, aura, stamina, mental } = data.stats;
   const vals = [att, defense, pace, aura, stamina, mental];
 
-  const progress = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
-  const opacity = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: 'clamp' });
-  const glowIntensity = interpolate(frame, [18, 28], [0, 1], { extrapolateRight: 'clamp' });
+  // 0→60 프레임 동안 중앙(0)에서 실제 값까지 채워지는 애니메이션
+  const progress = interpolate(frame, [0, 60], [0, 1], { extrapolateRight: 'clamp' });
+  const opacity = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' });
+  const glowIntensity = interpolate(frame, [55, 70], [0, 1], { extrapolateRight: 'clamp' });
 
   // Signature stat callout after graph fills
   const sigStats = data.signature_stats || [];
-  const calloutOpacity = interpolate(frame, [26, 34], [0, 1], { extrapolateRight: 'clamp' });
-  const calloutY = interpolate(frame, [26, 34], [15, 0], { extrapolateRight: 'clamp' });
+  const calloutOpacity = interpolate(frame, [65, 75], [0, 1], { extrapolateRight: 'clamp' });
+  const calloutY = interpolate(frame, [65, 75], [15, 0], { extrapolateRight: 'clamp' });
 
   const topSig = sigStats[0] ? { name: sigStats[0], val: data.stats[sigStats[0] as keyof typeof data.stats] } : null;
 
@@ -84,7 +85,7 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
           const ly = cy + (r + 55) * Math.sin(ANGLES[i]);
           const vx = cx + (r + 55) * Math.cos(ANGLES[i]);
           const vy = cy + (r + 55) * Math.sin(ANGLES[i]);
-          const valOp = interpolate(frame, [16 + i * 2, 22 + i * 2], [0, 1], { extrapolateRight: 'clamp' });
+          const valOp = interpolate(frame, [55 + i * 2, 62 + i * 2], [0, 1], { extrapolateRight: 'clamp' });
           return (
             <g key={label}>
               <text x={vx} y={vy - 4} fill={COLORS.softGold}
