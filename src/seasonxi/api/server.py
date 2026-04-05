@@ -709,9 +709,19 @@ def generate_narration(player_id: str, season: str):
     player_folder.mkdir(parents=True, exist_ok=True)
     output_path = player_folder / "narration.mp3"
 
-    # 4. Run Edge TTS
+    # 4. Run TTS — ElevenLabs first, Edge TTS fallback
+    tts_engine = "edge_tts"
     try:
-        asyncio.run(_generate_tts(script, output_path))
+        if os.getenv("ELEVENLABS_API_KEY"):
+            try:
+                from seasonxi.content.tts_elevenlabs import generate_elevenlabs_tts
+                asyncio.run(generate_elevenlabs_tts(script, output_path))
+                tts_engine = "elevenlabs"
+            except Exception as el_err:
+                print(f"[ElevenLabs] 실패, Edge TTS로 폴백: {el_err}")
+                asyncio.run(_generate_tts(script, output_path))
+        else:
+            asyncio.run(_generate_tts(script, output_path))
     except Exception as e:
         raise HTTPException(500, f"TTS generation failed: {e}")
 
@@ -722,6 +732,7 @@ def generate_narration(player_id: str, season: str):
         "script": script,
         "output": str(output_path),
         "size": output_path.stat().st_size if output_path.exists() else 0,
+        "tts_engine": tts_engine,
     }
 
 
