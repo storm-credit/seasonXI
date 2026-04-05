@@ -63,9 +63,12 @@ export default function VideoPreview({
 
   const startRender = async () => {
     if (!season) return;
+    // Clear existing video so polling waits for new file
+    setVideoUrl(null);
+    setVideoFilename(null);
     setRendering(true);
     setProgress(0);
-    setStatusText("Starting...");
+    setStatusText("Starting render...");
 
     try {
       await fetch(`${API}/api/render/${season.player_id}/${season.season}`, { method: "POST" });
@@ -89,7 +92,11 @@ export default function VideoPreview({
         if (step) setStatusText(step.text);
       }, 300);
 
+      // Wait a bit before polling (give render time to start and delete old file)
+      const startTime = Date.now();
       pollRef.current = setInterval(async () => {
+        // Don't check status in first 5 seconds (render is starting)
+        if (Date.now() - startTime < 5000) return;
         try {
           const res = await fetch(`${API}/api/render-status/${season.player_id}/${season.season}`);
           const data = await res.json();
@@ -98,13 +105,14 @@ export default function VideoPreview({
             if (pollRef.current) clearInterval(pollRef.current);
             setProgress(100);
             setStatusText("Complete!");
-            setVideoUrl(`${API}/api/asset-file/${data.filename}`);
+            // Cache bust: add timestamp to URL
+            setVideoUrl(`${API}/api/asset-file/${data.filename}?t=${Date.now()}`);
             setVideoFilename(data.filename);
             setRendering(false);
             onRenderComplete?.();
           }
         } catch { /* continue */ }
-      }, 2000);
+      }, 3000);
     } catch {
       setRendering(false);
       setStatusText("Failed");
@@ -146,7 +154,7 @@ export default function VideoPreview({
                   className="flex-1 py-1.5 rounded-lg bg-red-600 text-white font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:bg-red-500 transition-all">
                   <Upload size={10} /> YOUTUBE
                 </button>
-                <button onClick={startRender} disabled={rendering}
+                <button onClick={startRender} disabled={rendering} data-render="true"
                   className="flex-1 py-1.5 rounded-lg bg-sxi-white/5 text-sxi-white/50 border border-sxi-gold/20 font-display text-[10px] tracking-wider flex items-center justify-center gap-1 hover:bg-sxi-gold/10 hover:text-sxi-gold transition-all">
                   <Film size={10} /> RE-RENDER
                 </button>
@@ -176,7 +184,7 @@ export default function VideoPreview({
               {season ? "No video yet" : "Select a player"}
             </p>
             {season && (
-              <button onClick={startRender}
+              <button onClick={startRender} data-render="true"
                 className="px-6 py-2 rounded-lg bg-sxi-gold/20 text-sxi-gold border border-sxi-gold/30 font-display text-xs tracking-wider flex items-center justify-center gap-2 hover:bg-sxi-gold/30 transition-all mx-auto">
                 <Film size={12} /> RENDER MP4
               </button>

@@ -18,7 +18,6 @@ const EMPTY_CHECKLIST: ChecklistState = {
   hookImage: false,
   cardImage: false,
   closeupImage: false,
-  narration: false,
   sunoMusic: false,
   rendered: false,
   reviewed: false,
@@ -103,22 +102,23 @@ export default function DashboardPage() {
         } catch { /* fail */ }
         break;
 
-      case "narration":
-        try {
-          await fetch(`${API}/api/generate-narration/${pid}/${s}`, { method: "POST" });
-          autoCheck("narration");
-        } catch { /* fail */ }
-        break;
-
       case "sunoMusic":
         document.getElementById("music-panel")?.scrollIntoView({ behavior: "smooth" });
         break;
 
       case "rendered":
-        try {
-          await fetch(`${API}/api/render/${pid}/${s}`, { method: "POST" });
-          autoCheck("rendered");
-        } catch { /* fail */ }
+        // Trigger VideoPreview's render button (shows progress bar)
+        document.getElementById("video-preview")?.scrollIntoView({ behavior: "smooth" });
+        const renderBtn = document.querySelector("#video-preview button[data-render]") as HTMLButtonElement;
+        if (renderBtn) {
+          renderBtn.click();
+        } else {
+          // Fallback: direct API call
+          try {
+            await fetch(`${API}/api/render/${pid}/${s}`, { method: "POST" });
+            autoCheck("rendered");
+          } catch { /* fail */ }
+        }
         break;
 
       case "reviewed":

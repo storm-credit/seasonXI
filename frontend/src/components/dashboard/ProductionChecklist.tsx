@@ -1,13 +1,13 @@
 "use client";
 
-import { CheckCircle2, Circle, Image, Music, Film, Eye, Upload as UploadIcon } from "lucide-react";
+import { useState } from "react";
+import { CheckCircle2, Circle, Image, Music, Film, Eye, Upload as UploadIcon, Loader2 } from "lucide-react";
 import GlassPanel from "@/components/shared/GlassPanel";
 
 export interface ChecklistState {
   hookImage: boolean;
   cardImage: boolean;
   closeupImage: boolean;
-  narration: boolean;
   sunoMusic: boolean;
   rendered: boolean;
   reviewed: boolean;
@@ -19,14 +19,13 @@ type ActionKey = keyof ChecklistState;
 interface ProductionChecklistProps {
   state: ChecklistState;
   onChange: (key: ActionKey) => void;
-  onAction: (key: ActionKey) => void;
+  onAction: (key: ActionKey) => void | Promise<void>;
 }
 
 const ITEMS: { key: ActionKey; label: string; icon: typeof Image; actionLabel: string }[] = [
   { key: "hookImage",    label: "Hook Image",      icon: Image,       actionLabel: "GENERATE" },
   { key: "cardImage",    label: "Card Image",       icon: Image,       actionLabel: "GENERATE" },
   { key: "closeupImage", label: "Closeup Image",    icon: Image,       actionLabel: "GENERATE" },
-  { key: "narration",    label: "Narration",        icon: Music,       actionLabel: "GENERATE" },
   { key: "sunoMusic",    label: "Suno Music",       icon: Music,       actionLabel: "Upload" },
   { key: "rendered",     label: "Render MP4",       icon: Film,        actionLabel: "Render" },
   { key: "reviewed",     label: "Final Review",     icon: Eye,         actionLabel: "Play" },
@@ -34,9 +33,24 @@ const ITEMS: { key: ActionKey; label: string; icon: typeof Image; actionLabel: s
 ];
 
 export default function ProductionChecklist({ state, onChange, onAction }: ProductionChecklistProps) {
+  const [loadingKey, setLoadingKey] = useState<ActionKey | null>(null);
   const completedCount = Object.values(state).filter(Boolean).length;
   const total = ITEMS.length;
   const progress = total > 0 ? (completedCount / total) * 100 : 0;
+
+  const handleAction = async (key: ActionKey) => {
+    setLoadingKey(key);
+    try {
+      await onAction(key);
+    } finally {
+      // Keep loading for render (takes time), clear for others after 2s
+      if (key === "rendered") {
+        setTimeout(() => setLoadingKey(null), 120000); // 2 min timeout
+      } else {
+        setTimeout(() => setLoadingKey(null), 2000);
+      }
+    }
+  };
 
   return (
     <GlassPanel className="p-4 h-full overflow-auto">
@@ -63,44 +77,60 @@ export default function ProductionChecklist({ state, onChange, onAction }: Produ
         />
       </div>
 
-      {/* Items — clickable actions */}
+      {/* Items */}
       <div className="space-y-1">
         {ITEMS.map((item) => {
           const checked = state[item.key];
+          const isLoading = loadingKey === item.key;
           const Icon = item.icon;
           return (
             <div key={item.key} className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${
-              checked ? "bg-[rgba(201,162,74,0.06)]" : "hover:bg-[rgba(245,247,250,0.03)]"
+              checked ? "bg-[rgba(201,162,74,0.06)]"
+              : isLoading ? "bg-[rgba(201,162,74,0.1)] border border-sxi-gold/20"
+              : "hover:bg-[rgba(245,247,250,0.03)]"
             }`}>
-              {/* Check toggle */}
-              <button onClick={() => onChange(item.key)} className="flex-shrink-0">
-                {checked ? (
-                  <CheckCircle2 size={16} className="text-green-400" />
+              {/* Check / Loading toggle */}
+              <div className="flex-shrink-0">
+                {isLoading ? (
+                  <Loader2 size={16} className="text-sxi-gold animate-spin" />
+                ) : checked ? (
+                  <button onClick={() => onChange(item.key)}>
+                    <CheckCircle2 size={16} className="text-green-400" />
+                  </button>
                 ) : (
-                  <Circle size={16} className="text-sxi-white/20" />
+                  <button onClick={() => onChange(item.key)}>
+                    <Circle size={16} className="text-sxi-white/20" />
+                  </button>
                 )}
-              </button>
+              </div>
 
-              <Icon size={13} className={checked ? "text-sxi-gold/60" : "text-sxi-white/20"} />
+              <Icon size={13} className={isLoading ? "text-sxi-gold" : checked ? "text-sxi-gold/60" : "text-sxi-white/20"} />
 
               {/* Label */}
               <span className={`text-sm flex-1 ${
-                checked ? "text-sxi-white/40 line-through" : "text-sxi-white/80"
+                isLoading ? "text-sxi-gold" : checked ? "text-sxi-white/40 line-through" : "text-sxi-white/80"
               }`}>
                 {item.label}
+                {isLoading && <span className="text-[10px] text-sxi-gold/60 ml-2">Processing...</span>}
               </span>
 
               {/* Action button */}
-              {!checked && (
+              {!checked && !isLoading && (
                 <button
-                  onClick={() => onAction(item.key)}
+                  onClick={() => handleAction(item.key)}
                   className="text-[9px] text-sxi-gold bg-sxi-gold/10 hover:bg-sxi-gold/20 px-2 py-0.5 rounded font-display tracking-wider transition-colors"
                 >
                   {item.actionLabel}
                 </button>
               )}
 
-              {checked && (
+              {isLoading && (
+                <span className="text-[9px] text-sxi-gold bg-sxi-gold/10 px-1.5 py-0.5 rounded animate-pulse">
+                  WORKING...
+                </span>
+              )}
+
+              {checked && !isLoading && (
                 <span className="text-[9px] text-green-400/60 bg-green-400/10 px-1.5 py-0.5 rounded">
                   DONE
                 </span>
