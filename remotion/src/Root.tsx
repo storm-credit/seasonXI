@@ -84,9 +84,9 @@ const DEFAULT_STORY_DATA: StoryCardData = {
   verdictText: "The Season That Rewrote History",
   storyPoints: {
     highlights: [
-      "PSG — 87th MINUTE. DOWN 2-0. HAT TRICK.",
-      "CHELSEA — EXTRA TIME. THREE GOALS.",
-      "MAN CITY — THEY SAID IT WAS OVER. HE SCORED ANYWAY.",
+      "PSG R16 — DOWN 2-0. HAT TRICK IN 17 MINUTES.",
+      "CHELSEA QF — HAT TRICK IN THE FIRST HALF.",
+      "MAN CITY SF — 90+1 EQUALIZER. EXTRA TIME. THROUGH.",
     ],
     emotion: "4 YEARS IN RONALDO'S SHADOW\nONE SEASON TO ERASE IT ALL",
     verdict: ["🏆 LA LIGA CHAMPION", "🏆 CHAMPIONS LEAGUE WINNER", "🏆 BALLON D'OR"],
