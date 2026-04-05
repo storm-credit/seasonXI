@@ -105,8 +105,8 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         scaleFrom={1.0}
         scaleTo={1.12}
         panX={-20}
-        brightness={0.55}
-        contrast={1.2}
+        brightness={0.85}
+        contrast={1.1}
         objectPosition="top center"
       />
 
@@ -323,9 +323,13 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
 };
 
 // ─── Scene: STORY (5-15s, frames 150-450) ────────────────────────────────────
+// Phase 1 (frames   0-100): hook image + "THE STORY" + name/season headline
+// Phase 2 (frames 100-200): image dims → big GOALS number pops up
+// Phase 3 (frames 200-300): image brightens → meta pills + story text
 
 const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
   const T = STORY_TIMING;
   const duration = T.story.end - T.story.start; // 300
 
@@ -340,34 +344,132 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
 
   const metaOpacity = interpolate(frame, [70, 90], [0, 1], { extrapolateRight: 'clamp' });
 
+  // ── Phase timing ────────────────────────────────────────────────────────────
+  const inStatPhase = frame >= 100 && frame <= 200;
+  const inMetaPhase = frame > 200;
+
+  // Image brightness: normal → dim at phase 2 → normal at phase 3
+  const imageBrightness = (() => {
+    if (frame < 100) return 0.85;
+    if (frame <= 120) return interpolate(frame, [100, 120], [0.85, 0.3], { extrapolateRight: 'clamp' });
+    if (frame <= 200) return 0.3;
+    return interpolate(frame, [200, 220], [0.3, 0.85], { extrapolateRight: 'clamp' });
+  })();
+
+  // Big stat number spring pop (phase 2)
+  const statScale = spring({
+    frame: frame - 100,
+    fps,
+    config: { damping: 10, stiffness: 180 },
+  });
+  const statOpacity = interpolate(frame, [100, 118, 185, 200], [0, 1, 1, 0], {
+    extrapolateRight: 'clamp',
+  });
+
+  // Meta pills fade in at phase 3
+  const metaPhaseOpacity = interpolate(frame, [205, 225], [0, 1], { extrapolateRight: 'clamp' });
+
   return (
     <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: Math.min(fadeIn, fadeOut) }}>
       {/* Ken Burns — same hook image continues, slightly slower zoom */}
-      <KenBurns
-        src={data.hookImage}
-        durationInFrames={duration}
-        scaleFrom={1.08}
-        scaleTo={1.18}
-        panX={25}
-        brightness={0.4}
-        contrast={1.15}
-        objectPosition="top center"
-      />
+      {/* Image — top 45% of screen */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '45%', overflow: 'hidden' }}>
+        <KenBurns
+          src={data.hookImage}
+          durationInFrames={duration}
+          scaleFrom={1.08}
+          scaleTo={1.18}
+          panX={25}
+          brightness={imageBrightness}
+          contrast={1.1}
+          objectPosition="center 30%"
+        />
+        {/* Fade to black at bottom of image */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%',
+          background: 'linear-gradient(transparent, #0a0e1a)',
+        }} />
+      </div>
 
-      {/* Heavy dark overlay for text readability */}
+      {/* ── Phase 2: Big stat popup ── */}
+      {inStatPhase && (
+        <div
+          style={{
+            position: 'absolute',
+            top: '8%',
+            width: '100%',
+            textAlign: 'center',
+            opacity: statOpacity,
+            transform: `scale(${statScale})`,
+            transformOrigin: 'center top',
+            zIndex: 30,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: '"Bebas Neue","Inter",sans-serif',
+              fontWeight: 900,
+              fontSize: 160,
+              color: COLORS.gold,
+              lineHeight: 1,
+              textShadow: `0 0 80px ${COLORS.gold}80, 0 0 160px ${COLORS.gold}30`,
+            }}
+          >
+            {data.goals}
+          </div>
+          <div
+            style={{
+              fontFamily: '"Inter","Montserrat",sans-serif',
+              fontWeight: 700,
+              fontSize: 40,
+              color: COLORS.white,
+              letterSpacing: 8,
+              textTransform: 'uppercase',
+              marginTop: -8,
+            }}
+          >
+            GOALS
+          </div>
+          {/* Assists alongside */}
+          <div
+            style={{
+              marginTop: 20,
+              display: 'inline-flex',
+              alignItems: 'baseline',
+              gap: 12,
+              opacity: interpolate(frame, [120, 140], [0, 1], { extrapolateRight: 'clamp' }),
+            }}
+          >
+            <span
+              style={{
+                fontFamily: '"Bebas Neue","Inter",sans-serif',
+                fontWeight: 900,
+                fontSize: 72,
+                color: `${COLORS.white}CC`,
+              }}
+            >
+              {data.assists}
+            </span>
+            <span
+              style={{
+                fontFamily: '"Inter","Montserrat",sans-serif',
+                fontWeight: 600,
+                fontSize: 24,
+                color: `${COLORS.white}66`,
+                letterSpacing: 5,
+              }}
+            >
+              ASSISTS
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* Content area — middle zone, below image */}
       <div
         style={{
           position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(180deg, rgba(10,14,26,0.6) 0%, rgba(10,14,26,0.85) 60%, rgba(10,14,26,0.95) 100%)',
-        }}
-      />
-
-      {/* Content area */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '12%',
+          top: '50%',
           left: 0,
           right: 0,
           padding: '0 60px',
@@ -419,17 +521,19 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
           <span style={{ color: COLORS.gold, fontSize: 52 }}>{data.season}</span>
         </div>
 
-        {/* Story text */}
-        {data.storyText && (
+        {/* Story text — phase 1 only (hides during stat popup, returns at phase 3) */}
+        {data.storyText && !inStatPhase && (
           <div
             style={{
               fontFamily: '"Inter","Montserrat",sans-serif',
               fontWeight: 400,
-              fontSize: 36,
-              color: `${COLORS.white}CC`,
-              lineHeight: 1.6,
-              marginBottom: 24,
-              opacity: storyOpacity,
+              fontSize: 28,
+              color: `${COLORS.white}AA`,
+              lineHeight: 1.5,
+              marginBottom: 16,
+              opacity: inMetaPhase
+                ? interpolate(frame, [205, 225], [0, 1], { extrapolateRight: 'clamp' })
+                : storyOpacity,
               transform: `translateY(${storyY}px)`,
             }}
           >
@@ -437,34 +541,36 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
           </div>
         )}
 
-        {/* Meta pills: Club · Position */}
-        <div
-          style={{
-            display: 'flex',
-            gap: 12,
-            opacity: metaOpacity,
-          }}
-        >
-          {[data.club, data.position, data.tier].map((label, i) => (
-            <div
-              key={i}
-              style={{
-                fontFamily: '"Inter","Montserrat",sans-serif',
-                fontWeight: 700,
-                fontSize: 20,
-                color: i === 2 ? COLORS.gold : `${COLORS.white}88`,
-                background: i === 2 ? `${COLORS.gold}15` : 'rgba(255,255,255,0.06)',
-                border: `1px solid ${i === 2 ? COLORS.gold + '40' : 'rgba(255,255,255,0.1)'}`,
-                borderRadius: 6,
-                padding: '8px 20px',
-                letterSpacing: 2,
-                textTransform: 'uppercase',
-              }}
-            >
-              {label}
-            </div>
-          ))}
-        </div>
+        {/* Meta pills: Club · Position — phase 1 + phase 3 */}
+        {!inStatPhase && (
+          <div
+            style={{
+              display: 'flex',
+              gap: 12,
+              opacity: inMetaPhase ? metaPhaseOpacity : metaOpacity,
+            }}
+          >
+            {[data.club, data.position, data.tier].map((label, i) => (
+              <div
+                key={i}
+                style={{
+                  fontFamily: '"Inter","Montserrat",sans-serif',
+                  fontWeight: 700,
+                  fontSize: 20,
+                  color: i === 2 ? COLORS.gold : `${COLORS.white}88`,
+                  background: i === 2 ? `${COLORS.gold}15` : 'rgba(255,255,255,0.06)',
+                  border: `1px solid ${i === 2 ? COLORS.gold + '40' : 'rgba(255,255,255,0.1)'}`,
+                  borderRadius: 6,
+                  padding: '8px 20px',
+                  letterSpacing: 2,
+                  textTransform: 'uppercase',
+                }}
+              >
+                {label}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </AbsoluteFill>
   );
@@ -609,9 +715,9 @@ const EmotionScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         durationInFrames={duration}
         scaleFrom={1.15}
         scaleTo={1.22}
-        brightness={0.3}
-        contrast={1.3}
-        opacity={0.6}
+        brightness={0.6}
+        contrast={1.15}
+        opacity={0.7}
         objectPosition="top center"
       />
 
@@ -725,6 +831,31 @@ const CardRevealScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
     extrapolateRight: 'clamp',
   });
 
+  // ── Impact FX ──────────────────────────────────────────────────────────────
+
+  // Gold flash: 0 → 0.6 → 0 over first 8 frames
+  const flashOpacity = interpolate(frame, [0, 3, 8], [0, 0.6, 0], {
+    extrapolateRight: 'clamp',
+  });
+
+  // Camera shake: ±3px jitter for first 10 frames only
+  const shakeX = frame < 10 ? Math.sin(frame * 7) * 3 : 0;
+  const shakeY = frame < 10 ? Math.cos(frame * 5) * 2 : 0;
+
+  // Card scale bounce: 1.15 → 1.0 with spring
+  const cardScale = spring({
+    frame,
+    fps,
+    config: { damping: 12, stiffness: 200 },
+    from: 1.15,
+    to: 1.0,
+  });
+
+  // OVR glow pulse: synced to countup window (frames 60-120)
+  const ovrGlow = interpolate(frame, [60, 80, 110, 120], [0, 1, 1, 0], {
+    extrapolateRight: 'clamp',
+  });
+
   return (
     <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden' }}>
       {/* Silence label */}
@@ -752,10 +883,31 @@ const CardRevealScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         </div>
       </div>
 
-      {/* Reuse existing CardReveal component */}
-      <CardReveal data={legacyData} />
+      {/* CardReveal with scale bounce + camera shake */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          transform: `translate(${shakeX}px, ${shakeY}px) scale(${cardScale})`,
+          transformOrigin: 'center center',
+        }}
+      >
+        <CardReveal data={legacyData} />
+      </div>
 
-      {/* OVR badge overlay */}
+      {/* Gold flash overlay — first 8 frames */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: `radial-gradient(ellipse at center, ${COLORS.gold}80, transparent 70%)`,
+          opacity: flashOpacity,
+          pointerEvents: 'none',
+          zIndex: 50,
+        }}
+      />
+
+      {/* OVR badge overlay with countup glow */}
       <div
         style={{
           position: 'absolute',
@@ -772,7 +924,7 @@ const CardRevealScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
             fontWeight: 900,
             color: COLORS.gold,
             lineHeight: 0.85,
-            textShadow: `0 0 40px ${COLORS.gold}50`,
+            textShadow: `0 0 ${40 + ovrGlow * 60}px ${COLORS.gold}${Math.round(50 + ovrGlow * 80).toString(16)}, 0 0 ${ovrGlow * 120}px ${COLORS.gold}40`,
           }}
         >
           {data.ovr}
@@ -968,8 +1120,8 @@ const VerdictScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         scaleFrom={1.0}
         scaleTo={1.1}
         panX={10}
-        brightness={0.5}
-        contrast={1.15}
+        brightness={0.8}
+        contrast={1.1}
         objectPosition="top center"
       />
 
