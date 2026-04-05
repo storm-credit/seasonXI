@@ -365,6 +365,8 @@ print(f"  Features: {len([c for c in filtered.columns if c.endswith('_pct_role')
 # ── E: EVALUATE ───────────────────────────────────────────────
 print("\n[E] EVALUATE")
 
+from seasonxi.ratings.league_adjustment import get_league_multiplier
+
 results = []
 for _, row in filtered.iterrows():
     role = row["role_bucket"]
@@ -372,6 +374,10 @@ for _, row in filtered.iterrows():
     if not rater: continue
     conf = compute_confidence(int(row["minutes_played"]))
     scores = rater(row, conf)
+    # Post-OVR league quality adjustment
+    league_mult = get_league_multiplier(str(row.get("league_id", "")))
+    ovr_raw = scores["overall"]
+    scores["overall"] = max(50.0, min(99.0, 50 + (ovr_raw - 50) * league_mult))
     tier = score_to_tier(scores["overall"]).value
     results.append({
         "player_name": row["player_name"], "club": row["club_name"],

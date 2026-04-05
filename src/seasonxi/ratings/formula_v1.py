@@ -432,7 +432,16 @@ def compute_ratings(features_df: pd.DataFrame) -> pd.DataFrame:
         confidence = compute_confidence(int(row_adj.get("minutes_played", 0)))
         scores = rater(row_adj, confidence)
         explanation = _build_explanation(row, scores, role)
-        tier = score_to_tier(scores["overall"])
+
+        # Post-OVR league quality adjustment (small penalty for weaker leagues)
+        league_mult = get_league_multiplier(str(league_id))
+        ovr_raw = scores["overall"]
+        # Apply to the portion above base (50): stronger effect on high scorers in weak leagues
+        ovr_final = 50 + (ovr_raw - 50) * league_mult
+        ovr_final = max(50.0, min(99.0, ovr_final))
+        scores["overall"] = ovr_final
+
+        tier = score_to_tier(ovr_final)
 
         results.append({
             "player_season_id": row.get("player_season_id", ""),
@@ -446,7 +455,7 @@ def compute_ratings(features_df: pd.DataFrame) -> pd.DataFrame:
             "aura_score": round(scores["aura"], 1),
             "stamina_score": round(scores["stamina"], 1),
             "mental_score": round(scores["mental"], 1),
-            "overall_score": round(scores["overall"], 1),
+            "overall_score": round(ovr_final, 1),
             "confidence_score": confidence,
             "tier_label": tier.value,
             "explanation_json": json.dumps(explanation, ensure_ascii=False),

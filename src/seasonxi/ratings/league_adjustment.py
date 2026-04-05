@@ -16,11 +16,12 @@ from __future__ import annotations
 # Based on 5-year UEFA coefficient ratios, simplified
 # Updated for ~2020-2024 window
 LEAGUE_STRENGTH: dict[str, float] = {
-    "ENG1": 1.05,   # Premier League — highest coefficient
-    "ESP1": 1.03,   # La Liga — strong but slightly declined
-    "GER1": 1.00,   # Bundesliga — baseline
-    "ITA1": 1.02,   # Serie A — recovered strength
-    "FRA1": 0.95,   # Ligue 1 — lower competitive depth
+    # Standard IDs
+    "ENG1": 1.04, "ESP1": 1.02, "GER1": 1.00, "ITA1": 1.01, "FRA1": 0.92,
+    # Alternative names (from FBref/merge pipeline)
+    "epl": 1.04, "laliga": 1.02, "bundesliga": 1.00, "seriea": 1.01, "ligue1": 0.92,
+    # Full names
+    "Premier League": 1.04, "La Liga": 1.02, "Bundesliga": 1.00, "Serie A": 1.01, "Ligue 1": 0.92,
 }
 
 # Default if league unknown
