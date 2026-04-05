@@ -1032,7 +1032,8 @@ const VerdictScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
  *   OUTRO       [1650-1800]55-60s — SeasonXI logo, fade
  */
 export const SeasonStory: React.FC<{ data: StoryCardData }> = ({ data }) => {
-  const T = STORY_TIMING;
+  // Use dynamic timing from Whisper if provided; fall back to hard-coded STORY_TIMING
+  const T = data.sceneTiming ?? STORY_TIMING;
   const subs = data.subtitles ?? [];
 
   // Determine BGM volume: quiet during narration scenes, louder during card reveal silence

@@ -38,7 +38,7 @@ async def generate_elevenlabs_tts(
     script: str,
     output_path: Path,
     voice_id: str = DEFAULT_VOICE_ID,
-    speed: float = 0.95,
+    speed: float = 1.05,
 ) -> Path:
     """ElevenLabs TTS로 나레이션 MP3 생성.
 

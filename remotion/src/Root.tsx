@@ -165,7 +165,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="SeasonStory"
         component={SeasonStory}
-        durationInFrames={1800}
+        durationInFrames={DEFAULT_STORY_DATA.sceneTiming?.total_frames ?? 1800}
         fps={30}
         width={1080}
         height={1920}
@@ -175,16 +175,18 @@ export const RemotionRoot: React.FC = () => {
           if (props.data && (props.data as any).src) {
             const response = await fetch(`/public/data/${(props.data as any).src}`);
             const json = await response.json();
+            const merged: StoryCardData = { ...DEFAULT_STORY_DATA, ...json };
             return {
-              props: {
-                data: {
-                  ...DEFAULT_STORY_DATA,
-                  ...json,
-                } as StoryCardData,
-              },
+              durationInFrames: merged.sceneTiming?.total_frames ?? 1800,
+              props: { data: merged },
             };
           }
-          return { props };
+          // Dynamic duration from sceneTiming when props are passed directly
+          const totalFrames = props.data?.sceneTiming?.total_frames ?? 1800;
+          return {
+            durationInFrames: totalFrames,
+            props,
+          };
         }}
       />
     </>

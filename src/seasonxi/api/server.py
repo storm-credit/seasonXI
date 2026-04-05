@@ -268,15 +268,22 @@ def render_video(player_id: str, season: str):
         except Exception:
             pass
 
-    # 4. Build Whisper subtitles from narration MP3
+    # 4. Build Whisper subtitles + dynamic scene timing from narration MP3
     subtitles = []
+    scene_timing = None
     narration_file = REMOTION_DIR / "public" / f"{player_id}_{season}" / "narration.mp3"
     if narration_file.exists():
         try:
-            from seasonxi.content.whisper_timestamps import extract_word_timestamps, words_to_subtitle_cues
+            from seasonxi.content.whisper_timestamps import (
+                compute_scene_timing,
+                extract_word_timestamps,
+                words_to_subtitle_cues,
+            )
             whisper_words = extract_word_timestamps(narration_file)
             subtitles = words_to_subtitle_cues(whisper_words)
+            scene_timing = compute_scene_timing(whisper_words, narration_script)
             print(f"  [Whisper] {len(whisper_words)} words → {len(subtitles)} subtitle cues")
+            print(f"  [SceneTiming] total_frames={scene_timing.get('total_frames')}")
         except Exception as whisper_err:
             print(f"  [Whisper] Skipped ({whisper_err})")
             subtitles = _build_subtitles(narration_script)
@@ -310,6 +317,7 @@ def render_video(player_id: str, season: str):
             "storyText": narration_script[:200] if narration_script else "",
             "highlights": _build_highlights(position_val, goals, assists, def_v, pace),
             "subtitles": subtitles,
+            **({"sceneTiming": scene_timing} if scene_timing is not None else {}),
         }
     }
 
@@ -623,17 +631,19 @@ PLAYER DATA:
 - Stats: ATT {att}, DEF {def_v}, PACE {pace}, AURA {aura}, STAMINA {stamina}, MENTAL {mental}
 
 RULES:
-- Write ONLY the narration text, no stage directions, no timestamps
-- Start with a powerful hook line (1-2 sentences that make viewers stop scrolling)
-- Tell the story of this season: what made it special, key moments, context
-- End with the tier verdict: "{tier}. No debate." then "Season Eleven."
-- Keep it under 150 words (45 seconds at normal speech pace)
-- Use short punchy sentences. Create rhythm.
-- Don't read stats like a spreadsheet. Make them FEEL meaningful.
-- No emojis, no hashtags, no "subscribe"
-- Write in a cinematic, authoritative tone
+- Write the narration in FOUR clearly marked sections using these exact labels on their own line:
+  [HOOK]       — 1-2 powerful sentences that make viewers stop scrolling
+  [STORY]      — Context and backstory of the season (2-3 sentences)
+  [HIGHLIGHTS] — Key moments and stats that made the season special (2-3 sentences)
+  [EMOTION]    — Emotional build-up / anticipation before the card reveal (1-2 sentences)
+- End [EMOTION] with: "{tier}. No debate." then "Season Eleven."
+- Keep each section tight; total under 150 words (45 seconds at normal speech pace)
+- Short punchy sentences. Create rhythm.
+- Don't read stats like a spreadsheet — make them FEEL meaningful.
+- No emojis, no hashtags, no "subscribe", no stage directions
+- Cinematic, authoritative tone
 
-OUTPUT: Just the narration text, nothing else."""
+OUTPUT: Just the four labelled sections, nothing else."""
 
         response = client.models.generate_content(
             model="gemini-2.5-flash",
@@ -645,19 +655,24 @@ OUTPUT: Just the narration text, nothing else."""
     except Exception as e:
         print(f"  [Narration] Gemini failed ({e}), using template fallback")
 
-    # Fallback template
+    # Fallback template — includes scene markers for compute_scene_timing
     contributions = goals + assists
-    return f"""{player_name}. {season}. {club}.
+    return f"""[HOOK]
+{player_name}. {season}. {club}.
+This version was different.
 
+[STORY]
 {goals} goals, {assists} assists.
-{"" if contributions <= goals else f"{contributions} goal contributions. "}
+{"" if contributions <= goals else f"{contributions} goal contributions total. "}
+When talent meets consistency, the numbers tell the story.
 
+[HIGHLIGHTS]
 This is what {tier.lower()} looks like.
-When talent meets consistency, numbers tell the story.
-And the numbers say everything.
+Every game, every moment — relentless.
+The numbers say everything.
 
+[EMOTION]
 {tier}. No debate.
-
 Season Eleven."""
 
 

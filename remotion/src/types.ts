@@ -7,6 +7,18 @@ export interface SubtitleCue {
   highlight?: string; // word(s) to highlight in gold
 }
 
+export interface SceneTiming {
+  hook:        { start: number; end: number };
+  story:       { start: number; end: number };
+  highlights:  { start: number; end: number };
+  emotion:     { start: number; end: number };
+  cardReveal:  { start: number; end: number };
+  stats:       { start: number; end: number };
+  verdict:     { start: number; end: number };
+  outro:       { start: number; end: number };
+  total_frames: number;
+}
+
 export interface StoryCardData {
   player_name: string;
   club: string;
@@ -31,6 +43,8 @@ export interface StoryCardData {
   bgmSrc?: string;
   // Subtitles
   subtitles?: SubtitleCue[];
+  // Dynamic scene timing (from Whisper). Falls back to STORY_TIMING when absent.
+  sceneTiming?: SceneTiming;
   // Additional story text fields
   hookStat?: string;        // e.g. "44 GOALS" — shown first in hook (big number)
   hookLine?: string;        // e.g. "THE SEASON THAT BROKE REALITY"
