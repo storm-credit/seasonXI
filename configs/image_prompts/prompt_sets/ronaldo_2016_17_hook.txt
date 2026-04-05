@@ -31,7 +31,7 @@ Kit:
 - fictional football kit inspired by Real Madrid 2016-17
 - clean white base with subtle gold accents
 - premium and simple
-- no crest
+- 
 - no sponsor
 - no logos
 

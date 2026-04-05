@@ -16,7 +16,7 @@ Player:
 
 Kit:
 - fictional Real Madrid inspired, clean white with gold accents
-- no crest, no sponsor, no logos
+- with club crest on chest
 
 Composition:
 - UPPER BODY 3/4 portrait

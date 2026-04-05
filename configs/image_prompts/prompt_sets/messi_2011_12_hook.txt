@@ -32,7 +32,7 @@ Kit:
 - fictional football kit inspired by Barcelona 2011-12
 - deep blue and dark red striped feeling
 - premium and simple
-- no crest
+- 
 - no sponsor
 - no logos
 

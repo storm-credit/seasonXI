@@ -29,7 +29,7 @@ Kit:
 - fictional football kit inspired by PSG 2018-19
 - dark blue base
 - simple premium football kit
-- no crest
+- 
 - no sponsor
 - no logos
 

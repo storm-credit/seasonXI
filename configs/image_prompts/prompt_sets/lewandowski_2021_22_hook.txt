@@ -15,7 +15,7 @@ Player:
 - short dark hair, clean shaven or light stubble
 - cold predatory expression, clinical killer instinct
 - shooting stance, about to strike
-- red kit with subtle gold trim (no crest, no sponsor)
+- red kit with subtle gold trim (no sponsor)
 
 Season mood:
 - clinical, machine-like efficiency

@@ -40,8 +40,8 @@ Environment:
 - premium sports atmosphere
 
 Design restrictions:
-- no copyrighted club logos
-- no real brand marks
+- club crest on chest is OK
+- no real sponsor logos
 - no extra players
 - no text
 - no watermark
