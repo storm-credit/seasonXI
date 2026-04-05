@@ -334,7 +334,7 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const T = STORY_TIMING;
   const duration = T.story.end - T.story.start; // 300
 
-  const fadeIn = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
+  const fadeIn = interpolate(frame, [0, 3], [0, 1], { extrapolateRight: 'clamp' });
   const fadeOut = interpolate(frame, [duration - 10, duration], [1, 0], { extrapolateRight: 'clamp' });
 
   // Title overlay: name + season — fade in at frame 20
@@ -505,7 +505,7 @@ const HighlightsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const T = STORY_TIMING;
   const duration = T.highlights.end - T.highlights.start; // 300
 
-  const fadeIn = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: 'clamp' });
+  const fadeIn = interpolate(frame, [0, 3], [0, 1], { extrapolateRight: 'clamp' });
   const fadeOut = interpolate(frame, [duration - 10, duration], [1, 0], { extrapolateRight: 'clamp' });
 
   // Default highlights from goals/assists if not provided
@@ -656,7 +656,7 @@ const EmotionScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const frame = useCurrentFrame();
   const duration = STORY_TIMING.emotion.end - STORY_TIMING.emotion.start; // 150
 
-  const fadeIn = interpolate(frame, [0, 12], [0, 1], { extrapolateRight: 'clamp' });
+  const fadeIn = interpolate(frame, [0, 3], [0, 1], { extrapolateRight: 'clamp' });
   const fadeOut = interpolate(frame, [120, 148], [1, 0], { extrapolateRight: 'clamp' });
 
   const textOpacity = interpolate(frame, [20, 40], [0, 1], { extrapolateRight: 'clamp' });
@@ -955,7 +955,7 @@ const StatsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const frame = useCurrentFrame();
   const duration = STORY_TIMING.stats.end - STORY_TIMING.stats.start; // 300
 
-  const fadeIn = interpolate(frame, [0, 12], [0, 1], { extrapolateRight: 'clamp' });
+  const fadeIn = interpolate(frame, [0, 3], [0, 1], { extrapolateRight: 'clamp' });
   const fadeOut = interpolate(frame, [duration - 10, duration], [1, 0], { extrapolateRight: 'clamp' });
 
   const legacyData = toCardData(data);
@@ -1096,7 +1096,7 @@ const VerdictScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const frame = useCurrentFrame();
   const duration = STORY_TIMING.verdict.end - STORY_TIMING.verdict.start; // 300
 
-  const fadeIn = interpolate(frame, [0, 12], [0, 1], { extrapolateRight: 'clamp' });
+  const fadeIn = interpolate(frame, [0, 3], [0, 1], { extrapolateRight: 'clamp' });
   const fadeOut = interpolate(frame, [270, 298], [1, 0], { extrapolateRight: 'clamp' });
 
   const badgeDelay = 40;
@@ -1270,6 +1270,14 @@ export const SeasonStory: React.FC<{ data: StoryCardData }> = ({ data }) => {
 
   // BGM volume: quiet during narration, loud during card reveal + stats/verdict silence
   const frame = useCurrentFrame();
+
+  // Dynamic subtitle position: avoid overlapping scene-specific content
+  const subtitleBottom = (() => {
+    if (frame >= T.stats.start && frame < T.stats.end) return 52;      // 그래프/바 위
+    if (frame >= T.verdict.start && frame < T.verdict.end) return 3;   // 맨 아래
+    if (frame >= T.cardReveal.start && frame < T.cardReveal.end) return 15; // 카드 아래
+    return 8; // 기본
+  })();
   // Build a safe strictly-increasing frame array for interpolate
   const rawBgm = [
     T.hook.start,
@@ -1355,7 +1363,7 @@ export const SeasonStory: React.FC<{ data: StoryCardData }> = ({ data }) => {
       </Sequence>
 
       {/* ── Global subtitle layer (renders on top of all scenes) ─────── */}
-      {subs.length > 0 && <NarrationSubtitle cues={subs} bottomPct={22} />}
+      {subs.length > 0 && <NarrationSubtitle cues={subs} bottomPct={subtitleBottom} />}
     </AbsoluteFill>
   );
 };
