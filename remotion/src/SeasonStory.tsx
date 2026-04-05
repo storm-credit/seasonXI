@@ -97,7 +97,7 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const hookLine = data.hookLine ?? `${data.player_name.toUpperCase()} · ${data.season}`;
 
   return (
-    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: Math.min(fadeIn, fadeOut) }}>
+    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: fadeIn }}>
       {/* Ken Burns on hook image */}
       <KenBurns
         src={data.hookImage}
@@ -336,7 +336,7 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const fadeOut = interpolate(frame, [duration - 10, duration], [1, 0], { extrapolateRight: 'clamp' });
 
   return (
-    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: Math.min(fadeIn, fadeOut) }}>
+    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: fadeIn }}>
       {/* KenBurns fullscreen */}
       <KenBurns
         src={data.hookImage}
@@ -387,7 +387,7 @@ const HighlightsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
       style={{
         background: '#0a0e1a',
         overflow: 'hidden',
-        opacity: Math.min(fadeIn, fadeOut),
+        opacity: fadeIn,
       }}
     >
       {/* Hook image — very dark background */}
@@ -514,7 +514,7 @@ const EmotionScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
       style={{
         background: '#0a0e1a',
         overflow: 'hidden',
-        opacity: Math.min(fadeIn, fadeOut),
+        opacity: fadeIn,
         alignItems: 'center',
         justifyContent: 'center',
       }}
@@ -780,7 +780,7 @@ const StatsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const barsOpacity = interpolate(frame, [20, 40], [0, 1], { extrapolateRight: 'clamp' });
 
   return (
-    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: Math.min(fadeIn, fadeOut) }}>
+    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: fadeIn }}>
       {/* Top half: HexGraph (reused component) */}
       <div
         style={{
@@ -920,7 +920,7 @@ const VerdictScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
       style={{
         background: '#0a0e1a',
         overflow: 'hidden',
-        opacity: Math.min(fadeIn, fadeOut),
+        opacity: fadeIn,
       }}
     >
       {/* Ken Burns on closeup image */}
