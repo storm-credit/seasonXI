@@ -229,7 +229,7 @@ def render_video(player_id: str, season: str):
         display = card_data.get("display_name", card_data.get("player_name", player_id.upper()))
         club = card_data.get("club", "")
         tier = card_data.get("tier", "ELITE")
-        ovr_val = card_data.get("ovr")
+        ovr_val = card_data.get("ovr") or card_data.get("overall")
         if ovr_val and str(ovr_val).strip():
             ovr = int(float(ovr_val))
         else:
