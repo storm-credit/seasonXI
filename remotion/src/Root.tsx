@@ -83,9 +83,16 @@ const DEFAULT_STORY_DATA: StoryCardData = {
   ],
   verdictText: "The Season That Rewrote History",
   storyPoints: {
-    highlights: ["PSG — HAT TRICK", "CHELSEA — 3 GOALS", "MAN CITY — WINNER"],
-    emotion: "4 YEARS IN THE SHADOW",
-    verdict: ["LA LIGA", "CHAMPIONS LEAGUE", "BALLON D'OR"],
+    highlights: [
+      "PSG — 87th MINUTE. DOWN 2-0. HAT TRICK.",
+      "CHELSEA — EXTRA TIME. THREE GOALS.",
+      "MAN CITY — THEY SAID IT WAS OVER. HE SCORED ANYWAY.",
+    ],
+    emotion: "4 YEARS IN RONALDO'S SHADOW\nONE SEASON TO ERASE IT ALL",
+    verdict: ["🏆 LA LIGA CHAMPION", "🏆 CHAMPIONS LEAGUE WINNER", "🏆 BALLON D'OR"],
+    cardReveal: "27 GOALS · 12 ASSISTS\nLA LIGA TOP SCORER",
+    story: "THE SEASON THAT SILENCED EVERYONE",
+    verdictLine: "THE GREATEST LATE BLOOMER IN FOOTBALL HISTORY",
   },
   subtitles: [
     // HOOK (0-150)

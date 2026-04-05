@@ -57,9 +57,12 @@ export interface StoryCardData {
   nextTeaser?: string;      // e.g. "NEXT: SALAH 2021-22"
   // Scene story points
   storyPoints?: {
-    highlights?: string[];  // ["PSG HAT TRICK", "CHELSEA 3 GOALS", "MAN CITY WINNER"]
-    emotion?: string;       // "4 YEARS IN RONALDO'S SHADOW"
-    verdict?: string[];     // ["LA LIGA", "CHAMPIONS LEAGUE", "BALLON D'OR"]
+    highlights?: string[];   // ["PSG — 87th MINUTE...", ...]
+    emotion?: string;        // "4 YEARS IN RONALDO'S SHADOW\nONE SEASON..."
+    verdict?: string[];      // ["🏆 LA LIGA CHAMPION", ...]
+    cardReveal?: string;     // "27 GOALS · 12 ASSISTS\nLA LIGA TOP SCORER"
+    story?: string;          // "THE SEASON THAT SILENCED EVERYONE"
+    verdictLine?: string;    // "THE GREATEST LATE BLOOMER..."
   };
 }
 

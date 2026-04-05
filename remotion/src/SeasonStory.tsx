@@ -415,6 +415,23 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
         </div>
       </div>
 
+      {/* Story 텍스트 — 이름/시즌 아래, 메타 필 위 */}
+      {data.storyPoints?.story && (
+        <div style={{
+          position: 'absolute', top: '28%', width: '100%', textAlign: 'center',
+          opacity: interpolate(frame, [60, 80], [0, 1], { extrapolateRight: 'clamp' }),
+          zIndex: 15,
+        }}>
+          <div style={{
+            fontFamily: '"Inter",sans-serif', fontSize: 22, fontWeight: 600,
+            color: `${COLORS.gold}CC`, letterSpacing: 4, textTransform: 'uppercase',
+            textShadow: '0 2px 12px rgba(0,0,0,0.8)',
+          }}>
+            {data.storyPoints.story}
+          </div>
+        </div>
+      )}
+
       {/* 하단: 클럽 + 포지션 + 티어 */}
       <div
         style={{
@@ -907,6 +924,25 @@ const CardRevealScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
           OVR
         </div>
       </div>
+
+      {/* cardReveal 스탯 요약 텍스트 — 카드 아래 빈 공간 */}
+      {data.storyPoints?.cardReveal && (
+        <div style={{
+          position: 'absolute', bottom: '8%', width: '100%', textAlign: 'center',
+          opacity: interpolate(frame, [40, 60], [0, 1], { extrapolateRight: 'clamp' }),
+          zIndex: 15,
+        }}>
+          {data.storyPoints.cardReveal.split('\n').map((line, i) => (
+            <div key={i} style={{
+              fontFamily: '"Inter",sans-serif', fontSize: 24, fontWeight: 700,
+              color: i === 0 ? COLORS.gold : `${COLORS.white}88`,
+              letterSpacing: 3, marginBottom: 4,
+            }}>
+              {line}
+            </div>
+          ))}
+        </div>
+      )}
     </AbsoluteFill>
   );
 };
@@ -1165,6 +1201,23 @@ const VerdictScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
           {verdictText.toUpperCase()}
         </div>
       </div>
+
+      {/* verdictLine — TierBadge 아래, 트로피 리스트 아래 */}
+      {data.storyPoints?.verdictLine && (
+        <div style={{
+          position: 'absolute', bottom: '12%', width: '100%', textAlign: 'center',
+          opacity: interpolate(frame, [100, 120], [0, 1], { extrapolateRight: 'clamp' }),
+          zIndex: 20,
+        }}>
+          <div style={{
+            fontFamily: '"Inter",sans-serif', fontSize: 22, fontWeight: 600,
+            color: `${COLORS.white}AA`, letterSpacing: 3, fontStyle: 'italic',
+            textShadow: '0 2px 12px rgba(0,0,0,0.8)',
+          }}>
+            {data.storyPoints.verdictLine}
+          </div>
+        </div>
+      )}
 
       {/* Player + season footer */}
       <div
