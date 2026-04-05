@@ -43,12 +43,12 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
   });
 
   // Player credit line
-  const creditOpacity = interpolate(frame, [40, 55], [0, 0.7], {
+  const creditOpacity = interpolate(frame, [40, 55], [0, 1.0], {
     extrapolateRight: 'clamp',
   });
 
   // CTA text — comment engagement
-  const ctaOpacity = interpolate(frame, [42, 58], [0, 0.5], {
+  const ctaOpacity = interpolate(frame, [42, 58], [0, 1.0], {
     extrapolateRight: 'clamp',
   });
   const ctaY = interpolate(frame, [42, 58], [12, 0], {
