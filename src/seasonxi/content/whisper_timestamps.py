@@ -67,7 +67,7 @@ def words_to_subtitle_cues(
             continue
 
         group_end = group_words[-1]["end"]
-        text = " ".join(w["word"] for w in group_words)
+        text = " ".join(w["word"] for w in group_words).replace(",", "").replace("  ", " ").strip()
 
         start_frame = int(group_start * fps) + offset_frames  # 자막이 말보다 살짝 늦게
         end_frame = int(group_end * fps) + offset_frames + 6
