@@ -35,15 +35,13 @@ export const NarrationSubtitle: React.FC<NarrationSubtitleProps> = ({
 
   if (!activeCue) return null;
 
-  const FADE_FRAMES = 6;
+  const cueDuration = activeCue.endFrame - activeCue.startFrame;
+  const FADE_FRAMES = Math.min(6, Math.floor(cueDuration / 3)); // 자막이 짧으면 fade도 짧게
+  const fadeInEnd = activeCue.startFrame + FADE_FRAMES;
+  const fadeOutStart = Math.max(fadeInEnd + 1, activeCue.endFrame - FADE_FRAMES);
   const opacity = interpolate(
     frame,
-    [
-      activeCue.startFrame,
-      activeCue.startFrame + FADE_FRAMES,
-      activeCue.endFrame - FADE_FRAMES,
-      activeCue.endFrame,
-    ],
+    [activeCue.startFrame, fadeInEnd, fadeOutStart, activeCue.endFrame],
     [0, 1, 1, 0],
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
