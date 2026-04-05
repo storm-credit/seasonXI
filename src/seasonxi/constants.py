@@ -29,8 +29,8 @@ class Tier(str, Enum):
 
 # Tier thresholds (overall score >= threshold)
 TIER_THRESHOLDS: list[tuple[int, Tier]] = [
-    (93, Tier.MYTHIC),
-    (88, Tier.LEGENDARY),
+    (92, Tier.MYTHIC),
+    (87, Tier.LEGENDARY),
     (82, Tier.ELITE),
     (74, Tier.GOLD),
     (65, Tier.SILVER),

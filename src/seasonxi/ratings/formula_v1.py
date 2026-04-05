@@ -41,7 +41,7 @@ from seasonxi.ratings.league_adjustment import apply_league_adjustment
 from seasonxi.ratings.team_debiasing import debias_team_feature
 
 
-def _adaptive_overall(raws: dict[str, float], base_weights: dict[str, float], boost: float = 0.03) -> float:
+def _adaptive_overall(raws: dict[str, float], base_weights: dict[str, float], boost: float = 0.05) -> float:
     """Compute overall with adaptive weighting based on player's strengths.
 
     Identifies top 2 stats by raw value and shifts weight toward them.
