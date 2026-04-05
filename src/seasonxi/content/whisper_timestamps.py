@@ -33,6 +33,7 @@ def words_to_subtitle_cues(
     words: list[dict],
     fps: int = 30,
     max_words_per_cue: int = 8,
+    offset_frames: int = 3,
 ) -> list[dict]:
     """단어 타임스탬프를 Remotion SubtitleCue 배열로 변환.
 
@@ -67,8 +68,8 @@ def words_to_subtitle_cues(
         group_end = group_words[-1]["end"]
         text = " ".join(w["word"] for w in group_words)
 
-        start_frame = int(group_start * fps)
-        end_frame = int(group_end * fps) + 6  # 약간의 여유
+        start_frame = int(group_start * fps) + offset_frames  # 자막이 말보다 살짝 늦게
+        end_frame = int(group_end * fps) + offset_frames + 6
 
         # 카드 리빌 구간 (900-1050) 건너뛰기
         if start_frame >= 880 and start_frame < 1060:

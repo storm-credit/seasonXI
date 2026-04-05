@@ -91,7 +91,7 @@ export const HexGraph: React.FC<{ data: CardData }> = ({ data }) => {
               <text x={vx} y={vy - 4} fill={COLORS.softGold}
                 fontFamily="Bebas Neue, sans-serif" fontSize={36}
                 textAnchor="middle" dominantBaseline="middle"
-                opacity={valOp}>{vals[i]}</text>
+                opacity={valOp}>{Math.round(vals[i] * interpolate(frame, [55, 80], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }))}</text>
               <text x={lx} y={ly + 26} fill={`${COLORS.white}AA`}
                 fontFamily="Montserrat, sans-serif" fontWeight={700}
                 fontSize={18} textAnchor="middle" dominantBaseline="middle"

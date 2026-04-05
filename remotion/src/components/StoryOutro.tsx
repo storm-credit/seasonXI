@@ -149,7 +149,7 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
             fontFamily: '"Inter", "Montserrat", sans-serif',
             fontWeight: 500,
             fontSize: 32,
-            color: `${COLORS.white}66`,
+            color: `${COLORS.white}CC`,
             letterSpacing: 5,
             textTransform: 'uppercase',
           }}
@@ -208,7 +208,7 @@ export const StoryOutro: React.FC<StoryOutroProps> = ({
             fontFamily: '"Inter","Montserrat",sans-serif',
             fontWeight: 600,
             fontSize: 36,
-            color: `${COLORS.white}AA`,
+            color: `${COLORS.white}EE`,
             letterSpacing: 3,
             textTransform: 'uppercase',
           }}
