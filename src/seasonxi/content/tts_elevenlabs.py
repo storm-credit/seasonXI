@@ -23,7 +23,7 @@ from pathlib import Path
 import requests
 
 MAX_RETRIES = 3
-DEFAULT_VOICE_ID = "pNInz6obpgDQGcFmaJgB"  # Adam (영어 남성)
+DEFAULT_VOICE_ID = "TxGEqnHWrfWFTfGW9XjX"  # Josh (다큐/스포츠 나레이션)
 MODEL_ID = "eleven_multilingual_v2"
 API_BASE = "https://api.elevenlabs.io/v1"
 
@@ -90,9 +90,9 @@ def _generate_blocking(
         "text": script,
         "model_id": MODEL_ID,
         "voice_settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.8,
-            "style": 0.3,
+            "stability": 0.40,
+            "similarity_boost": 0.75,
+            "style": 0.48,
             "use_speaker_boost": True,
         },
         "speed": speed,
