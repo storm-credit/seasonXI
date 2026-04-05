@@ -14,14 +14,22 @@ import ImageUpload from "@/components/production/ImageUpload";
 import VideoPreview from "@/components/production/VideoPreview";
 import MusicPanel from "@/components/production/MusicPanel";
 
+const EMPTY_CHECKLIST: ChecklistState = {
+  hookImage: false,
+  cardImage: false,
+  closeupImage: false,
+  narration: false,
+  sunoMusic: false,
+  rendered: false,
+  reviewed: false,
+  uploaded: false,
+};
+
 export default function DashboardPage() {
   const [selectedDay, setSelectedDay] = useState(0);
   const [selectedSeason, setSelectedSeason] = useState<Season | null>(null);
   const [loading, setLoading] = useState(false);
-  const [checklist, setChecklist] = useState<ChecklistState>({
-    hookImage: false, cardImage: false, sunoMusic: false,
-    rendered: false, reviewed: false, uploaded: false,
-  });
+  const [checklist, setChecklist] = useState<ChecklistState>({ ...EMPTY_CHECKLIST });
 
   const autoCheck = (key: keyof ChecklistState) => {
     setChecklist(prev => ({ ...prev, [key]: true }));
@@ -34,16 +42,14 @@ export default function DashboardPage() {
 
   const handleSelectSeason = useCallback(async (playerId: string, season: string) => {
     setLoading(true);
-    const fresh: ChecklistState = {
-      hookImage: false, cardImage: false, sunoMusic: false,
-      rendered: false, reviewed: false, uploaded: false,
-    };
+    const fresh: ChecklistState = { ...EMPTY_CHECKLIST };
     setChecklist(fresh);
     try {
       const assets = await checkAssets(playerId, season);
-      if (assets.hook?.exists) fresh.hookImage = true;
-      if (assets.card?.exists) fresh.cardImage = true;
-      if (assets.bgm?.exists) fresh.sunoMusic = true;
+      if (assets.hook?.exists)    fresh.hookImage    = true;
+      if (assets.card?.exists)    fresh.cardImage    = true;
+      if (assets.closeup?.exists) fresh.closeupImage = true;
+      if (assets.bgm?.exists)     fresh.sunoMusic    = true;
       setChecklist({ ...fresh });
     } catch { /* skip */ }
     try {
@@ -72,28 +78,57 @@ export default function DashboardPage() {
   const handleChecklistAction = useCallback(async (key: keyof ChecklistState) => {
     if (!selectedSeason) return;
     const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8800";
+    const pid = selectedSeason.player_id;
+    const s = selectedSeason.season;
+
     switch (key) {
-      case "hookImage": case "cardImage":
-        document.getElementById("image-upload")?.scrollIntoView({ behavior: "smooth" }); break;
-      case "sunoMusic":
-        document.getElementById("music-panel")?.scrollIntoView({ behavior: "smooth" }); break;
-      case "rendered":
-        // Trigger render directly
+      case "hookImage":
         try {
-          await fetch(`${API}/api/render/${selectedSeason.player_id}/${selectedSeason.season}`, { method: "POST" });
+          await fetch(`${API}/api/generate-image/${pid}/${s}?scene=hook`, { method: "POST" });
+          autoCheck("hookImage");
+        } catch { /* fail */ }
+        break;
+
+      case "cardImage":
+        try {
+          await fetch(`${API}/api/generate-image/${pid}/${s}?scene=card`, { method: "POST" });
+          autoCheck("cardImage");
+        } catch { /* fail */ }
+        break;
+
+      case "closeupImage":
+        try {
+          await fetch(`${API}/api/generate-image/${pid}/${s}?scene=closeup`, { method: "POST" });
+          autoCheck("closeupImage");
+        } catch { /* fail */ }
+        break;
+
+      case "narration":
+        try {
+          await fetch(`${API}/api/generate-narration/${pid}/${s}`, { method: "POST" });
+          autoCheck("narration");
+        } catch { /* fail */ }
+        break;
+
+      case "sunoMusic":
+        document.getElementById("music-panel")?.scrollIntoView({ behavior: "smooth" });
+        break;
+
+      case "rendered":
+        try {
+          await fetch(`${API}/api/render/${pid}/${s}`, { method: "POST" });
           autoCheck("rendered");
         } catch { /* fail */ }
         break;
+
       case "reviewed":
-        // Scroll to video and play
         document.getElementById("video-preview")?.scrollIntoView({ behavior: "smooth" });
-        const vid = document.querySelector("#video-preview video") as HTMLVideoElement;
-        vid?.play();
+        (document.querySelector("#video-preview video") as HTMLVideoElement | null)?.play();
         break;
+
       case "uploaded":
-        // Trigger YouTube upload
         try {
-          await fetch(`${API}/api/upload-youtube/${selectedSeason.player_id}/${selectedSeason.season}`, { method: "POST" });
+          await fetch(`${API}/api/upload-youtube/${pid}/${s}`, { method: "POST" });
           autoCheck("uploaded");
         } catch { /* fail */ }
         break;
@@ -115,25 +150,26 @@ export default function DashboardPage() {
       <main className="flex-1 flex flex-col overflow-hidden">
 
         <div className="flex-1 flex flex-col p-4 gap-3 overflow-hidden">
-          {/* Row 1: Card + Stats + Prompt — compact */}
-          <div className="grid grid-cols-12 gap-3" style={{ height: "calc(40% - 6px)" }}>
-            <div className="col-span-3 overflow-hidden">
+          {/* Row 1: Card + Stats + Prompt */}
+          <div className="grid grid-cols-12 gap-3 min-h-0" style={{ flex: "0 0 40%" }}>
+            <div className="col-span-3 min-h-0 overflow-hidden">
               <PlayerCard season={selectedSeason} />
             </div>
-            <div className="col-span-4 overflow-hidden">
+            <div className="col-span-4 min-h-0 overflow-hidden">
               <StatsPanel stats={selectedSeason?.stats || null} />
             </div>
-            <div className="col-span-5 overflow-hidden">
+            <div className="col-span-5 min-h-0 overflow-hidden">
               <PromptBuilder season={selectedSeason} />
             </div>
           </div>
 
-          {/* Row 2: Image → Music → Video → Checklist — fixed height */}
-          <div className="grid grid-cols-12 gap-3" style={{ height: "calc(60% - 6px)" }}>
-            <div className="col-span-3 overflow-hidden" id="image-upload">
+          {/* Row 2: Image → Music → Video → Checklist */}
+          <div className="grid grid-cols-12 gap-3 min-h-0" style={{ flex: "1 1 0%" }}>
+            <div className="col-span-3 min-h-0 overflow-hidden" id="image-upload">
               <ImageUpload season={selectedSeason} onSaved={(type) => {
-                if (type === "hook") autoCheck("hookImage");
-                else if (type === "card") autoCheck("cardImage");
+                if (type === "hook")    autoCheck("hookImage");
+                else if (type === "card")    autoCheck("cardImage");
+                else if (type === "closeup") autoCheck("closeupImage");
               }} />
             </div>
             <div className="col-span-3 overflow-hidden" id="music-panel">

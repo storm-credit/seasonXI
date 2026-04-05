@@ -114,9 +114,11 @@ export default function MusicPanel({ season, onSaved }: MusicPanelProps) {
         </div>
       )}
 
-      {/* File upload */}
+      {/* File upload — click or drag */}
       <div
         onClick={() => fileInputRef.current?.click()}
+        onDrop={(e) => { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f && f.type.startsWith("audio/")) handleFile(f); }}
+        onDragOver={(e) => e.preventDefault()}
         className="border border-dashed border-purple-500/30 rounded-lg p-3 text-center cursor-pointer hover:border-purple-500/50 hover:bg-purple-500/5 transition-all"
       >
         <input ref={fileInputRef} type="file" accept="audio/*"

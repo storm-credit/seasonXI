@@ -113,8 +113,8 @@ export default function VideoPreview({
 
   return (
     <>
-    <GlassPanel className="p-4 h-full flex flex-col">
-      <div className="flex items-center justify-between mb-3">
+    <GlassPanel className="p-3 h-full flex flex-col overflow-hidden">
+      <div className="flex items-center justify-between mb-2">
         <h3 className="font-display text-sm tracking-wider text-sxi-gold uppercase">
           Video Preview
         </h3>
@@ -124,17 +124,16 @@ export default function VideoPreview({
         </a>
       </div>
 
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-h-0">
         {videoUrl ? (
           /* Video player — inline, fills panel */
-          <div className="w-full flex flex-col gap-2 flex-1">
-            <div className="flex-1 flex items-center justify-center bg-black rounded-lg overflow-hidden border border-sxi-gold/20 min-h-0">
+          <div className="w-full flex flex-col gap-1.5 flex-1 min-h-0">
+            <div className="flex-1 bg-black rounded-lg overflow-hidden border border-sxi-gold/20 min-h-0">
               <video
                 src={videoUrl}
                 controls
                 loop
-                className="rounded-lg"
-                style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+                style={{ width: "100%", height: "100%", objectFit: "contain" }}
               />
             </div>
             {videoFilename && (

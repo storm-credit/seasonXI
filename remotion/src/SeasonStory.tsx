@@ -70,6 +70,8 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
 
   // Fade in from black
   const fadeIn = interpolate(frame, [0, 18], [0, 1], { extrapolateRight: 'clamp' });
+  // Fade out at end of scene (last 10 frames)
+  const fadeOut = interpolate(frame, [duration - 10, duration], [1, 0], { extrapolateRight: 'clamp' });
 
   // hookStat big number — visible from frame 0 for thumbnail, scale in quickly
   const statScale = interpolate(frame, [0, 12], [0.85, 1.0], { extrapolateRight: 'clamp' });
@@ -95,7 +97,7 @@ const HookScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const hookLine = data.hookLine ?? `${data.player_name.toUpperCase()} · ${data.season}`;
 
   return (
-    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: fadeIn }}>
+    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: Math.min(fadeIn, fadeOut) }}>
       {/* Ken Burns on hook image */}
       <KenBurns
         src={data.hookImage}
@@ -328,6 +330,7 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const duration = T.story.end - T.story.start; // 300
 
   const fadeIn = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
+  const fadeOut = interpolate(frame, [duration - 10, duration], [1, 0], { extrapolateRight: 'clamp' });
 
   const titleOpacity = interpolate(frame, [15, 35], [0, 1], { extrapolateRight: 'clamp' });
   const titleY = interpolate(frame, [15, 35], [20, 0], { extrapolateRight: 'clamp' });
@@ -338,7 +341,7 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const metaOpacity = interpolate(frame, [70, 90], [0, 1], { extrapolateRight: 'clamp' });
 
   return (
-    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: fadeIn }}>
+    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: Math.min(fadeIn, fadeOut) }}>
       {/* Ken Burns — same hook image continues, slightly slower zoom */}
       <KenBurns
         src={data.hookImage}
@@ -471,8 +474,11 @@ const StoryScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
 
 const HighlightsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const frame = useCurrentFrame();
+  const T = STORY_TIMING;
+  const duration = T.highlights.end - T.highlights.start; // 300
 
   const fadeIn = interpolate(frame, [0, 15], [0, 1], { extrapolateRight: 'clamp' });
+  const fadeOut = interpolate(frame, [duration - 10, duration], [1, 0], { extrapolateRight: 'clamp' });
 
   // Default highlights from goals/assists if not provided
   const highlights = data.highlights ?? [
@@ -486,7 +492,7 @@ const HighlightsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
       style={{
         background: '#0a0e1a',
         overflow: 'hidden',
-        opacity: fadeIn,
+        opacity: Math.min(fadeIn, fadeOut),
       }}
     >
       {/* Subtle grid background */}
@@ -713,15 +719,14 @@ const CardRevealScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
 
   const legacyData = toCardData(data);
 
-  const fadeIn = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' });
-
+  // Hard cut — no fade in/out (impact moment)
   // Silence moment: text saying "THE CARD"
   const silenceOpacity = interpolate(frame, [0, 8, 25, 35], [0, 0.7, 0.7, 0], {
     extrapolateRight: 'clamp',
   });
 
   return (
-    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: fadeIn }}>
+    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden' }}>
       {/* Silence label */}
       <div
         style={{
@@ -795,6 +800,7 @@ const StatsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const duration = STORY_TIMING.stats.end - STORY_TIMING.stats.start; // 300
 
   const fadeIn = interpolate(frame, [0, 12], [0, 1], { extrapolateRight: 'clamp' });
+  const fadeOut = interpolate(frame, [duration - 10, duration], [1, 0], { extrapolateRight: 'clamp' });
 
   const legacyData = toCardData(data);
 
@@ -812,7 +818,7 @@ const StatsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
   const barsOpacity = interpolate(frame, [20, 40], [0, 1], { extrapolateRight: 'clamp' });
 
   return (
-    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: fadeIn }}>
+    <AbsoluteFill style={{ background: '#0a0e1a', overflow: 'hidden', opacity: Math.min(fadeIn, fadeOut) }}>
       {/* Top half: HexGraph (reused component) */}
       <div
         style={{

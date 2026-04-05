@@ -81,12 +81,36 @@ const DEFAULT_STORY_DATA: StoryCardData = {
   ],
   verdictText: "The Season That Rewrote History",
   subtitles: [
-    { startFrame: 30,  endFrame: 120, text: "They said his best days were behind him.",   highlight: "best days" },
-    { startFrame: 180, endFrame: 300, text: "Then 2021-22 happened.",                     highlight: "2021-22" },
-    { startFrame: 480, endFrame: 600, text: "44 goals. 15 assists.",                       highlight: "44 goals" },
-    { startFrame: 630, endFrame: 740, text: "A Champions League for the ages.",            highlight: "Champions League" },
-    { startFrame: 960, endFrame: 1040, text: "The card says it all.",                      highlight: undefined },
-    { startFrame: 1380, endFrame: 1500, text: "Legendary. Undeniable.",                   highlight: "Legendary" },
+    // HOOK (0-150)
+    { startFrame: 10,  endFrame: 75,  text: "They said he was nothing without Ronaldo.", highlight: "nothing without Ronaldo" },
+    { startFrame: 80,  endFrame: 145, text: "This is the season he proved them all wrong.", highlight: "proved them all wrong" },
+
+    // STORY (150-450)
+    { startFrame: 155, endFrame: 230, text: "2021-22. Benzema was 34.", highlight: "34" },
+    { startFrame: 240, endFrame: 340, text: "At an age where most strikers fade, he started the greatest season of his career.", highlight: "greatest season" },
+    { startFrame: 350, endFrame: 440, text: "27 goals, 12 assists in La Liga.", highlight: "27 goals" },
+
+    // HIGHLIGHTS (450-750)
+    { startFrame: 455, endFrame: 540, text: "The Champions League made him immortal.", highlight: "immortal" },
+    { startFrame: 545, endFrame: 610, text: "PSG, 87th minute. Hat trick.", highlight: "Hat trick" },
+    { startFrame: 615, endFrame: 670, text: "Chelsea, extra time. Hat trick.", highlight: "Hat trick" },
+    { startFrame: 675, endFrame: 740, text: "Man City, when nobody believed. Hat trick.", highlight: "Hat trick" },
+
+    // EMOTION (750-900)
+    { startFrame: 755, endFrame: 820, text: "Four years in Ronaldo's shadow.", highlight: "Ronaldo's shadow" },
+    { startFrame: 825, endFrame: 895, text: "And then, at 34, he took the crown.", highlight: "took the crown" },
+
+    // CARD REVEAL (900-1050) — NO SUBTITLES (silence moment)
+
+    // VERDICT (1050-1350) — after stats
+    { startFrame: 1100, endFrame: 1170, text: "La Liga. Champions League. Ballon d'Or.", highlight: "Ballon d'Or" },
+    { startFrame: 1180, endFrame: 1250, text: "He took everything at 34.", highlight: "everything" },
+    { startFrame: 1260, endFrame: 1350, text: "The greatest late bloomer in football history.", highlight: "greatest late bloomer" },
+
+    // VERDICT continued (1350-1650)
+    { startFrame: 1360, endFrame: 1430, text: "Some players peak at 25.", highlight: "25" },
+    { startFrame: 1440, endFrame: 1520, text: "This man peaked at 34.", highlight: "34" },
+    { startFrame: 1530, endFrame: 1620, text: "Legendary. No debate.", highlight: "Legendary" },
   ],
 };
 

@@ -200,15 +200,99 @@ def _extract_block(text: str, block_name: str) -> str:
 # ─── API: Render Video ────────────────────────────────────────
 @app.post("/api/render/{player_id}/{season}")
 def render_video(player_id: str, season: str):
-    """Trigger Remotion render via render-server HTTP API."""
+    """Trigger Remotion render with player-specific props."""
     import urllib.request
     video_id = f"{player_id}_{season.replace('-', '_')}"
+    s = season.replace("-", "_")
 
-    # Send render request to Remotion render-server (port 3335)
+    # Build player-specific StoryCardData props
+    # 1. Try to find card data
+    card_data = None
+    cards_file = PROJECT_ROOT / "outputs" / "cards" / "_all_cards_v2_merged.json"
+    if cards_file.exists():
+        all_cards = json.loads(cards_file.read_text(encoding="utf-8"))
+        for c in all_cards:
+            name = c.get("display_name", c.get("player_name", ""))
+            if player_id.lower() in name.lower():
+                card_data = c
+                break
+
+    # 2. Build props
+    display = player_id.upper()
+    club = ""
+    tier = "ELITE"
+    ovr = 85
+    att = def_v = pace = aura = stamina = mental = 80
+    goals = assists = 0
+
+    if card_data:
+        display = card_data.get("display_name", card_data.get("player_name", player_id.upper()))
+        club = card_data.get("club", "")
+        tier = card_data.get("tier", "ELITE")
+        ovr_val = card_data.get("ovr")
+        if ovr_val:
+            ovr = int(float(ovr_val))
+        else:
+            # Compute from stats average
+            stats = [float(card_data.get(k, 0) or 0) for k in ["att", "def", "pace", "aura", "stamina", "mental"]]
+            ovr = int(sum(stats) / len(stats)) if stats else 85
+        att = int(float(card_data.get("att", 80) or 80))
+        def_v = int(float(card_data.get("def", 40) or 40))
+        pace = int(float(card_data.get("pace", 80) or 80))
+        aura = int(float(card_data.get("aura", 80) or 80))
+        stamina = int(float(card_data.get("stamina", 80) or 80))
+        mental = int(float(card_data.get("mental", 80) or 80))
+        goals = int(float(card_data.get("goals", 0) or 0))
+        assists = int(float(card_data.get("assists", 0) or 0))
+
+    # 3. Auto-generate narration MP3 if missing
+    narration_path = REMOTION_DIR / "public" / f"{player_id}_{season}" / "narration.mp3"
+    if not narration_path.exists():
+        try:
+            generate_narration(player_id, season)
+        except Exception:
+            pass  # Non-fatal — render can proceed without narration
+
+    # 4. Check for images & audio in player folder
+    player_folder = f"{player_id}_{season}"
+    props = {
+        "data": {
+            "player_name": display,
+            "club": club,
+            "season": season,
+            "position": card_data.get("position", "FW") if card_data else "FW",
+            "tier": tier,
+            "ovr": ovr,
+            "att": att,
+            "def": def_v,
+            "pace": pace,
+            "aura": aura,
+            "stamina": stamina,
+            "mental": mental,
+            "goals": goals,
+            "assists": assists,
+            "hookImage": f"{player_folder}/{player_id}_{s}_hook_v1.png",
+            "cardImage": f"{player_folder}/{player_id}_{s}_card_v1.png",
+            "closeupImage": f"{player_folder}/{player_id}_{s}_closeup_v1.png",
+            "narrationSrc": f"{player_folder}/narration.mp3",
+            "bgmSrc": f"{player_folder}/bgm.mp3",
+            "hookStat": f"{goals} GOALS",
+            "hookLine": f"{display} · {season}",
+            "verdictText": f"{tier} Season",
+            "highlights": [
+                {"number": str(goals), "label": "Goals", "delay": 0},
+                {"number": str(assists), "label": "Assists", "delay": 35},
+            ],
+            "subtitles": [],
+        }
+    }
+
+    # Send render request to Remotion render-server
     render_url = "http://seasonxi-remotion:3335/render"
     payload = json.dumps({
         "composition": "SeasonStory",
         "output": f"/app/outputs/{video_id}.mp4",
+        "props": props,
     }).encode()
 
     try:
@@ -220,7 +304,7 @@ def render_video(player_id: str, season: str):
         )
         with urllib.request.urlopen(req, timeout=10) as resp:
             result = json.loads(resp.read())
-            return {"status": "rendering", "video_id": video_id, **result}
+            return {"status": "rendering", "video_id": video_id, "player": display, **result}
     except Exception as e:
         raise HTTPException(500, f"Render server error: {e}")
 
@@ -373,6 +457,172 @@ def generate_image_api(player_id: str, season: str, scene: str = "HOOK", count: 
         }
     except Exception as e:
         raise HTTPException(500, str(e))
+
+
+# ─── Narration: Gemini-powered script builder ─────────────────
+def _build_narration_script(
+    player_name: str,
+    club: str,
+    season: str,
+    goals: int,
+    assists: int,
+    tier: str,
+    position: str,
+    att: int = 0,
+    def_v: int = 0,
+    pace: int = 0,
+    aura: int = 0,
+    stamina: int = 0,
+    mental: int = 0,
+) -> str:
+    """Generate a compelling 45-second narration script using Gemini.
+
+    Falls back to a template if Gemini is unavailable.
+    """
+    # Try Gemini first
+    try:
+        from google import genai
+
+        # Reuse the Vertex AI client from generate_image
+        backend = os.getenv("GEMINI_BACKEND", "ai_studio").lower().strip()
+        if backend == "vertex_ai":
+            sa_key = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "")
+            if sa_key and not os.path.isabs(sa_key):
+                resolved = PROJECT_ROOT / sa_key
+                if resolved.exists():
+                    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str(resolved)
+            project = os.getenv("VERTEX_PROJECT", "")
+            location = os.getenv("VERTEX_LOCATION", "us-central1")
+            client = genai.Client(vertexai=True, project=project, location=location)
+        else:
+            api_key = os.getenv("GEMINI_API_KEY", "")
+            client = genai.Client(api_key=api_key)
+
+        prompt = f"""You are a football documentary narrator for YouTube Shorts. Write a compelling 45-second English narration script for this player's season.
+
+PLAYER DATA:
+- Name: {player_name}
+- Club: {club}
+- Season: {season}
+- Position: {position}
+- Goals: {goals}, Assists: {assists}
+- Season Grade: {tier}
+- Stats: ATT {att}, DEF {def_v}, PACE {pace}, AURA {aura}, STAMINA {stamina}, MENTAL {mental}
+
+RULES:
+- Write ONLY the narration text, no stage directions, no timestamps
+- Start with a powerful hook line (1-2 sentences that make viewers stop scrolling)
+- Tell the story of this season: what made it special, key moments, context
+- End with the tier verdict: "{tier}. No debate." then "Season Eleven."
+- Keep it under 150 words (45 seconds at normal speech pace)
+- Use short punchy sentences. Create rhythm.
+- Don't read stats like a spreadsheet. Make them FEEL meaningful.
+- No emojis, no hashtags, no "subscribe"
+- Write in a cinematic, authoritative tone
+
+OUTPUT: Just the narration text, nothing else."""
+
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+        )
+        script = (response.text or "").strip()
+        if len(script) > 50:  # Valid response
+            return script
+    except Exception as e:
+        print(f"  [Narration] Gemini failed ({e}), using template fallback")
+
+    # Fallback template
+    contributions = goals + assists
+    return f"""{player_name}. {season}. {club}.
+
+{goals} goals, {assists} assists.
+{"" if contributions <= goals else f"{contributions} goal contributions. "}
+
+This is what {tier.lower()} looks like.
+When talent meets consistency, numbers tell the story.
+And the numbers say everything.
+
+{tier}. No debate.
+
+Season Eleven."""
+
+
+async def _generate_tts(script: str, output_path: "Path") -> None:
+    """Run Edge TTS and save MP3 to output_path."""
+    import edge_tts  # type: ignore
+    comm = edge_tts.Communicate(script, "en-US-AndrewNeural", rate="-5%", pitch="-2Hz")
+    await comm.save(str(output_path))
+
+
+# ─── API: Generate Narration ──────────────────────────────────
+@app.post("/api/generate-narration/{player_id}/{season}")
+def generate_narration(player_id: str, season: str):
+    """Generate narration script + TTS MP3 for a player season.
+
+    Saves to remotion/public/{player_id}_{season}/narration.mp3.
+    """
+    import asyncio
+
+    # 1. Get card data — try search first, fallback to cards JSON
+    results = search_players(f"{player_id} {season}")
+    data = {}
+    if results:
+        data = results[0]
+    else:
+        # Fallback: search in _all_cards_v2_merged.json
+        cards_file = PROJECT_ROOT / "outputs" / "cards" / "_all_cards_v2_merged.json"
+        if cards_file.exists():
+            all_cards = json.loads(cards_file.read_text(encoding="utf-8"))
+            for c in all_cards:
+                name = c.get("display_name", c.get("player_name", ""))
+                if player_id.lower() in name.lower():
+                    data = c
+                    break
+
+    player_name = data.get("display_name") or data.get("player_name") or player_id.upper()
+    club = data.get("club") or ""
+    tier = data.get("tier") or "ELITE"
+    position = data.get("position") or "FW"
+    goals = int(float(data.get("goals", 0) or 0))
+    assists = int(float(data.get("assists", 0) or 0))
+
+    # 2. Build script (with stats for Gemini)
+    script = _build_narration_script(
+        player_name=player_name,
+        club=club,
+        season=season,
+        goals=goals,
+        assists=assists,
+        tier=tier,
+        position=position,
+        att=int(float(data.get("att", 0) or 0)),
+        def_v=int(float(data.get("def", 0) or 0)),
+        pace=int(float(data.get("pace", 0) or 0)),
+        aura=int(float(data.get("aura", 0) or 0)),
+        stamina=int(float(data.get("stamina", 0) or 0)),
+        mental=int(float(data.get("mental", 0) or 0)),
+    )
+
+    # 3. Determine output path
+    player_folder = REMOTION_DIR / "public" / f"{player_id}_{season}"
+    player_folder.mkdir(parents=True, exist_ok=True)
+    output_path = player_folder / "narration.mp3"
+
+    # 4. Run Edge TTS
+    try:
+        asyncio.run(_generate_tts(script, output_path))
+    except Exception as e:
+        raise HTTPException(500, f"TTS generation failed: {e}")
+
+    return {
+        "status": "done",
+        "player_id": player_id,
+        "season": season,
+        "script": script,
+        "output": str(output_path),
+        "size": output_path.stat().st_size if output_path.exists() else 0,
+    }
 
 
 @app.post("/api/assemble-prompt/{player_id}/{season}")
