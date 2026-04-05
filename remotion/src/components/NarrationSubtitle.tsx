@@ -24,7 +24,7 @@ interface NarrationSubtitleProps {
  */
 export const NarrationSubtitle: React.FC<NarrationSubtitleProps> = ({
   cues,
-  bottomPct = 22,
+  bottomPct = 8,
 }) => {
   const frame = useCurrentFrame();
 
@@ -89,13 +89,12 @@ export const NarrationSubtitle: React.FC<NarrationSubtitleProps> = ({
       <div
         style={{
           maxWidth: '88%',
-          padding: '14px 28px',
-          borderRadius: 12,
-          background: 'rgba(10, 14, 26, 0.72)',
-          backdropFilter: 'blur(6px)',
+          padding: '16px 32px',
+          borderRadius: 14,
+          background: 'rgba(10, 14, 26, 0.82)',
+          backdropFilter: 'blur(8px)',
           textAlign: 'center',
-          // Subtle gold border
-          border: `1px solid ${COLORS.gold}22`,
+          border: `1.5px solid ${COLORS.gold}40`,
         }}
       >
         <p

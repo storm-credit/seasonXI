@@ -1075,7 +1075,7 @@ const StatsScene: React.FC<{ data: StoryCardData }> = ({ data }) => {
                     opacity: valOpacity,
                   }}
                 >
-                  {s.value}
+                  {Math.round(localProgress * 100)}
                 </div>
               </div>
             );
