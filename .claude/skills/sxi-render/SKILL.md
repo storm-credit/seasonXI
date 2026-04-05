@@ -5,38 +5,50 @@ description: "Render SeasonXI Shorts videos using Remotion. Use when the user wa
 
 # SXI Render — Video Generation
 
-## Render a specific player
+추천 모델: **haiku** (단순 실행)
+
+## 렌더 API (메인)
 ```bash
-cd C:\ProjectS\seasonXI/remotion
-npx remotion render SeasonCard --output="../outputs/{player}_{season}.mp4"
+curl -X POST "http://localhost:8800/api/render/{player_id}/{season}"
+# 예시: curl -X POST "http://localhost:8800/api/render/benzema/2021-22"
 ```
 
-## Pipeline: Export JSON then Render
-1. Export player data to Remotion JSON:
+## 렌더 상태 확인
 ```bash
-curl -X POST "http://localhost:8800/api/pipeline-export/{player_name}"
+curl "http://localhost:8800/api/render-status/{player_id}/{season}"
 ```
 
-2. Render:
-```bash
-cd remotion && npx remotion render SeasonCard --output="../outputs/{video_id}.mp4"
+## 컴포지션
+- **SeasonStory** (60초, 1800 frames) — 메인 (나레이션 + 카드 리빌 + 스탯)
+- SeasonCard (12초, 360 frames) — 레거시
+
+## 에셋 필요 (렌더 전 확인)
+```
+remotion/public/{player_id}_{season}/
+  {player_id}_{season_underscore}_hook_v1.png    ← sxi-prepare로 생성
+  {player_id}_{season_underscore}_card_v1.png
+  {player_id}_{season_underscore}_closeup_v1.png
+  narration.mp3                                   ← sxi-prepare로 생성
+  bgm.mp3                                         ← 수동 (Suno)
 ```
 
-## Video structure (7 scenes, 12 seconds)
-1. Hook (1.2s) — player silhouette + hook text
-2. Card Reveal (1.3s) — identity
-3. OVR Shock (1.0s) — number pop
-4. Hex Graph (1.5s) — 6-stat radar fill
-5. Player Closeup (1.2s) — face + commentary
-6. Achievement (1.3s) — milestone number
-7. Verdict (3.5s) — tier + CTA
+## 8씬 구조 (60초)
+1. Hook (0-5s) — hookStat 큰 숫자 + 이미지 줌인
+2. Story (5-15s) — Ken Burns + storyText + 자막
+3. Highlights (15-25s) — 골 숫자 팝업
+4. Emotion (25-30s) — 빌드업
+5. Card Reveal (30-35s) — 플래시 + 셰이크 + 카드 등장
+6. Stats (35-45s) — 스탯 바 카운트업 + 육각 그래프
+7. Verdict (45-55s) — TierBadge + 클로즈업
+8. Outro (55-60s) — SeasonXI 로고 + CTA + 다음 선수 티저
 
-## Image requirements (3 per player)
-- `{player}_{season}_hook.png` — full body dramatic
-- `{player}_{season}_card.png` — 3/4 body stable
-- `{player}_{season}_closeup.png` — face portrait
-
-## Remotion Studio (preview)
+## Remotion Studio
 ```
 http://localhost:3334
 ```
+
+## 주요 파일
+- `remotion/src/SeasonStory.tsx` — 60초 메인 컴포지션
+- `remotion/src/Root.tsx` — 컴포지션 등록 + 기본 데이터
+- `remotion/render-server.js` — 렌더 서버 (포트 3335)
+- `src/seasonxi/api/server.py` — 렌더 API (line 201)

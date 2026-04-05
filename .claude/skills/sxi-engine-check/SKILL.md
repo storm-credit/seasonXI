@@ -3,43 +3,52 @@ name: sxi-engine-check
 description: "Run SXI Engine diagnostics and audits. Use whenever the user wants to: check engine health, verify formulas, test player archetypes, run trust audit, check tier distribution, test edge cases, validate algorithm changes, or asks 'is the engine working correctly?'"
 ---
 
-# SXI Engine Check
+# SXI Engine Check — v3 진단
 
-Run comprehensive engine diagnostics. Multiple levels available:
+추천 모델: **sonnet** (분석/해석 필요)
 
-## Quick check (default)
+## pytest (65개 테스트, 최우선)
 ```bash
-cd C:\ProjectS\seasonXI
-PYTHONIOENCODING=utf-8 uv run python scripts/engine_diagnostic.py
+cd C:/ProjectS/seasonXI
+uv run pytest tests/ -v
 ```
-8 tests: raw range, score range, position comparison, weights, confidence, tier distribution, team bias, position balance.
 
-## Deep review (archetype validation)
+## 진단 스크립트 (단계별)
 ```bash
+# Quick (8 tests)
+PYTHONIOENCODING=utf-8 uv run python scripts/engine_diagnostic.py
+
+# Full audit (21 tests)
+PYTHONIOENCODING=utf-8 uv run python scripts/full_audit.py
+
+# Performance (43 tests)
+PYTHONIOENCODING=utf-8 uv run python scripts/engine_performance_check.py
+
+# Archetype (선수별 검증)
 PYTHONIOENCODING=utf-8 uv run python scripts/deep_review.py
 ```
-Tests known player profiles (Messi, Kante, VVD, etc.) against expected ratings.
 
-## Full trust audit (21 tests)
-```bash
-PYTHONIOENCODING=utf-8 uv run python scripts/full_audit.py
-```
-Legendary player test, average player test, team bias, position balance, stat independence, confidence penalty, tier distribution, compressed ranges, monotonicity, playstyle sensitivity.
+## v3 알려진 아키타입 레이팅
 
-## Performance check (43 tests)
-```bash
-PYTHONIOENCODING=utf-8 uv run python scripts/engine_performance_check.py
-```
-Speed, memory, determinism, boundaries, NaN resilience, negative values, missing features, confidence edge cases, weight sums, consistency, tier thresholds, adaptive weights, sigmoid, GK special cases.
+| 선수 | OVR | 티어 |
+|------|-----|------|
+| Vinicius | 92.0 | Mythic |
+| Alisson | 92.4 | Mythic |
+| Benzema | 90.4 | Legendary |
+| Salah | 89.5 | Legendary |
+| De Bruyne | 88.2 | Legendary |
+| VVD | 86.0 | Elite |
+| Lewandowski | 84.2 | Elite |
 
-## Improvement check (production readiness)
-```bash
-PYTHONIOENCODING=utf-8 uv run python scripts/improvement_check.py
-```
-Algorithm weaknesses, data gaps, embarrassing edge cases, ontology leaks, production risks, v3 roadmap.
+## v3 핵심 변경
+- GK: clean_sheets DEF에만 (4중 오염 제거)
+- DF: tackles 제거, interceptions 0.35 중심
+- MENTAL: team_success_pct 완전 제거
+- _adaptive_overall() 중앙화 (boost 5%)
+- _stretch() k=4.5, 티어: Mythic≥92, Legendary≥87
 
-## Scout review (5 HANESIS rounds)
-```bash
-PYTHONIOENCODING=utf-8 uv run python scripts/scout_review.py
-```
-Professional scout perspective: data quality, number accuracy, eye test, decision trust, fan acceptance.
+## 주요 파일
+- `src/seasonxi/ratings/formula_v1.py` — v3 공식
+- `src/seasonxi/constants.py` — 티어 임계값
+- `tests/` — pytest 테스트 4개
+- `scripts/` — 진단 스크립트 6개

@@ -1,33 +1,37 @@
 ---
 name: sxi-content
-description: "Manage SeasonXI content production — images, music, prompts, YouTube. Use when the user wants to: generate image prompts, create Nanobanana/Midjourney prompts, manage Suno music, prepare YouTube upload, check production status, or work on the 10-day content plan."
+description: "Manage SeasonXI content production — images, narration, TTS, prompts, YouTube. Use when the user wants to: generate images, create narration, run TTS, manage prompts, prepare YouTube upload, or work on the content pipeline."
 ---
 
 # SXI Content — Production Management
 
-## Image prompts (Nanobanana)
-Prompt sets in: configs/image_prompts/prompt_sets/
-Format: {player}_{season}_{hook|card|closeup}.txt
+추천 모델: **haiku** (실행) / **sonnet** (스크립트 품질 검토)
 
-Dashboard copies prompts automatically:
-http://localhost:3001 → select player → HOOK/CARD/CLOSEUP/SUNO tabs
-
-## Suno music prompts
-configs/suno_prompts.txt — 6 player themes (instrumental)
-
-## YouTube upload
+## 이미지 생성 (Vertex AI + Nano Banana)
 ```bash
-cd C:\ProjectS\seasonXI
-uv run python -m seasonxi.content.youtube_upload --video outputs/{video}.mp4 --player {id} --season {season}
+curl -X POST "http://localhost:8800/api/generate-image/{player_id}/{season}?scene=hook"
+curl -X POST "http://localhost:8800/api/generate-image/{player_id}/{season}?scene=card"
+curl -X POST "http://localhost:8800/api/generate-image/{player_id}/{season}?scene=closeup"
+```
+출력: `remotion/public/{player_id}_{season}/{player_id}_{season_underscore}_{scene}_v1.png`
+
+## 나레이션 생성 (Gemini + Edge TTS)
+```bash
+curl -X POST "http://localhost:8800/api/generate-narration/{player_id}/{season}"
+```
+- Gemini 2.5 Flash → 45초 영어 나레이션
+- Edge TTS en-US-AndrewNeural (rate=-5%, pitch=-2Hz)
+- 출력: `remotion/public/{player_id}_{season}/narration.mp3`
+
+## YouTube 메타데이터
+```bash
+curl "http://localhost:8800/api/youtube-metadata/{player_id}/{season}"
 ```
 
-## Production plan
-Obsidian: C:\Users\Storm Credit\Desktop\쇼츠\seasonXI\02_Production\
-- production_plan.md (A/B/C priority 30 seasons)
-- weekly_plan.md (Day 1-7)
-- today_queue.md (daily checklist)
+## 원클릭 준비 → sxi-prepare 스킬 사용
 
-## 10-day schedule (3 videos/day)
-Day 1: Messi 2011-12, Ronaldo 2016-17, Mbappe 2018-19
-Day 2: Messi 2014-15, Ronaldo 2007-08, Mbappe 2021-22
-... (see 02_Production/10day_plan.md)
+## 주요 파일
+- `src/seasonxi/content/generate_image.py` — 이미지 (Nano Banana 폴백)
+- `src/seasonxi/content/youtube_metadata.py` — 메타데이터
+- `configs/image_prompts/prompt_sets/` — 선수별 프롬프트
+- `configs/suno_prompts.txt` — 수노 BGM (60초 섹션 마커)

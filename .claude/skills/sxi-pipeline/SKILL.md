@@ -5,7 +5,12 @@ description: "Run the SeasonXI HANESIS pipeline to rate football players. Use th
 
 # SXI Pipeline — HANESIS Full Run
 
-This skill executes the SeasonXI HANESIS pipeline which merges FBref + Understat data, computes ratings for ~2000 players using the SXI Engine v2.0 (ATT/DEF/PACE/AURA/STAMINA/MENTAL), and exports card JSONs.
+추천 모델: **haiku** (단순 실행)
+
+SXI Engine **v3** 파이프라인. FBref + Understat + Sofascore 4소스 병합, v3 공식으로 ~2000명 레이팅, 카드 JSON 익스포트.
+- Sofascore 버그 수정됨 (FBREF_PCT_MAP / SOFASCORE_PCT_MAP 분리)
+- 포지션 분류 v3: 다중 지표 점수 기반 (FW 18%)
+- 리그 보정: epl/laliga/bundesliga/seriea/ligue1 매핑
 
 ## When to use
 
@@ -27,7 +32,7 @@ PYTHONIOENCODING=utf-8 uv run python scripts/merge_and_run.py
 1. **H (Harvest):** Load 5-league FBref CSVs + Understat xG/xA
 2. **A (Align):** Fuzzy-match FBref names to Understat (95% match rate), merge defense data
 3. **N (Normalize):** Per90, percentile within position, proxy missing features
-4. **E (Evaluate):** SXI Engine v2.0 — 6 stats per player, adaptive overall
+4. **E (Evaluate):** SXI Engine v3 — 6 stats, GK clean_sheets 오염 제거, MENTAL 팀 독립, adaptive overall 중앙화
 5. **S (Synergize):** Validate known players (Salah, Son, Benzema, etc.)
 6. **I (Infer):** Anomaly detection, Top 20 ranking, tier distribution
 7. **S (Storyframe):** Export to outputs/cards/_all_cards_v2_merged.json
@@ -45,7 +50,9 @@ PYTHONIOENCODING=utf-8 uv run python scripts/merge_and_run.py
 - `data/raw/fbref/` — FBref player CSVs (5 leagues)
 - `data/raw/understat/` — Understat xG/xA data
 - `data/raw/fbref_extra/` — Defense data (tackles, interceptions)
-- `src/seasonxi/ratings/formula_v1.py` — SXI Engine v2.0
+- `src/seasonxi/ratings/formula_v1.py` — SXI Engine v3 (formula_version="v3")
+- `src/seasonxi/ratings/league_adjustment.py` — 리그 보정 (epl/laliga/ligue1 등)
+- `data/raw/sofascore/` — Sofascore 데이터
 - `outputs/cards/` — exported card JSONs
 
 ## After running
