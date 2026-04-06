@@ -119,6 +119,19 @@ def discover_seasons(base: str = "data/raw") -> dict:
         _ensure(label)
         seasons[label]["fbref_all_file"] = fpath
 
+    # FBref Kaggle multi-season files  e.g. fbref_2017_18_all.csv
+    for fpath in sorted(Path(base).glob("fbref/fbref_*_all.csv")):
+        m = re.search(r"fbref_(\d{4})_(\d{2})_all", fpath.stem)
+        if not m:
+            continue
+        y1 = m.group(1)
+        y2_short = m.group(2)
+        y2 = str(int(y1[:2] + y2_short))  # "2017" + "18" → "2018"
+        label = _season_label(y1, y2)
+        _ensure(label)
+        if seasons[label]["fbref_all_file"] is None:
+            seasons[label]["fbref_all_file"] = fpath
+
     # Understat  e.g. all_leagues_2021_2022.csv
     for fpath in sorted(Path(base).glob("understat/all_leagues_*.csv")):
         m = re.search(r"all_leagues_(\d{4})_(\d{4})", fpath.stem)
@@ -175,6 +188,23 @@ def _normalise_kaggle_row(df: pd.DataFrame) -> pd.DataFrame:
         "Int": "interceptions",
         "Clr": "clearances",
         "AerWon": "aerial_duels_won",
+        # Kaggle multi-season (2017-2024, akshankrithick)
+        "player": "player_name",
+        "squad": "club_name",
+        "pos": "primary_position",
+        "comp": "league_raw",
+        "Matches Played": "appearances",
+        "Avg Mins per Match": "avg_mins",
+        "Expected Goals": "xg",
+        "Progressive Passes": "progressive_passes",
+        "Progressive Carries": "progressive_carries",
+        "Tackles Won": "tackles",
+        "Interceptions": "interceptions",
+        "Clearances": "clearances",
+        "Total Shots": "shots",
+        "Key passes": "key_passes",
+        "Goals & Assists": "goals_assists",
+        "Non Penalty Goals": "npg",
     }
     df = df.rename(columns={k: v for k, v in col_map.items() if k in df.columns})
 
@@ -196,6 +226,17 @@ def _normalise_kaggle_row(df: pd.DataFrame) -> pd.DataFrame:
             return None
         df["league_id"] = df["Comp"].apply(_map_comp)
 
+    # league_id from league_raw (lowercase comp column from akshankrithick dataset)
+    if "league_raw" in df.columns and "league_id" not in df.columns:
+        def _map_league_raw(val):
+            if pd.isna(val): return None
+            v = str(val).strip()
+            if v in COMP_TO_LEAGUE: return COMP_TO_LEAGUE[v]
+            for k, lid in COMP_TO_LEAGUE.items():
+                if v in k or k.endswith(v): return lid
+            return None
+        df["league_id"] = df["league_raw"].apply(_map_league_raw)
+
     # Fill stats the Kaggle file does not contain
     for col in ["shots", "key_passes", "successful_dribbles", "tackles",
                 "interceptions", "clearances", "aerial_duels_won",
@@ -203,7 +244,16 @@ def _normalise_kaggle_row(df: pd.DataFrame) -> pd.DataFrame:
         if col not in df.columns:
             df[col] = 0.0
 
-    # minutes_played: strip commas e.g. "1,234" and replace "N/A"
+    # minutes_played: compute from avg_mins × appearances if missing
+    if "minutes_played" not in df.columns or df["minutes_played"].isna().all():
+        if "avg_mins" in df.columns and "appearances" in df.columns:
+            df["avg_mins"] = pd.to_numeric(df["avg_mins"], errors="coerce").fillna(0)
+            df["appearances"] = pd.to_numeric(df["appearances"], errors="coerce").fillna(0)
+            df["minutes_played"] = (df["avg_mins"] * df["appearances"]).round(0)
+            print(f"    [minutes] Computed from avg_mins × appearances")
+        else:
+            df["minutes_played"] = 0
+
     if "minutes_played" in df.columns:
         df["minutes_played"] = (
             df["minutes_played"].astype(str)
