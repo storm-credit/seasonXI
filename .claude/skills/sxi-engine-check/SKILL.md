@@ -33,11 +33,12 @@ PYTHONIOENCODING=utf-8 uv run python scripts/deep_review.py
 
 | 선수 | OVR | 티어 |
 |------|-----|------|
-| Vinicius | 92.0 | Mythic |
-| Alisson | 92.4 | Mythic |
-| Benzema | 90.4 | Legendary |
-| Salah | 89.5 | Legendary |
-| De Bruyne | 88.2 | Legendary |
+| Vinicius | 92.8 | Legendary |
+| Alisson | 94.1 | Legendary |
+| Benzema | 91.2 | Legendary |
+| Salah | 91.0 | Legendary |
+| De Bruyne | 90.8 | Legendary |
+| Kane | 86.5 | Elite |
 | VVD | 86.0 | Elite |
 | Lewandowski | 84.2 | Elite |
 
@@ -46,7 +47,7 @@ PYTHONIOENCODING=utf-8 uv run python scripts/deep_review.py
 - DF: tackles 제거, interceptions 0.35 중심
 - MENTAL: team_success_pct 완전 제거
 - _adaptive_overall() 중앙화 (boost 5%)
-- _stretch() k=4.5, 티어: Mythic≥92, Legendary≥87
+- _stretch() k=4.5, 티어: Mythic≥95, Legendary≥90, Elite≥84
 
 ## 주요 파일
 - `src/seasonxi/ratings/formula_v1.py` — v3 공식
