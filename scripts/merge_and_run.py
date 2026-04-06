@@ -205,6 +205,10 @@ def _normalise_kaggle_row(df: pd.DataFrame) -> pd.DataFrame:
         "Key passes": "key_passes",
         "Goals & Assists": "goals_assists",
         "Non Penalty Goals": "npg",
+        "Clean Sheets": "clean_sheets",
+        "Pass completion %": "pass_completion_pct",
+        "Saves": "saves",
+        "Saves %": "save_pct",
     }
     df = df.rename(columns={k: v for k, v in col_map.items() if k in df.columns})
 
@@ -244,13 +248,22 @@ def _normalise_kaggle_row(df: pd.DataFrame) -> pd.DataFrame:
         if col not in df.columns:
             df[col] = 0.0
 
-    # minutes_played: compute from avg_mins × appearances if missing
+    # minutes_played: akshankrithick "Avg Mins per Match" is actually total minutes
     if "minutes_played" not in df.columns or df["minutes_played"].isna().all():
-        if "avg_mins" in df.columns and "appearances" in df.columns:
+        if "avg_mins" in df.columns:
             df["avg_mins"] = pd.to_numeric(df["avg_mins"], errors="coerce").fillna(0)
-            df["appearances"] = pd.to_numeric(df["appearances"], errors="coerce").fillna(0)
-            df["minutes_played"] = (df["avg_mins"] * df["appearances"]).round(0)
-            print(f"    [minutes] Computed from avg_mins × appearances")
+            # Check if values look like total minutes (>100) or per-match avg (<100)
+            median_mins = df["avg_mins"].median()
+            if median_mins > 100:
+                # It's actually total minutes, not average
+                df["minutes_played"] = df["avg_mins"]
+                print(f"    [minutes] avg_mins is total minutes (median={median_mins:.0f})")
+            elif "appearances" in df.columns:
+                df["appearances"] = pd.to_numeric(df["appearances"], errors="coerce").fillna(0)
+                df["minutes_played"] = (df["avg_mins"] * df["appearances"]).round(0)
+                print(f"    [minutes] Computed from avg_mins × appearances")
+            else:
+                df["minutes_played"] = df["avg_mins"]
         else:
             df["minutes_played"] = 0
 
