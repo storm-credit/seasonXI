@@ -73,7 +73,7 @@ const DEFAULT_STORY_DATA: StoryCardData = {
   narrationSrc: "benzema_2021-22/narration.mp3",
   bgmSrc: "benzema_2021-22/bgm.mp3",
   hookStat: "44 GOALS",
-  hookLine: "2021-22. BENZEMA WAS 34.\nTHE SEASON THAT SILENCED EVERYONE.",
+  hookLine: "2021-22. BENZEMA WAS 34.\nTHEY SAID HE WAS DONE. HE WASN'T.",
   nextTeaser: "NEXT: SALAH 2021-22",
   storyText: "At 34, when every pundit had written him off, Karim Benzema delivered the greatest season of his career — and arguably the greatest individual campaign in Champions League history.",
   highlights: [
@@ -85,14 +85,14 @@ const DEFAULT_STORY_DATA: StoryCardData = {
   storyPoints: {
     highlights: [
       "PSG R16 — DOWN 2-0. HAT TRICK IN 17 MINUTES.",
-      "CHELSEA QF — HAT TRICK IN THE FIRST HALF.",
+      "CHELSEA QF — 3 GOALS ACROSS 2 LEGS. REAL THROUGH.",
       "MAN CITY SF — 90+1 EQUALIZER. EXTRA TIME. THROUGH.",
     ],
-    emotion: "4 YEARS IN RONALDO'S SHADOW\nONE SEASON TO ERASE IT ALL",
-    verdict: ["🏆 LA LIGA CHAMPION", "🏆 CHAMPIONS LEAGUE WINNER", "🏆 BALLON D'OR"],
-    cardReveal: "27 GOALS · 12 ASSISTS\nLA LIGA TOP SCORER",
-    story: "THE SEASON THAT SILENCED EVERYONE",
-    verdictLine: "THE GREATEST LATE BLOOMER IN FOOTBALL HISTORY",
+    emotion: "YEARS IN THE SHADOW.\nONE SEASON IN THE LIGHT.",
+    verdict: ["LA LIGA CHAMPION", "CHAMPIONS LEAGUE WINNER", "BALLON D'OR"],
+    cardReveal: "27 GOALS · 12 ASSISTS\nPICHICHI · LA LIGA TOP SCORER",
+    story: "HE DIDN'T JUST PEAK. HE PEAKED LATEST.",
+    verdictLine: "AT 34. BETTER THAN EVER.",
   },
   subtitles: [
     // HOOK (0-150)
