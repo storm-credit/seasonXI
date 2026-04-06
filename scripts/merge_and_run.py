@@ -1,164 +1,456 @@
-"""Merge FBref + Understat and run HANESIS pipeline.
+"""Merge FBref + Understat and run HANESIS pipeline - multi-season.
 
-FBref has: goals, assists, shots, appearances, minutes, position, team
-Understat adds: xG, xA, key_passes, xGChain, xGBuildup
+Season discovery:
+  - FBref league-split files  : {league}_{YYYY}_{YYYY}_players.csv  (HANESIS schema)
+  - FBref all-leagues file    : all_leagues_{YYYY}_{YYYY}_players.csv (Kaggle schema)
+  - FBref partial files       : {league}_{YYYY}_{YYYY}_players.csv with fewer columns
+  - Understat                 : all_leagues_{YYYY}_{YYYY}.csv
+
+Outputs:
+  outputs/cards/_all_cards_v2_merged.json        (2021-22 only, backward-compat)
+  outputs/cards/_all_cards_v3_multiseason.json   (all seasons combined)
 """
-import pandas as pd
+import io
+import re
+import glob
+import json
+import sys
+
+# Force UTF-8 output so player names with accents print correctly on Windows
+if hasattr(sys.stdout, "buffer"):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 from pathlib import Path
+
+import pandas as pd
 from thefuzz import fuzz
 
 from seasonxi.ratings.formula_v1 import ROLE_RATERS, STAT_NAMES
 from seasonxi.ratings.confidence import compute_confidence
 from seasonxi.constants import score_to_tier
 
-print("=" * 65)
-print("  HANESIS PIPELINE — FBref + Understat MERGED")
-print("=" * 65)
+# ── CONSTANTS ─────────────────────────────────────────────────
+MIN_MINUTES = 900  # 10+ full games
 
-# ── H: HARVEST ────────────────────────────────────────────────
-print("\n[H] HARVEST")
+LEAGUE_GAMES = {
+    "epl": 38, "laliga": 38, "seriea": 38, "bundesliga": 34, "ligue1": 38,
+}
 
-# Load FBref
-fbref_dfs = []
-for csv in sorted(Path("data/raw/fbref").glob("*_players.csv")):
-    df = pd.read_csv(csv)
-    league = csv.stem.split("_")[0]
-    df["league_id"] = league
-    fbref_dfs.append(df)
-fbref = pd.concat(fbref_dfs, ignore_index=True)
-print(f"  FBref: {len(fbref)} players")
-
-# Load Understat
-us = pd.read_csv("data/raw/understat/all_leagues_2021_2022.csv")
-us_league_map = {
-    "ENG-Premier League": "epl", "ESP-La Liga": "laliga",
-    "ITA-Serie A": "seriea", "GER-Bundesliga": "bundesliga",
+# Understat league → internal league_id
+US_LEAGUE_MAP = {
+    "ENG-Premier League": "epl",
+    "ESP-La Liga": "laliga",
+    "ITA-Serie A": "seriea",
+    "GER-Bundesliga": "bundesliga",
     "FRA-Ligue 1": "ligue1",
 }
-us["league_id"] = us["league_name"].map(us_league_map)
-print(f"  Understat: {len(us)} players")
 
-# ── A: ALIGN (Fuzzy match FBref <-> Understat) ────────────────
-print("\n[A] ALIGN: Matching FBref <-> Understat...")
+# Kaggle Comp column → internal league_id
+COMP_TO_LEAGUE = {
+    "eng Premier League": "epl",
+    "es La Liga": "laliga",
+    "it Serie A": "seriea",
+    "de Bundesliga": "bundesliga",
+    "fr Ligue 1": "ligue1",
+}
 
-def normalize_name(name):
-    if pd.isna(name): return ""
+# Internal league_id → file stem prefix (for per-league FBref files)
+LEAGUE_STEMS = {"epl", "laliga", "seriea", "bundesliga", "ligue1"}
+
+# ══════════════════════════════════════════════════════════════
+#  SEASON DISCOVERY
+# ══════════════════════════════════════════════════════════════
+
+def _season_label(y1: str, y2: str) -> str:
+    """Convert "2021", "2022" → "2021-22"."""
+    return f"{y1}-{y2[-2:]}"
+
+
+def discover_seasons(base: str = "data/raw") -> dict:
+    """Scan data/raw/ and return a dict keyed by season label.
+
+    Returns:
+        {
+          "2021-22": {
+              "fbref_league_files": {"epl": Path, "laliga": Path, ...},
+              "fbref_all_file": None | Path,          # Kaggle-style all-leagues
+              "understat_file": None | Path,
+          },
+          ...
+        }
+    """
+    seasons: dict = {}
+
+    def _ensure(label):
+        if label not in seasons:
+            seasons[label] = {
+                "fbref_league_files": {},
+                "fbref_all_file": None,
+                "understat_file": None,
+            }
+
+    # FBref per-league files  e.g. epl_2021_2022_players.csv
+    for fpath in sorted(Path(base).glob("fbref/*_players.csv")):
+        stem = fpath.stem  # e.g. "epl_2021_2022_players"
+        # Must not start with "all_"
+        if stem.startswith("all_"):
+            continue
+        parts = stem.split("_")
+        # Expect: league_YYYY_YYYY_players  (parts[0]=league, [-2]=year1, [-1]="players")
+        if len(parts) < 4:
+            continue
+        # Year tokens are the two consecutive 4-digit numbers before "players"
+        m = re.search(r"_(\d{4})_(\d{4})_players$", stem)
+        if not m:
+            continue
+        y1, y2 = m.group(1), m.group(2)
+        league = stem[: stem.index(f"_{y1}")]
+        if league not in LEAGUE_STEMS:
+            continue
+        label = _season_label(y1, y2)
+        _ensure(label)
+        seasons[label]["fbref_league_files"][league] = fpath
+
+    # FBref all-leagues Kaggle files  e.g. all_leagues_2023_2024_players.csv
+    for fpath in sorted(Path(base).glob("fbref/all_leagues_*_players.csv")):
+        m = re.search(r"all_leagues_(\d{4})_(\d{4})_players", fpath.stem)
+        if not m:
+            continue
+        label = _season_label(m.group(1), m.group(2))
+        _ensure(label)
+        seasons[label]["fbref_all_file"] = fpath
+
+    # Understat  e.g. all_leagues_2021_2022.csv
+    for fpath in sorted(Path(base).glob("understat/all_leagues_*.csv")):
+        m = re.search(r"all_leagues_(\d{4})_(\d{4})", fpath.stem)
+        if not m:
+            continue
+        label = _season_label(m.group(1), m.group(2))
+        _ensure(label)
+        seasons[label]["understat_file"] = fpath
+
+    return seasons
+
+
+# ══════════════════════════════════════════════════════════════
+#  FBREF LOADING — handles three different schemas
+# ══════════════════════════════════════════════════════════════
+
+# Columns the pipeline requires downstream (filled with 0 if absent)
+REQUIRED_COLS = [
+    "player_name", "club_name", "primary_position", "league_id",
+    "minutes_played", "goals", "assists", "shots", "key_passes",
+    "progressive_passes", "progressive_carries", "successful_dribbles",
+    "xg", "xa", "tackles", "interceptions", "clearances",
+    "aerial_duels_won", "yellow_cards", "red_cards", "clean_sheets",
+    "team_goals_scored", "team_goals_conceded", "team_points",
+]
+
+
+def _normalise_kaggle_row(df: pd.DataFrame) -> pd.DataFrame:
+    """Map Kaggle / FBref all-leagues column names to HANESIS schema.
+
+    Handles two variants:
+      - Standard Kaggle CSV (comma-sep): Player, Squad, Min, Gls, Ast, xG, xAG, Comp
+      - Rich FBref semicolon CSV (2022-23): Player, Squad, Goals, Assists, Min, Comp,
+          Shots (via SoT columns), TklWon, Int, Clr, AerWon, CrdY, CrdR
+    """
+    col_map = {
+        # Standard Kaggle
+        "Player": "player_name",
+        "Squad": "club_name",
+        "Pos": "primary_position",
+        "Min": "minutes_played",
+        "Gls": "goals",
+        "Ast": "assists",
+        "xG": "xg",
+        "xAG": "xa",
+        "PrgP": "progressive_passes",
+        "PrgC": "progressive_carries",
+        "CrdY": "yellow_cards",
+        "CrdR": "red_cards",
+        # Rich FBref semicolon format (2022-23)
+        "Goals": "goals",
+        "Assists": "assists",
+        "TklWon": "tackles",
+        "Int": "interceptions",
+        "Clr": "clearances",
+        "AerWon": "aerial_duels_won",
+    }
+    df = df.rename(columns={k: v for k, v in col_map.items() if k in df.columns})
+
+    # league_id from Comp column
+    # Standard Kaggle: "eng Premier League" / Rich format: "Premier League"
+    if "Comp" in df.columns:
+        # Try standard map first, then strip prefix
+        def _map_comp(val):
+            if pd.isna(val):
+                return None
+            v = str(val).strip()
+            if v in COMP_TO_LEAGUE:
+                return COMP_TO_LEAGUE[v]
+            # Rich format: may be just "Premier League", "La Liga" etc.
+            for k, lid in COMP_TO_LEAGUE.items():
+                # Match last word(s): "eng Premier League" -> "Premier League"
+                if v in k or k.endswith(v):
+                    return lid
+            return None
+        df["league_id"] = df["Comp"].apply(_map_comp)
+
+    # Fill stats the Kaggle file does not contain
+    for col in ["shots", "key_passes", "successful_dribbles", "tackles",
+                "interceptions", "clearances", "aerial_duels_won",
+                "clean_sheets", "team_goals_scored", "team_goals_conceded", "team_points"]:
+        if col not in df.columns:
+            df[col] = 0.0
+
+    # minutes_played: strip commas e.g. "1,234" and replace "N/A"
+    if "minutes_played" in df.columns:
+        df["minutes_played"] = (
+            df["minutes_played"].astype(str)
+            .str.replace(",", "", regex=False)
+            .str.replace("N/A", "0", regex=False)
+        )
+        df["minutes_played"] = pd.to_numeric(df["minutes_played"], errors="coerce").fillna(0)
+
+    return df
+
+
+def _normalise_partial_row(df: pd.DataFrame) -> pd.DataFrame:
+    """Handle minimal schema files (e.g. epl_2024_2025_players.csv)."""
+    # Already close to HANESIS schema — just fill missing cols
+    for col in ["shots", "key_passes", "successful_dribbles", "xg", "xa",
+                "tackles", "interceptions", "clearances", "aerial_duels_won",
+                "clean_sheets", "team_goals_scored", "team_goals_conceded", "team_points",
+                "progressive_passes", "progressive_carries"]:
+        if col not in df.columns:
+            df[col] = 0.0
+    return df
+
+
+def load_fbref_season(info: dict, season_label: str) -> pd.DataFrame:
+    """Load all FBref data for one season into a single normalised DataFrame."""
+    dfs = []
+
+    # --- per-league HANESIS files ---
+    for league, fpath in info["fbref_league_files"].items():
+        try:
+            df = pd.read_csv(fpath)
+        except UnicodeDecodeError:
+            try:
+                df = pd.read_csv(fpath, encoding="latin-1")
+            except Exception as e:
+                print(f"    SKIP {fpath.name}: {e}")
+                continue
+        except Exception as e:
+            print(f"    SKIP {fpath.name}: {e}")
+            continue
+
+        # Detect if this is a TSV masquerading as CSV (epl_2023_2024 style)
+        if len(df.columns) == 1 and "\t" in df.columns[0]:
+            try:
+                df = pd.read_csv(fpath, sep="\t")
+            except Exception:
+                pass
+
+        # If it has Kaggle-style columns (some per-league files exported from Kaggle)
+        if "Player" in df.columns and "Min" in df.columns:
+            df = _normalise_kaggle_row(df)
+        elif "player_name" not in df.columns:
+            # Unknown / unusable format
+            print(f"    SKIP {fpath.name}: unrecognised schema (cols={list(df.columns)[:5]})")
+            continue
+        else:
+            df = _normalise_partial_row(df)
+
+        if "league_id" not in df.columns:
+            df["league_id"] = league
+
+        df["season"] = season_label
+        dfs.append(df)
+
+    # --- Kaggle all-leagues file (only use for leagues not already loaded) ---
+    if info["fbref_all_file"] is not None:
+        already_loaded = set(info["fbref_league_files"].keys())
+        try:
+            # Try UTF-8 first, fall back to latin-1 for files with encoding issues
+            try:
+                kaggle = pd.read_csv(info["fbref_all_file"])
+            except UnicodeDecodeError:
+                kaggle = pd.read_csv(info["fbref_all_file"], encoding="latin-1")
+            # Detect semicolon-separated files (one giant column header)
+            if len(kaggle.columns) == 1 and ";" in kaggle.columns[0]:
+                try:
+                    kaggle = pd.read_csv(
+                        info["fbref_all_file"], sep=";", encoding="latin-1"
+                    )
+                except Exception:
+                    pass
+            kaggle = _normalise_kaggle_row(kaggle)
+            kaggle["season"] = season_label
+
+            if already_loaded:
+                # Only keep leagues not already covered by per-league files
+                kaggle = kaggle[~kaggle["league_id"].isin(already_loaded)]
+                if len(kaggle) > 0:
+                    print(f"    Kaggle supplement for: {sorted(kaggle['league_id'].dropna().unique())}")
+            else:
+                print(f"    Using Kaggle all-leagues file exclusively")
+
+            if len(kaggle) > 0:
+                dfs.append(kaggle)
+
+        except Exception as e:
+            print(f"    WARN: Kaggle file {info['fbref_all_file'].name} failed: {e}")
+
+    if not dfs:
+        return pd.DataFrame()
+
+    combined = pd.concat(dfs, ignore_index=True)
+
+    # Ensure all required columns exist
+    for col in REQUIRED_COLS:
+        if col not in combined.columns:
+            combined[col] = 0.0
+
+    # Clean up numeric columns — cast to float64 to avoid dtype incompatibility later
+    float_cols = ["minutes_played", "goals", "assists", "shots", "xg", "xa",
+                  "key_passes", "tackles", "interceptions", "clearances",
+                  "aerial_duels_won", "clean_sheets", "successful_dribbles",
+                  "progressive_passes", "progressive_carries"]
+    for col in float_cols:
+        if col in combined.columns:
+            combined[col] = pd.to_numeric(combined[col], errors="coerce").fillna(0).astype(float)
+
+    # Drop rows with no name
+    combined = combined[combined["player_name"].notna() & (combined["player_name"] != "")]
+    # Drop duplicate header rows (Kaggle files sometimes embed them)
+    combined = combined[combined["player_name"] != "Player"]
+
+    return combined
+
+
+# ══════════════════════════════════════════════════════════════
+#  ALIGN (fuzzy match Understat → FBref)
+# ══════════════════════════════════════════════════════════════
+
+def normalize_name(name) -> str:
+    if pd.isna(name):
+        return ""
     return str(name).lower().strip()
 
-matched = 0
-for idx, fb_row in fbref.iterrows():
-    fb_name = normalize_name(fb_row["player_name"])
-    fb_league = fb_row["league_id"]
 
-    # Find best match in Understat for same league
-    us_league = us[us["league_id"] == fb_league]
-    best_score = 0
-    best_idx = None
+def merge_understat(fbref: pd.DataFrame, us_path: Path) -> pd.DataFrame:
+    """Fuzzy-match Understat xG/xA into fbref DataFrame in-place."""
+    us = pd.read_csv(us_path)
 
-    for us_idx, us_row in us_league.iterrows():
-        us_name = normalize_name(us_row["player"])
-        score = fuzz.ratio(fb_name, us_name)
-        if score > best_score:
-            best_score = score
-            best_idx = us_idx
+    us_league_col = "league_name" if "league_name" in us.columns else "league"
+    us["league_id"] = us[us_league_col].map(US_LEAGUE_MAP)
 
-    if best_score >= 80 and best_idx is not None:
-        us_row = us.loc[best_idx]
-        fbref.loc[idx, "xg"] = us_row["xg"]
-        fbref.loc[idx, "xa"] = us_row["xa"]
-        fbref.loc[idx, "key_passes"] = us_row["key_passes"]
-        matched += 1
+    matched = 0
+    for idx, fb_row in fbref.iterrows():
+        fb_name = normalize_name(fb_row["player_name"])
+        fb_league = fb_row.get("league_id", "")
 
-print(f"  Understat matched: {matched}/{len(fbref)} ({matched/len(fbref)*100:.0f}%)")
+        us_league = us[us["league_id"] == fb_league]
+        best_score = 0
+        best_idx = None
 
-# Merge defense data (tackles_won, interceptions)
-print("  Loading defense data...")
-defense_map = {"epl": "epl", "laliga": "laliga", "seriea": "seriea",
-               "bundesliga": "bundesliga", "ligue1": "ligue1"}
-def_matched = 0
-for league_key in defense_map:
-    def_path = Path(f"data/raw/fbref_extra/{league_key}_defense.csv")
-    if not def_path.exists():
-        print(f"    {league_key}: no defense file")
-        continue
-    def_df = pd.read_csv(def_path)
-    print(f"    {league_key}: {len(def_df)} defense rows")
+        for us_idx, us_row in us_league.iterrows():
+            score = fuzz.ratio(fb_name, normalize_name(us_row["player"]))
+            if score > best_score:
+                best_score = score
+                best_idx = us_idx
 
-    for _, def_row in def_df.iterrows():
-        def_name = normalize_name(def_row["player_name"])
-        # Find match in fbref for this league
-        league_mask = fbref["league_id"] == league_key
-        for idx in fbref[league_mask].index:
-            fb_name = normalize_name(fbref.loc[idx, "player_name"])
-            if fuzz.ratio(fb_name, def_name) >= 85:
-                fbref.loc[idx, "tackles"] = def_row.get("tackles_won", 0)
-                fbref.loc[idx, "interceptions"] = def_row.get("interceptions", 0)
-                def_matched += 1
-                break
+        if best_score >= 80 and best_idx is not None:
+            us_row = us.loc[best_idx]
+            fbref.loc[idx, "xg"] = float(us_row["xg"])
+            fbref.loc[idx, "xa"] = float(us_row["xa"])
+            fbref.loc[idx, "key_passes"] = float(us_row["key_passes"])
+            matched += 1
 
-print(f"  Defense matched: {def_matched}")
+    print(f"    Understat matched: {matched}/{len(fbref)} ({matched/len(fbref)*100:.0f}%)")
+    return fbref
 
-# Merge Sofascore data (clearances, dribbles, pass accuracy, duels, clean_sheets)
-print("  Loading Sofascore data...")
-sf_path = Path("data/raw/sofascore/sofascore_all_leagues_2021_2022.csv")
-sf_matched = 0
-if sf_path.exists():
-    sf = pd.read_csv(sf_path, sep='~')
-    sf_league_map = {"epl": "epl", "laliga": "laliga", "seriea": "seriea",
-                     "bundesliga": "bundesliga", "ligue1": "ligue1"}
-    print(f"    Sofascore: {len(sf)} players")
 
-    # Pre-convert columns to float to avoid dtype warnings
+# ══════════════════════════════════════════════════════════════
+#  DEFENSE + SOFASCORE (optional supplementary data)
+# ══════════════════════════════════════════════════════════════
+
+def merge_defense(fbref: pd.DataFrame) -> pd.DataFrame:
+    """Load fbref_extra defense files if present (2021-22 only typically)."""
+    def_matched = 0
+    for league_key in LEAGUE_STEMS:
+        def_path = Path(f"data/raw/fbref_extra/{league_key}_defense.csv")
+        if not def_path.exists():
+            continue
+        def_df = pd.read_csv(def_path)
+        for _, def_row in def_df.iterrows():
+            def_name = normalize_name(def_row["player_name"])
+            league_mask = fbref["league_id"] == league_key
+            for idx in fbref[league_mask].index:
+                if fuzz.ratio(normalize_name(fbref.loc[idx, "player_name"]), def_name) >= 85:
+                    fbref.loc[idx, "tackles"] = def_row.get("tackles_won", 0)
+                    fbref.loc[idx, "interceptions"] = def_row.get("interceptions", 0)
+                    def_matched += 1
+                    break
+    if def_matched:
+        print(f"    Defense matched: {def_matched}")
+    return fbref
+
+
+def merge_sofascore(fbref: pd.DataFrame, season_label: str) -> pd.DataFrame:
+    """Load Sofascore file matching this season if present."""
+    # Try season-specific path first, then generic
+    season_slug = season_label.replace("-", "_")
+    candidates = [
+        Path(f"data/raw/sofascore/sofascore_all_leagues_{season_slug}.csv"),
+        Path("data/raw/sofascore/sofascore_all_leagues_2021_2022.csv"),
+    ]
+    sf_path = next((p for p in candidates if p.exists()), None)
+    if sf_path is None:
+        return fbref
+
+    sf = pd.read_csv(sf_path, sep="~")
+    print(f"    Sofascore: {len(sf)} rows from {sf_path.name}")
+
     for col in ["clearances", "successful_dribbles", "clean_sheets", "duels_won", "pass_completion_pct"]:
         if col not in fbref.columns:
             fbref[col] = 0.0
         else:
             fbref[col] = fbref[col].astype(float)
 
+    sf_matched = 0
     for _, sf_row in sf.iterrows():
         sf_name = normalize_name(str(sf_row.get("player_name", "")))
         sf_league = str(sf_row.get("league", ""))
-
         league_mask = fbref["league_id"] == sf_league
         for idx in fbref[league_mask].index:
-            fb_name = normalize_name(fbref.loc[idx, "player_name"])
-            if fuzz.ratio(fb_name, sf_name) >= 80:
+            if fuzz.ratio(normalize_name(fbref.loc[idx, "player_name"]), sf_name) >= 80:
                 fbref.loc[idx, "clearances"] = float(sf_row.get("clearances", 0))
                 fbref.loc[idx, "successful_dribbles"] = float(sf_row.get("dribbles", 0))
                 fbref.loc[idx, "clean_sheets"] = float(sf_row.get("clean_sheets", 0))
                 total_p = sf_row.get("total_passes", 0)
                 if total_p and total_p > 0:
-                    fbref.loc[idx, "pass_completion_pct"] = float(sf_row.get("accurate_passes", 0)) / total_p
+                    fbref.loc[idx, "pass_completion_pct"] = (
+                        float(sf_row.get("accurate_passes", 0)) / total_p
+                    )
                 fbref.loc[idx, "duels_won"] = float(sf_row.get("duels_won", 0))
                 sf_matched += 1
                 break
 
-    print(f"  Sofascore matched: {sf_matched}")
-else:
-    print("  Sofascore: file not found")
+    print(f"    Sofascore matched: {sf_matched}")
+    return fbref
 
-# ── N: NORMALIZE ──────────────────────────────────────────────
-print("\n[N] NORMALIZE")
 
-MIN_MINUTES = 900  # 10+ full games — filters out bench warmers for fairer percentiles
-filtered = fbref[fbref["minutes_played"] >= MIN_MINUTES].copy()
-print(f"  After {MIN_MINUTES}min filter: {len(filtered)}")
+# ══════════════════════════════════════════════════════════════
+#  NORMALIZE (per90, percentile, proxy)
+# ══════════════════════════════════════════════════════════════
 
-# Position classification
-def classify_pos(row):
-    """Multi-factor position classifier v3.
-
-    Based on PlayeRank (2019) principle: use multiple indicators
-    rather than single threshold for role assignment.
-
-    Key changes from v2:
-    - FW threshold lowered: goals >= 10 (was 15) OR xg >= 8 (was 12)
-    - Multi-factor fw_score replaces single threshold for MF reclassification
-    - LW/RW in position string -> always FW
-    - shots_p90, dribbles_p90 add supporting evidence
-    """
+def classify_pos(row) -> str:
+    """Multi-factor position classifier v3."""
     pos = row.get("primary_position", "")
-    if pd.isna(pos): pos = ""
+    if pd.isna(pos):
+        pos = ""
     pos = str(pos).upper().replace(",", "").replace("-", "").replace("/", "")
 
     goals = row.get("goals", 0) or 0
@@ -166,8 +458,6 @@ def classify_pos(row):
     assists = row.get("assists", 0) or 0
     minutes = row.get("minutes_played", 0) or 1
     goals_p90 = goals / (minutes / 90) if minutes > 0 else 0
-
-    # shots_p90 and dribbles_p90 may not exist yet (computed later) — use raw counts
     shots = row.get("shots", 0) or 0
     shots_p90 = shots / (minutes / 90) if minutes > 0 else 0
     dribbles = row.get("successful_dribbles", 0) or 0
@@ -175,151 +465,137 @@ def classify_pos(row):
 
     if "GK" in pos:
         return "GK"
-
-    # Any position containing FW -> FW (trust FBref primary position)
     if "FW" in pos:
         return "FW"
-
-    # Pure DF positions
     if pos in ("DF", "CB", "LB", "RB", "WB"):
         return "DF"
-
-    # DF-MF hybrids (attacking fullbacks/wingbacks)
     if "DF" in pos and "MF" in pos:
         if assists >= 5 or goals >= 3 or goals_p90 >= 0.15:
             return "MF"
         return "DF"
-
     if pos.startswith("DF") or ("DF" in pos and "MF" not in pos):
         return "DF"
-
-    # MF -> FW reclassification (the key fix)
-    # Covers: MF, MFFW (already caught above), LW, RW embedded in pos string
     if pos.startswith("MF") or pos in ("AM", "CM", "CAM", "CDM", "LM", "RM"):
-        # Multi-factor FW score
         fw_score = 0
-        if goals >= 10:      fw_score += 2
-        if goals >= 15:      fw_score += 1
-        if xg >= 8:          fw_score += 2
-        if xg >= 12:         fw_score += 1
-        if goals_p90 >= 0.3: fw_score += 2
-        if goals_p90 >= 0.5: fw_score += 1
-        if shots_p90 >= 2.0: fw_score += 1
+        if goals >= 10:       fw_score += 2
+        if goals >= 15:       fw_score += 1
+        if xg >= 8:           fw_score += 2
+        if xg >= 12:          fw_score += 1
+        if goals_p90 >= 0.3:  fw_score += 2
+        if goals_p90 >= 0.5:  fw_score += 1
+        if shots_p90 >= 2.0:  fw_score += 1
         if dribbles_p90 >= 1.5: fw_score += 1
-
-        # Threshold: 3+ points -> FW
-        if fw_score >= 3:
-            return "FW"
-        return "MF"
-
-    # Fallback
+        return "FW" if fw_score >= 3 else "MF"
     return "MF"
 
-filtered["role_bucket"] = filtered.apply(classify_pos, axis=1)
 
-# Per90
-stats_p90 = ["goals","assists","shots","key_passes","xg","xa",
-             "tackles","interceptions","clearances","aerial_duels_won","clean_sheets",
-             "successful_dribbles","duels_won"]
-for s in stats_p90:
-    if s in filtered.columns:
-        filtered[f"{s}_p90"] = filtered[s].fillna(0) / (filtered["minutes_played"] / 90)
-
-# Derived
-filtered["goals_minus_xg_p90"] = filtered.get("goals_p90", 0) - filtered.get("xg_p90", 0)
-
-# Context
-league_games = {"epl":38,"laliga":38,"seriea":38,"bundesliga":34,"ligue1":38}
-filtered["team_goal_contribution"] = (
-    (filtered["goals"].fillna(0) + filtered["assists"].fillna(0))
-    / filtered["team_goals_scored"].clip(lower=1)
-).clip(0,1)
-filtered["max_pts"] = filtered["league_id"].map(lambda x: league_games.get(x,38)*3)
-filtered["team_success_pct"] = (filtered["team_points"] / filtered["max_pts"]).clip(0,1)
-filtered["minutes_share"] = filtered["minutes_played"] / (
-    filtered["league_id"].map(lambda x: league_games.get(x,38)) * 90
-)
-
-# Percentile within role
-# Split into FBref-only stats (rank() applied) vs Sofascore stats (override after, no re-rank)
 FBREF_PCT_MAP = [
-    ("goals_p90","goals_pct_role"), ("xg_p90","xg_pct_role"),
-    ("shots_p90","shots_pct_role"), ("goals_minus_xg_p90","goals_minus_xg_pct_role"),
-    ("assists_p90","assists_pct_role"), ("xa_p90","xa_pct_role"),
-    ("key_passes_p90","key_passes_pct_role"),
-    ("tackles_p90","tackles_pct_role"), ("interceptions_p90","interceptions_pct_role"),
-    ("aerial_duels_won_p90","aerials_pct_role"),
+    ("goals_p90", "goals_pct_role"), ("xg_p90", "xg_pct_role"),
+    ("shots_p90", "shots_pct_role"), ("goals_minus_xg_p90", "goals_minus_xg_pct_role"),
+    ("assists_p90", "assists_pct_role"), ("xa_p90", "xa_pct_role"),
+    ("key_passes_p90", "key_passes_pct_role"),
+    ("tackles_p90", "tackles_pct_role"), ("interceptions_p90", "interceptions_pct_role"),
+    ("aerial_duels_won_p90", "aerials_pct_role"),
 ]
-# Sofascore-sourced: ranked separately, then overridden — NOT re-ranked in FBREF loop
 SOFASCORE_PCT_MAP = [
-    ("clearances_p90","clearances_pct_role"),
-    ("successful_dribbles_p90","dribbles_pct_role"),
-    ("duels_won_p90","aerial_duel_success_pct_role"),
-    ("clean_sheets_p90","clean_sheets_pct_role"),
+    ("clearances_p90", "clearances_pct_role"),
+    ("successful_dribbles_p90", "dribbles_pct_role"),
+    ("duels_won_p90", "aerial_duel_success_pct_role"),
+    ("clean_sheets_p90", "clean_sheets_pct_role"),
+]
+DF_GK_ONLY = {"clearances_pct_role", "aerials_pct_role", "clean_sheets_pct_role"}
+
+PROXY_COLS = [
+    "prog_passes_pct_role", "prog_carries_pct_role", "dribbles_pct_role",
+    "pass_completion_pct_role", "pressures_pct_role", "pressure_success_pct_role",
+    "aerial_duel_success_pct_role", "ball_recoveries_pct_role",
+    "gk_saves_pct_role", "gk_psxg_diff_pct_role", "gk_crosses_stopped_pct_role",
+    "gk_pass_completion_pct_role", "gk_launch_pct_role",
+    "clearances_pct_role", "aerials_pct_role",
 ]
 
-# Pass completion (not per90 — it's already a rate)
-if "pass_completion_pct" in filtered.columns:
-    filtered["pass_completion_pct_role"] = filtered.groupby("role_bucket")["pass_completion_pct"].rank(pct=True).fillna(0.5)
 
-# FBref stats: rank within role
-for src, dst in FBREF_PCT_MAP:
-    if src in filtered.columns:
-        filtered[dst] = filtered.groupby("role_bucket")[src].rank(pct=True).fillna(0.5)
-    else:
-        filtered[dst] = 0.5
+def normalize_season(filtered: pd.DataFrame) -> pd.DataFrame:
+    """Apply per90, percentile ranking, and proxy filling to one season's data."""
+    # Per90
+    stats_p90 = ["goals", "assists", "shots", "key_passes", "xg", "xa",
+                 "tackles", "interceptions", "clearances", "aerial_duels_won",
+                 "clean_sheets", "successful_dribbles", "duels_won"]
+    for s in stats_p90:
+        if s in filtered.columns:
+            filtered[f"{s}_p90"] = (
+                filtered[s].fillna(0) / (filtered["minutes_played"] / 90)
+            )
 
-# BUG 2 fix: DF/GK-only stats — FW/MF get 0.0 (these stats are meaningless for attackers)
-DF_GK_ONLY = {"clearances_pct_role", "aerials_pct_role", "clean_sheets_pct_role"}
-df_gk_mask = filtered["role_bucket"].isin(["DF", "GK"])
+    filtered["goals_minus_xg_p90"] = (
+        filtered.get("goals_p90", pd.Series(0, index=filtered.index))
+        - filtered.get("xg_p90", pd.Series(0, index=filtered.index))
+    )
 
-# Sofascore override: rank within role, then apply only where real data exists
-# This runs AFTER FBref loop and is NOT overwritten again — bug 1 fix
-for stat, pct_col in SOFASCORE_PCT_MAP:
-    if stat in filtered.columns:
-        real_pct = filtered.groupby("role_bucket")[stat].rank(pct=True)
-        has_data = filtered[stat] > 0
-        if pct_col in DF_GK_ONLY:
-            # BUG 2 fix: zero out FW/MF first, then apply real data only for DF/GK
-            filtered[pct_col] = 0.0
-            override_mask = has_data & df_gk_mask
-            filtered.loc[override_mask, pct_col] = real_pct[override_mask]
+    # Context
+    filtered["team_goal_contribution"] = (
+        (filtered["goals"].fillna(0) + filtered["assists"].fillna(0))
+        / filtered["team_goals_scored"].clip(lower=1)
+    ).clip(0, 1)
+    filtered["max_pts"] = filtered["league_id"].map(
+        lambda x: LEAGUE_GAMES.get(x, 38) * 3
+    )
+    filtered["team_success_pct"] = (
+        filtered["team_points"] / filtered["max_pts"]
+    ).clip(0, 1)
+    filtered["minutes_share"] = filtered["minutes_played"] / (
+        filtered["league_id"].map(lambda x: LEAGUE_GAMES.get(x, 38)) * 90
+    )
+
+    # Percentiles within role
+    if "pass_completion_pct" in filtered.columns:
+        filtered["pass_completion_pct_role"] = (
+            filtered.groupby("role_bucket")["pass_completion_pct"]
+            .rank(pct=True).fillna(0.5)
+        )
+
+    for src, dst in FBREF_PCT_MAP:
+        if src in filtered.columns:
+            filtered[dst] = (
+                filtered.groupby("role_bucket")[src].rank(pct=True).fillna(0.5)
+            )
         else:
-            filtered[pct_col] = 0.5  # default for rows without data
-            filtered.loc[has_data, pct_col] = real_pct[has_data]
-    else:
-        if pct_col in DF_GK_ONLY:
-            filtered[pct_col] = 0.0
+            filtered[dst] = 0.5
+
+    df_gk_mask = filtered["role_bucket"].isin(["DF", "GK"])
+    # Zero out DF/GK-only stats for FW/MF first
+    for pct_col in DF_GK_ONLY:
+        if pct_col in filtered.columns:
+            filtered.loc[~df_gk_mask, pct_col] = 0.0
+
+    for stat, pct_col in SOFASCORE_PCT_MAP:
+        if stat in filtered.columns:
+            real_pct = filtered.groupby("role_bucket")[stat].rank(pct=True)
+            has_data = filtered[stat] > 0
+            if pct_col in DF_GK_ONLY:
+                filtered[pct_col] = 0.0
+                override_mask = has_data & df_gk_mask
+                filtered.loc[override_mask, pct_col] = real_pct[override_mask]
+            else:
+                filtered[pct_col] = 0.5
+                filtered.loc[has_data, pct_col] = real_pct[has_data]
         else:
-            filtered[pct_col] = 0.5
+            filtered[pct_col] = 0.0 if pct_col in DF_GK_ONLY else 0.5
 
-# BUG 2 fix: aerials_pct_role (from FBref) also 0.0 for FW/MF
-if "aerials_pct_role" in filtered.columns:
-    filtered.loc[~df_gk_mask, "aerials_pct_role"] = 0.0
+    if "aerials_pct_role" in filtered.columns:
+        filtered.loc[~df_gk_mask, "aerials_pct_role"] = 0.0
 
-print(f"  Sofascore percentile overrides applied")
+    # Proxy fill
+    for col in PROXY_COLS:
+        if col not in filtered.columns:
+            filtered[col] = float("nan")
+        needs_proxy = filtered[col].isna() | (filtered[col] == 0.5)
+        if not needs_proxy.any():
+            continue
 
-# Proxy missing features — smarter estimation from available data
-# BUG 3 fix: use per-row has_data mask instead of checking if entire column is 0.5
-# For DF: interceptions correlates with clearances/aerials
-# For FW: key_passes correlates with progressive actions
-# For MF: tackles correlates with pressures
-for col in ["prog_passes_pct_role","prog_carries_pct_role","dribbles_pct_role",
-            "pass_completion_pct_role","pressures_pct_role","pressure_success_pct_role",
-            "aerial_duel_success_pct_role","ball_recoveries_pct_role",
-            "gk_saves_pct_role","gk_psxg_diff_pct_role","gk_crosses_stopped_pct_role",
-            "gk_pass_completion_pct_role","gk_launch_pct_role",
-            "clearances_pct_role","aerials_pct_role"]:
-    # BUG 3 fix: identify rows that are missing real data (NaN or never set / still at default)
-    if col not in filtered.columns:
-        filtered[col] = float("nan")
-    # Per-row proxy mask: rows where value is NaN or 0.5 (default placeholder)
-    needs_proxy = filtered[col].isna() | (filtered[col] == 0.5)
-    if needs_proxy.any():
         if "prog" in col and "key_passes_pct_role" in filtered.columns:
             filtered.loc[needs_proxy, col] = filtered.loc[needs_proxy, "key_passes_pct_role"]
         elif "dribble" in col:
-            # FW: goals proxy, DF: low, MF: assists proxy
             def _dribble_proxy(r):
                 if r["role_bucket"] == "FW":
                     return r.get("goals_pct_role", 0.5) * 0.7 + r.get("assists_pct_role", 0.5) * 0.3
@@ -337,7 +613,8 @@ for col in ["prog_passes_pct_role","prog_carries_pct_role","dribbles_pct_role",
             def _pass_comp_proxy(r):
                 if r["role_bucket"] == "DF":
                     return min(1.0, r.get("interceptions_pct_role", 0.5) * 0.6 + 0.3)
-                return min(1.0, r.get("assists_pct_role", 0.5) * 0.7 + r.get("key_passes_pct_role", 0.5) * 0.3)
+                return min(1.0, r.get("assists_pct_role", 0.5) * 0.7
+                           + r.get("key_passes_pct_role", 0.5) * 0.3)
             filtered.loc[needs_proxy, col] = filtered[needs_proxy].apply(_pass_comp_proxy, axis=1)
         elif "ball_rec" in col:
             icp = filtered.get("interceptions_pct_role", pd.Series(0.5, index=filtered.index))
@@ -346,13 +623,15 @@ for col in ["prog_passes_pct_role","prog_carries_pct_role","dribbles_pct_role",
         elif "aerial" in col and "clearances" not in col:
             def _aerial_proxy(r):
                 if r["role_bucket"] == "DF":
-                    return min(1.0, r.get("interceptions_pct_role", 0.5) * 0.7 + r.get("tackles_pct_role", 0.5) * 0.3)
+                    return min(1.0, r.get("interceptions_pct_role", 0.5) * 0.7
+                               + r.get("tackles_pct_role", 0.5) * 0.3)
                 return min(1.0, r.get("goals_pct_role", 0.5) * 0.3 + 0.3)
             filtered.loc[needs_proxy, col] = filtered[needs_proxy].apply(_aerial_proxy, axis=1)
         elif "clearances" in col:
             def _clearances_proxy(r):
                 if r["role_bucket"] in ["DF", "GK"]:
-                    return r.get("interceptions_pct_role", 0.5) * 0.8 + r.get("tackles_pct_role", 0.5) * 0.2
+                    return (r.get("interceptions_pct_role", 0.5) * 0.8
+                            + r.get("tackles_pct_role", 0.5) * 0.2)
                 return 0.3
             filtered.loc[needs_proxy, col] = filtered[needs_proxy].apply(_clearances_proxy, axis=1)
         elif "gk" in col and "clean_sheets_pct_role" in filtered.columns:
@@ -360,73 +639,232 @@ for col in ["prog_passes_pct_role","prog_carries_pct_role","dribbles_pct_role",
         else:
             filtered.loc[needs_proxy, col] = 0.5
 
-print(f"  Features: {len([c for c in filtered.columns if c.endswith('_pct_role')])} percentiles")
+    return filtered
 
-# ── E: EVALUATE ───────────────────────────────────────────────
-print("\n[E] EVALUATE")
 
-from seasonxi.ratings.league_adjustment import get_league_multiplier
+# ══════════════════════════════════════════════════════════════
+#  EVALUATE
+# ══════════════════════════════════════════════════════════════
 
-results = []
-for _, row in filtered.iterrows():
-    role = row["role_bucket"]
-    rater = ROLE_RATERS.get(role)
-    if not rater: continue
-    conf = compute_confidence(int(row["minutes_played"]))
-    scores = rater(row, conf)
-    # Post-OVR league quality adjustment
-    league_mult = get_league_multiplier(str(row.get("league_id", "")))
-    ovr_raw = scores["overall"]
-    scores["overall"] = max(50.0, min(99.0, 50 + (ovr_raw - 50) * league_mult))
-    tier = score_to_tier(scores["overall"]).value
-    results.append({
-        "player_name": row["player_name"], "club": row["club_name"],
-        "league": row["league_id"], "position": role,
-        "minutes": int(row["minutes_played"]),
-        "goals": int(row.get("goals",0)), "assists": int(row.get("assists",0)),
-        "xg": round(float(row.get("xg",0)),1), "xa": round(float(row.get("xa",0)),1),
-        **{d: round(scores[d],1) for d in STAT_NAMES},
-        "overall": round(scores["overall"],1), "confidence": round(conf,3),
-        "tier": tier,
-    })
+def evaluate_season(filtered: pd.DataFrame, season_label: str) -> pd.DataFrame:
+    """Run HANESIS E-stage and return a ratings DataFrame."""
+    from seasonxi.ratings.league_adjustment import get_league_multiplier
 
-ratings = pd.DataFrame(results)
-print(f"  Rated: {len(ratings)} players")
+    results = []
+    for _, row in filtered.iterrows():
+        role = row["role_bucket"]
+        rater = ROLE_RATERS.get(role)
+        if not rater:
+            continue
+        conf = compute_confidence(int(row["minutes_played"]))
+        scores = rater(row, conf)
+        league_mult = get_league_multiplier(str(row.get("league_id", "")))
+        ovr_raw = scores["overall"]
+        scores["overall"] = max(50.0, min(99.0, 50 + (ovr_raw - 50) * league_mult))
+        tier = score_to_tier(scores["overall"]).value
 
-# ── S: VALIDATE ───────────────────────────────────────────────
-print("\n[S] VALIDATE: Known players")
+        results.append({
+            "player_name": row["player_name"],
+            "club": row["club_name"],
+            "league": row["league_id"],
+            "position": role,
+            "season": season_label,
+            "minutes": int(row["minutes_played"]),
+            "goals": int(row.get("goals", 0)),
+            "assists": int(row.get("assists", 0)),
+            "xg": round(float(row.get("xg", 0)), 1),
+            "xa": round(float(row.get("xa", 0)), 1),
+            **{d: round(scores[d], 1) for d in STAT_NAMES},
+            "overall": round(scores["overall"], 1),
+            "confidence": round(conf, 3),
+            "tier": tier,
+        })
 
-known = ["Salah","Son","Benzema","Lewandowski","De Bruyne","Van Dijk",
-         "Mbappe","Kane","Modric","Haaland"]
-for name in known:
-    m = ratings[ratings["player_name"].str.contains(name, case=False, na=False)]
-    if len(m) == 0:
-        print(f"  NOT FOUND: {name}")
-        continue
-    p = m.iloc[0]
-    print(f"  {p['player_name']:25s} {p['position']:3s} ATT:{p['att']:3.0f} DEF:{p['def']:3.0f} PAC:{p['pace']:3.0f} AUR:{p['aura']:3.0f} STA:{p['stamina']:3.0f} MEN:{p['mental']:3.0f} | OVR:{p['overall']:5.1f} {p['tier']}")
+    return pd.DataFrame(results)
 
-# ── I: INFER ──────────────────────────────────────────────────
-print("\n[I] INFER: Top 20")
-top20 = ratings.nlargest(20, "overall")
-for i, (_, p) in enumerate(top20.iterrows()):
-    print(f"  {i+1:2d}. {p['player_name']:25s} {p['club']:20s} {p['position']:3s} OVR:{p['overall']:5.1f} {p['tier']}")
 
-print("\n  TIER DISTRIBUTION:")
-td = ratings["tier"].value_counts()
-total = len(ratings)
-for t in ["Mythic","Legendary","Elite","Gold","Silver","Bronze"]:
-    c = td.get(t,0)
-    print(f"    {t:10s} {c:4d} ({c/total*100:5.1f}%)")
+# ══════════════════════════════════════════════════════════════
+#  VALIDATE / INFER helpers
+# ══════════════════════════════════════════════════════════════
 
-# ── S: STORYFRAME ─────────────────────────────────────────────
-print("\n[S] STORYFRAME")
-out = Path("outputs/cards")
-out.mkdir(parents=True, exist_ok=True)
-ratings.to_json(out / "_all_cards_v2_merged.json", orient="records", indent=2, force_ascii=False)
-top20.to_json(out / "_top20_v2_merged.json", orient="records", indent=2, force_ascii=False)
-print(f"  Exported: {len(ratings)} cards")
+KNOWN_PLAYERS = [
+    "Salah", "Son", "Benzema", "Lewandowski", "De Bruyne", "Van Dijk",
+    "Mbappe", "Kane", "Modric", "Haaland",
+]
 
-print("\n" + "=" * 65)
-print(f"  DONE: {len(ratings)} players, Mythic={td.get('Mythic',0)}, Legendary={td.get('Legendary',0)}")
-print("=" * 65)
+
+def validate_known(ratings: pd.DataFrame, season: str) -> None:
+    if ratings.empty or "player_name" not in ratings.columns:
+        print("    (no players rated)")
+        return
+    for name in KNOWN_PLAYERS:
+        m = ratings[ratings["player_name"].str.contains(name, case=False, na=False)]
+        if len(m) == 0:
+            continue  # Not every player appears in every season
+        p = m.iloc[0]
+        try:
+            print(
+                f"    {p['player_name']:25s} {p['position']:3s} "
+                f"ATT:{p['att']:3.0f} DEF:{p['def']:3.0f} PAC:{p['pace']:3.0f} "
+                f"AUR:{p['aura']:3.0f} STA:{p['stamina']:3.0f} MEN:{p['mental']:3.0f} "
+                f"| OVR:{p['overall']:5.1f} {p['tier']}"
+            )
+        except (UnicodeEncodeError, KeyError):
+            print(f"    {str(p['player_name'])[:24]} OVR:{p.get('overall', 0):5.1f} {p.get('tier', '?')}")
+
+
+def print_tier_distribution(ratings: pd.DataFrame) -> None:
+    td = ratings["tier"].value_counts()
+    total = len(ratings)
+    for t in ["Mythic", "Legendary", "Elite", "Gold", "Silver", "Bronze"]:
+        c = td.get(t, 0)
+        print(f"    {t:10s} {c:4d} ({c/total*100:5.1f}%)")
+
+
+# ══════════════════════════════════════════════════════════════
+#  MAIN
+# ══════════════════════════════════════════════════════════════
+
+def main():
+    print("=" * 65)
+    print("  HANESIS PIPELINE - FBref + Understat MULTI-SEASON")
+    print("=" * 65)
+
+    seasons = discover_seasons()
+    print(f"\nDiscovered seasons: {sorted(seasons.keys())}")
+
+    all_ratings: list[pd.DataFrame] = []
+    ratings_2122: pd.DataFrame | None = None
+
+    for season_label in sorted(seasons.keys()):
+        info = seasons[season_label]
+        print(f"\n{'-'*65}")
+        print(f"  SEASON: {season_label}")
+        print(f"{'-'*65}")
+
+        # ── H: HARVEST ──────────────────────────────────────────
+        print("\n  [H] HARVEST")
+        fbref = load_fbref_season(info, season_label)
+
+        if fbref.empty:
+            print(f"    No FBref data - skipping {season_label}")
+            continue
+
+        print(f"    FBref raw: {len(fbref)} rows | leagues: {sorted(fbref['league_id'].dropna().unique())}")
+
+        # ── A: ALIGN ────────────────────────────────────────────
+        print("\n  [A] ALIGN")
+        if info["understat_file"] is not None:
+            fbref = merge_understat(fbref, info["understat_file"])
+        else:
+            print("    Understat: no file - using FBref xG/xA as-is")
+
+        # Optional supplementary data
+        print("  [A] Loading supplementary data...")
+        fbref = merge_defense(fbref)
+        fbref = merge_sofascore(fbref, season_label)
+
+        # ── N: NORMALIZE ────────────────────────────────────────
+        print("\n  [N] NORMALIZE")
+        filtered = fbref[fbref["minutes_played"] >= MIN_MINUTES].copy()
+        print(f"    After {MIN_MINUTES}min filter: {len(filtered)}")
+
+        filtered["role_bucket"] = filtered.apply(classify_pos, axis=1)
+        role_counts = filtered["role_bucket"].value_counts().to_dict()
+        print(f"    Roles: {role_counts}")
+
+        filtered = normalize_season(filtered)
+        pct_cols = [c for c in filtered.columns if c.endswith("_pct_role")]
+        print(f"    Features: {len(pct_cols)} percentiles computed")
+
+        # ── E: EVALUATE ─────────────────────────────────────────
+        print("\n  [E] EVALUATE")
+        ratings = evaluate_season(filtered, season_label)
+        print(f"    Rated: {len(ratings)} players")
+
+        # ── S: VALIDATE ─────────────────────────────────────────
+        print("\n  [S] VALIDATE (known players):")
+        validate_known(ratings, season_label)
+
+        # ── I: INFER ────────────────────────────────────────────
+        print(f"\n  [I] INFER: Top 10 for {season_label}")
+        if not ratings.empty:
+            top10 = ratings.nlargest(10, "overall")
+            for i, (_, p) in enumerate(top10.iterrows()):
+                try:
+                    name_str = str(p['player_name'])
+                    club_str = str(p['club'])
+                    print(f"    {i+1:2d}. {name_str:25s} {club_str:20s} "
+                          f"{p['position']:3s} OVR:{p['overall']:5.1f} {p['tier']}")
+                except UnicodeEncodeError:
+                    print(f"    {i+1:2d}. [encoding error] OVR:{p['overall']:5.1f} {p['tier']}")
+        else:
+            print("    (no players rated)")
+
+        print(f"\n  TIER DISTRIBUTION ({season_label}):")
+        print_tier_distribution(ratings)
+
+        if not ratings.empty:
+            all_ratings.append(ratings)
+        if season_label == "2021-22" and not ratings.empty:
+            ratings_2122 = ratings
+
+    # ── S: STORYFRAME ─────────────────────────────────────────
+    print(f"\n{'='*65}")
+    print("  [S] STORYFRAME - export")
+
+    out = Path("outputs/cards")
+    out.mkdir(parents=True, exist_ok=True)
+
+    # Backward-compat: 2021-22 only
+    if ratings_2122 is not None and len(ratings_2122) > 0:
+        td_2122 = ratings_2122["tier"].value_counts()
+        ratings_2122.to_json(
+            out / "_all_cards_v2_merged.json",
+            orient="records", indent=2, force_ascii=False,
+        )
+        top20_2122 = ratings_2122.nlargest(20, "overall")
+        top20_2122.to_json(
+            out / "_top20_v2_merged.json",
+            orient="records", indent=2, force_ascii=False,
+        )
+        print(f"  v2 (2021-22): {len(ratings_2122)} cards -> _all_cards_v2_merged.json")
+    else:
+        print("  v2 (2021-22): no data found - skipped")
+
+    # Multi-season export
+    if all_ratings:
+        combined = pd.concat(all_ratings, ignore_index=True)
+        combined.to_json(
+            out / "_all_cards_v3_multiseason.json",
+            orient="records", indent=2, force_ascii=False,
+        )
+        print(f"  v3 (all seasons): {len(combined)} cards -> _all_cards_v3_multiseason.json")
+
+        print(f"\n  SEASON SUMMARY:")
+        season_counts = combined.groupby("season").agg(
+            players=("player_name", "count"),
+            mythic=("tier", lambda x: (x == "Mythic").sum()),
+            legendary=("tier", lambda x: (x == "Legendary").sum()),
+            elite=("tier", lambda x: (x == "Elite").sum()),
+        ).reset_index()
+        for _, row in season_counts.iterrows():
+            print(f"    {row['season']}: {row['players']:4d} players | "
+                  f"Mythic={row['mythic']} Legendary={row['legendary']} Elite={row['elite']}")
+
+        td_all = combined["tier"].value_counts()
+        print(f"\n  GLOBAL TIER DISTRIBUTION ({len(combined)} players):")
+        print_tier_distribution(combined)
+
+        total_m = td_all.get("Mythic", 0)
+        total_l = td_all.get("Legendary", 0)
+        print(f"\n  DONE: {len(combined)} players across {len(all_ratings)} seasons, "
+              f"Mythic={total_m}, Legendary={total_l}")
+    else:
+        print("  No ratings produced.")
+
+    print("=" * 65)
+
+
+if __name__ == "__main__":
+    main()
